@@ -1,6 +1,6 @@
 # K's AI Trading Desk · Neon City
 
-Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json`, `journal.json` and `strategies.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json`, `journal.json`, `strategies.json`, `regime.json` and `counters.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
 The classic pixel bullpen is kept at `bullpen.html` (self-contained, inlined fallback data, reads `data.json` every 30 s).
 
 ### Neon City: what drives what (all from data.json / journal.json)
@@ -10,6 +10,78 @@ The classic pixel bullpen is kept at `bullpen.html` (self-contained, inlined fal
 - Money board: `pnlToday/pnlWeek/pnlAllTime` plus per-bot `pnlToday/Week/AllTime`, `tradesToday/Week/AllTime`. Paper results are always labelled not-real.
 - Watchlist: today's `watchlist[]` items with TradingView `tv-single-ticker` widgets (`tvSymbol` wins) and a ticker tape.
 - Approvals waiting on K: optional `approvals[]` = `{from, date, title, status}` (status `pending` or absent = shown). The field now exists: the three Nov 2 items are kept with `status: resolved/superseded` plus a `resolution`, so the panel shows **None pending**. `STATIC_PENDING_APPROVALS` (used only if the field is missing) is now empty.
+
+## Counting (desk throughput) — paste into routine prompts
+
+`counters.json` holds exact, real counts of what each bot processed, keyed by date (ET) then bot id
+(`kiwi scanner news whale risk quant journal options`). Nothing is estimated or seeded: a day with no counts shows 0.
+The site's **DESK THROUGHPUT** panel (Neon City right column, bullpen bottom card) and each tower's label read it every 60 s.
+`_audits` holds the **Nov 2 audit (partial, reconstructed)** (790 bar requests, 28,566 bars, 30 symbols, 9 option chains,
+89 watchlist price updates, ~28 sources cited, 11 ideas, 6 rejected, 0 taken, 37,000 simulated trades): shown as its own
+labelled entry, never added to a day, the per-bot bars or the 7-day average.
+
+Per bot per day: `quotesCalls`, `symbolsQuoted {unique[], total}`, `barCalls`, `bars`, `optionCalls`, `optionContracts`,
+`webSearches`, `pagesFetched`, `headlines {items[{title,url,time}] (latest 200), count, seen[]}`, `xSearches`, `xPosts`,
+`ideasGenerated`, `ideasLogged`, `ideasRejected`, `ordersSent`, `fills`, `backtestVariants`, `simulatedTrades`, `runs`, `lastRun`
+(+ `keys[]`, the idempotency keys already counted). `count.py` holds an exclusive file lock (`counters.json.lock`) and
+replaces the file atomically, so parallel routines are safe. `runs.jsonl` gets one line per `--run-end`:
+`{bot, routine, start, end, date, counts}` where `counts` is the delta since `--run-start`.
+
+### Paste this into every routine prompt (replace BOT with the routine's bot id)
+```
+COUNTING (desk throughput, real counts only; run from /workspace/desk-pages; never guess a number):
+- First step of the run:   python3 count.py --bot BOT --routine "<routine name>" --run-start
+- After EVERY Questrade get_quotes call:   python3 count.py --bot BOT --quotes 1 --symbols SYM1,SYM2,...   (every symbol in that call)
+- After EVERY Questrade get_historical_data call: ingest it, which counts it:   python3 bars.py ingest --bot BOT <file>
+  (if you do not ingest it:   python3 count.py --bot BOT --bar-calls 1 --bars <number of candles returned>)
+- After EVERY Questrade option chain / option quotes call:   python3 count.py --bot BOT --option-calls 1 --contracts <contracts returned>
+- After EVERY web search:   python3 count.py --bot BOT --web-searches 1
+- After EVERY page fetch:   python3 count.py --bot BOT --pages 1
+- For EVERY news headline you read and use (repeat --headline; time optional, ISO with offset):
+    python3 count.py --bot BOT --headline "Exact headline title|https://source.url|2026-11-03T09:41:00-05:00"
+  (a fetch that yields a headline can be one call:  python3 count.py --bot BOT --pages 1 --headline "Title|url")
+- After EVERY X search:   python3 count.py --bot BOT --x-searches 1 --x-posts <posts returned>
+- Each trade idea you come up with (logged or not):   python3 count.py --bot BOT --ideas 1
+- A real Questrade fill:   python3 count.py --bot BOT --fills 1
+- Last step of the run:   python3 count.py --bot BOT --routine "<routine name>" --run-end
+- Automatic (do NOT count these by hand): log_idea.py add (ideasLogged), risk_check.py BLOCK (ideasRejected, Risk Manager),
+  set_activity.py --approved (ordersSent, Kiwi), bars.py ingest / regime.py --ingest (barCalls + bars), Quant Lab backtests.
+- Then commit + push counters.json and runs.jsonl with the other data files.
+```
+Flags can be combined into one call after a step, e.g.
+`python3 count.py --bot scanner --quotes 1 --symbols RIVN,AMD --bars 78 --bar-calls 1 --web-searches 2 --pages 3 --headline "Title|url" --x-searches 1 --x-posts 25 --run`
+(`--run` = count one run without a start/end pair). `--key ID` makes an event count once per bot per day (re-runs are skipped).
+
+### count.py usage
+```
+python3 count.py --bot BOT [--quotes N] [--symbols A,B,...] [--bar-calls N] [--bars N] [--option-calls N] [--contracts N]
+                 [--web-searches N] [--pages N] [--headline "Title|url[|ISO time]"]... [--x-searches N] [--x-posts N]
+                 [--ideas N] [--logged N] [--rejected N] [--orders N] [--fills N] [--variants N] [--sim-trades N]
+                 [--key ID] [--run | --run-start | --run-end] [--routine NAME] [--date YYYY-MM-DD]
+python3 count.py --show [--date YYYY-MM-DD] [--bot BOT] [--json]
+```
+Env: `DESK_COUNTERS=/path/counters.json` (tests: write somewhere else), `DESK_COUNT=0` (scripts skip auto-counting),
+`DESK_BOT=<id>` (bot credited by `bars.py ingest` / `regime.py --ingest` when `--bot` is not given; default `kiwi`).
+
+### What the scripts count by themselves
+| script | counter (bot) | rule |
+|---|---|---|
+| `log_idea.py add` | `ideasLogged` (the idea's `--bot`) | once per idea id |
+| `risk_check.py` (trade check) | `ideasRejected` (`risk`) | every BLOCK, once per `--idea` id (else bot:ticker:side) per day, so resize re-checks count once; not with `--no-write`, `--status`, `--update` |
+| `set_activity.py --approved X` | `ordersSent` (`kiwi`) | when X is new (the bell rings), once per X per day |
+| `bars.py ingest [--bot B] FILE…` | `barCalls` +1 per file, `bars` + candles returned (B, else `$DESK_BOT`, else `kiwi`) | `seed`/`list` don't count |
+| `regime.py --ingest FILE [--bot B]` | same as bars.py ingest | |
+| `/workspace/quant/walkforward.py` | `backtestVariants` + `simulatedTrades` (`quant`) | variants = grid points per strategy×symbol run (63 for a full run); trades = every simulated trade across all variants |
+| `/workspace/quant/backtest.py`, `sensitivity.py`, `sip-2026-11-02/sip_backtest.py`, `multistrat-2026-11-02/backtest_new_rules.py` | same (`quant`) | via `/workspace/quant/deskcount.py` |
+
+### Panel
+Tiles (desk totals today, rolling-digit odometer): price checks = `quotesCalls`; symbols = unique symbols across bots;
+bars; option chains = `optionCalls`; headlines = unique headline count; X posts; ideas = per bot max(`ideasGenerated`,
+`ideasLogged`); rejected; orders = `ordersSent`; simulated trades. Each tile shows the 7-day average of the past days in
+counters.json (up to 7, today excluded) once any exist. Per-bot bars = items processed today = symbols quoted (total) +
+bars + option contracts + headlines + pages + X posts + ideas + rejections + orders + fills + simulated trades
+(hover a row for every counter). Expandable lists: today's latest 40 headlines with links, and the Nov 2 audit.
+Neon City towers (and the flat view / desk drawer) show `TODAY n RUNS · m ITEMS` for that bot.
 
 ## Classic bullpen (bullpen.html)
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.

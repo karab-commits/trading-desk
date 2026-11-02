@@ -23,6 +23,8 @@ table{border-collapse:collapse;width:100%;font-size:11px}th{font-size:9px;letter
 .pz{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.15em;color:#ff3d6e;border:1px solid #ff3d6e;border-radius:3px;padding:0 4px;box-shadow:0 0 8px #ff3d6e88}.pzr{color:#ff9db3;font-size:9px;max-width:170px;white-space:normal}
 .lbl.paused{opacity:.55;filter:grayscale(.7)}.lbl.paused .pz{opacity:1}.oc.paused,.fb.paused{opacity:.5;filter:grayscale(.6)}
 .bud{display:grid;grid-template-columns:84px 1fr 96px;gap:6px;align-items:center;font-size:11px;margin:3px 0}.bud .bar{margin:0}.bud .n{text-align:right;color:#b9c3ee}
+.thru{--thr-accent:var(--cy);--thr-fg:#fff;--thr-dim:#8b95c9;--thr-bg2:#0007;--thr-line:#22f3ff44;--thr-track:#ffffff14;--thr-up:#39ff88;--thr-down:#ff3d6e}.thru .od{text-shadow:0 0 8px #22f3ff88}
+.lbl .thr{font-size:9px;color:#b9c3ee;letter-spacing:.04em}.lbl .thr b{color:#fff}
 .deb ul{margin:2px 0 4px;padding-left:16px;font-size:11px}.deb .vd{font-weight:900;letter-spacing:.12em}.deb .vd.take{color:#39ff88}.deb .vd.skip{color:#ff3d6e}
 
 #scene{position:fixed;inset:0}#c{position:absolute;inset:0;width:100%;height:100%}#lbls{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -59,9 +61,10 @@ body.nogl #cols{display:grid;grid-template-columns:1fr 1fr;padding-bottom:50px}
 <div id="ctl"><button id="back">← Back to city</button><button id="replay">▶ Replay today's events</button></div>
 <div id="flat"></div></div>
 <div id="cols"><div id="left" class="col"><div class="glass mb" id="money"></div><div class="glass" id="budgets"></div><div class="glass" id="appr"></div><div class="glass" id="org"></div><div class="glass"><div class="ph">DAILY REAL P&L</div><div id="chart"></div></div></div>
-<div id="right" class="col"><div class="glass" id="drawer"></div><div class="glass"><div class="ph">TODAY'S WATCHLIST</div><small id="wu"></small><div id="wl"></div></div>
+<div id="right" class="col"><div class="glass" id="drawer"></div><div class="glass" id="thru"></div><div class="glass"><div class="ph">TODAY'S WATCHLIST</div><small id="wu"></small><div id="wl"></div></div>
 <div class="glass" id="debate"></div><div class="glass"><div class="ph">REAL EVENTS (journal)</div><div id="evl"></div></div></div></div>
 <div id="tape" class="glass"><div class="ticker" id="tk"></div></div>
+<script src="throughput.js"></script>
 <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
 <script>// ---- shared core: reads ONLY data.json + journal.json + strategies.json; no invented numbers ----
 const BOTCOL={kiwi:'#ffe14d',scanner:'#22f3ff',news:'#ff3df2',whale:'#4d8bff',risk:'#ff4d6d',quant:'#9dff3d',journal:'#ffa53d',options:'#b14dff'};
@@ -76,7 +79,7 @@ const hhmm=iso=>{if(!iso)return'';const d=new Date(iso);return d.toLocaleTimeStr
 async function loadDesk(){
   const bust='?t='+Date.now();
   const [d,j,sj]=await Promise.all([fetch('data.json'+bust).then(r=>r.json()),fetch('journal.json'+bust).then(r=>r.json()).catch(()=>({ideas:[]})),fetch('strategies.json'+bust).then(r=>r.json()).catch(()=>({strategies:[]}))]);
-  const regime=await fetch('regime.json'+bust).then(r=>r.ok?r.json():null).catch(()=>null);
+  const [regime,counters]=await Promise.all([fetch('regime.json'+bust).then(r=>r.ok?r.json():null).catch(()=>null),window.THRU?THRU.fetch():Promise.resolve(null)]);
   const strats=sj.strategies||[];
   const ideas=j.ideas||[];
   const bots=ORDER.map(id=>d.bots.find(b=>b.id===id)).filter(Boolean).concat(d.bots.filter(b=>!ORDER.includes(b.id)));
@@ -88,6 +91,7 @@ async function loadDesk(){
     b._paused=(d.paused||[]).find(p=>p.bot===b.id)||null;
     b._paper=mine.reduce((s,i)=>s+(i.result&&typeof i.result.netCAD==='number'?i.result.netCAD:0),0);
     b._real=b.pnlAllTime??0;
+    b._thru=window.THRU?THRU.bot(counters,b.id):{runs:0,items:0};
     b._position=(d.account.openPositions>0&&d.watchlist.some(w=>w.bot===b.id&&/open|filled|taken/i.test(w.status)))?'IN TRADE':'FLAT';
   });
   // daily history: real P&L per day from paper.byDate[].real (only days the desk has run)
@@ -99,7 +103,7 @@ async function loadDesk(){
   events.sort((a,b)=>new Date(a.t)-new Date(b.t));
   // paper P&L by ticker (resolved journal ideas)
   const byTicker={};ideas.forEach(i=>{if(i.result&&typeof i.result.netCAD==='number')byTicker[i.ticker]=(byTicker[i.ticker]||0)+i.result.netCAD;});
-  return {d,ideas,bots,days,events,byTicker,strat:sj,regime};
+  return {d,ideas,bots,days,events,byTicker,strat:sj,regime,counters};
 }
 function vaultStats(S){const d=S.d;const real=S.days.map(x=>x.real);
   return {total:d.pnlAllTime.total,today:d.pnlToday.total,tradesToday:d.pnlToday.trades,tradesAll:d.pnlAllTime.trades,days:d.desk.daysRunning,
@@ -124,6 +128,7 @@ function botDeskHTML(S,b){const a=b.activity||{};const col=BOTCOL[b.id]||'#22f3f
   ${(b._strats||[]).map(st=>`<label>STRATEGY</label><div class="now">${esc(st.name)} <span class="tag">${esc(st.testedTag||st.tested)}</span></div><small>${esc(st.tested)}${st.maxTradesPerDay?` · max ${st.maxTradesPerDay}/day`:''}${st.window&&st.window.start?` · ${esc(st.window.start)}–${esc(st.window.end)} ET`:''}${st.devils_advocate&&st.devils_advocate.required?" · devil's-advocate debate required":''}</small>`).join('')}
   <div class="grid2"><div><label>POSITION</label><b>${b._position}</b></div><div><label>REAL P&L TODAY</label><b class="${tcls(b.pnlToday)}">${money(b.pnlToday)}</b></div>
   <div><label>REAL P&L ALL-TIME</label><b class="${tcls(b._real)}">${money(b._real)}</b></div><div><label>TRADES (today/all)</label><b>${b.tradesToday}/${b.tradesAllTime}</b></div></div>
+  ${b._thru?`<label>THROUGHPUT TODAY (counters.json)</label><small>${b._thru.runs} run(s) · ${b._thru.items.toLocaleString('en-US')} items · quotes ${b._thru.quotesCalls} (${b._thru.symbols.length} symbols) · bars ${b._thru.bars.toLocaleString('en-US')} · option calls ${b._thru.optionCalls} · searches ${b._thru.webSearches} · pages ${b._thru.pagesFetched} · headlines ${b._thru.headlineCount} · X posts ${b._thru.xPosts} · ideas ${b._thru.ideas} · rejected ${b._thru.ideasRejected} · orders ${b._thru.ordersSent} · sim trades ${b._thru.simulatedTrades.toLocaleString('en-US')}</small>`:''}
   <label>NOW</label><div class="now">${esc(a.now)}</div>
   <label>NEXT</label><div class="now">${esc(a.next||'—')}</div>
   <label>IDEAS SCORED</label><div class="bar"><i style="width:${ideas.length?scored/ideas.length*100:0}%"></i></div><small>${scored}/${ideas.length} journal ideas resolved${ideas.length?` · paper net ${money(b._paper)} (not real P&L)`:''}</small>
@@ -187,9 +192,10 @@ function render(first){const V=vaultStats(S);$('#upd').textContent='data '+S.d.l
  const ac=S.d.account,risk=(S.strat&&S.strat.risk)||{};const stop=ac.dailyLossStop||risk.dailyLossStopCAD||150;const lost=Math.max(0,-(V.today||0));const mxo=ac.maxOpenPositions||risk.maxOpenPositions||4;
  $('#prog').style.width=Math.min(100,lost/stop*100)+'%';$('#prog').parentElement.style.setProperty('--c',lost>=stop?'#ff3d6e':'var(--ye)');
  $('#vsub').innerHTML=`Daily loss used <b class="${lost>0?'dn':'flat'}">${plain(lost)}</b> / ${plain(stop)} · ${V.tradesToday} trade(s) today · ${ac.openPositions??0}/${mxo} open<br>Today ${money(V.today)} · Equity ${plain(V.equity)} ${V.cur} · ${V.green} green / ${V.red} red / ${V.flat} flat`;
+ if(window.THRU)THRU.render($('#thru'),S.counters,{colors:BOTCOL,names:Object.fromEntries(S.bots.map(b=>[b.id,b.name])),head:'<div class="ph">DESK THROUGHPUT · REAL COUNTS</div>'});
  renderMoney();moodRender(S);$('#budgets').innerHTML=budgetsHTML(S);$('#debate').innerHTML=debateHTML(S);$('#appr').innerHTML=approvalsHTML(S);$('#org').innerHTML=orgChartHTML(S);$('#chart').innerHTML=dailyChartSVG(S,280,120);renderWatch();
  $('#evl').innerHTML=S.events.slice(-5).reverse().map(e=>`<div><span class="mut">${hhmm(e.t)}</span> ${esc(e.text)}</div>`).join('')||'<span class="mut">No logged events</span>';
- $('#flat').innerHTML=S.bots.map(b=>`<div class="glass fb${b._paused?' paused':''}" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}">${b._paused?`<span class="pz">PAUSED</span> <span class="pzr">${esc(b._paused.reason)}</span><br>`:''}<div class="ban" style="color:var(--c);font-size:9px;letter-spacing:.2em">${BOTCAT[b.id]}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><b style="color:var(--c)">${esc(b.name)}</b> · ${b._position}<br>${b._strat?`<small>${esc(b._strat.name)} · ${esc(b._strat.testedTag||'')}</small>`:''}P&L ${b.id==='kiwi'?'(desk) '+money(S.d.pnlToday.total,''):money(b.pnlToday,'')}<br><span class="dot ${b.activity?.state}"></span>${esc(b.activity?.now)}</div>`).join('');
+ $('#flat').innerHTML=S.bots.map(b=>`<div class="glass fb${b._paused?' paused':''}" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}">${b._paused?`<span class="pz">PAUSED</span> <span class="pzr">${esc(b._paused.reason)}</span><br>`:''}<div class="ban" style="color:var(--c);font-size:9px;letter-spacing:.2em">${BOTCAT[b.id]}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><b style="color:var(--c)">${esc(b.name)}</b> · ${b._position}<br>${b._strat?`<small>${esc(b._strat.name)} · ${esc(b._strat.testedTag||'')}</small>`:''}P&L ${b.id==='kiwi'?'(desk) '+money(S.d.pnlToday.total,''):money(b.pnlToday,'')}<br><span class="dot ${b.activity?.state}"></span>${esc(b.activity?.now)}<br><small>today: ${b._thru.runs} run(s) · ${b._thru.items.toLocaleString('en-US')} items processed</small></div>`).join('');
  document.querySelectorAll('.oc,.fb').forEach(e=>e.onclick=()=>openBot(e.dataset.bot));if(openId)openBot(openId);
  window.DESK.onData&&window.DESK.onData(S);}
 let seen=0;
@@ -216,6 +222,7 @@ const rings=[];[14,22,30].forEach((r,i)=>{const m=new THREE.Mesh(new THREE.Torus
 const dome=new THREE.Mesh(new THREE.SphereGeometry(5,32,16,0,Math.PI*2,0,Math.PI/2),new THREE.MeshBasicMaterial({color:0xffe14d,wireframe:true,transparent:true,opacity:.6}));scene.add(dome);
 scene.add(new THREE.Mesh(new THREE.CylinderGeometry(5.4,5.6,.5,48),new THREE.MeshBasicMaterial({color:0x1a1440})));
 let sky=null;const towers={};
+const thr=b=>{const t=b._thru||{runs:0,items:0};return `<div class="thr" title="from counters.json: runs today and items processed today (symbols quoted, bars, option contracts, headlines, pages, X posts, ideas, rejections, orders, fills, simulated trades)">TODAY <b>${t.runs}</b> RUN${t.runs===1?'':'S'} · <b>${t.items.toLocaleString('en-US')}</b> ITEMS</div>`};
 function build(S){ // rebuilt on every data refresh so heights/brightness track data.json
  if(sky)scene.remove(sky);let cum=0;const pts=S.days.map((d,i)=>{cum+=d.real;return new THREE.Vector3(-20+i*(40/Math.max(1,S.days.length-1)),26+cum/10,-40)});if(pts.length===1)pts.push(pts[0].clone().add(new THREE.Vector3(40,0,0)));
  if(pts.length){sky=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x39ff88}));scene.add(sky)}
@@ -232,8 +239,8 @@ function build(S){ // rebuilt on every data refresh so heights/brightness track 
    T=towers[b.id]={g,h,bright,pulse,pt:-1,L,isHead};}
   const st2=(st||'').toUpperCase();T.L.classList.toggle('paused',!!b._paused);
   const pzh=b._paused?`<br><span class="pz">PAUSED</span><br><span class="pzr">${esc(b._paused.reason)} · until ${esc(b._paused.until.slice(5))}</span>`:'';
-  T.L.innerHTML=isHead?`<div class="ban">HEAD OF DESK · ${b._strat?esc(String(b._strat.short).toUpperCase()):'DESK TOTAL'}</div><div class="card"><b style="color:var(--c)">Kiwi</b><br>TODAY <b class="${tcls(S.d.pnlToday.total)}">${money(S.d.pnlToday.total,'')}</b><span class="x"> · ALL <b class="${tcls(S.d.pnlAllTime.total)}">${money(S.d.pnlAllTime.total,'')}</b><br>${S.d.pnlToday.trades} trade(s) today</span><br><span class="dot ${st}"></span>${esc(st2)}</div>`
-   :`<div class="ban">${BOTCAT[b.id]||''}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><div class="card"><b style="color:var(--c)">${esc(b.name)}</b><span class="x"><br>POSITION <b>${b._position}</b></span><br>P&L <b class="${tcls(b.pnlToday)}">${money(b.pnlToday,'')}</b><span class="x"> · TOTAL <b class="${tcls(b._real)}">${money(b._real,'')}</b></span><br><span class="dot ${st}"></span>${esc(st2)}<span class="x"> · ${b._ideas.length} ideas</span>${pzh}</div>`;});}
+  T.L.innerHTML=isHead?`<div class="ban">HEAD OF DESK · ${b._strat?esc(String(b._strat.short).toUpperCase()):'DESK TOTAL'}</div><div class="card"><b style="color:var(--c)">Kiwi</b><br>TODAY <b class="${tcls(S.d.pnlToday.total)}">${money(S.d.pnlToday.total,'')}</b><span class="x"> · ALL <b class="${tcls(S.d.pnlAllTime.total)}">${money(S.d.pnlAllTime.total,'')}</b><br>${S.d.pnlToday.trades} trade(s) today</span><br><span class="dot ${st}"></span>${esc(st2)}${thr(b)}</div>`
+   :`<div class="ban">${BOTCAT[b.id]||''}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><div class="card"><b style="color:var(--c)">${esc(b.name)}</b><span class="x"><br>POSITION <b>${b._position}</b></span><br>P&L <b class="${tcls(b.pnlToday)}">${money(b.pnlToday,'')}</b><span class="x"> · TOTAL <b class="${tcls(b._real)}">${money(b._real,'')}</b></span><br><span class="dot ${st}"></span>${esc(st2)}<span class="x"> · ${b._ideas.length} ideas</span>${thr(b)}${pzh}</div>`;});}
 build(window.S);window.DESK.onData=build;
 window.DESK.onEvent=id=>{const t=towers[id];if(t){t.pt=0;t.pulse.visible=true}};
 const HOME=()=>({p:new THREE.Vector3(0,narrow?30:22,narrow?52:46),l:new THREE.Vector3(0,narrow?3:6,0)});let camT=HOME(),foc=null;const cp=camT.p.clone(),cl=camT.l.clone();

@@ -1,0 +1,31 @@
+{
+ "_meta": {
+  "version": 1,
+  "updated": null,
+  "tz": "America/Toronto",
+  "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
+ },
+ "_audits": [
+  {
+   "date": "2026-11-02",
+   "label": "Nov 2 audit (partial, reconstructed)",
+   "source": "/workspace/throughput-audit/ (bot transcripts recovered after the fact; several were unreadable)",
+   "note": "Reconstructed from Nov 2 transcripts, partial, desk-wide (no per-bot split). Not counted live, so it is not part of today's totals or the 7-day average.",
+   "totals": {
+    "barRequests": 790,
+    "bars": 28566,
+    "symbols": 30,
+    "optionChains": 9,
+    "watchlistPriceUpdates": 89,
+    "sourcesCited": 28,
+    "ideas": 11,
+    "rejected": 6,
+    "taken": 0,
+    "simulatedTrades": 37000
+   },
+   "approx": [
+    "sourcesCited"
+   ]
+  }
+ ]
+}

@@ -422,6 +422,14 @@ def main():
     if not a.no_write:
         data['riskBudgets'] = snap; save('data.json', data)
     verdict = 'BLOCK' if block else 'ALLOW'
+    if block and not a.no_write:   # desk throughput: one rejection per idea per day (re-checks of the same idea count once)
+        try:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import count as _c
+            _c.quiet_record('risk', {'ideasRejected': 1}, key='rejected:' + (a.idea or f'{bot}:{tk}:{side}'),
+                            path=None if HERE == os.path.dirname(os.path.abspath(__file__)) else os.path.join(HERE, 'counters.json'))
+        except Exception as e:
+            print(f'(not counted: {e})', file=sys.stderr)
     print(f"{verdict} {bot} {side} {tk} risk {risk:.2f} CAD")
     for b in block:
         print(f'  - BLOCK: {b}')

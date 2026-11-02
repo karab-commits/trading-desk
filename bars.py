@@ -6,7 +6,8 @@ Python cannot call the Questrade connector itself, so a routine run does:
   2. python3 bars.py ingest /workspace/agent-tools/<file>.txt [more files...]
 Then regime.py and risk_check.py read the cache.
 
-  python3 bars.py ingest FILE [FILE...]     # merge MCP outputs (dedup by bar start)
+  python3 bars.py ingest [--bot ID] FILE [FILE...]   # merge MCP outputs (dedup by bar start); counts barCalls + bars
+                                            # for --bot (default $DESK_BOT, else kiwi) in counters.json
   python3 bars.py seed                      # copy /workspace/quant/data + eod daily CSVs into the cache (one-off)
   python3 bars.py list                      # symbols, bar counts, first/last date
 """
@@ -63,9 +64,12 @@ def parse_mcp(text):
     return json.loads(text[text.index('{'):text.rindex('}') + 1])
 
 
-def cmd_ingest(files):
+def cmd_ingest(files, bot=None, count=True):
+    if files and files[0] == '--bot':
+        bot, files = files[1], files[2:]
     if not files:
-        sys.exit('usage: bars.py ingest FILE [FILE...]')
+        sys.exit('usage: bars.py ingest [--bot ID] FILE [FILE...]')
+    calls = nbars = 0
     for fp in files:
         d = parse_mcp(open(fp).read())
         sym, gran = d.get('symbol'), d.get('granularity')
@@ -73,9 +77,20 @@ def cmd_ingest(files):
             print(f'SKIP {fp}: not a get_historical_data result')
             continue
         n = merge(sym, gran, d['candles'])
+        calls += 1; nbars += len(d['candles'])
         last = d['candles'][-1]['start'][:16] if d['candles'] else '-'
         trunc = ' (TRUNCATED: narrow the window)' if d.get('candlesTruncated') else ''
         print(f"OK {sym} {gran}: +{len(d['candles'])} candles, cache now {n}, last {last}{trunc}")
+    if count and calls:   # desk throughput: one get_historical_data call per file
+        try:
+            sys.path.insert(0, HERE)
+            import count as _c
+            b = bot or _c.default_bot()
+            if _c.quiet_record(b, {'barCalls': calls, 'bars': nbars}):
+                print(f'counted {b}: barCalls+{calls}, bars+{nbars}')
+        except Exception as e:
+            print(f'(not counted: {e})', file=sys.stderr)
+    return calls, nbars
 
 
 def cmd_seed():

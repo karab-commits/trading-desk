@@ -237,6 +237,10 @@ table.sc td{padding:3px 0}table.sc th{color:var(--gold)}table.sc td:first-child{
 .wl-desk b{color:#d4af37;font-weight:700;text-transform:uppercase;font-size:9px;letter-spacing:.4px}
 </style>
 <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
+<style>.thru{--thr-accent:var(--gold);--thr-fg:var(--txt);--thr-dim:var(--dim);--thr-bg2:var(--card2);--thr-line:var(--line);--thr-track:#2a211a;--thr-up:var(--up);--thr-down:var(--down)}
+.thru .ph{margin:0 0 4px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);font-weight:400}.thru .th-sub{display:block;font-size:11px;color:var(--dim);margin-bottom:8px}
+@media(min-width:700px){.thru{--thr-cols:5}}.thru .od{color:var(--gold)}</style>
+<script src="throughput.js"></script>
 </head><body>
 <div class="wrap">
   <header>
@@ -254,6 +258,7 @@ table.sc td{padding:3px 0}table.sc th{color:var(--gold)}table.sc td:first-child{
     </div>
     <div class="cards" id="cards"></div>
   </div>
+  <section class="card thru-card" id="thru" style="margin:0 12px 12px"></section>
   <footer><span class="dot" id="syncDot"></span><span id="sync">Loading desk data…</span><br>Last updated: <span id="updBot">-</span><br>Screens, P&amp;L, paper ideas, the scorecard, packets and the bell all come from data.json, which the desk updates after every scan and trade. The moving desk lamps and swarm glow are decoration only.</footer>
 </div>
 <div id="sheetRoot"><div class="sheet-bg" id="sheetBg"></div><div class="sheet" role="dialog" aria-modal="true">
@@ -1085,6 +1090,7 @@ resize();var rT;window.addEventListener('resize',function(){clearTimeout(rT);rT=
 renderTicker();clock();load();
 setInterval(load,30000);setInterval(function(){clock();if(DATA)render();},30000);
 requestAnimationFrame(frame);
+if(window.THRU)THRU.mount(document.getElementById('thru'),{colors:{kiwi:'#ffd34d',scanner:'#5ec8ff',news:'#ff8ad8',whale:'#7aa8ff',risk:'#ff6b6b',quant:'#9be15d',journal:'#ffb35c',options:'#c48bff'},head:'<div class="ph">Desk throughput · real counts</div>'});   // re-reads counters.json every 60 s
 })();
 </script>
 </body></html>

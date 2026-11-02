@@ -170,6 +170,16 @@ def fmt_money(x, cur):
     return f"{'+' if x > 0 else '-' if x < 0 else ''}${abs(x):.2f} {cur}"
 
 
+def _count(ddir, bot, inc, key=None):
+    """Desk throughput counter (count.py); never breaks logging."""
+    try:
+        sys.path.insert(0, HERE)
+        import count as _c
+        _c.quiet_record(bot, inc, key=key, path=None if os.path.abspath(ddir) == HERE else os.path.join(ddir, 'counters.json'))
+    except Exception as e:
+        print(f'(not counted: {e})', file=sys.stderr)
+
+
 def cmd_add(a):
     ddir = desk_dir(a)
     data = load_json(os.path.join(ddir, 'data.json'), {})
@@ -229,6 +239,7 @@ def cmd_add(a):
     idea['realPnlCAD'] = None
     journal['ideas'].append(idea)
     write_back(ddir, journal, data)
+    _count(ddir, a.bot, {'ideasLogged': 1}, key='logged:' + iid)
     p, cur = idea['plan'], idea['currency']
     print(f'id: {iid}')
     if idea.get('mode') == 'paper':

@@ -56,6 +56,14 @@ def main():
         act['since'] = now.isoformat(timespec='seconds')
         b['activity'] = act
     if a.approved is not None:
+        if a.approved and a.approved != d.get('lastApprovedIdea'):   # desk throughput: ordersSent (once per approval per day)
+            try:
+                import os
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import count as _c
+                _c.quiet_record('kiwi', {'ordersSent': 1}, key='order:' + a.approved)
+            except Exception as e:
+                print(f'(not counted: {e})', file=sys.stderr)
         d['lastApprovedIdea'] = a.approved or None
     d['lastUpdated'] = now.strftime('%a %b %-d, %Y %-I:%M %p ET')
     json.dump(d, open(a.file, 'w'), indent=2, ensure_ascii=False)

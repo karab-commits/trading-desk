@@ -12,7 +12,7 @@ after ~100 more trades.
 Bars come from the desk cache bars/SPY_1d.csv (see bars.py). Routine run, once a day before 9:45 ET:
   1. Questrade get_historical_data SPY (uuid 05902721-1882-4522-0364-ad9650530625) granularity 1d,
      from = 7 days ago, to = tomorrow, write_to_file=true
-  2. python3 regime.py --ingest /workspace/agent-tools/<that file>.txt
+  2. python3 regime.py --ingest /workspace/agent-tools/<that file>.txt [--bot risk]   (counts barCalls + bars)
 Other uses:
   python3 regime.py                    # recompute for today (ET) from the cache, write regime.json
   python3 regime.py --date 2026-11-03  # for another trading date
@@ -88,9 +88,10 @@ def main():
     ap.add_argument('--date', help='trading date YYYY-MM-DD (default today ET)')
     ap.add_argument('--backfill', action='store_true', help='tag journal ideas that have no regime')
     ap.add_argument('--no-write', action='store_true')
+    ap.add_argument('--bot', help='bot to credit the ingested bars to in counters.json (default $DESK_BOT, else kiwi)')
     a = ap.parse_args()
     if a.ingest:
-        bars.cmd_ingest(a.ingest)
+        bars.cmd_ingest(a.ingest, bot=a.bot)   # counts barCalls + bars (count.py)
     if a.backfill:
         jp = os.path.join(HERE, 'journal.json'); j = json.load(open(jp)); n = 0
         for i in j.get('ideas', []):
