@@ -1,14 +1,28 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 6:55 AM ET",
+  "lastUpdated": "Mon Nov 2, 2026 7:23 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
-    {"symbol": "QQC.TO"},
-    {"symbol": "XEG.TO"},
-    {"symbol": "SPY"},
-    {"symbol": "QQQ"},
-    {"symbol": "NVDA"},
-    {"symbol": "AAPL"},
-    {"symbol": "PLTR"}
+    {
+      "symbol": "QQC.TO"
+    },
+    {
+      "symbol": "XEG.TO"
+    },
+    {
+      "symbol": "SPY"
+    },
+    {
+      "symbol": "QQQ"
+    },
+    {
+      "symbol": "NVDA"
+    },
+    {
+      "symbol": "AAPL"
+    },
+    {
+      "symbol": "PLTR"
+    }
   ],
   "bots": [
     {
@@ -16,43 +30,96 @@
       "name": "Scanner",
       "role": "Scans the market for gap-and-go setups",
       "status": "Pre-market scan at 9:00 AM ET. QQC.TO is the setup for today.",
-      "bubbles": ["9:00 scan queued", "QQC.TO on the board", "buy zone 47.67-48.10"]
+      "bubbles": [
+        "9:00 scan queued",
+        "QQC.TO on the board",
+        "buy zone 47.67-48.10"
+      ]
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Reads headlines and flags anything that moves the plan",
       "status": "Reading overnight headlines before the open.",
-      "bubbles": ["reading headlines", "nothing breaking yet", "checking QQC + XEG news"]
+      "bubbles": [
+        "reading headlines",
+        "nothing breaking yet",
+        "checking QQC + XEG news"
+      ]
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Watches for large orders and unusual volume",
       "status": "Watching for big prints at the open.",
-      "bubbles": ["watching big prints", "no whales spotted yet", "eyes on volume at 9:30"]
+      "bubbles": [
+        "watching big prints",
+        "no whales spotted yet",
+        "eyes on volume at 9:30"
+      ]
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Enforces the risk rules. Says no.",
-      "status": "Max risk $25/trade. XEG.TO short blocked until shortability is confirmed.",
-      "bubbles": ["no.", "max $25 risk", "XEG short: not yet", "stop goes in after fill"]
+      "status": "Max $100 at risk per trade. XEG.TO short blocked until shortability is confirmed.",
+      "bubbles": [
+        "no.",
+        "max $100 risk",
+        "XEG short: not yet",
+        "stop goes in after fill"
+      ]
     },
     {
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Runs the plan, nothing goes out without K's go.",
       "status": "Back on the desk. Waiting for the 10:05 QQC check.",
-      "bubbles": ["back on the desk", "waiting for 10:05", "nothing sent without K's go"]
+      "bubbles": [
+        "back on the desk",
+        "waiting for 10:05",
+        "nothing sent without K's go"
+      ]
+    },
+    {
+      "id": "quant",
+      "name": "Quant Lab",
+      "role": "Backtests and ranks strategies",
+      "status": "Ready",
+      "bubbles": [
+        "running backtests",
+        "ranking strategies",
+        "testing the after-10:00 entry"
+      ]
+    },
+    {
+      "id": "journal",
+      "name": "Trade Journal",
+      "role": "Logs every trade and keeps the stats",
+      "status": "Ready",
+      "bubbles": [
+        "logging trades",
+        "updating the stats",
+        "journal is ready"
+      ]
+    },
+    {
+      "id": "options",
+      "name": "Options Desk",
+      "role": "Reads options chains",
+      "status": "Ready",
+      "bubbles": [
+        "reading options chains",
+        "scanning strikes",
+        "watching implied vol"
+      ]
     }
   ],
   "account": {
     "equity": 500,
     "buyingPower": 500,
     "currency": "CAD",
-    "maxRiskPerTrade": 25,
-    "maxRiskPct": 5,
+    "maxRiskPerTrade": 100,
     "openPositions": 0,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944"
@@ -61,11 +128,11 @@
     "symbol": "QQC.TO",
     "side": "BUY",
     "qty": 10,
-    "entry": 47.70,
-    "stop": 47.10,
+    "entry": 47.7,
+    "stop": 47.1,
     "target": 48.85,
-    "maxLoss": -6.00,
-    "projected": 11.50,
+    "maxLoss": -6.0,
+    "projected": 11.5,
     "status": "Waiting for 10:05 check",
     "condition": "Buys only if QQC is between $47.67 and $48.10; stop placed after fill"
   },
@@ -74,16 +141,32 @@
       "symbol": "XEG.TO",
       "idea": "Short idea",
       "near": 30.95,
-      "stop": 31.30,
+      "stop": 31.3,
       "target": 30.47,
       "note": "Shortability unconfirmed"
     }
   ],
   "schedule": [
-    {"time": "9:00 AM", "label": "Pre-market scan"},
-    {"time": "10:05 AM", "label": "QQC check & buy"},
-    {"time": "12:00 PM", "label": "Midday scan"},
-    {"time": "3:30 PM", "label": "Close-out check"}
+    {
+      "time": "9:00 AM",
+      "label": "Pre-market scan"
+    },
+    {
+      "time": "10:05 AM",
+      "label": "QQC check & buy"
+    },
+    {
+      "time": "12:00 PM",
+      "label": "Midday scan"
+    },
+    {
+      "time": "3:30 PM",
+      "label": "Close-out check"
+    },
+    {
+      "time": "4:30 PM",
+      "label": "Daily improvement review"
+    }
   ],
   "backtest": {
     "title": "QQC gap-and-go",
@@ -91,18 +174,70 @@
     "sample": "167 gap-up days, Oct 2024 - Oct 2026",
     "basis": "Before fees",
     "rows": [
-      {"name": "Base (1.9R target)", "winRate": 38.3, "pnl": -68.08},
-      {"name": "1.5R target", "winRate": 38.3, "pnl": -76.35},
-      {"name": "2.5R target", "winRate": 38.3, "pnl": -63.35},
-      {"name": "Stop at prior low", "winRate": 46.1, "pnl": -71.90},
-      {"name": "Enter after 10:00 (last 6 mo, 33 trades)", "winRate": 54.5, "pnl": 22.60}
+      {
+        "name": "Base (1.9R target)",
+        "winRate": 38.3,
+        "pnl": -68.08
+      },
+      {
+        "name": "1.5R target",
+        "winRate": 38.3,
+        "pnl": -76.35
+      },
+      {
+        "name": "2.5R target",
+        "winRate": 38.3,
+        "pnl": -63.35
+      },
+      {
+        "name": "Stop at prior low",
+        "winRate": 46.1,
+        "pnl": -71.9
+      },
+      {
+        "name": "Enter after 10:00 (last 6 mo, 33 trades)",
+        "winRate": 54.5,
+        "pnl": 22.6
+      }
     ],
     "note": "No proven edge yet"
   },
   "rules": [
     "Same-day only, flat by the close",
-    "Max 5% risk per trade",
+    "At most $100 at risk per trade",
     "Nothing sent without K's go",
     "K approves each order in the Questrade app"
+  ],
+  "playbook": [
+    {
+      "name": "QQC gap-and-go (base)",
+      "status": "testing",
+      "trades": 167,
+      "winRate": 38.3,
+      "expectancyR": -0.137,
+      "note": "Negative over 2 yrs"
+    },
+    {
+      "name": "QQC gap-and-go, enter after 10:00",
+      "status": "testing",
+      "trades": 33,
+      "winRate": 54.5,
+      "expectancyR": -0.051,
+      "note": "+$22.60 last 6 mo, small sample"
+    }
+  ],
+  "deskLog": [
+    {
+      "date": "Nov 2",
+      "text": "Max risk per trade raised to $100"
+    },
+    {
+      "date": "Nov 2",
+      "text": "Added Quant Lab, Trade Journal and Options Desk"
+    },
+    {
+      "date": "Nov 2",
+      "text": "Backtested QQC gap-and-go; no proven edge yet"
+    }
   ]
 }
