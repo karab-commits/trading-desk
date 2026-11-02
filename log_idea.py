@@ -13,6 +13,8 @@ traded exactly at the alert's plan, and records whether K actually took it.
 
 Fees come from data.json `fees` (Questrade schedule; see README). Money is kept in the
 idea's own currency (CAD or USD) and also converted to CAD with fees.usdcad for totals.
+Every `add` also records the strategy's `mode` from strategies.json: a paper-only (retired) strategy such as Quant
+Lab's VWAP reclaim/loss is logged with mode=paper, taken=no and the run must not send an order.
 Every `add` also tags the idea with today's market mood (`regime`: calm|volatile, from regime.py).
 After every add/resolve, data.json `paper` (by-date paper P&L for the wall board) is refreshed.
 """
@@ -194,6 +196,22 @@ def cmd_add(a):
             'strategy': a.strategy, 'bot': a.bot, 'currency': (a.currency or infer_currency(t)).upper(),
             'note': a.note or '', 'loggedAt': now_et().isoformat(timespec='seconds')}
     idea['plan'] = plan_numbers(idea, cfg)
+    # strategy mode from strategies.json (live | paper): paper-only strategies are logged but never traded
+    mode, mlabel = 'live', None
+    try:
+        sys.path.insert(0, HERE)
+        import risk_check as _rc
+        _S = load_json(os.path.join(ddir, 'strategies.json'), {})
+        _r = _rc.resolve_strategy(_S, a.bot, a.strategy_id or a.strategy)
+        if _r:
+            mode, mlabel = _r['mode'], _r['label']
+    except Exception:
+        pass
+    if a.paper:
+        mode = 'paper'
+    idea['mode'] = mode
+    if mode == 'paper':
+        idea['paperReason'] = f'paper-only: retired ({mlabel})' if mlabel else 'paper-only'
     # market-mood tag (regime.py): tag only, never a filter
     try:
         sys.path.insert(0, HERE)
@@ -206,13 +224,15 @@ def cmd_add(a):
                              'stale': rg.get('stale', False)} if rg else {'error': 'no SPY bars cached (run regime.py)'})
     idea['feesSource'] = {'url': cfg.get('source'), 'checked': cfg.get('checked')}
     idea['result'] = None
-    idea['taken'] = None
+    idea['taken'] = 'no' if idea.get('mode') == 'paper' else None
     idea['realPnl'] = None
     idea['realPnlCAD'] = None
     journal['ideas'].append(idea)
     write_back(ddir, journal, data)
     p, cur = idea['plan'], idea['currency']
     print(f'id: {iid}')
+    if idea.get('mode') == 'paper':
+        print(f"PAPER-ONLY: {idea['paperReason']} - logged for paper scoring; do NOT send a real order")
     print(f"regime: {idea['regime'] or 'unknown'}" + (f" (SPY rv10 {rg['spy_rv10']}% vs median {rg['median']}%)" if rg else ''))
     print(f"{t} {a.side} {a.shares} @ {a.entry} stop {a.stop} target {a.target} ({cur})")
     print(f"risk {fmt_money(-p['riskGross'], cur)} | reward {fmt_money(p['rewardGross'], cur)} | R:R {p['rr']}")
@@ -231,6 +251,8 @@ def cmd_resolve(a):
     idea = next((i for i in journal['ideas'] if i['id'] == a.id), None)
     if not idea:
         sys.exit(f'no idea with id {a.id}')
+    if idea.get('mode') == 'paper' and (a.taken == 'yes' or a.real_pnl is not None):
+        sys.exit(f"{a.id} is paper-only ({idea.get('paperReason')}); it can't be marked taken / given real P&L")
     cur = idea['currency']
     if a.outcome == 'no-fill':
         res = {'outcome': 'no-fill', 'exit': None, 'gross': 0.0, 'fees': trade_fees(idea['side'], idea['entry'], idea['entry'], 0, cur, cfg),
@@ -302,6 +324,8 @@ def main():
     p.add_argument('--bot', required=True)
     p.add_argument('--currency', choices=['CAD', 'USD', 'cad', 'usd'])
     p.add_argument('--note')
+    p.add_argument('--strategy-id', help='strategy id/alias for the mode lookup (e.g. vwap, orb, sip_orb); default: match --strategy text')
+    p.add_argument('--paper', action='store_true', help='force paper-only (never traded)')
     p.set_defaults(fn=cmd_add)
     p = sp.add_parser('resolve', parents=[common], help='score an idea at its plan')
     p.add_argument('--id', required=True)

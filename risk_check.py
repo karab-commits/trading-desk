@@ -5,7 +5,7 @@ riskBudgets (unless --no-write).
 
   python3 risk_check.py --bot scanner --ticker XIU.TO --side short --risk 38.50
   python3 risk_check.py --bot news --ticker SOFI --side long --risk 20 --idea 2026-11-03-SOFI-1
-  python3 risk_check.py --bot quant --ticker QQQ --side long --risk 30 --open SPY:long:35:quant --open XIU.TO:short
+  python3 risk_check.py --bot quant --strategy orb --ticker QQQ --side long --risk 30 --open SPY:long:35:quant --open XIU.TO:short
   python3 risk_check.py --update          # start of every routine run: refresh pauses + budget bars, print status
   python3 risk_check.py --status          # print budgets / pauses, write nothing
   python3 risk_check.py --unpause whale   # K lifts a pause by hand
@@ -21,6 +21,8 @@ Checks (any failure = BLOCK):
   groups:  an open or pending position in the same correlation group (strategies.json risk.correlation.groups) and
            the same direction; or 20-day daily-return correlation > 0.8 with an open same-direction position
            (only when both tickers are in bars/*.csv; else groups only)
+  mode:    strategies.json mode/modes: 'paper' strategies are BLOCKed ('paper-only: retired'; Quant Lab VWAP).
+           Bots with several strategies must pass --strategy (Quant Lab: orb | vwap | sip_orb)
   debate:  strategies with devils_advocate.required (News Desk; Quant Lab's Stocks-in-play ORB, pass
            --strategy sip_orb) need --idea <journal id> whose debate verdict is 'take' (debate.py)
 Real trades = journal ideas with taken == 'yes' (log_idea.py resolve --taken yes --real-pnl X). Open/pending =
@@ -224,13 +226,68 @@ def corr20(a, b, n=20):
     return cov / (va * vb) if va and vb else None
 
 
+
+# ------------------------------------------------------------------ strategy lookup + mode (live | paper)
+def _aliases(st):
+    out = []  # (alias, sub-key or None)
+    al = st.get('aliases')
+    if isinstance(al, dict):
+        for k, v in al.items():
+            out += [(x.lower(), k) for x in [k] + list(v)]
+    else:
+        out += [(x.lower(), None) for x in (al or [])]
+    for x in (st.get('id'), st.get('short'), st.get('name')):
+        if x:
+            out.append((x.lower(), None))
+    return out
+
+
+def bot_strategies(strategies, bot):
+    return [s for s in strategies.get('strategies', []) if s.get('bot') == bot]
+
+
+def needs_name(strategies, bot):
+    L = bot_strategies(strategies, bot)
+    return len(L) > 1 or any(s.get('modes') for s in L)
+
+
+def choices(strategies, bot):
+    out = []
+    for s in bot_strategies(strategies, bot):
+        out += list(s['modes']) if s.get('modes') else [s.get('id') or s.get('short')]
+    return out
+
+
+def resolve_strategy(strategies, bot, text):
+    """Match free text (or an id/alias) to one of the bot's strategies; the longest alias contained in the text wins.
+    Returns {strategy, sub, mode, label} or None. Mode = sub-mode (modes{}) or the strategy's mode (default live)."""
+    L = bot_strategies(strategies, bot)
+    if not L:
+        return None
+    if not text:
+        if needs_name(strategies, bot):
+            return None
+        st = L[0]; return dict(strategy=st, sub=None, mode=st.get('mode', 'live'), label=st.get('short') or st.get('name'))
+    t = text.lower(); best = None
+    for st in L:
+        for al, sub in _aliases(st):
+            if al and (al == t or al in t) and (best is None or len(al) > best[0]):
+                best = (len(al), st, sub)
+    if not best:
+        return None
+    _, st, sub = best
+    if st.get('modes') and sub is None:
+        return None if needs_name(strategies, bot) and len(st['modes']) > 1 else None
+    mode = st['modes'][sub] if sub else st.get('mode', 'live')
+    return dict(strategy=st, sub=sub, mode=mode, label=f"{st.get('short')} / {sub}" if sub else (st.get('short') or st.get('name')))
+
 # ------------------------------------------------------------------ main
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--bot'); ap.add_argument('--ticker'); ap.add_argument('--side', choices=['long', 'short'])
     ap.add_argument('--risk', type=float, help='this trade\'s max loss to the stop in CAD, after fees')
     ap.add_argument('--idea', help='journal idea id (needed for strategies with a devil\'s-advocate debate)')
-    ap.add_argument('--strategy', help='strategy id/short name when the bot has more than one (e.g. sip_orb, "ORB + VWAP")')
+    ap.add_argument('--strategy', help='which strategy (required for Quant Lab: orb | vwap | sip_orb); paper-mode strategies always BLOCK')
     ap.add_argument('--open', action='append', default=[], metavar='TICKER:side[:riskCAD[:bot]]')
     ap.add_argument('--date', help='trading date (default today ET)')
     ap.add_argument('--now', help='HH:MM ET override for the 15:15 cutoff (testing)')
@@ -334,12 +391,20 @@ def main():
     if not mine:
         info.append(f'{tk} is in no correlation group')
     # devil's advocate
-    strats = [s for s in strategies.get('strategies', []) if s.get('bot') == bot]
-    if a.strategy:
-        q = a.strategy.lower()
-        strats = [s for s in strats if q in (s.get('id') or '').lower() or q in s.get('short', '').lower() or q in s.get('name', '').lower()] or strats
-    elif len(strats) > 1:
-        strats = strats[:1]   # default = the bot's first (main) strategy
+    strats = []
+    if bot_strategies(strategies, bot):
+        rs = resolve_strategy(strategies, bot, a.strategy)
+        if rs is None:
+            block.append(f"name the strategy: --strategy {'|'.join(choices(strategies, bot))}" if not a.strategy
+                         else f"unknown strategy {a.strategy!r} for {bot} (use {'|'.join(choices(strategies, bot))})")
+        else:
+            strats = [rs['strategy']]
+            if rs['mode'] == 'paper':
+                block.append(f"paper-only: retired ({rs['label']}) - log the signal with log_idea.py as a paper idea, never send a real order")
+            elif rs['mode'] != 'live':
+                block.append(f"strategy mode {rs['mode']!r} is not live ({rs['label']})")
+            else:
+                info.append(f"strategy {rs['label']}: mode live")
     need = [s for s in strats if (s.get('devils_advocate') or {}).get('required')]
     if need:
         idea = next((i for i in journal.get('ideas', []) if i['id'] == a.idea), None) if a.idea else None

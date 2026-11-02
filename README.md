@@ -158,8 +158,8 @@ Not included: short borrow fees (charged on overnight shorts; the desk is flat b
 | bot | strategy | status (Nov 2 promotion rule) | in-sample (after fees/slip) | walk-forward out-of-sample | max/day |
 |---|---|---|---|---|---|
 | scanner | Big-gap fade 0.75×ATR14 (XIU, SOFI, HXT) | all **testing** (XIU was active; 0–1 of 20 journal trades) | XIU +0.188R n=50; SOFI +0.175R n=33; HXT +0.115R n=49 | XIU +0.037R n=38 (3/5 windows +); SOFI +0.365R n=11 (4/5); HXT +0.055R n=39 (3/5). Live params in the same windows: +0.169 / +0.402 / +0.149R | 2 |
-| quant | ORB 15-min + VWAP reclaim/loss, RVOL ≥1.5 | testing; **VWAP half: retire proposed** (approval pending) | ORB t2R +0.101R n=47; VWAP +0.063R n=57 (30-min proxy) | ORB +0.121R n=51 (3/4 windows +); VWAP −0.148R n=46 (1/4) | 2 |
-| quant | **Stocks-in-play 15-min ORB** (new; scout = Whale Tracker; Zarattini, Barbon & Aziz 2024, SSRN 4729284) | testing (pilot only) | 5-min pilot, 14 hindsight-picked days: −0.616R n=12 (range-side stop instead: +0.542R) | — | 2 |
+| quant | ORB 15-min (live) + VWAP reclaim/loss (**paper-only, retired Nov 2 — decided by Kiwi**) | ORB testing; VWAP `mode: paper` | ORB t2R +0.101R n=47; VWAP +0.063R n=57 (30-min proxy) | ORB +0.121R n=51 (3/4 windows +); VWAP −0.148R n=46 (1/4) | 2 |
+| quant | **Stocks-in-play 15-min ORB** (new; scout = Whale Tracker; Zarattini, Barbon & Aziz 2024, SSRN 4729284); stop = other side of the 15-min range, target 2R (10%-ATR stop removed Nov 2, decided by Kiwi) | testing | quick 5-min test, 12 hand-picked trades: +0.54R (indicative only; the old 10%-ATR stop did −0.62R) | — | 2 |
 | whale | SIP scout + **QQQ-only** RVOL breakout (all other tickers **retired**) | retired; QQQ testing | −0.280R n=97 overall; QQQ +0.179R n=17 | — | 2 |
 | news | News-catalyst momentum, pullback hold + devil's-advocate veto | untested (no headline history) | — | — | 2 |
 | options | Debit spreads, max loss $40, ≥1 DTE, legs <10% wide | untested (no chain history) | — | — | 2 |
@@ -250,4 +250,7 @@ Needs ≥ 3 bear reasons and ≥ 1 bull reason; `take` needs `--why`. Writes `id
 - **Paused bots**: tower dimmed (grey, low beam) with a red `PAUSED` tag, the reason and the until date on its label; same tag on the org chart, flat view, desk panel and budget bar.
 - **Loss budgets today** panel (left column): desk $150 bar plus one bar per bot (used = realized loss + open risk), orange at 60%, red at 100%.
 - **News Desk · devil's advocate** panel (right column, under the watchlist) and in News Desk's desk panel: latest debate's verdict, bear case, bull case.
-- Approvals: one pending item — retire the VWAP half of Quant Lab's strategy (walk-forward negative).
+- Approvals: the VWAP retirement item is resolved (`decided by Kiwi`), so the panel shows None pending.
+
+### Strategy modes: live vs paper (Nov 2 2026, decided by Kiwi)
+`strategies.json` strategies carry `mode` (`live` | `paper` | `mixed`); a mixed entry has `modes{sub: live|paper}` and `aliases{sub: [...]}` (Quant Lab: `modes {orb: live, vwap: paper}`). A **paper** strategy is retired from real money: the routine still logs each signal (`log_idea.py add` matches the `--strategy` text or `--strategy-id` to the aliases, longest match wins, and writes `mode: "paper"`, `taken: "no"`, `paperReason`, printing `PAPER-ONLY … do NOT send a real order`; `--paper` forces it; `resolve --taken yes/--real-pnl` is refused). `risk_check.py` always BLOCKs it with `paper-only: retired`. Bots with more than one strategy must name it: `risk_check.py --bot quant --strategy orb|vwap|sip_orb …` (no or unknown `--strategy` = BLOCK).

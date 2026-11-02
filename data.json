@@ -138,7 +138,7 @@
     {
       "id": "quant",
       "name": "Quant Lab",
-      "role": "Trades ORB + VWAP and the new Stocks-in-play ORB (testing); runs walk-forward tests",
+      "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "Re-checked big-gap fade >0.75 ATR after Questrade fees through Nov 2: XIU n=50, win 58.0%, +0.188R, max DD 2.43R, last 6m +0.207R (active). SOFI n=33 +0.175R, H1 flat -> testing. HXT n=49 +0.115R, last 3m -0.148R, 42/49 same days as XIU -> testing. 1-trade-a-day XIU/HXT/SOFI n=78 +0.150R. Files: backtests-2026-11-02/.",
       "pnlToday": 0,
       "pnlWeek": 0,
@@ -296,7 +296,8 @@
     "Profit shown after fees",
     "Per-bot daily loss budgets: Scanner $50, Quant Lab $35, News Desk $25, Whale Tracker $20, Options Desk $20 (sum = $150); auto-pause on budget hit, 3 stop-outs in 5 days, or -4R over 20 trades",
     "One bet per correlation group and direction (risk_check.py)",
-    "News Desk: devil's-advocate debate before every entry (veto only)"
+    "News Desk: devil's-advocate debate before every entry (veto only)",
+    "Quant Lab VWAP reclaim/loss: paper-only (retired Nov 2, decided by Kiwi)"
   ],
   "playbook": [
     {
@@ -851,7 +852,9 @@
       "from": "quant",
       "date": "2026-11-02",
       "title": "Retire the VWAP reclaim/loss half of ORB + VWAP? Walk-forward OOS -0.148R on 46 trades, positive in 1/4 test windows (ORB half stays: +0.121R, 3/4).",
-      "status": "pending"
+      "status": "resolved",
+      "resolution": "decided by Kiwi: VWAP reclaim/loss retired to paper-only (signals still logged as paper ideas; risk_check.py blocks real orders)",
+      "resolvedAt": "2026-11-02T17:50:00-05:00"
     }
   ],
   "paused": [],
