@@ -148,3 +148,24 @@ Not included: short borrow fees (charged on overnight shorts; the desk is flat b
 - Account card: `Trades today N / 1` and `Paper ideas today`.
 - **Weekly scorecard** card under Account (from `data.json.scorecard`): paper vs real table, whose ideas paid, all-time line. Empty state: "First scorecard Friday".
 - Desk rules card lists the two new rules plus a fee footnote linking the Questrade schedule.
+
+## Today's watchlist (data.json `watchlist` + set_watch.py)
+
+The stocks the desk is interested in today, shown on a **Today's watchlist** board right below the office (above Account), one row per stock: split-flap ticker, LONG/SHORT badge, status light, last price + `as of H:MM ET`, a stop–entry–target ladder with the current price marker, entry/stop/target, profit/loss **after fees**, shares · R:R, strategy with a `tested`/`untested` tag, the bot that found it, the reason, the journal id, open P&L when in trade, and `close by 4:00 PM ET` (flat by the close). Empty state: "No stocks on the watchlist yet today".
+The page re-fetches `data.json?t=<now>` (no-store) every 60 s, so open tabs update without reload; the board header shows `prices updated H:MM ET`, and during market hours a price older than 20 min is marked **STALE**.
+
+`watchlist` is an array; each item has its own `date` (ET) and the site only shows items dated today, so yesterday's list never shows as today's. Item keys: `date, ticker, side, status, entry, entryNote, trigger, zoneLow, zoneHigh, notBefore, stop, target, shares, currency, netProfitAtTarget, netLossAtStop (+CAD), rr, rrNet, strategy, tested, testNote, bot, reason, journalId, last, priceTime, fill, openPnl, openPnlCAD, closeBy ("16:00"), statusAt`. Any of entry/stop/target/shares/side can be missing (shown as `-`; no ladder).
+Status: `watching | triggered | in trade | target hit | stopped | closed | skipped | expired`.
+
+```
+python3 set_watch.py add --ticker RIVN --side short --entry 12.79 --stop 13.12 --target 12.18 --shares 27 --strategy "Gap fade" --bot scanner [--journal-id ID] [--reason "..."]
+python3 set_watch.py add --journal-id 2026-11-02-QQC-1 --trigger 47.67 --zone-high 48.10 --not-before 10:05 --tested no --test-note "backtest found no edge"
+python3 set_watch.py price --ticker RIVN --last 12.91 [--time 2026-11-02T09:45:04-05:00]
+python3 set_watch.py status --ticker RIVN --status "in trade" [--fill 12.78]
+python3 set_watch.py list
+python3 set_watch.py reset                 # new day: drop every item not dated today (--all drops today too)
+```
+- `--journal-id` pulls side, entry, stop, target, shares, strategy, bot, currency and the after-fee plan from journal.json (log the idea with `log_idea.py add` first). Without it, after-fee numbers use the same Questrade fee model.
+- `add` on a ticker already on today's list updates it. Extra flags: `--trigger` (defaults to entry), `--zone-low/--zone-high`, `--not-before HH:MM`, `--entry-note`, `--tested yes|no` (default no), `--test-note`, `--status`, `--last/--time`.
+- `price` moves the status by itself: watching → triggered when the trigger is crossed (long ≥ trigger and ≤ zone high; short ≤ trigger and ≥ zone low; not before `--not-before`); triggered / in trade → target hit or stopped when the target or stop is crossed; watching → expired for a price at/after 16:00 ET. `triggered` is a signal, not a fill; set `in trade` by hand once K's order fills. In trade, `openPnl` = (last − fill) × shares (by side) minus estimated fees. Skipped / closed / target hit / stopped / expired are never changed by a price update.
+- Prices come from the Questrade connector (`get_quotes`, read only).

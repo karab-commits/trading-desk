@@ -48,6 +48,54 @@
       "taken": null,
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-02-QQC-1",
+      "date": "2026-11-02",
+      "session": "premarket",
+      "ticker": "QQC.TO",
+      "side": "long",
+      "entry": 47.7,
+      "stop": 47.1,
+      "target": 48.85,
+      "shares": 10,
+      "strategy": "QQC gap-and-go (backtest found no edge)",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Conditional: buy at 10:05 ET only if QQC is above 47.67 and at most 48.10; stop placed after fill. Backtest found no edge (untested).",
+      "loggedAt": "2026-11-02T09:44:44-05:00",
+      "plan": {
+        "riskGross": 6.0,
+        "rewardGross": 11.5,
+        "rr": 1.92,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 11.5,
+        "netLossAtStop": -6.0,
+        "rrNet": 1.92,
+        "netProfitAtTargetCAD": 11.5,
+        "netLossAtStopCAD": -6.0
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
