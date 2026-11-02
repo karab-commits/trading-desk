@@ -1,15 +1,15 @@
 # K's AI Trading Desk · Neon City
 
-Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json` and `journal.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json`, `journal.json` and `strategies.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
 The classic pixel bullpen is kept at `bullpen.html` (self-contained, inlined fallback data, reads `data.json` every 30 s).
 
 ### Neon City: what drives what (all from data.json / journal.json)
-- Vault: `pnlAllTime.total`, `pnlToday`, `account`, `desk.daysRunning`; progress bar = `pnlToday.trades / account.maxTradesPerDay`. Green/red days and the daily bar chart use `paper.byDate[date].real` (chart shows an empty state under 5 days).
-- Towers: one per `bots[]`; height = number of `journal.json` ideas with that `bot`; beam brightness = `activity.state`. Kiwi's centre panel shows the desk total.
+- Vault: `pnlAllTime.total`, `pnlToday`, `account`, `desk.daysRunning`; progress bar = daily loss budget used = max(0, −`pnlToday.total`) / `account.dailyLossStop` (150 CAD; turns red at the stop); subtitle adds trades today (`pnlToday.trades`) and open positions `account.openPositions` / `account.maxOpenPositions` (4). Green/red days and the daily bar chart use `paper.byDate[date].real` (chart shows an empty state under 5 days).
+- Towers: one per `bots[]`; banner = category · the bot's strategy `short` name from `strategies.json`; height = number of `journal.json` ideas with that `bot`; beam brightness = `activity.state`. Kiwi's centre panel shows the desk total.
 - Pulses fire only for new journal events (idea `loggedAt`, `result.resolvedAt`) seen on refresh, or via "Replay today's events".
 - Money board: `pnlToday/pnlWeek/pnlAllTime` plus per-bot `pnlToday/Week/AllTime`, `tradesToday/Week/AllTime`. Paper results are always labelled not-real.
 - Watchlist: today's `watchlist[]` items with TradingView `tv-single-ticker` widgets (`tvSymbol` wins) and a ticker tape.
-- Approvals waiting on K: optional `approvals[]` = `{from, date, title, status}` (status `pending` or absent = shown). Until that field exists the page shows a static list `STATIC_PENDING_APPROVALS` in index.html (Nov 2 daily review).
+- Approvals waiting on K: optional `approvals[]` = `{from, date, title, status}` (status `pending` or absent = shown). The field now exists: the three Nov 2 items are kept with `status: resolved/superseded` plus a `resolution`, so the panel shows **None pending**. `STATIC_PENDING_APPROVALS` (used only if the field is missing) is now empty.
 
 ## Classic bullpen (bullpen.html)
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.
@@ -150,13 +150,29 @@ Checked 2026-11-02 on Questrade's own pages: [Transaction fees](https://www.ques
 USD amounts are shown in CAD at `fees.usdcad.rate` (Bank of Canada daily average; 1.3960 on 2026-10-30). Update `rate`/`asOf` when it moves.
 Not included: short borrow fees (charged on overnight shorts; the desk is flat by the close), margin interest, FINRA TAF (not on Questrade's schedule).
 
-## Rules added Nov 2 2026 (approved by K)
-- **One trade a day max**: routines must not send a second trade alert once one is taken that day. Shown in Desk rules and as `Trades today N / 1` in the Account card (`account.maxTradesPerDay`, default 1; count = `pnlToday.trades`).
+## Multi-strategy desk (K's choice, Nov 2 2026) + strategies.json
+**Rules card (data.json `rules`)**: Kiwi leads: orders are sent without waiting for K's go; K approves each one in Questrade. Every bot trades its strategy on every valid signal. $40 max risk per trade, $150 daily loss stop, max 4 open positions, flat by close. (`account.maxRiskPerTrade: 40`, `account.dailyLossStop: 150`, `account.maxOpenPositions: 4`; `account.maxTradesPerDay` removed.)
+
+`strategies.json` is read by the signal routine (every 15 min, 9:45 AM - 3:15 PM ET) on every run, and by index.html (tower banners + desk panel). Schema: `{version, updated, readBy, execution, risk{maxLossPerTradeCAD, dailyLossStopCAD, maxOpenPositions, sameDayOnly, flatByClose, noNewEntriesAfterET, flattenByET, sizing, dailyStopCheck, stopOrders}, strategies[]}`; each strategy = `{bot (data.json bot id), name, short (banner label), tested, testedTag, stats|null, untestedWhy?, universe[], entry, stop, target, timeStop, window{start,end,tz}, maxTradesPerDay, notes?}` (Quant Lab's entry/stop/target/window are split into `orb` and `vwap`; Risk Manager has `limits[]`).
+
+| bot | strategy | tested | stats (after 0.02%/side slip) | max/day |
+|---|---|---|---|---|
+| scanner | Big-gap fade 0.75×ATR14 (XIU, SOFI, HXT) | XIU active; SOFI, HXT testing | XIU +0.188R n=50; SOFI +0.175R n=33; HXT +0.115R n=49 (daily bars, after fees) | 2 |
+| quant | ORB 15-min + VWAP reclaim/loss, RVOL ≥1.5 | testing (30-min proxy, weak) | filtered ORB t2R +0.101R n=47 (t 0.85); VWAP +0.063R n=57; unfiltered ORB t1.5R −0.079R n=415 | 2 |
+| whale | RVOL ≥2 day-high/low break, VWAP side, t2R | **negative** (30-min proxy) | −0.280R n=97, both halves < 0 | 2 |
+| news | News-catalyst momentum, pullback hold | untested (no headline history) | — | 2 |
+| options | Debit spreads, max loss $40, ≥1 DTE, legs <10% wide | untested (no chain history) | — | 2 |
+| risk / journal / kiwi | enforcer / logging / approves only | n/a | — | 0 |
+
+New-rule backtests: `/workspace/quant/multistrat-2026-11-02/backtest_new_rules.py` → `results_new_rules.csv/.txt`, `trades_new_rules.csv` (Questrade 30-min RTH bars, May 4 - Oct 30 2026, XIU.TO ZEB.TO QQC.TO QQQ). They are 30-min proxies of 15/5-min rules, not exact tests.
+
+## Rules added Nov 2 2026 (approved by K; partly replaced above)
+- ~~One trade a day max~~ and ~~nothing sent without K's go~~: **replaced Nov 2 2026 by the multi-strategy rules below.**
 - **Profit shown after fees**: every alert quotes `log_idea.py add`'s net numbers. If `todayTrade` has `projectedNet` / `maxLossNet`, the Today's trade card shows those as "Profit / Loss after fees".
 
 ## Site additions (v3)
 - Wall P&L board desk row shows **REAL** (Questrade) and **PAPER** (all logged ideas, net of fees) side by side for the board's period (TODAY / WEEK / ALL TIME). Empty paper state: `--  no ideas`.
-- Account card: `Trades today N / 1` and `Paper ideas today`.
+- Account card: `Daily loss used $X / $150 · N trades today` (was `Trades today N / 1`) and `Paper ideas today`.
 - **Weekly scorecard** card under Account (from `data.json.scorecard`): paper vs real table, whose ideas paid, all-time line. Empty state: "First scorecard Friday".
 - Desk rules card lists the two new rules plus a fee footnote linking the Questrade schedule.
 

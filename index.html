@@ -58,7 +58,7 @@ body.nogl #cols{display:grid;grid-template-columns:1fr 1fr;padding-bottom:50px}
 <div class="glass"><div class="ph">REAL EVENTS (journal)</div><div id="evl"></div></div></div></div>
 <div id="tape" class="glass"><div class="ticker" id="tk"></div></div>
 <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
-<script>// ---- shared core: reads ONLY data.json + journal.json; no invented numbers ----
+<script>// ---- shared core: reads ONLY data.json + journal.json + strategies.json; no invented numbers ----
 const BOTCOL={kiwi:'#ffe14d',scanner:'#22f3ff',news:'#ff3df2',whale:'#4d8bff',risk:'#ff4d6d',quant:'#9dff3d',journal:'#ffa53d',options:'#b14dff'};
 const BOTCAT={kiwi:'HEAD OF DESK',scanner:'SCANNER',news:'NEWS',whale:'FLOW',risk:'RISK',quant:'QUANT',journal:'JOURNAL',options:'OPTIONS'};
 const ORDER=['kiwi','scanner','news','whale','risk','quant','journal','options'];
@@ -70,12 +70,14 @@ const tcls=v=>v>0?'up':v<0?'dn':'flat';
 const hhmm=iso=>{if(!iso)return'';const d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Toronto'})+' ET'};
 async function loadDesk(){
   const bust='?t='+Date.now();
-  const [d,j]=await Promise.all([fetch('data.json'+bust).then(r=>r.json()),fetch('journal.json'+bust).then(r=>r.json()).catch(()=>({ideas:[]}))]);
+  const [d,j,sj]=await Promise.all([fetch('data.json'+bust).then(r=>r.json()),fetch('journal.json'+bust).then(r=>r.json()).catch(()=>({ideas:[]})),fetch('strategies.json'+bust).then(r=>r.json()).catch(()=>({strategies:[]}))]);
+  const strats=sj.strategies||[];
   const ideas=j.ideas||[];
   const bots=ORDER.map(id=>d.bots.find(b=>b.id===id)).filter(Boolean).concat(d.bots.filter(b=>!ORDER.includes(b.id)));
   bots.forEach(b=>{
     const mine=ideas.filter(i=>i.bot===b.id);
     b._ideas=mine;
+    b._strat=strats.find(s=>s.bot===b.id)||null;
     b._paper=mine.reduce((s,i)=>s+(i.result&&typeof i.result.netCAD==='number'?i.result.netCAD:0),0);
     b._real=b.pnlAllTime??0;
     b._position=(d.account.openPositions>0&&d.watchlist.some(w=>w.bot===b.id&&/open|filled|taken/i.test(w.status)))?'IN TRADE':'FLAT';
@@ -89,7 +91,7 @@ async function loadDesk(){
   events.sort((a,b)=>new Date(a.t)-new Date(b.t));
   // paper P&L by ticker (resolved journal ideas)
   const byTicker={};ideas.forEach(i=>{if(i.result&&typeof i.result.netCAD==='number')byTicker[i.ticker]=(byTicker[i.ticker]||0)+i.result.netCAD;});
-  return {d,ideas,bots,days,events,byTicker};
+  return {d,ideas,bots,days,events,byTicker,strat:sj};
 }
 function vaultStats(S){const d=S.d;const real=S.days.map(x=>x.real);
   return {total:d.pnlAllTime.total,today:d.pnlToday.total,tradesToday:d.pnlToday.trades,tradesAll:d.pnlAllTime.trades,days:d.desk.daysRunning,
@@ -110,6 +112,7 @@ function botDeskHTML(S,b){const a=b.activity||{};const col=BOTCOL[b.id]||'#22f3f
   return `<div class="desk" style="--c:${col}">
   <div class="dh"><span class="dot ${a.state}"></span><b>${esc(b.name)}</b> <span class="tag">${esc(BOTCAT[b.id]||'')}</span><span class="st">${esc((a.state||'').toUpperCase())}</span></div>
   <div class="role">${esc(b.role)}</div>
+  ${b._strat?`<label>STRATEGY</label><div class="now">${esc(b._strat.name)} <span class="tag">${esc(b._strat.testedTag||b._strat.tested)}</span></div><small>${esc(b._strat.tested)}${b._strat.maxTradesPerDay?` · max ${b._strat.maxTradesPerDay}/day`:''}${b._strat.window&&b._strat.window.start?` · ${esc(b._strat.window.start)}–${esc(b._strat.window.end)} ET`:''}</small>`:''}
   <div class="grid2"><div><label>POSITION</label><b>${b._position}</b></div><div><label>REAL P&L TODAY</label><b class="${tcls(b.pnlToday)}">${money(b.pnlToday)}</b></div>
   <div><label>REAL P&L ALL-TIME</label><b class="${tcls(b._real)}">${money(b._real)}</b></div><div><label>TRADES (today/all)</label><b>${b.tradesToday}/${b.tradesAllTime}</b></div></div>
   <label>NOW</label><div class="now">${esc(a.now)}</div>
@@ -118,15 +121,12 @@ function botDeskHTML(S,b){const a=b.activity||{};const col=BOTCOL[b.id]||'#22f3f
   <label>THOUGHTS</label><ul class="log">${(a.log||[]).map(l=>`<li>${esc(l)}</li>`).join('')||'<li class="mut">No log entries</li>'}${ideas.map(i=>`<li><span class="mut">${hhmm(i.loggedAt)}</span> ${esc(i.ticker)} ${esc(i.side)} @ ${i.entry} → ${i.result?esc(i.result.outcome)+' '+money(i.result.netCAD)+' paper':'open'}</li>`).join('')}</ul>
   <div class="detail">${esc(a.detail)}</div><small class="mut">since ${hhmm(a.since)}</small></div>`;}
 // ---- Paperclip-style panels ----
-// data.json has no approvals/proposals field yet (only lastApprovedIdea=null), so this is a clearly named STATIC list
-// copied from Kiwi's Nov 2 daily review. Proposed schema for later: data.json "approvals":[{id,title,from,date,status}]
-const STATIC_PENDING_APPROVALS=[
- {from:'kiwi',date:'2026-11-02',title:'Untested midday ideas become paper-only (no live orders)'},
- {from:'kiwi',date:'2026-11-02',title:"Update the rules card to 'Kiwi leads'"},
- {from:'quant',date:'2026-11-02',title:'Move SOFI and HXT to testing'}];
+// Approvals now come from data.json "approvals":[{from,date,title,status,resolution}] (status pending/absent = shown).
+// The Nov 2 static items (rules card, SOFI/HXT, paper-only midday ideas) were resolved/superseded on Nov 2, so the fallback is empty.
+const STATIC_PENDING_APPROVALS=[];
 function approvalsList(S){return (S.d.approvals&&S.d.approvals.filter(a=>!a.status||a.status==='pending'))||STATIC_PENDING_APPROVALS;}
 function approvalsHTML(S){const L=approvalsList(S);const src=S.d.approvals?'data.json approvals':'static list (Nov 2 daily review) — no data.json field yet';
- return `<div class="appr"><div class="ph">APPROVALS WAITING ON K <span class="cnt">${L.length}</span></div>${L.map((a,i)=>`<div class="ap" style="--c:${BOTCOL[a.from]||'#fff'}"><span class="n">${i+1}</span><div>${esc(a.title)}<small>from ${esc((S.bots.find(b=>b.id===a.from)||{}).name||a.from)} · ${esc(a.date)}</small></div><span class="pend">PENDING</span></div>`).join('')}<small class="mut">Source: ${src}</small></div>`;}
+ return `<div class="appr"><div class="ph">APPROVALS WAITING ON K <span class="cnt">${L.length}</span></div>${L.length?'':'<div class="empty">None pending</div>'}${L.map((a,i)=>`<div class="ap" style="--c:${BOTCOL[a.from]||'#fff'}"><span class="n">${i+1}</span><div>${esc(a.title)}<small>from ${esc((S.bots.find(b=>b.id===a.from)||{}).name||a.from)} · ${esc(a.date)}</small></div><span class="pend">PENDING</span></div>`).join('')}<small class="mut">Source: ${src}</small></div>`;}
 function orgChartHTML(S){const head=S.bots.find(b=>b.id==='kiwi');const team=S.bots.filter(b=>b.id!=='kiwi');
  const card=b=>{const a=b.activity||{};return `<div class="oc" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}"><div><span class="dot ${a.state}"></span><b>${esc(b.name)}</b></div><div class="t">${esc(a.now||'—')}</div><div class="nx">Next: ${esc(a.next||'—')}</div></div>`};
  return `<div class="org"><div class="ph">ORG CHART</div><div class="ohead">${head?card(head):''}</div><div class="oline"></div><div class="oteam">${team.map(card).join('')}</div></div>`;}
@@ -157,11 +157,12 @@ function openBot(id){openId=id;const b=S.bots.find(x=>x.id===id);if(!b)return;$(
 function closeBot(){openId=null;$('#drawer').classList.remove('open');$('#back').style.display='none';window.DESK.onFocus&&window.DESK.onFocus(null)}
 window.openBot=openBot;window.closeBot=closeBot;$('#back').onclick=closeBot;
 function render(first){const V=vaultStats(S);$('#upd').textContent='data '+S.d.lastUpdated;$('#days').textContent=V.days;$('#total').className=tcls(V.total);if(first)odometer($('#total'),V.total,V.cur);else $('#total').textContent=money(V.total,V.cur);
- const mx=S.d.account.maxTradesPerDay||1;$('#prog').style.width=Math.min(100,V.tradesToday/mx*100)+'%';
- $('#vsub').innerHTML=`Today ${money(V.today)} · ${V.tradesToday}/${mx} trades used · Equity ${plain(V.equity)} ${V.cur} · ${V.green} green / ${V.red} red / ${V.flat} flat`;
+ const ac=S.d.account,risk=(S.strat&&S.strat.risk)||{};const stop=ac.dailyLossStop||risk.dailyLossStopCAD||150;const lost=Math.max(0,-(V.today||0));const mxo=ac.maxOpenPositions||risk.maxOpenPositions||4;
+ $('#prog').style.width=Math.min(100,lost/stop*100)+'%';$('#prog').parentElement.style.setProperty('--c',lost>=stop?'#ff3d6e':'var(--ye)');
+ $('#vsub').innerHTML=`Daily loss used <b class="${lost>0?'dn':'flat'}">${plain(lost)}</b> / ${plain(stop)} · ${V.tradesToday} trade(s) today · ${ac.openPositions??0}/${mxo} open<br>Today ${money(V.today)} · Equity ${plain(V.equity)} ${V.cur} · ${V.green} green / ${V.red} red / ${V.flat} flat`;
  renderMoney();$('#appr').innerHTML=approvalsHTML(S);$('#org').innerHTML=orgChartHTML(S);$('#chart').innerHTML=dailyChartSVG(S,280,120);renderWatch();
  $('#evl').innerHTML=S.events.slice(-5).reverse().map(e=>`<div><span class="mut">${hhmm(e.t)}</span> ${esc(e.text)}</div>`).join('')||'<span class="mut">No logged events</span>';
- $('#flat').innerHTML=S.bots.map(b=>`<div class="glass fb" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}"><div class="ban" style="color:var(--c);font-size:9px;letter-spacing:.2em">${BOTCAT[b.id]}</div><b style="color:var(--c)">${esc(b.name)}</b> · ${b._position}<br>P&L ${b.id==='kiwi'?'(desk) '+money(S.d.pnlToday.total,''):money(b.pnlToday,'')}<br><span class="dot ${b.activity?.state}"></span>${esc(b.activity?.now)}</div>`).join('');
+ $('#flat').innerHTML=S.bots.map(b=>`<div class="glass fb" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}"><div class="ban" style="color:var(--c);font-size:9px;letter-spacing:.2em">${BOTCAT[b.id]}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><b style="color:var(--c)">${esc(b.name)}</b> · ${b._position}<br>${b._strat?`<small>${esc(b._strat.name)} · ${esc(b._strat.testedTag||'')}</small>`:''}P&L ${b.id==='kiwi'?'(desk) '+money(S.d.pnlToday.total,''):money(b.pnlToday,'')}<br><span class="dot ${b.activity?.state}"></span>${esc(b.activity?.now)}</div>`).join('');
  document.querySelectorAll('.oc,.fb').forEach(e=>e.onclick=()=>openBot(e.dataset.bot));if(openId)openBot(openId);
  window.DESK.onData&&window.DESK.onData(S);}
 let seen=0;
@@ -203,8 +204,8 @@ function build(S){ // rebuilt on every data refresh so heights/brightness track 
    const L=T?T.L:document.createElement('div');if(!T){L.className='lbl';L.style.setProperty('--c',BOTCOL[b.id]);L.onclick=()=>openBot(b.id);$('#lbls').appendChild(L)}
    T=towers[b.id]={g,h,bright,pulse,pt:-1,L,isHead};}
   const st2=(st||'').toUpperCase();
-  T.L.innerHTML=isHead?`<div class="ban">HEAD OF DESK · DESK TOTAL</div><div class="card"><b style="color:var(--c)">Kiwi</b><br>TODAY <b class="${tcls(S.d.pnlToday.total)}">${money(S.d.pnlToday.total,'')}</b><span class="x"> · ALL <b class="${tcls(S.d.pnlAllTime.total)}">${money(S.d.pnlAllTime.total,'')}</b><br>${S.d.pnlToday.trades} trade(s) today</span><br><span class="dot ${st}"></span>${esc(st2)}</div>`
-   :`<div class="ban">${BOTCAT[b.id]||''}</div><div class="card"><b style="color:var(--c)">${esc(b.name)}</b><span class="x"><br>POSITION <b>${b._position}</b></span><br>P&L <b class="${tcls(b.pnlToday)}">${money(b.pnlToday,'')}</b><span class="x"> · TOTAL <b class="${tcls(b._real)}">${money(b._real,'')}</b></span><br><span class="dot ${st}"></span>${esc(st2)}<span class="x"> · ${b._ideas.length} ideas</span></div>`;});}
+  T.L.innerHTML=isHead?`<div class="ban">HEAD OF DESK · ${b._strat?esc(String(b._strat.short).toUpperCase()):'DESK TOTAL'}</div><div class="card"><b style="color:var(--c)">Kiwi</b><br>TODAY <b class="${tcls(S.d.pnlToday.total)}">${money(S.d.pnlToday.total,'')}</b><span class="x"> · ALL <b class="${tcls(S.d.pnlAllTime.total)}">${money(S.d.pnlAllTime.total,'')}</b><br>${S.d.pnlToday.trades} trade(s) today</span><br><span class="dot ${st}"></span>${esc(st2)}</div>`
+   :`<div class="ban">${BOTCAT[b.id]||''}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><div class="card"><b style="color:var(--c)">${esc(b.name)}</b><span class="x"><br>POSITION <b>${b._position}</b></span><br>P&L <b class="${tcls(b.pnlToday)}">${money(b.pnlToday,'')}</b><span class="x"> · TOTAL <b class="${tcls(b._real)}">${money(b._real,'')}</b></span><br><span class="dot ${st}"></span>${esc(st2)}<span class="x"> · ${b._ideas.length} ideas</span></div>`;});}
 build(window.S);window.DESK.onData=build;
 window.DESK.onEvent=id=>{const t=towers[id];if(t){t.pt=0;t.pulse.visible=true}};
 const HOME=()=>({p:new THREE.Vector3(0,narrow?30:22,narrow?52:46),l:new THREE.Vector3(0,narrow?3:6,0)});let camT=HOME(),foc=null;const cp=camT.p.clone(),cl=camT.l.clone();

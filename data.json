@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 4:39 PM ET",
+  "lastUpdated": "Mon Nov 2, 2026 5:30 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -28,7 +28,7 @@
     {
       "id": "scanner",
       "name": "Scanner",
-      "role": "Scans the market for gap-and-go setups",
+      "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
       "status": "Tomorrow's XIU big-gap fade triggers (ATR14 0.692 through Nov 2): short if XIU opens at or above 54.59, long if at or below 53.55; target = prior close 54.07. Today's 4 ideas scored: AMD short +1.70R, XIU long -1.00R, RIVN and QQC no fill.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -52,7 +52,7 @@
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Reads headlines and flags anything that moves the plan",
+      "role": "Trades fresh news-catalyst momentum",
       "status": "No News Desk idea traded today.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -71,7 +71,7 @@
     {
       "id": "whale",
       "name": "Whale Tracker",
-      "role": "Watches for large orders and unusual volume",
+      "role": "Trades unusual relative-volume breakouts",
       "status": "No big-money signal produced a trade idea today.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -90,7 +90,7 @@
     {
       "id": "risk",
       "name": "Risk Manager",
-      "role": "Enforces the risk rules. Says no.",
+      "role": "Enforces the limits: $40/trade, $150/day, 4 open, flat by close. Says no.",
       "status": "Nov 2: 6 ideas rejected, 0 desk trades, max risk 100 CAD per trade unchanged. Account 0944 at 4:40 PM ET: equity 2,500.00 CAD, buying power 2,500.00 CAD, no positions, no working orders.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -115,7 +115,7 @@
     {
       "id": "kiwi",
       "name": "Kiwi",
-      "role": "Head of desk. Runs the plan, nothing goes out without K's go.",
+      "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
       "status": "4:39 PM ET daily review: account 0944 flat, 0 desk trades, real P&L 0.00 CAD today/week/all time. 4 alerts paper-scored on Questrade 5-min bars: net +73.64 CAD (AMD +85.60, XIU -11.96, RIVN and QQC never filled). Playbook: XIU big-gap fade stays the only active strategy.",
       "pnlToday": 0,
       "pnlWeek": 0,
@@ -138,7 +138,7 @@
     {
       "id": "quant",
       "name": "Quant Lab",
-      "role": "Backtests and ranks strategies",
+      "role": "Backtests strategies; trades ORB + VWAP reclaim/loss",
       "status": "Re-checked big-gap fade >0.75 ATR after Questrade fees through Nov 2: XIU n=50, win 58.0%, +0.188R, max DD 2.43R, last 6m +0.207R (active). SOFI n=33 +0.175R, H1 flat -> testing. HXT n=49 +0.115R, last 3m -0.148R, 42/49 same days as XIU -> testing. 1-trade-a-day XIU/HXT/SOFI n=78 +0.150R. Files: backtests-2026-11-02/.",
       "pnlToday": 0,
       "pnlWeek": 0,
@@ -162,7 +162,7 @@
     {
       "id": "journal",
       "name": "Trade Journal",
-      "role": "Logs every trade and keeps the stats",
+      "role": "Logs every trade and keeps the stats (no trading)",
       "status": "Scored all 4 Nov 2 alerts in journal.json at their plans (5-min Questrade bars, stop first if one bar touches both): AMD short time exit 466.74 +61.32 USD (+85.60 CAD, +1.70R); XIU long stopped 54.07 -11.96 CAD (-1.00R); RIVN and QQC no fill. None taken. Week scorecard: paper +73.64 CAD, real 0.00.",
       "pnlToday": 0,
       "pnlWeek": 0,
@@ -181,7 +181,7 @@
     {
       "id": "options",
       "name": "Options Desk",
-      "role": "Reads options chains",
+      "role": "Trades defined-risk debit spreads (max loss $40)",
       "status": "No options ideas today.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -202,12 +202,13 @@
     "equity": 2500.0,
     "buyingPower": 2500.0,
     "currency": "CAD",
-    "maxRiskPerTrade": 100,
+    "maxRiskPerTrade": 40,
     "openPositions": 0,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944",
-    "maxTradesPerDay": 1,
-    "asOf": "2026-11-02T16:40:00-05:00"
+    "asOf": "2026-11-02T16:40:00-05:00",
+    "dailyLossStop": 150,
+    "maxOpenPositions": 4
   },
   "todayTrade": {
     "symbol": "QQC.TO",
@@ -288,11 +289,10 @@
     "note": "No proven edge yet"
   },
   "rules": [
-    "Same-day only, flat by the close",
-    "At most $100 at risk per trade",
-    "Nothing sent without K's go",
-    "K approves each order in the Questrade app",
-    "One trade a day max",
+    "Kiwi leads: orders are sent without waiting for K's go; K approves each one in Questrade.",
+    "Every bot trades its strategy on every valid signal.",
+    "$40 max risk per trade, $150 daily loss stop, max 4 open positions, flat by close.",
+    "Same-day only",
     "Profit shown after fees"
   ],
   "playbook": [
@@ -378,6 +378,10 @@
     }
   ],
   "deskLog": [
+    {
+      "date": "Nov 2",
+      "text": "Multi-strategy desk: every bot trades its strategy (strategies.json) on every valid signal; Kiwi sends orders, K approves each in Questrade. $40/trade, $150/day stop, max 4 open"
+    },
     {
       "date": "Nov 2",
       "text": "EOD review: no desk trade, real P&L $0.00. 4 alerts paper-scored: AMD short +$85.60, XIU breakout -$11.96, RIVN & QQC never filled"
@@ -817,5 +821,28 @@
         "trades": 0
       }
     }
-  }
+  },
+  "approvals": [
+    {
+      "from": "kiwi",
+      "date": "2026-11-02",
+      "title": "Untested midday ideas become paper-only (no live orders)",
+      "status": "superseded",
+      "resolution": "Superseded by K's choice to trade every valid signal"
+    },
+    {
+      "from": "kiwi",
+      "date": "2026-11-02",
+      "title": "Update the rules card to 'Kiwi leads'",
+      "status": "resolved",
+      "resolution": "Rules card updated Nov 2"
+    },
+    {
+      "from": "quant",
+      "date": "2026-11-02",
+      "title": "Move SOFI and HXT to testing",
+      "status": "resolved",
+      "resolution": "SOFI and HXT stay in testing and trade per K's every-signal choice"
+    }
+  ]
 }

@@ -1,0 +1,387 @@
+{
+ "version": 1,
+ "updated": "2026-11-02T17:30:00-05:00",
+ "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
+ "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
+ "risk": {
+  "maxLossPerTradeCAD": 40,
+  "dailyLossStopCAD": 150,
+  "maxOpenPositions": 4,
+  "sameDayOnly": true,
+  "flatByClose": true,
+  "noNewEntriesAfterET": "15:15",
+  "flattenByET": "15:50",
+  "sizing": "shares = floor(40 CAD / (|entry - stop| in CAD + est. fees per share)); then cap so the order's cost fits current Questrade buying power left after open positions. USD risk converted at data.json fees.usdcad.rate. If the capped size is under 1 share (or 1 spread), skip.",
+  "dailyStopCheck": "Before each order: today's realized loss + open risk to every working stop + this trade's risk must be <= 150 CAD. Once today's realized + unrealized P&L <= -150 CAD: no new orders, cancel working entries, flatten.",
+  "stopOrders": "Every entry goes with its stop (bracket or stop placed immediately after the fill). No averaging down, no widening stops.",
+  "deskMaxTradesPerDay": null,
+  "note": "No desk-wide trade cap (K chose every valid signal); per-strategy caps below plus the 150 CAD daily stop bound the day. 150/40 = at most 3 full-size stop-outs before the stop is close."
+ },
+ "strategies": [
+  {
+   "bot": "scanner",
+   "name": "Big-gap fade (0.75x ATR14)",
+   "short": "Gap fade",
+   "tested": "active (XIU.TO); testing (SOFI, HXT.TO) - all trade per K's every-signal choice",
+   "testedTag": "active/testing",
+   "stats": {
+    "source": "/workspace/quant/eod/2026-11-02/recheck_output.txt (daily bars Oct 2024 - Nov 2 2026, after Questrade fees + 0.02%/side slip)",
+    "XIU.TO": {
+     "status": "active",
+     "trades": 50,
+     "winRate": 58.0,
+     "expectancyR": 0.188,
+     "maxDD_R": 2.43,
+     "tStat": 2.17,
+     "firstHalf": "+0.236R (26)",
+     "secondHalf": "+0.137R (24)",
+     "last6m": "+0.207R (12)",
+     "last3m": "+0.116R (6)"
+    },
+    "SOFI": {
+     "status": "testing",
+     "trades": 33,
+     "winRate": 60.6,
+     "expectancyR": 0.175,
+     "maxDD_R": 1.72,
+     "tStat": 1.5,
+     "firstHalf": "+0.008R (19)",
+     "secondHalf": "+0.402R (14)",
+     "last6m": "+0.303R (6)",
+     "why": "under 50 trades; first half flat"
+    },
+    "HXT.TO": {
+     "status": "testing",
+     "trades": 49,
+     "winRate": 57.1,
+     "expectancyR": 0.115,
+     "maxDD_R": 4.57,
+     "tStat": 1.29,
+     "last6m": "+0.038R (10)",
+     "last3m": "-0.148R (5)",
+     "why": "recent edge gone; 42 of 49 signals on the same days as XIU"
+    }
+   },
+   "universe": [
+    "XIU.TO",
+    "SOFI",
+    "HXT.TO"
+   ],
+   "entry": "At the open: gap = open - prior close. If |gap| >= 0.75 x ATR14 (ATR from daily bars through yesterday), fade it: gap up -> short, gap down -> long, entry at the open price. Because the first routine run is 9:45 ET, enter at the 9:45 run only if price is still on the gap side of the open by <= 0.25 x gap (i.e. not already more than a quarter of the way to target) and still beyond the stop; otherwise no trade.",
+   "stop": "One gap beyond the open: short stop = open + |gap|; long stop = open - |gap|.",
+   "target": "Prior close (full gap fill).",
+   "timeStop": "Exit at market 15:50 ET if neither stop nor target hit.",
+   "window": {
+    "start": "09:45",
+    "end": "10:15",
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2,
+   "notes": "Backtest assumes fill at the 9:30 open; a 9:45 fill is untested and will differ. HXT.TO duplicates XIU on most days: if XIU fires in the same direction, HXT is the second trade and doubles one bet (Risk Manager counts both against the 150 CAD stop). SHORTS need a shortable borrow in Questrade."
+  },
+  {
+   "bot": "quant",
+   "name": "Opening-range breakout (15-min) + VWAP reclaim/loss, volume-confirmed",
+   "short": "ORB + VWAP",
+   "tested": "testing - 30-min proxy only, weak; no 15-min test",
+   "testedTag": "testing (weak)",
+   "stats": {
+    "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
+    "orbFiltered_t2R": {
+     "trades": 47,
+     "winRate": 55.3,
+     "expectancyR": 0.101,
+     "totalR": 4.74,
+     "maxDD_R": 2.68,
+     "tStat": 0.85,
+     "firstHalf": "+0.110 (23)",
+     "secondHalf": "+0.092 (24)",
+     "rule": "ORB30 t2R +RVOL1.5 +VWAP +trend",
+     "at0_04pctSlip": 0.047,
+     "perTicker": {
+      "XIU.TO": {
+       "trades": 11,
+       "expectancyR": 0.056
+      },
+      "ZEB.TO": {
+       "trades": 13,
+       "expectancyR": -0.154
+      },
+      "QQC.TO": {
+       "trades": 16,
+       "expectancyR": 0.261
+      },
+      "QQQ": {
+       "trades": 7,
+       "expectancyR": 0.28
+      }
+     }
+    },
+    "orbFiltered_t1_5R_noTrend": {
+     "trades": 84,
+     "winRate": 47.6,
+     "expectancyR": -0.019,
+     "totalR": -1.63,
+     "maxDD_R": 8.15,
+     "tStat": -0.24,
+     "firstHalf": "-0.027 (38)",
+     "secondHalf": "-0.013 (46)",
+     "rule": "ORB30 t1.5R +RVOL1.5 +VWAP side",
+     "at0_04pctSlip": -0.076
+    },
+    "orbUnfiltered_t1_5R": {
+     "trades": 415,
+     "winRate": 45.3,
+     "expectancyR": -0.079,
+     "totalR": -32.82,
+     "maxDD_R": 39.13,
+     "tStat": -1.89,
+     "firstHalf": "-0.114 (191)",
+     "secondHalf": "-0.049 (224)",
+     "rule": "ORB30 t1.5R (no filter)",
+     "at0_04pctSlip": -0.152,
+     "note": "XIU.TO alone -0.144R - matches the earlier -0.14R finding; filters are required"
+    },
+    "vwapReclaimLoss": {
+     "trades": 57,
+     "winRate": 57.9,
+     "expectancyR": 0.063,
+     "totalR": 3.57,
+     "maxDD_R": 7.27,
+     "tStat": 0.52,
+     "firstHalf": "-0.016 (30)",
+     "secondHalf": "+0.150 (27)",
+     "rule": "VWAP reclaim/loss t1.5R +RVOL1.5 +trend",
+     "at0_04pctSlip": -0.055,
+     "perTicker": {
+      "XIU.TO": {
+       "trades": 16,
+       "expectancyR": 0.031
+      },
+      "ZEB.TO": {
+       "trades": 14,
+       "expectancyR": -0.035
+      },
+      "QQC.TO": {
+       "trades": 18,
+       "expectancyR": 0.192
+      },
+      "QQQ": {
+       "trades": 9,
+       "expectancyR": 0.013
+      }
+     }
+    },
+    "verdict": "Filtered ORB +0.101R on 47 trades (t=0.85, both halves positive, +0.047R at 0.04%/side) - not significant and the filters were chosen on this same data. VWAP reclaim/loss +0.063R on 57 (first half negative, -0.055R at 0.04%/side). Neither meets Quant Lab's 'active' bar. XIU.TO and ZEB.TO were flat-to-negative in both."
+   },
+   "universe": [
+    "SPY",
+    "QQQ",
+    "QQC.TO",
+    "XIU.TO",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "META"
+   ],
+   "universeNote": "SPY and the megacaps have no intraday backtest. ZEB.TO dropped (negative in the ORB proxy).",
+   "entry": {
+    "orb": "Opening range = high/low of 9:30-9:45 ET. LONG when a 5-min bar CLOSES above the OR high, with that bar's relative volume >= 1.5 (vs the same 5-min slot's 20-day average), price above session VWAP, and today's open above yesterday's close (trend filter). SHORT is the mirror (close below OR low, below VWAP, open below prior close). Only the first breakout of the day counts; skip if OR width > 1.0 x ATR14(daily) or < 0.1 x ATR14.",
+    "vwap": "After 10:30 ET: LONG when a 15-min bar closes back above VWAP after the prior bar closed below it (reclaim), RVOL >= 1.5 on that bar, and price above yesterday's close. SHORT when a bar closes below VWAP after closing above it (loss), RVOL >= 1.5, price below yesterday's close. First signal per ticker per day."
+   },
+   "stop": {
+    "orb": "Opposite side of the opening range (long stop = OR low; short stop = OR high).",
+    "vwap": "Beyond the extreme of the signal bar and the bar before it (long: lower low of the two; short: higher high). Min stop distance 0.05% of price."
+   },
+   "target": {
+    "orb": "2.0R (never below 1.5R)",
+    "vwap": "1.5R"
+   },
+   "timeStop": "Exit at market 15:50 ET; also exit an ORB trade at 12:30 ET if it is not at +0.5R.",
+   "window": {
+    "orb": {
+     "start": "09:45",
+     "end": "11:30"
+    },
+    "vwap": {
+     "start": "10:30",
+     "end": "14:30"
+    },
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2
+  },
+  {
+   "bot": "whale",
+   "name": "Relative-volume breakout (RVOL >= 2, day high/low break, VWAP side)",
+   "short": "RVOL breakout",
+   "tested": "tested - NEGATIVE on the 30-min proxy (would be 'retired' under Quant Lab's rule)",
+   "testedTag": "backtest negative",
+   "stats": {
+    "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
+    "rule": "RVOL2 day-high/low break, VWAP side, t2R",
+    "trades": 97,
+    "winRate": 38.1,
+    "expectancyR": -0.28,
+    "totalR": -27.12,
+    "maxDD_R": 30.97,
+    "tStat": -2.46,
+    "firstHalf": "-0.445 (42)",
+    "secondHalf": "-0.153 (55)",
+    "at0_04pctSlip": -0.441,
+    "perTicker": {
+     "XIU.TO": {
+      "trades": 25,
+      "expectancyR": -0.459
+     },
+     "ZEB.TO": {
+      "trades": 20,
+      "expectancyR": -0.35
+     },
+     "QQC.TO": {
+      "trades": 35,
+      "expectancyR": -0.334
+     },
+     "QQQ": {
+      "trades": 17,
+      "expectancyR": 0.179
+     }
+    },
+    "verdict": "-0.280R on 97 trades, both halves negative, worse at 0.04%/side (-0.441R). Only QQQ was positive (+0.179R, 17 trades). On ~2,500 CAD this loses about 11 CAD per trade at 40 CAD risk."
+   },
+   "universe": [
+    "QQQ",
+    "SPY",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "META",
+    "AMD",
+    "TSLA"
+   ],
+   "universeNote": "TSX ETFs (XIU.TO, ZEB.TO, QQC.TO) removed - they lost -0.33R to -0.46R in the proxy. US names other than QQQ are untested.",
+   "entry": "From 10:00 ET: a 5-min bar with relative volume >= 2.0 (vs the same slot's 20-day average) that CLOSES above the session high so far with price above VWAP -> LONG at the bar close; or closes below the session low so far with price below VWAP -> SHORT. First signal per ticker per day.",
+   "stop": "Other end of the signal bar (long: bar low; short: bar high), min 0.05% of price; if that risk needs fewer than 1 share at 40 CAD, skip.",
+   "target": "2.0R",
+   "timeStop": "Exit at market 15:50 ET.",
+   "window": {
+    "start": "10:00",
+    "end": "15:00",
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2
+  },
+  {
+   "bot": "news",
+   "name": "News-catalyst momentum (pullback hold)",
+   "short": "News momentum",
+   "tested": "untested",
+   "testedTag": "untested",
+   "stats": null,
+   "untestedWhy": "No archive of timestamped headlines matched to intraday bars, so the rule can't be backtested with the data on hand.",
+   "universe": [
+    "Any US or TSX stock with average daily volume >= 1M shares and price >= 5 (CAD/USD); no OTC, no halted names"
+   ],
+   "entry": "A fresh headline (company-specific: earnings, guidance, M&A, FDA, contract, analyst action; from the desk's news/X/filings sources) published <= 60 min before the signal. Price has moved >= 2% from the pre-headline price in the headline's direction, on relative volume >= 2.0. Wait for the first pullback: a 5-min bar that retraces toward VWAP or the 9-EMA but holds (closes above VWAP for longs / below for shorts), then enter on the break of that pullback bar's high (long) or low (short).",
+   "stop": "Below the pullback low (long) / above the pullback high (short); skip if that is wider than 1.5 x ATR14(5-min) or if 40 CAD buys less than 1 share.",
+   "target": "2.0R; or trail the rest under each higher 5-min low after +1R.",
+   "timeStop": "Exit if not at +0.5R within 45 min of entry; hard exit 15:50 ET.",
+   "window": {
+    "start": "09:45",
+    "end": "14:30",
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2,
+   "notes": "No trades into scheduled macro releases (economic calendar) or halts."
+  },
+  {
+   "bot": "options",
+   "name": "Defined-risk debit spreads",
+   "short": "Debit spreads",
+   "tested": "untested",
+   "testedTag": "untested",
+   "stats": null,
+   "untestedWhy": "No historical option-chain (bid/ask) data on hand; Questrade connector gives current chains only.",
+   "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "META"
+   ],
+   "entry": "Only as the options expression of another bot's valid signal on the same underlying (direction from that signal): buy a vertical debit spread (call spread for long, put spread for short), long leg at or 1 strike in the money, short leg 1-2 strikes out. Total debit x 100 x contracts + fees <= 40 CAD. Expiry >= 1 trading day out (no 0DTE) and <= 10 DTE. Each leg's bid/ask spread must be < 10% of its mid and open interest >= 500. Limit order at the spread mid (one 15-min re-price toward natural, then cancel).",
+   "stop": "Max loss = debit paid (<= 40 CAD); also close if the underlying hits the source signal's stop.",
+   "target": "Close at +80% of the debit, or when the underlying hits the source signal's target.",
+   "timeStop": "Close the spread by 15:45 ET (same-day only).",
+   "window": {
+    "start": "10:00",
+    "end": "14:30",
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2,
+   "notes": "40 CAD max loss means very narrow spreads on high-priced underlyings (about 0.25-0.40 USD debit after FX). Counts as one open position; underlying signal and spread together count as two if both are taken."
+  },
+  {
+   "bot": "risk",
+   "name": "Risk enforcer (no strategy)",
+   "short": "Enforcer only",
+   "tested": "n/a",
+   "testedTag": "n/a",
+   "stats": null,
+   "universe": [],
+   "limits": [
+    "$40 CAD max loss to the stop per trade (after estimated fees and FX)",
+    "$150 CAD daily loss stop: no new orders once realized + open risk would exceed it; flatten at -$150",
+    "Max 4 open positions",
+    "Same-day only - no overnight holds",
+    "No new entries after 3:15 PM ET; flat by 3:50 PM ET (close at 4:00)",
+    "Every order has a stop; no averaging down, no widening stops",
+    "Per-strategy max trades per day as listed",
+    "Order size capped by available buying power"
+   ],
+   "entry": null,
+   "stop": null,
+   "target": null,
+   "timeStop": null,
+   "window": null,
+   "maxTradesPerDay": 0
+  },
+  {
+   "bot": "journal",
+   "name": "Logging only",
+   "short": "Logging only",
+   "tested": "n/a",
+   "testedTag": "n/a",
+   "stats": null,
+   "universe": [],
+   "role": "Logs every order, fill, and exit to journal.json (log_idea.py) and scores ideas; places no trades.",
+   "entry": null,
+   "stop": null,
+   "target": null,
+   "timeStop": null,
+   "window": null,
+   "maxTradesPerDay": 0
+  },
+  {
+   "bot": "kiwi",
+   "name": "Head of desk - approves only",
+   "short": "Approves only",
+   "tested": "n/a",
+   "testedTag": "n/a",
+   "stats": null,
+   "universe": [],
+   "role": "Leads the desk: routes each valid signal through Risk Manager and sends the order to Questrade for K's approval in the app. No strategy of its own.",
+   "entry": null,
+   "stop": null,
+   "target": null,
+   "timeStop": null,
+   "window": null,
+   "maxTradesPerDay": 0
+  }
+ ]
+}
