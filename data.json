@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Runs the plan, nothing goes out without K's go.",
-      "status": "9:39 PM ET daily review: account 0944 flat, 0 desk trades, real P&L 0.00 CAD today/week/all time. 4 alerts paper-scored on Questrade 5-min bars: net +73.64 CAD (AMD +85.60, XIU -11.96, RIVN and QQC never filled). Playbook: XIU big-gap fade stays the only active strategy.",
+      "status": "4:39 PM ET daily review: account 0944 flat, 0 desk trades, real P&L 0.00 CAD today/week/all time. 4 alerts paper-scored on Questrade 5-min bars: net +73.64 CAD (AMD +85.60, XIU -11.96, RIVN and QQC never filled). Playbook: XIU big-gap fade stays the only active strategy.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -125,13 +125,13 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "EOD review: real P&L $0.00",
-        "detail": "9:39 PM ET daily review: account 0944 flat, 0 desk trades, real P&L 0.00 CAD today/week/all time. 4 alerts paper-scored on Questrade 5-min bars: net +73.64 CAD (AMD +85.60, XIU -11.96, RIVN and QQC never filled). Playbook: XIU big-gap fade stays the only active strategy.",
+        "detail": "4:39 PM ET daily review: account 0944 flat, 0 desk trades, real P&L 0.00 CAD today/week/all time. 4 alerts paper-scored on Questrade 5-min bars: net +73.64 CAD (AMD +85.60, XIU -11.96, RIVN and QQC never filled). Playbook: XIU big-gap fade stays the only active strategy.",
         "since": "2026-11-02T16:39:08-05:00",
         "state": "done",
         "next": "Pre-market scan 9:00 Tue",
         "log": [
           "3:40 ET close-out: flat, nothing to close",
-          "9:39 PM EOD review done"
+          "4:39 PM EOD review done"
         ]
       }
     },
