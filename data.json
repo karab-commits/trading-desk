@@ -52,7 +52,7 @@
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Trades fresh news-catalyst momentum",
+      "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
       "status": "No News Desk idea traded today.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -71,7 +71,7 @@
     {
       "id": "whale",
       "name": "Whale Tracker",
-      "role": "Trades unusual relative-volume breakouts",
+      "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
       "status": "No big-money signal produced a trade idea today.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -90,7 +90,7 @@
     {
       "id": "risk",
       "name": "Risk Manager",
-      "role": "Enforces the limits: $40/trade, $150/day, 4 open, flat by close. Says no.",
+      "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
       "status": "Nov 2: 6 ideas rejected, 0 desk trades, max risk 100 CAD per trade unchanged. Account 0944 at 4:40 PM ET: equity 2,500.00 CAD, buying power 2,500.00 CAD, no positions, no working orders.",
       "pnlToday": 0.0,
       "pnlWeek": 0.0,
@@ -138,7 +138,7 @@
     {
       "id": "quant",
       "name": "Quant Lab",
-      "role": "Backtests strategies; trades ORB + VWAP reclaim/loss",
+      "role": "Trades ORB + VWAP and the new Stocks-in-play ORB (testing); runs walk-forward tests",
       "status": "Re-checked big-gap fade >0.75 ATR after Questrade fees through Nov 2: XIU n=50, win 58.0%, +0.188R, max DD 2.43R, last 6m +0.207R (active). SOFI n=33 +0.175R, H1 flat -> testing. HXT n=49 +0.115R, last 3m -0.148R, 42/49 same days as XIU -> testing. 1-trade-a-day XIU/HXT/SOFI n=78 +0.150R. Files: backtests-2026-11-02/.",
       "pnlToday": 0,
       "pnlWeek": 0,
@@ -293,7 +293,10 @@
     "Every bot trades its strategy on every valid signal.",
     "$40 max risk per trade, $150 daily loss stop, max 4 open positions, flat by close.",
     "Same-day only",
-    "Profit shown after fees"
+    "Profit shown after fees",
+    "Per-bot daily loss budgets: Scanner $50, Quant Lab $35, News Desk $25, Whale Tracker $20, Options Desk $20 (sum = $150); auto-pause on budget hit, 3 stop-outs in 5 days, or -4R over 20 trades",
+    "One bet per correlation group and direction (risk_check.py)",
+    "News Desk: devil's-advocate debate before every entry (veto only)"
   ],
   "playbook": [
     {
@@ -843,6 +846,63 @@
       "title": "Move SOFI and HXT to testing",
       "status": "resolved",
       "resolution": "SOFI and HXT stay in testing and trade per K's every-signal choice"
+    },
+    {
+      "from": "quant",
+      "date": "2026-11-02",
+      "title": "Retire the VWAP reclaim/loss half of ORB + VWAP? Walk-forward OOS -0.148R on 46 trades, positive in 1/4 test windows (ORB half stays: +0.121R, 3/4).",
+      "status": "pending"
     }
-  ]
+  ],
+  "paused": [],
+  "pausedHistory": [],
+  "riskBudgets": {
+    "date": "2026-11-02",
+    "updated": "2026-11-02T17:38:00-05:00",
+    "bots": {
+      "scanner": {
+        "budget": 50,
+        "realizedLoss": 0.0,
+        "openRisk": 0,
+        "used": 0.0,
+        "left": 50.0
+      },
+      "quant": {
+        "budget": 35,
+        "realizedLoss": 0.0,
+        "openRisk": 0,
+        "used": 0.0,
+        "left": 35.0
+      },
+      "news": {
+        "budget": 25,
+        "realizedLoss": 0.0,
+        "openRisk": 0,
+        "used": 0.0,
+        "left": 25.0
+      },
+      "whale": {
+        "budget": 20,
+        "realizedLoss": 0.0,
+        "openRisk": 0,
+        "used": 0.0,
+        "left": 20.0
+      },
+      "options": {
+        "budget": 20,
+        "realizedLoss": 0.0,
+        "openRisk": 0,
+        "used": 0.0,
+        "left": 20.0
+      }
+    },
+    "desk": {
+      "budget": 150,
+      "realizedLoss": 0.0,
+      "openRisk": 0,
+      "used": 0.0,
+      "left": 150.0,
+      "openPositions": 0
+    }
+  }
 }

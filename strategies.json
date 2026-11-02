@@ -1,6 +1,6 @@
 {
- "version": 1,
- "updated": "2026-11-02T17:30:00-05:00",
+ "version": 2,
+ "updated": "2026-11-02T18:00:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -15,19 +15,134 @@
   "dailyStopCheck": "Before each order: today's realized loss + open risk to every working stop + this trade's risk must be <= 150 CAD. Once today's realized + unrealized P&L <= -150 CAD: no new orders, cancel working entries, flatten.",
   "stopOrders": "Every entry goes with its stop (bracket or stop placed immediately after the fill). No averaging down, no widening stops.",
   "deskMaxTradesPerDay": null,
-  "note": "No desk-wide trade cap (K chose every valid signal); per-strategy caps below plus the 150 CAD daily stop bound the day. 150/40 = at most 3 full-size stop-outs before the stop is close."
+  "note": "No desk-wide trade cap (K chose every valid signal); per-strategy caps below plus the 150 CAD daily stop bound the day. 150/40 = at most 3 full-size stop-outs before the stop is close.",
+  "botBudgetsCAD": {
+   "scanner": 50,
+   "quant": 35,
+   "news": 25,
+   "whale": 20,
+   "options": 20
+  },
+  "botBudgetsNote": "Per-bot slices of the 150 CAD daily stop (sum = 150). A bot whose realized loss today + open risk + the new trade's risk would exceed its slice is blocked (risk_check.py prints the largest risk it can still take). Quant Lab's slice covers both its strategies.",
+  "pauseRules": {
+   "dailyBudget": {
+    "rule": "realized real loss today >= the bot's budget",
+    "pauseUntil": "next trading day"
+   },
+   "stopoutGuard": {
+    "rule": "3 or more stop-outs (real trades) in the bot's last 5 trading days",
+    "pauseTradingDays": 2
+   },
+   "drawdownGuard": {
+    "rule": "sum of real R over the bot's last 20 real trades <= -4R",
+    "pauseTradingDays": 5
+   },
+   "storedIn": "data.json paused[] = {bot, rule, reason, since, until, setBy}; expired pauses move to pausedHistory[] and the trades before them no longer count for that rule",
+   "inspiredBy": "freqtrade protections (StoplossGuard, MaxDrawdown, cooldown)"
+  },
+  "correlation": {
+   "rule": "Block a new trade when an open or pending position is in the same group AND the same direction (one bet per group). Also block when the 20-day daily-return correlation with an open same-direction position is > 0.8, computed from cached Questrade daily bars (bars/*.csv) when both tickers are cached; otherwise groups only.",
+   "threshold": 0.8,
+   "lookbackDays": 20,
+   "barCache": "bars/<SYMBOL>_1d.csv (bars.py)",
+   "groups": {
+    "tsx_index": [
+     "XIU.TO",
+     "HXT.TO",
+     "XIC.TO",
+     "ZCN.TO",
+     "VCN.TO",
+     "XIC",
+     "ZCN"
+    ],
+    "us_index": [
+     "SPY",
+     "QQQ",
+     "IWM",
+     "DIA",
+     "VOO",
+     "QQC.TO",
+     "VFV.TO",
+     "XUS.TO",
+     "ZSP.TO",
+     "XQQ.TO"
+    ],
+    "cdn_banks": [
+     "RY",
+     "TD",
+     "BNS",
+     "BMO",
+     "CM",
+     "NA",
+     "ZEB.TO",
+     "ZEB"
+    ],
+    "energy": [
+     "XEG.TO",
+     "CNQ",
+     "SU",
+     "CVE",
+     "IMO",
+     "TOU",
+     "XLE",
+     "ZEO.TO"
+    ],
+    "us_megacap_tech": [
+     "AAPL",
+     "MSFT",
+     "NVDA",
+     "AMZN",
+     "META",
+     "GOOGL",
+     "GOOG"
+    ],
+    "semis": [
+     "NVDA",
+     "AMD",
+     "AVGO",
+     "MU",
+     "SMH",
+     "SOXX",
+     "TSM",
+     "INTC"
+    ],
+    "ev_auto": [
+     "TSLA",
+     "RIVN",
+     "LCID"
+    ],
+    "gold_miners": [
+     "ABX",
+     "AEM",
+     "K",
+     "WPM",
+     "FNV",
+     "XGD.TO",
+     "GDX"
+    ],
+    "fintech_brokers": [
+     "SOFI",
+     "HOOD",
+     "COIN",
+     "AFRM"
+    ]
+   },
+   "matching": "Tickers match on the root symbol (XIU.TO = XIU, CNQ.TO = CNQ). A ticker can be in more than one group.",
+   "notes": "ZEB (equal-weight Canadian banks ETF) is in cdn_banks, not tsx_index (K marked it \"?\"); its correlation with XIU still triggers the 0.8 check when cached. QQC.TO (Nasdaq-100 in CAD) is in us_index."
+  },
+  "checkedBy": "risk_check.py (every order, before it is sent)"
  },
  "strategies": [
   {
    "bot": "scanner",
    "name": "Big-gap fade (0.75x ATR14)",
    "short": "Gap fade",
-   "tested": "active (XIU.TO); testing (SOFI, HXT.TO) - all trade per K's every-signal choice",
-   "testedTag": "active/testing",
+   "tested": "testing (all three) - walk-forward OOS positive in most windows (XIU 3/5, SOFI 4/5, HXT 3/5) but 0-1 of the 20 journal trades the promotion rule needs. XIU was active before the Nov 2 promotion rule.",
+   "testedTag": "testing (OOS +)",
    "stats": {
     "source": "/workspace/quant/eod/2026-11-02/recheck_output.txt (daily bars Oct 2024 - Nov 2 2026, after Questrade fees + 0.02%/side slip)",
     "XIU.TO": {
-     "status": "active",
+     "status": "testing",
      "trades": 50,
      "winRate": 58.0,
      "expectancyR": 0.188,
@@ -36,7 +151,70 @@
      "firstHalf": "+0.236R (26)",
      "secondHalf": "+0.137R (24)",
      "last6m": "+0.207R (12)",
-     "last3m": "+0.116R (6)"
+     "last3m": "+0.116R (6)",
+     "inSample": "full-sample numbers above (Oct 2024 - Nov 2 2026)",
+     "outOfSample": {
+      "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
+      "windowsPositive": "3/5",
+      "trades": 38,
+      "expectancyR": 0.037,
+      "winRate": 47.4,
+      "tStat": 0.3,
+      "totalR": 1.42,
+      "liveParamsInTestWindows": {
+       "n": 25,
+       "meanR": 0.169,
+       "winRate": 56.0,
+       "totalR": 4.21,
+       "t": 1.44
+      },
+      "journalTrades": 1,
+      "promotion": "testing",
+      "why": "OOS mean R +0.037 on 38 trades; positive in 3/5 test windows; 1 paper/real journal trades (need 20)",
+      "windows": [
+       {
+        "test": "2025-10-01..2026-01-01",
+        "chosen": "k=0.6 m=1.0",
+        "testN": 7,
+        "testMeanR": 0.141,
+        "liveTestN": 4,
+        "liveTestMeanR": 0.295
+       },
+       {
+        "test": "2026-01-01..2026-04-01",
+        "chosen": "k=0.75 m=0.75",
+        "testN": 8,
+        "testMeanR": -0.107,
+        "liveTestN": 8,
+        "liveTestMeanR": 0.026
+       },
+       {
+        "test": "2026-04-01..2026-07-01",
+        "chosen": "k=0.6 m=1.0",
+        "testN": 13,
+        "testMeanR": 0.137,
+        "liveTestN": 7,
+        "liveTestMeanR": 0.305
+       },
+       {
+        "test": "2026-07-01..2026-10-01",
+        "chosen": "k=0.6 m=1.0",
+        "testN": 8,
+        "testMeanR": -0.086,
+        "liveTestN": 5,
+        "liveTestMeanR": -0.052
+       },
+       {
+        "test": "2026-10-01..2026-12-01",
+        "chosen": "k=0.6 m=0.75",
+        "testN": 2,
+        "testMeanR": 0.096,
+        "liveTestN": 1,
+        "liveTestMeanR": 0.956
+       }
+      ]
+     },
+     "why": "OOS mean R +0.037 on 38 trades; positive in 3/5 test windows; 1 paper/real journal trades (need 20). Live params (k 0.75, m 1.0) in the same test windows: +0.169R on 25."
     },
     "SOFI": {
      "status": "testing",
@@ -48,7 +226,69 @@
      "firstHalf": "+0.008R (19)",
      "secondHalf": "+0.402R (14)",
      "last6m": "+0.303R (6)",
-     "why": "under 50 trades; first half flat"
+     "why": "OOS mean R +0.365 on 11 trades; positive in 4/5 test windows; 0 paper/real journal trades (need 20). Live params (k 0.75, m 1.0) in the same test windows: +0.402R on 14.",
+     "inSample": "full-sample numbers above (Oct 2024 - Nov 2 2026)",
+     "outOfSample": {
+      "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
+      "windowsPositive": "4/5",
+      "trades": 11,
+      "expectancyR": 0.365,
+      "winRate": 72.7,
+      "tStat": 2.07,
+      "totalR": 4.02,
+      "liveParamsInTestWindows": {
+       "n": 14,
+       "meanR": 0.402,
+       "winRate": 71.4,
+       "totalR": 5.63,
+       "t": 2.52
+      },
+      "journalTrades": 0,
+      "promotion": "testing",
+      "why": "OOS mean R +0.365 on 11 trades; positive in 4/5 test windows; 0 paper/real journal trades (need 20)",
+      "windows": [
+       {
+        "test": "2025-10-01..2026-01-01",
+        "chosen": "k=1.0 m=1.0",
+        "testN": 1,
+        "testMeanR": 0.179,
+        "liveTestN": 1,
+        "liveTestMeanR": 0.179
+       },
+       {
+        "test": "2026-01-01..2026-04-01",
+        "chosen": "k=1.0 m=1.0",
+        "testN": 1,
+        "testMeanR": 0.976,
+        "liveTestN": 4,
+        "liveTestMeanR": 0.623
+       },
+       {
+        "test": "2026-04-01..2026-07-01",
+        "chosen": "k=0.75 m=1.0",
+        "testN": 5,
+        "testMeanR": 0.344,
+        "liveTestN": 5,
+        "liveTestMeanR": 0.344
+       },
+       {
+        "test": "2026-07-01..2026-10-01",
+        "chosen": "k=0.75 m=1.0",
+        "testN": 3,
+        "testMeanR": 0.507,
+        "liveTestN": 3,
+        "liveTestMeanR": 0.507
+       },
+       {
+        "test": "2026-10-01..2026-12-01",
+        "chosen": "k=0.75 m=0.75",
+        "testN": 1,
+        "testMeanR": -0.379,
+        "liveTestN": 1,
+        "liveTestMeanR": -0.284
+       }
+      ]
+     }
     },
     "HXT.TO": {
      "status": "testing",
@@ -59,8 +299,71 @@
      "tStat": 1.29,
      "last6m": "+0.038R (10)",
      "last3m": "-0.148R (5)",
-     "why": "recent edge gone; 42 of 49 signals on the same days as XIU"
-    }
+     "why": "OOS mean R +0.055 on 39 trades; positive in 3/5 test windows; 0 paper/real journal trades (need 20). Live params (k 0.75, m 1.0) in the same test windows: +0.149R on 22.",
+     "inSample": "full-sample numbers above (Oct 2024 - Nov 2 2026)",
+     "outOfSample": {
+      "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
+      "windowsPositive": "3/5",
+      "trades": 39,
+      "expectancyR": 0.055,
+      "winRate": 48.7,
+      "tStat": 0.39,
+      "totalR": 2.16,
+      "liveParamsInTestWindows": {
+       "n": 22,
+       "meanR": 0.149,
+       "winRate": 59.1,
+       "totalR": 3.28,
+       "t": 1.29
+      },
+      "journalTrades": 0,
+      "promotion": "testing",
+      "why": "OOS mean R +0.055 on 39 trades; positive in 3/5 test windows; 0 paper/real journal trades (need 20)",
+      "windows": [
+       {
+        "test": "2025-10-01..2026-01-01",
+        "chosen": "k=0.6 m=1.25",
+        "testN": 7,
+        "testMeanR": -0.145,
+        "liveTestN": 4,
+        "liveTestMeanR": -0.017
+       },
+       {
+        "test": "2026-01-01..2026-04-01",
+        "chosen": "k=0.5 m=0.75",
+        "testN": 21,
+        "testMeanR": 0.092,
+        "liveTestN": 7,
+        "liveTestMeanR": 0.37
+       },
+       {
+        "test": "2026-04-01..2026-07-01",
+        "chosen": "k=0.75 m=0.75",
+        "testN": 6,
+        "testMeanR": 0.332,
+        "liveTestN": 6,
+        "liveTestMeanR": 0.249
+       },
+       {
+        "test": "2026-07-01..2026-10-01",
+        "chosen": "k=0.75 m=1.0",
+        "testN": 4,
+        "testMeanR": 0.08,
+        "liveTestN": 4,
+        "liveTestMeanR": 0.08
+       },
+       {
+        "test": "2026-10-01..2026-12-01",
+        "chosen": "k=0.75 m=0.75",
+        "testN": 1,
+        "testMeanR": -1.076,
+        "liveTestN": 1,
+        "liveTestMeanR": -1.057
+       }
+      ]
+     }
+    },
+    "walkForward": "12-month train / 3-month test, rolled quarterly; tests Oct 2025 - Nov 2 2026 (5 windows). Grid k {0.5,0.6,0.75,0.9,1.0} x stop {0.75,1.0,1.25} x gap. Look-ahead audit: 0 leaks on 508 days per ticker. Nearby k 0.6-0.75 positive OOS on XIU and SOFI; k 0.5 and 1.0 flat/negative on XIU and HXT."
    },
    "universe": [
     "XIU.TO",
@@ -83,8 +386,8 @@
    "bot": "quant",
    "name": "Opening-range breakout (15-min) + VWAP reclaim/loss, volume-confirmed",
    "short": "ORB + VWAP",
-   "tested": "testing - 30-min proxy only, weak; no 15-min test",
-   "testedTag": "testing (weak)",
+   "tested": "testing - ORB walk-forward OOS +0.121R on 51 (positive in 3/4 windows); VWAP OOS -0.148R on 46 (positive in 1/4) -> VWAP flagged for retirement, K to confirm",
+   "testedTag": "testing (ORB OOS +, VWAP OOS -)",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -115,7 +418,8 @@
        "trades": 7,
        "expectancyR": 0.28
       }
-     }
+     },
+     "inSample": true
     },
     "orbFiltered_t1_5R_noTrend": {
      "trades": 84,
@@ -170,9 +474,181 @@
        "trades": 9,
        "expectancyR": 0.013
       }
-     }
+     },
+     "inSample": true
     },
-    "verdict": "Filtered ORB +0.101R on 47 trades (t=0.85, both halves positive, +0.047R at 0.04%/side) - not significant and the filters were chosen on this same data. VWAP reclaim/loss +0.063R on 57 (first half negative, -0.055R at 0.04%/side). Neither meets Quant Lab's 'active' bar. XIU.TO and ZEB.TO were flat-to-negative in both."
+    "verdict": "Filtered ORB +0.101R on 47 trades (t=0.85, both halves positive, +0.047R at 0.04%/side) - not significant and the filters were chosen on this same data. VWAP reclaim/loss +0.063R on 57 (first half negative, -0.055R at 0.04%/side). Neither meets Quant Lab's 'active' bar. XIU.TO and ZEB.TO were flat-to-negative in both.",
+    "outOfSample": {
+     "orb": {
+      "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
+      "windowsPositive": "3/4",
+      "trades": 51,
+      "expectancyR": 0.121,
+      "winRate": 60.8,
+      "tStat": 1.08,
+      "totalR": 6.18,
+      "liveParamsInTestWindows": {
+       "n": 36,
+       "meanR": 0.111,
+       "winRate": 55.6,
+       "totalR": 4.0,
+       "t": 0.82
+      },
+      "journalTrades": 0,
+      "promotion": "testing",
+      "why": "OOS mean R +0.121 on 51 trades; positive in 3/4 test windows; 0 paper/real journal trades (need 20)",
+      "windows": [
+       {
+        "test": "2026-07-01..2026-08-01",
+        "chosen": "t=2.0R rvol>=1.2",
+        "testN": 15,
+        "testMeanR": 0.121,
+        "liveTestN": 12,
+        "liveTestMeanR": 0.154
+       },
+       {
+        "test": "2026-08-01..2026-09-01",
+        "chosen": "t=2.5R rvol>=1.5",
+        "testN": 4,
+        "testMeanR": -0.357,
+        "liveTestN": 4,
+        "liveTestMeanR": -0.357
+       },
+       {
+        "test": "2026-09-01..2026-10-01",
+        "chosen": "t=1.5R rvol>=1.2",
+        "testN": 11,
+        "testMeanR": 0.369,
+        "liveTestN": 8,
+        "liveTestMeanR": 0.216
+       },
+       {
+        "test": "2026-10-01..2026-11-01",
+        "chosen": "t=2.0R rvol>=1.2",
+        "testN": 21,
+        "testMeanR": 0.083,
+        "liveTestN": 12,
+        "liveTestMeanR": 0.154
+       }
+      ]
+     },
+     "vwap": {
+      "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
+      "windowsPositive": "1/4",
+      "trades": 46,
+      "expectancyR": -0.148,
+      "winRate": 43.5,
+      "tStat": -1.08,
+      "totalR": -6.8,
+      "liveParamsInTestWindows": {
+       "n": 37,
+       "meanR": 0.058,
+       "winRate": 56.8,
+       "totalR": 2.15,
+       "t": 0.4
+      },
+      "journalTrades": 0,
+      "promotion": "retired",
+      "why": "OOS mean R -0.148 on 46 trades; positive in 1/4 test windows; 0 paper/real journal trades (need 20)",
+      "windows": [
+       {
+        "test": "2026-07-01..2026-08-01",
+        "chosen": "t=2.0R rvol>=2.0",
+        "testN": 6,
+        "testMeanR": -0.68,
+        "liveTestN": 9,
+        "liveTestMeanR": -0.28
+       },
+       {
+        "test": "2026-08-01..2026-09-01",
+        "chosen": "t=2.0R rvol>=1.2",
+        "testN": 11,
+        "testMeanR": -0.253,
+        "liveTestN": 5,
+        "liveTestMeanR": -0.254
+       },
+       {
+        "test": "2026-09-01..2026-10-01",
+        "chosen": "t=2.0R rvol>=1.2",
+        "testN": 20,
+        "testMeanR": -0.267,
+        "liveTestN": 14,
+        "liveTestMeanR": 0.039
+       },
+       {
+        "test": "2026-10-01..2026-11-01",
+        "chosen": "t=1.5R rvol>=1.5",
+        "testN": 9,
+        "testMeanR": 0.6,
+        "liveTestN": 9,
+        "liveTestMeanR": 0.6
+       }
+      ]
+     },
+     "perTickerOOS": {
+      "orb": {
+       "XIU.TO": {
+        "n": 12,
+        "meanR": 0.117,
+        "winRate": 58.3,
+        "totalR": 1.4,
+        "t": 0.55
+       },
+       "ZEB.TO": {
+        "n": 13,
+        "meanR": -0.201,
+        "winRate": 53.8,
+        "totalR": -2.61,
+        "t": -0.93
+       },
+       "QQC.TO": {
+        "n": 15,
+        "meanR": 0.319,
+        "winRate": 73.3,
+        "totalR": 4.79,
+        "t": 1.73
+       },
+       "QQQ": {
+        "n": 11,
+        "meanR": 0.236,
+        "winRate": 54.5,
+        "totalR": 2.59,
+        "t": 0.78
+       }
+      },
+      "vwap": {
+       "XIU.TO": {
+        "n": 12,
+        "meanR": -0.128,
+        "winRate": 41.7,
+        "totalR": -1.53,
+        "t": -0.42
+       },
+       "ZEB.TO": {
+        "n": 9,
+        "meanR": -0.111,
+        "winRate": 44.4,
+        "totalR": -1.0,
+        "t": -0.37
+       },
+       "QQC.TO": {
+        "n": 16,
+        "meanR": 0.022,
+        "winRate": 56.2,
+        "totalR": 0.35,
+        "t": 0.1
+       },
+       "QQQ": {
+        "n": 9,
+        "meanR": -0.512,
+        "winRate": 22.2,
+        "totalR": -4.6,
+        "t": -1.61
+       }
+      }
+     },
+     "note": "30-min proxy (same as the in-sample test). 2-month train / 1-month test, rolled monthly; tests Jul-Oct 2026 (4 windows). Grids: ORB target {1.5,2,2.5}R x RVOL {1.2,1.5,2}; VWAP target {1,1.5,2}R x RVOL {1.2,1.5,2}. QQQ now includes SEC + FX fees. Look-ahead audit: 0 leaks (47 ORB, 58 VWAP signals recomputed from data available at the signal bar). Nearby ORB params all positive OOS (+0.05 to +0.22R); VWAP RVOL 1.2 and 2.0 negative OOS, only RVOL 1.5 positive -> fragile."
+    }
    },
    "universe": [
     "SPY",
@@ -210,14 +686,80 @@
     },
     "tz": "America/Toronto"
    },
-   "maxTradesPerDay": 2
+   "maxTradesPerDay": 2,
+   "vwapStatus": "retire proposed (walk-forward OOS -0.148R, 1/4 windows positive). Still trades until K confirms (approval item in data.json)."
+  },
+  {
+   "bot": "quant",
+   "id": "sip_orb",
+   "scout": "whale",
+   "name": "Stocks-in-play 15-min opening-range breakout",
+   "short": "Stocks-in-play ORB",
+   "tested": "testing - 5-min pilot on 14 hand-picked high-volume days: -0.62R per trade on 12 (2 wins); not a valid test (days picked with hindsight, tiny sample)",
+   "testedTag": "testing (pilot -)",
+   "citation": "Zarattini, C., Barbon, A. & Aziz, A. (2024). A Profitable Day Trading Strategy For The U.S. Equity Market. SSRN 4729284. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4729284",
+   "stats": {
+    "pilot": {
+     "source": "/workspace/quant/sip-2026-11-02/sip_backtest.py -> sip_output.txt, sip_trades.csv (Questrade 5-min RTH bars, SOFI/AMD/RIVN, 14 days Jul 29 - Nov 2 2026 with daily volume >= 1.9x the 14-day average)",
+     "liveRule": {
+      "trades": 12,
+      "winRate": 16.7,
+      "expectancyR": -0.616,
+      "totalR": -7.4
+     },
+     "variants": {
+      "stopOtherSideOfRangeOnly_t2R": {
+       "trades": 12,
+       "winRate": 75.0,
+       "expectancyR": 0.542
+      },
+      "stop10pctATRonly_t2R": {
+       "trades": 12,
+       "expectancyR": -0.616
+      },
+      "t1.5R": {
+       "trades": 12,
+       "expectancyR": -0.698
+      },
+      "t3R": {
+       "trades": 12,
+       "expectancyR": -0.452
+      },
+      "noDirectionFilter": {
+       "trades": 13,
+       "expectancyR": -0.653
+      }
+     },
+     "caveats": "Days chosen from full-day volume (hindsight; not known at 9:45). First-15-min RVOL vs its 14-day average could not be computed (no 5-min history for the prior 14 days); a proxy is in sip_trades.csv. 10% of ATR14 was tighter than the range on all 12 trades, so the live stop is always the ATR stop - and that stop was hit on 10 of 12. Net of 0.02%/side slip, SEC fee and 1.5% FX on P&L.",
+     "verdict": "Untested in practice. The pilot says the 10%-ATR stop is too tight on these names at a 15-min range; the range-side stop did much better on the same 12 trades. Needs a forward paper/real record (20 trades) and a proper test before any change."
+    }
+   },
+   "universe": [
+    "Morning list from Whale Tracker (scout) + News Desk: liquid US and Canadian stocks, price > 5 (USD/CAD), average daily volume >= 1M shares, with first-15-min relative volume >= 2.0 (9:30-9:45 volume vs the 14-day average of the same 15 minutes) OR a fresh company-specific news catalyst (News Desk, <= 12 h old). Scan Questrade get_quotes on the watchlist plus the News Desk names; no OTC, no halted names, no ETFs."
+   ],
+   "scan": "9:45 ET routine run: Whale Tracker reads get_quotes for the candidate list (watchlist + News Desk names + liquid US/TSX movers) and get_historical_data 15m for today's 9:30-9:45 bar of each. RVOL = that bar's volume / the 14-day mean of the same bar. Until 14 days of first-bar volumes are cached, use the proxy first-15-min volume / (14-day average daily volume x 0.12) (0.12 = median first-15-min share of daily volume on the 14 pilot days; marked rvolProxy). Top 5 by RVOL (>= 2.0) or with a fresh catalyst go on data.json watchlist (strategy \"Stocks-in-play ORB\", bot quant, reason \"scout: whale\").",
+   "entry": "Opening range = high/low of 9:30-9:45 ET. Direction = the first 15-minute candle: close > open -> long only; close < open -> short only; doji -> no trade. LONG on a break above the OR high (stop-entry at OR high); SHORT on a break below the OR low. One entry per ticker per day, 9:45-15:15 ET.",
+   "stop": "The other side of the opening range, or 10% of ATR14 (daily, through yesterday) from entry if that is tighter.",
+   "target": "2R",
+   "timeStop": "Exit at market 15:15 ET if neither stop nor target hit.",
+   "window": {
+    "start": "09:45",
+    "end": "15:15",
+    "tz": "America/Toronto"
+   },
+   "maxTradesPerDay": 2,
+   "devils_advocate": {
+    "required": true,
+    "why": "untested strategy"
+   },
+   "notes": "Shares Quant Lab's 35 CAD daily budget with ORB + VWAP. Risk Manager blocks a second trade in the same correlation group and direction."
   },
   {
    "bot": "whale",
-   "name": "Relative-volume breakout (RVOL >= 2, day high/low break, VWAP side)",
-   "short": "RVOL breakout",
-   "tested": "tested - NEGATIVE on the 30-min proxy (would be 'retired' under Quant Lab's rule)",
-   "testedTag": "backtest negative",
+   "name": "QQQ-only relative-volume breakout (rest retired) + stocks-in-play scout",
+   "short": "SIP scout + QQQ RVOL",
+   "tested": "retired on every ticker except QQQ (tested -0.28R on 97, both halves negative); QQQ-only kept as testing (+0.179R on 17, 30-min proxy)",
+   "testedTag": "retired (QQQ testing)",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "rule": "RVOL2 day-high/low break, VWAP side, t2R",
@@ -251,17 +793,9 @@
     "verdict": "-0.280R on 97 trades, both halves negative, worse at 0.04%/side (-0.441R). Only QQQ was positive (+0.179R, 17 trades). On ~2,500 CAD this loses about 11 CAD per trade at 40 CAD risk."
    },
    "universe": [
-    "QQQ",
-    "SPY",
-    "AAPL",
-    "MSFT",
-    "NVDA",
-    "AMZN",
-    "META",
-    "AMD",
-    "TSLA"
+    "QQQ"
    ],
-   "universeNote": "TSX ETFs (XIU.TO, ZEB.TO, QQC.TO) removed - they lost -0.33R to -0.46R in the proxy. US names other than QQQ are untested.",
+   "universeNote": "Retired Nov 2 2026 for SPY, AAPL, MSFT, NVDA, AMZN, META, AMD, TSLA and the TSX ETFs. Whale Tracker's main job is now the stocks-in-play scout list for Quant Lab (see the Stocks-in-play ORB strategy).",
    "entry": "From 10:00 ET: a 5-min bar with relative volume >= 2.0 (vs the same slot's 20-day average) that CLOSES above the session high so far with price above VWAP -> LONG at the bar close; or closes below the session low so far with price below VWAP -> SHORT. First signal per ticker per day.",
    "stop": "Other end of the signal bar (long: bar low; short: bar high), min 0.05% of price; if that risk needs fewer than 1 share at 40 CAD, skip.",
    "target": "2.0R",
@@ -271,7 +805,13 @@
     "end": "15:00",
     "tz": "America/Toronto"
    },
-   "maxTradesPerDay": 2
+   "maxTradesPerDay": 2,
+   "status": {
+    "QQQ": "testing",
+    "others": "retired 2026-11-02 (K approved)"
+   },
+   "role": "Scout: builds the stocks-in-play morning list (RVOL >= 2 in the first 15 min or a fresh News Desk catalyst) by 9:45 ET and hands it to Quant Lab; trades only the QQQ RVOL breakout itself.",
+   "scoutFor": "Stocks-in-play ORB (quant)"
   },
   {
    "bot": "news",
@@ -294,7 +834,14 @@
     "tz": "America/Toronto"
    },
    "maxTradesPerDay": 2,
-   "notes": "No trades into scheduled macro releases (economic calendar) or halts."
+   "notes": "No trades into scheduled macro releases (economic calendar) or halts.",
+   "devils_advocate": {
+    "required": true,
+    "vetoOnly": true,
+    "rule": "Before any News Desk entry the run writes a BEAR case (at least 3 concrete reasons the trade fails - e.g. the news is already priced in / the move is extended vs ATR, the broader market is weak or against the trade (SPY/QQQ direction, regime.json), the spread or liquidity is poor (bid/ask > 0.2% or thin size), a known event is near (macro release, halt risk), the headline is stale or second-hand) and a BULL case, then skips the trade unless the bull case clearly wins. Veto only: it can stop a valid signal, never create one or change size, stop or target.",
+    "record": "python3 debate.py --id <journal idea id> --bull \"...\" --bear \"...\" --bear \"...\" --bear \"...\" --verdict take|skip --why \"...\" (writes bull, bear, verdict on the idea in journal.json)",
+    "enforced": "risk_check.py --bot news requires --idea <id> with a debate whose verdict is take; otherwise BLOCK."
+   }
   },
   {
    "bot": "options",
@@ -383,5 +930,18 @@
    "window": null,
    "maxTradesPerDay": 0
   }
- ]
+ ],
+ "regime": {
+  "script": "regime.py",
+  "file": "regime.json",
+  "definition": "SPY 10-day realized vol through the prior close vs its trailing 1-year (250-session) median: volatile if above, else calm",
+  "use": "tag only - every idea gets a regime field (log_idea.py); no filter yet",
+  "revisit": "revisit as filter after ~100 more trades",
+  "evidence": "gap fade, 116 trades with a regime (XIU, HXT, SOFI, net of fees): calm +0.06R (n 57) / volatile +0.24R (n 59) - /workspace/quant/ideas-2026-11-02/regime_output.txt"
+ },
+ "promotionRule": {
+  "rule": "A strategy is active only if its walk-forward out-of-sample mean R is > 0 in most test windows (more than half of the windows that had trades) AND it has >= 20 paper or real trades in journal.json. Otherwise testing. Retire when OOS mean R <= -0.05 over >= 30 OOS trades (K confirms).",
+  "walkForward": "/workspace/quant/walkforward.py -> /workspace/quant/walkforward-2026-11-02/ (windows.csv, neighbours.csv, lookahead_audit.csv, oos_trades.csv, walkforward_results.json)",
+  "note": "testing strategies still trade on every valid signal (K's every-signal rule); the status is a label plus the evidence bar."
+ }
 }

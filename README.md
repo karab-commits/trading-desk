@@ -153,16 +153,17 @@ Not included: short borrow fees (charged on overnight shorts; the desk is flat b
 ## Multi-strategy desk (K's choice, Nov 2 2026) + strategies.json
 **Rules card (data.json `rules`)**: Kiwi leads: orders are sent without waiting for K's go; K approves each one in Questrade. Every bot trades its strategy on every valid signal. $40 max risk per trade, $150 daily loss stop, max 4 open positions, flat by close. (`account.maxRiskPerTrade: 40`, `account.dailyLossStop: 150`, `account.maxOpenPositions: 4`; `account.maxTradesPerDay` removed.)
 
-`strategies.json` is read by the signal routine (every 15 min, 9:45 AM - 3:15 PM ET) on every run, and by index.html (tower banners + desk panel). Schema: `{version, updated, readBy, execution, risk{maxLossPerTradeCAD, dailyLossStopCAD, maxOpenPositions, sameDayOnly, flatByClose, noNewEntriesAfterET, flattenByET, sizing, dailyStopCheck, stopOrders}, strategies[]}`; each strategy = `{bot (data.json bot id), name, short (banner label), tested, testedTag, stats|null, untestedWhy?, universe[], entry, stop, target, timeStop, window{start,end,tz}, maxTradesPerDay, notes?}` (Quant Lab's entry/stop/target/window are split into `orb` and `vwap`; Risk Manager has `limits[]`).
+`strategies.json` is read by the signal routine (every 15 min, 9:45 AM - 3:15 PM ET) on every run, and by index.html (tower banners + desk panel). Schema: `{version, updated, readBy, execution, risk{maxLossPerTradeCAD, dailyLossStopCAD, maxOpenPositions, sameDayOnly, flatByClose, noNewEntriesAfterET, flattenByET, sizing, dailyStopCheck, stopOrders, botBudgetsCAD, pauseRules, correlation{groups, threshold, lookbackDays}}, regime, promotionRule, strategies[]}`. A bot can own more than one strategy (Quant Lab: ORB + VWAP, then Stocks-in-play ORB); the tower banner shows the first, the desk panel lists all; each strategy = `{bot (data.json bot id), id?, scout?, name, short (banner label), tested, testedTag, stats|null (stats.outOfSample = walk-forward), citation?, devils_advocate?, untestedWhy?, universe[], entry, stop, target, timeStop, window{start,end,tz}, maxTradesPerDay, notes?}` (Quant Lab's entry/stop/target/window are split into `orb` and `vwap`; Risk Manager has `limits[]`).
 
-| bot | strategy | tested | stats (after 0.02%/side slip) | max/day |
-|---|---|---|---|---|
-| scanner | Big-gap fade 0.75×ATR14 (XIU, SOFI, HXT) | XIU active; SOFI, HXT testing | XIU +0.188R n=50; SOFI +0.175R n=33; HXT +0.115R n=49 (daily bars, after fees) | 2 |
-| quant | ORB 15-min + VWAP reclaim/loss, RVOL ≥1.5 | testing (30-min proxy, weak) | filtered ORB t2R +0.101R n=47 (t 0.85); VWAP +0.063R n=57; unfiltered ORB t1.5R −0.079R n=415 | 2 |
-| whale | RVOL ≥2 day-high/low break, VWAP side, t2R | **negative** (30-min proxy) | −0.280R n=97, both halves < 0 | 2 |
-| news | News-catalyst momentum, pullback hold | untested (no headline history) | — | 2 |
-| options | Debit spreads, max loss $40, ≥1 DTE, legs <10% wide | untested (no chain history) | — | 2 |
-| risk / journal / kiwi | enforcer / logging / approves only | n/a | — | 0 |
+| bot | strategy | status (Nov 2 promotion rule) | in-sample (after fees/slip) | walk-forward out-of-sample | max/day |
+|---|---|---|---|---|---|
+| scanner | Big-gap fade 0.75×ATR14 (XIU, SOFI, HXT) | all **testing** (XIU was active; 0–1 of 20 journal trades) | XIU +0.188R n=50; SOFI +0.175R n=33; HXT +0.115R n=49 | XIU +0.037R n=38 (3/5 windows +); SOFI +0.365R n=11 (4/5); HXT +0.055R n=39 (3/5). Live params in the same windows: +0.169 / +0.402 / +0.149R | 2 |
+| quant | ORB 15-min + VWAP reclaim/loss, RVOL ≥1.5 | testing; **VWAP half: retire proposed** (approval pending) | ORB t2R +0.101R n=47; VWAP +0.063R n=57 (30-min proxy) | ORB +0.121R n=51 (3/4 windows +); VWAP −0.148R n=46 (1/4) | 2 |
+| quant | **Stocks-in-play 15-min ORB** (new; scout = Whale Tracker; Zarattini, Barbon & Aziz 2024, SSRN 4729284) | testing (pilot only) | 5-min pilot, 14 hindsight-picked days: −0.616R n=12 (range-side stop instead: +0.542R) | — | 2 |
+| whale | SIP scout + **QQQ-only** RVOL breakout (all other tickers **retired**) | retired; QQQ testing | −0.280R n=97 overall; QQQ +0.179R n=17 | — | 2 |
+| news | News-catalyst momentum, pullback hold + devil's-advocate veto | untested (no headline history) | — | — | 2 |
+| options | Debit spreads, max loss $40, ≥1 DTE, legs <10% wide | untested (no chain history) | — | — | 2 |
+| risk / journal / kiwi | enforcer / logging / approves only | n/a | — | — | 0 |
 
 New-rule backtests: `/workspace/quant/multistrat-2026-11-02/backtest_new_rules.py` → `results_new_rules.csv/.txt`, `trades_new_rules.csv` (Questrade 30-min RTH bars, May 4 - Oct 30 2026, XIU.TO ZEB.TO QQC.TO QQQ). They are 30-min proxies of 15/5-min rules, not exact tests.
 
@@ -203,3 +204,50 @@ python3 set_watch.py reset                 # new day: drop every item not dated 
 - `add` on a ticker already on today's list updates it. Extra flags: `--trigger` (defaults to entry), `--zone-low/--zone-high`, `--not-before HH:MM`, `--entry-note`, `--tested yes|no` (default no), `--test-note`, `--tv-symbol EXCHANGE:SYMBOL`, `--status`, `--last/--time`.
 - `price` moves the status by itself: watching → triggered when the trigger is crossed (long ≥ trigger and ≤ zone high; short ≤ trigger and ≥ zone low; not before `--not-before`); triggered / in trade → target hit or stopped when the target or stop is crossed; watching → expired for a price at/after 16:00 ET. `triggered` is a signal, not a fill; set `in trade` by hand once K's order fills. In trade, `openPnl` = (last − fill) × shares (by side) minus estimated fees. Skipped / closed / target hit / stopped / expired are never changed by a price update.
 - Prices come from the Questrade connector (`get_quotes`, read only).
+
+## Risk, mood, debate and walk-forward upgrades (K approved, Nov 2 2026)
+Every routine run (9:45 AM–3:15 PM ET, every 15 min) uses these scripts. None of them contacts Questrade or places orders; the run fetches bars/quotes through the read-only Questrade connector and passes files or values in.
+
+### `risk_check.py`: per-bot budgets, auto-pauses, one bet per group (run before EVERY order)
+```
+python3 risk_check.py --update                                    # first thing each run: refresh pauses + budget bars
+python3 risk_check.py --bot scanner --ticker XIU.TO --side short --risk 38.50 [--open SPY:long:35:quant ...]
+python3 risk_check.py --bot news --ticker SOFI --side long --risk 20 --idea 2026-11-03-SOFI-1
+python3 risk_check.py --bot quant --strategy sip_orb --ticker AMD --side long --risk 30 --idea 2026-11-03-AMD-1
+python3 risk_check.py --status          # print only
+python3 risk_check.py --unpause whale   # K lifts a pause by hand
+```
+Prints `ALLOW …` (exit 0) or `BLOCK …` (exit 2) with one line per reason. Checks: $40/trade; desk realized loss + open risk + this risk ≤ $150; < 4 open/pending positions; no entries after 15:15 ET; the bot is not paused; the bot's own budget (`strategies.json risk.botBudgetsCAD`: Scanner 50, Quant Lab 35, News Desk 25, Whale Tracker 20, Options Desk 20 = 150) — when the trade is too big it prints `RESIZE to risk <= X CAD` so the run can resize and re-check; same ticker already open; **one bet per correlation group and direction** (`risk.correlation.groups`: tsx_index, us_index, cdn_banks, energy, us_megacap_tech, semis, ev_auto, gold_miners, fintech_brokers; root-symbol match, so CNQ = CNQ.TO); **20-day daily-return correlation > 0.8** with an open same-direction position when both tickers are in `bars/` (else groups only); and for strategies with `devils_advocate.required` a debate with verdict `take`.
+- Real trades come from journal.json ideas with `taken: "yes"` (`log_idea.py resolve --taken yes --real-pnl X`), so no separate `--record-result` is needed. Open/pending = taken ideas with no result + today's watchlist items `triggered`/`in trade` + every `--open TICKER:side[:riskCAD[:bot]]` (pass each Questrade position / working entry; unknown risk counts as 40 CAD).
+- **Auto-pauses** (freqtrade-style protections), written to data.json `paused[]` = `{bot, rule, reason, since, until, setBy, setAt}`: `dailyBudget` (realized loss today ≥ budget → until next trading day), `stopoutGuard` (≥ 3 stop-outs in the bot's last 5 trading days → 2 trading days), `drawdownGuard` (last 20 real trades sum ≤ −4R → 5 trading days). Expired pauses move to `pausedHistory[]`; trades before an expired pause no longer count for that rule. Trading days = weekdays (exchange holidays are not skipped).
+- data.json `riskBudgets` = `{date, updated, bots{id:{budget, realizedLoss, openRisk, used, left}}, desk{…, openPositions}}` drives the site's budget bars.
+
+### `regime.py` + `regime.json`: market-mood tag (tag only, no filter)
+```
+# once a day before 9:45 ET: Questrade get_historical_data SPY (05902721-1882-4522-0364-ad9650530625), 1d, from 7 days ago to tomorrow, write_to_file
+python3 regime.py --ingest /workspace/agent-tools/<file>.txt
+python3 regime.py                # recompute from the cache only
+python3 regime.py --backfill     # tag old journal ideas
+```
+`regime.json` = `{date, spy_rv10, median, regime: calm|volatile, asOfClose, bars, stale, units, method, note, updated}`: SPY 10-day realized vol (annualized %) through the prior close vs its trailing 250-session median. `log_idea.py add` writes `regime` (+ `regimeDetail {spy_rv10, median, asOfClose, stale}`) on every new idea. Revisit as a filter after ~100 more trades (gap fade so far: calm +0.06R / volatile +0.24R on 116 trades).
+
+### `bars.py` + `bars/`: Questrade bar cache
+`python3 bars.py ingest FILE…` merges `get_historical_data` outputs into `bars/<SYMBOL>_<granularity>.csv`; `bars.py list` shows coverage. regime.py reads `bars/SPY_1d.csv`; risk_check.py's correlation check reads `bars/<ticker>_1d.csv`. Ingest a 1d bar for any ticker you hold so the correlation stays current.
+
+### `debate.py`: devil's-advocate veto (News Desk; Stocks-in-play ORB while untested)
+```
+python3 debate.py --id <idea id> --bull "…" --bear "…" --bear "…" --bear "…" --verdict skip
+python3 debate.py --id <idea id> --bull "…" --bear "…" --bear "…" --bear "…" --verdict take --why "why the bull case clearly wins"
+python3 debate.py --show --bot news
+```
+Needs ≥ 3 bear reasons and ≥ 1 bull reason; `take` needs `--why`. Writes `idea.debate = {bull[], bear[], verdict, why, by, at, regime, rule:"veto only"}` in journal.json. Prints `VETO` (exit 3) or `PASS` (exit 0). risk_check.py blocks a News Desk (or `--strategy sip_orb`) order without a `take` debate.
+
+### Walk-forward (`/workspace/quant/walkforward.py`)
+`python3 /workspace/quant/walkforward.py` → `/workspace/quant/walkforward-YYYY-MM-DD/` (`windows.csv`, `neighbours.csv`, `lookahead_audit.csv`, `oos_trades.csv`, `walkforward_results.json`, `output.txt`). Gap fade: 12-month train / 3-month test rolled quarterly (5 test windows, Oct 2025 – Nov 2 2026), grid k × stop. Quant Lab ORB / VWAP: 2-month train / 1-month test rolled monthly on 30-min bars (Jul–Oct 2026). Look-ahead audit recomputes every signal from truncated data: 0 leaks. **Promotion rule** (`strategies.json promotionRule`): active only if OOS mean R > 0 in most test windows AND ≥ 20 paper/real journal trades.
+
+### Site (index.html)
+- **Mood badge** on the vault's top-right corner: `MOOD · CALM` (green) / `MOOD · VOLATILE` (orange), tooltip with SPY rv10 vs median; shows the date if regime.json is not today's.
+- **Paused bots**: tower dimmed (grey, low beam) with a red `PAUSED` tag, the reason and the until date on its label; same tag on the org chart, flat view, desk panel and budget bar.
+- **Loss budgets today** panel (left column): desk $150 bar plus one bar per bot (used = realized loss + open risk), orange at 60%, red at 100%.
+- **News Desk · devil's advocate** panel (right column, under the watchlist) and in News Desk's desk panel: latest debate's verdict, bear case, bull case.
+- Approvals: one pending item — retire the VWAP half of Quant Lab's strategy (walk-forward negative).

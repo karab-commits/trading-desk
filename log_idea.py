@@ -13,6 +13,7 @@ traded exactly at the alert's plan, and records whether K actually took it.
 
 Fees come from data.json `fees` (Questrade schedule; see README). Money is kept in the
 idea's own currency (CAD or USD) and also converted to CAD with fees.usdcad for totals.
+Every `add` also tags the idea with today's market mood (`regime`: calm|volatile, from regime.py).
 After every add/resolve, data.json `paper` (by-date paper P&L for the wall board) is refreshed.
 """
 import argparse, json, os, sys
@@ -193,6 +194,16 @@ def cmd_add(a):
             'strategy': a.strategy, 'bot': a.bot, 'currency': (a.currency or infer_currency(t)).upper(),
             'note': a.note or '', 'loggedAt': now_et().isoformat(timespec='seconds')}
     idea['plan'] = plan_numbers(idea, cfg)
+    # market-mood tag (regime.py): tag only, never a filter
+    try:
+        sys.path.insert(0, HERE)
+        import regime as _regime
+        rg = _regime.tag_for(a.date)
+    except Exception:
+        rg = None
+    idea['regime'] = rg['regime'] if rg else None
+    idea['regimeDetail'] = ({'spy_rv10': rg['spy_rv10'], 'median': rg['median'], 'asOfClose': rg['asOfClose'],
+                             'stale': rg.get('stale', False)} if rg else {'error': 'no SPY bars cached (run regime.py)'})
     idea['feesSource'] = {'url': cfg.get('source'), 'checked': cfg.get('checked')}
     idea['result'] = None
     idea['taken'] = None
@@ -202,6 +213,7 @@ def cmd_add(a):
     write_back(ddir, journal, data)
     p, cur = idea['plan'], idea['currency']
     print(f'id: {iid}')
+    print(f"regime: {idea['regime'] or 'unknown'}" + (f" (SPY rv10 {rg['spy_rv10']}% vs median {rg['median']}%)" if rg else ''))
     print(f"{t} {a.side} {a.shares} @ {a.entry} stop {a.stop} target {a.target} ({cur})")
     print(f"risk {fmt_money(-p['riskGross'], cur)} | reward {fmt_money(p['rewardGross'], cur)} | R:R {p['rr']}")
     print(f"fees est: {p['feesAtTarget']['total']:.2f} at target / {p['feesAtStop']['total']:.2f} at stop {cur}")
