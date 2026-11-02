@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 9:54 AM ET",
+  "lastUpdated": "Mon Nov 2, 2026 10:04 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -525,7 +525,7 @@
     {
       "date": "2026-11-02",
       "ticker": "RIVN",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-02T09:46:11-05:00",
       "side": "short",
@@ -544,16 +544,17 @@
       "netLossAtStopCAD": -12.63,
       "planFrom": "journal",
       "journalId": "2026-11-02-RIVN-1",
-      "reason": "Gapped up on UBS upgrade, fading under VWAP",
+      "reason": "Ran through 13.12 stop before triggering",
       "trigger": 12.8,
       "entryNote": "below 12.80 (~12.79), under VWAP/open after 9:45",
       "testNote": "untested gap-fade variant on RIVN",
       "session": "adhoc",
       "tested": false,
-      "last": 13.055,
-      "priceTime": "2026-11-02T09:54:17-05:00",
+      "last": 13.205,
+      "priceTime": "2026-11-02T10:04:07-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-02T10:04:23-05:00"
     },
     {
       "date": "2026-11-02",
@@ -616,5 +617,5 @@
       "priceTime": "2026-11-02T09:54:17-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-02T09:54:24-05:00"
+  "watchlistUpdated": "2026-11-02T10:04:23-05:00"
 }
