@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 10:06 AM ET",
+  "lastUpdated": "Mon Nov 2, 2026 10:25 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -550,8 +550,8 @@
       "testNote": "untested gap-fade variant on RIVN",
       "session": "adhoc",
       "tested": false,
-      "last": 13.225,
-      "priceTime": "2026-11-02T10:05:10-05:00",
+      "last": 13.4886,
+      "priceTime": "2026-11-02T10:24:57-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-02T10:04:23-05:00",
@@ -587,8 +587,8 @@
       "testNote": "backtest found no edge",
       "session": "premarket",
       "tested": false,
-      "last": 47.36,
-      "priceTime": "2026-11-02T10:05:10-05:00",
+      "last": 47.6,
+      "priceTime": "2026-11-02T10:24:58-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-02T10:04:39-05:00",
@@ -616,10 +616,10 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.11,
-      "priceTime": "2026-11-02T10:05:10-05:00",
+      "last": 54.2,
+      "priceTime": "2026-11-02T10:24:58-05:00",
       "tvSymbol": "TSX:XIU"
     }
   ],
-  "watchlistUpdated": "2026-11-02T10:06:24-05:00"
+  "watchlistUpdated": "2026-11-02T10:25:07-05:00"
 }
