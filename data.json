@@ -196,7 +196,8 @@
     "maxRiskPerTrade": 100,
     "openPositions": 0,
     "accountLabel": "Questrade margin",
-    "accountLast4": "0944"
+    "accountLast4": "0944",
+    "maxTradesPerDay": 1
   },
   "todayTrade": {
     "symbol": "QQC.TO",
@@ -280,7 +281,9 @@
     "Same-day only, flat by the close",
     "At most $100 at risk per trade",
     "Nothing sent without K's go",
-    "K approves each order in the Questrade app"
+    "K approves each order in the Questrade app",
+    "One trade a day max",
+    "Profit shown after fees"
   ],
   "playbook": [
     {
@@ -457,5 +460,43 @@
     "total": 0,
     "trades": 0
   },
-  "lastApprovedIdea": null
+  "lastApprovedIdea": null,
+  "fees": {
+    "broker": "Questrade self-directed (online orders)",
+    "checked": "2026-11-02",
+    "source": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+    "sources": [
+      "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+      "https://www.questrade.com/pricing-fees",
+      "https://www.questrade.com/learning/using-questrade/0-commissions-faq",
+      "https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2",
+      "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?recent=3"
+    ],
+    "accountCurrency": "CAD",
+    "stocksEtfs": {
+      "commissionPerOrder": 0,
+      "ecnPerShare": {
+        "CAD": 0,
+        "USD": 0
+      },
+      "note": "Stock and ETF buy/sell: Free (Canadian and US listed, online). ECN: none on Canadian orders; none on US orders unless direct-routed (NASDAQ $0.003/sh, ARCA/NYSE/BATS/EDGX $0.004/sh remove liquidity), OTC ($0.000005/sh) or overnight 8pm-2am ($0.003/sh). The desk uses smart routing, so 0."
+    },
+    "secFee": {
+      "rate": 2.06e-05,
+      "appliesTo": "sales of US-listed securities",
+      "note": "SEC Section 31 fee $20.60 per $1M of sale value, effective Apr 4 2026 (Questrade page and SEC advisory agree)"
+    },
+    "fx": {
+      "spreadPct": 1.5,
+      "mode": "pnl",
+      "note": "Questrade Currency Conversion (USD/CAD) 1.5%. Same-day US trades in the margin account settle in USD with no forced conversion, so only the P&L is assumed converted back to CAD (mode 'pnl'). Set mode 'round_trip' if CAD is converted to buy and back after selling, or 'none' to keep USD."
+    },
+    "usdcad": {
+      "rate": 1.396,
+      "asOf": "2026-10-30",
+      "source": "Bank of Canada daily average (FXUSDCAD)",
+      "note": "Used only to show USD P&L in CAD totals"
+    },
+    "notIncluded": "Short borrow fees (overnight only; the desk is flat by the close), margin interest, FINRA TAF (not listed on Questrade's schedule)"
+  }
 }

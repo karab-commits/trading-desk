@@ -1,6 +1,6 @@
-# Bullpen v2 preview (not live)
+# K's AI Trading Desk · Bullpen
 
-`bullpen-v2.html` is self-contained (data is inlined as a fallback); when hosted it reads `data.json` every 60 s.
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is self-contained (data is inlined as a fallback); when hosted it reads `data.json` every 60 s.
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.
 
 ## New data.json fields
@@ -81,3 +81,70 @@ python3 set_pnl.py --rejected 2                 # Risk Manager, today
 python3 set_pnl.py --period week --desk --realized 40 --desk-trades 3
 python3 set_pnl.py --reset today                # start of a new day
 ```
+
+## Paper-tracking every alert (journal.json + log_idea.py)
+
+Every idea the desk sends K is logged **before** the alert goes out, taken or not, then scored later as if it had been traded exactly at the alert's plan. Nothing in `journal.json` is invented: ideas come from real alerts, exits from real prices, real P&L from Questrade.
+
+`journal.json` = `{"version": 1, "ideas": [...]}`. Each idea:
+
+| key | notes |
+|---|---|
+| `id` | `YYYY-MM-DD-ROOT-n`, e.g. `2026-11-03-XIU-1` |
+| `date`, `session` | alert date (ET) and `premarket` / `midday` / `adhoc` |
+| `ticker`, `side`, `entry`, `stop`, `target`, `shares` | the plan in the alert |
+| `strategy`, `bot` | playbook strategy name and the bot id whose idea it was (scorecard groups by both) |
+| `currency` | `CAD` / `USD`. Default: CAD for `.TO .V .CN .NE` tickers, else USD |
+| `plan` | `riskGross`, `rewardGross`, `rr`, `feesAtTarget`, `feesAtStop`, `netProfitAtTarget`, `netLossAtStop`, `rrNet` (+ `…CAD`) |
+| `result` | `null` while open; then `outcome` (`target`/`stop`/`time`/`no-fill`), `exit`, `gross`, `fees`, `net`, `grossR`, `netR`, `netCAD` |
+| `taken`, `realPnl`, `realPnlCAD`, `realR` | whether K took it and the real P&L (net of fees, idea currency) |
+
+```
+# log an idea (prints the id and the after-fee numbers to quote in the alert)
+python3 log_idea.py add --date 2026-11-03 --session premarket --ticker XIU.TO --side short \
+    --entry 54.31 --stop 54.84 --target 53.78 --shares 150 --strategy "Big-gap fade XIU" --bot scanner [--currency CAD] [--note "..."]
+# score it at the plan (time = closed at the close / time stop at PRICE)
+python3 log_idea.py resolve --id 2026-11-03-XIU-1 --outcome target|stop|time|no-fill --exit 53.78 [--taken yes|no] [--real-pnl 75.10]
+# unresolved ideas
+python3 log_idea.py list --date 2026-11-03 --open
+```
+`add` output ends with an `alert line:` like `Profit after fees +$79.50 CAD at target, loss after fees -$79.50 CAD at stop` for the alert (rule: **profit is shown after fees in every alert**).
+R = P&L ÷ planned gross risk (|entry − stop| × shares). `no-fill` ideas are counted but not scored.
+After every add/resolve, `data.json.paper` is refreshed: `{currency, basis, updated, ideasLogged, byDate: {"YYYY-MM-DD": {net, ideas, resolved, open, filled, wins, real, taken}}}` (CAD, net of fees, resolved ideas only). The site works out today / this ISO week / all time from `byDate` in ET, so it never goes stale overnight.
+All scripts take `--dir PATH` (or `DESK_DIR=PATH`) to work on a copy, e.g. for tests.
+
+## Weekly scorecard (scorecard.py) — Fridays
+
+```
+python3 scorecard.py                  # current ISO week (ET) + all time
+python3 scorecard.py --week 2026-W45  # a given week
+python3 scorecard.py --all            # print all-time (data.json still gets week + all time)
+```
+Writes `data.json.scorecard = {updated, currency: "CAD", basis, week: {label, from, to, title, ideas, open, paper, real}, allTime: {ideas, open, paper, real}}` and prints a short summary.
+Each book (`paper` = every filled idea at its plan; `real` = ideas with `taken: yes` and a `realPnl`) has `trades, wins, losses, winRate, avgWin, avgLoss, expectancyR, netPnl, bestStrategy, worstStrategy, byStrategy[], byBot[]` (all CAD, after fees; win = net > 0). `byBot` answers "which bot's ideas actually paid".
+
+## Fees (data.json `fees`)
+
+Checked 2026-11-02 on Questrade's own pages: [Transaction fees](https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction), [Pricing](https://www.questrade.com/pricing-fees), [$0 commissions FAQ](https://www.questrade.com/learning/using-questrade/0-commissions-faq).
+
+| item | Questrade (self-directed, online) | used in scripts |
+|---|---|---|
+| Stock / ETF commission, buy and sell (Canadian + US listed) | **Free** ($0 since Feb 10 2025) | `stocksEtfs.commissionPerOrder: 0` |
+| ECN fees | None on Canadian orders. None on US orders unless **direct-routed** (remove liquidity: NASDAQ $0.003/sh; ARCA, NYSE, BATS, EDGX $0.004/sh; IEX $0.0012/sh; add liquidity: EDGA $0.004/sh), US OTC ($0.000005/sh), or overnight session 8pm-2am ET ($0.003/sh) | `0` (desk uses smart routing) |
+| SEC fee | US-listed sales only: 0.0000206 × sale value ($20.60 per $1M, SEC FY2026 rate from Apr 4 2026, [SEC advisory](https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2)) | `secFee.rate` on the selling leg (exit for longs, entry for shorts) |
+| Currency conversion USD/CAD | **1.5%** | `fx.spreadPct: 1.5`, `fx.mode: "pnl"` |
+| Options (not used yet) | US equity options $0; CAD options $0.99/contract; US index $0.99/contract | — |
+
+`fx.mode`: `pnl` (default) assumes a same-day USD trade in the margin account settles in USD (no forced conversion) and only the P&L is converted back, costing 1.5% of |P&L|; `round_trip` charges 1.5% on entry + exit notional (CAD converted to buy and back after selling); `none` keeps USD.
+USD amounts are shown in CAD at `fees.usdcad.rate` (Bank of Canada daily average; 1.3960 on 2026-10-30). Update `rate`/`asOf` when it moves.
+Not included: short borrow fees (charged on overnight shorts; the desk is flat by the close), margin interest, FINRA TAF (not on Questrade's schedule).
+
+## Rules added Nov 2 2026 (approved by K)
+- **One trade a day max**: routines must not send a second trade alert once one is taken that day. Shown in Desk rules and as `Trades today N / 1` in the Account card (`account.maxTradesPerDay`, default 1; count = `pnlToday.trades`).
+- **Profit shown after fees**: every alert quotes `log_idea.py add`'s net numbers. If `todayTrade` has `projectedNet` / `maxLossNet`, the Today's trade card shows those as "Profit / Loss after fees".
+
+## Site additions (v3)
+- Wall P&L board desk row shows **REAL** (Questrade) and **PAPER** (all logged ideas, net of fees) side by side for the board's period (TODAY / WEEK / ALL TIME). Empty paper state: `--  no ideas`.
+- Account card: `Trades today N / 1` and `Paper ideas today`.
+- **Weekly scorecard** card under Account (from `data.json.scorecard`): paper vs real table, whose ideas paid, all-time line. Empty state: "First scorecard Friday".
+- Desk rules card lists the two new rules plus a fee footnote linking the Questrade schedule.
