@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans the market for gap-and-go setups",
-      "status": "Waiting for QQC.TO to trade above 47.67 (buy zone 47.67-48.10). Pre-market scan runs at 9:00 AM ET.",
+      "status": "Pre-market: XIU indicated 54.10 vs 53.78 close (+0.32), trigger 0.53 (ATR14 0.70). SOFI gap +0.26 vs trigger 0.67. No setups passed.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -37,18 +37,21 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watching QQC.TO > 47.67",
-        "detail": "Waiting for QQC.TO to trade above 47.67 (buy zone 47.67-48.10). Pre-market scan runs at 9:00 AM ET.",
-        "since": "2026-11-02T08:00:00-05:00",
+        "now": "Watching XIU open vs trigger",
+        "detail": "Pre-market: XIU indicated 54.10 vs 53.78 close (+0.32), trigger 0.53 (ATR14 0.70). SOFI gap +0.26 vs trigger 0.67. No setups passed.",
+        "since": "2026-11-02T09:07:24-05:00",
         "state": "waiting",
-        "next": "Pre-market scan 9:00"
+        "next": "QQC check 10:05",
+        "log": [
+          "Pre-market scan done 9:10 ET"
+        ]
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Reads headlines and flags anything that moves the plan",
-      "status": "Waiting on the ISM manufacturing report at 10:00 AM ET before the QQC check.",
+      "status": "TSX futures +0.2% after Friday's 1.7% drop; Brent down 4% on Iran talks; Trump says Canada trade deal framework; US midterms Tue; Apple earnings after close; Canada mfg PMI 9:30.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -56,11 +59,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "ISM report at 10:00",
-        "detail": "Waiting on the ISM manufacturing report at 10:00 AM ET before the QQC check.",
-        "since": "2026-11-02T08:00:00-05:00",
-        "state": "waiting",
-        "next": "Pre-market scan 9:00"
+        "now": "TSX fut +0.2%, oil -4%",
+        "detail": "TSX futures +0.2% after Friday's 1.7% drop; Brent down 4% on Iran talks; Trump says Canada trade deal framework; US midterms Tue; Apple earnings after close; Canada mfg PMI 9:30.",
+        "since": "2026-11-02T09:07:24-05:00",
+        "state": "done",
+        "next": "Midday scan 12:00"
       }
     },
     {
@@ -75,18 +78,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Standing by",
+        "now": "No big-money signal found",
         "detail": "Nothing to watch yet. Big-print tracking starts with the pre-market scan.",
-        "since": "2026-11-02T08:00:00-05:00",
+        "since": "2026-11-02T09:07:24-05:00",
         "state": "idle",
-        "next": "Pre-market scan 9:00"
+        "next": "Midday scan 12:00"
       }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Enforces the risk rules. Says no.",
-      "status": "QQC.TO plan sized at 10 shares with about $6 at risk, inside the $100 max per trade. Re-checks at 10:05 AM ET.",
+      "status": "XIU gap below 0.75xATR trigger; SOFI gap below trigger. Nothing reached risk sizing.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -97,10 +100,10 @@
       "rejectedWeek": 0,
       "rejectedAllTime": 0,
       "activity": {
-        "now": "QQC: 10 sh, $6 risk OK",
-        "detail": "QQC.TO plan sized at 10 shares with about $6 at risk, inside the $100 max per trade. Re-checks at 10:05 AM ET.",
-        "since": "2026-11-02T08:00:00-05:00",
-        "state": "waiting",
+        "now": "No idea to size this AM",
+        "detail": "XIU gap below 0.75xATR trigger; SOFI gap below trigger. Nothing reached risk sizing.",
+        "since": "2026-11-02T09:07:24-05:00",
+        "state": "done",
         "next": "QQC check 10:05"
       }
     },
@@ -108,7 +111,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Runs the plan, nothing goes out without K's go.",
-      "status": "Setting today's plan: QQC.TO gap-and-go is the only setup on the board; max $100 risk per trade.",
+      "status": "Pre-market note to K: no setups worth taking. XIU fade needs open <=53.25 (buy) or >=54.31 (short).",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -116,11 +119,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Planning today's session",
-        "detail": "Setting today's plan: QQC.TO gap-and-go is the only setup on the board; max $100 risk per trade.",
-        "since": "2026-11-02T08:00:00-05:00",
-        "state": "working",
-        "next": "Pre-market scan 9:00"
+        "now": "No setups; XIU trig 0.53",
+        "detail": "Pre-market note to K: no setups worth taking. XIU fade needs open <=53.25 (buy) or >=54.31 (short).",
+        "since": "2026-11-02T09:07:24-05:00",
+        "state": "waiting",
+        "next": "QQC check 10:05"
       }
     },
     {
@@ -135,11 +138,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Found: XIU big-gap fade",
+        "now": "XIU fade: no trigger today",
         "detail": "Tested 9 strategies on 8 tickers; XIU big-gap fade +0.19R over 50 trades, positive both halves",
-        "since": "2026-11-02T08:00:00-05:00",
-        "state": "done",
-        "next": "Daily review 4:30",
+        "since": "2026-11-02T09:07:24-05:00",
+        "state": "idle",
+        "next": "Daily review 4:30 PM",
         "log": [
           "Tested 9 strategies on 8 tickers (72 strategy/ticker runs)",
           "3 active: big-gap fade on XIU.TO, SOFI, HXT.TO",
