@@ -1,6 +1,17 @@
-# K's AI Trading Desk · Bullpen
+# K's AI Trading Desk · Neon City
 
-Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is self-contained (data is inlined as a fallback); when hosted it reads `data.json` every 30 s.
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json` and `journal.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
+The classic pixel bullpen is kept at `bullpen.html` (self-contained, inlined fallback data, reads `data.json` every 30 s).
+
+### Neon City: what drives what (all from data.json / journal.json)
+- Vault: `pnlAllTime.total`, `pnlToday`, `account`, `desk.daysRunning`; progress bar = `pnlToday.trades / account.maxTradesPerDay`. Green/red days and the daily bar chart use `paper.byDate[date].real` (chart shows an empty state under 5 days).
+- Towers: one per `bots[]`; height = number of `journal.json` ideas with that `bot`; beam brightness = `activity.state`. Kiwi's centre panel shows the desk total.
+- Pulses fire only for new journal events (idea `loggedAt`, `result.resolvedAt`) seen on refresh, or via "Replay today's events".
+- Money board: `pnlToday/pnlWeek/pnlAllTime` plus per-bot `pnlToday/Week/AllTime`, `tradesToday/Week/AllTime`. Paper results are always labelled not-real.
+- Watchlist: today's `watchlist[]` items with TradingView `tv-single-ticker` widgets (`tvSymbol` wins) and a ticker tape.
+- Approvals waiting on K: optional `approvals[]` = `{from, date, title, status}` (status `pending` or absent = shown). Until that field exists the page shows a static list `STATIC_PENDING_APPROVALS` in index.html (Nov 2 daily review).
+
+## Classic bullpen (bullpen.html)
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.
 
 ## New data.json fields
