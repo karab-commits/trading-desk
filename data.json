@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 9:07 AM ET",
+  "lastUpdated": "Mon Nov 2, 2026 9:43 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans the market for gap-and-go setups",
-      "status": "Pre-market: XIU indicated 54.10 vs 53.78 close (+0.32), trigger 0.53 (ATR14 0.70). SOFI gap +0.26 vs trigger 0.67. No setups passed.",
+      "status": "9:43 ET scan: no active-playbook setup triggered (XIU open 53.87 +0.09, SOFI 16.975 +0.22, HXT 96.66 +0.13, ZEB 75.67 +0.34, all under 0.75xATR). One untested idea: RIVN opened 12.75 vs 12.18 close (+1.2 ATR, UBS upgrade), now 12.855 under VWAP 12.88. Short 27 only below 12.80, stop 13.12, target 12.18. Shortability unconfirmed.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -37,13 +37,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watching XIU open vs trigger",
-        "detail": "Pre-market: XIU indicated 54.10 vs 53.78 close (+0.32), trigger 0.53 (ATR14 0.70). SOFI gap +0.26 vs trigger 0.67. No setups passed.",
-        "since": "2026-11-02T09:07:24-05:00",
+        "now": "RIVN short if <12.80",
+        "detail": "9:43 ET scan: no active-playbook setup triggered (XIU open 53.87 +0.09, SOFI 16.975 +0.22, HXT 96.66 +0.13, ZEB 75.67 +0.34, all under 0.75xATR). One untested idea: RIVN opened 12.75 vs 12.18 close (+1.2 ATR, UBS upgrade), now 12.855 under VWAP 12.88. Short 27 only below 12.80, stop 13.12, target 12.18. Shortability unconfirmed.",
+        "since": "2026-11-02T09:43:17-05:00",
         "state": "waiting",
         "next": "QQC check 10:05",
         "log": [
-          "Pre-market scan done 9:10 ET"
+          "Pre-market scan done 9:10 ET",
+          "9:43 ET open scan: 1 untested idea (RIVN)"
         ]
       }
     },
@@ -89,22 +90,25 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Enforces the risk rules. Says no.",
-      "status": "XIU gap below 0.75xATR trigger; SOFI gap below trigger. Nothing reached risk sizing.",
+      "status": "Rejected: XEG down-open buy (open 30.79, stop 30.44 hit at 30.35 low in first 5 min); CNQ gap-fade long (untested, XEG gap fade tested -0.036R); PGEN fade (news gap 3.7 ATR, competitor FDA approval); EL fade (target 109.40 already hit, low 107.57). RIVN short 27: max loss -9.05 USD after fees, fits 349.86 USD buying power.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
-      "rejectedToday": 0,
+      "rejectedToday": 4,
       "rejectedWeek": 0,
       "rejectedAllTime": 0,
       "activity": {
-        "now": "No idea to size this AM",
-        "detail": "XIU gap below 0.75xATR trigger; SOFI gap below trigger. Nothing reached risk sizing.",
-        "since": "2026-11-02T09:07:24-05:00",
+        "now": "4 rejected, RIVN sized",
+        "detail": "Rejected: XEG down-open buy (open 30.79, stop 30.44 hit at 30.35 low in first 5 min); CNQ gap-fade long (untested, XEG gap fade tested -0.036R); PGEN fade (news gap 3.7 ATR, competitor FDA approval); EL fade (target 109.40 already hit, low 107.57). RIVN short 27: max loss -9.05 USD after fees, fits 349.86 USD buying power.",
+        "since": "2026-11-02T09:43:17-05:00",
         "state": "done",
-        "next": "QQC check 10:05"
+        "next": "QQC check 10:05",
+        "log": [
+          "9:45 ET: 4 rejected, RIVN conditional"
+        ]
       }
     },
     {
@@ -498,5 +502,23 @@
       "note": "Used only to show USD P&L in CAD totals"
     },
     "notIncluded": "Short borrow fees (overnight only; the desk is flat by the close), margin interest, FINRA TAF (not listed on Questrade's schedule)"
+  },
+  "paper": {
+    "currency": "CAD",
+    "basis": "net of fees, resolved ideas only",
+    "updated": "2026-11-02T09:43:09-05:00",
+    "ideasLogged": 1,
+    "byDate": {
+      "2026-11-02": {
+        "net": 0.0,
+        "ideas": 1,
+        "resolved": 0,
+        "open": 1,
+        "filled": 0,
+        "wins": 0,
+        "real": 0.0,
+        "taken": 0
+      }
+    }
   }
 }

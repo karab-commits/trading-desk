@@ -1,4 +1,53 @@
 {
   "version": 1,
-  "ideas": []
+  "ideas": [
+    {
+      "id": "2026-11-02-RIVN-1",
+      "date": "2026-11-02",
+      "session": "adhoc",
+      "ticker": "RIVN",
+      "side": "short",
+      "entry": 12.79,
+      "stop": 13.12,
+      "target": 12.18,
+      "shares": 27,
+      "strategy": "Gap fade >0.75ATR (RIVN untested)",
+      "bot": "scanner",
+      "currency": "USD",
+      "note": "Conditional: only if RIVN trades below 12.80 (under VWAP/open) after 9:45; shortability unconfirmed; untested on RIVN",
+      "loggedAt": "2026-11-02T09:43:09-05:00",
+      "plan": {
+        "riskGross": 8.91,
+        "rewardGross": 16.47,
+        "rr": 1.85,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0071,
+          "fx": 0.25,
+          "total": 0.2542
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0071,
+          "fx": 0.13,
+          "total": 0.1408
+        },
+        "netProfitAtTarget": 16.22,
+        "netLossAtStop": -9.05,
+        "rrNet": 1.79,
+        "netProfitAtTargetCAD": 22.64,
+        "netLossAtStopCAD": -12.63
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
+    }
+  ]
 }
