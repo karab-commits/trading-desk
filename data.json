@@ -292,7 +292,7 @@
   ],
   "playbook": [
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
       "status": "active",
       "trades": 50,
       "winRate": 58.0,
@@ -300,7 +300,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.188R (no-slip +0.230, 0.04%/side +0.146); H1 +0.236R n=26, H2 +0.137R n=24; last 6m (May-Oct 2026) +0.207R n=12. Paper trade / minimum size first: pooled result negative in the last ~4 months."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 SOFI",
+      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
       "status": "active",
       "trades": 33,
       "winRate": 60.6,
@@ -308,7 +308,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.184R (no-slip +0.192, 0.04%/side +0.177); H1 +0.017R n=19, H2 +0.412R n=14; last 6m (May-Oct 2026) +0.310R n=6. Paper trade / minimum size first: pooled result negative in the last ~4 months."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 HXT.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
       "status": "active",
       "trades": 49,
       "winRate": 57.1,
@@ -316,7 +316,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.115R (no-slip +0.157, 0.04%/side +0.074); H1 +0.074R n=28, H2 +0.170R n=21; last 6m (May-Oct 2026) +0.038R n=10. Paper trade / minimum size first: pooled result negative in the last ~4 months."
     },
     {
-      "name": "Down-open buy >0.35ATR, daily \u00b7 ZEB.TO",
+      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 64,
       "winRate": 54.7,
@@ -324,7 +324,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 ZEB.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 30,
       "winRate": 80.0,
@@ -332,7 +332,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 all 8 tickers pooled",
+      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
       "status": "testing",
       "trades": 412,
       "winRate": 55.1,
@@ -340,7 +340,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
     },
     {
-      "name": "VWAP cross +trendFilter, 30-min \u00b7 XIU.TO",
+      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
       "status": "testing",
       "trades": 51,
       "winRate": 54.9,
@@ -551,8 +551,8 @@
       "testNote": "untested gap-fade variant on RIVN",
       "session": "adhoc",
       "tested": false,
-      "last": 13.465,
-      "priceTime": "2026-11-02T12:08:53-05:00",
+      "last": 13.475,
+      "priceTime": "2026-11-02T12:10:41-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-02T10:04:23-05:00",
@@ -588,8 +588,8 @@
       "testNote": "backtest found no edge",
       "session": "premarket",
       "tested": false,
-      "last": 47.35,
-      "priceTime": "2026-11-02T12:08:53-05:00",
+      "last": 47.3,
+      "priceTime": "2026-11-02T12:10:41-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-02T10:04:39-05:00",
@@ -604,7 +604,7 @@
       "strategy": "HOD breakout over VWAP (untested; ORB/PDH-break tests negative)",
       "bot": "scanner",
       "reason": "Not taken: intraday breakouts tested negative on XIU (ORB30 -0.14R, PDH break -0.26R)",
-      "entryNote": "gap trigger 0.53 \u00b7 opened 53.87",
+      "entryNote": "gap trigger 0.53 · opened 53.87",
       "testNote": "+0.188R over 50 trades (backtest)",
       "session": "premarket",
       "tested": true,
@@ -617,8 +617,8 @@
       "netLossAtStopCAD": -11.96,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.32,
-      "priceTime": "2026-11-02T12:08:53-05:00",
+      "last": 54.31,
+      "priceTime": "2026-11-02T12:10:41-05:00",
       "tvSymbol": "TSX:XIU",
       "side": "long",
       "entry": 54.33,
@@ -659,9 +659,9 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-02T12:09:36-05:00",
-      "last": 489.46,
-      "priceTime": "2026-11-02T12:08:53-05:00"
+      "last": 488.745,
+      "priceTime": "2026-11-02T12:10:41-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-02T12:09:36-05:00"
+  "watchlistUpdated": "2026-11-02T12:10:48-05:00"
 }
