@@ -1,0 +1,30 @@
+                  slice  n  winRate  expR_net  totalR  maxDD_R     t
+             XIU.TO all 50     58.0     0.188    9.41     2.43  2.17
+  XIU.TO H1 <2025-10-31 26     61.5     0.236    6.13     2.43  1.84
+              XIU.TO H2 24     54.2     0.137    3.28     1.40  1.16
+         XIU.TO last 6m 12     58.3     0.207    2.49     0.57  1.39
+         XIU.TO last 3m  6     66.7     0.116    0.69     0.57  0.53
+             HXT.TO all 49     57.1     0.115    5.66     4.57  1.29
+  HXT.TO H1 <2025-10-31 28     53.6     0.074    2.08     4.57  0.57
+              HXT.TO H2 21     61.9     0.170    3.58     1.06  1.43
+         HXT.TO last 6m 10     60.0     0.038    0.38     1.06  0.24
+         HXT.TO last 3m  5     60.0    -0.148   -0.74     1.06 -0.62
+               SOFI all 33     60.6     0.175    5.77     1.72  1.50
+    SOFI H1 <2025-10-31 19     52.6     0.008    0.14     1.72  0.05
+                SOFI H2 14     71.4     0.402    5.63     0.57  2.52
+           SOFI last 6m  6     66.7     0.303    1.82     0.28  1.38
+           SOFI last 3m  3     66.7     0.487    1.46     0.28  1.25
+    Portfolio 1/day all 78     56.4     0.150   11.71     2.03  2.09
+Portfolio 1/day last 6m 19     57.9     0.171    3.25     1.06  1.29
+Portfolio 1/day last 3m 10     60.0     0.110    1.10     1.06  0.51
+XIU/HXT same-day signals: 42 of 49 HXT trades (same TSX-60 basket)
+Last 8 XIU signals:
+      date  side  entry  stop  exit reason      netR
+2026-06-15 short  52.22 52.69 52.11  close  0.189647
+2026-06-23  long  51.35 50.86 51.84 target  0.957882
+2026-08-04 short  53.25 53.74 53.41  close -0.370065
+2026-08-05 short  54.26 55.11 53.94  close  0.351012
+2026-08-26  long  54.57 54.24 54.41  close -0.550897
+2026-09-11 short  52.99 53.42 52.92  close  0.113530
+2026-09-17 short  53.36 53.92 53.23  close  0.194075
+2026-10-16  long  53.60 53.11 54.09 target  0.956045
