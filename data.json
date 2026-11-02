@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 2, 2026 7:23 AM ET",
+  "lastUpdated": "Mon Nov 2, 2026 8:00 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,90 +29,161 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans the market for gap-and-go setups",
-      "status": "Pre-market scan at 9:00 AM ET. QQC.TO is the setup for today.",
-      "bubbles": [
-        "9:00 scan queued",
-        "QQC.TO on the board",
-        "buy zone 47.67-48.10"
-      ]
+      "status": "Waiting for QQC.TO to trade above 47.67 (buy zone 47.67-48.10). Pre-market scan runs at 9:00 AM ET.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "Watching QQC.TO > 47.67",
+        "detail": "Waiting for QQC.TO to trade above 47.67 (buy zone 47.67-48.10). Pre-market scan runs at 9:00 AM ET.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "waiting",
+        "next": "Pre-market scan 9:00"
+      }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Reads headlines and flags anything that moves the plan",
-      "status": "Reading overnight headlines before the open.",
-      "bubbles": [
-        "reading headlines",
-        "nothing breaking yet",
-        "checking QQC + XEG news"
-      ]
+      "status": "Waiting on the ISM manufacturing report at 10:00 AM ET before the QQC check.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "ISM report at 10:00",
+        "detail": "Waiting on the ISM manufacturing report at 10:00 AM ET before the QQC check.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "waiting",
+        "next": "Pre-market scan 9:00"
+      }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Watches for large orders and unusual volume",
-      "status": "Watching for big prints at the open.",
-      "bubbles": [
-        "watching big prints",
-        "no whales spotted yet",
-        "eyes on volume at 9:30"
-      ]
+      "status": "Nothing to watch yet. Big-print tracking starts with the pre-market scan.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "Standing by",
+        "detail": "Nothing to watch yet. Big-print tracking starts with the pre-market scan.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "idle",
+        "next": "Pre-market scan 9:00"
+      }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Enforces the risk rules. Says no.",
-      "status": "Max $100 at risk per trade. XEG.TO short blocked until shortability is confirmed.",
-      "bubbles": [
-        "no.",
-        "max $100 risk",
-        "XEG short: not yet",
-        "stop goes in after fill"
-      ]
+      "status": "QQC.TO plan sized at 10 shares with about $6 at risk, inside the $100 max per trade. Re-checks at 10:05 AM ET.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "rejectedToday": 0,
+      "rejectedWeek": 0,
+      "rejectedAllTime": 0,
+      "activity": {
+        "now": "QQC: 10 sh, $6 risk OK",
+        "detail": "QQC.TO plan sized at 10 shares with about $6 at risk, inside the $100 max per trade. Re-checks at 10:05 AM ET.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "waiting",
+        "next": "QQC check 10:05"
+      }
     },
     {
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Runs the plan, nothing goes out without K's go.",
-      "status": "Back on the desk. Waiting for the 10:05 QQC check.",
-      "bubbles": [
-        "back on the desk",
-        "waiting for 10:05",
-        "nothing sent without K's go"
-      ]
+      "status": "Setting today's plan: QQC.TO gap-and-go is the only setup on the board; max $100 risk per trade.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "Planning today's session",
+        "detail": "Setting today's plan: QQC.TO gap-and-go is the only setup on the board; max $100 risk per trade.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "working",
+        "next": "Pre-market scan 9:00"
+      }
     },
     {
       "id": "quant",
       "name": "Quant Lab",
       "role": "Backtests and ranks strategies",
-      "status": "Ready",
-      "bubbles": [
-        "running backtests",
-        "ranking strategies",
-        "testing the after-10:00 entry"
-      ]
+      "status": "Tested 9 strategies on 8 tickers; XIU big-gap fade +0.19R over 50 trades, positive both halves",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "Found: XIU big-gap fade",
+        "detail": "Tested 9 strategies on 8 tickers; XIU big-gap fade +0.19R over 50 trades, positive both halves",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "done",
+        "next": "Daily review 4:30",
+        "log": [
+          "Tested 9 strategies on 8 tickers (72 strategy/ticker runs)",
+          "3 active: big-gap fade on XIU.TO, SOFI, HXT.TO",
+          "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive"
+        ]
+      }
     },
     {
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats",
-      "status": "Ready",
-      "bubbles": [
-        "logging trades",
-        "updating the stats",
-        "journal is ready"
-      ]
+      "status": "No trades yet today, so nothing to journal.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "No trades yet today",
+        "detail": "No trades yet today, so nothing to journal.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "idle",
+        "next": "Close-out 3:30"
+      }
     },
     {
       "id": "options",
       "name": "Options Desk",
       "role": "Reads options chains",
-      "status": "Ready",
-      "bubbles": [
-        "reading options chains",
-        "scanning strikes",
-        "watching implied vol"
-      ]
+      "status": "No options ideas yet. Starts with the pre-market scan.",
+      "pnlToday": 0,
+      "pnlWeek": 0,
+      "pnlAllTime": 0,
+      "tradesToday": 0,
+      "tradesWeek": 0,
+      "tradesAllTime": 0,
+      "activity": {
+        "now": "Standing by",
+        "detail": "No options ideas yet. Starts with the pre-market scan.",
+        "since": "2026-11-02T08:00:00-05:00",
+        "state": "idle",
+        "next": "Pre-market scan 9:00"
+      }
     }
   ],
   "account": {
@@ -210,6 +281,62 @@
   ],
   "playbook": [
     {
+      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
+      "status": "active",
+      "trades": 50,
+      "winRate": 58.0,
+      "expectancyR": 0.188,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.188R (no-slip +0.230, 0.04%/side +0.146); H1 +0.236R n=26, H2 +0.137R n=24; last 6m (May-Oct 2026) +0.207R n=12. Paper trade / minimum size first: pooled result negative in the last ~4 months."
+    },
+    {
+      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
+      "status": "active",
+      "trades": 33,
+      "winRate": 60.6,
+      "expectancyR": 0.184,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.184R (no-slip +0.192, 0.04%/side +0.177); H1 +0.017R n=19, H2 +0.412R n=14; last 6m (May-Oct 2026) +0.310R n=6. Paper trade / minimum size first: pooled result negative in the last ~4 months."
+    },
+    {
+      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
+      "status": "active",
+      "trades": 49,
+      "winRate": 57.1,
+      "expectancyR": 0.115,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.115R (no-slip +0.157, 0.04%/side +0.074); H1 +0.074R n=28, H2 +0.170R n=21; last 6m (May-Oct 2026) +0.038R n=10. Paper trade / minimum size first: pooled result negative in the last ~4 months."
+    },
+    {
+      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
+      "status": "testing",
+      "trades": 64,
+      "winRate": 54.7,
+      "expectancyR": 0.329,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
+    },
+    {
+      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
+      "status": "testing",
+      "trades": 30,
+      "winRate": 80.0,
+      "expectancyR": 0.303,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
+    },
+    {
+      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
+      "status": "testing",
+      "trades": 412,
+      "winRate": 55.1,
+      "expectancyR": 0.099,
+      "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
+    },
+    {
+      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
+      "status": "testing",
+      "trades": 51,
+      "winRate": 54.9,
+      "expectancyR": 0.08,
+      "note": "May 4-Oct 30 2026, 30-min bars (halves split Aug 1); exp +0.080R (no-slip +0.214, 0.04%/side -0.054); H1 +0.333R n=24, H2 -0.146R n=27; last 6m (May-Oct 2026) +0.080R n=51"
+    },
+    {
       "name": "QQC gap-and-go (base)",
       "status": "testing",
       "trades": 167,
@@ -229,6 +356,14 @@
   "deskLog": [
     {
       "date": "Nov 2",
+      "text": "Quant Lab tested 9 strategies; XIU big-gap fade is the first with an edge"
+    },
+    {
+      "date": "Nov 2",
+      "text": "Bullpen v2 preview: bots relay work, source swarm, desk levels"
+    },
+    {
+      "date": "Nov 2",
       "text": "Max risk per trade raised to $100"
     },
     {
@@ -239,5 +374,85 @@
       "date": "Nov 2",
       "text": "Backtested QQC gap-and-go; no proven edge yet"
     }
-  ]
+  ],
+  "sources": [
+    {
+      "type": "Questrade quotes",
+      "name": "Questrade quotes & price history",
+      "feeds": [
+        "scanner",
+        "whale"
+      ]
+    },
+    {
+      "type": "Options flow",
+      "name": "Questrade option chains",
+      "feeds": [
+        "options"
+      ]
+    },
+    {
+      "type": "X posts",
+      "name": "X posts search",
+      "feeds": [
+        "news"
+      ]
+    },
+    {
+      "type": "News wires",
+      "name": "Web news search",
+      "feeds": [
+        "news"
+      ]
+    },
+    {
+      "type": "Economic calendar",
+      "name": "Economic calendar (web)",
+      "feeds": [
+        "risk",
+        "kiwi"
+      ]
+    },
+    {
+      "type": "Earnings",
+      "name": "Company earnings calendars (web)",
+      "feeds": [
+        "scanner"
+      ]
+    },
+    {
+      "type": "Filings",
+      "name": "SEC/SEDAR filings (web)",
+      "feeds": [
+        "news",
+        "quant"
+      ]
+    }
+  ],
+  "desk": {
+    "strategiesTested": 9,
+    "variantsTested": 72,
+    "tradesJournaled": 0,
+    "sourcesWatched": 7,
+    "daysRunning": 1
+  },
+  "pnlToday": {
+    "realized": 0,
+    "unrealized": 0,
+    "total": 0,
+    "trades": 0
+  },
+  "pnlWeek": {
+    "realized": 0,
+    "unrealized": 0,
+    "total": 0,
+    "trades": 0
+  },
+  "pnlAllTime": {
+    "realized": 0,
+    "unrealized": 0,
+    "total": 0,
+    "trades": 0
+  },
+  "lastApprovedIdea": null
 }
