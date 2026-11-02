@@ -4,6 +4,7 @@ r"""Today's watchlist board (data.json `watchlist`): the stocks the desk is inte
   python3 set_watch.py add --ticker RIVN --side short --entry 12.79 --stop 13.12 --target 12.18 --shares 27 \
       --strategy "Gap fade >0.75ATR (RIVN untested)" --bot scanner [--journal-id 2026-11-02-RIVN-1] [--reason "..."]
   python3 set_watch.py add --journal-id 2026-11-02-QQC-1 --trigger 47.67 --zone-high 48.10 --not-before 10:05
+  python3 set_watch.py add --ticker RIVN --tv-symbol NASDAQ:RIVN      # TradingView symbol for the live widget
   python3 set_watch.py price --ticker RIVN --last 12.91 [--time 2026-11-02T09:45:04-05:00]
   python3 set_watch.py status --ticker RIVN --status "in trade" [--fill 12.78]
   python3 set_watch.py list
@@ -13,6 +14,8 @@ r"""Today's watchlist board (data.json `watchlist`): the stocks the desk is inte
 so yesterday's list never shows as today's. Same ticker + same day = same item (add updates it).
 --journal-id pulls side/entry/stop/target/shares/strategy/bot/currency and the after-fee plan from journal.json.
 Without a journal id the after-fee numbers are computed with the same Questrade fee model as log_idea.py.
+tvSymbol (--tv-symbol EXCHANGE:SYMBOL) is the TradingView symbol for the site's live price widget. If not given, .TO/.V/.NE/.CN
+tickers get TSX:/TSXV:/NEO:/CSE: automatically; US tickers should be given explicitly (NASDAQ:RIVN, NYSE:CNQ, AMEX:SPY).
 Entry, stop, target and shares are optional (e.g. a skipped idea); missing ones show as "-" on the site.
 
 price: sets last + priceTime (default now) and moves the status automatically:
@@ -76,6 +79,16 @@ def find(data, ticker, date):
     for it in data['watchlist']:
         if it.get('ticker') == ticker and it.get('date') == date:
             return it
+    return None
+
+
+TV_EXCH = {'TO': 'TSX', 'V': 'TSXV', 'NE': 'NEO', 'CN': 'CSE'}
+
+
+def default_tv_symbol(ticker):
+    root, dot, suf = ticker.rpartition('.')
+    if dot and suf in TV_EXCH and root:
+        return '%s:%s' % (TV_EXCH[suf], root)
     return None
 
 
@@ -148,6 +161,10 @@ def cmd_add(a):
             it[k] = v if v != '' else None
     if changed_plan and it.get('planFrom') == 'journal':
         it['planFrom'] = 'override'
+    if a.tv_symbol is not None:
+        it['tvSymbol'] = a.tv_symbol.upper() or None
+    if not it.get('tvSymbol') and default_tv_symbol(ticker):
+        it['tvSymbol'] = default_tv_symbol(ticker)
     if a.tested is not None:
         it['tested'] = a.tested == 'yes'
     it.setdefault('tested', False)
@@ -265,6 +282,8 @@ def line(it):
         s += ' | net +%.2f / %.2f %s R:R %s' % (it['netProfitAtTarget'], it['netLossAtStop'], it.get('currency'), it.get('rr'))
     if it.get('openPnl') is not None:
         s += ' | open P&L %+.2f' % it['openPnl']
+    if it.get('tvSymbol'):
+        s += ' | tv %s' % it['tvSymbol']
     return s
 
 
@@ -290,6 +309,7 @@ def main():
     p.add_argument('--bot')
     p.add_argument('--reason')
     p.add_argument('--journal-id')
+    p.add_argument('--tv-symbol', help='TradingView EXCHANGE:SYMBOL for the live widget, e.g. NASDAQ:RIVN, TSX:QQC ("" clears)')
     p.add_argument('--currency', choices=['CAD', 'USD', 'cad', 'usd'])
     p.add_argument('--session')
     p.add_argument('--status', choices=STATUSES)

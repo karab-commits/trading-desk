@@ -227,7 +227,17 @@ table.sc td{padding:3px 0}table.sc th{color:var(--gold)}table.sc td:first-child{
 .wl-meta .why{color:#f6efdc}
 .wl-foot{display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;margin-top:6px;font-size:10px;color:#a8a28a;font-family:ui-monospace,monospace}
 .wl-foot b{color:#ffd34d;font-weight:700}
-</style></head><body>
+.wl-live{margin-top:7px;background:#070e24;border:1px solid #2a3d70;border-left:3px solid #d4af37;border-radius:4px;padding:3px 6px 2px;--tv-widget-background-color:transparent;color-scheme:dark}
+.wl-live .lab{display:flex;justify-content:space-between;gap:6px;font:700 9px/1.3 ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.4px;text-transform:uppercase;color:#d4af37}
+.wl-live .lab span{color:#a8a28a;text-transform:none;letter-spacing:0;font-weight:400}
+.wl,.wl-it,.wl-live{min-width:0}
+.wl-live tv-single-ticker{display:block;width:100%;min-width:0;min-height:46px;max-width:100%;overflow:hidden}
+.wl-live .ph{font:11px/46px ui-monospace,monospace;color:#8b93a7}
+.wl-desk{margin-top:7px;font:10px/1.35 ui-monospace,"SF Mono",Menlo,monospace;color:#c9c0a6;letter-spacing:.2px}
+.wl-desk b{color:#d4af37;font-weight:700;text-transform:uppercase;font-size:9px;letter-spacing:.4px}
+</style>
+<script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
+</head><body>
 <div class="wrap">
   <header>
     <div class="brand"><div class="logo"><i></i></div><div><h1 id="deskName">K's AI Trading Desk</h1><div class="sub">Last updated: <span id="updTop">-</span></div></div></div>
@@ -935,21 +945,24 @@ function wlLadder(w){
  if(typeof lp==='number')h+='<div class="now" style="left:'+P(lp)+'%" title="last '+pxv(lp)+'"></div>';
  return h+'</div>';
 }
-function watchCard(D){
- var day=todayET(),all=Array.isArray(D.watchlist)?D.watchlist:[],items=all.filter(function(w){return w&&w.date===day;});
- var h='<section class="card wl" id="watchlist"><h2>Today\'s watchlist <span class="cnt">'+items.length+' STOCK'+(items.length===1?'':'S')+'</span></h2>';
- var latest=null;items.forEach(function(w){var t=Date.parse(w.priceTime);if(isFinite(t)&&(latest==null||t>latest))latest=t;});
- h+='<div class="wl-sub"><span>'+(latest!=null?'prices updated '+tET(new Date(latest).toISOString())+(isStale(new Date(latest).toISOString())?' · <span class="stale">STALE (&gt;20 min)</span>':''):'no prices yet')+'</span><span>flat by 4:00 PM ET</span></div>';
- if(!items.length)return h+'<div class="wl-empty">No stocks on the watchlist yet today</div></section>';
+/* TradingView symbol for a watchlist item: data.json tvSymbol wins, then suffix rules (.TO TSX, .V TSXV, .NE NEO, .CN CSE), then known US listings, else the bare ticker */
+var TV_US={'RIVN':'NASDAQ:RIVN','SOFI':'NASDAQ:SOFI','NVDA':'NASDAQ:NVDA','AAPL':'NASDAQ:AAPL','PLTR':'NASDAQ:PLTR','QQQ':'NASDAQ:QQQ','TSLA':'NASDAQ:TSLA','AMD':'NASDAQ:AMD','MSFT':'NASDAQ:MSFT','AMZN':'NASDAQ:AMZN','META':'NASDAQ:META','GOOGL':'NASDAQ:GOOGL','SPY':'AMEX:SPY','IWM':'AMEX:IWM','EL':'NYSE:EL','PGEN':'NASDAQ:PGEN','CNQ':'NYSE:CNQ'};
+function tvSym(w){
+ if(w.tvSymbol)return String(w.tvSymbol);var t=String(w.ticker||'').toUpperCase();if(!t)return '';
+ var m=t.match(/^(.+)\.(TO|V|NE|CN)$/);if(m)return {TO:'TSX',V:'TSXV',NE:'NEO',CN:'CSE'}[m[2]]+':'+m[1];
+ return TV_US[t]||t;
+}
+function wlItems(D){var day=todayET(),all=Array.isArray(D.watchlist)?D.watchlist:[],items=all.filter(function(w){return w&&w.date===day;});
  var order=['in trade','triggered','watching','target hit','stopped','closed','expired','skipped'];
- items=items.slice().sort(function(a,b){return order.indexOf(a.status)-order.indexOf(b.status);});
- items.forEach(function(w){
-  var st=WL_ST[w.status]?w.status:'watching',c=WL_ST[st],cur=w.currency||'',side=w.side||'',stale=isStale(w.priceTime);
+ return items.slice().sort(function(a,b){return order.indexOf(a.status)-order.indexOf(b.status);});}
+function wlTop(w){var st=WL_ST[w.status]?w.status:'watching',c=WL_ST[st],side=w.side||'';
+ return '<div class="wl-top">'+flap(w.ticker||'?')+'<span class="side '+(side||'none')+'">'+(side?side.toUpperCase():'NO TRADE')+'</span>'+
+  '<span class="light'+(c[1]?' pulse':'')+'" style="--c:'+c[0]+'"><i></i>'+esc(st)+'</span></div>';}
+function wlBody(w){
+  var st=WL_ST[w.status]?w.status:'watching',cur=w.currency||'',side=w.side||'',stale=isStale(w.priceTime),h='';
   var dist='';if(typeof w.last==='number'){var trig=typeof w.trigger==='number'?w.trigger:w.entry;if(st==='watching'&&typeof trig==='number'){var d=w.last-trig;dist=(side==='short'?(d>0?pxv(d)+' above trigger '+pxv(trig):'at/under trigger'):(d<0?pxv(-d)+' below trigger '+pxv(trig):'at/over trigger'));}}
-  h+='<div class="wl-it'+(st==='skipped'||st==='expired'?' dim':'')+'"><div class="wl-top">'+flap(w.ticker||'?')+
-   '<span class="side '+(side||'none')+'">'+(side?side.toUpperCase():'NO TRADE')+'</span>'+
-   '<span class="light'+(c[1]?' pulse':'')+'" style="--c:'+c[0]+'"><i></i>'+esc(st)+'</span></div>'+
-   '<div class="wl-px"><span class="lp">'+pxv(w.last)+'</span><span class="asof">'+(cur?esc(cur)+' · ':'')+(w.priceTime?'as of '+tET(w.priceTime):'no price yet')+(stale?' · <span class="stale">stale</span>':'')+'</span>'+(dist?'<span class="dist">'+esc(dist)+'</span>':'')+'</div>'+
+  h+='<div class="wl-desk"><b>Desk price (Questrade)</b> '+(w.priceTime?'as of '+tET(w.priceTime):'no price yet')+' · used for triggers'+(stale?' · <span class="stale">stale</span>':'')+'</div>'+
+   '<div class="wl-px" style="margin-top:2px"><span class="lp">'+pxv(w.last)+'</span><span class="asof">'+(cur?esc(cur):'')+'</span>'+(dist?'<span class="dist">'+esc(dist)+'</span>':'')+'</div>'+
    wlLadder(w);
   var hasPlan=typeof w.entry==='number'||typeof w.stop==='number'||typeof w.target==='number';
   if(hasPlan)h+='<div class="wl-g">'+
@@ -959,9 +972,35 @@ function watchCard(D){
   h+='<div class="wl-meta">'+(w.entryNote?'<div>'+(hasPlan?'Entry ':'')+esc(w.entryNote)+'</div>':'')+
    (w.strategy?'<div>'+esc(w.strategy)+'<span class="tag2 '+(w.tested?'tested':'untested')+'">'+(w.tested?'tested':'untested')+'</span>'+(w.testNote?' <span class="k">'+esc(w.testNote)+'</span>':'')+'</div>':'')+
    (w.reason?'<div class="why">'+esc(w.reason)+'</div>':'')+'</div>'+
-   '<div class="wl-foot"><span>'+(w.bot?'found by <b>'+esc((ENG&&ENG.NAMES&&ENG.NAMES[w.bot])||w.bot)+'</b>':'')+(w.journalId?' · '+esc(w.journalId):'')+'</span><span>'+(hasPlan?'close by <b>4:00 PM</b> ET':'')+'</span></div></div>';
- });
- return h+'<div class="note" style="margin-top:7px">Projected profit/loss are after Questrade fees, in the stock\'s currency. Quotes from Questrade; this page re-checks data.json every 60s.</div></section>';
+   '<div class="wl-foot"><span>'+(w.bot?'found by <b>'+esc((ENG&&ENG.NAMES&&ENG.NAMES[w.bot])||w.bot)+'</b>':'')+(w.journalId?' · '+esc(w.journalId):'')+'</span><span>'+(hasPlan?'close by <b>4:00 PM</b> ET':'')+'</span></div>';
+  return h;
+}
+function wlLive(w){var sym=tvSym(w);if(!sym)return '';var tsx=/^(TSX|TSXV|NEO|CSE):/.test(sym);
+ return '<div class="wl-live"><div class="lab">Live price: TradingView<span>'+esc(sym)+' · '+(tsx?'TSX delayed ~15 min':'US delayed (Cboe One)')+'</span></div>'+
+  '<tv-single-ticker symbol="'+esc(sym)+'" theme="dark" transparent><div class="ph">Loading TradingView '+esc(sym)+'…</div></tv-single-ticker></div>';}
+/* The board lives in a persistent <section id="watchlist">: rows (and their TradingView widgets) are only rebuilt when the
+   set of tickers changes, so the 30 s data.json refresh updates the Questrade numbers without reloading the live widgets. */
+function renderWatch(D){
+ var cards=document.getElementById('cards'),sec=document.getElementById('watchlist');
+ if(!sec){sec=document.createElement('section');sec.className='card wl';sec.id='watchlist';}
+ if(cards.firstChild!==sec)cards.insertBefore(sec,cards.firstChild);
+ var items=wlItems(D),key=items.map(function(w){return (w.ticker||'?')+'|'+tvSym(w);}).join(',');
+ var latest=null;items.forEach(function(w){var t=Date.parse(w.priceTime);if(isFinite(t)&&(latest==null||t>latest))latest=t;});
+ var head='<h2>Today\'s watchlist <span class="cnt">'+items.length+' STOCK'+(items.length===1?'':'S')+'</span></h2>'+
+  '<div class="wl-sub"><span>'+(latest!=null?'desk prices updated '+tET(new Date(latest).toISOString())+(isStale(new Date(latest).toISOString())?' · <span class="stale">STALE (&gt;20 min)</span>':''):'no prices yet')+'</span><span>flat by 4:00 PM ET</span></div>';
+ if(sec.getAttribute('data-key')!==key||!sec.querySelector('.wl-headbox')){
+  var h='<div class="wl-headbox"></div>';
+  if(!items.length)h+='<div class="wl-empty">No stocks on the watchlist yet today</div>';
+  items.forEach(function(w,i){h+='<div class="wl-it" data-i="'+i+'"><div class="wl-a"></div>'+wlLive(w)+'<div class="wl-b"></div></div>';});
+  h+='<div class="note" style="margin-top:7px">Live price: TradingView\'s free widget. TradingView says widget stock data is delayed (TSX ~15 min; US from Cboe One). Desk price (Questrade, refreshed by the desk routine) drives the ladder marker, status and triggers. Projected profit/loss are after Questrade fees, in the stock\'s currency. This page re-checks data.json every 30s.</div>';
+  sec.innerHTML=h;sec.setAttribute('data-key',key);
+ }
+ sec.querySelector('.wl-headbox').innerHTML=head;
+ var rows=sec.querySelectorAll('.wl-it');
+ items.forEach(function(w,i){var r=rows[i];if(!r)return;var st=WL_ST[w.status]?w.status:'watching';
+  r.className='wl-it'+(st==='skipped'||st==='expired'?' dim':'');
+  var a=wlTop(w),b=wlBody(w),ea=r.querySelector('.wl-a'),eb=r.querySelector('.wl-b');
+  if(ea.innerHTML!==a)ea.innerHTML=a;if(eb.getAttribute('data-h')!==b){eb.innerHTML=b;eb.setAttribute('data-h',b);}});
 }
 function render(){
  if(!DATA)return;var D=DATA,h='';
@@ -969,7 +1008,6 @@ function render(){
  document.getElementById('updTop').textContent=D.lastUpdated||'-';document.getElementById('updBot').textContent=D.lastUpdated||'-';
  var a=D.account||{};
  if(window.THEME&&THEME.pnl){var hp=document.getElementById('hpnl');if(hp){var q=THEME.pnl.deskP(D,0);hp.innerHTML='P&amp;L today <b class="'+THEME.pnl.cls(q.total)+'">'+THEME.pnl.fmt(q.total)+'</b>';}}
- h+=watchCard(D);
  h+='<section class="card"><h2>Account <span class="pill">'+esc(a.accountLabel||'')+(a.accountLast4?' ••'+esc(a.accountLast4):'')+'</span></h2><div class="grid2">'+
   '<div><div class="k">Equity</div><div class="v">'+money(a.equity)+' <span class="k">'+esc(a.currency||'')+'</span></div></div>'+
   '<div><div class="k">Buying power</div><div class="v">'+money(a.buyingPower)+'</div></div>'+
@@ -1028,7 +1066,7 @@ function render(){
   if(fz){var st=fz.stocksEtfs||{},cm=+st.commissionPerOrder||0;fn='<div class="note">Fees used ('+esc(fz.broker||'')+', checked '+esc(fz.checked||'')+'): '+(cm?'$'+cm.toFixed(2)+' per order':'$0 commission')+' on stocks/ETFs'+(fz.secFee?', US sells pay the SEC fee ($'+(fz.secFee.rate*1e6).toFixed(2)+' per $1M)':'')+(fz.fx?', USD/CAD conversion '+esc(fz.fx.spreadPct)+'%':'')+'. '+(fz.source?'<a href="'+esc(fz.source)+'" target="_blank" rel="noopener" style="color:var(--gold)">Questrade fee schedule</a>':'')+'</div>';}
   h+='<section class="card"><h2>Desk rules</h2><ul class="rules">'+D.rules.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul>'+fn+'</section>';}
  if(D.deskLog&&D.deskLog.length){h+='<section class="card"><h2>Desk log <span class="k" style="letter-spacing:0;text-transform:none">newest first</span></h2><ul class="log">'+D.deskLog.map(function(l){return '<li><span class="d">'+esc(l.date||'')+'</span><span>'+esc(l.text||l)+'</span></li>';}).join('')+'</ul></section>';}
- document.getElementById('cards').innerHTML=h;
+ var cards=document.getElementById('cards');renderWatch(D);while(cards.lastChild&&cards.lastChild.id!=='watchlist')cards.removeChild(cards.lastChild);cards.insertAdjacentHTML('beforeend',h);
 }
 function clock(){
  var e=etNow(),hh=e.h%12||12,am=e.h<12?'AM':'PM';document.getElementById('clk').textContent=hh+':'+(e.m<10?'0':'')+e.m+' '+am;
@@ -1038,14 +1076,14 @@ function clock(){
 function load(){
  fetch('data.json?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(j){
    DATA=j;renderTicker();render();setTags();onData();
-   document.getElementById('sync').textContent='Synced with desk data at '+new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit',second:'2-digit'})+' · refreshes every 60s';
+   document.getElementById('sync').textContent='Synced with desk data at '+new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit',second:'2-digit'})+' · refreshes every 30s';
    document.getElementById('syncDot').className='dot';
- }).catch(function(){if(window.DESK_DATA){DATA=window.DESK_DATA;renderTicker();render();setTags();onData();document.getElementById('sync').textContent='Mockup preview · using built-in desk data';document.getElementById('syncDot').className='dot';}else{document.getElementById('sync').textContent='Could not load data.json, retrying in 60s';document.getElementById('syncDot').className='dot err';}});
+ }).catch(function(){if(window.DESK_DATA){DATA=window.DESK_DATA;renderTicker();render();setTags();onData();document.getElementById('sync').textContent='Mockup preview · using built-in desk data';document.getElementById('syncDot').className='dot';}else{document.getElementById('sync').textContent='Could not load data.json, retrying in 30s';document.getElementById('syncDot').className='dot err';}});
 }
 
 resize();var rT;window.addEventListener('resize',function(){clearTimeout(rT);rT=setTimeout(resize,150);});
 renderTicker();clock();load();
-setInterval(load,60000);setInterval(function(){clock();if(DATA)render();},30000);
+setInterval(load,30000);setInterval(function(){clock();if(DATA)render();},30000);
 requestAnimationFrame(frame);
 })();
 </script>

@@ -1,6 +1,6 @@
 # K's AI Trading Desk · Bullpen
 
-Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is self-contained (data is inlined as a fallback); when hosted it reads `data.json` every 60 s.
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is self-contained (data is inlined as a fallback); when hosted it reads `data.json` every 30 s.
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.
 
 ## New data.json fields
@@ -152,9 +152,16 @@ Not included: short borrow fees (charged on overnight shorts; the desk is flat b
 ## Today's watchlist (data.json `watchlist` + set_watch.py)
 
 The stocks the desk is interested in today, shown on a **Today's watchlist** board right below the office (above Account), one row per stock: split-flap ticker, LONG/SHORT badge, status light, last price + `as of H:MM ET`, a stop–entry–target ladder with the current price marker, entry/stop/target, profit/loss **after fees**, shares · R:R, strategy with a `tested`/`untested` tag, the bot that found it, the reason, the journal id, open P&L when in trade, and `close by 4:00 PM ET` (flat by the close). Empty state: "No stocks on the watchlist yet today".
-The page re-fetches `data.json?t=<now>` (no-store) every 60 s, so open tabs update without reload; the board header shows `prices updated H:MM ET`, and during market hours a price older than 20 min is marked **STALE**.
+The page re-fetches `data.json?t=<now>` (no-store) every 30 s, so open tabs update without reload; the board header shows `desk prices updated H:MM ET`, and during market hours a price older than 20 min is marked **STALE**.
 
-`watchlist` is an array; each item has its own `date` (ET) and the site only shows items dated today, so yesterday's list never shows as today's. Item keys: `date, ticker, side, status, entry, entryNote, trigger, zoneLow, zoneHigh, notBefore, stop, target, shares, currency, netProfitAtTarget, netLossAtStop (+CAD), rr, rrNet, strategy, tested, testNote, bot, reason, journalId, last, priceTime, fill, openPnl, openPnlCAD, closeBy ("16:00"), statusAt`. Any of entry/stop/target/shares/side can be missing (shown as `-`; no ladder).
+**Live price (TradingView widget).** Each row with a ticker embeds TradingView's free **Single Ticker** web component (`<tv-single-ticker symbol="TSX:QQC" theme="dark" transparent>`, loaded once from `https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js`), labelled `Live price: TradingView`. It streams price and day change by itself in the browser (Questrade can't be called from the page: private auth).
+- **It is delayed, not real-time.** TradingView's widget docs ([markets: North America](https://www.tradingview.com/widget-docs/markets/north-america/), [data FAQ](https://www.tradingview.com/widget-docs/faq/data/), checked 2026-11-02) list TSX/TSXV as *Delayed* (~15 min) and NASDAQ/NYSE/Arca (Cboe One) as *Delayed* too; only forex and crypto are real-time, and a paid TradingView plan does not change widget data. The widget shows a `D` next to delayed symbols, so during the session the Questrade desk price can be newer than the widget.
+- The widget is a closed shadow-DOM component and exposes no price to the page's JS, so the **ladder marker, status light, trigger distance and triggers stay on the Questrade price** in data.json, shown as `Desk price (Questrade) as of H:MM ET · used for triggers`.
+- The board is a persistent `<section id="watchlist">`: rows (and widgets) are only rebuilt when the set of tickers changes; the 30 s refresh only updates the Questrade numbers, so widgets don't reload.
+- Symbol mapping: item `tvSymbol` wins; otherwise `.TO` → `TSX:`, `.V` → `TSXV:`, `.NE` → `NEO:`, `.CN` → `CSE:` (e.g. `QQC.TO` → `TSX:QQC`, `XIU.TO` → `TSX:XIU`); US tickers use a small built-in map (`RIVN` → `NASDAQ:RIVN`, `SPY` → `AMEX:SPY`, `CNQ` → `NYSE:CNQ`, …) or the bare ticker. Set `tvSymbol` explicitly for any new US ticker: `python3 set_watch.py add --ticker SOFI --tv-symbol NASDAQ:SOFI`. `set_watch.py add` fills `tvSymbol` automatically for Canadian suffixes.
+- Mockup: `/workspace/desk-mockups/watchlist-live.png` (430 px wide, 2x).
+
+`watchlist` is an array; each item has its own `date` (ET) and the site only shows items dated today, so yesterday's list never shows as today's. Item keys: `date, ticker, side, status, entry, entryNote, trigger, zoneLow, zoneHigh, notBefore, stop, target, shares, currency, netProfitAtTarget, netLossAtStop (+CAD), rr, rrNet, strategy, tested, testNote, bot, reason, journalId, last, priceTime, fill, openPnl, openPnlCAD, closeBy ("16:00"), statusAt, tvSymbol` (`tvSymbol` = TradingView `EXCHANGE:SYMBOL` for the live widget). Any of entry/stop/target/shares/side can be missing (shown as `-`; no ladder).
 Status: `watching | triggered | in trade | target hit | stopped | closed | skipped | expired`.
 
 ```
@@ -166,6 +173,6 @@ python3 set_watch.py list
 python3 set_watch.py reset                 # new day: drop every item not dated today (--all drops today too)
 ```
 - `--journal-id` pulls side, entry, stop, target, shares, strategy, bot, currency and the after-fee plan from journal.json (log the idea with `log_idea.py add` first). Without it, after-fee numbers use the same Questrade fee model.
-- `add` on a ticker already on today's list updates it. Extra flags: `--trigger` (defaults to entry), `--zone-low/--zone-high`, `--not-before HH:MM`, `--entry-note`, `--tested yes|no` (default no), `--test-note`, `--status`, `--last/--time`.
+- `add` on a ticker already on today's list updates it. Extra flags: `--trigger` (defaults to entry), `--zone-low/--zone-high`, `--not-before HH:MM`, `--entry-note`, `--tested yes|no` (default no), `--test-note`, `--tv-symbol EXCHANGE:SYMBOL`, `--status`, `--last/--time`.
 - `price` moves the status by itself: watching → triggered when the trigger is crossed (long ≥ trigger and ≤ zone high; short ≤ trigger and ≥ zone low; not before `--not-before`); triggered / in trade → target hit or stopped when the target or stop is crossed; watching → expired for a price at/after 16:00 ET. `triggered` is a signal, not a fill; set `in trade` by hand once K's order fills. In trade, `openPnl` = (last − fill) × shares (by side) minus estimated fees. Skipped / closed / target hit / stopped / expired are never changed by a price update.
 - Prices come from the Questrade connector (`get_quotes`, read only).
