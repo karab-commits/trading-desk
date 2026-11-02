@@ -96,6 +96,102 @@
       "taken": null,
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-02-XIU-1",
+      "date": "2026-11-02",
+      "session": "midday",
+      "ticker": "XIU.TO",
+      "side": "long",
+      "entry": 54.33,
+      "stop": 54.07,
+      "target": 54.85,
+      "shares": 46,
+      "strategy": "HOD breakout over VWAP (untested; ORB/PDH-break tests negative)",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Considered at 12:09 ET, not taken: desk tests of intraday breakouts on XIU are negative",
+      "loggedAt": "2026-11-02T12:09:21-05:00",
+      "plan": {
+        "riskGross": 11.96,
+        "rewardGross": 23.92,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 23.92,
+        "netLossAtStop": -11.96,
+        "rrNet": 2.0,
+        "netProfitAtTargetCAD": 23.92,
+        "netLossAtStopCAD": -11.96
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-02-AMD-1",
+      "date": "2026-11-02",
+      "session": "midday",
+      "ticker": "AMD",
+      "side": "short",
+      "entry": 487.5,
+      "stop": 499.5,
+      "target": 463.5,
+      "shares": 3,
+      "strategy": "LOD breakdown under VWAP (untested; PDH/PDL-break tests negative)",
+      "bot": "scanner",
+      "currency": "USD",
+      "note": "Considered at 12:09 ET, not taken: untested, breakdown tests negative, shortability unconfirmed",
+      "loggedAt": "2026-11-02T12:09:21-05:00",
+      "plan": {
+        "riskGross": 36.0,
+        "rewardGross": 72.0,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0301,
+          "fx": 1.08,
+          "total": 1.1101
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0301,
+          "fx": 0.54,
+          "total": 0.5701
+        },
+        "netProfitAtTarget": 70.89,
+        "netLossAtStop": -36.57,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 98.96,
+        "netLossAtStopCAD": -51.05
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
