@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T13:18:06-05:00",
+  "updated": "2026-11-03T13:19:09-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 60,
+   "runs": 61,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -72,7 +72,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T13:18:06-05:00",
+   "lastRun": "2026-11-03T13:19:09-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -125,8 +125,8 @@
    "optionContracts": 0,
    "webSearches": 11,
    "pagesFetched": 0,
-   "xSearches": 6,
-   "xPosts": 75,
+   "xSearches": 7,
+   "xPosts": 85,
    "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -330,9 +330,14 @@
       "title": "Upstart Beats Q3 Estimates with Record Profits, Trims Full-Year Outlook",
       "url": "https://x.com/i/trending/2117614467848741184",
       "time": "2026-11-03T12:48:51-05:00"
+     },
+     {
+      "title": "IREN Shares Surge 9% Ahead of First-Quarter Earnings",
+      "url": "https://x.com/i/trending/2117678429692633305",
+      "time": "2026-11-03T13:18:56-05:00"
      }
     ],
-    "count": 38,
+    "count": 39,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -371,13 +376,14 @@
      "73c866ff62db",
      "03668f032410",
      "36508c462c9e",
-     "9f98ebaa639a"
+     "9f98ebaa639a",
+     "0086290f4908"
     ]
    },
    "lastRun": null
   },
   "whale": {
-   "quotesCalls": 7,
+   "quotesCalls": 8,
    "barCalls": 29,
    "bars": 264,
    "optionCalls": 0,
@@ -418,7 +424,7 @@
      "SOFI",
      "HXT.TO"
     ],
-    "total": 43
+    "total": 45
    },
    "headlines": {
     "items": [],
