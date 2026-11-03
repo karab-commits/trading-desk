@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T10:18:17-05:00",
+  "updated": "2026-11-03T10:19:47-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 11,
+   "runs": 12,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -72,7 +72,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T10:18:17-05:00",
+   "lastRun": "2026-11-03T10:19:47-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -123,10 +123,10 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 3,
+   "webSearches": 4,
    "pagesFetched": 0,
-   "xSearches": 0,
-   "xPosts": 0,
+   "xSearches": 1,
+   "xPosts": 15,
    "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -185,9 +185,29 @@
       "title": "Shopify shares plunge after revenue miss",
       "url": "https://financialpost.com/retail/shopify-shares-plunge-after-revenue-miss/",
       "time": "2026-11-03T09:39:00-05:00"
+     },
+     {
+      "title": "Organigram to Acquire Aurora Cannabis in $561 Million Deal",
+      "url": "https://x.com/i/trending/2117626638674628941",
+      "time": "2026-11-03T09:35:08-05:00"
+     },
+     {
+      "title": "Marvell to Acquire Lumentum in $115 Billion All-Stock Deal",
+      "url": "https://x.com/i/trending/2117228744737980854",
+      "time": "2026-11-02T07:14:03-05:00"
+     },
+     {
+      "title": "Oracle Raises $10 Billion in Discounted Shares for AI Push",
+      "url": "https://x.com/i/trending/2117634520006467962",
+      "time": "2026-11-03T10:06:27-05:00"
+     },
+     {
+      "title": "Organigram to Acquire Aurora and Establish a Global Cannabis Leader",
+      "url": "https://www.businesswire.com/news/home/20261103746636/en/Organigram-to-Acquire-Aurora-and-Establish-a-Global-Cannabis-Leader",
+      "time": "2026-11-03T09:16:00-05:00"
      }
     ],
-    "count": 9,
+    "count": 13,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -197,13 +217,17 @@
      "c1ba759f8d95",
      "bd45cbda46d8",
      "48cc2511a9d7",
-     "f6e26d2ad2e9"
+     "f6e26d2ad2e9",
+     "f8e26e7bb201",
+     "a1fd97b44fa0",
+     "3aba69751a9a",
+     "326be552ba43"
     ]
    },
    "lastRun": null
   },
   "whale": {
-   "quotesCalls": 2,
+   "quotesCalls": 3,
    "barCalls": 1,
    "bars": 40,
    "optionCalls": 0,
@@ -244,7 +268,7 @@
      "SOFI",
      "HXT.TO"
     ],
-    "total": 27
+    "total": 34
    },
    "headlines": {
     "items": [],
