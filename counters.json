@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": null,
+  "updated": "2026-11-03T09:09:56-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -27,5 +27,203 @@
     "sourcesCited"
    ]
   }
- ]
+ ],
+ "2026-11-03": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 4,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "scanner": {
+   "quotesCalls": 1,
+   "barCalls": 3,
+   "bars": 64,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 2,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 5
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 2,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 1,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Apple, Palantir, Dynatrace slide premarket; Grab, Upwork jump",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-apple-palantir-dynatrace-130332497.html",
+      "time": "2026-11-03T09:09:07-05:00"
+     },
+     {
+      "title": "US stock futures mixed as Apple slides, midterms loom",
+      "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-mixed-as-apple-slides-midterms-loom-4994306",
+      "time": "2026-11-03T09:09:07-05:00"
+     },
+     {
+      "title": "Stocks making the biggest moves premarket: PFE, PLTR, AAPL, ZBRA",
+      "url": "https://www.cnbc.com/2026/11/03/stocks-making-the-biggest-moves-premarket-pfe-pltr-aapl-zbra.html",
+      "time": "2026-11-03T09:09:07-05:00"
+     },
+     {
+      "title": "TSX futures drop amid rise in oil prices; U.S. midterm elections ahead",
+      "url": "https://www.investing.com/news/stock-market-news/tsx-futures-drop-amid-rise-in-oil-prices-us-midterm-elections-ahead-4994886",
+      "time": "2026-11-03T09:09:07-05:00"
+     },
+     {
+      "title": "Why is Lattice Semiconductor stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-lattice-semiconductor-stock-surging-today-93CH-4994940",
+      "time": "2026-11-03T09:09:07-05:00"
+     }
+    ],
+    "count": 5,
+    "seen": [
+     "34d42531c132",
+     "6289babcfb7e",
+     "a11b34d6e7b7",
+     "ba6ba535bfc7",
+     "69f6f660eaa0"
+    ]
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 1,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "SHOP.TO",
+     "SHOP",
+     "PLTR",
+     "AAPL",
+     "AMD",
+     "LSCC",
+     "GRAB",
+     "DT",
+     "NVDA",
+     "ZBRA",
+     "UPWK",
+     "XIC.TO"
+    ],
+    "total": 12
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 4,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  }
+ }
 }
