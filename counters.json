@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T10:50:59-05:00",
+  "updated": "2026-11-03T10:52:23-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 20,
+   "runs": 21,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -72,7 +72,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T10:50:59-05:00",
+   "lastRun": "2026-11-03T10:52:23-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -123,7 +123,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 5,
+   "webSearches": 6,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 15,
@@ -210,9 +210,34 @@
       "title": "Tech Up Early Despite Apple's Drop on Election Day",
       "url": "https://www.schwab.com/learn/story/stock-market-update-open",
       "time": "2026-11-03T10:32:34-05:00"
+     },
+     {
+      "title": "Backblaze Stock Jumps 12% on Earnings, Revenue Beat and Strong Outlook",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/11/62825696/backblaze-stock-jumps-12-on-earnings-revenue-beat-and-strong-outlook",
+      "time": "2026-11-03T10:15:00-05:00"
+     },
+     {
+      "title": "Why is Ibotta stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-ibotta-stock-surging-today-93CH-4994893",
+      "time": "2026-11-03T07:41:00-05:00"
+     },
+     {
+      "title": "Why is Ethos Technologies stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-ethos-technologies-stock-surging-today-93CH-4995044",
+      "time": "2026-11-03T08:06:00-05:00"
+     },
+     {
+      "title": "Why is Madrigal Pharmaceuticals stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-madrigal-pharmaceuticals-stock-surging-today-93CH-4994934",
+      "time": "2026-11-03T07:51:00-05:00"
+     },
+     {
+      "title": "Why is Backblaze stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-backblaze-stock-surging-today-93CH-4994841",
+      "time": "2026-11-03T07:30:00-05:00"
      }
     ],
-    "count": 14,
+    "count": 19,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -227,15 +252,20 @@
      "a1fd97b44fa0",
      "3aba69751a9a",
      "326be552ba43",
-     "d43b2c195845"
+     "d43b2c195845",
+     "be12fa47ad19",
+     "6392b0a10d43",
+     "b392c6e115b2",
+     "3c165bb25dcc",
+     "885c73ac0066"
     ]
    },
    "lastRun": null
   },
   "whale": {
    "quotesCalls": 3,
-   "barCalls": 2,
-   "bars": 53,
+   "barCalls": 3,
+   "bars": 70,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
