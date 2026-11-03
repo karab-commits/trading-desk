@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T10:48:06-05:00",
+  "updated": "2026-11-03T10:50:59-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 16,
+   "quotesCalls": 17,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 19,
+   "runs": 20,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -65,14 +65,14 @@
      "QQC.TO",
      "SOFI"
     ],
-    "total": 134
+    "total": 142
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T10:48:06-05:00",
+   "lastRun": "2026-11-03T10:50:59-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
