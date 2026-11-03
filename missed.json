@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "updated": "2026-11-02T19:18:07-05:00",
+  "date": "2026-11-02",
+  "isoWeek": "2026-W45",
+  "marketOpen": false,
+  "currency": "CAD",
+  "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
+  "usdcad": 1.396,
+  "totals": {
+    "today": {
+      "net": 73.64,
+      "final": 73.64,
+      "unrealized": 0.0,
+      "ideas": 4,
+      "scored": 2,
+      "open": 0,
+      "notTriggered": 2,
+      "pending": 0,
+      "wins": 1,
+      "losses": 1
+    },
+    "week": {
+      "net": 73.64,
+      "final": 73.64,
+      "unrealized": 0.0,
+      "ideas": 4,
+      "scored": 2,
+      "open": 0,
+      "notTriggered": 2,
+      "pending": 0,
+      "wins": 1,
+      "losses": 1
+    },
+    "allTime": {
+      "net": 73.64,
+      "final": 73.64,
+      "unrealized": 0.0,
+      "ideas": 4,
+      "scored": 2,
+      "open": 0,
+      "notTriggered": 2,
+      "pending": 0,
+      "wins": 1,
+      "losses": 1
+    }
+  },
+  "byBot": {
+    "scanner": {
+      "today": {
+        "net": 73.64,
+        "ideas": 4,
+        "scored": 2,
+        "open": 0
+      },
+      "week": {
+        "net": 73.64,
+        "ideas": 4,
+        "scored": 2,
+        "open": 0
+      },
+      "allTime": {
+        "net": 73.64,
+        "ideas": 4,
+        "scored": 2,
+        "open": 0
+      }
+    }
+  },
+  "real": {
+    "today": 0.0,
+    "week": 0.0,
+    "allTime": 0.0,
+    "byBot": {
+      "scanner": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "news": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "whale": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "risk": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "kiwi": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "quant": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "journal": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      },
+      "options": {
+        "today": 0,
+        "week": 0,
+        "allTime": 0
+      }
+    }
+  },
+  "ideas": [
+    {
+      "id": "2026-11-02-XIU-1",
+      "date": "2026-11-02",
+      "bot": "scanner",
+      "ticker": "XIU.TO",
+      "side": "long",
+      "entry": 54.33,
+      "stop": 54.07,
+      "target": 54.85,
+      "shares": 46,
+      "strategy": "HOD breakout over VWAP (untested; ORB/PDH-break tests negative)",
+      "currency": "CAD",
+      "size": 46,
+      "loggedAt": "2026-11-02T12:09:21-05:00",
+      "why": "skipped",
+      "state": "final",
+      "outcome": "stop",
+      "exit": 54.07,
+      "fees": 0.0,
+      "net": -11.96,
+      "netCAD": -11.96,
+      "resolvedAt": "2026-11-02T16:37:04-05:00"
+    },
+    {
+      "id": "2026-11-02-AMD-1",
+      "date": "2026-11-02",
+      "bot": "scanner",
+      "ticker": "AMD",
+      "side": "short",
+      "entry": 487.5,
+      "stop": 499.5,
+      "target": 463.5,
+      "shares": 3,
+      "strategy": "LOD breakdown under VWAP (untested; PDH/PDL-break tests negative)",
+      "currency": "USD",
+      "size": 3,
+      "loggedAt": "2026-11-02T12:09:21-05:00",
+      "why": "skipped",
+      "state": "final",
+      "outcome": "time",
+      "exit": 466.74,
+      "fees": 0.9643,
+      "net": 61.32,
+      "netCAD": 85.6,
+      "resolvedAt": "2026-11-02T16:37:04-05:00"
+    },
+    {
+      "id": "2026-11-02-QQC-1",
+      "date": "2026-11-02",
+      "bot": "scanner",
+      "ticker": "QQC.TO",
+      "side": "long",
+      "entry": 47.7,
+      "stop": 47.1,
+      "target": 48.85,
+      "shares": 10,
+      "strategy": "QQC gap-and-go (backtest found no edge)",
+      "currency": "CAD",
+      "size": 10,
+      "loggedAt": "2026-11-02T09:44:44-05:00",
+      "why": "skipped",
+      "state": "not triggered",
+      "outcome": "no-fill",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
+      "id": "2026-11-02-RIVN-1",
+      "date": "2026-11-02",
+      "bot": "scanner",
+      "ticker": "RIVN",
+      "side": "short",
+      "entry": 12.79,
+      "stop": 13.12,
+      "target": 12.18,
+      "shares": 27,
+      "strategy": "Gap fade >0.75ATR (RIVN untested)",
+      "currency": "USD",
+      "size": 27,
+      "loggedAt": "2026-11-02T09:43:09-05:00",
+      "why": "skipped",
+      "state": "not triggered",
+      "outcome": "no-fill",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    }
+  ],
+  "excluded": []
+}

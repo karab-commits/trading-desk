@@ -325,3 +325,39 @@ Needs ≥ 3 bear reasons and ≥ 1 bull reason; `take` needs `--why`. Writes `id
 
 ### Strategy modes: live vs paper (Nov 2 2026, decided by Kiwi)
 `strategies.json` strategies carry `mode` (`live` | `paper` | `mixed`); a mixed entry has `modes{sub: live|paper}` and `aliases{sub: [...]}` (Quant Lab: `modes {orb: live, vwap: paper}`). A **paper** strategy is retired from real money: the routine still logs each signal (`log_idea.py add` matches the `--strategy` text or `--strategy-id` to the aliases, longest match wins, and writes `mode: "paper"`, `taken: "no"`, `paperReason`, printing `PAPER-ONLY … do NOT send a real order`; `--paper` forces it; `resolve --taken yes/--real-pnl` is refused). `risk_check.py` always BLOCKs it with `paper-only: retired`. Bots with more than one strategy must name it: `risk_check.py --bot quant --strategy orb|vwap|sip_orb …` (no or unknown `--strategy` = BLOCK).
+
+## Missed trades (ideas not taken) — K asked Nov 2 2026
+
+**MISSED TRADES · NOT REAL MONEY** panel on both pages (bullpen: full-width card above Desk throughput; Neon City: left
+column under the money board). It shows the hypothetical P&L, CAD after fees, of every `journal.json` idea that was
+**not** traded with real money: skipped, blocked by `risk_check.py` (a `rejected:<idea id>` key in counters.json `risk`),
+vetoed by `debate.py` (verdict `skip`), expired, untaken, or paper-only (`mode: paper`).
+- Excluded: real fills (`taken: "yes"`, `realPnl`/`realPnlCAD` set, or the watchlist item is `in trade` / has a `fill`) and
+  K's own manual orders (`manual: true` or bot `k`/`manual`; K's Questrade orders such as SPCX are not desk ideas and are never in journal.json).
+- Per idea: date, bot, ticker, side, size (shares), entry, stop, target, exit/last, why it was not real, state and P&L:
+  - **final** = the journal's paper result (`log_idea.py resolve`: hit target / hit stop / flat at close), or a watchlist `target hit`/`stopped`;
+  - **UNREALIZED** = no result yet, watchlist status `triggered`, market open: marked to the latest Questrade price the desk
+    wrote to data.json `watchlist[].last` (TradingView widgets can't be read by the page, so the desk price is the live source);
+    after 4:00 PM ET (or on a later day) it counts as flat at that last price until the close-out routine resolves it;
+  - **not triggered** = `no-fill`, or still `watching`/`expired` at the close → $0; `waiting` / `pending` (not scored yet) → $0.
+- Fees: the same model as `log_idea.py` (data.json `fees`): $0 commission, SEC fee on US sells, 1.5% FX on the USD P&L
+  (`fx.mode: pnl`), USD → CAD at `fees.usdcad.rate` (1.3960 if missing).
+- Totals today / this ISO week / all time (ET dates), per-bot breakdown, and `Real: $X · Missed: $Y` (Real = data.json
+  `pnlToday/pnlWeek/pnlAllTime.total`, per bot `bots[].pnlToday/Week/AllTime`).
+- `missed.js` (shared by both pages) recomputes everything in the browser from journal.json + data.json + counters.json
+  every 60 s, so the panel never depends on a stale file. `missed.py` does the identical math (tested to match) and writes
+  `missed.json` for routines and reports: `{updated, date, isoWeek, marketOpen, usdcad, totals{today,week,allTime}, byBot, real, ideas[], excluded[]}`.
+
+```
+python3 missed.py            # recompute + write missed.json, print Real vs Missed per period, per bot, per idea
+python3 missed.py --show     # print only
+python3 missed.py --json     # dump the model
+```
+
+### Paste into routines
+- **Price-refresh routine** (every 15 min, 9:45 AM–3:45 PM ET, after the `set_watch.py price …` updates):
+  `cd /workspace/desk-pages && python3 missed.py && git add missed.json data.json && git commit -qm "missed: refresh" && git push -q`
+- **Close-out routine** (3:30 PM close-out check and the 4:30 PM ET review, after every `log_idea.py resolve …` for the day):
+  `cd /workspace/desk-pages && python3 missed.py && git add missed.json journal.json data.json && git commit -qm "missed: close-out" && git push -q`
+  Resolve every idea of the day (`--outcome time --exit <4:00 PM price>` for ideas still open, `no-fill` for ideas that never
+  triggered) so nothing stays "flat at last price" or "pending".

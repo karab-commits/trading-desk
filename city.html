@@ -23,6 +23,7 @@ table{border-collapse:collapse;width:100%;font-size:11px}th{font-size:9px;letter
 .pz{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.15em;color:#ff3d6e;border:1px solid #ff3d6e;border-radius:3px;padding:0 4px;box-shadow:0 0 8px #ff3d6e88}.pzr{color:#ff9db3;font-size:9px;max-width:170px;white-space:normal}
 .lbl.paused{opacity:.55;filter:grayscale(.7)}.lbl.paused .pz{opacity:1}.oc.paused,.fb.paused{opacity:.5;filter:grayscale(.6)}
 .bud{display:grid;grid-template-columns:84px 1fr 96px;gap:6px;align-items:center;font-size:11px;margin:3px 0}.bud .bar{margin:0}.bud .n{text-align:right;color:#b9c3ee}
+.missed{--ms-accent:var(--cy);--ms-fg:#fff;--ms-dim:#8b95c9;--ms-bg2:#0007;--ms-line:#22f3ff33;--ms-up:#39ff88;--ms-down:#ff3d6e;--ms-warn:#ffa53d}.missed .ms-t b.u{text-shadow:0 0 8px #39ff8888}.missed .ms-t b.d{text-shadow:0 0 8px #ff3d6e88}
 .thru{--thr-accent:var(--cy);--thr-fg:#fff;--thr-dim:#8b95c9;--thr-bg2:#0007;--thr-line:#22f3ff44;--thr-track:#ffffff14;--thr-up:#39ff88;--thr-down:#ff3d6e}.thru .od{text-shadow:0 0 8px #22f3ff88}
 .lbl .thr{font-size:9px;color:#b9c3ee;letter-spacing:.04em}.lbl .thr b{color:#fff}
 .deb ul{margin:2px 0 4px;padding-left:16px;font-size:11px}.deb .vd{font-weight:900;letter-spacing:.12em}.deb .vd.take{color:#39ff88}.deb .vd.skip{color:#ff3d6e}
@@ -60,11 +61,12 @@ body.nogl #cols{display:grid;grid-template-columns:1fr 1fr;padding-bottom:50px}
 <div class="bar" style="--c:var(--ye)"><i id="prog"></i></div><small id="vsub"></small></div>
 <div id="ctl"><button id="back">← Back to city</button><button id="replay">▶ Replay today's events</button></div>
 <div id="flat"></div></div>
-<div id="cols"><div id="left" class="col"><div class="glass mb" id="money"></div><div class="glass" id="budgets"></div><div class="glass" id="appr"></div><div class="glass" id="org"></div><div class="glass"><div class="ph">DAILY REAL P&L</div><div id="chart"></div></div></div>
+<div id="cols"><div id="left" class="col"><div class="glass mb" id="money"></div><div class="glass" id="missed"><div class="ph">MISSED TRADES</div><small>Loading…</small></div><div class="glass" id="budgets"></div><div class="glass" id="appr"></div><div class="glass" id="org"></div><div class="glass"><div class="ph">DAILY REAL P&L</div><div id="chart"></div></div></div>
 <div id="right" class="col"><div class="glass" id="drawer"></div><div class="glass" id="thru"></div><div class="glass"><div class="ph">TODAY'S WATCHLIST</div><small id="wu"></small><div id="wl"></div></div>
 <div class="glass" id="debate"></div><div class="glass"><div class="ph">REAL EVENTS (journal)</div><div id="evl"></div></div></div></div>
 <div id="tape" class="glass"><div class="ticker" id="tk"></div></div>
 <script src="throughput.js"></script>
+<script src="missed.js"></script>
 <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
 <script>// ---- shared core: reads ONLY data.json + journal.json + strategies.json; no invented numbers ----
 const BOTCOL={kiwi:'#ffe14d',scanner:'#22f3ff',news:'#ff3df2',whale:'#4d8bff',risk:'#ff4d6d',quant:'#9dff3d',journal:'#ffa53d',options:'#b14dff'};
@@ -205,6 +207,7 @@ $('#replay').onclick=()=>{const today=S.events.filter(e=>(e.t||'').slice(0,10)==
 const hasGL=(()=>{try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(e){return false}})();
 if(!hasGL||/[?&]flat\b/.test(location.search))document.body.classList.add('nogl');
 window.__dataReady=load(true);setInterval(()=>load(false),60000);
+if(window.MISSED)MISSED.mount($('#missed'),{colors:BOTCOL,head:'<div class="ph">MISSED TRADES · IDEAS NOT TAKEN · NOT REAL MONEY</div>'});  // journal.json + data.json, every 60 s
 </script>
 <script type="module">
 // ===== 3D layer (three.js from CDN). Any failure -> 2D fallback =====
