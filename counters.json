@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T09:52:36-05:00",
+  "updated": "2026-11-03T09:52:44-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -224,8 +224,8 @@
   },
   "quant": {
    "quotesCalls": 1,
-   "barCalls": 5,
-   "bars": 20,
+   "barCalls": 12,
+   "bars": 300,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
