@@ -104,9 +104,9 @@
       "activity": {
         "now": "Watching 1 open position",
         "detail": "12:38 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
-        "since": "2026-11-03T12:39:04-05:00",
+        "since": "2026-11-03T12:39:10-05:00",
         "state": "waiting",
-        "next": "Next check 12:30",
+        "next": "Next check ~12:52",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -193,9 +193,9 @@
       "activity": {
         "now": "No source signal",
         "detail": "12:38 run: debit spreads only express another bot's valid signal; none this run.",
-        "since": "2026-11-03T12:39:04-05:00",
+        "since": "2026-11-03T12:39:10-05:00",
         "state": "idle",
-        "next": "Next check ~12:40"
+        "next": "Next check ~12:52"
       }
     }
   ],
