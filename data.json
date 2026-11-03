@@ -104,9 +104,9 @@
       "activity": {
         "now": "Watching 1 open position",
         "detail": "13:18 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
-        "since": "2026-11-03T13:19:09-05:00",
+        "since": "2026-11-03T13:19:15-05:00",
         "state": "done",
-        "next": "Next check ~13:18",
+        "next": "Next check 13:33",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
