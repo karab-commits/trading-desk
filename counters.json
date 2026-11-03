@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T11:48:07-05:00",
+  "updated": "2026-11-03T11:49:59-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 31,
+   "quotesCalls": 32,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 36,
+   "runs": 37,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -65,14 +65,14 @@
      "QQC.TO",
      "SOFI"
     ],
-    "total": 244
+    "total": 247
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T11:48:07-05:00",
+   "lastRun": "2026-11-03T11:49:59-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -123,7 +123,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 9,
+   "webSearches": 10,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 15,
@@ -275,9 +275,14 @@
       "title": "Stock market today: Dow, S&P 500, Nasdaq waver ahead of midterm election results, AMD earnings",
       "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-3-dow-sp-500-nasdaq-midterms-amd-earnings-141143244.html",
       "time": "2026-11-03T10:59:00-05:00"
+     },
+     {
+      "title": "Jazz climbs as 2026 revenue guidance boosted",
+      "url": "https://seekingalpha.com/news/4663602-jazz-climbs-as-2026-revenue-guidance-boosted",
+      "time": "2026-11-03T11:35:00-05:00"
      }
     ],
-    "count": 27,
+    "count": 28,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -305,15 +310,16 @@
      "f8f503366c5f",
      "167be1dc4572",
      "b403b9e5a48f",
-     "82efc2a2ed8b"
+     "82efc2a2ed8b",
+     "1471d28cd537"
     ]
    },
    "lastRun": null
   },
   "whale": {
    "quotesCalls": 4,
-   "barCalls": 28,
-   "bars": 236,
+   "barCalls": 29,
+   "bars": 264,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
