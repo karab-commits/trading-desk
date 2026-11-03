@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-03T13:29:14-05:00",
+  "updated": "2026-11-03T13:35:30-05:00",
   "date": "2026-11-03",
   "isoWeek": "2026-W45",
   "marketOpen": true,
@@ -68,7 +68,7 @@
     }
   },
   "real": {
-    "today": -3.77,
+    "today": -2.76,
     "week": 0.0,
     "allTime": 0.0,
     "byBot": {
@@ -98,7 +98,7 @@
         "allTime": 0
       },
       "quant": {
-        "today": -3.77,
+        "today": -2.76,
         "week": 0,
         "allTime": 0
       },
