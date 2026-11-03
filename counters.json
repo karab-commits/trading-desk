@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T14:01:48-05:00",
+  "updated": "2026-11-03T14:04:14-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 60,
+   "quotesCalls": 61,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 70,
+   "runs": 71,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -65,14 +65,14 @@
      "QQC.TO",
      "SOFI"
     ],
-    "total": 456
+    "total": 458
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T14:01:48-05:00",
+   "lastRun": "2026-11-03T14:04:14-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -125,8 +125,8 @@
    "optionContracts": 0,
    "webSearches": 11,
    "pagesFetched": 0,
-   "xSearches": 9,
-   "xPosts": 105,
+   "xSearches": 10,
+   "xPosts": 115,
    "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -396,8 +396,8 @@
   },
   "whale": {
    "quotesCalls": 10,
-   "barCalls": 29,
-   "bars": 264,
+   "barCalls": 30,
+   "bars": 304,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
