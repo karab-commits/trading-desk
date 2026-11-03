@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 3, 2026 9:09 AM ET",
+  "lastUpdated": "2026-11-03T09:32:00-05:00",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU trigger: buy if open <= 53.55, short if >= 54.59 (ATR14 0.692). SOFI gap +0.19, no trade.",
+      "status": "XIU opened 53.63 (gap -0.44 < 0.52 trigger); HXT 96.24 (-0.86 < 0.89); SOFI +0.14",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,22 +37,22 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "XIU/HXT gap check 9:30",
-        "detail": "XIU trigger: buy if open <= 53.55, short if >= 54.59 (ATR14 0.692). SOFI gap +0.19, no trade.",
-        "since": "2026-11-03T09:09:56-05:00",
-        "state": "waiting",
-        "next": "Re-check open 9:30",
+        "now": "No gap trade at open",
+        "detail": "XIU opened 53.63 (gap -0.44 < 0.52 trigger); HXT 96.24 (-0.86 < 0.89); SOFI +0.14",
+        "since": "2026-11-03T09:31:12-05:00",
+        "state": "done",
+        "next": "Intraday scan 9:45",
         "log": [
-          "Pre-market scan done 9:10 ET",
           "9:43 ET open scan: 1 untested idea (RIVN)",
-          "12:09 ET midday: 2 ideas paper-logged, none taken"
+          "12:09 ET midday: 2 ideas paper-logged, none taken",
+          "9:31 ET open: no gap fades triggered"
         ]
       }
     },
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
+      "role": "Trades fresh news-catalyst momentum \u00b7 devil's-advocate debate before every entry (veto only)",
       "status": "SHOP -16%, PLTR -6%, AAPL -4%, DT -16% pre-market; TSX futures down on oil; US midterms today",
       "pnlToday": 0,
       "pnlWeek": 0.0,
@@ -91,7 +91,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "SPY rv10 14.04% vs median 11.39%. Budget 0/150 used, 0/4 open",
+      "status": "No orders at the open. Budget 0/150 used, 0/4 open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -103,10 +103,10 @@
       "rejectedAllTime": 6,
       "activity": {
         "now": "Mood VOLATILE, 0 paused",
-        "detail": "SPY rv10 14.04% vs median 11.39%. Budget 0/150 used, 0/4 open",
-        "since": "2026-11-03T09:09:56-05:00",
-        "state": "working",
-        "next": "Check gap trades 9:30",
+        "detail": "No orders at the open. Budget 0/150 used, 0/4 open",
+        "since": "2026-11-03T09:31:12-05:00",
+        "state": "idle",
+        "next": "Intraday checks 9:45",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944: equity 2,500 CAD, BP 2,500 CAD, no positions or working orders",
+      "status": "No opening signal passed its trigger. Intraday routine takes SIP/news/QQQ setups from 9:45",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,14 +124,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market run",
-        "detail": "Account 0944: equity 2,500 CAD, BP 2,500 CAD, no positions or working orders",
-        "since": "2026-11-03T09:09:56-05:00",
-        "state": "working",
-        "next": "Gap entries 9:30",
+        "now": "Pre-market done, no orders",
+        "detail": "No opening signal passed its trigger. Intraday routine takes SIP/news/QQQ setups from 9:45",
+        "since": "2026-11-03T09:31:12-05:00",
+        "state": "done",
+        "next": "Intraday run 9:45",
         "log": [
           "3:40 ET close-out: flat, nothing to close",
-          "4:39 PM EOD review done"
+          "4:39 PM EOD review done",
+          "9:31 ET pre-market: no orders at open"
         ]
       }
     },
@@ -302,7 +303,7 @@
   ],
   "playbook": [
     {
-      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU.TO",
       "status": "active",
       "trades": 50,
       "winRate": 58.0,
@@ -310,7 +311,7 @@
       "note": "Re-checked Nov 2 2026 EOD after Questrade fees (CAD $0) + 0.02%/side slip, data thru Nov 2: n=50, win 58.0%, +0.188R, max DD 2.43R; H1 +0.236R n=26, H2 +0.137R n=24; last 6m +0.207R n=12; last 3m +0.116R n=6. Only active strategy. Tomorrow fires if XIU opens >=54.59 (short) or <=53.55 (long)."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · XIU/HXT/SOFI, 1 trade a day",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU/HXT/SOFI, 1 trade a day",
       "status": "testing",
       "trades": 78,
       "winRate": 56.4,
@@ -318,7 +319,7 @@
       "note": "New run Nov 2 2026 EOD (one desk trade a day, priority XIU > HXT > SOFI), after fees: +0.150R n=78, max DD 2.03R; last 6m +0.171R n=19; last 3m +0.110R n=10. Adds little over XIU alone."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 SOFI",
       "status": "testing",
       "trades": 33,
       "winRate": 60.6,
@@ -326,7 +327,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 HXT.TO",
       "status": "testing",
       "trades": 49,
       "winRate": 57.1,
@@ -334,7 +335,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R."
     },
     {
-      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
+      "name": "Down-open buy >0.35ATR, daily \u00b7 ZEB.TO",
       "status": "testing",
       "trades": 64,
       "winRate": 54.7,
@@ -342,7 +343,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 ZEB.TO",
       "status": "testing",
       "trades": 30,
       "winRate": 80.0,
@@ -350,7 +351,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 all 8 tickers pooled",
       "status": "testing",
       "trades": 412,
       "winRate": 55.1,
@@ -358,7 +359,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
     },
     {
-      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
+      "name": "VWAP cross +trendFilter, 30-min \u00b7 XIU.TO",
       "status": "testing",
       "trades": 51,
       "winRate": 54.9,
@@ -383,6 +384,10 @@
     }
   ],
   "deskLog": [
+    {
+      "date": "Nov 3",
+      "text": "Pre-market: mood volatile (SPY rv10 14.0% vs 11.4%). No gap fade at the open (XIU -0.44 vs 0.52 trigger, HXT missed by 3 cents). Watching SHOP, PLTR, AAPL, LSCC (stocks-in-play ORB), DT (news), QQQ (whale)"
+    },
     {
       "date": "Nov 2",
       "text": "Multi-strategy desk: every bot trades its strategy (strategies.json) on every valid signal; Kiwi sends orders, K approves each in Questrade. $40/trade, $150/day stop, max 4 open"
@@ -537,8 +542,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-02T16:38:52-05:00",
-    "ideasLogged": 4,
+    "updated": "2026-11-03T09:31:04-05:00",
+    "ideasLogged": 6,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -549,6 +554,16 @@
         "wins": 1,
         "real": 0.0,
         "taken": 0
+      },
+      "2026-11-03": {
+        "net": 0.0,
+        "ideas": 2,
+        "resolved": 2,
+        "open": 0,
+        "filled": 0,
+        "wins": 0,
+        "real": 0.0,
+        "taken": 0
       }
     }
   },
@@ -556,67 +571,77 @@
     {
       "date": "2026-11-03",
       "ticker": "XIU.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-03T09:09:30-05:00",
       "side": "long",
       "target": 54.07,
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "Buy at the open only if XIU opens at or below 53.55 (gap down >= 0.75 x ATR14 0.692 = 0.519 under Monday's 54.07 close). TSX futures down on oil and SHOP -16% pre-market. Short side needs an open >= 54.59.",
+      "reason": "Opened 53.63, gap -0.44 below Monday's 54.07 close, short of the 0.519 trigger (0.75 x ATR14). No gap-fade trade today.",
       "trigger": 53.55,
       "entryNote": "open <= 53.55 (or short if open >= 54.59)",
       "testNote": "testing: walk-forward OOS +0.037R n=38",
       "tvSymbol": "TSX:XIU",
       "tested": false,
       "currency": "CAD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
-      "last": 54.07,
-      "priceTime": "2026-11-03T09:09:30-05:00",
+      "rr": 1.0,
+      "rrNet": 1.0,
+      "netProfitAtTarget": 39.52,
+      "netLossAtStop": -39.52,
+      "netProfitAtTargetCAD": 39.52,
+      "netLossAtStopCAD": -39.52,
+      "last": 53.66,
+      "priceTime": "2026-11-03T09:30:52-05:00",
       "statusAt": "2026-11-03T09:09:30-05:00",
       "triggeredAt": "2026-11-03T09:09:30-05:00",
       "triggerPrice": 54.07,
       "openPnl": null,
       "openPnlCAD": null,
       "zoneHigh": 53.55,
-      "notBefore": "09:30"
+      "notBefore": "09:30",
+      "entry": 53.55,
+      "stop": 53.03,
+      "shares": 76,
+      "planFrom": "journal",
+      "journalId": "2026-11-03-XIU-1"
     },
     {
       "date": "2026-11-03",
       "ticker": "HXT.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-03T09:09:30-05:00",
       "side": "long",
       "target": 97.1,
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "Same correlation group as XIU, so only one of them can trade. Long if open <= 96.21, short if open >= 97.99 (ATR14 1.19, trigger 0.89).",
+      "reason": "Opened 96.24, gap -0.86 vs the 0.89 trigger: missed by 3 cents. No trade.",
       "trigger": 96.21,
       "testNote": "testing: OOS +0.055R n=39",
       "tvSymbol": "TSX:HXT",
       "tested": false,
       "currency": "CAD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
-      "last": 97.1,
-      "priceTime": "2026-11-03T09:09:30-05:00",
+      "rr": 1.0,
+      "rrNet": 1.0,
+      "netProfitAtTarget": 39.16,
+      "netLossAtStop": -39.16,
+      "netProfitAtTargetCAD": 39.16,
+      "netLossAtStopCAD": -39.16,
+      "last": 96.24,
+      "priceTime": "2026-11-03T09:30:52-05:00",
       "statusAt": "2026-11-03T09:09:30-05:00",
       "triggeredAt": "2026-11-03T09:09:30-05:00",
       "triggerPrice": 97.1,
       "openPnl": null,
       "openPnlCAD": null,
       "zoneHigh": 96.21,
-      "notBefore": "09:30"
+      "notBefore": "09:30",
+      "entry": 96.21,
+      "stop": 95.32,
+      "shares": 44,
+      "planFrom": "journal",
+      "journalId": "2026-11-03-HXT-1"
     },
     {
       "date": "2026-11-03",
@@ -757,7 +782,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-03T09:09:44-05:00",
+  "watchlistUpdated": "2026-11-03T09:31:04-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",

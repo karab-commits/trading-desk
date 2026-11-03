@@ -280,6 +280,150 @@
         "median": 11.38,
         "asOfClose": "2026-10-30"
       }
+    },
+    {
+      "id": "2026-11-03-XIU-1",
+      "date": "2026-11-03",
+      "session": "premarket",
+      "ticker": "XIU.TO",
+      "side": "long",
+      "entry": 53.55,
+      "stop": 53.03,
+      "target": 54.07,
+      "shares": 76,
+      "strategy": "Big-gap fade (0.75x ATR14)",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Conditional: buy only if open <= 53.55. Opened 53.63 (gap -0.44 < trigger 0.519): no trade.",
+      "loggedAt": "2026-11-03T09:31:04-05:00",
+      "plan": {
+        "riskGross": 39.52,
+        "rewardGross": 39.52,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 39.52,
+        "netLossAtStop": -39.52,
+        "rrNet": 1.0,
+        "netProfitAtTargetCAD": 39.52,
+        "netLossAtStopCAD": -39.52
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 14.04,
+        "median": 11.39,
+        "asOfClose": "2026-11-02",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": {
+        "outcome": "no-fill",
+        "exit": null,
+        "gross": 0.0,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "net": 0.0,
+        "grossR": 0.0,
+        "netR": 0.0,
+        "netCAD": 0.0,
+        "resolvedAt": "2026-11-03T09:31:04-05:00"
+      },
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-03-HXT-1",
+      "date": "2026-11-03",
+      "session": "premarket",
+      "ticker": "HXT.TO",
+      "side": "long",
+      "entry": 96.21,
+      "stop": 95.32,
+      "target": 97.1,
+      "shares": 44,
+      "strategy": "Big-gap fade (0.75x ATR14)",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Conditional: buy only if open <= 96.21. Opened 96.24 (gap -0.86 < trigger 0.89): no trade.",
+      "loggedAt": "2026-11-03T09:31:04-05:00",
+      "plan": {
+        "riskGross": 39.16,
+        "rewardGross": 39.16,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 39.16,
+        "netLossAtStop": -39.16,
+        "rrNet": 1.0,
+        "netProfitAtTargetCAD": 39.16,
+        "netLossAtStopCAD": -39.16
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 14.04,
+        "median": 11.39,
+        "asOfClose": "2026-11-02",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": {
+        "outcome": "no-fill",
+        "exit": null,
+        "gross": 0.0,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "net": 0.0,
+        "grossR": 0.0,
+        "netR": 0.0,
+        "netCAD": 0.0,
+        "resolvedAt": "2026-11-03T09:31:04-05:00"
+      },
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
