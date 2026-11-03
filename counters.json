@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T10:31:01-05:00",
+  "updated": "2026-11-03T10:32:57-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 12,
+   "quotesCalls": 13,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 15,
+   "runs": 16,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -65,14 +65,14 @@
      "QQC.TO",
      "SOFI"
     ],
-    "total": 103
+    "total": 110
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T10:31:01-05:00",
+   "lastRun": "2026-11-03T10:32:57-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -123,7 +123,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 4,
+   "webSearches": 5,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 15,
@@ -205,9 +205,14 @@
       "title": "Organigram to Acquire Aurora and Establish a Global Cannabis Leader",
       "url": "https://www.businesswire.com/news/home/20261103746636/en/Organigram-to-Acquire-Aurora-and-Establish-a-Global-Cannabis-Leader",
       "time": "2026-11-03T09:16:00-05:00"
+     },
+     {
+      "title": "Tech Up Early Despite Apple's Drop on Election Day",
+      "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+      "time": "2026-11-03T10:32:34-05:00"
      }
     ],
-    "count": 13,
+    "count": 14,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -221,15 +226,16 @@
      "f8e26e7bb201",
      "a1fd97b44fa0",
      "3aba69751a9a",
-     "326be552ba43"
+     "326be552ba43",
+     "d43b2c195845"
     ]
    },
    "lastRun": null
   },
   "whale": {
    "quotesCalls": 3,
-   "barCalls": 1,
-   "bars": 40,
+   "barCalls": 2,
+   "bars": 53,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
