@@ -1,7 +1,6 @@
 # K's AI Trading Desk · Neon City
 
-Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the Neon City view (three.js from unpkg; falls back to a 2D dashboard if WebGL/three.js fails, or force it with `?flat`). It reads `data.json`, `journal.json`, `strategies.json`, `regime.json` and `counters.json` on load and every 60 s; it has no inlined data, so it must be served over http(s).
-The classic pixel bullpen is kept at `bullpen.html` (self-contained, inlined fallback data, reads `data.json` every 30 s).
+Live at https://karab-commits.github.io/trading-desk/ (GitHub Pages, `main`). `index.html` is the bullpen desk view again (K asked to go back, Nov 2, 2026): self-contained, inlined fallback data, reads `data.json` every 30 s. The Neon City view is kept at `city.html` (three.js from unpkg; 2D fallback with `?flat`; reads data.json, journal.json, strategies.json, regime.json, counters.json every 60 s; must be served over http(s)).
 
 ### Neon City: what drives what (all from data.json / journal.json)
 - Vault: `pnlAllTime.total`, `pnlToday`, `account`, `desk.daysRunning`; progress bar = daily loss budget used = max(0, −`pnlToday.total`) / `account.dailyLossStop` (150 CAD; turns red at the stop); subtitle adds trades today (`pnlToday.trades`) and open positions `account.openPositions` / `account.maxOpenPositions` (4). Green/red days and the daily bar chart use `paper.byDate[date].real` (chart shows an empty state under 5 days).
@@ -83,7 +82,7 @@ bars + option contracts + headlines + pages + X posts + ideas + rejections + ord
 (hover a row for every counter). Expandable lists: today's latest 40 headlines with links, and the Nov 2 audit.
 Neon City towers (and the flat view / desk drawer) show `TODAY n RUNS · m ITEMS` for that bot.
 
-## Classic bullpen (bullpen.html)
+## Bullpen desk (index.html)
 Nothing on the floor is simulated. Every desk CRT, packet, and bell ring comes from `data.json` (bots' `activity`, `lastApprovedIdea`). The animated mini-charts on the desk monitors are decoration only.
 
 ## New data.json fields
@@ -225,7 +224,7 @@ Not included: short borrow fees (charged on overnight shorts; the desk is flat b
 ## Multi-strategy desk (K's choice, Nov 2 2026) + strategies.json
 **Rules card (data.json `rules`)**: Kiwi leads: orders are sent without waiting for K's go; K approves each one in Questrade. Every bot trades its strategy on every valid signal. $40 max risk per trade, $150 daily loss stop, max 4 open positions, flat by close. (`account.maxRiskPerTrade: 40`, `account.dailyLossStop: 150`, `account.maxOpenPositions: 4`; `account.maxTradesPerDay` removed.)
 
-`strategies.json` is read by the signal routine (every 15 min, 9:45 AM - 3:15 PM ET) on every run, and by index.html (tower banners + desk panel). Schema: `{version, updated, readBy, execution, risk{maxLossPerTradeCAD, dailyLossStopCAD, maxOpenPositions, sameDayOnly, flatByClose, noNewEntriesAfterET, flattenByET, sizing, dailyStopCheck, stopOrders, botBudgetsCAD, pauseRules, correlation{groups, threshold, lookbackDays}}, regime, promotionRule, strategies[]}`. A bot can own more than one strategy (Quant Lab: ORB + VWAP, then Stocks-in-play ORB); the tower banner shows the first, the desk panel lists all; each strategy = `{bot (data.json bot id), id?, scout?, name, short (banner label), tested, testedTag, stats|null (stats.outOfSample = walk-forward), citation?, devils_advocate?, untestedWhy?, universe[], entry, stop, target, timeStop, window{start,end,tz}, maxTradesPerDay, notes?}` (Quant Lab's entry/stop/target/window are split into `orb` and `vwap`; Risk Manager has `limits[]`).
+`strategies.json` is read by the signal routine (every 15 min, 9:45 AM - 3:15 PM ET) on every run, and by city.html (tower banners + desk panel). Schema: `{version, updated, readBy, execution, risk{maxLossPerTradeCAD, dailyLossStopCAD, maxOpenPositions, sameDayOnly, flatByClose, noNewEntriesAfterET, flattenByET, sizing, dailyStopCheck, stopOrders, botBudgetsCAD, pauseRules, correlation{groups, threshold, lookbackDays}}, regime, promotionRule, strategies[]}`. A bot can own more than one strategy (Quant Lab: ORB + VWAP, then Stocks-in-play ORB); the tower banner shows the first, the desk panel lists all; each strategy = `{bot (data.json bot id), id?, scout?, name, short (banner label), tested, testedTag, stats|null (stats.outOfSample = walk-forward), citation?, devils_advocate?, untestedWhy?, universe[], entry, stop, target, timeStop, window{start,end,tz}, maxTradesPerDay, notes?}` (Quant Lab's entry/stop/target/window are split into `orb` and `vwap`; Risk Manager has `limits[]`).
 
 | bot | strategy | status (Nov 2 promotion rule) | in-sample (after fees/slip) | walk-forward out-of-sample | max/day |
 |---|---|---|---|---|---|
@@ -317,7 +316,7 @@ Needs ≥ 3 bear reasons and ≥ 1 bull reason; `take` needs `--why`. Writes `id
 ### Walk-forward (`/workspace/quant/walkforward.py`)
 `python3 /workspace/quant/walkforward.py` → `/workspace/quant/walkforward-YYYY-MM-DD/` (`windows.csv`, `neighbours.csv`, `lookahead_audit.csv`, `oos_trades.csv`, `walkforward_results.json`, `output.txt`). Gap fade: 12-month train / 3-month test rolled quarterly (5 test windows, Oct 2025 – Nov 2 2026), grid k × stop. Quant Lab ORB / VWAP: 2-month train / 1-month test rolled monthly on 30-min bars (Jul–Oct 2026). Look-ahead audit recomputes every signal from truncated data: 0 leaks. **Promotion rule** (`strategies.json promotionRule`): active only if OOS mean R > 0 in most test windows AND ≥ 20 paper/real journal trades.
 
-### Site (index.html)
+### Neon City (city.html)
 - **Mood badge** on the vault's top-right corner: `MOOD · CALM` (green) / `MOOD · VOLATILE` (orange), tooltip with SPY rv10 vs median; shows the date if regime.json is not today's.
 - **Paused bots**: tower dimmed (grey, low beam) with a red `PAUSED` tag, the reason and the until date on its label; same tag on the org chart, flat view, desk panel and budget bar.
 - **Loss budgets today** panel (left column): desk $150 bar plus one bar per bot (used = realized loss + open risk), orange at 60%, red at 100%.

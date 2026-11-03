@@ -1,5 +1,5 @@
 /* DESK THROUGHPUT panel: reads counters.json (written only by count.py and the desk scripts). Real counts only:
-   a missing day/bot shows 0, nothing is estimated. Shared by index.html (Neon City) and bullpen.html.
+   a missing day/bot shows 0, nothing is estimated. Shared by index.html (bullpen desk) and city.html (Neon City).
    API: THRU.fetch() -> Promise<counters|null>; THRU.render(el, C, opts); THRU.bot(C, id) -> today's numbers for one bot;
         THRU.mount(el, opts) fetches + renders now and every 60 s. */
 (function(){

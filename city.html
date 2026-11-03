@@ -1,0 +1,257 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>K's AI Trading Desk · Neon City</title>
+<style>:root{--bg:#070a1f;--cy:#22f3ff;--mg:#ff3df2;--li:#9dff3d;--ye:#ffe14d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#dfe8ff;font:13px/1.35 "JetBrains Mono",ui-monospace,Menlo,monospace}
+.up{color:#39ff88;text-shadow:0 0 8px #39ff8888}.dn{color:#ff3d6e;text-shadow:0 0 8px #ff3d6e88}.flat{color:#e8f0ff}
+.glass{background:rgba(20,24,60,.55);backdrop-filter:blur(10px);border:1px solid rgba(34,243,255,.55);border-radius:10px;box-shadow:0 0 18px rgba(34,243,255,.25),inset 0 0 20px rgba(34,243,255,.06)}
+.ph{font-weight:800;letter-spacing:.15em;color:var(--cy);text-shadow:0 0 8px var(--cy);margin-bottom:6px;font-size:11px}
+.mut{color:#8b95c9}small{display:block;color:#8b95c9;font-size:10px}
+label{display:block;font-size:9px;letter-spacing:.15em;color:#8b95c9;margin-top:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:#666}.dot.idle{background:var(--ye);box-shadow:0 0 6px var(--ye)}.dot.done{background:#39ff88;box-shadow:0 0 6px #39ff88}.dot.working,.dot.active{background:var(--mg);box-shadow:0 0 8px var(--mg);animation:bl 1s infinite}@keyframes bl{50%{opacity:.3}}
+.desk{border-left:3px solid var(--c);padding-left:10px}.dh{font-size:16px}.dh b{color:var(--c);text-shadow:0 0 10px var(--c)}.tag{font-size:9px;border:1px solid var(--c);color:var(--c);padding:1px 5px;border-radius:3px;margin-left:6px}.st{float:right;font-size:10px;color:#8b95c9}
+.role{color:#8b95c9;font-size:11px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px}.grid2 b{font-size:14px}.now{color:#fff}
+.bar{height:8px;background:#ffffff14;border-radius:4px;overflow:hidden;margin:3px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--c,var(--cy)),#fff);box-shadow:0 0 10px var(--c)}
+.log,.runs{margin:2px 0;padding-left:16px;font-size:11px;max-height:150px;overflow:auto}.detail{font-size:11px;margin-top:8px;color:#b9c3ee}
+.empty{padding:14px;border:1px dashed #ffffff33;border-radius:8px;color:#b9c3ee;font-size:12px}
+.appr .ap{display:flex;gap:8px;align-items:center;border:1px solid #ffffff22;border-left:3px solid var(--c);border-radius:6px;padding:6px;margin-bottom:5px;font-size:12px}.ap .n{color:var(--ye);font-weight:800}.ap>div{flex:1}.pend{font-size:9px;color:var(--ye);border:1px solid var(--ye);padding:1px 5px;border-radius:3px;box-shadow:0 0 8px #ffe14d55}.cnt{background:var(--mg);color:#000;border-radius:8px;padding:0 6px;margin-left:4px}
+.org{text-align:center}.ohead{display:flex;justify-content:center}.oline{height:12px;border-left:1px solid var(--cy);width:0;margin:0 auto;box-shadow:0 0 6px var(--cy)}
+.oteam{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;border-top:1px solid var(--cy);padding-top:8px}
+.oc{border:1px solid var(--c);border-radius:6px;padding:5px;text-align:left;font-size:10px;cursor:pointer;background:#0008;box-shadow:0 0 8px color-mix(in srgb,var(--c) 40%,transparent)}.oc b{color:var(--c)}.oc .t{color:#fff;margin-top:2px}.oc .nx{color:#8b95c9}
+.ticker{display:flex;gap:28px;white-space:nowrap;animation:tk 30s linear infinite}@keyframes tk{to{transform:translateX(-50%)}}
+table{border-collapse:collapse;width:100%;font-size:11px}th{font-size:9px;letter-spacing:.1em;color:#8b95c9;text-align:left;font-weight:400}td,th{padding:4px 6px;border-bottom:1px solid #ffffff12}
+.badge{font-size:9px;padding:1px 5px;border-radius:3px;border:1px solid currentColor}
+#mood{position:absolute;top:-11px;right:-14px;font-size:10px;font-weight:800;letter-spacing:.12em;padding:3px 9px;border-radius:12px;background:#070a1f;border:1px solid currentColor;box-shadow:0 0 12px currentColor;cursor:help;white-space:nowrap}#mood.calm{color:#39ff88}#mood.volatile{color:#ff8a3d}#mood.unk{color:#8b95c9}
+.pz{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.15em;color:#ff3d6e;border:1px solid #ff3d6e;border-radius:3px;padding:0 4px;box-shadow:0 0 8px #ff3d6e88}.pzr{color:#ff9db3;font-size:9px;max-width:170px;white-space:normal}
+.lbl.paused{opacity:.55;filter:grayscale(.7)}.lbl.paused .pz{opacity:1}.oc.paused,.fb.paused{opacity:.5;filter:grayscale(.6)}
+.bud{display:grid;grid-template-columns:84px 1fr 96px;gap:6px;align-items:center;font-size:11px;margin:3px 0}.bud .bar{margin:0}.bud .n{text-align:right;color:#b9c3ee}
+.thru{--thr-accent:var(--cy);--thr-fg:#fff;--thr-dim:#8b95c9;--thr-bg2:#0007;--thr-line:#22f3ff44;--thr-track:#ffffff14;--thr-up:#39ff88;--thr-down:#ff3d6e}.thru .od{text-shadow:0 0 8px #22f3ff88}
+.lbl .thr{font-size:9px;color:#b9c3ee;letter-spacing:.04em}.lbl .thr b{color:#fff}
+.deb ul{margin:2px 0 4px;padding-left:16px;font-size:11px}.deb .vd{font-weight:900;letter-spacing:.12em}.deb .vd.take{color:#39ff88}.deb .vd.skip{color:#ff3d6e}
+
+#scene{position:fixed;inset:0}#c{position:absolute;inset:0;width:100%;height:100%}#lbls{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#title{position:absolute;top:10px;left:14px;font-weight:900;font-size:18px;color:var(--mg);text-shadow:0 0 12px var(--mg);z-index:3}#title small a{color:#8b95c9}
+#top{position:absolute;top:10px;left:50%;transform:translateX(-50%);text-align:center;padding:8px 22px;min-width:380px;border-color:var(--ye);box-shadow:0 0 24px #ffe14d55;z-index:3}
+#top .v{font-size:11px;letter-spacing:.3em;color:var(--ye);text-shadow:0 0 8px var(--ye)}#total{font-size:38px;font-weight:800}
+.col{position:absolute;top:64px;bottom:54px;overflow:auto;display:flex;flex-direction:column;gap:8px;z-index:2}.col>div{padding:9px}
+#left{left:10px;width:300px}#right{right:10px;width:340px}#left .oteam{grid-template-columns:1fr 1fr}
+#tape{position:fixed;left:0;right:0;bottom:0;height:44px;overflow:hidden;border-radius:0;display:flex;align-items:center;border-width:1px 0 0;z-index:3}
+.lbl{position:absolute;transform:translate(-50%,-100%);text-align:center;pointer-events:auto;cursor:pointer;animation:bob 3s ease-in-out infinite}
+.lbl .ban{font-size:9px;font-weight:900;letter-spacing:.2em;color:var(--c);text-shadow:0 0 8px var(--c)}
+.lbl .card{background:rgba(10,12,40,.78);border:1px solid var(--c);border-radius:6px;padding:4px 8px;font-size:10px;box-shadow:0 0 12px var(--c);min-width:110px}
+@keyframes bob{50%{margin-top:-6px}}
+button{background:#0008;color:var(--cy);border:1px solid var(--cy);border-radius:6px;padding:5px 10px;font:inherit;cursor:pointer;box-shadow:0 0 8px #22f3ff55}
+#ctl{position:absolute;left:50%;transform:translateX(-50%);top:134px;display:flex;gap:8px;z-index:3}#back{display:none}
+.tabs{display:flex;gap:4px;margin-bottom:6px}.tabs button{padding:3px 8px;font-size:10px}.tabs button.on{background:var(--cy);color:#000}
+.mb b.big{font-size:22px;display:block}
+.wl-it{border:1px solid #ffffff22;border-radius:6px;padding:6px;margin-bottom:6px}.wl-it .h{display:flex;justify-content:space-between}
+tv-single-ticker{display:block;min-height:60px;margin-top:4px}
+#flat{display:none;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;padding:8px}
+#flat .fb{padding:8px;cursor:pointer;border-color:var(--c);box-shadow:0 0 10px var(--c)}
+#drawer{display:none}#drawer.open{display:block}
+body.nogl #scene{position:relative;height:auto;inset:auto;min-height:150px}body.nogl #c,body.nogl #lbls{display:none}body.nogl #flat{display:grid}body.nogl #title,body.nogl #top,body.nogl #ctl{position:static;transform:none;margin:8px auto;width:max-content;max-width:94%}body.nogl .col{width:auto!important}
+body.nogl .col,body.narrow .col{position:static;width:auto;overflow:visible;padding:0 8px;margin-bottom:8px}
+body.nogl #cols{display:grid;grid-template-columns:1fr 1fr;padding-bottom:50px}
+@media(max-width:800px){#scene{position:relative;height:62vh}#top{min-width:0;width:94%;top:40px;padding:6px}#total{font-size:26px}#title{font-size:13px;top:6px}
+ #ctl{top:auto;bottom:8px}.lbl .card{min-width:0;padding:2px 5px;font-size:9px}.lbl .card .x{display:none}
+ .col{position:static;width:auto!important;overflow:visible;padding:0 8px;margin-top:8px}#cols{padding-bottom:50px}body.nogl #cols{display:block}}
+</style></head><body>
+<div id="scene"><canvas id="c"></canvas><div id="lbls"></div>
+<div id="title">K'S AI TRADING DESK <small class="mut" id="upd"></small> <small><a href="index.html">← Back to the desk</a></small></div>
+<div id="top" class="glass"><span id="mood" class="unk">MOOD …</span><div class="v">THE VAULT · <span id="days"></span> TRADING DAY(S) · REAL P&L</div><div id="total" class="flat">—</div>
+<div class="bar" style="--c:var(--ye)"><i id="prog"></i></div><small id="vsub"></small></div>
+<div id="ctl"><button id="back">← Back to city</button><button id="replay">▶ Replay today's events</button></div>
+<div id="flat"></div></div>
+<div id="cols"><div id="left" class="col"><div class="glass mb" id="money"></div><div class="glass" id="budgets"></div><div class="glass" id="appr"></div><div class="glass" id="org"></div><div class="glass"><div class="ph">DAILY REAL P&L</div><div id="chart"></div></div></div>
+<div id="right" class="col"><div class="glass" id="drawer"></div><div class="glass" id="thru"></div><div class="glass"><div class="ph">TODAY'S WATCHLIST</div><small id="wu"></small><div id="wl"></div></div>
+<div class="glass" id="debate"></div><div class="glass"><div class="ph">REAL EVENTS (journal)</div><div id="evl"></div></div></div></div>
+<div id="tape" class="glass"><div class="ticker" id="tk"></div></div>
+<script src="throughput.js"></script>
+<script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
+<script>// ---- shared core: reads ONLY data.json + journal.json + strategies.json; no invented numbers ----
+const BOTCOL={kiwi:'#ffe14d',scanner:'#22f3ff',news:'#ff3df2',whale:'#4d8bff',risk:'#ff4d6d',quant:'#9dff3d',journal:'#ffa53d',options:'#b14dff'};
+const BOTCAT={kiwi:'HEAD OF DESK',scanner:'SCANNER',news:'NEWS',whale:'FLOW',risk:'RISK',quant:'QUANT',journal:'JOURNAL',options:'OPTIONS'};
+const ORDER=['kiwi','scanner','news','whale','risk','quant','journal','options'];
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money=(v,cur='CAD')=>v==null||isNaN(v)?'—':(v<0?'-':(v>0?'+':''))+'$'+Math.abs(v).toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2})+(cur?' '+cur:'');
+const plain=(v)=>v==null?'—':'$'+Number(v).toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
+const tcls=v=>v>0?'up':v<0?'dn':'flat';
+const hhmm=iso=>{if(!iso)return'';const d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Toronto'})+' ET'};
+async function loadDesk(){
+  const bust='?t='+Date.now();
+  const [d,j,sj]=await Promise.all([fetch('data.json'+bust).then(r=>r.json()),fetch('journal.json'+bust).then(r=>r.json()).catch(()=>({ideas:[]})),fetch('strategies.json'+bust).then(r=>r.json()).catch(()=>({strategies:[]}))]);
+  const [regime,counters]=await Promise.all([fetch('regime.json'+bust).then(r=>r.ok?r.json():null).catch(()=>null),window.THRU?THRU.fetch():Promise.resolve(null)]);
+  const strats=sj.strategies||[];
+  const ideas=j.ideas||[];
+  const bots=ORDER.map(id=>d.bots.find(b=>b.id===id)).filter(Boolean).concat(d.bots.filter(b=>!ORDER.includes(b.id)));
+  bots.forEach(b=>{
+    const mine=ideas.filter(i=>i.bot===b.id);
+    b._ideas=mine;
+    b._strat=strats.find(s=>s.bot===b.id)||null;
+    b._strats=strats.filter(s=>s.bot===b.id);
+    b._paused=(d.paused||[]).find(p=>p.bot===b.id)||null;
+    b._paper=mine.reduce((s,i)=>s+(i.result&&typeof i.result.netCAD==='number'?i.result.netCAD:0),0);
+    b._real=b.pnlAllTime??0;
+    b._thru=window.THRU?THRU.bot(counters,b.id):{runs:0,items:0};
+    b._position=(d.account.openPositions>0&&d.watchlist.some(w=>w.bot===b.id&&/open|filled|taken/i.test(w.status)))?'IN TRADE':'FLAT';
+  });
+  // daily history: real P&L per day from paper.byDate[].real (only days the desk has run)
+  const days=Object.entries((d.paper&&d.paper.byDate)||{}).sort().map(([date,v])=>({date,real:v.real??0,paper:v.net??0,ideas:v.ideas??0,taken:v.taken??0}));
+  // real events for pulses: idea logged, idea resolved
+  const events=[];
+  ideas.forEach(i=>{events.push({t:i.loggedAt,bot:i.bot,kind:'logged',text:`${i.ticker} ${i.side} idea logged`});
+    if(i.result&&i.result.resolvedAt)events.push({t:i.result.resolvedAt,bot:i.bot,kind:'resolved',text:`${i.ticker} scored: ${i.result.outcome} (paper ${money(i.result.netCAD)})`});});
+  events.sort((a,b)=>new Date(a.t)-new Date(b.t));
+  // paper P&L by ticker (resolved journal ideas)
+  const byTicker={};ideas.forEach(i=>{if(i.result&&typeof i.result.netCAD==='number')byTicker[i.ticker]=(byTicker[i.ticker]||0)+i.result.netCAD;});
+  return {d,ideas,bots,days,events,byTicker,strat:sj,regime,counters};
+}
+function vaultStats(S){const d=S.d;const real=S.days.map(x=>x.real);
+  return {total:d.pnlAllTime.total,today:d.pnlToday.total,tradesToday:d.pnlToday.trades,tradesAll:d.pnlAllTime.trades,days:d.desk.daysRunning,
+    green:real.filter(v=>v>0).length,red:real.filter(v=>v<0).length,flat:real.filter(v=>v===0).length,
+    best:real.length?Math.max(...real):null,equity:d.account.equity,bp:d.account.buyingPower,cur:d.account.currency,maxRisk:d.account.maxRiskPerTrade,
+    paperNet:(d.scorecard&&d.scorecard.week&&d.scorecard.week.paper)?d.scorecard.week.paper.netPnl:null};}
+function odometer(el,target,cur){ // ticks from 0 to the real value once; ends exactly on data value
+  const t0=performance.now(),dur=1400;const step=n=>{const k=Math.min(1,(n-t0)/dur);el.textContent=money(target*(1-Math.pow(1-k,3)),cur);if(k<1)requestAnimationFrame(step);else el.textContent=money(target,cur)};requestAnimationFrame(step);}
+function wlRows(S){return S.d.watchlist.map(w=>{const cad=w.currency==='CAD';
+  const pnl=w.openPnlCAD;return {...w,pnlTxt:pnl==null?(/skip/i.test(w.status)?'not taken':'—'):money(pnl),pnlCls:tcls(pnl||0)}});}
+function dailyChartSVG(S,w=520,h=170){
+  const days=S.days;if(days.length<5){
+    return `<div class="empty">Only <b>${days.length}</b> trading day${days.length===1?'':'s'} logged. Real P&L: ${days.map(x=>`${x.date.slice(5)} <b class="${tcls(x.real)}">${money(x.real)}</b>`).join(', ')||'none yet'}.<br><small>Bar chart fills in as real trading days are logged. Paper results are not counted as P&L.</small></div>`;}
+  const m=Math.max(1,...days.map(x=>Math.abs(x.real)));const bw=w/days.length;
+  return `<svg viewBox="0 0 ${w} ${h}" class="bars"><line x1="0" x2="${w}" y1="${h/2}" y2="${h/2}" stroke="#ffffff33"/>${days.map((x,i)=>{const bh=Math.abs(x.real)/m*(h/2-10);return `<rect x="${i*bw+2}" width="${bw-4}" y="${x.real>=0?h/2-bh:h/2}" height="${Math.max(1,bh)}" fill="${x.real>=0?'#39ff88':'#ff3d6e'}"><title>${x.date} ${money(x.real)}</title></rect>`}).join('')}</svg>`;}
+function botDeskHTML(S,b){const a=b.activity||{};const col=BOTCOL[b.id]||'#22f3ff';
+  const ideas=b._ideas;const scored=ideas.filter(i=>i.result).length;
+  return `<div class="desk" style="--c:${col}">
+  <div class="dh"><span class="dot ${a.state}"></span><b>${esc(b.name)}</b> <span class="tag">${esc(BOTCAT[b.id]||'')}</span><span class="st">${esc((a.state||'').toUpperCase())}</span></div>
+  <div class="role">${esc(b.role)}</div>
+  ${b._paused?`<div style="margin-top:6px"><span class="pz">PAUSED</span> <span class="pzr">${esc(b._paused.reason)} · until ${esc(b._paused.until)}</span></div>`:''}
+  ${(b._strats||[]).map(st=>`<label>STRATEGY</label><div class="now">${esc(st.name)} <span class="tag">${esc(st.testedTag||st.tested)}</span></div><small>${esc(st.tested)}${st.maxTradesPerDay?` · max ${st.maxTradesPerDay}/day`:''}${st.window&&st.window.start?` · ${esc(st.window.start)}–${esc(st.window.end)} ET`:''}${st.devils_advocate&&st.devils_advocate.required?" · devil's-advocate debate required":''}</small>`).join('')}
+  <div class="grid2"><div><label>POSITION</label><b>${b._position}</b></div><div><label>REAL P&L TODAY</label><b class="${tcls(b.pnlToday)}">${money(b.pnlToday)}</b></div>
+  <div><label>REAL P&L ALL-TIME</label><b class="${tcls(b._real)}">${money(b._real)}</b></div><div><label>TRADES (today/all)</label><b>${b.tradesToday}/${b.tradesAllTime}</b></div></div>
+  ${b._thru?`<label>THROUGHPUT TODAY (counters.json)</label><small>${b._thru.runs} run(s) · ${b._thru.items.toLocaleString('en-US')} items · quotes ${b._thru.quotesCalls} (${b._thru.symbols.length} symbols) · bars ${b._thru.bars.toLocaleString('en-US')} · option calls ${b._thru.optionCalls} · searches ${b._thru.webSearches} · pages ${b._thru.pagesFetched} · headlines ${b._thru.headlineCount} · X posts ${b._thru.xPosts} · ideas ${b._thru.ideas} · rejected ${b._thru.ideasRejected} · orders ${b._thru.ordersSent} · sim trades ${b._thru.simulatedTrades.toLocaleString('en-US')}</small>`:''}
+  <label>NOW</label><div class="now">${esc(a.now)}</div>
+  <label>NEXT</label><div class="now">${esc(a.next||'—')}</div>
+  <label>IDEAS SCORED</label><div class="bar"><i style="width:${ideas.length?scored/ideas.length*100:0}%"></i></div><small>${scored}/${ideas.length} journal ideas resolved${ideas.length?` · paper net ${money(b._paper)} (not real P&L)`:''}</small>
+  <label>THOUGHTS</label><ul class="log">${(a.log||[]).map(l=>`<li>${esc(l)}</li>`).join('')||'<li class="mut">No log entries</li>'}${ideas.map(i=>`<li><span class="mut">${hhmm(i.loggedAt)}</span> ${esc(i.ticker)} ${esc(i.side)} @ ${i.entry} → ${i.result?esc(i.result.outcome)+' '+money(i.result.netCAD)+' paper':'open'}</li>`).join('')}</ul>
+  ${b.id==='news'||ideas.some(i=>i.debate)?`<div style="margin-top:8px;border-top:1px solid #ffffff22;padding-top:6px">${debateHTML(S,b.id)}</div>`:''}
+  <div class="detail">${esc(a.detail)}</div><small class="mut">since ${hhmm(a.since)}</small></div>`;}
+// ---- Paperclip-style panels ----
+// Approvals now come from data.json "approvals":[{from,date,title,status,resolution}] (status pending/absent = shown).
+// The Nov 2 static items (rules card, SOFI/HXT, paper-only midday ideas) were resolved/superseded on Nov 2, so the fallback is empty.
+const STATIC_PENDING_APPROVALS=[];
+function approvalsList(S){return (S.d.approvals&&S.d.approvals.filter(a=>!a.status||a.status==='pending'))||STATIC_PENDING_APPROVALS;}
+function approvalsHTML(S){const L=approvalsList(S);const src=S.d.approvals?'data.json approvals':'static list (Nov 2 daily review) — no data.json field yet';
+ return `<div class="appr"><div class="ph">APPROVALS WAITING ON K <span class="cnt">${L.length}</span></div>${L.length?'':'<div class="empty">None pending</div>'}${L.map((a,i)=>`<div class="ap" style="--c:${BOTCOL[a.from]||'#fff'}"><span class="n">${i+1}</span><div>${esc(a.title)}<small>from ${esc((S.bots.find(b=>b.id===a.from)||{}).name||a.from)} · ${esc(a.date)}</small></div><span class="pend">PENDING</span></div>`).join('')}<small class="mut">Source: ${src}</small></div>`;}
+// ---- per-bot loss budgets (data.json riskBudgets from risk_check.py; budgets from strategies.json risk.botBudgetsCAD) ----
+function budgetsHTML(S){const R=(S.strat&&S.strat.risk)||{};const B=R.botBudgetsCAD||{};const rb=S.d.riskBudgets&&S.d.riskBudgets.date===todayET()?S.d.riskBudgets:null;
+ const ids=Object.keys(B);if(!ids.length)return '<div class="ph">LOSS BUDGETS TODAY</div><div class="empty">No per-bot budgets in strategies.json</div>';
+ const row=(name,col,budget,used,pz)=>{const pct=Math.min(100,used/budget*100);const c=pct>=100?'#ff3d6e':pct>=60?'#ff8a3d':col;
+  return `<div class="bud"><span style="color:${col}">${esc(name)}${pz?' <span class="pz">PAUSED</span>':''}</span><div class="bar" style="--c:${c}"><i style="width:${pct}%;background:${c}"></i></div><span class="n">${plain(used)} / $${Number(budget).toFixed(0)}</span></div>`};
+ const desk=rb?rb.desk:{used:0,budget:R.dailyLossStopCAD||150};
+ return `<div class="ph">LOSS BUDGETS TODAY · REAL</div>${row('Desk','#ffe14d',desk.budget||150,desk.used||0)}${ids.map(id=>{const b=S.bots.find(x=>x.id===id)||{name:id};const u=rb&&rb.bots[id]?rb.bots[id].used:0;return row(b.name,BOTCOL[id]||'#22f3ff',B[id],u,b._paused)}).join('')}
+ <small>used = realized loss today + open risk to stops (risk_check.py)${rb?' · '+hhmm(rb.updated):' · nothing used yet today'}. Auto-pause: budget hit, 3 stop-outs in 5 days, or −4R over 20 trades.</small>`;}
+// ---- News Desk devil's-advocate debate (latest idea with a debate in journal.json) ----
+function debateHTML(S,bot='news'){const L=S.ideas.filter(i=>i.bot===bot&&i.debate).sort((a,b)=>new Date(a.debate.at)-new Date(b.debate.at));const i=L[L.length-1];
+ const bn=(S.bots.find(x=>x.id===bot)||{name:bot}).name;const head=`<div class="ph" style="color:${BOTCOL[bot]};text-shadow:0 0 8px ${BOTCOL[bot]}">${esc(bn.toUpperCase())} · DEVIL'S ADVOCATE (latest)</div>`;
+ if(!i)return head+`<div class="empty">No ${esc(bn)} debate yet. Before every news entry the run writes 3+ bear reasons and a bull case; the trade is skipped unless the bull case clearly wins (veto only).</div>`;
+ const d=i.debate;return head+`<div class="deb"><b style="color:var(--cy)">${esc(i.ticker)}</b> ${esc(i.side)} · <span class="vd ${d.verdict}">${d.verdict==='take'?'BULL WINS · TAKE':'VETO · SKIP'}</span> <span class="mut">${hhmm(d.at)} ${esc((d.at||'').slice(0,10))}</span>
+ <label>BEAR CASE</label><ul>${d.bear.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><label>BULL CASE</label><ul>${d.bull.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${d.why?`<small>why: ${esc(d.why)}</small>`:''}</div>`;}
+function moodRender(S){const r=S.regime,el=$('#mood');if(!el)return;if(!r||!r.regime){el.className='unk';el.textContent='MOOD ?';el.title='regime.json missing';return}
+ const stale=r.date!==todayET();el.className=r.regime;el.textContent=`MOOD · ${r.regime.toUpperCase()}${stale?' · '+r.date.slice(5):''}`;
+ el.title=`SPY 10-day realized vol ${r.spy_rv10}% vs 1-year median ${r.median}% (closes through ${r.asOfClose}). Tag only, no filter yet.${stale?' Not refreshed today.':''}`;}
+function orgChartHTML(S){const head=S.bots.find(b=>b.id==='kiwi');const team=S.bots.filter(b=>b.id!=='kiwi');
+ const card=b=>{const a=b.activity||{};return `<div class="oc${b._paused?' paused':''}" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}"><div><span class="dot ${a.state}"></span><b>${esc(b.name)}</b>${b._paused?' <span class="pz">PAUSED</span>':''}</div><div class="t">${esc(a.now||'—')}</div><div class="nx">Next: ${esc(a.next||'—')}</div></div>`};
+ return `<div class="org"><div class="ph">ORG CHART</div><div class="ohead">${head?card(head):''}</div><div class="oline"></div><div class="oteam">${team.map(card).join('')}</div></div>`;}
+function runHistoryHTML(S,b){const a=b.activity||{};const rows=(a.log||[]).map(l=>({t:'',x:l})).concat(b._ideas.flatMap(i=>[{t:i.loggedAt,x:`Logged ${i.ticker} ${i.side} idea`},...(i.result?[{t:i.result.resolvedAt,x:`Scored ${i.ticker}: ${i.result.outcome}`}]:[])]));
+ rows.push({t:a.since,x:`Current: ${a.now}`});
+ return `<label>RUN HISTORY</label><ol class="runs">${rows.map(r=>`<li>${r.t?`<span class="mut">${hhmm(r.t)}</span> `:''}${esc(r.x)}</li>`).join('')}</ol>`;}
+</script>
+<script>
+// ===== 2D layer: works with or without WebGL; everything comes from data.json / journal.json =====
+const TV_US={RIVN:'NASDAQ:RIVN',SOFI:'NASDAQ:SOFI',NVDA:'NASDAQ:NVDA',AAPL:'NASDAQ:AAPL',PLTR:'NASDAQ:PLTR',QQQ:'NASDAQ:QQQ',TSLA:'NASDAQ:TSLA',AMD:'NASDAQ:AMD',MSFT:'NASDAQ:MSFT',AMZN:'NASDAQ:AMZN',META:'NASDAQ:META',GOOGL:'NASDAQ:GOOGL',SPY:'AMEX:SPY',IWM:'AMEX:IWM',EL:'NYSE:EL',PGEN:'NASDAQ:PGEN',CNQ:'NYSE:CNQ'};
+function tvSym(w){if(w.tvSymbol)return w.tvSymbol;const t=String(w.ticker||'').toUpperCase();const m=t.match(/^(.+)\.(TO|V|NE|CN)$/);if(m)return {TO:'TSX',V:'TSXV',NE:'NEO',CN:'CSE'}[m[2]]+':'+m[1];return TV_US[t]||t}
+const todayET=()=>new Date().toLocaleDateString('en-CA',{timeZone:'America/Toronto'});
+const PER=[['TODAY','pnlToday','tradesToday'],['WEEK','pnlWeek','tradesWeek'],['ALL TIME','pnlAllTime','tradesAllTime']];let per=0,S=null,openId=null;
+window.DESK={onEvent:null,onData:null};
+function renderMoney(){const p=PER[per];const t=S.d[p[1]]||{};
+ $('#money').innerHTML=`<div class="ph">MONEY BOARD · REAL</div><div class="tabs">${PER.map((x,i)=>`<button class="${i===per?'on':''}" data-p="${i}">${x[0]}</button>`).join('')}</div>
+ <b class="big ${tcls(t.total)}">${money(t.total)}</b><small>realized ${money(t.realized)} · unrealized ${money(t.unrealized)} · ${t.trades??0} trade(s)</small>
+ <table style="margin-top:6px"><tr><th>BOT</th><th>P&L</th><th>TRADES</th></tr>${S.bots.map(b=>`<tr><td style="color:${BOTCOL[b.id]}">${esc(b.name)}</td><td class="${tcls(b[p[1]])}">${money(b[p[1]],'')}</td><td>${b[p[2]]??0}</td></tr>`).join('')}</table>`;
+ $('#money').querySelectorAll('[data-p]').forEach(e=>e.onclick=()=>{per=+e.dataset.p;renderMoney()});}
+function renderWatch(){const items=S.d.watchlist.filter(w=>w.date===todayET());const sec=$('#wl');const key=items.map(w=>w.ticker+'|'+tvSym(w)).join(',');
+ const latest=items.map(w=>w.priceTime).filter(Boolean).sort().pop();$('#wu').textContent=(latest?'desk prices (Questrade) '+hhmm(latest):'no prices yet')+' · page re-reads data.json every 60s';
+ if(sec.dataset.key!==key){sec.dataset.key=key;sec.innerHTML=items.length?items.map((w,i)=>`<div class="wl-it"><div class="h" data-i="${i}"></div><tv-single-ticker symbol="${esc(tvSym(w))}" theme="dark" transparent></tv-single-ticker><div class="b" data-i="${i}"></div></div>`).join('')+'<small>Widget: TradingView, delayed (TSX ~15 min; US Cboe One). Desk price drives status/P&L.</small>':'<div class="empty">No stocks on the watchlist yet today</div>';}
+ items.forEach((w,i)=>{const r=wlRows({d:{watchlist:[w]}})[0];const h=sec.querySelector(`.h[data-i="${i}"]`),b=sec.querySelector(`.b[data-i="${i}"]`);if(!h)return;
+  h.innerHTML=`<b style="color:var(--cy)">${esc(w.ticker)}</b> <span>${esc(w.side||'no trade')}</span> <span class="badge" style="color:var(--ye)" title="${esc(w.reason||'')}">${esc(String(w.status).toUpperCase())}</span>`;
+  b.innerHTML=`<small>desk ${w.last??'—'} ${esc(w.currency||'')} · E ${w.entry??'—'} S ${w.stop??'—'} T ${w.target??'—'} · net@T ${money(w.netProfitAtTargetCAD)} · P&L after fees <span class="${r.pnlCls}">${r.pnlTxt}</span></small>`;});
+ const all=wlRows(S).filter(w=>w.date===todayET());const tape=all.map(w=>`<span><b style="color:var(--cy)">${esc(w.ticker)}</b> ${w.last??'—'} <span class="mut">${esc(w.side||'')} E ${w.entry??'—'} S ${w.stop??'—'} T ${w.target??'—'}</span> <span class="badge" style="color:var(--ye)">${esc(String(w.status).toUpperCase())}</span> ${w.pnlTxt}</span>`).join('')||'<span class="mut">No watchlist today</span>';$('#tk').innerHTML=tape+tape;}
+function openBot(id){openId=id;const b=S.bots.find(x=>x.id===id);if(!b)return;$('#drawer').innerHTML=`<button style="float:right" onclick="closeBot()">✕</button>`+botDeskHTML(S,b)+(b.id==='kiwi'?`<label>DESK TOTAL (all bots)</label><b class="${tcls(S.d.pnlToday.total)}">today ${money(S.d.pnlToday.total)}</b> · <span class="${tcls(S.d.pnlAllTime.total)}">all time ${money(S.d.pnlAllTime.total)}</span>`:'')+runHistoryHTML(S,b);$('#drawer').classList.add('open');$('#back').style.display='block';if(innerWidth<=800)$('#drawer').scrollIntoView({behavior:'smooth'});window.DESK.onFocus&&window.DESK.onFocus(id);}
+function closeBot(){openId=null;$('#drawer').classList.remove('open');$('#back').style.display='none';window.DESK.onFocus&&window.DESK.onFocus(null)}
+window.openBot=openBot;window.closeBot=closeBot;$('#back').onclick=closeBot;
+function render(first){const V=vaultStats(S);$('#upd').textContent='data '+S.d.lastUpdated;$('#days').textContent=V.days;$('#total').className=tcls(V.total);if(first)odometer($('#total'),V.total,V.cur);else $('#total').textContent=money(V.total,V.cur);
+ const ac=S.d.account,risk=(S.strat&&S.strat.risk)||{};const stop=ac.dailyLossStop||risk.dailyLossStopCAD||150;const lost=Math.max(0,-(V.today||0));const mxo=ac.maxOpenPositions||risk.maxOpenPositions||4;
+ $('#prog').style.width=Math.min(100,lost/stop*100)+'%';$('#prog').parentElement.style.setProperty('--c',lost>=stop?'#ff3d6e':'var(--ye)');
+ $('#vsub').innerHTML=`Daily loss used <b class="${lost>0?'dn':'flat'}">${plain(lost)}</b> / ${plain(stop)} · ${V.tradesToday} trade(s) today · ${ac.openPositions??0}/${mxo} open<br>Today ${money(V.today)} · Equity ${plain(V.equity)} ${V.cur} · ${V.green} green / ${V.red} red / ${V.flat} flat`;
+ if(window.THRU)THRU.render($('#thru'),S.counters,{colors:BOTCOL,names:Object.fromEntries(S.bots.map(b=>[b.id,b.name])),head:'<div class="ph">DESK THROUGHPUT · REAL COUNTS</div>'});
+ renderMoney();moodRender(S);$('#budgets').innerHTML=budgetsHTML(S);$('#debate').innerHTML=debateHTML(S);$('#appr').innerHTML=approvalsHTML(S);$('#org').innerHTML=orgChartHTML(S);$('#chart').innerHTML=dailyChartSVG(S,280,120);renderWatch();
+ $('#evl').innerHTML=S.events.slice(-5).reverse().map(e=>`<div><span class="mut">${hhmm(e.t)}</span> ${esc(e.text)}</div>`).join('')||'<span class="mut">No logged events</span>';
+ $('#flat').innerHTML=S.bots.map(b=>`<div class="glass fb${b._paused?' paused':''}" data-bot="${b.id}" style="--c:${BOTCOL[b.id]}">${b._paused?`<span class="pz">PAUSED</span> <span class="pzr">${esc(b._paused.reason)}</span><br>`:''}<div class="ban" style="color:var(--c);font-size:9px;letter-spacing:.2em">${BOTCAT[b.id]}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><b style="color:var(--c)">${esc(b.name)}</b> · ${b._position}<br>${b._strat?`<small>${esc(b._strat.name)} · ${esc(b._strat.testedTag||'')}</small>`:''}P&L ${b.id==='kiwi'?'(desk) '+money(S.d.pnlToday.total,''):money(b.pnlToday,'')}<br><span class="dot ${b.activity?.state}"></span>${esc(b.activity?.now)}<br><small>today: ${b._thru.runs} run(s) · ${b._thru.items.toLocaleString('en-US')} items processed</small></div>`).join('');
+ document.querySelectorAll('.oc,.fb').forEach(e=>e.onclick=()=>openBot(e.dataset.bot));if(openId)openBot(openId);
+ window.DESK.onData&&window.DESK.onData(S);}
+let seen=0;
+async function load(first){try{const N=await loadDesk();const fresh=S&&N.events.length>seen?N.events.slice(seen):[];S=N;window.S=S;seen=N.events.length;render(first);fresh.forEach(e=>pulse(e));if(first)window.__ready=true}catch(e){console.warn('data.json load failed',e);if(first){$('#total').textContent='data.json unavailable';window.__ready=true}}}
+function pulse(e){window.DESK.onEvent&&window.DESK.onEvent(e.bot);const f=document.querySelector(`.fb[data-bot="${e.bot}"]`);if(f){f.animate([{boxShadow:'0 0 40px #fff'},{boxShadow:'0 0 10px var(--c)'}],900)}}
+$('#replay').onclick=()=>{const today=S.events.filter(e=>(e.t||'').slice(0,10)===todayET());(today.length?today:[]).forEach((e,k)=>setTimeout(()=>{pulse(e);$('#evl').innerHTML=`<div><span class="mut">${hhmm(e.t)}</span> ${esc(e.text)}</div>`+$('#evl').innerHTML},k*900));if(!today.length)$('#evl').innerHTML='<span class="mut">No journal events logged today</span>'};
+const hasGL=(()=>{try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(e){return false}})();
+if(!hasGL||/[?&]flat\b/.test(location.search))document.body.classList.add('nogl');
+window.__dataReady=load(true);setInterval(()=>load(false),60000);
+</script>
+<script type="module">
+// ===== 3D layer (three.js from CDN). Any failure -> 2D fallback =====
+if(!document.body.classList.contains('nogl'))(async()=>{try{
+const THREE=await import('https://unpkg.com/three@0.160.0/build/three.module.js');
+const narrow=innerWidth<=800;let comp=null;
+await window.__dataReady;if(!window.S)throw new Error('no data');
+const R=new THREE.WebGLRenderer({canvas:$('#c'),antialias:!narrow});R.setPixelRatio(narrow?1:Math.min(2,devicePixelRatio));
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x070a1f);scene.fog=new THREE.Fog(0x070a1f,40,110);
+const cam=new THREE.PerspectiveCamera(narrow?62:50,1,.1,500);
+if(!narrow){try{const [{EffectComposer},{RenderPass},{UnrealBloomPass}]=await Promise.all(['postprocessing/EffectComposer.js','postprocessing/RenderPass.js','postprocessing/UnrealBloomPass.js'].map(p=>import('https://unpkg.com/three@0.160.0/examples/jsm/'+p)));
+ comp=new EffectComposer(R);comp.addPass(new RenderPass(scene,cam));comp.addPass(new UnrealBloomPass(new THREE.Vector2(1,1),1.1,.6,.1));}catch(e){comp=null}}
+const grid=new THREE.GridHelper(200,narrow?40:80,0xff3df2,0x2a2f80);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);
+const rings=[];[14,22,30].forEach((r,i)=>{const m=new THREE.Mesh(new THREE.TorusGeometry(r,.05,8,96),new THREE.MeshBasicMaterial({color:[0x22f3ff,0xff3df2,0x9dff3d][i]}));m.rotation.x=Math.PI/2;m.position.y=.05;scene.add(m);rings.push(m)});
+const dome=new THREE.Mesh(new THREE.SphereGeometry(5,32,16,0,Math.PI*2,0,Math.PI/2),new THREE.MeshBasicMaterial({color:0xffe14d,wireframe:true,transparent:true,opacity:.6}));scene.add(dome);
+scene.add(new THREE.Mesh(new THREE.CylinderGeometry(5.4,5.6,.5,48),new THREE.MeshBasicMaterial({color:0x1a1440})));
+let sky=null;const towers={};
+const thr=b=>{const t=b._thru||{runs:0,items:0};return `<div class="thr" title="from counters.json: runs today and items processed today (symbols quoted, bars, option contracts, headlines, pages, X posts, ideas, rejections, orders, fills, simulated trades)">TODAY <b>${t.runs}</b> RUN${t.runs===1?'':'S'} · <b>${t.items.toLocaleString('en-US')}</b> ITEMS</div>`};
+function build(S){ // rebuilt on every data refresh so heights/brightness track data.json
+ if(sky)scene.remove(sky);let cum=0;const pts=S.days.map((d,i)=>{cum+=d.real;return new THREE.Vector3(-20+i*(40/Math.max(1,S.days.length-1)),26+cum/10,-40)});if(pts.length===1)pts.push(pts[0].clone().add(new THREE.Vector3(40,0,0)));
+ if(pts.length){sky=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x39ff88}));scene.add(sky)}
+ const team=S.bots.filter(b=>b.id!=='kiwi');const maxIdeas=Math.max(1,...S.bots.map(b=>b._ideas.length));
+ S.bots.forEach(b=>{let T=towers[b.id];const isHead=b.id==='kiwi';const i=team.indexOf(b);const ang=i/team.length*Math.PI*2;const x=isHead?0:Math.cos(ang)*18,z=isHead?0:Math.sin(ang)*18;
+  const col=new THREE.Color(BOTCOL[b.id]||'#22f3ff');const h=isHead?6:6+8*(b._ideas.length/maxIdeas);const st=b.activity?.state;const bright=b._paused?.08:(st==='working'||st==='active'||st==='waiting'?1:st==='done'?.6:.35);
+  if(T&&T.h===h&&T.bright===bright){}else{if(T){scene.remove(T.g)}const g=new THREE.Group();g.position.set(x,0,z);scene.add(g);
+   if(!isHead){const t=new THREE.Mesh(new THREE.BoxGeometry(2.4,h,2.4),new THREE.MeshBasicMaterial({color:0x0d1035}));t.position.y=h/2;g.add(t);
+    const e=new THREE.LineSegments(new THREE.EdgesGeometry(t.geometry),new THREE.LineBasicMaterial({color:col}));e.position.y=h/2;g.add(e);
+    for(let k=1;k<h;k+=1.2){const w=new THREE.Mesh(new THREE.PlaneGeometry(1.8,.15),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.25*bright}));w.position.set(0,k,1.21);g.add(w)}}
+   const beam=new THREE.Mesh(new THREE.CylinderGeometry(.25,.25,40,12,1,true),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.15+.35*bright,blending:THREE.AdditiveBlending,depthWrite:false}));beam.position.y=h+20;g.add(beam);
+   const pulse=new THREE.Mesh(new THREE.SphereGeometry(.6,12,12),new THREE.MeshBasicMaterial({color:col}));pulse.visible=false;g.add(pulse);
+   const L=T?T.L:document.createElement('div');if(!T){L.className='lbl';L.style.setProperty('--c',BOTCOL[b.id]);L.onclick=()=>openBot(b.id);$('#lbls').appendChild(L)}
+   T=towers[b.id]={g,h,bright,pulse,pt:-1,L,isHead};}
+  const st2=(st||'').toUpperCase();T.L.classList.toggle('paused',!!b._paused);
+  const pzh=b._paused?`<br><span class="pz">PAUSED</span><br><span class="pzr">${esc(b._paused.reason)} · until ${esc(b._paused.until.slice(5))}</span>`:'';
+  T.L.innerHTML=isHead?`<div class="ban">HEAD OF DESK · ${b._strat?esc(String(b._strat.short).toUpperCase()):'DESK TOTAL'}</div><div class="card"><b style="color:var(--c)">Kiwi</b><br>TODAY <b class="${tcls(S.d.pnlToday.total)}">${money(S.d.pnlToday.total,'')}</b><span class="x"> · ALL <b class="${tcls(S.d.pnlAllTime.total)}">${money(S.d.pnlAllTime.total,'')}</b><br>${S.d.pnlToday.trades} trade(s) today</span><br><span class="dot ${st}"></span>${esc(st2)}${thr(b)}</div>`
+   :`<div class="ban">${BOTCAT[b.id]||''}${b._strat?' · '+esc(String(b._strat.short||b._strat.name).toUpperCase()):''}</div><div class="card"><b style="color:var(--c)">${esc(b.name)}</b><span class="x"><br>POSITION <b>${b._position}</b></span><br>P&L <b class="${tcls(b.pnlToday)}">${money(b.pnlToday,'')}</b><span class="x"> · TOTAL <b class="${tcls(b._real)}">${money(b._real,'')}</b></span><br><span class="dot ${st}"></span>${esc(st2)}<span class="x"> · ${b._ideas.length} ideas</span>${thr(b)}${pzh}</div>`;});}
+build(window.S);window.DESK.onData=build;
+window.DESK.onEvent=id=>{const t=towers[id];if(t){t.pt=0;t.pulse.visible=true}};
+const HOME=()=>({p:new THREE.Vector3(0,narrow?30:22,narrow?52:46),l:new THREE.Vector3(0,narrow?3:6,0)});let camT=HOME(),foc=null;const cp=camT.p.clone(),cl=camT.l.clone();
+window.DESK.onFocus=id=>{foc=id;if(!id){camT=HOME();return}const t=towers[id];const p=t.g.position;const out=t.isHead?new THREE.Vector3(0,0,1):p.clone().setY(0).normalize();camT={p:p.clone().add(out.multiplyScalar(9)).setY(t.h+3),l:p.clone().setY(t.h*.7)}};
+function size(){const el=$('#scene');const w=el.clientWidth,h=el.clientHeight;R.setSize(w,h,false);comp&&comp.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()}addEventListener('resize',size);size();
+const v=new THREE.Vector3();
+(function loop(){rings.forEach((r,i)=>r.rotation.z+=.001*(i%2?1:-1));dome.rotation.y+=.002;cp.lerp(camT.p,.06);cl.lerp(camT.l,.06);cam.position.copy(cp);cam.lookAt(cl);
+ const W=$('#scene').clientWidth,H=$('#scene').clientHeight;
+ for(const id in towers){const t=towers[id];if(t.pt>=0){t.pt+=.4;t.pulse.position.y=t.h+t.pt;if(t.pt>40){t.pt=-1;t.pulse.visible=false}}
+  v.set(t.g.position.x,t.h+(t.isHead?1:2.5),t.g.position.z).project(cam);t.L.style.left=((v.x+1)/2*W)+'px';t.L.style.top=((1-v.y)/2*H)+'px';t.L.style.display=(v.z<1&&(!foc||foc===id))?'block':'none'}
+ comp?comp.render():R.render(scene,cam);requestAnimationFrame(loop)})();
+window.__3d=true;
+}catch(e){console.warn('3D unavailable, using 2D view',e);document.body.classList.add('nogl')}})();
+</script></body></html>
