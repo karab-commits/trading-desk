@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T12:46:15-05:00",
+  "updated": "2026-11-03T12:49:02-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 51,
+   "runs": 52,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -72,7 +72,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T12:46:15-05:00",
+   "lastRun": "2026-11-03T12:49:02-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -125,8 +125,8 @@
    "optionContracts": 0,
    "webSearches": 11,
    "pagesFetched": 0,
-   "xSearches": 4,
-   "xPosts": 50,
+   "xSearches": 5,
+   "xPosts": 65,
    "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -310,9 +310,29 @@
       "title": "Parabolic Technologies Stock Surges Over 300% in Short Squeeze Frenzy",
       "url": "https://x.com/i/trending/2117658203903201619",
       "time": "2026-11-03T11:47:20-05:00"
+     },
+     {
+      "title": "Grab Hits $1 Billion Revenue Milestone in Q3 2026 with Record Users and Profitability",
+      "url": "https://x.com/i/trending/2117403186549915729",
+      "time": "2026-11-03T12:48:51-05:00"
+     },
+     {
+      "title": "Pfizer Beats Earnings Expectations and Raises 2026 Outlook",
+      "url": "https://x.com/i/trending/2117603920285753820",
+      "time": "2026-11-03T12:48:51-05:00"
+     },
+     {
+      "title": "Shopify Shares Drop 15% After Rare Revenue Miss",
+      "url": "https://x.com/i/trending/2117594015441039697",
+      "time": "2026-11-03T12:48:51-05:00"
+     },
+     {
+      "title": "Upstart Beats Q3 Estimates with Record Profits, Trims Full-Year Outlook",
+      "url": "https://x.com/i/trending/2117614467848741184",
+      "time": "2026-11-03T12:48:51-05:00"
      }
     ],
-    "count": 34,
+    "count": 38,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -347,13 +367,17 @@
      "4cd2a6940f0d",
      "1777955a481b",
      "e4b46d4cf3fa",
-     "b17812f43920"
+     "b17812f43920",
+     "73c866ff62db",
+     "03668f032410",
+     "36508c462c9e",
+     "9f98ebaa639a"
     ]
    },
    "lastRun": null
   },
   "whale": {
-   "quotesCalls": 6,
+   "quotesCalls": 7,
    "barCalls": 29,
    "bars": 264,
    "optionCalls": 0,
@@ -394,7 +418,7 @@
      "SOFI",
      "HXT.TO"
     ],
-    "total": 41
+    "total": 43
    },
    "headlines": {
     "items": [],
