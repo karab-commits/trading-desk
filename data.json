@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 3, 2026 1:02 PM ET",
+  "lastUpdated": "Tue Nov 3, 2026 1:04 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "12:48 run: searched X news (last hour, 15 stories). Fiserv, Grab, Pfizer, Shopify and Upstart moves come from earnings released before the open, not within 60 minutes; Parabolic Technologies is an excluded micro-float squeeze. No signal.",
+      "status": "13:03 run: searched X news (last hour, 10 stories). Marvell-Lumentum (Nov 2) and Organigram-Aurora (9:35 ET) are older than 60 min; Nebius bounce has no company news; Parabolic is an excluded micro-float squeeze. DT is bouncing, no short setup. No signal.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -62,17 +62,17 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No fresh catalyst <60 min",
-        "detail": "12:48 run: searched X news (last hour, 15 stories). Fiserv, Grab, Pfizer, Shopify and Upstart moves come from earnings released before the open, not within 60 minutes; Parabolic Technologies is an excluded micro-float squeeze. No signal.",
-        "since": "2026-11-03T12:49:02-05:00",
+        "detail": "13:03 run: searched X news (last hour, 10 stories). Marvell-Lumentum (Nov 2) and Organigram-Aurora (9:35 ET) are older than 60 min; Nebius bounce has no company news; Parabolic is an excluded micro-float squeeze. DT is bouncing, no short setup. No signal.",
+        "since": "2026-11-03T13:04:45-05:00",
         "state": "idle",
-        "next": "Next check ~13:02"
+        "next": "Next check ~13:18"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "12:48 run: QQQ session high 688.69 and low 683.18 unchanged (Questrade quote), last 686.67 above VWAP 685.94, so no 5-min close beyond the range. No signal.",
+      "status": "13:03 run: QQQ session high 688.69 and low 683.18 unchanged (Questrade quote), last 687.15 above VWAP 685.97, so no 5-min close beyond the range. No signal.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -81,17 +81,17 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "QQQ: no RVOL breakout",
-        "detail": "12:48 run: QQQ session high 688.69 and low 683.18 unchanged (Questrade quote), last 686.67 above VWAP 685.94, so no 5-min close beyond the range. No signal.",
-        "since": "2026-11-03T12:49:02-05:00",
+        "detail": "13:03 run: QQQ session high 688.69 and low 683.18 unchanged (Questrade quote), last 687.15 above VWAP 685.97, so no 5-min close beyond the range. No signal.",
+        "since": "2026-11-03T13:04:45-05:00",
         "state": "idle",
-        "next": "Next check ~13:02"
+        "next": "Next check ~13:18"
       }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "12:48 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
+      "status": "13:03 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -103,10 +103,10 @@
       "rejectedAllTime": 6,
       "activity": {
         "now": "Watching 1 open position",
-        "detail": "12:48 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
-        "since": "2026-11-03T12:49:02-05:00",
-        "state": "waiting",
-        "next": "Next check ~13:02",
+        "detail": "13:03 run: open risk 32.84 / 150 CAD, 1/4 positions. AAPL stop 325.33 working in Questrade. No orders to check this run.",
+        "since": "2026-11-03T13:04:45-05:00",
+        "state": "idle",
+        "next": "Next check ~13:18",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Checked account, positions and orders: AAPL long 3 @ 332.89 with its 325.33 stop working, unrealized -3.23 CAD per Questrade (last 332.27). No new valid signals; no orders sent.",
+      "status": "Checked account, positions and orders: AAPL long 3 @ 332.89 with its 325.33 stop working, unrealized -10.28 CAD (last 330.44). No new valid signals; no orders sent.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,11 +124,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "12:48 run: no new orders",
-        "detail": "Checked account, positions and orders: AAPL long 3 @ 332.89 with its 325.33 stop working, unrealized -3.23 CAD per Questrade (last 332.27). No new valid signals; no orders sent.",
-        "since": "2026-11-03T12:49:02-05:00",
-        "state": "done",
-        "next": "Next run ~13:02",
+        "now": "13:03 run: no new orders",
+        "detail": "Checked account, positions and orders: AAPL long 3 @ 332.89 with its 325.33 stop working, unrealized -10.28 CAD (last 330.44). No new valid signals; no orders sent.",
+        "since": "2026-11-03T13:04:45-05:00",
+        "state": "idle",
+        "next": "Next check ~13:18",
         "log": [
           "3:40 ET close-out: flat, nothing to close",
           "4:39 PM EOD review done",
@@ -140,8 +140,8 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "12:48 run: AAPL long 3 @ 332.89 (stocks-in-play ORB), last 332.27, stop 325.33 working, target 348.49, time stop 15:15. Quant's daily risk budget is used up, so no new Quant trades today.",
-      "pnlToday": -3.23,
+      "status": "13:03 run: AAPL long 3 @ 332.89 (stocks-in-play ORB), last 330.44, stop 325.33 working, target 348.49, time stop 15:15. Quant's daily risk budget is used up, so no new Quant trades today.",
+      "pnlToday": -10.28,
       "pnlWeek": 0,
       "pnlAllTime": 0,
       "tradesToday": 1,
@@ -149,10 +149,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Managing AAPL long",
-        "detail": "12:48 run: AAPL long 3 @ 332.89 (stocks-in-play ORB), last 332.27, stop 325.33 working, target 348.49, time stop 15:15. Quant's daily risk budget is used up, so no new Quant trades today.",
-        "since": "2026-11-03T12:49:02-05:00",
+        "detail": "13:03 run: AAPL long 3 @ 332.89 (stocks-in-play ORB), last 330.44, stop 325.33 working, target 348.49, time stop 15:15. Quant's daily risk budget is used up, so no new Quant trades today.",
+        "since": "2026-11-03T13:04:45-05:00",
         "state": "working",
-        "next": "AAPL time stop 15:15",
+        "next": "Time stop 15:15",
         "log": [
           "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive",
           "EOD re-check: XIU active, SOFI+HXT testing",
@@ -183,7 +183,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "12:48 run: debit spreads only express another bot's valid signal; none this run.",
+      "status": "13:03 run: debit spreads only express another bot's valid signal; none this run.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -192,10 +192,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No source signal",
-        "detail": "12:48 run: debit spreads only express another bot's valid signal; none this run.",
-        "since": "2026-11-03T12:49:02-05:00",
+        "detail": "13:03 run: debit spreads only express another bot's valid signal; none this run.",
+        "since": "2026-11-03T13:04:45-05:00",
         "state": "idle",
-        "next": "Next check ~13:02"
+        "next": "Next check ~13:18"
       }
     }
   ],
@@ -484,8 +484,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -3.23,
-    "total": -3.23,
+    "unrealized": -10.28,
+    "total": -10.28,
     "trades": 1
   },
   "pnlWeek": {
@@ -665,8 +665,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 148.4605,
-      "priceTime": "2026-11-03T13:02:23-05:00"
+      "last": 148.74,
+      "priceTime": "2026-11-03T13:04:05-05:00"
     },
     {
       "date": "2026-11-03",
@@ -690,8 +690,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 174.445,
-      "priceTime": "2026-11-03T13:02:23-05:00"
+      "last": 174.6894,
+      "priceTime": "2026-11-03T13:04:05-05:00"
     },
     {
       "date": "2026-11-03",
@@ -713,10 +713,10 @@
       "netLossAtStop": -23.53,
       "netProfitAtTargetCAD": 63.66,
       "netLossAtStopCAD": -32.84,
-      "openPnl": -6.26,
-      "openPnlCAD": -8.74,
-      "last": 330.84,
-      "priceTime": "2026-11-03T13:02:23-05:00",
+      "openPnl": -7.49,
+      "openPnlCAD": -10.46,
+      "last": 330.435,
+      "priceTime": "2026-11-03T13:04:05-05:00",
       "side": "long",
       "entry": 333.05,
       "stop": 325.33,
@@ -749,8 +749,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 107.24,
-      "priceTime": "2026-11-03T13:02:23-05:00"
+      "last": 107.045,
+      "priceTime": "2026-11-03T13:04:05-05:00"
     },
     {
       "date": "2026-11-03",
@@ -774,8 +774,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 49.02,
-      "priceTime": "2026-11-03T13:02:23-05:00"
+      "last": 48.935,
+      "priceTime": "2026-11-03T13:04:05-05:00"
     },
     {
       "date": "2026-11-03",
@@ -799,11 +799,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 687.2399,
-      "priceTime": "2026-11-03T13:02:23-05:00"
+      "last": 687.1473,
+      "priceTime": "2026-11-03T13:04:05-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-03T13:02:30-05:00",
+  "watchlistUpdated": "2026-11-03T13:04:45-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -972,7 +972,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-03",
-    "updated": "2026-11-03T12:47:51-05:00",
+    "updated": "2026-11-03T13:03:22-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -983,9 +983,9 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 7.21,
+        "realizedLoss": 3.23,
         "openRisk": 32.84,
-        "used": 40.05,
+        "used": 36.07,
         "left": 0.0
       },
       "news": {
