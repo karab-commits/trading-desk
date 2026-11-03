@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T09:31:12-05:00",
+  "updated": "2026-11-03T09:36:27-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 0,
+   "quotesCalls": 1,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,17 +46,26 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 1,
+   "runs": 2,
    "symbolsQuoted": {
-    "unique": [],
-    "total": 0
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SHOP",
+     "PLTR",
+     "AAPL",
+     "LSCC",
+     "DT",
+     "QQQ"
+    ],
+    "total": 8
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T09:31:12-05:00"
+   "lastRun": "2026-11-03T09:36:27-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
