@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 3, 2026 9:51 AM ET",
+  "lastUpdated": "Tue Nov 3, 2026 9:52 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "SHOP -16%, PLTR -6%, AAPL -4%, DT -16% pre-market; TSX futures down on oil; US midterms today",
+      "status": "DT and SHOP (down on results) trade above VWAP, so no short pullback-hold; LSCC (up on results) has not pulled back. No entry.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +61,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market news read",
-        "detail": "SHOP -16%, PLTR -6%, AAPL -4%, DT -16% pre-market; TSX futures down on oil; US midterms today",
-        "since": "2026-11-03T09:09:56-05:00",
-        "state": "done",
-        "next": "DT pullback watch 9:45"
+        "now": "No news-momentum signal",
+        "detail": "DT and SHOP (down on results) trade above VWAP, so no short pullback-hold; LSCC (up on results) has not pulled back. No entry.",
+        "since": "2026-11-03T09:52:30-05:00",
+        "state": "idle",
+        "next": "Next check 10:05"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "SHOP, PLTR, AAPL, LSCC on big pre-market volume; QQQ RVOL watch",
+      "status": "SIP list checked at 9:50 with Questrade quotes and 5-min bars: SHOP, PLTR, AAPL, LSCC, DT all long-direction first candles; only AAPL broke its range. QQQ RVOL breakout window opens 10:00.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -81,17 +81,17 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Scouted 5 stocks in play",
-        "detail": "SHOP, PLTR, AAPL, LSCC on big pre-market volume; QQQ RVOL watch",
-        "since": "2026-11-03T09:09:56-05:00",
+        "detail": "SIP list checked at 9:50 with Questrade quotes and 5-min bars: SHOP, PLTR, AAPL, LSCC, DT all long-direction first candles; only AAPL broke its range. QQQ RVOL breakout window opens 10:00.",
+        "since": "2026-11-03T09:52:30-05:00",
         "state": "done",
-        "next": "QQQ RVOL 9:45"
+        "next": "QQQ RVOL check 10:00"
       }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "No orders at the open. Budget 0/150 used, 0/4 open",
+      "status": "ALLOW quant AAPL long, risk 32.84 CAD (Quant budget 35). Desk open risk 32.84 / 150, 1/4 positions. Debate passed (take).",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -102,11 +102,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Mood VOLATILE, 0 paused",
-        "detail": "No orders at the open. Budget 0/150 used, 0/4 open",
-        "since": "2026-11-03T09:31:12-05:00",
-        "state": "idle",
-        "next": "Intraday checks 9:45",
+        "now": "AAPL ok: 32.84 of 35 CAD",
+        "detail": "ALLOW quant AAPL long, risk 32.84 CAD (Quant budget 35). Desk open risk 32.84 / 150, 1/4 positions. Debate passed (take).",
+        "since": "2026-11-03T09:52:30-05:00",
+        "state": "done",
+        "next": "Check every order",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No opening signal passed its trigger. Intraday routine takes SIP/news/QQQ setups from 9:45",
+      "status": "9:51 ET: AAPL buy 3 filled @ 332.89 (K approved), sell stop 3 @ 325.33 placed. 1 open position.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,11 +124,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market done, no orders",
-        "detail": "No opening signal passed its trigger. Intraday routine takes SIP/news/QQQ setups from 9:45",
-        "since": "2026-11-03T09:31:12-05:00",
-        "state": "done",
-        "next": "Intraday run 9:45",
+        "now": "Sent AAPL buy + stop",
+        "detail": "9:51 ET: AAPL buy 3 filled @ 332.89 (K approved), sell stop 3 @ 325.33 placed. 1 open position.",
+        "since": "2026-11-03T09:52:30-05:00",
+        "state": "working",
+        "next": "Next desk run 10:03",
         "log": [
           "3:40 ET close-out: flat, nothing to close",
           "4:39 PM EOD review done",
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "SHOP, PLTR, AAPL, LSCC: 15-min range sets at 9:45",
+      "status": "Stocks-in-play ORB: AAPL broke its 332.67 opening-range high on heavy volume; bought 3 @ 332.89, stop 325.33 working, target 348.49 (2R). ORB 15-min: no signal (SPY/QQQ/NVDA/META/MSFT/XIU no close beyond range; QQC.TO closed 2c above its range high on low volume, fails RVOL 1.5). Quant budget left 2.16 CAD, so SHOP/PLTR/LSCC/DT range breaks can't be taken today.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -148,15 +148,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "SIP ORB: 4 candidates",
-        "detail": "SHOP, PLTR, AAPL, LSCC: 15-min range sets at 9:45",
-        "since": "2026-11-03T09:09:56-05:00",
-        "state": "waiting",
-        "next": "ORB levels 9:45",
+        "now": "AAPL long 3 @ 332.89 live",
+        "detail": "Stocks-in-play ORB: AAPL broke its 332.67 opening-range high on heavy volume; bought 3 @ 332.89, stop 325.33 working, target 348.49 (2R). ORB 15-min: no signal (SPY/QQQ/NVDA/META/MSFT/XIU no close beyond range; QQC.TO closed 2c above its range high on low volume, fails RVOL 1.5). Quant budget left 2.16 CAD, so SHOP/PLTR/LSCC/DT range breaks can't be taken today.",
+        "since": "2026-11-03T09:52:30-05:00",
+        "state": "working",
+        "next": "Manage AAPL; 12:30 time stop if < +0.5R",
         "log": [
-          "3 active: big-gap fade on XIU.TO, SOFI, HXT.TO",
           "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive",
-          "EOD re-check: XIU active, SOFI+HXT testing"
+          "EOD re-check: XIU active, SOFI+HXT testing",
+          "09:51 AAPL SIP ORB long filled 3 @ 332.89"
         ]
       }
     },
@@ -483,10 +483,10 @@
     "daysRunning": 1
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
-    "trades": 0
+    "realized": 0.0,
+    "unrealized": 0.24,
+    "total": 0.24,
+    "trades": 1
   },
   "pnlWeek": {
     "realized": 0.0,
@@ -500,7 +500,7 @@
     "total": 0.0,
     "trades": 0
   },
-  "lastApprovedIdea": null,
+  "lastApprovedIdea": "AAPL stop 325.33",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -696,27 +696,36 @@
     {
       "date": "2026-11-03",
       "ticker": "AAPL",
-      "status": "watching",
+      "status": "in trade",
       "closeBy": "16:00",
       "addedAt": "2026-11-03T09:09:44-05:00",
-      "strategy": "Stocks-in-play 15-min ORB",
+      "strategy": "Stocks-in-play ORB",
       "bot": "quant",
-      "reason": "Whale scout: -4% pre-market on 3.4M shares after a memory-cost margin warning. 15-min ORB after 9:45. Same group as NVDA (us_megacap_tech).",
+      "reason": "Stocks-in-play ORB (scout: whale): long break of the 332.67 opening-range high; filled 3 @ 332.89, stop 325.33 working",
       "notBefore": "09:45",
-      "testNote": "testing",
+      "testNote": "Stocks-in-play ORB: testing (quick test +0.54R on 12 trades, indicative)",
       "tvSymbol": "NASDAQ:AAPL",
       "tested": false,
       "currency": "USD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
-      "openPnl": null,
-      "openPnlCAD": null,
-      "last": 332.89,
-      "priceTime": "2026-11-03T09:51:29-05:00"
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 45.6,
+      "netLossAtStop": -23.53,
+      "netProfitAtTargetCAD": 63.66,
+      "netLossAtStopCAD": -32.84,
+      "openPnl": 0.17,
+      "openPnlCAD": 0.24,
+      "last": 332.955,
+      "priceTime": "2026-11-03T09:51:03-05:00",
+      "side": "long",
+      "entry": 333.05,
+      "stop": 325.33,
+      "target": 348.49,
+      "shares": 3,
+      "planFrom": "journal",
+      "journalId": "2026-11-03-AAPL-1",
+      "statusAt": "2026-11-03T09:52:17-05:00",
+      "fill": 332.8889
     },
     {
       "date": "2026-11-03",
@@ -794,7 +803,7 @@
       "priceTime": "2026-11-03T09:51:28-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-03T09:51:36-05:00",
+  "watchlistUpdated": "2026-11-03T09:52:17-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -963,7 +972,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-03",
-    "updated": "2026-11-03T09:51:20-05:00",
+    "updated": "2026-11-03T09:52:30-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -975,9 +984,9 @@
       "quant": {
         "budget": 35,
         "realizedLoss": 0.0,
-        "openRisk": 0,
-        "used": 0.0,
-        "left": 35.0
+        "openRisk": 32.84,
+        "used": 32.84,
+        "left": 2.16
       },
       "news": {
         "budget": 25,
@@ -1004,10 +1013,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 32.84,
+      "used": 32.84,
+      "left": 117.16,
+      "openPositions": 1
     }
   }
 }

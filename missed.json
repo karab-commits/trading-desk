@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-03T09:51:42-05:00",
+  "updated": "2026-11-03T09:52:30-05:00",
   "date": "2026-11-03",
   "isoWeek": "2026-W45",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 3,
+      "ideas": 2,
       "scored": 0,
       "open": 0,
       "notTriggered": 2,
-      "pending": 1,
+      "pending": 0,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 73.64,
       "final": 73.64,
       "unrealized": 0.0,
-      "ideas": 7,
+      "ideas": 6,
       "scored": 2,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 0,
       "wins": 1,
       "losses": 1
     },
@@ -36,11 +36,11 @@
       "net": 73.64,
       "final": 73.64,
       "unrealized": 0.0,
-      "ideas": 7,
+      "ideas": 6,
       "scored": 2,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 0,
       "wins": 1,
       "losses": 1
     }
@@ -65,30 +65,10 @@
         "scored": 2,
         "open": 0
       }
-    },
-    "quant": {
-      "today": {
-        "net": 0.0,
-        "ideas": 1,
-        "scored": 0,
-        "open": 0
-      },
-      "week": {
-        "net": 0.0,
-        "ideas": 1,
-        "scored": 0,
-        "open": 0
-      },
-      "allTime": {
-        "net": 0.0,
-        "ideas": 1,
-        "scored": 0,
-        "open": 0
-      }
     }
   },
   "real": {
-    "today": 0.0,
+    "today": 0.24,
     "week": 0.0,
     "allTime": 0.0,
     "byBot": {
@@ -135,28 +115,6 @@
     }
   },
   "ideas": [
-    {
-      "id": "2026-11-03-AAPL-1",
-      "date": "2026-11-03",
-      "bot": "quant",
-      "ticker": "AAPL",
-      "side": "long",
-      "entry": 333.05,
-      "stop": 325.33,
-      "target": 348.49,
-      "shares": 3,
-      "strategy": "Stocks-in-play ORB",
-      "currency": "USD",
-      "size": 3,
-      "loggedAt": "2026-11-03T09:51:08-05:00",
-      "why": "untaken",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
-    },
     {
       "id": "2026-11-03-XIU-1",
       "date": "2026-11-03",
@@ -288,5 +246,10 @@
       "netCAD": 0.0
     }
   ],
-  "excluded": []
+  "excluded": [
+    {
+      "id": "2026-11-03-AAPL-1",
+      "why": "in trade (real fill)"
+    }
+  ]
 }

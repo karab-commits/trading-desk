@@ -424,6 +424,79 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-03-AAPL-1",
+      "date": "2026-11-03",
+      "session": "adhoc",
+      "ticker": "AAPL",
+      "side": "long",
+      "entry": 333.05,
+      "stop": 325.33,
+      "target": 348.49,
+      "shares": 3,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle 325.58->332.38 (long only); broke OR high 332.67 in the 9:45-9:50 bar (high 333.22, close 333.15), 15.7M shares by 9:51, above VWAP 329.12. Stop = OR low 325.33, target 2R. Scout: whale.",
+      "loggedAt": "2026-11-03T09:51:08-05:00",
+      "plan": {
+        "riskGross": 23.16,
+        "rewardGross": 46.32,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0215,
+          "fx": 0.69,
+          "total": 0.7163
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0201,
+          "fx": 0.35,
+          "total": 0.3675
+        },
+        "netProfitAtTarget": 45.6,
+        "netLossAtStop": -23.53,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 63.66,
+        "netLossAtStopCAD": -32.84
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 14.04,
+        "median": 11.39,
+        "asOfClose": "2026-11-02",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Textbook stocks-in-play setup: -3.8% earnings-warning gap, 15.7M shares traded by 9:51 (very heavy first-half-hour volume), strong first 15-min candle (325.58 to 332.38) and a clean break of the 332.67 range high",
+          "Price is well above session VWAP (329.12) and the broad market is green: SPY and QQQ opened above yesterday's close and trade above VWAP"
+        ],
+        "bear": [
+          "Yesterday's close 338.32 is about 5 dollars overhead: gap-fill sellers and trapped longs can cap the move well before the 2R target at 348.49",
+          "The news is negative (memory-cost margin warning); this is a counter-news bounce, and the stop is wide (7.72, 2.3%) so the position is only 3 shares",
+          "Entry chases about 0.38 above the range high after a +2.3% run from the low, and it is US election day, so macro headlines can whipsaw megacaps"
+        ],
+        "verdict": "take",
+        "why": "The written rule fired exactly (direction, break, stop, target) on very high relative volume with the market and VWAP behind it; the bear points cap upside but don't invalidate the signal, and loss to the stop is capped at about 33 CAD inside Quant Lab's 35 CAD budget",
+        "by": "quant",
+        "at": "2026-11-03T09:51:18-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }
