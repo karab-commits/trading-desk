@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-03T11:18:50-05:00",
+  "updated": "2026-11-03T11:26:56-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -30,7 +30,7 @@
  ],
  "2026-11-03": {
   "kiwi": {
-   "quotesCalls": 23,
+   "quotesCalls": 24,
    "barCalls": 1,
    "bars": 4,
    "optionCalls": 0,
@@ -46,7 +46,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 28,
+   "runs": 29,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -65,14 +65,14 @@
      "QQC.TO",
      "SOFI"
     ],
-    "total": 190
+    "total": 193
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-03T11:18:50-05:00",
+   "lastRun": "2026-11-03T11:26:56-05:00",
    "keys": [
     "order:AAPL stocks-in-play ORB long",
     "order:AAPL stop 325.33"
@@ -123,7 +123,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 7,
+   "webSearches": 8,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 15,
@@ -245,9 +245,19 @@
       "title": "US Stock Market Live Updates: S&P 500, Nasdaq rise ahead of midterm results; Apple falls",
       "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-apple-palantir-nvidia-midterm-elections-us-iran-war-crude-oil-prices-ai-stocks-treasury-yields-earnings-news-3rd-november-2026/liveblog/135501430.cms",
       "time": "2026-11-03T11:06:06-05:00"
+     },
+     {
+      "title": "Nvidia, SK Hynix, SanDisk Spike Up To 7% Ahead Of AMD Earnings As Chips Rebound From Multi-Week Selloff",
+      "url": "https://www.ndtvprofit.com/markets/nvidia-sk-hynix-sandisk-spike-up-to-7-ahead-of-amd-earnings-as-chips-rebound-from-multi-week-selloff-12278017",
+      "time": "2026-11-03T11:26:45-05:00"
+     },
+     {
+      "title": "Why Is Emergent BioSolutions (EBS) Stock Up +9.78% Today?",
+      "url": "https://tickeron.com/blogs/why-is-emergent-biosolutions-ebs-stock-up-9-78-today-26922/",
+      "time": "2026-11-03T11:26:45-05:00"
      }
     ],
-    "count": 21,
+    "count": 23,
     "seen": [
      "34d42531c132",
      "6289babcfb7e",
@@ -269,15 +279,17 @@
      "3c165bb25dcc",
      "885c73ac0066",
      "868a3b668359",
-     "a9250fea2e17"
+     "a9250fea2e17",
+     "ee6e68ec103a",
+     "33e2440ba7b7"
     ]
    },
    "lastRun": null
   },
   "whale": {
    "quotesCalls": 4,
-   "barCalls": 15,
-   "bars": 138,
+   "barCalls": 27,
+   "bars": 211,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
