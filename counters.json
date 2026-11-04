@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-04T11:04:17-05:00",
+  "updated": "2026-11-04T11:08:34-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -527,7 +527,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 6,
+   "runs": 7,
    "symbolsQuoted": {
     "unique": [],
     "total": 0
@@ -537,7 +537,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-04T11:04:17-05:00"
+   "lastRun": "2026-11-04T11:08:34-05:00"
   },
   "scanner": {
    "quotesCalls": 1,
@@ -591,8 +591,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 6,
-   "bars": 102,
+   "barCalls": 10,
+   "bars": 130,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -619,7 +619,7 @@
    "lastRun": null
   },
   "whale": {
-   "quotesCalls": 0,
+   "quotesCalls": 1,
    "barCalls": 1,
    "bars": 17,
    "optionCalls": 0,
@@ -637,8 +637,21 @@
    "simulatedTrades": 0,
    "runs": 0,
    "symbolsQuoted": {
-    "unique": [],
-    "total": 0
+    "unique": [
+     "QQQ",
+     "SPY",
+     "AAPL",
+     "MSFT",
+     "NVDA",
+     "AMZN",
+     "META",
+     "QQC.TO",
+     "XIU.TO",
+     "AMD",
+     "MU",
+     "GOOGL"
+    ],
+    "total": 12
    },
    "headlines": {
     "items": [],
@@ -653,7 +666,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 1,
+   "webSearches": 2,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
