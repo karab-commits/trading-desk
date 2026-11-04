@@ -476,10 +476,26 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
-      "taken": null,
-      "realPnl": null,
-      "realPnlCAD": null,
+      "result": {
+        "outcome": "target",
+        "exit": 349.38,
+        "gross": 48.99,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0216,
+          "fx": 0.73,
+          "total": 0.7564
+        },
+        "net": 48.23,
+        "grossR": 2.115,
+        "netR": 2.083,
+        "netCAD": 67.33,
+        "resolvedAt": "2026-11-04T10:51:45-05:00"
+      },
+      "taken": "yes",
+      "realPnl": 48.71,
+      "realPnlCAD": 68.0,
       "debate": {
         "bull": [
           "Textbook stocks-in-play setup: -3.8% earnings-warning gap, 15.7M shares traded by 9:51 (very heavy first-half-hour volume), strong first 15-min candle (325.58 to 332.38) and a clean break of the 332.67 range high",
@@ -496,7 +512,8 @@
         "at": "2026-11-03T09:51:18-05:00",
         "regime": "volatile",
         "rule": "veto only"
-      }
+      },
+      "realR": 2.103
     }
   ]
 }

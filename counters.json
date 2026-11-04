@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-04T10:48:10-05:00",
+  "updated": "2026-11-04T10:52:03-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -512,6 +512,35 @@
  "2026-11-04": {
   "kiwi": {
    "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 6,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 3,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-04T10:52:03-05:00"
+  },
+  "scanner": {
+   "quotesCalls": 1,
    "barCalls": 0,
    "bars": 0,
    "optionCalls": 0,
@@ -527,7 +556,57 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 2,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "SPY",
+     "QQQ",
+     "QQC.TO",
+     "XIU.TO",
+     "AAPL",
+     "MSFT",
+     "NVDA",
+     "AMZN",
+     "META",
+     "AMD",
+     "TSLA",
+     "PLTR",
+     "SOFI",
+     "RIVN",
+     "SHOP",
+     "COIN",
+     "AVGO",
+     "MU",
+     "NFLX",
+     "GOOGL"
+    ],
+    "total": 20
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 6,
+   "bars": 102,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
    "symbolsQuoted": {
     "unique": [],
     "total": 0
@@ -537,7 +616,79 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-04T10:48:10-05:00"
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 17,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 1,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Stocks making the biggest moves premarket: DJT, TSLA, CRWV, NVO",
+      "url": "https://www.cnbc.com/2026/11/04/stocks-making-the-biggest-moves-premarket-djt-tsla-crwv-nvo.html",
+      "time": "2026-11-04T10:51:45-05:00"
+     },
+     {
+      "title": "AI data center stocks dip, renewables surge after Democrat sweep in US midterm elections",
+      "url": "https://www.investing.com/news/stock-market-news/ai-data-center-stocks-dip-renewables-surge-after-democrat-sweep-in-us-midterm-elections-4998519",
+      "time": "2026-11-04T10:51:45-05:00"
+     }
+    ],
+    "count": 2,
+    "seen": [
+     "0503a8877fb3",
+     "00431168d371"
+    ]
+   },
+   "lastRun": null
   }
  }
 }
