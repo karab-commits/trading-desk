@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 4, 2026 11:08 AM ET",
+  "lastUpdated": "Wed Nov 4, 2026 11:17 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Gap-fade window 9:45-10:15 passed without a run.",
+      "status": "Gap-fade window 9:45-10:15 is over for today.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -38,10 +38,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Gap-fade window closed",
-        "detail": "Gap-fade window 9:45-10:15 passed without a run.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "Gap-fade window 9:45-10:15 is over for today.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Tomorrow 9:45",
+        "next": "Pre-market scan tomorrow 9:00",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "11:07: today's movers (NVO, RIOT, SHLS, LIVN, DUOL, election moves) are pre-market headlines, older than the 60-minute rule.",
+      "status": "11:16: today's movers (TRMB, W, DUOL, NVO, SWKS, DDOG) are pre-market earnings headlines, older than the 60-minute rule.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -62,17 +62,17 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No fresh catalyst <60m",
-        "detail": "11:07: today's movers (NVO, RIOT, SHLS, LIVN, DUOL, election moves) are pre-market headlines, older than the 60-minute rule.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "11:16: today's movers (TRMB, W, DUOL, NVO, SWKS, DDOG) are pre-market earnings headlines, older than the 60-minute rule.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20"
+        "next": "Next check 11:30"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "11:07: QQQ 690.95, below VWAP 695.29 and inside the session range (687.87-701.45); no signal.",
+      "status": "11:16: QQQ 693.17, below VWAP 695.17 and inside the session range (687.87-701.45); no signal.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -81,17 +81,17 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "QQQ: no RVOL breakout",
-        "detail": "11:07: QQQ 690.95, below VWAP 695.29 and inside the session range (687.87-701.45); no signal.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "11:16: QQQ 693.17, below VWAP 695.17 and inside the session range (687.87-701.45); no signal.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20"
+        "next": "Next check 11:30"
       }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "11:07: account flat, no working orders, no pending approvals. Desk realized +68.00 CAD today.",
+      "status": "11:16: account flat, no working orders, no pending approvals. Desk realized +68.00 CAD today.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -103,10 +103,10 @@
       "rejectedAllTime": 6,
       "activity": {
         "now": "0/4 open, 0/150 used",
-        "detail": "11:07: account flat, no working orders, no pending approvals. Desk realized +68.00 CAD today.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "11:16: account flat, no working orders, no pending approvals. Desk realized +68.00 CAD today.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20",
+        "next": "Next check 11:30",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "11:07 run: no new orders; flat, nothing pending. Today's real P&L is the AAPL Nov 3 trade closed 9:43 (+68.00 CAD).",
+      "status": "11:16 run: no new orders; flat, nothing pending. Today's real P&L is the AAPL Nov 3 trade closed 9:43 (+68.00 CAD).",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -125,10 +125,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Desk +68.00 CAD today",
-        "detail": "11:07 run: no new orders; flat, nothing pending. Today's real P&L is the AAPL Nov 3 trade closed 9:43 (+68.00 CAD).",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "11:16 run: no new orders; flat, nothing pending. Today's real P&L is the AAPL Nov 3 trade closed 9:43 (+68.00 CAD).",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20",
+        "next": "Next check 11:30",
         "log": [
           "3:40 ET close-out: flat, nothing to close",
           "4:39 PM EOD review done",
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "11:07 run: ORB first breakouts already happened 9:45-9:55. VWAP (paper-only) checked on 15-min bars for NVDA, MSFT, AAPL, XIU.TO: NVDA lost VWAP on the 10:30 bar but RVOL vs the 20-day slot average can't be verified from cached data, so it doesn't meet the rule; no other crosses.",
+      "status": "11:16 run: ORB and stocks-in-play first breakouts already happened in the first half hour (AMD, MU, GOOGL, AAPL well past their opening ranges); no new first-break entries. VWAP is paper-only.",
       "pnlToday": 68.0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,11 +148,11 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "No ORB/VWAP signal 11:07",
-        "detail": "11:07 run: ORB first breakouts already happened 9:45-9:55. VWAP (paper-only) checked on 15-min bars for NVDA, MSFT, AAPL, XIU.TO: NVDA lost VWAP on the 10:30 bar but RVOL vs the 20-day slot average can't be verified from cached data, so it doesn't meet the rule; no other crosses.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "now": "No ORB/SIP signal 11:16",
+        "detail": "11:16 run: ORB and stocks-in-play first breakouts already happened in the first half hour (AMD, MU, GOOGL, AAPL well past their opening ranges); no new first-break entries. VWAP is paper-only.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20",
+        "next": "Next check 11:30",
         "log": [
           "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive",
           "EOD re-check: XIU active, SOFI+HXT testing",
@@ -183,7 +183,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "11:07 run: debit spreads only express another bot's valid signal; none this run.",
+      "status": "11:16 run: debit spreads only express another bot's valid signal; none this run.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -192,10 +192,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No source signal",
-        "detail": "11:07 run: debit spreads only express another bot's valid signal; none this run.",
-        "since": "2026-11-04T11:08:34-05:00",
+        "detail": "11:16 run: debit spreads only express another bot's valid signal; none this run.",
+        "since": "2026-11-04T11:17:35-05:00",
         "state": "idle",
-        "next": "Check 11:20"
+        "next": "Next check 11:30"
       }
     }
   ],
@@ -972,7 +972,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-04",
-    "updated": "2026-11-04T11:07:05-05:00",
+    "updated": "2026-11-04T11:16:13-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
