@@ -514,6 +514,78 @@
         "rule": "veto only"
       },
       "realR": 2.103
+    },
+    {
+      "id": "2026-11-09-NVDA-1",
+      "date": "2026-11-09",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "long",
+      "entry": 177.0,
+      "stop": 170.24,
+      "target": 190.52,
+      "shares": 3,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle green (173.07 to 176.29), OR 170.24-176.45, broke OR high at 9:45-9:50 bar; ~60M shares in first 15 min vs 117.7M 20-day ADV (est. RVOL well above 2); catalyst: board probe of CEO (Sunday statement). Scout: Whale Tracker.",
+      "loggedAt": "2026-11-09T09:49:31-05:00",
+      "plan": {
+        "riskGross": 20.28,
+        "rewardGross": 40.56,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0118,
+          "fx": 0.61,
+          "total": 0.6202
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0105,
+          "fx": 0.3,
+          "total": 0.3147
+        },
+        "netProfitAtTarget": 39.94,
+        "netLossAtStop": -20.59,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 55.76,
+        "netLossAtStopCAD": -28.75
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 27.35,
+        "median": 11.41,
+        "asOfClose": "2026-11-06",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "NVDA is the most in-play stock today: about 60M shares in the first 15 minutes against a 117.7M 20-day average, a green first candle and a clean break of the 176.45 opening-range high, while QQQ is up about 1.4% from its open."
+        ],
+        "bear": [
+          "The catalyst is negative (board probe of the CEO, analysts warn of an overhang and possible China export curbs), so the rebound can fail and roll back to the 170 lows.",
+          "The opening range is wide (6.21), so the 2R target at 190.52 needs a +7.6% move from entry; most likely outcome is a time stop at 15:15 for a small result.",
+          "Entry at 177.00 chases 0.55 above the trigger, and the regime is volatile (SPY rv10 27% vs 11% median), where opening-range breaks fake out more often."
+        ],
+        "verdict": "take",
+        "why": "The rules are met exactly (green first candle, OR-high break, RVOL far above 2), risk is capped at 28.75 CAD after fees inside Quant Lab's 35 CAD budget, and the chase is under 10% of R; the bear points argue for a small size, not for skipping a valid stocks-in-play signal.",
+        "by": "quant",
+        "at": "2026-11-09T09:49:40-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }

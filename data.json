@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 9:48 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 9:50 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU opened 54.27 (+0.44 vs trigger 0.57), HXT 97.55 (+0.88 vs 1.02), SOFI 16.33 (+0.13 vs 0.69). No trade.",
+      "status": "XIU, HXT, SOFI gaps below 0.75x ATR14 at the open; no gap-fade trade.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,11 +37,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No gap fades at open",
-        "detail": "XIU opened 54.27 (+0.44 vs trigger 0.57), HXT 97.55 (+0.88 vs 1.02), SOFI 16.33 (+0.13 vs 0.69). No trade.",
-        "since": "2026-11-09T09:31:58-05:00",
-        "state": "done",
-        "next": "Intraday scans from 9:45",
+        "now": "No gap fades today",
+        "detail": "XIU, HXT, SOFI gaps below 0.75x ATR14 at the open; no gap-fade trade.",
+        "since": "2026-11-09T09:50:07-05:00",
+        "state": "idle",
+        "next": "Window closes 10:15",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Pre-market catalysts: NVDA -5.9% (Huang board probe), AMD +4.3% (Oppenheimer upgrade), AMZN +3.6% and META +2.8% (JPMorgan upgrades), UAL +4.8%. Midterm result driving homebuilders (NVR).",
+      "status": "Confirmed NVDA CEO-probe headlines (CNBC, Reuters). No fresh (<60 min) catalyst with a pullback setup this run.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +61,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "NVDA probe, upgrades",
-        "detail": "Pre-market catalysts: NVDA -5.9% (Huang board probe), AMD +4.3% (Oppenheimer upgrade), AMZN +3.6% and META +2.8% (JPMorgan upgrades), UAL +4.8%. Midterm result driving homebuilders (NVR).",
-        "since": "2026-11-09T09:15:51-05:00",
-        "state": "done",
-        "next": "Debate any News trade after 9:45"
+        "now": "NVDA probe confirmed",
+        "detail": "Confirmed NVDA CEO-probe headlines (CNBC, Reuters). No fresh (<60 min) catalyst with a pullback setup this run.",
+        "since": "2026-11-09T09:50:07-05:00",
+        "state": "idle",
+        "next": "Catalyst check 10:00"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "Pre-market volume: NVDA 32.6M (28% of 20d avg), AMD 2.6M, AMZN 1.5M, KKR 1.1M. QQQ relvol strategy checks after open.",
+      "status": "Stocks-in-play scout: NVDA ~60M shares in first 15 min (vs 117.7M ADV). QQQ relvol rule starts at 10:00.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,18 +80,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scouted: NVDA 32.6M pre",
-        "detail": "Pre-market volume: NVDA 32.6M (28% of 20d avg), AMD 2.6M, AMZN 1.5M, KKR 1.1M. QQQ relvol strategy checks after open.",
-        "since": "2026-11-09T09:15:51-05:00",
-        "state": "done",
-        "next": "QQQ relvol after 9:45"
+        "now": "Scouted NVDA for Quant",
+        "detail": "Stocks-in-play scout: NVDA ~60M shares in first 15 min (vs 117.7M ADV). QQQ relvol rule starts at 10:00.",
+        "since": "2026-11-09T09:50:07-05:00",
+        "state": "idle",
+        "next": "QQQ relvol 10:00"
       }
     },
     {
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "No opening signals, so no risk checks or rejections this run. Desk 0/150, 0/4 open.",
+      "status": "NVDA long 3 (Quant Lab SIP ORB) allowed: risk 28.75 CAD, quant budget 28.75/35, desk 0/150 realized, 0/4 open.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -102,11 +102,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "No orders to check",
-        "detail": "No opening signals, so no risk checks or rejections this run. Desk 0/150, 0/4 open.",
-        "since": "2026-11-09T09:31:58-05:00",
-        "state": "idle",
-        "next": "Intraday checks from 9:45",
+        "now": "ALLOW NVDA, 28.75 CAD",
+        "detail": "NVDA long 3 (Quant Lab SIP ORB) allowed: risk 28.75 CAD, quant budget 28.75/35, desk 0/150 realized, 0/4 open.",
+        "since": "2026-11-09T09:50:07-05:00",
+        "state": "done",
+        "next": "10:00 checks",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile. Gap fades did not trigger at the open. Watchlist for the 9:45 routine: NVDA, AMD, AMZN, META, UAL (stocks-in-play ORB).",
+      "status": "Sent NVDA buy 3 limit 177.00 (Quant Lab SIP ORB). Waiting for K's approval in Questrade, then the stop at 170.24.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,11 +124,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Open: no orders sent",
-        "detail": "Mood volatile. Gap fades did not trigger at the open. Watchlist for the 9:45 routine: NVDA, AMD, AMZN, META, UAL (stocks-in-play ORB).",
-        "since": "2026-11-09T09:31:58-05:00",
-        "state": "idle",
-        "next": "Intraday run 9:45",
+        "now": "NVDA order awaits K",
+        "detail": "Sent NVDA buy 3 limit 177.00 (Quant Lab SIP ORB). Waiting for K's approval in Questrade, then the stop at 170.24.",
+        "since": "2026-11-09T09:50:07-05:00",
+        "state": "waiting",
+        "next": "Intraday run 10:00",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Stocks-in-play ORB candidates for 9:45: NVDA, AMD, AMZN, META, UAL. Untested; needs devil's-advocate take.",
+      "status": "Stocks-in-play ORB: NVDA first 15-min candle green, OR 170.24-176.45, broke the high. Buy 3 limit 177.00, stop 170.24, target 190.52 (2R). Debate: take. Risk 28.75 of 35 CAD budget used, so AMZN, META, AMD, UAL skipped (no budget left).",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,11 +148,11 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "SIP list: NVDA AMD AMZN",
-        "detail": "Stocks-in-play ORB candidates for 9:45: NVDA, AMD, AMZN, META, UAL. Untested; needs devil's-advocate take.",
-        "since": "2026-11-09T09:15:51-05:00",
+        "now": "NVDA long sent, 3 @ 177",
+        "detail": "Stocks-in-play ORB: NVDA first 15-min candle green, OR 170.24-176.45, broke the high. Buy 3 limit 177.00, stop 170.24, target 190.52 (2R). Debate: take. Risk 28.75 of 35 CAD budget used, so AMZN, META, AMD, UAL skipped (no budget left).",
+        "since": "2026-11-09T09:50:07-05:00",
         "state": "waiting",
-        "next": "15-min range at 9:45",
+        "next": "Stop after fill; 10:00 run",
         "log": [
           "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive",
           "EOD re-check: XIU active, SOFI+HXT testing",
@@ -183,7 +183,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "No options setup before the open; debit spreads on SPY/QQQ/megacaps are left to the intraday routine. No option chains pulled this run.",
+      "status": "Debit spreads start at 10:00 ET; no chains pulled this run.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -191,11 +191,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No pre-mkt spread",
-        "detail": "No options setup before the open; debit spreads on SPY/QQQ/megacaps are left to the intraday routine. No option chains pulled this run.",
-        "since": "2026-11-09T09:15:51-05:00",
+        "now": "Waiting for 10:00",
+        "detail": "Debit spreads start at 10:00 ET; no chains pulled this run.",
+        "since": "2026-11-09T09:50:07-05:00",
         "state": "idle",
-        "next": "Intraday check 9:45"
+        "next": "Spread check 10:00"
       }
     }
   ],
@@ -487,9 +487,9 @@
     "daysRunning": 1
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": 0.0,
+    "total": 0.0,
     "trades": 0
   },
   "pnlWeek": {
@@ -504,7 +504,7 @@
     "total": 68.0,
     "trades": 1
   },
-  "lastApprovedIdea": "AAPL stop 325.33",
+  "lastApprovedIdea": "NVDA long 3 @ 177.00 (Quant Lab SIP ORB)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -546,8 +546,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-04T10:51:45-05:00",
-    "ideasLogged": 7,
+    "updated": "2026-11-09T09:49:31-05:00",
+    "ideasLogged": 8,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -568,6 +568,16 @@
         "wins": 1,
         "real": 68.0,
         "taken": 1
+      },
+      "2026-11-09": {
+        "net": 0.0,
+        "ideas": 1,
+        "resolved": 0,
+        "open": 1,
+        "filled": 0,
+        "wins": 0,
+        "real": 0.0,
+        "taken": 0
       }
     }
   },
@@ -575,27 +585,34 @@
     {
       "date": "2026-11-09",
       "ticker": "NVDA",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Stocks in play: -5.9% pre-mkt on Huang board probe, 32.6M pre-mkt shares (28% of 20-day avg). ORB either side after 9:45.",
+      "reason": "Stocks-in-play ORB: green first 15-min candle, broke OR high 176.45; stop OR low 170.24; huge volume on CEO-probe news",
       "notBefore": "09:45",
-      "testNote": "untested: +0.54R on 12 hand-picked trades only",
+      "testNote": "Stocks-in-play ORB untested (12 hand-picked trades)",
       "tvSymbol": "NASDAQ:NVDA",
       "tested": false,
       "currency": "USD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 39.94,
+      "netLossAtStop": -20.59,
+      "netProfitAtTargetCAD": 55.76,
+      "netLossAtStopCAD": -28.75,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 176.72,
-      "priceTime": "2026-11-09T09:48:22-05:00"
+      "last": 176.93,
+      "priceTime": "2026-11-09T09:49:52-05:00",
+      "side": "long",
+      "entry": 177.0,
+      "stop": 170.24,
+      "target": 190.52,
+      "shares": 3,
+      "planFrom": "journal",
+      "journalId": "2026-11-09-NVDA-1"
     },
     {
       "date": "2026-11-09",
@@ -770,7 +787,7 @@
       "priceTime": "2026-11-09T09:48:22-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T09:48:35-05:00",
+  "watchlistUpdated": "2026-11-09T09:49:52-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -939,7 +956,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T09:47:22-05:00",
+    "updated": "2026-11-09T09:49:40-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

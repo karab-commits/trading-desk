@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-09T09:48:50-05:00",
+  "updated": "2026-11-09T09:50:13-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -730,11 +730,11 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 0,
+   "ordersSent": 1,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 6,
+   "runs": 7,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -753,7 +753,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-09T09:48:50-05:00"
+   "lastRun": "2026-11-09T09:50:13-05:00",
+   "keys": [
+    "order:NVDA long 3 @ 177.00 (Quant Lab SIP ORB)"
+   ]
   },
   "scanner": {
    "quotesCalls": 3,
@@ -796,7 +799,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 1,
+   "webSearches": 2,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 10,
@@ -851,16 +854,28 @@
       "title": "Taiwan Stock Market Surges Nearly 5% in Chip Rally",
       "url": "https://x.com/i/trending/2119734123946475848",
       "time": "2026-11-09T09:15:40-05:00"
+     },
+     {
+      "title": "Nvidia stock: Jensen Huang affair with alleged Chinese spy probed",
+      "url": "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html",
+      "time": "2026-11-09T09:49:18-05:00"
+     },
+     {
+      "title": "Nvidia's shares slide as chip giant probes CEO over spy claims",
+      "url": "https://www.investing.com/news/economy-news/nvidias-outofhour-shares-fall-as-firm-probes-ceo-jensen-huang-5010476",
+      "time": "2026-11-09T09:49:18-05:00"
      }
     ],
-    "count": 6,
+    "count": 8,
     "seen": [
      "5288489c1b73",
      "a147a72fcff2",
      "5ce4f7171b77",
      "3dce38dae63e",
      "61ce44809b20",
-     "60a526ff5aaa"
+     "60a526ff5aaa",
+     "2e104f370e83",
+     "af3d98ad13b4"
     ]
    },
    "lastRun": null
@@ -905,16 +920,16 @@
   },
   "quant": {
    "quotesCalls": 1,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 6,
+   "bars": 60,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 0,
-   "ideasLogged": 0,
+   "ideasGenerated": 5,
+   "ideasLogged": 1,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -938,7 +953,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": null
+   "lastRun": null,
+   "keys": [
+    "logged:2026-11-09-NVDA-1"
+   ]
   }
  }
 }
