@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-09T15:22:32-05:00",
+  "updated": "2026-11-09T15:34:34-05:00",
   "date": "2026-11-09",
   "isoWeek": "2026-W46",
   "marketOpen": true,
@@ -9,60 +9,60 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": -20.32,
-      "final": -20.32,
+      "net": -16.42,
+      "final": -16.42,
       "unrealized": 0.0,
       "ideas": 2,
-      "scored": 1,
+      "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
-      "wins": 0,
+      "pending": 0,
+      "wins": 1,
       "losses": 1
     },
     "week": {
-      "net": -20.32,
-      "final": -20.32,
+      "net": -16.42,
+      "final": -16.42,
       "unrealized": 0.0,
       "ideas": 2,
-      "scored": 1,
+      "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
-      "wins": 0,
+      "pending": 0,
+      "wins": 1,
       "losses": 1
     },
     "allTime": {
-      "net": 53.32,
-      "final": 53.32,
+      "net": 57.22,
+      "final": 57.22,
       "unrealized": 0.0,
       "ideas": 8,
-      "scored": 3,
+      "scored": 4,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
-      "wins": 1,
+      "pending": 0,
+      "wins": 2,
       "losses": 2
     }
   },
   "byBot": {
     "quant": {
       "today": {
-        "net": 0.0,
+        "net": 3.9,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "week": {
-        "net": 0.0,
+        "net": 3.9,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "allTime": {
-        "net": 0.0,
+        "net": 3.9,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       }
     },
@@ -108,7 +108,7 @@
     }
   },
   "real": {
-    "today": 7.91,
+    "today": 4.93,
     "week": 68.0,
     "allTime": 68.0,
     "byBot": {
@@ -138,7 +138,7 @@
         "allTime": 0
       },
       "quant": {
-        "today": -11.82,
+        "today": 4.93,
         "week": 68.0,
         "allTime": 68.0
       },
@@ -193,12 +193,13 @@
       "size": 3,
       "loggedAt": "2026-11-09T09:49:31-05:00",
       "why": "skipped",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "time",
+      "exit": 177.95,
+      "fees": 0.0537,
+      "net": 2.8,
+      "netCAD": 3.9,
+      "resolvedAt": "2026-11-09T15:34:30-05:00"
     },
     {
       "id": "2026-11-03-XIU-1",
