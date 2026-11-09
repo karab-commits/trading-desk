@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-09T11:03:04-05:00",
+  "updated": "2026-11-09T11:07:10-05:00",
   "date": "2026-11-09",
   "isoWeek": "2026-W46",
   "marketOpen": true,
@@ -9,36 +9,36 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 0.0,
+      "net": 4.63,
       "final": 0.0,
-      "unrealized": 0.0,
-      "ideas": 1,
+      "unrealized": 4.63,
+      "ideas": 2,
       "scored": 0,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
       "pending": 1,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": 0.0,
+      "net": 4.63,
       "final": 0.0,
-      "unrealized": 0.0,
-      "ideas": 1,
+      "unrealized": 4.63,
+      "ideas": 2,
       "scored": 0,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
       "pending": 1,
       "wins": 0,
       "losses": 0
     },
     "allTime": {
-      "net": 73.64,
+      "net": 78.27,
       "final": 73.64,
-      "unrealized": 0.0,
-      "ideas": 7,
+      "unrealized": 4.63,
+      "ideas": 8,
       "scored": 2,
-      "open": 0,
+      "open": 1,
       "notTriggered": 4,
       "pending": 1,
       "wins": 1,
@@ -64,6 +64,26 @@
         "ideas": 1,
         "scored": 0,
         "open": 0
+      }
+    },
+    "whale": {
+      "today": {
+        "net": 4.63,
+        "ideas": 1,
+        "scored": 0,
+        "open": 1
+      },
+      "week": {
+        "net": 4.63,
+        "ideas": 1,
+        "scored": 0,
+        "open": 1
+      },
+      "allTime": {
+        "net": 4.63,
+        "ideas": 1,
+        "scored": 0,
+        "open": 1
       }
     },
     "scanner": {
@@ -135,6 +155,29 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-09-QQQ-1",
+      "date": "2026-11-09",
+      "bot": "whale",
+      "ticker": "QQQ",
+      "side": "long",
+      "entry": 677.0,
+      "stop": 675.71,
+      "target": 679.58,
+      "shares": 11,
+      "strategy": "QQQ relative-volume breakout",
+      "currency": "USD",
+      "size": 11,
+      "loggedAt": "2026-11-09T11:03:53-05:00",
+      "why": "paper-only",
+      "state": "unrealized",
+      "outcome": null,
+      "priceTime": "2026-11-09T11:05:45-05:00",
+      "exit": 677.3201,
+      "fees": 0.2063,
+      "net": 3.31,
+      "netCAD": 4.63
+    },
     {
       "id": "2026-11-09-NVDA-1",
       "date": "2026-11-09",

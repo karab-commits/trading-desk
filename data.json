@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 11:03 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 11:07 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -72,7 +72,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "10:50 bar breakout (vol ~2.5x on 2 cached days) passed before this run; QQQ at 678.25 vs 677.00 signal close, paper-logged only",
+      "status": "QQQ long triggered at 677.32 (entry 677.00); paper-only RVOL breakout, not sent.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ signal stale",
-        "detail": "10:50 bar breakout (vol ~2.5x on 2 cached days) passed before this run; QQQ at 678.25 vs 677.00 signal close, paper-logged only",
-        "since": "2026-11-09T11:03:53-05:00",
-        "state": "idle",
-        "next": "11:15 run"
+        "now": "QQQ triggered at 677.32",
+        "detail": "QQQ long triggered at 677.32 (entry 677.00); paper-only RVOL breakout, not sent.",
+        "since": "2026-11-09T11:07:10-05:00",
+        "state": "done",
+        "next": "11:15 run",
+        "log": [
+          "11:05 ET: QQQ triggered at 677.32, paper only"
+        ]
       }
     },
     {
@@ -604,8 +607,8 @@
       "netLossAtStopCAD": -28.75,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 179.1,
-      "priceTime": "2026-11-09T11:02:28-05:00",
+      "last": 177.3,
+      "priceTime": "2026-11-09T11:05:45-05:00",
       "side": "long",
       "entry": 177.0,
       "stop": 170.24,
@@ -637,8 +640,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 503.015,
-      "priceTime": "2026-11-09T11:02:28-05:00"
+      "last": 502.8998,
+      "priceTime": "2026-11-09T11:05:45-05:00"
     },
     {
       "date": "2026-11-09",
@@ -662,8 +665,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 268.7104,
-      "priceTime": "2026-11-09T11:02:28-05:00"
+      "last": 268.36,
+      "priceTime": "2026-11-09T11:05:45-05:00"
     },
     {
       "date": "2026-11-09",
@@ -687,8 +690,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 642.35,
-      "priceTime": "2026-11-09T11:02:27-05:00"
+      "last": 642.0,
+      "priceTime": "2026-11-09T11:05:45-05:00"
     },
     {
       "date": "2026-11-09",
@@ -710,10 +713,10 @@
       "netLossAtStop": -23.14,
       "netProfitAtTargetCAD": 62.64,
       "netLossAtStopCAD": -32.31,
-      "openPnl": -2.08,
-      "openPnlCAD": -2.9,
-      "last": 120.37,
-      "priceTime": "2026-11-09T11:02:25-05:00",
+      "openPnl": -0.97,
+      "openPnlCAD": -1.35,
+      "last": 120.5261,
+      "priceTime": "2026-11-09T11:05:43-05:00",
       "side": "long",
       "entry": 120.76,
       "stop": 117.505,
@@ -745,8 +748,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.45,
-      "priceTime": "2026-11-09T11:02:28-05:00"
+      "last": 54.47,
+      "priceTime": "2026-11-09T11:05:45-05:00"
     },
     {
       "date": "2026-11-09",
@@ -770,7 +773,7 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 97.76,
-      "priceTime": "2026-11-09T11:02:28-05:00"
+      "priceTime": "2026-11-09T11:05:45-05:00"
     },
     {
       "date": "2026-11-09",
@@ -793,11 +796,44 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 16.93,
-      "priceTime": "2026-11-09T11:02:27-05:00"
+      "last": 16.87,
+      "priceTime": "2026-11-09T11:05:44-05:00"
+    },
+    {
+      "date": "2026-11-09",
+      "ticker": "QQQ",
+      "status": "triggered",
+      "closeBy": "16:00",
+      "addedAt": "2026-11-09T11:06:57-05:00",
+      "side": "long",
+      "entry": 677.0,
+      "stop": 675.71,
+      "target": 679.58,
+      "shares": 11,
+      "strategy": "QQQ relative-volume breakout",
+      "bot": "whale",
+      "currency": "USD",
+      "rr": 2.0,
+      "rrNet": 1.91,
+      "netProfitAtTarget": 27.8,
+      "netLossAtStop": -14.56,
+      "netProfitAtTargetCAD": 38.81,
+      "netLossAtStopCAD": -20.32,
+      "planFrom": "journal",
+      "journalId": "2026-11-09-QQQ-1",
+      "reason": "Paper-only QQQ RVOL breakout; marking to live quote",
+      "tvSymbol": "NASDAQ:QQQ",
+      "tested": false,
+      "openPnl": null,
+      "openPnlCAD": null,
+      "last": 677.3201,
+      "priceTime": "2026-11-09T11:05:45-05:00",
+      "statusAt": "2026-11-09T11:05:45-05:00",
+      "triggeredAt": "2026-11-09T11:05:45-05:00",
+      "triggerPrice": 677.3201
     }
   ],
-  "watchlistUpdated": "2026-11-09T11:03:53-05:00",
+  "watchlistUpdated": "2026-11-09T11:06:57-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
