@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 10:46 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 10:48 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "UAL 120.49 still under its 120.75 OR high; expired UAL approval not resent",
+      "status": "UAL broke its 120.75 opening-range high (hit 121.01). Buy 7 limit 120.76, stop 117.505, target 127.27 (2R). Approval expires 10:49:57 ET.",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,11 +148,11 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "No live SIP signal",
-        "detail": "UAL 120.49 still under its 120.75 OR high; expired UAL approval not resent",
-        "since": "2026-11-09T10:31:47-05:00",
-        "state": "idle",
-        "next": "10:45 run",
+        "now": "UAL buy 7 sent, approve",
+        "detail": "UAL broke its 120.75 opening-range high (hit 121.01). Buy 7 limit 120.76, stop 117.505, target 127.27 (2R). Approval expires 10:49:57 ET.",
+        "since": "2026-11-09T10:48:02-05:00",
+        "state": "waiting",
+        "next": "Stop after fill",
         "log": [
           "EOD re-check: XIU active, SOFI+HXT testing",
           "09:51 AAPL SIP ORB long filled 3 @ 332.89",
@@ -504,7 +504,7 @@
     "total": 68.0,
     "trades": 1
   },
-  "lastApprovedIdea": "UAL buy 7 stop 120.76 sent, approve in Questrade",
+  "lastApprovedIdea": "UAL buy 7 @120.76 sent 10:47",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -693,7 +693,7 @@
     {
       "date": "2026-11-09",
       "ticker": "UAL",
-      "status": "skipped",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
       "strategy": "Stocks-in-play ORB",
@@ -720,7 +720,7 @@
       "target": 127.27,
       "shares": 7,
       "planFrom": "fees model",
-      "statusAt": "2026-11-09T10:21:24-05:00"
+      "statusAt": "2026-11-09T10:48:02-05:00"
     },
     {
       "date": "2026-11-09",
@@ -795,7 +795,7 @@
       "priceTime": "2026-11-09T10:46:42-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T10:46:53-05:00",
+  "watchlistUpdated": "2026-11-09T10:48:02-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -964,7 +964,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T10:31:40-05:00",
+    "updated": "2026-11-09T10:47:51-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
