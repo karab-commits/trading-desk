@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 1:19 PM ET",
+  "lastUpdated": "Mon Nov 9, 2026 1:32 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "1:09: X news last hour: no new qualifying company catalyst (Rocket Lab is a pre-earnings run, earnings after the close).",
+      "status": "1:32: fresh SoftBank/Grab Malaysia AI JV headline, but GRAB is 3.45 USD (under the 5 floor) and only +1%. No trade.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,11 +61,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst",
-        "detail": "1:09: X news last hour: no new qualifying company catalyst (Rocket Lab is a pre-earnings run, earnings after the close).",
-        "since": "2026-11-09T13:10:13-05:00",
+        "now": "GRAB news: no setup",
+        "detail": "1:32: fresh SoftBank/Grab Malaysia AI JV headline, but GRAB is 3.45 USD (under the 5 floor) and only +1%. No trade.",
+        "since": "2026-11-09T13:32:47-05:00",
         "state": "idle",
-        "next": "Next check 1:15"
+        "next": "Next check 1:45"
       }
     },
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "1:18 run: UAL 7 @120.66, stop 117.50 working, last 119.24. No new orders.",
+      "status": "1:32 run: UAL 7 @120.66, stop 117.50 working, last 119.32. No new orders.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,10 +128,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "1 open: UAL long",
-        "detail": "1:18 run: UAL 7 @120.66, stop 117.50 working, last 119.24. No new orders.",
-        "since": "2026-11-09T13:19:05-05:00",
+        "detail": "1:32 run: UAL 7 @120.66, stop 117.50 working, last 119.32. No new orders.",
+        "since": "2026-11-09T13:32:47-05:00",
         "state": "working",
-        "next": "Next check 1:30",
+        "next": "Next check 1:45",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -144,7 +144,7 @@
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "12:37: UAL 119.63, stop 117.50, target 127.27 (2R). Stocks-in-play ORB exits at 15:15 if neither hits.",
-      "pnlToday": -13.88,
+      "pnlToday": -13.09,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
       "tradesToday": 1,
@@ -491,8 +491,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -13.88,
-    "total": -13.88,
+    "unrealized": -13.09,
+    "total": -13.09,
     "trades": 1
   },
   "pnlWeek": {
@@ -607,8 +607,8 @@
       "netLossAtStopCAD": -28.75,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 176.59,
-      "priceTime": "2026-11-09T13:18:44-05:00",
+      "last": 175.925,
+      "priceTime": "2026-11-09T13:32:20-05:00",
       "side": "long",
       "entry": 177.0,
       "stop": 170.24,
@@ -640,8 +640,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 502.7891,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 505.635,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -665,8 +665,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 268.1305,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 267.88,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -690,8 +690,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 642.25,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 642.375,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -713,10 +713,10 @@
       "netLossAtStop": -23.14,
       "netProfitAtTargetCAD": 62.64,
       "netLossAtStopCAD": -32.31,
-      "openPnl": -10.11,
-      "openPnlCAD": -14.11,
-      "last": 119.24,
-      "priceTime": "2026-11-09T13:18:44-05:00",
+      "openPnl": -9.54,
+      "openPnlCAD": -13.31,
+      "last": 119.32,
+      "priceTime": "2026-11-09T13:32:20-05:00",
       "side": "long",
       "entry": 120.76,
       "stop": 117.505,
@@ -748,8 +748,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.68,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 54.71,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -772,8 +772,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 98.23,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 98.25,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -796,8 +796,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 16.7799,
-      "priceTime": "2026-11-09T13:18:44-05:00"
+      "last": 16.78,
+      "priceTime": "2026-11-09T13:32:20-05:00"
     },
     {
       "date": "2026-11-09",
@@ -826,15 +826,15 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 676.59,
-      "priceTime": "2026-11-09T13:18:44-05:00",
+      "last": 676.9901,
+      "priceTime": "2026-11-09T13:32:20-05:00",
       "statusAt": "2026-11-09T11:30:43-05:00",
       "triggeredAt": "2026-11-09T11:05:45-05:00",
       "triggerPrice": 677.3201,
       "exitSeen": 675.07
     }
   ],
-  "watchlistUpdated": "2026-11-09T13:19:05-05:00",
+  "watchlistUpdated": "2026-11-09T13:32:46-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -1003,7 +1003,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T13:18:49-05:00",
+    "updated": "2026-11-09T13:32:24-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1014,9 +1014,9 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 10.94,
+        "realizedLoss": 13.88,
         "openRisk": 32.31,
-        "used": 43.25,
+        "used": 46.19,
         "left": 0.0
       },
       "news": {

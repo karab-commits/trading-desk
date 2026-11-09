@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-09T13:19:05-05:00",
+  "updated": "2026-11-09T13:32:47-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -718,7 +718,7 @@
  },
  "2026-11-09": {
   "kiwi": {
-   "quotesCalls": 30,
+   "quotesCalls": 31,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -734,7 +734,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 37,
+   "runs": 38,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -748,14 +748,14 @@
      "QQQ",
      "SPY"
     ],
-    "total": 261
+    "total": 271
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-09T13:19:05-05:00",
+   "lastRun": "2026-11-09T13:32:47-05:00",
    "keys": [
     "order:NVDA long 3 @ 177.00 (Quant Lab SIP ORB)",
     "order:UAL buy 7 stop 120.76 sent, approve in Questrade",
@@ -798,16 +798,16 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 1,
+   "quotesCalls": 2,
    "barCalls": 0,
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 2,
    "pagesFetched": 0,
-   "xSearches": 9,
-   "xPosts": 80,
-   "ideasGenerated": 0,
+   "xSearches": 10,
+   "xPosts": 90,
+   "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
    "ordersSent": 0,
@@ -823,9 +823,10 @@
      "META",
      "UAL",
      "KKR",
-     "NRG"
+     "NRG",
+     "GRAB"
     ],
-    "total": 7
+    "total": 8
    },
    "headlines": {
     "items": [
@@ -883,9 +884,14 @@
       "title": "Strathcona Resources to Acquire Greenfire in C$2.7-2.9 Billion Deal",
       "url": "https://x.com/i/trending/2119778345474736374",
       "time": "2026-11-09T10:30:00-05:00"
+     },
+     {
+      "title": "SoftBank, Grab and PETROS Commit $1.85 Billion to Malaysia AI Infrastructure",
+      "url": "https://x.com/i/trending/2119857412236865694",
+      "time": "2026-11-09T13:25:59-05:00"
      }
     ],
-    "count": 11,
+    "count": 12,
     "seen": [
      "5288489c1b73",
      "a147a72fcff2",
@@ -897,7 +903,8 @@
      "af3d98ad13b4",
      "91146f0dd781",
      "b548d3b09042",
-     "07ffa4d0b585"
+     "07ffa4d0b585",
+     "b8233e9d69a5"
     ]
    },
    "lastRun": null
