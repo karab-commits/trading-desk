@@ -72,7 +72,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "10:20/10:25 bars did not close above the 674.98 session high",
+      "status": "10:50 bar breakout (vol ~2.5x on 2 cached days) passed before this run; QQQ at 678.25 vs 677.00 signal close, paper-logged only",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: no breakout close",
-        "detail": "10:20/10:25 bars did not close above the 674.98 session high",
-        "since": "2026-11-09T10:31:47-05:00",
+        "now": "QQQ signal stale",
+        "detail": "10:50 bar breakout (vol ~2.5x on 2 cached days) passed before this run; QQQ at 678.25 vs 677.00 signal close, paper-logged only",
+        "since": "2026-11-09T11:03:53-05:00",
         "state": "idle",
-        "next": "10:45 run"
+        "next": "11:15 run"
       }
     },
     {
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Two approvals expired today (NVDA, UAL). No new orders at 10:21.",
+      "status": "UAL 7 @ 120.66 with stop 117.50 working; desk risk 32 of 150 CAD",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,11 +124,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "0 open, 0/150 used",
-        "detail": "Two approvals expired today (NVDA, UAL). No new orders at 10:21.",
-        "since": "2026-11-09T10:22:28-05:00",
-        "state": "idle",
-        "next": "10:30 run",
+        "now": "1 open: UAL long",
+        "detail": "UAL 7 @ 120.66 with stop 117.50 working; desk risk 32 of 150 CAD",
+        "since": "2026-11-09T11:03:53-05:00",
+        "state": "working",
+        "next": "11:15 run",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "UAL long 7 filled at 120.66 (limit 120.76); last 120.63",
+      "status": "UAL buy filled 7 @ 120.66. Protective sell stop 7 @ 117.50 is working. Target 127.27 (2R); time stop 15:15.",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,15 +148,15 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "UAL in trade at 120.66",
-        "detail": "UAL long 7 filled at 120.66 (limit 120.76); last 120.63",
-        "since": "2026-11-09T10:49:40-05:00",
+        "now": "In UAL long 7 @120.66",
+        "detail": "UAL buy filled 7 @ 120.66. Protective sell stop 7 @ 117.50 is working. Target 127.27 (2R); time stop 15:15.",
+        "since": "2026-11-09T11:03:53-05:00",
         "state": "working",
-        "next": "Stop after fill",
+        "next": "Watch target / 15:15 exit",
         "log": [
-          "EOD re-check: XIU active, SOFI+HXT testing",
           "09:51 AAPL SIP ORB long filled 3 @ 332.89",
-          "10:21 NVDA+UAL orders expired unapproved"
+          "10:21 NVDA+UAL orders expired unapproved",
+          "10:48 UAL long filled 7 @ 120.66"
         ]
       }
     },
@@ -546,8 +546,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-09T10:04:20-05:00",
-    "ideasLogged": 9,
+    "updated": "2026-11-09T11:03:53-05:00",
+    "ideasLogged": 10,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -571,9 +571,9 @@
       },
       "2026-11-09": {
         "net": 0.0,
-        "ideas": 2,
+        "ideas": 3,
         "resolved": 0,
-        "open": 2,
+        "open": 3,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -720,7 +720,7 @@
       "target": 127.27,
       "shares": 7,
       "planFrom": "journal",
-      "statusAt": "2026-11-09T10:49:40-05:00",
+      "statusAt": "2026-11-09T11:03:53-05:00",
       "fill": 120.66,
       "journalId": "2026-11-09-UAL-1"
     },
@@ -797,7 +797,7 @@
       "priceTime": "2026-11-09T11:02:27-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T11:03:04-05:00",
+  "watchlistUpdated": "2026-11-09T11:03:53-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -966,7 +966,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T10:47:51-05:00",
+    "updated": "2026-11-09T11:03:53-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -978,9 +978,9 @@
       "quant": {
         "budget": 35,
         "realizedLoss": 0.0,
-        "openRisk": 0,
-        "used": 0.0,
-        "left": 35.0
+        "openRisk": 32.31,
+        "used": 32.31,
+        "left": 2.69
       },
       "news": {
         "budget": 25,
@@ -1007,10 +1007,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 32.31,
+      "used": 32.31,
+      "left": 117.69,
+      "openPositions": 1
     }
   }
 }
