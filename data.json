@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 10:04 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 10:07 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -604,8 +604,8 @@
       "netLossAtStopCAD": -28.75,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 178.23,
-      "priceTime": "2026-11-09T09:58:42-05:00",
+      "last": 178.33,
+      "priceTime": "2026-11-09T10:07:19-05:00",
       "side": "long",
       "entry": 177.0,
       "stop": 170.24,
@@ -637,8 +637,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 489.2019,
-      "priceTime": "2026-11-09T09:58:42-05:00"
+      "last": 484.6,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     },
     {
       "date": "2026-11-09",
@@ -662,8 +662,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 272.7,
-      "priceTime": "2026-11-09T09:58:42-05:00"
+      "last": 272.03,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     },
     {
       "date": "2026-11-09",
@@ -687,8 +687,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 639.345,
-      "priceTime": "2026-11-09T09:58:42-05:00"
+      "last": 638.665,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     },
     {
       "date": "2026-11-09",
@@ -712,8 +712,8 @@
       "netLossAtStopCAD": -32.31,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 119.2,
-      "priceTime": "2026-11-09T09:58:37-05:00",
+      "last": 119.63,
+      "priceTime": "2026-11-09T10:07:17-05:00",
       "side": "long",
       "entry": 120.76,
       "stop": 117.505,
@@ -742,8 +742,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.31,
-      "priceTime": "2026-11-09T09:58:33-05:00"
+      "last": 54.37,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     },
     {
       "date": "2026-11-09",
@@ -766,8 +766,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 97.57,
-      "priceTime": "2026-11-09T09:58:42-05:00"
+      "last": 97.66,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     },
     {
       "date": "2026-11-09",
@@ -790,11 +790,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 16.66,
-      "priceTime": "2026-11-09T09:58:42-05:00"
+      "last": 16.72,
+      "priceTime": "2026-11-09T10:07:19-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T10:04:46-05:00",
+  "watchlistUpdated": "2026-11-09T10:07:38-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",

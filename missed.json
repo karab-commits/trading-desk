@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-09T09:59:06-05:00",
+  "updated": "2026-11-09T10:07:49-05:00",
   "date": "2026-11-09",
   "isoWeek": "2026-W46",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 5.06,
+      "net": 0.0,
       "final": 0.0,
-      "unrealized": 5.06,
-      "ideas": 1,
+      "unrealized": 0.0,
+      "ideas": 2,
       "scored": 0,
-      "open": 1,
+      "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": 5.06,
+      "net": 0.0,
       "final": 0.0,
-      "unrealized": 5.06,
-      "ideas": 1,
+      "unrealized": 0.0,
+      "ideas": 2,
       "scored": 0,
-      "open": 1,
+      "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
     "allTime": {
-      "net": 78.7,
+      "net": 73.64,
       "final": 73.64,
-      "unrealized": 5.06,
-      "ideas": 7,
+      "unrealized": 0.0,
+      "ideas": 8,
       "scored": 2,
-      "open": 1,
+      "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 2,
       "wins": 1,
       "losses": 1
     }
@@ -48,22 +48,22 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 5.06,
-        "ideas": 1,
+        "net": 0.0,
+        "ideas": 2,
         "scored": 0,
-        "open": 1
+        "open": 0
       },
       "week": {
-        "net": 5.06,
-        "ideas": 1,
+        "net": 0.0,
+        "ideas": 2,
         "scored": 0,
-        "open": 1
+        "open": 0
       },
       "allTime": {
-        "net": 5.06,
-        "ideas": 1,
+        "net": 0.0,
+        "ideas": 2,
         "scored": 0,
-        "open": 1
+        "open": 0
       }
     },
     "scanner": {
@@ -136,6 +136,28 @@
   },
   "ideas": [
     {
+      "id": "2026-11-09-UAL-1",
+      "date": "2026-11-09",
+      "bot": "quant",
+      "ticker": "UAL",
+      "side": "long",
+      "entry": 120.76,
+      "stop": 117.505,
+      "target": 127.27,
+      "shares": 7,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 7,
+      "loggedAt": "2026-11-09T10:04:20-05:00",
+      "why": "untaken",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
       "id": "2026-11-09-NVDA-1",
       "date": "2026-11-09",
       "bot": "quant",
@@ -149,14 +171,13 @@
       "currency": "USD",
       "size": 3,
       "loggedAt": "2026-11-09T09:49:31-05:00",
-      "why": "untaken",
-      "state": "unrealized",
+      "why": "skipped",
+      "state": "pending",
       "outcome": null,
-      "priceTime": "2026-11-09T09:58:42-05:00",
-      "exit": 178.23,
-      "fees": 0.0664,
-      "net": 3.62,
-      "netCAD": 5.06
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
     },
     {
       "id": "2026-11-03-XIU-1",
