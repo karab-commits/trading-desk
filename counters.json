@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-09T15:51:50-05:00",
+  "updated": "2026-11-09T16:40:40-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -719,8 +719,8 @@
  "2026-11-09": {
   "kiwi": {
    "quotesCalls": 41,
-   "barCalls": 1,
-   "bars": 5,
+   "barCalls": 2,
+   "bars": 45,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -734,7 +734,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 48,
+   "runs": 49,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -755,7 +755,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-09T15:51:50-05:00",
+   "lastRun": "2026-11-09T16:40:40-05:00",
    "keys": [
     "order:NVDA long 3 @ 177.00 (Quant Lab SIP ORB)",
     "order:UAL buy 7 stop 120.76 sent, approve in Questrade",
@@ -963,8 +963,8 @@
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 1,
-   "backtestVariants": 0,
-   "simulatedTrades": 0,
+   "backtestVariants": 6,
+   "simulatedTrades": 73,
    "runs": 0,
    "symbolsQuoted": {
     "unique": [
