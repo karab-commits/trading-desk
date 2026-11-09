@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "15:51 ET: UAL still open (close-out approval expired). Re-sent cancel of the 117.50 stop for K's approval; sell 7 at market goes once the stop is cancelled.",
+      "status": "UAL 7 sh still held after the close with no stop (day stop expired 4:00 PM). Sell at the open to get flat.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,8 +128,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "EOD done: UAL open -$2.47",
-        "detail": "15:51 ET: UAL still open (close-out approval expired). Re-sent cancel of the 117.50 stop for K's approval; sell 7 at market goes once the stop is cancelled.",
-        "since": "2026-11-09T16:40:40-05:00",
+        "detail": "UAL 7 sh still held after the close with no stop (day stop expired 4:00 PM). Sell at the open to get flat.",
+        "since": "2026-11-09T16:40:46-05:00",
         "state": "done",
         "next": "Flatten UAL at the open",
         "log": [
