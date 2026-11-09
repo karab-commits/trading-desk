@@ -72,7 +72,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "10:15 bar closed 674.68 above session high and VWAP, but volume 587k is about 1.2x its slot average (needs 2.0)",
+      "status": "10:20/10:25 bars did not close above the 674.98 session high",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: RVOL under 2",
-        "detail": "10:15 bar closed 674.68 above session high and VWAP, but volume 587k is about 1.2x its slot average (needs 2.0)",
-        "since": "2026-11-09T10:22:28-05:00",
+        "now": "QQQ: no breakout close",
+        "detail": "10:20/10:25 bars did not close above the 674.98 session high",
+        "since": "2026-11-09T10:31:47-05:00",
         "state": "idle",
-        "next": "10:30 run"
+        "next": "10:45 run"
       }
     },
     {
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "NVDA (9:49) and UAL (10:04) orders expired unapproved in Questrade; not resent. UAL still below its 120.75 opening-range high; AMZN/META/AMD/NVDA breaks already happened.",
+      "status": "UAL 120.49 still under its 120.75 OR high; expired UAL approval not resent",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -149,10 +149,10 @@
       "tradesAllTime": 1,
       "activity": {
         "now": "No live SIP signal",
-        "detail": "NVDA (9:49) and UAL (10:04) orders expired unapproved in Questrade; not resent. UAL still below its 120.75 opening-range high; AMZN/META/AMD/NVDA breaks already happened.",
-        "since": "2026-11-09T10:22:27-05:00",
+        "detail": "UAL 120.49 still under its 120.75 OR high; expired UAL approval not resent",
+        "since": "2026-11-09T10:31:47-05:00",
         "state": "idle",
-        "next": "10:30 run",
+        "next": "10:45 run",
         "log": [
           "EOD re-check: XIU active, SOFI+HXT testing",
           "09:51 AAPL SIP ORB long filled 3 @ 332.89",
@@ -964,7 +964,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T10:21:24-05:00",
+    "updated": "2026-11-09T10:31:40-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
