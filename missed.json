@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updated": "2026-11-03T14:21:42-05:00",
-  "date": "2026-11-03",
-  "isoWeek": "2026-W45",
+  "updated": "2026-11-09T09:31:25-05:00",
+  "date": "2026-11-09",
+  "isoWeek": "2026-W46",
   "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
@@ -12,25 +12,25 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 2,
+      "ideas": 0,
       "scored": 0,
       "open": 0,
-      "notTriggered": 2,
+      "notTriggered": 0,
       "pending": 0,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": 73.64,
-      "final": 73.64,
+      "net": 0.0,
+      "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 6,
-      "scored": 2,
+      "ideas": 0,
+      "scored": 0,
       "open": 0,
-      "notTriggered": 4,
+      "notTriggered": 0,
       "pending": 0,
-      "wins": 1,
-      "losses": 1
+      "wins": 0,
+      "losses": 0
     },
     "allTime": {
       "net": 73.64,
@@ -47,30 +47,30 @@
   },
   "byBot": {
     "scanner": {
-      "today": {
-        "net": 0.0,
-        "ideas": 2,
-        "scored": 0,
-        "open": 0
-      },
-      "week": {
-        "net": 73.64,
-        "ideas": 6,
-        "scored": 2,
-        "open": 0
-      },
       "allTime": {
         "net": 73.64,
         "ideas": 6,
         "scored": 2,
         "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
       }
     }
   },
   "real": {
-    "today": -4.79,
-    "week": 0.0,
-    "allTime": 0.0,
+    "today": 0.0,
+    "week": 68.0,
+    "allTime": 68.0,
     "byBot": {
       "scanner": {
         "today": 0,
@@ -98,9 +98,9 @@
         "allTime": 0
       },
       "quant": {
-        "today": -4.79,
-        "week": 0,
-        "allTime": 0
+        "today": 0,
+        "week": 68.0,
+        "allTime": 68.0
       },
       "journal": {
         "today": 0,
@@ -249,7 +249,7 @@
   "excluded": [
     {
       "id": "2026-11-03-AAPL-1",
-      "why": "in trade (real fill)"
+      "why": "filled with real money"
     }
   ]
 }

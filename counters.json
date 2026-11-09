@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-04T11:24:50-05:00",
+  "updated": "2026-11-09T09:31:45-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -711,6 +711,156 @@
      "00431168d371",
      "86a08e17aac2",
      "462903d8c343"
+    ]
+   },
+   "lastRun": null
+  }
+ },
+ "2026-11-09": {
+  "kiwi": {
+   "quotesCalls": 1,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 1,
+   "symbolsQuoted": {
+    "unique": [
+     "NVDA",
+     "AMD",
+     "AMZN",
+     "META",
+     "UAL",
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI"
+    ],
+    "total": 8
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-09T09:31:25-05:00"
+  },
+  "scanner": {
+   "quotesCalls": 3,
+   "barCalls": 3,
+   "bars": 76,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "SOFI",
+     "HXT.TO",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 11
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 1,
+   "pagesFetched": 0,
+   "xSearches": 1,
+   "xPosts": 10,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "NVDA",
+     "AMD",
+     "AMZN",
+     "META",
+     "UAL",
+     "KKR",
+     "NRG"
+    ],
+    "total": 7
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Nvidia slides on Huang probe, NVR extends rally",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-slides-on-huang-probe-nvr-extends-rally-5011241",
+      "time": "2026-11-09T09:15:06-05:00"
+     },
+     {
+      "title": "Stock market movers: Live updates (Amazon +3%, Meta +2.5% after JPMorgan upgrades)",
+      "url": "https://www.cnbc.com/2026/11/09/stock-market-movers-live-updates.html",
+      "time": "2026-11-09T09:15:06-05:00"
+     },
+     {
+      "title": "Pre-Market Movers Today: AMD +2.5% on Oppenheimer upgrade, KKR ahead of Q3",
+      "url": "https://admiralmarkets.com/analytics/traders-blog/pre-market-movers-november-9-2026",
+      "time": "2026-11-09T09:15:06-05:00"
+     },
+     {
+      "title": "Premarket Movers: S&P 500 Gainers and Losers Before the Open",
+      "url": "https://www.chartmill.com/news/LUV/Chartmill-58328-Premarket-Movers-SP-500-Gainers-and-Losers-Before-the-Open",
+      "time": "2026-11-09T09:15:06-05:00"
+     },
+     {
+      "title": "Nvidia CEO Jensen Huang Admits Affair with Suspected Chinese Spy (board probe)",
+      "url": "https://x.com/i/trending/2119172440320336218",
+      "time": "2026-11-09T09:15:40-05:00"
+     },
+     {
+      "title": "Taiwan Stock Market Surges Nearly 5% in Chip Rally",
+      "url": "https://x.com/i/trending/2119734123946475848",
+      "time": "2026-11-09T09:15:40-05:00"
+     }
+    ],
+    "count": 6,
+    "seen": [
+     "5288489c1b73",
+     "a147a72fcff2",
+     "5ce4f7171b77",
+     "3dce38dae63e",
+     "61ce44809b20",
+     "60a526ff5aaa"
     ]
    },
    "lastRun": null
