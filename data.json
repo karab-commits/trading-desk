@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 10:17 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 10:22 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Confirmed NVDA CEO-probe headlines (CNBC, Reuters). No fresh (<60 min) catalyst with a pullback setup this run.",
+      "status": "No first-hand company headline under 60 min old at 10:21",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +61,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "NVDA probe confirmed",
-        "detail": "Confirmed NVDA CEO-probe headlines (CNBC, Reuters). No fresh (<60 min) catalyst with a pullback setup this run.",
-        "since": "2026-11-09T09:50:07-05:00",
+        "now": "No fresh catalyst",
+        "detail": "No first-hand company headline under 60 min old at 10:21",
+        "since": "2026-11-09T10:22:28-05:00",
         "state": "idle",
-        "next": "Catalyst check 10:00"
+        "next": "10:30 run"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "Stocks-in-play scout: NVDA ~60M shares in first 15 min (vs 117.7M ADV). QQQ relvol rule starts at 10:00.",
+      "status": "10:15 bar closed 674.68 above session high and VWAP, but volume 587k is about 1.2x its slot average (needs 2.0)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scouted NVDA for Quant",
-        "detail": "Stocks-in-play scout: NVDA ~60M shares in first 15 min (vs 117.7M ADV). QQQ relvol rule starts at 10:00.",
-        "since": "2026-11-09T09:50:07-05:00",
+        "now": "QQQ: RVOL under 2",
+        "detail": "10:15 bar closed 674.68 above session high and VWAP, but volume 587k is about 1.2x its slot average (needs 2.0)",
+        "since": "2026-11-09T10:22:28-05:00",
         "state": "idle",
-        "next": "QQQ relvol 10:00"
+        "next": "10:30 run"
       }
     },
     {
@@ -116,7 +116,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Sent NVDA buy 3 limit 177.00 (Quant Lab SIP ORB). Waiting for K's approval in Questrade, then the stop at 170.24.",
+      "status": "Two approvals expired today (NVDA, UAL). No new orders at 10:21.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -124,11 +124,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "NVDA order awaits K",
-        "detail": "Sent NVDA buy 3 limit 177.00 (Quant Lab SIP ORB). Waiting for K's approval in Questrade, then the stop at 170.24.",
-        "since": "2026-11-09T09:50:07-05:00",
-        "state": "waiting",
-        "next": "Intraday run 10:00",
+        "now": "0 open, 0/150 used",
+        "detail": "Two approvals expired today (NVDA, UAL). No new orders at 10:21.",
+        "since": "2026-11-09T10:22:28-05:00",
+        "state": "idle",
+        "next": "10:30 run",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Stocks-in-play ORB: NVDA first 15-min candle green, OR 170.24-176.45, broke the high. Buy 3 limit 177.00, stop 170.24, target 190.52 (2R). Debate: take. Risk 28.75 of 35 CAD budget used, so AMZN, META, AMD, UAL skipped (no budget left).",
+      "status": "NVDA (9:49) and UAL (10:04) orders expired unapproved in Questrade; not resent. UAL still below its 120.75 opening-range high; AMZN/META/AMD/NVDA breaks already happened.",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,15 +148,15 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "NVDA long sent, 3 @ 177",
-        "detail": "Stocks-in-play ORB: NVDA first 15-min candle green, OR 170.24-176.45, broke the high. Buy 3 limit 177.00, stop 170.24, target 190.52 (2R). Debate: take. Risk 28.75 of 35 CAD budget used, so AMZN, META, AMD, UAL skipped (no budget left).",
-        "since": "2026-11-09T10:04:46-05:00",
-        "state": "waiting",
-        "next": "Stop after fill; 10:00 run",
+        "now": "No live SIP signal",
+        "detail": "NVDA (9:49) and UAL (10:04) orders expired unapproved in Questrade; not resent. UAL still below its 120.75 opening-range high; AMZN/META/AMD/NVDA breaks already happened.",
+        "since": "2026-11-09T10:22:27-05:00",
+        "state": "idle",
+        "next": "10:30 run",
         "log": [
-          "XIU.TO big-gap fade +0.188R, 50 trades, both halves positive",
           "EOD re-check: XIU active, SOFI+HXT testing",
-          "09:51 AAPL SIP ORB long filled 3 @ 332.89"
+          "09:51 AAPL SIP ORB long filled 3 @ 332.89",
+          "10:21 NVDA+UAL orders expired unapproved"
         ]
       }
     },
@@ -693,7 +693,7 @@
     {
       "date": "2026-11-09",
       "ticker": "UAL",
-      "status": "triggered",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
       "strategy": "Stocks-in-play ORB",
@@ -719,7 +719,8 @@
       "stop": 117.505,
       "target": 127.27,
       "shares": 7,
-      "planFrom": "fees model"
+      "planFrom": "fees model",
+      "statusAt": "2026-11-09T10:21:24-05:00"
     },
     {
       "date": "2026-11-09",
@@ -794,7 +795,7 @@
       "priceTime": "2026-11-09T10:17:42-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T10:17:57-05:00",
+  "watchlistUpdated": "2026-11-09T10:21:24-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -963,7 +964,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T10:04:31-05:00",
+    "updated": "2026-11-09T10:21:24-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
