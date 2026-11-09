@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 9:58 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 10:04 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -150,7 +150,7 @@
       "activity": {
         "now": "NVDA long sent, 3 @ 177",
         "detail": "Stocks-in-play ORB: NVDA first 15-min candle green, OR 170.24-176.45, broke the high. Buy 3 limit 177.00, stop 170.24, target 190.52 (2R). Debate: take. Risk 28.75 of 35 CAD budget used, so AMZN, META, AMD, UAL skipped (no budget left).",
-        "since": "2026-11-09T09:50:07-05:00",
+        "since": "2026-11-09T10:04:46-05:00",
         "state": "waiting",
         "next": "Stop after fill; 10:00 run",
         "log": [
@@ -504,7 +504,7 @@
     "total": 68.0,
     "trades": 1
   },
-  "lastApprovedIdea": "NVDA long 3 @ 177.00 (Quant Lab SIP ORB)",
+  "lastApprovedIdea": "UAL buy 7 stop 120.76 sent, approve in Questrade",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -546,8 +546,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-09T09:49:31-05:00",
-    "ideasLogged": 8,
+    "updated": "2026-11-09T10:04:20-05:00",
+    "ideasLogged": 9,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -571,9 +571,9 @@
       },
       "2026-11-09": {
         "net": 0.0,
-        "ideas": 1,
+        "ideas": 2,
         "resolved": 0,
-        "open": 1,
+        "open": 2,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -585,7 +585,7 @@
     {
       "date": "2026-11-09",
       "ticker": "NVDA",
-      "status": "triggered",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
       "strategy": "Stocks-in-play 15-min ORB",
@@ -612,7 +612,8 @@
       "target": 190.52,
       "shares": 3,
       "planFrom": "journal",
-      "journalId": "2026-11-09-NVDA-1"
+      "journalId": "2026-11-09-NVDA-1",
+      "statusAt": "2026-11-09T10:03:11-05:00"
     },
     {
       "date": "2026-11-09",
@@ -692,10 +693,10 @@
     {
       "date": "2026-11-09",
       "ticker": "UAL",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
-      "strategy": "Stocks-in-play 15-min ORB",
+      "strategy": "Stocks-in-play ORB",
       "bot": "quant",
       "reason": "Stocks in play: +4.8% pre-mkt, airlines rallying. ORB after 9:45.",
       "notBefore": "09:45",
@@ -703,16 +704,22 @@
       "tvSymbol": "NASDAQ:UAL",
       "tested": false,
       "currency": "USD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 44.87,
+      "netLossAtStop": -23.14,
+      "netProfitAtTargetCAD": 62.64,
+      "netLossAtStopCAD": -32.31,
       "openPnl": null,
       "openPnlCAD": null,
       "last": 119.2,
-      "priceTime": "2026-11-09T09:58:37-05:00"
+      "priceTime": "2026-11-09T09:58:37-05:00",
+      "side": "long",
+      "entry": 120.76,
+      "stop": 117.505,
+      "target": 127.27,
+      "shares": 7,
+      "planFrom": "fees model"
     },
     {
       "date": "2026-11-09",
@@ -787,7 +794,7 @@
       "priceTime": "2026-11-09T09:58:42-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T09:58:57-05:00",
+  "watchlistUpdated": "2026-11-09T10:04:46-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
@@ -956,7 +963,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-09",
-    "updated": "2026-11-09T09:49:40-05:00",
+    "updated": "2026-11-09T10:04:31-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

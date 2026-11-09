@@ -586,6 +586,80 @@
         "regime": "volatile",
         "rule": "veto only"
       }
+    },
+    {
+      "id": "2026-11-09-UAL-1",
+      "date": "2026-11-09",
+      "session": "adhoc",
+      "ticker": "UAL",
+      "side": "long",
+      "entry": 120.76,
+      "stop": 117.505,
+      "target": 127.27,
+      "shares": 7,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "first 15m candle green; OR 117.505-120.75; stop-entry above OR high",
+      "loggedAt": "2026-11-09T10:04:20-05:00",
+      "plan": {
+        "riskGross": 22.79,
+        "rewardGross": 45.57,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0184,
+          "fx": 0.68,
+          "total": 0.7019
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0169,
+          "fx": 0.34,
+          "total": 0.3587
+        },
+        "netProfitAtTarget": 44.87,
+        "netLossAtStop": -23.14,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 62.64,
+        "netLossAtStopCAD": -32.31
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 27.35,
+        "median": 11.41,
+        "asOfClose": "2026-11-06",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Entry is a stop order: only fills if UAL actually breaks the 120.75 opening-range high, so no chase",
+          "Market backing it: SPY 748.3 and QQQ 672.9 are at today's highs, well off the lows",
+          "UAL holding above its session VWAP (119.40) with first 15-min volume ~688k"
+        ],
+        "bear": [
+          "Volume is fading fast (382k first bar, 21k in the 10:00 bar so far), breakouts on drying volume fail more often",
+          "Already tested 120.75 at 9:35 and was rejected, possible double top",
+          "No company-specific news; volatile regime means wider whipsaws through the 3.25 stop"
+        ],
+        "verdict": "take",
+        "why": "Stop-entry needs a real break to fill and the tape (SPY/QQQ at highs, UAL above VWAP) supports it; the fading-volume risk is capped by the fixed opening-range stop",
+        "by": "kiwi",
+        "at": "2026-11-09T10:04:31-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }
