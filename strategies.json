@@ -21,9 +21,9 @@
    "quant": 35,
    "news": 25,
    "whale": 20,
-   "options": 20
+   "options": 56
   },
-  "botBudgetsNote": "Per-bot slices of the 150 CAD daily stop (sum = 150). A bot whose realized loss today + open risk + the new trade's risk would exceed its slice is blocked (risk_check.py prints the largest risk it can still take). Quant Lab's slice covers both its strategies.",
+  "botBudgetsNote": "Per-bot slices of the 150 CAD daily stop (sum = 150). A bot whose realized loss today + open risk + the new trade's risk would exceed its slice is blocked (risk_check.py prints the largest risk it can still take). Quant Lab's slice covers both its strategies. Options raised to 56 CAD on Nov 9, 2026 so one 40 USD spread fits; the desk-wide 150 CAD stop still applies on top, so slices now sum to 186 but the desk can never lose more than 150.",
   "pauseRules": {
    "dailyBudget": {
     "rule": "realized real loss today >= the bot's budget",
@@ -130,7 +130,11 @@
    "matching": "Tickers match on the root symbol (XIU.TO = XIU, CNQ.TO = CNQ). A ticker can be in more than one group.",
    "notes": "ZEB (equal-weight Canadian banks ETF) is in cdn_banks, not tsx_index (K marked it \"?\"); its correlation with XIU still triggers the 0.8 check when cached. QQC.TO (Nasdaq-100 in CAD) is in us_index."
   },
-  "checkedBy": "risk_check.py (every order, before it is sent)"
+  "checkedBy": "risk_check.py (every order, before it is sent)",
+  "maxLossPerTradeCADByBot": {
+   "options": 56
+  },
+  "maxLossPerTradeCADByBotNote": "Options Desk cap is 40 USD per spread (0.40 debit), per K on Nov 9, 2026; 40 USD x 1.396 USDCAD = about 56 CAD. Other bots use maxLossPerTradeCAD."
  },
  "strategies": [
   {
@@ -895,8 +899,8 @@
     "AMZN",
     "META"
    ],
-   "entry": "Only as the options expression of another bot's valid signal on the same underlying (direction from that signal): buy a vertical debit spread (call spread for long, put spread for short), long leg at or 1 strike in the money, short leg 1-2 strikes out. Total debit x 100 x contracts + fees <= 40 CAD. Expiry >= 1 trading day out (no 0DTE) and <= 10 DTE. Each leg's bid/ask spread must be < 10% of its mid and open interest >= 500. Limit order at the spread mid (one 15-min re-price toward natural, then cancel).",
-   "stop": "Max loss = debit paid (<= 40 CAD); also close if the underlying hits the source signal's stop.",
+   "entry": "Only as the options expression of another bot's valid signal on the same underlying (direction from that signal): buy a vertical debit spread (call spread for long, put spread for short), long leg at or 1 strike in the money, short leg 1-2 strikes out. Total debit x 100 x contracts + fees <= 40 USD (about 56 CAD; K's rule, Nov 9, 2026). Expiry >= 1 trading day out (no 0DTE) and <= 10 DTE. Each leg's bid/ask spread must be < 10% of its mid and open interest >= 500. Limit order at the spread mid (one 15-min re-price toward natural, then cancel).",
+   "stop": "Max loss = debit paid (<= 40 USD, about 56 CAD); also close if the underlying hits the source signal's stop.",
    "target": "Close at +80% of the debit, or when the underlying hits the source signal's target.",
    "timeStop": "Close the spread by 15:45 ET (same-day only).",
    "window": {
@@ -905,7 +909,7 @@
     "tz": "America/Toronto"
    },
    "maxTradesPerDay": 2,
-   "notes": "40 CAD max loss means very narrow spreads on high-priced underlyings (about 0.25-0.40 USD debit after FX). Counts as one open position; underlying signal and spread together count as two if both are taken.",
+   "notes": "40 USD max loss means debits of 0.40 USD or less per spread. Counts as one open position; underlying signal and spread together count as two if both are taken.",
    "mode": "live"
   },
   {

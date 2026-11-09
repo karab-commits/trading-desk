@@ -341,7 +341,7 @@ def main():
 
     block, info = [], []
     bot, tk, side, risk = a.bot, a.ticker.upper(), a.side, float(a.risk)
-    maxr = float(R.get('maxLossPerTradeCAD', 40)); stop = float(R.get('dailyLossStopCAD', 150)); mxo = int(R.get('maxOpenPositions', 4))
+    maxr = float((R.get('maxLossPerTradeCADByBot') or {}).get(bot, R.get('maxLossPerTradeCAD', 40))); stop = float(R.get('dailyLossStopCAD', 150)); mxo = int(R.get('maxOpenPositions', 4))
     # desk limits
     if risk <= 0:
         block.append('risk must be > 0 CAD')
