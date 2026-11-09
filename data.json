@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 9, 2026 10:48 AM ET",
+  "lastUpdated": "Mon Nov 9, 2026 10:50 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -140,7 +140,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "UAL broke its 120.75 opening-range high (hit 121.01). Buy 7 limit 120.76, stop 117.505, target 127.27 (2R). Approval expires 10:49:57 ET.",
+      "status": "UAL long 7 filled at 120.66 (limit 120.76); last 120.63",
       "pnlToday": 0,
       "pnlWeek": 68.0,
       "pnlAllTime": 68.0,
@@ -148,10 +148,10 @@
       "tradesWeek": 1,
       "tradesAllTime": 1,
       "activity": {
-        "now": "UAL buy 7 sent, approve",
-        "detail": "UAL broke its 120.75 opening-range high (hit 121.01). Buy 7 limit 120.76, stop 117.505, target 127.27 (2R). Approval expires 10:49:57 ET.",
-        "since": "2026-11-09T10:48:02-05:00",
-        "state": "waiting",
+        "now": "UAL in trade at 120.66",
+        "detail": "UAL long 7 filled at 120.66 (limit 120.76); last 120.63",
+        "since": "2026-11-09T10:49:40-05:00",
+        "state": "working",
         "next": "Stop after fill",
         "log": [
           "EOD re-check: XIU active, SOFI+HXT testing",
@@ -604,8 +604,8 @@
       "netLossAtStopCAD": -28.75,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 178.96,
-      "priceTime": "2026-11-09T10:46:42-05:00",
+      "last": 178.57,
+      "priceTime": "2026-11-09T10:48:34-05:00",
       "side": "long",
       "entry": 177.0,
       "stop": 170.24,
@@ -637,8 +637,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 493.42,
-      "priceTime": "2026-11-09T10:46:42-05:00"
+      "last": 494.775,
+      "priceTime": "2026-11-09T10:48:34-05:00"
     },
     {
       "date": "2026-11-09",
@@ -662,8 +662,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 269.69,
-      "priceTime": "2026-11-09T10:46:41-05:00"
+      "last": 269.644,
+      "priceTime": "2026-11-09T10:48:33-05:00"
     },
     {
       "date": "2026-11-09",
@@ -687,16 +687,16 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 640.33,
-      "priceTime": "2026-11-09T10:46:42-05:00"
+      "last": 639.5703,
+      "priceTime": "2026-11-09T10:48:34-05:00"
     },
     {
       "date": "2026-11-09",
       "ticker": "UAL",
-      "status": "triggered",
+      "status": "in trade",
       "closeBy": "16:00",
       "addedAt": "2026-11-09T09:15:40-05:00",
-      "strategy": "Stocks-in-play ORB",
+      "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
       "reason": "Stocks in play: +4.8% pre-mkt, airlines rallying. ORB after 9:45.",
       "notBefore": "09:45",
@@ -710,17 +710,19 @@
       "netLossAtStop": -23.14,
       "netProfitAtTargetCAD": 62.64,
       "netLossAtStopCAD": -32.31,
-      "openPnl": null,
-      "openPnlCAD": null,
-      "last": 120.54,
-      "priceTime": "2026-11-09T10:46:36-05:00",
+      "openPnl": -0.23,
+      "openPnlCAD": -0.32,
+      "last": 120.63,
+      "priceTime": "2026-11-09T10:48:32-05:00",
       "side": "long",
       "entry": 120.76,
       "stop": 117.505,
       "target": 127.27,
       "shares": 7,
-      "planFrom": "fees model",
-      "statusAt": "2026-11-09T10:48:02-05:00"
+      "planFrom": "journal",
+      "statusAt": "2026-11-09T10:49:40-05:00",
+      "fill": 120.66,
+      "journalId": "2026-11-09-UAL-1"
     },
     {
       "date": "2026-11-09",
@@ -743,8 +745,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 54.36,
-      "priceTime": "2026-11-09T10:46:41-05:00"
+      "last": 54.37,
+      "priceTime": "2026-11-09T10:47:58-05:00"
     },
     {
       "date": "2026-11-09",
@@ -767,8 +769,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 97.63,
-      "priceTime": "2026-11-09T10:45:56-05:00"
+      "last": 97.66,
+      "priceTime": "2026-11-09T10:46:59-05:00"
     },
     {
       "date": "2026-11-09",
@@ -791,11 +793,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 16.8299,
-      "priceTime": "2026-11-09T10:46:42-05:00"
+      "last": 16.83,
+      "priceTime": "2026-11-09T10:48:35-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-09T10:48:02-05:00",
+  "watchlistUpdated": "2026-11-09T10:50:01-05:00",
   "scorecard": {
     "updated": "2026-11-02T16:38:52-05:00",
     "currency": "CAD",
