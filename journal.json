@@ -801,7 +801,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 74.875,
+        "gross": -2.05,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0031,
+          "fx": 0.03,
+          "total": 0.0338
+        },
+        "net": -2.08,
+        "grossR": -0.125,
+        "netR": -0.127,
+        "netCAD": -2.91,
+        "resolvedAt": "2026-11-10T15:22:14-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
@@ -873,7 +889,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 10.3602,
+        "gross": 1.1,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0011,
+          "fx": 0.02,
+          "total": 0.0176
+        },
+        "net": 1.08,
+        "grossR": 0.223,
+        "netR": 0.22,
+        "netCAD": 1.51,
+        "resolvedAt": "2026-11-10T15:22:14-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
@@ -946,7 +978,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 155.89,
+        "gross": -2.38,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0032,
+          "fx": 0.04,
+          "total": 0.0389
+        },
+        "net": -2.42,
+        "grossR": -0.185,
+        "netR": -0.188,
+        "netCAD": -3.38,
+        "resolvedAt": "2026-11-10T15:22:14-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
@@ -1002,8 +1050,24 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
-      "taken": null,
+      "result": {
+        "outcome": "time",
+        "exit": 60.57,
+        "gross": 4.83,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0037,
+          "fx": 0.07,
+          "total": 0.0762
+        },
+        "net": 4.75,
+        "grossR": 0.302,
+        "netR": 0.297,
+        "netCAD": 6.64,
+        "resolvedAt": "2026-11-10T15:22:14-05:00"
+      },
+      "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
       "debate": {

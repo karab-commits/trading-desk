@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 10, 2026 3:13 PM ET",
+  "lastUpdated": "Tue Nov 10, 2026 3:22 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "UAL 7 sh held, no stop (11:57). 9 approvals today expired unapproved, latest UAL stop 11:42. No new entries.",
+      "status": "Sent UAL 7 sh market sell for K to approve; no other positions",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Holding: K not approving",
-        "detail": "UAL 7 sh held, no stop (11:57). 9 approvals today expired unapproved, latest UAL stop 11:42. No new entries.",
-        "since": "2026-11-10T11:58:09-05:00",
+        "now": "UAL sell awaiting OK",
+        "detail": "Sent UAL 7 sh market sell for K to approve; no other positions",
+        "since": "2026-11-10T15:22:15-05:00",
         "state": "waiting",
-        "next": "Next check 12:10",
+        "next": "Flat by 4:00 PM",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -144,7 +144,7 @@
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "RKLB long 3 @58.96 sent 10:07; AAON buy expired unapproved 9:51",
-      "pnlToday": -4.15,
+      "pnlToday": -7.4,
       "pnlWeek": -2.47,
       "pnlAllTime": 65.53,
       "tradesToday": 0,
@@ -175,11 +175,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "3 ideas, 1 open (UAL)",
+        "now": "Resolving today's ideas",
         "detail": "Today: NVDA paper +2.80 USD (time exit), QQQ paper stop, UAL real trade still open",
-        "since": "2026-11-09T16:40:40-05:00",
-        "state": "done",
-        "next": "Resolve UAL once sold"
+        "since": "2026-11-10T15:22:15-05:00",
+        "state": "working",
+        "next": "4:30 PM review"
       }
     },
     {
@@ -515,8 +515,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -21.79,
-    "total": -21.79,
+    "unrealized": -7.4,
+    "total": -7.4,
     "trades": 0
   },
   "pnlWeek": {
@@ -573,7 +573,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-10T10:06:49-05:00",
+    "updated": "2026-11-10T15:22:14-05:00",
     "ideasLogged": 14,
     "byDate": {
       "2026-11-02": {
@@ -607,12 +607,12 @@
         "taken": 0
       },
       "2026-11-10": {
-        "net": 0.0,
+        "net": 1.86,
         "ideas": 4,
-        "resolved": 0,
-        "open": 4,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 4,
+        "open": 0,
+        "filled": 4,
+        "wins": 2,
         "real": 0.0,
         "taken": 0
       }
