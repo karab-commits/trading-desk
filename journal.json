@@ -763,7 +763,7 @@
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
       "currency": "USD",
-      "note": "First 15-min candle green (O71.64 C74.60); OR 67.72-74.97; broke above OR high 9:45-9:50; ADV 1.37M; catalyst record Q3. scout: whale",
+      "note": "First 15-min candle green (O71.64 C74.60); OR 67.72-74.97; broke above OR high 9:45-9:50; ADV 1.37M; catalyst record Q3. scout: whale | Buy approval expired unapproved 9:51 ET.",
       "loggedAt": "2026-11-10T09:48:49-05:00",
       "plan": {
         "riskGross": 16.36,
@@ -802,7 +802,7 @@
         "checked": "2026-11-02"
       },
       "result": null,
-      "taken": null,
+      "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
       "debate": {
@@ -950,6 +950,78 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-10-RKLB-1",
+      "date": "2026-11-10",
+      "session": "adhoc",
+      "ticker": "RKLB",
+      "side": "long",
+      "entry": 58.96,
+      "stop": 54.96,
+      "target": 66.96,
+      "shares": 3,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle green (O54.99 C57.605); OR 54.96-58.45; broke above OR high (day high 59.36); ADV 20.6M; catalyst Q3 results. Second quant trade (AAON expired unapproved). | Resized 4 to 3 sh by Risk Manager.",
+      "loggedAt": "2026-11-10T10:06:49-05:00",
+      "plan": {
+        "riskGross": 16.0,
+        "rewardGross": 32.0,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0055,
+          "fx": 0.48,
+          "total": 0.4855
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0045,
+          "fx": 0.24,
+          "total": 0.2445
+        },
+        "netProfitAtTarget": 31.51,
+        "netLossAtStop": -16.24,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 43.99,
+        "netLossAtStopCAD": -22.68
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.48,
+        "median": 11.41,
+        "asOfClose": "2026-11-09",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "First 15-min candle green and price broke the 58.45 opening-range high on 9M shares, reversing the pre-market -9% drop; QQQ turned up to flat"
+        ],
+        "bear": [
+          "News was negative (wider Q3 loss, Neutron delayed to 2027), so the bounce may be short covering that fades",
+          "Wide 3.5 USD opening range means the 2R target at 66.96 needs +13.6%",
+          "Volatile regime, and the move above 58.45 has already pulled back from 59.36"
+        ],
+        "verdict": "take",
+        "why": "Rules met exactly; strategy is direction-agnostic and the break is clean on heavy volume; size within budget",
+        "by": "quant",
+        "at": "2026-11-10T10:06:49-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }

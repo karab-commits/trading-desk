@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 10, 2026 9:49 AM ET",
+  "lastUpdated": "Tue Nov 10, 2026 10:07 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -93,7 +93,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "AAON 23.19 CAD ALLOW; QBTS resized 6 to 5 sh ALLOW; quant budget 33.90/35 if both",
+      "status": "RKLB 17.01 CAD ALLOW; quant 30.36/35",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -104,9 +104,9 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "AAON ok, QBTS resized",
-        "detail": "AAON 23.19 CAD ALLOW; QBTS resized 6 to 5 sh ALLOW; quant budget 33.90/35 if both",
-        "since": "2026-11-10T09:49:43-05:00",
+        "now": "RKLB resized 4 to 3",
+        "detail": "RKLB 17.01 CAD ALLOW; quant 30.36/35",
+        "since": "2026-11-10T10:07:14-05:00",
         "state": "working",
         "next": "Intraday checks 9:45",
         "log": [
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "UAL 7 sh market sell re-sent 9:47 (overnight hold); AAON buy 2 @75.90 sent 9:49; both await K's approval",
+      "status": "5th UAL sell sent 10:07 (4 earlier expired unapproved, no stop working); RKLB buy 3 sent 10:07",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL sell + AAON pending",
-        "detail": "UAL 7 sh market sell re-sent 9:47 (overnight hold); AAON buy 2 @75.90 sent 9:49; both await K's approval",
-        "since": "2026-11-10T09:49:43-05:00",
+        "now": "UAL sell + RKLB pending",
+        "detail": "5th UAL sell sent 10:07 (4 earlier expired unapproved, no stop working); RKLB buy 3 sent 10:07",
+        "since": "2026-11-10T10:07:14-05:00",
         "state": "waiting",
-        "next": "Stop for AAON after fill",
+        "next": "Confirm fills 10:15",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -143,7 +143,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "SIP ORB: AAON long 2 @75.90 sent; QBTS short rejected (borrow agreement); SANM fails volume rule; RKLB now long-only above 58.45",
+      "status": "RKLB long 3 @58.96 sent 10:07; AAON buy expired unapproved 9:51",
       "pnlToday": -4.15,
       "pnlWeek": -2.47,
       "pnlAllTime": 65.53,
@@ -151,15 +151,15 @@
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "AAON ORB long sent",
-        "detail": "SIP ORB: AAON long 2 @75.90 sent; QBTS short rejected (borrow agreement); SANM fails volume rule; RKLB now long-only above 58.45",
-        "since": "2026-11-10T09:49:43-05:00",
+        "now": "RKLB ORB long sent",
+        "detail": "RKLB long 3 @58.96 sent 10:07; AAON buy expired unapproved 9:51",
+        "since": "2026-11-10T10:07:14-05:00",
         "state": "working",
-        "next": "RKLB break, AAON fill",
+        "next": "Stop after RKLB fill",
         "log": [
-          "10:21 NVDA+UAL orders expired unapproved",
           "10:48 UAL long filled 7 @ 120.66",
-          "09:50 AAON long sent, QBTS short rejected"
+          "09:50 AAON long sent, QBTS short rejected",
+          "10:07 RKLB long sent; AAON expired"
         ]
       }
     },
@@ -515,8 +515,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -4.15,
-    "total": -4.15,
+    "unrealized": -9.19,
+    "total": -9.19,
     "trades": 0
   },
   "pnlWeek": {
@@ -531,7 +531,7 @@
     "total": 65.53,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL sell 7 at market (overnight close-out)",
+  "lastApprovedIdea": "RKLB long 3 @ 58.96 (SIP ORB)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -573,8 +573,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-10T09:48:49-05:00",
-    "ideasLogged": 13,
+    "updated": "2026-11-10T10:06:49-05:00",
+    "ideasLogged": 14,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -608,9 +608,9 @@
       },
       "2026-11-10": {
         "net": 0.0,
-        "ideas": 3,
+        "ideas": 4,
         "resolved": 0,
-        "open": 3,
+        "open": 4,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -649,14 +649,14 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 164.055,
-      "priceTime": "2026-11-10T09:31:01-05:00",
+      "last": 164.45,
+      "priceTime": "2026-11-10T10:06:37-05:00",
       "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
       "date": "2026-11-10",
       "ticker": "AAON",
-      "status": "triggered",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "long",
@@ -666,7 +666,7 @@
       "shares": 2,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "First 15-min candle green; broke OR high 74.97. Buy limit 75.90 sent 9:49 ET, pending K's approval.",
+      "reason": "Buy 2 @ 75.90 approval expired unapproved 9:51 ET",
       "trigger": 71.29,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets",
@@ -682,24 +682,25 @@
       "planFrom": "journal",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 75.87,
-      "priceTime": "2026-11-10T09:48:36-05:00",
-      "journalId": "2026-11-10-AAON-1"
+      "last": 76.72,
+      "priceTime": "2026-11-10T10:06:37-05:00",
+      "journalId": "2026-11-10-AAON-1",
+      "statusAt": "2026-11-10T10:06:49-05:00"
     },
     {
       "date": "2026-11-10",
       "ticker": "RKLB",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "long",
-      "entry": 58.45,
+      "entry": 58.96,
       "stop": 54.96,
-      "target": 65.43,
-      "shares": 1,
+      "target": 66.96,
+      "shares": 3,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "First 15-min candle green, so long only now: stop-entry above OR high 58.45",
+      "reason": "Broke OR high 58.45; buy 3 @ 58.96 sent 10:07 ET, pending K's approval",
       "trigger": 58.45,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets",
@@ -708,15 +709,16 @@
       "currency": "USD",
       "rr": 2.0,
       "rrNet": 1.94,
-      "netProfitAtTarget": 6.87,
-      "netLossAtStop": -3.54,
-      "netProfitAtTargetCAD": 9.6,
-      "netLossAtStopCAD": -4.95,
-      "planFrom": "fees model",
+      "netProfitAtTarget": 31.51,
+      "netLossAtStop": -16.24,
+      "netProfitAtTargetCAD": 43.99,
+      "netLossAtStopCAD": -22.68,
+      "planFrom": "journal",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 57.71,
-      "priceTime": "2026-11-10T09:48:36-05:00"
+      "last": 58.84,
+      "priceTime": "2026-11-10T10:06:37-05:00",
+      "journalId": "2026-11-10-RKLB-1"
     },
     {
       "date": "2026-11-10",
@@ -747,14 +749,14 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 10.965,
-      "priceTime": "2026-11-10T09:31:01-05:00",
+      "last": 10.72,
+      "priceTime": "2026-11-10T10:06:37-05:00",
       "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
       "date": "2026-11-10",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "long",
@@ -779,8 +781,11 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 673.29,
-      "priceTime": "2026-11-10T09:47:25-05:00"
+      "last": 679.45,
+      "priceTime": "2026-11-10T10:06:37-05:00",
+      "statusAt": "2026-11-10T10:06:37-05:00",
+      "triggeredAt": "2026-11-10T10:06:37-05:00",
+      "triggerPrice": 679.45
     },
     {
       "date": "2026-11-10",
@@ -870,7 +875,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-10T09:49:43-05:00",
+  "watchlistUpdated": "2026-11-10T10:07:14-05:00",
   "scorecard": {
     "updated": "2026-11-09T16:40:01-05:00",
     "currency": "CAD",
@@ -1123,7 +1128,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-10",
-    "updated": "2026-11-10T09:49:08-05:00",
+    "updated": "2026-11-10T10:06:56-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1134,10 +1139,10 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 0.0,
-        "openRisk": 28.09,
-        "used": 28.09,
-        "left": 6.91
+        "realizedLoss": 4.15,
+        "openRisk": 9.2,
+        "used": 13.35,
+        "left": 21.65
       },
       "news": {
         "budget": 25,
@@ -1164,10 +1169,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 28.09,
-      "used": 28.09,
-      "left": 121.91,
-      "openPositions": 2
+      "openRisk": 9.2,
+      "used": 9.2,
+      "left": 140.8,
+      "openPositions": 1
     }
   }
 }

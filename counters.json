@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-10T09:49:49-05:00",
+  "updated": "2026-11-10T10:07:14-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1044,11 +1044,11 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 2,
+   "ordersSent": 3,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 3,
+   "runs": 4,
    "symbolsQuoted": {
     "unique": [
      "SANM",
@@ -1064,10 +1064,11 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-10T09:49:49-05:00",
+   "lastRun": "2026-11-10T10:07:14-05:00",
    "keys": [
     "order:AAON long 2 @ 75.90 (SIP ORB)",
-    "order:UAL sell 7 at market (overnight close-out)"
+    "order:UAL sell 7 at market (overnight close-out)",
+    "order:RKLB long 3 @ 58.96 (SIP ORB)"
    ]
   },
   "scanner": {
@@ -1162,7 +1163,7 @@
    "lastRun": null
   },
   "whale": {
-   "quotesCalls": 3,
+   "quotesCalls": 4,
    "barCalls": 0,
    "bars": 0,
    "optionCalls": 0,
@@ -1194,7 +1195,7 @@
      "XIU.TO",
      "HXT.TO"
     ],
-    "total": 21
+    "total": 27
    },
    "headlines": {
     "items": [],
@@ -1213,8 +1214,8 @@
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 7,
-   "ideasLogged": 3,
+   "ideasGenerated": 8,
+   "ideasLogged": 4,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -1234,7 +1235,8 @@
    "keys": [
     "logged:2026-11-10-AAON-1",
     "logged:2026-11-10-QBTS-1",
-    "logged:2026-11-10-SANM-1"
+    "logged:2026-11-10-SANM-1",
+    "logged:2026-11-10-RKLB-1"
    ]
   },
   "options": {
@@ -1287,7 +1289,7 @@
    "xPosts": 0,
    "ideasGenerated": 0,
    "ideasLogged": 0,
-   "ideasRejected": 1,
+   "ideasRejected": 2,
    "ordersSent": 0,
    "fills": 0,
    "backtestVariants": 0,
@@ -1304,7 +1306,8 @@
    },
    "lastRun": null,
    "keys": [
-    "rejected:2026-11-10-QBTS-1"
+    "rejected:2026-11-10-QBTS-1",
+    "rejected:2026-11-10-RKLB-1"
    ]
   }
  }
