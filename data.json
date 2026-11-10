@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 10, 2026 9:31 AM ET",
+  "lastUpdated": "Tue Nov 10, 2026 9:49 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -71,7 +71,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "Pre-mkt volume: RKLB 1.8M, QBTS 4.8M, HIMS 1.1M, SANM 44k, AAON 66k. QQQ -1.1% pre-mkt; RVOL breakout from 10:00.",
+      "status": "Quoted SANM AAON RKLB QBTS QQQ UAL; QQQ RVOL window opens 10:00",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -79,10 +79,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scouted SANM AAON RKLB QBTS",
-        "detail": "Pre-mkt volume: RKLB 1.8M, QBTS 4.8M, HIMS 1.1M, SANM 44k, AAON 66k. QQQ -1.1% pre-mkt; RVOL breakout from 10:00.",
-        "since": "2026-11-10T09:04:10-05:00",
-        "state": "done",
+        "now": "Scouted 4 SIP names",
+        "detail": "Quoted SANM AAON RKLB QBTS QQQ UAL; QQQ RVOL window opens 10:00",
+        "since": "2026-11-10T09:49:43-05:00",
+        "state": "working",
         "next": "QQQ RVOL from 10:00",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
@@ -93,7 +93,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "Mood volatile (SPY rv10 30.5% vs 11.4%). No pauses. Desk 0/150 used. UAL 7 sh from Nov 9 being flattened by the 9:31 routine.",
+      "status": "AAON 23.19 CAD ALLOW; QBTS resized 6 to 5 sh ALLOW; quant budget 33.90/35 if both",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -104,13 +104,14 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "No gap trades to check",
-        "detail": "Mood volatile (SPY rv10 30.5% vs 11.4%). No pauses. Desk 0/150 used. UAL 7 sh from Nov 9 being flattened by the 9:31 routine.",
-        "since": "2026-11-10T09:31:14-05:00",
-        "state": "done",
+        "now": "AAON ok, QBTS resized",
+        "detail": "AAON 23.19 CAD ALLOW; QBTS resized 6 to 5 sh ALLOW; quant budget 33.90/35 if both",
+        "since": "2026-11-10T09:49:43-05:00",
+        "state": "working",
         "next": "Intraday checks 9:45",
         "log": [
-          "9:45 ET: 4 rejected, RIVN conditional"
+          "9:45 ET: 4 rejected, RIVN conditional",
+          "09:50 QBTS resize 6->5"
         ]
       }
     },
@@ -118,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No gap-fade signals at the open. Watchlist: SANM AAON RKLB QBTS (SIP ORB), QQQ (RVOL). UAL flatten handled by its own 9:31 routine.",
+      "status": "UAL 7 sh market sell re-sent 9:47 (overnight hold); AAON buy 2 @75.90 sent 9:49; both await K's approval",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -126,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market done, no orders",
-        "detail": "No gap-fade signals at the open. Watchlist: SANM AAON RKLB QBTS (SIP ORB), QQQ (RVOL). UAL flatten handled by its own 9:31 routine.",
-        "since": "2026-11-10T09:31:14-05:00",
-        "state": "done",
-        "next": "Intraday run 9:45",
+        "now": "UAL sell + AAON pending",
+        "detail": "UAL 7 sh market sell re-sent 9:47 (overnight hold); AAON buy 2 @75.90 sent 9:49; both await K's approval",
+        "since": "2026-11-10T09:49:43-05:00",
+        "state": "waiting",
+        "next": "Stop for AAON after fill",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -142,23 +143,23 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Stocks-in-play ORB after 9:45: SANM, AAON (gap up), RKLB, QBTS (gap down). Direction from the first 15-min candle.",
-      "pnlToday": 0,
+      "status": "SIP ORB: AAON long 2 @75.90 sent; QBTS short rejected (borrow agreement); SANM fails volume rule; RKLB now long-only above 58.45",
+      "pnlToday": -4.15,
       "pnlWeek": -2.47,
       "pnlAllTime": 65.53,
       "tradesToday": 0,
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP ORB list: 4 names",
-        "detail": "Stocks-in-play ORB after 9:45: SANM, AAON (gap up), RKLB, QBTS (gap down). Direction from the first 15-min candle.",
-        "since": "2026-11-10T09:04:11-05:00",
-        "state": "waiting",
-        "next": "ORB check 9:45",
+        "now": "AAON ORB long sent",
+        "detail": "SIP ORB: AAON long 2 @75.90 sent; QBTS short rejected (borrow agreement); SANM fails volume rule; RKLB now long-only above 58.45",
+        "since": "2026-11-10T09:49:43-05:00",
+        "state": "working",
+        "next": "RKLB break, AAON fill",
         "log": [
-          "09:51 AAPL SIP ORB long filled 3 @ 332.89",
           "10:21 NVDA+UAL orders expired unapproved",
-          "10:48 UAL long filled 7 @ 120.66"
+          "10:48 UAL long filled 7 @ 120.66",
+          "09:50 AAON long sent, QBTS short rejected"
         ]
       }
     },
@@ -513,9 +514,9 @@
     "daysRunning": 3
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": -4.15,
+    "total": -4.15,
     "trades": 0
   },
   "pnlWeek": {
@@ -530,7 +531,7 @@
     "total": 65.53,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL close-out: cancel stop (15:51)",
+  "lastApprovedIdea": "UAL sell 7 at market (overnight close-out)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -572,8 +573,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-09T16:40:01-05:00",
-    "ideasLogged": 10,
+    "updated": "2026-11-10T09:48:49-05:00",
+    "ideasLogged": 13,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -604,6 +605,16 @@
         "wins": 1,
         "real": 0.0,
         "taken": 0
+      },
+      "2026-11-10": {
+        "net": 0.0,
+        "ideas": 3,
+        "resolved": 0,
+        "open": 3,
+        "filled": 0,
+        "wins": 0,
+        "real": 0.0,
+        "taken": 0
       }
     }
   },
@@ -611,7 +622,7 @@
     {
       "date": "2026-11-10",
       "ticker": "SANM",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "long",
@@ -621,7 +632,7 @@
       "shares": 1,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Stocks in play: +8.9% pre-mkt (163) on a big FQ4 beat and raised FY27 guide; wide pre-mkt spread. ORB after 9:45.",
+      "reason": "Not in universe: 20-day avg volume 936k < 1M",
       "trigger": 163.0,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets; direction from the first 15-min candle",
@@ -639,39 +650,41 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 164.055,
-      "priceTime": "2026-11-10T09:31:01-05:00"
+      "priceTime": "2026-11-10T09:31:01-05:00",
+      "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
       "date": "2026-11-10",
       "ticker": "AAON",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "long",
-      "entry": 71.29,
-      "stop": 70.0,
-      "target": 74.0,
-      "shares": 1,
+      "entry": 75.9,
+      "stop": 67.72,
+      "target": 92.26,
+      "shares": 2,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Stocks in play: +13.4% pre-mkt (71.29) on record Q3, data-center cooling sales +218%. ORB after 9:45.",
+      "reason": "First 15-min candle green; broke OR high 74.97. Buy limit 75.90 sent 9:49 ET, pending K's approval.",
       "trigger": 71.29,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets",
       "tvSymbol": "NASDAQ:AAON",
       "tested": false,
       "currency": "USD",
-      "rr": 2.1,
-      "rrNet": 2.04,
-      "netProfitAtTarget": 2.67,
-      "netLossAtStop": -1.31,
-      "netProfitAtTargetCAD": 3.72,
-      "netLossAtStopCAD": -1.83,
-      "planFrom": "fees model",
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 32.23,
+      "netLossAtStop": -16.61,
+      "netProfitAtTargetCAD": 44.99,
+      "netLossAtStopCAD": -23.19,
+      "planFrom": "journal",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 70.34,
-      "priceTime": "2026-11-10T09:31:01-05:00"
+      "last": 75.87,
+      "priceTime": "2026-11-10T09:48:36-05:00",
+      "journalId": "2026-11-10-AAON-1"
     },
     {
       "date": "2026-11-10",
@@ -679,15 +692,15 @@
       "status": "watching",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
-      "side": "short",
-      "entry": 53.5,
-      "stop": 55.0,
-      "target": 50.5,
+      "side": "long",
+      "entry": 58.45,
+      "stop": 54.96,
+      "target": 65.43,
       "shares": 1,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Stocks in play: -9.1% pre-mkt (53.50) on wider Q3 loss and Neutron delay to 2027; 1.8M pre-mkt shares. ORB after 9:45.",
-      "trigger": 53.5,
+      "reason": "First 15-min candle green, so long only now: stop-entry above OR high 58.45",
+      "trigger": 58.45,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets",
       "tvSymbol": "NASDAQ:RKLB",
@@ -695,20 +708,20 @@
       "currency": "USD",
       "rr": 2.0,
       "rrNet": 1.94,
-      "netProfitAtTarget": 2.95,
-      "netLossAtStop": -1.52,
-      "netProfitAtTargetCAD": 4.12,
-      "netLossAtStopCAD": -2.13,
+      "netProfitAtTarget": 6.87,
+      "netLossAtStop": -3.54,
+      "netProfitAtTargetCAD": 9.6,
+      "netLossAtStopCAD": -4.95,
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 55.2367,
-      "priceTime": "2026-11-10T09:31:01-05:00"
+      "last": 57.71,
+      "priceTime": "2026-11-10T09:48:36-05:00"
     },
     {
       "date": "2026-11-10",
       "ticker": "QBTS",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-10T09:03:55-05:00",
       "side": "short",
@@ -718,7 +731,7 @@
       "shares": 1,
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Stocks in play: -6.0% pre-mkt (10.78) into Q3 earnings today; 4.8M pre-mkt shares. ORB after 9:45.",
+      "reason": "Short rejected by Questrade: accept the security borrow agreement in the Questrade app first",
       "trigger": 10.78,
       "notBefore": "09:45",
       "entryNote": "Levels are placeholders until the 9:30-9:45 range sets",
@@ -735,7 +748,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 10.965,
-      "priceTime": "2026-11-10T09:31:01-05:00"
+      "priceTime": "2026-11-10T09:31:01-05:00",
+      "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
       "date": "2026-11-10",
@@ -765,8 +779,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 671.21,
-      "priceTime": "2026-11-10T09:31:01-05:00"
+      "last": 673.29,
+      "priceTime": "2026-11-10T09:47:25-05:00"
     },
     {
       "date": "2026-11-10",
@@ -856,7 +870,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-10T09:31:25-05:00",
+  "watchlistUpdated": "2026-11-10T09:49:43-05:00",
   "scorecard": {
     "updated": "2026-11-09T16:40:01-05:00",
     "currency": "CAD",
@@ -1109,7 +1123,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-10",
-    "updated": "2026-11-10T09:02:30-05:00",
+    "updated": "2026-11-10T09:49:08-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1120,10 +1134,10 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 2.47,
-        "openRisk": 0,
-        "used": 2.47,
-        "left": 32.53
+        "realizedLoss": 0.0,
+        "openRisk": 28.09,
+        "used": 28.09,
+        "left": 6.91
       },
       "news": {
         "budget": 25,
@@ -1150,10 +1164,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 28.09,
+      "used": 28.09,
+      "left": 121.91,
+      "openPositions": 2
     }
   }
 }

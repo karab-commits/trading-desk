@@ -749,6 +749,207 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-10-AAON-1",
+      "date": "2026-11-10",
+      "session": "adhoc",
+      "ticker": "AAON",
+      "side": "long",
+      "entry": 75.9,
+      "stop": 67.72,
+      "target": 92.26,
+      "shares": 2,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle green (O71.64 C74.60); OR 67.72-74.97; broke above OR high 9:45-9:50; ADV 1.37M; catalyst record Q3. scout: whale",
+      "loggedAt": "2026-11-10T09:48:49-05:00",
+      "plan": {
+        "riskGross": 16.36,
+        "rewardGross": 32.72,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0038,
+          "fx": 0.49,
+          "total": 0.4946
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0028,
+          "fx": 0.25,
+          "total": 0.2482
+        },
+        "netProfitAtTarget": 32.23,
+        "netLossAtStop": -16.61,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 44.99,
+        "netLossAtStopCAD": -23.19
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.48,
+        "median": 11.41,
+        "asOfClose": "2026-11-09",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Record Q3 with data-center cooling sales +218%, first 15-min candle closed strong green and price broke the OR high, now at the day high 75.9 on 670k shares by 9:48"
+        ],
+        "bear": [
+          "Already +20% on the day and extended far above VWAP 73.15, so a fade is likely",
+          "Opening range is very wide (7.25 USD, about 10%), so the stop is far and the 2R target at 92 needs another +21%",
+          "Spread was wide (about 1% at times) and the market is volatile with SPY and QQQ red"
+        ],
+        "verdict": "take",
+        "why": "Rules met exactly with a real catalyst and clean break; wide stop is already priced into small size (2 shares)",
+        "by": "quant",
+        "at": "2026-11-10T09:48:58-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
+    },
+    {
+      "id": "2026-11-10-QBTS-1",
+      "date": "2026-11-10",
+      "session": "adhoc",
+      "ticker": "QBTS",
+      "side": "short",
+      "entry": 10.58,
+      "stop": 11.4,
+      "target": 8.94,
+      "shares": 5,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (O11.06 C10.705); OR 10.69-11.40; broke below OR low; ADV 15.4M; catalyst Q3 earnings today. scout: whale | Resized to 5 sh by Risk Manager; short order rejected by Questrade 9:50 ET: borrow agreement not yet accepted in the account.",
+      "loggedAt": "2026-11-10T09:48:49-05:00",
+      "plan": {
+        "riskGross": 4.92,
+        "rewardGross": 9.84,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0013,
+          "fx": 0.15,
+          "total": 0.1489
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0013,
+          "fx": 0.07,
+          "total": 0.0751
+        },
+        "netProfitAtTarget": 9.69,
+        "netLossAtStop": -5.0,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 13.53,
+        "netLossAtStopCAD": -6.97
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.48,
+        "median": 11.41,
+        "asOfClose": "2026-11-09",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "First 15-min candle red from 11.06 to 10.705, broke the OR low and is at the day low 10.58 below VWAP 10.95, 8.8M shares already, weak tape with QQQ down"
+        ],
+        "bear": [
+          "Q3 earnings are due today, so a surprise headline can squeeze the short hard",
+          "Quantum names are heavily shorted and prone to violent short squeezes; borrow may be hard",
+          "Already -7.7% on the day, so part of the move may be done"
+        ],
+        "verdict": "take",
+        "why": "Rules met exactly; earnings likely after the close and the desk is flat by then; size is tiny (6 shares, about 7 CAD at the stop)",
+        "by": "quant",
+        "at": "2026-11-10T09:48:58-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
+    },
+    {
+      "id": "2026-11-10-SANM-1",
+      "date": "2026-11-10",
+      "session": "adhoc",
+      "ticker": "SANM",
+      "side": "short",
+      "entry": 153.51,
+      "stop": 166.395,
+      "target": 127.74,
+      "shares": 1,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "Not valid: 20-day avg volume 936k < 1M universe rule; OR low not broken. Paper only.",
+      "loggedAt": "2026-11-10T09:48:49-05:00",
+      "plan": {
+        "riskGross": 12.89,
+        "rewardGross": 25.77,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0032,
+          "fx": 0.39,
+          "total": 0.3897
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0032,
+          "fx": 0.19,
+          "total": 0.1964
+        },
+        "netProfitAtTarget": 25.38,
+        "netLossAtStop": -13.08,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 35.43,
+        "netLossAtStopCAD": -18.26
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.48,
+        "median": 11.41,
+        "asOfClose": "2026-11-09",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
