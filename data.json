@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T09:05:00-05:00",
+  "lastUpdated": "Tue Nov 10, 2026 9:31 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Trades fresh news-catalyst momentum \u00b7 devil's-advocate debate before every entry (veto only)",
+      "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
       "status": "Oct CPI +0.4% m/m vs 0.3% est, core +0.3% vs 0.2%; Nasdaq futures about -1%. Movers: SANM +9% and AAON +13% on beats, RKLB -9% on wider loss and Neutron delay, HIMS -2% on weak guide, QBTS reports today.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
@@ -306,7 +306,7 @@
   ],
   "playbook": [
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
       "status": "active",
       "trades": 50,
       "winRate": 58.0,
@@ -330,7 +330,7 @@
       "note": "Paper only. Nov 9: 10:50 signal, 7 min stale so not sent; stopped out -1.03R (-$20.32 CAD paper). 20-day volume average not cached yet."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU/HXT/SOFI, 1 trade a day",
+      "name": "Big-gap fade >0.75 ATR, daily · XIU/HXT/SOFI, 1 trade a day",
       "status": "testing",
       "trades": 78,
       "winRate": 56.4,
@@ -338,7 +338,7 @@
       "note": "New run Nov 2 2026 EOD (one desk trade a day, priority XIU > HXT > SOFI), after fees: +0.150R n=78, max DD 2.03R; last 6m +0.171R n=19; last 3m +0.110R n=10. Adds little over XIU alone."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 SOFI",
+      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
       "status": "testing",
       "trades": 33,
       "winRate": 60.6,
@@ -346,7 +346,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 HXT.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
       "status": "testing",
       "trades": 49,
       "winRate": 57.1,
@@ -354,7 +354,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R."
     },
     {
-      "name": "Down-open buy >0.35ATR, daily \u00b7 ZEB.TO",
+      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 64,
       "winRate": 54.7,
@@ -362,7 +362,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 ZEB.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 30,
       "winRate": 80.0,
@@ -370,7 +370,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 all 8 tickers pooled",
+      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
       "status": "testing",
       "trades": 412,
       "winRate": 55.1,
@@ -378,7 +378,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
     },
     {
-      "name": "VWAP cross +trendFilter, 30-min \u00b7 XIU.TO",
+      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
       "status": "testing",
       "trades": 51,
       "winRate": 54.9,
@@ -639,8 +639,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 163.0,
-      "priceTime": "2026-11-10T09:03:17-05:00"
+      "last": 164.055,
+      "priceTime": "2026-11-10T09:31:01-05:00"
     },
     {
       "date": "2026-11-10",
@@ -671,8 +671,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 71.29,
-      "priceTime": "2026-11-10T09:03:17-05:00"
+      "last": 70.34,
+      "priceTime": "2026-11-10T09:31:01-05:00"
     },
     {
       "date": "2026-11-10",
@@ -703,8 +703,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 53.5,
-      "priceTime": "2026-11-10T09:03:17-05:00"
+      "last": 55.2367,
+      "priceTime": "2026-11-10T09:31:01-05:00"
     },
     {
       "date": "2026-11-10",
@@ -735,8 +735,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 10.78,
-      "priceTime": "2026-11-10T09:03:17-05:00"
+      "last": 10.965,
+      "priceTime": "2026-11-10T09:31:01-05:00"
     },
     {
       "date": "2026-11-10",
@@ -766,11 +766,11 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 671.88,
-      "priceTime": "2026-11-10T09:03:17-05:00"
+      "last": 671.21,
+      "priceTime": "2026-11-10T09:31:01-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-10T09:04:10-05:00",
+  "watchlistUpdated": "2026-11-10T09:31:08-05:00",
   "scorecard": {
     "updated": "2026-11-09T16:40:01-05:00",
     "currency": "CAD",

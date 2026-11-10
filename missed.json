@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-09T15:51:50-05:00",
-  "date": "2026-11-09",
+  "updated": "2026-11-10T09:31:08-05:00",
+  "date": "2026-11-10",
   "isoWeek": "2026-W46",
   "marketOpen": true,
   "currency": "CAD",
@@ -9,26 +9,26 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": -16.42,
-      "final": -16.42,
+      "net": 0.0,
+      "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 2,
-      "scored": 2,
+      "ideas": 0,
+      "scored": 0,
       "open": 0,
       "notTriggered": 0,
       "pending": 0,
-      "wins": 1,
-      "losses": 1
+      "wins": 0,
+      "losses": 0
     },
     "week": {
       "net": -16.42,
       "final": -16.42,
       "unrealized": 0.0,
-      "ideas": 2,
+      "ideas": 3,
       "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 1,
       "losses": 1
     },
@@ -36,43 +36,37 @@
       "net": 57.22,
       "final": 57.22,
       "unrealized": 0.0,
-      "ideas": 8,
+      "ideas": 9,
       "scored": 4,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 2,
       "losses": 2
     }
   },
   "byBot": {
     "quant": {
-      "today": {
-        "net": 3.9,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
       "week": {
         "net": 3.9,
-        "ideas": 1,
+        "ideas": 2,
         "scored": 1,
         "open": 0
       },
       "allTime": {
         "net": 3.9,
-        "ideas": 1,
+        "ideas": 2,
         "scored": 1,
+        "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
         "open": 0
       }
     },
     "whale": {
-      "today": {
-        "net": -20.32,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
       "week": {
         "net": -20.32,
         "ideas": 1,
@@ -83,6 +77,12 @@
         "net": -20.32,
         "ideas": 1,
         "scored": 1,
+        "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
         "open": 0
       }
     },
@@ -108,9 +108,9 @@
     }
   },
   "real": {
-    "today": 4.93,
-    "week": 68.0,
-    "allTime": 68.0,
+    "today": 0.0,
+    "week": -2.47,
+    "allTime": 65.53,
     "byBot": {
       "scanner": {
         "today": 0,
@@ -138,9 +138,9 @@
         "allTime": 0
       },
       "quant": {
-        "today": 4.93,
-        "week": 68.0,
-        "allTime": 68.0
+        "today": 0,
+        "week": -2.47,
+        "allTime": 65.53
       },
       "journal": {
         "today": 0,
@@ -177,6 +177,28 @@
       "net": -14.56,
       "netCAD": -20.32,
       "resolvedAt": "2026-11-09T11:31:03-05:00"
+    },
+    {
+      "id": "2026-11-09-UAL-1",
+      "date": "2026-11-09",
+      "bot": "quant",
+      "ticker": "UAL",
+      "side": "long",
+      "entry": 120.76,
+      "stop": 117.505,
+      "target": 127.27,
+      "shares": 7,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 7,
+      "loggedAt": "2026-11-09T10:04:20-05:00",
+      "why": "untaken",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
     },
     {
       "id": "2026-11-09-NVDA-1",
@@ -336,10 +358,6 @@
     {
       "id": "2026-11-03-AAPL-1",
       "why": "filled with real money"
-    },
-    {
-      "id": "2026-11-09-UAL-1",
-      "why": "in trade (real fill)"
     }
   ]
 }
