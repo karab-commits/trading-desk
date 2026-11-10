@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "UAL 7 sh held, no stop (11:41). 8 approvals today expired unapproved; re-sends paused until K is back. No new entries.",
+      "status": "UAL fell to ~118.82 (11:41), near the 117.50 stop. Re-sent sell stop 7 @ 117.50 at 11:42 ET, expires 11:43 ET. 8 earlier approvals today expired.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,9 +127,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Holding: K not approving",
-        "detail": "UAL 7 sh held, no stop (11:41). 8 approvals today expired unapproved; re-sends paused until K is back. No new entries.",
-        "since": "2026-11-10T11:41:41-05:00",
+        "now": "UAL stop re-sent 11:42",
+        "detail": "UAL fell to ~118.82 (11:41), near the 117.50 stop. Re-sent sell stop 7 @ 117.50 at 11:42 ET, expires 11:43 ET. 8 earlier approvals today expired.",
+        "since": "2026-11-10T11:41:55-05:00",
         "state": "waiting",
         "next": "Next check 11:55",
         "log": [
@@ -531,7 +531,7 @@
     "total": 65.53,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL stop 117.50 10:55",
+  "lastApprovedIdea": "UAL stop 117.50 11:42",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",

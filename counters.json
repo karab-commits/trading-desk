@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-10T11:41:41-05:00",
+  "updated": "2026-11-10T11:41:55-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1044,7 +1044,7 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 6,
+   "ordersSent": 7,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
@@ -1082,7 +1082,8 @@
     "order:RKLB long 3 @ 58.96 (SIP ORB)",
     "order:UAL sell 7 (flatten) 10:22",
     "order:UAL stop 117.50 10:40",
-    "order:UAL stop 117.50 10:55"
+    "order:UAL stop 117.50 10:55",
+    "order:UAL stop 117.50 11:42"
    ]
   },
   "scanner": {
