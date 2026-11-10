@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 10, 2026 9:31 AM ET",
+  "lastUpdated": "2026-11-10T09:32:00-05:00",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU.TO trigger 0.60 (ATR14 0.79): buy <=54.08, short >=55.27 vs close 54.67. HXT.TO trigger 1.07: buy <=97.13, short >=99.26. SOFI trigger 0.71: buy <=16.04, short >=17.46; pre-mkt 16.45 (-0.30).",
+      "status": "Opens: XIU.TO 54.48 (gap -0.19 vs 0.60 trigger), HXT.TO 97.66 (-0.53 vs 1.07), SOFI 16.475 (-0.28 vs 0.71). No signal.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,11 +37,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap check at the open",
-        "detail": "XIU.TO trigger 0.60 (ATR14 0.79): buy <=54.08, short >=55.27 vs close 54.67. HXT.TO trigger 1.07: buy <=97.13, short >=99.26. SOFI trigger 0.71: buy <=16.04, short >=17.46; pre-mkt 16.45 (-0.30).",
-        "since": "2026-11-10T09:04:10-05:00",
-        "state": "waiting",
-        "next": "Re-check opens 9:30",
+        "now": "No gap fades today",
+        "detail": "Opens: XIU.TO 54.48 (gap -0.19 vs 0.60 trigger), HXT.TO 97.66 (-0.53 vs 1.07), SOFI 16.475 (-0.28 vs 0.71). No signal.",
+        "since": "2026-11-10T09:31:14-05:00",
+        "state": "done",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
@@ -52,7 +51,7 @@
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
+      "role": "Trades fresh news-catalyst momentum \u00b7 devil's-advocate debate before every entry (veto only)",
       "status": "Oct CPI +0.4% m/m vs 0.3% est, core +0.3% vs 0.2%; Nasdaq futures about -1%. Movers: SANM +9% and AAON +13% on beats, RKLB -9% on wider loss and Neutron delay, HIMS -2% on weak guide, QBTS reports today.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
@@ -94,7 +93,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "SPY rv10 30.5% vs 11.4% median. Desk 0/150 used; open positions: UAL 7 sh from Nov 9 (flatten at 9:31).",
+      "status": "Mood volatile (SPY rv10 30.5% vs 11.4%). No pauses. Desk 0/150 used. UAL 7 sh from Nov 9 being flattened by the 9:31 routine.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -105,11 +104,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Mood VOLATILE, no pauses",
-        "detail": "SPY rv10 30.5% vs 11.4% median. Desk 0/150 used; open positions: UAL 7 sh from Nov 9 (flatten at 9:31).",
-        "since": "2026-11-10T09:04:11-05:00",
-        "state": "working",
-        "next": "Check open gap trades",
+        "now": "No gap trades to check",
+        "detail": "Mood volatile (SPY rv10 30.5% vs 11.4%). No pauses. Desk 0/150 used. UAL 7 sh from Nov 9 being flattened by the 9:31 routine.",
+        "since": "2026-11-10T09:31:14-05:00",
+        "state": "done",
+        "next": "Intraday checks 9:45",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional"
         ]
@@ -119,7 +118,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "UAL 7 sh held overnight; flatten routine at 9:31. Waiting for 9:30 opens to check gap fades.",
+      "status": "No gap-fade signals at the open. Watchlist: SANM AAON RKLB QBTS (SIP ORB), QQQ (RVOL). UAL flatten handled by its own 9:31 routine.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +126,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market scan",
-        "detail": "UAL 7 sh held overnight; flatten routine at 9:31. Waiting for 9:30 opens to check gap fades.",
-        "since": "2026-11-10T09:04:11-05:00",
-        "state": "working",
-        "next": "Gap check 9:30",
+        "now": "Pre-market done, no orders",
+        "detail": "No gap-fade signals at the open. Watchlist: SANM AAON RKLB QBTS (SIP ORB), QQQ (RVOL). UAL flatten handled by its own 9:31 routine.",
+        "since": "2026-11-10T09:31:14-05:00",
+        "state": "done",
+        "next": "Intraday run 9:45",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -306,7 +305,7 @@
   ],
   "playbook": [
     {
-      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU.TO",
       "status": "active",
       "trades": 50,
       "winRate": 58.0,
@@ -330,7 +329,7 @@
       "note": "Paper only. Nov 9: 10:50 signal, 7 min stale so not sent; stopped out -1.03R (-$20.32 CAD paper). 20-day volume average not cached yet."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · XIU/HXT/SOFI, 1 trade a day",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU/HXT/SOFI, 1 trade a day",
       "status": "testing",
       "trades": 78,
       "winRate": 56.4,
@@ -338,7 +337,7 @@
       "note": "New run Nov 2 2026 EOD (one desk trade a day, priority XIU > HXT > SOFI), after fees: +0.150R n=78, max DD 2.03R; last 6m +0.171R n=19; last 3m +0.110R n=10. Adds little over XIU alone."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 SOFI",
       "status": "testing",
       "trades": 33,
       "winRate": 60.6,
@@ -346,7 +345,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 HXT.TO",
       "status": "testing",
       "trades": 49,
       "winRate": 57.1,
@@ -354,7 +353,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R."
     },
     {
-      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
+      "name": "Down-open buy >0.35ATR, daily \u00b7 ZEB.TO",
       "status": "testing",
       "trades": 64,
       "winRate": 54.7,
@@ -362,7 +361,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 ZEB.TO",
       "status": "testing",
       "trades": 30,
       "winRate": 80.0,
@@ -370,7 +369,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
+      "name": "Big-gap fade >0.75 ATR, daily \u00b7 all 8 tickers pooled",
       "status": "testing",
       "trades": 412,
       "winRate": 55.1,
@@ -378,7 +377,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
     },
     {
-      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
+      "name": "VWAP cross +trendFilter, 30-min \u00b7 XIU.TO",
       "status": "testing",
       "trades": 51,
       "winRate": 54.9,
@@ -449,7 +448,7 @@
     },
     {
       "date": "Nov 10",
-      "text": "Pre-market: mood volatile (hot CPI, Nasdaq futures -1%); UAL 7 sh still held, flatten at 9:31; stocks-in-play list SANM AAON RKLB QBTS; gap checks at the open"
+      "text": "Pre-market: mood volatile (hot CPI, Nasdaq futures -1%); no gap fades at open (XIU -0.19 vs 0.60 trigger, HXT -0.53 vs 1.07, SOFI -0.28 vs 0.71); stocks-in-play list SANM AAON RKLB QBTS; UAL flatten at 9:31"
     }
   ],
   "sources": [

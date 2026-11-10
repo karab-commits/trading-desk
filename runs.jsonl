@@ -137,3 +137,4 @@
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-09T15:50:59-05:00", "end": "2026-11-09T15:51:50-05:00", "date": "2026-11-09", "counts": {"quotesCalls": 1, "ordersSent": 1, "symbolsQuoted": 9}}
 {"bot": "kiwi", "routine": "Trading desk: daily improvement review", "start": "2026-11-09T16:39:05-05:00", "end": "2026-11-09T16:40:40-05:00", "date": "2026-11-09", "counts": {"barCalls": 1, "bars": 40}}
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-10T09:30:50-05:00", "end": "2026-11-10T09:31:08-05:00", "date": "2026-11-10", "counts": {"quotesCalls": 1, "symbolsQuoted": 5}}
+{"bot": "kiwi", "routine": "pre-market", "start": "2026-11-10T09:02:11-05:00", "end": "2026-11-10T09:31:14-05:00", "date": "2026-11-10", "counts": {"quotesCalls": 1, "barCalls": 1, "bars": 5, "symbolsQuoted": 5}}
