@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 10, 2026 11:41 AM ET",
+  "lastUpdated": "Tue Nov 10, 2026 11:58 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "UAL fell to ~118.82 (11:41), near the 117.50 stop. Re-sent sell stop 7 @ 117.50 at 11:42 ET, expires 11:43 ET. 8 earlier approvals today expired.",
+      "status": "UAL 7 sh held, no stop (11:57). 9 approvals today expired unapproved, latest UAL stop 11:42. No new entries.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL stop re-sent 11:42",
-        "detail": "UAL fell to ~118.82 (11:41), near the 117.50 stop. Re-sent sell stop 7 @ 117.50 at 11:42 ET, expires 11:43 ET. 8 earlier approvals today expired.",
-        "since": "2026-11-10T11:41:55-05:00",
+        "now": "Holding: K not approving",
+        "detail": "UAL 7 sh held, no stop (11:57). 9 approvals today expired unapproved, latest UAL stop 11:42. No new entries.",
+        "since": "2026-11-10T11:58:09-05:00",
         "state": "waiting",
-        "next": "Next check 11:55",
+        "next": "Next check 12:10",
         "log": [
           "4:39 PM EOD review done",
           "9:31 ET pre-market: no orders at open",
@@ -515,8 +515,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -17.98,
-    "total": -17.98,
+    "unrealized": -21.79,
+    "total": -21.79,
     "trades": 0
   },
   "pnlWeek": {
@@ -649,8 +649,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 154.315,
-      "priceTime": "2026-11-10T11:41:19-05:00",
+      "last": 152.98,
+      "priceTime": "2026-11-10T11:57:48-05:00",
       "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
@@ -682,8 +682,8 @@
       "planFrom": "journal",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 76.95,
-      "priceTime": "2026-11-10T11:41:20-05:00",
+      "last": 76.755,
+      "priceTime": "2026-11-10T11:57:45-05:00",
       "journalId": "2026-11-10-AAON-1",
       "statusAt": "2026-11-10T10:06:49-05:00"
     },
@@ -716,8 +716,8 @@
       "planFrom": "journal",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 59.14,
-      "priceTime": "2026-11-10T11:41:20-05:00",
+      "last": 59.47,
+      "priceTime": "2026-11-10T11:57:50-05:00",
       "journalId": "2026-11-10-RKLB-1",
       "statusAt": "2026-11-10T10:22:15-05:00"
     },
@@ -750,8 +750,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 10.255,
-      "priceTime": "2026-11-10T11:41:21-05:00",
+      "last": 10.205,
+      "priceTime": "2026-11-10T11:57:49-05:00",
       "statusAt": "2026-11-10T09:49:43-05:00"
     },
     {
@@ -782,8 +782,8 @@
       "planFrom": "fees model",
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 672.005,
-      "priceTime": "2026-11-10T11:41:21-05:00",
+      "last": 669.94,
+      "priceTime": "2026-11-10T11:57:50-05:00",
       "statusAt": "2026-11-10T10:21:38-05:00",
       "triggeredAt": "2026-11-10T10:06:37-05:00",
       "triggerPrice": 679.45,
@@ -813,8 +813,8 @@
       "netProfitAtTargetCAD": 0.19,
       "netLossAtStopCAD": -0.6,
       "planFrom": "fees model",
-      "last": 54.325,
-      "priceTime": "2026-11-10T11:41:21-05:00",
+      "last": 54.335,
+      "priceTime": "2026-11-10T11:57:49-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -842,8 +842,8 @@
       "netProfitAtTargetCAD": 0.53,
       "netLossAtStopCAD": -0.53,
       "planFrom": "fees model",
-      "last": 97.55,
-      "priceTime": "2026-11-10T11:41:21-05:00",
+      "last": 97.555,
+      "priceTime": "2026-11-10T11:57:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -871,13 +871,13 @@
       "netProfitAtTargetCAD": 0.38,
       "netLossAtStopCAD": -0.39,
       "planFrom": "fees model",
-      "last": 16.045,
-      "priceTime": "2026-11-10T11:41:21-05:00",
+      "last": 15.955,
+      "priceTime": "2026-11-10T11:57:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-10T11:41:40-05:00",
+  "watchlistUpdated": "2026-11-10T11:58:09-05:00",
   "scorecard": {
     "updated": "2026-11-09T16:40:01-05:00",
     "currency": "CAD",
@@ -1130,7 +1130,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-10",
-    "updated": "2026-11-10T11:41:39-05:00",
+    "updated": "2026-11-10T11:58:08-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
