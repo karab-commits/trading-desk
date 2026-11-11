@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-10T16:36:20-05:00",
+  "updated": "2026-11-11T09:08:21-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1324,6 +1324,176 @@
     "rejected:2026-11-10-QBTS-1",
     "rejected:2026-11-10-RKLB-1"
    ]
+  }
+ },
+ "2026-11-11": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 1,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 1,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-11T09:08:21-05:00",
+   "keys": [
+    "order:UAL sell 7 (carried exit) Nov 11"
+   ]
+  },
+  "scanner": {
+   "quotesCalls": 1,
+   "barCalls": 3,
+   "bars": 54,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "SOFI",
+     "HXT.TO",
+     "UAL",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 6
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "CRWV",
+     "NVDA",
+     "AMD",
+     "MU",
+     "INTC",
+     "FOSL",
+     "GPRO",
+     "SPCX",
+     "AVGO"
+    ],
+    "total": 9
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 1,
+   "pagesFetched": 0,
+   "xSearches": 1,
+   "xPosts": 10,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: CoreWeave, Nvidia rally; Fossil, Tandy Leather jump",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-coreweave-nvidia-rally-fossil-tandy-leather-jump-5018694",
+      "time": "2026-11-11T09:07:36-05:00"
+     },
+     {
+      "title": "S&P 500, Nasdaq Futures Rise Premarket — CRWV, GPRO, SPCX, NVDA, NLST Stocks In Focus",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-futures-rise-095935016.html",
+      "time": "2026-11-11T04:59:00-05:00"
+     },
+     {
+      "title": "Why Fossil Group Shares Are Trading Higher By Over 26%; Here Are 20 Stocks Moving Premarket",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63133304/why-fossil-group-shares-are-trading-higher-by-over-26-here-are-20-stocks-moving-premarket",
+      "time": "2026-11-11T09:07:36-05:00"
+     },
+     {
+      "title": "CoreWeave Shares Jump 16% on Blowout Q3 Results and Raised Outlook",
+      "url": "https://x.com/i/trending/2120262503016091706",
+      "time": "2026-11-11T09:04:00-05:00"
+     },
+     {
+      "title": "NVIDIA Shares Erase 2026 Gains After Wall Street Downgrade",
+      "url": "https://x.com/i/trending/2120489558261244406",
+      "time": "2026-11-11T07:16:30-05:00"
+     }
+    ],
+    "count": 5,
+    "seen": [
+     "a25d9ece4e25",
+     "7382ce1fd022",
+     "a97a9d182bcd",
+     "c624ec166406",
+     "2a2a236e88b3"
+    ]
+   },
+   "lastRun": null
   }
  }
 }
