@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 11, 2026 9:08 AM ET",
+  "lastUpdated": "Wed Nov 11, 2026 9:40 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -653,10 +653,10 @@
       "reason": "Carried since Nov 9 with no stop. Market sell 7 sent 9:07 AM ET for approval; first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": false,
-      "last": 119.8,
-      "priceTime": "2026-11-11T09:05:26-05:00",
-      "openPnl": -6.13,
-      "openPnlCAD": -8.55,
+      "last": 119.027,
+      "priceTime": "2026-11-11T09:39:47-05:00",
+      "openPnl": -11.62,
+      "openPnlCAD": -16.22,
       "statusAt": "2026-11-11T09:08:03-05:00",
       "fill": 120.66
     },
@@ -680,8 +680,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.215,
-      "priceTime": "2026-11-11T09:07:18-05:00",
+      "last": 55.7657,
+      "priceTime": "2026-11-11T09:39:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -705,8 +705,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 544.58,
-      "priceTime": "2026-11-11T09:07:17-05:00",
+      "last": 529.615,
+      "priceTime": "2026-11-11T09:39:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -730,8 +730,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 61.61,
-      "priceTime": "2026-11-11T09:07:18-05:00",
+      "last": 61.37,
+      "priceTime": "2026-11-11T09:39:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -755,8 +755,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 9.95,
-      "priceTime": "2026-11-11T09:06:52-05:00",
+      "last": 9.7698,
+      "priceTime": "2026-11-11T09:39:49-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -780,13 +780,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 174.115,
-      "priceTime": "2026-11-11T09:07:15-05:00",
+      "last": 174.84,
+      "priceTime": "2026-11-11T09:39:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-11T09:08:03-05:00",
+  "watchlistUpdated": "2026-11-11T09:40:09-05:00",
   "scorecard": {
     "updated": "2026-11-10T16:36:02-05:00",
     "currency": "CAD",
