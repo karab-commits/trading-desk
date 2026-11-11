@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-11T09:40:20-05:00",
+  "updated": "2026-11-11T09:44:53-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1471,7 +1471,7 @@
       "time": "2026-11-11T09:07:36-05:00"
      },
      {
-      "title": "S&P 500, Nasdaq Futures Rise Premarket \u2014 CRWV, GPRO, SPCX, NVDA, NLST Stocks In Focus",
+      "title": "S&P 500, Nasdaq Futures Rise Premarket — CRWV, GPRO, SPCX, NVDA, NLST Stocks In Focus",
       "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-futures-rise-095935016.html",
       "time": "2026-11-11T04:59:00-05:00"
      },
@@ -1501,6 +1501,44 @@
     ]
    },
    "lastRun": null
+  },
+  "options": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 8,
+   "optionContracts": 144,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 13,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 1,
+   "symbolsQuoted": {
+    "unique": [
+     "NOK",
+     "AMZN",
+     "TQQQ",
+     "IBIT",
+     "NVDA",
+     "SOXL",
+     "INTC",
+     "SPCX"
+    ],
+    "total": 8
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-11T09:44:53-05:00"
   }
  }
 }
