@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 11, 2026 12:28 PM ET",
+  "lastUpdated": "Wed Nov 11, 2026 12:41 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -120,7 +120,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "12:27 ET: UAL 7 sh last 118.94, open -17.08 CAD. Sells unapproved; opening gate blocks entries until flat.",
+      "status": "12:41 ET: UAL 7 sh last 119.14, open -15.1 CAD. Sells unapproved; opening gate blocks entries until flat.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -129,14 +129,14 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "UAL held, no stop: on hold",
-        "detail": "12:27 ET: UAL 7 sh last 118.94, open -17.08 CAD. Sells unapproved; opening gate blocks entries until flat.",
-        "since": "2026-11-11T12:28:02-05:00",
+        "detail": "12:41 ET: UAL 7 sh last 119.14, open -15.1 CAD. Sells unapproved; opening gate blocks entries until flat.",
+        "since": "2026-11-11T12:41:15-05:00",
         "state": "waiting",
-        "next": "Intraday check 12:45",
+        "next": "Intraday check 13:00",
         "log": [
-          "10:14 UAL sell 222492c5 expired; no re-send",
           "12:05 watchlist refresh, gate holds",
-          "12:27 watchlist refresh, gate holds"
+          "12:27 watchlist refresh, gate holds",
+          "12:41 watchlist refresh, gate holds"
         ]
       }
     },
@@ -524,8 +524,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -17.08,
-    "total": -17.08,
+    "unrealized": -15.1,
+    "total": -15.1,
     "trades": 0
   },
   "pnlWeek": {
@@ -653,10 +653,10 @@
       "reason": "Carried since Nov 9 with no stop. Market sell 7 sent 9:07 AM ET for approval; first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": false,
-      "last": 118.94,
-      "priceTime": "2026-11-11T12:27:49-05:00",
-      "openPnl": -12.24,
-      "openPnlCAD": -17.08,
+      "last": 119.14,
+      "priceTime": "2026-11-11T12:40:59-05:00",
+      "openPnl": -10.82,
+      "openPnlCAD": -15.1,
       "statusAt": "2026-11-11T09:08:03-05:00",
       "fill": 120.66
     },
@@ -680,8 +680,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 60.745,
-      "priceTime": "2026-11-11T12:27:51-05:00",
+      "last": 61.7096,
+      "priceTime": "2026-11-11T12:41:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -705,8 +705,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 556.97,
-      "priceTime": "2026-11-11T12:27:51-05:00",
+      "last": 560.285,
+      "priceTime": "2026-11-11T12:41:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -730,8 +730,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 63.555,
-      "priceTime": "2026-11-11T12:27:51-05:00",
+      "last": 63.54,
+      "priceTime": "2026-11-11T12:41:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -755,8 +755,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 9.925,
-      "priceTime": "2026-11-11T12:27:51-05:00",
+      "last": 9.985,
+      "priceTime": "2026-11-11T12:40:55-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -780,13 +780,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 176.245,
-      "priceTime": "2026-11-11T12:27:51-05:00",
+      "last": 176.765,
+      "priceTime": "2026-11-11T12:41:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-11T12:28:02-05:00",
+  "watchlistUpdated": "2026-11-11T12:41:15-05:00",
   "scorecard": {
     "updated": "2026-11-10T16:36:02-05:00",
     "currency": "CAD",
@@ -1039,7 +1039,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-11",
-    "updated": "2026-11-11T12:27:53-05:00",
+    "updated": "2026-11-11T12:41:07-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
