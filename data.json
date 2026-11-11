@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 11, 2026 2:36 PM ET",
+  "lastUpdated": "Wed Nov 11, 2026 2:55 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -120,7 +120,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "14:35 ET: UAL 7 sh last 119.00, open -16.49 CAD. Sells unapproved; opening gate blocks entries until flat.",
+      "status": "14:55 ET: UAL 7 sh last 118.845, open -18.03 CAD. Sells unapproved; opening gate blocks entries until flat.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -129,14 +129,14 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "UAL held, no stop: on hold",
-        "detail": "14:35 ET: UAL 7 sh last 119.00, open -16.49 CAD. Sells unapproved; opening gate blocks entries until flat.",
-        "since": "2026-11-11T14:36:03-05:00",
+        "detail": "14:55 ET: UAL 7 sh last 118.845, open -18.03 CAD. Sells unapproved; opening gate blocks entries until flat.",
+        "since": "2026-11-11T14:55:43-05:00",
         "state": "waiting",
         "next": "Close-out check 15:15",
         "log": [
-          "14:08 watchlist refresh, gate holds",
           "14:24 watchlist refresh, gate holds",
-          "14:35 watchlist refresh, gate holds"
+          "14:35 watchlist refresh, gate holds",
+          "14:55 watchlist refresh, gate holds"
         ]
       }
     },
@@ -524,8 +524,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -16.49,
-    "total": -16.49,
+    "unrealized": -18.03,
+    "total": -18.03,
     "trades": 0
   },
   "pnlWeek": {
@@ -653,10 +653,10 @@
       "reason": "Carried since Nov 9 with no stop. Market sell 7 sent 9:07 AM ET for approval; first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": false,
-      "last": 119.0,
-      "priceTime": "2026-11-11T14:35:44-05:00",
-      "openPnl": -11.81,
-      "openPnlCAD": -16.49,
+      "last": 118.845,
+      "priceTime": "2026-11-11T14:55:25-05:00",
+      "openPnl": -12.91,
+      "openPnlCAD": -18.03,
       "statusAt": "2026-11-11T09:08:03-05:00",
       "fill": 120.66
     },
@@ -680,8 +680,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 60.385,
-      "priceTime": "2026-11-11T14:35:51-05:00",
+      "last": 60.37,
+      "priceTime": "2026-11-11T14:55:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -705,8 +705,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 560.92,
-      "priceTime": "2026-11-11T14:35:51-05:00",
+      "last": 559.385,
+      "priceTime": "2026-11-11T14:55:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -730,8 +730,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 62.785,
-      "priceTime": "2026-11-11T14:35:51-05:00",
+      "last": 62.82,
+      "priceTime": "2026-11-11T14:55:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -755,8 +755,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 9.855,
-      "priceTime": "2026-11-11T14:35:34-05:00",
+      "last": 9.87,
+      "priceTime": "2026-11-11T14:55:28-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -780,13 +780,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 175.055,
-      "priceTime": "2026-11-11T14:35:51-05:00",
+      "last": 175.63,
+      "priceTime": "2026-11-11T14:55:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-11T14:36:03-05:00",
+  "watchlistUpdated": "2026-11-11T14:55:43-05:00",
   "scorecard": {
     "updated": "2026-11-10T16:36:02-05:00",
     "currency": "CAD",
@@ -1039,7 +1039,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-11",
-    "updated": "2026-11-11T14:35:54-05:00",
+    "updated": "2026-11-11T14:55:35-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
