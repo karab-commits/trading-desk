@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-11T15:15:22-05:00",
+  "updated": "2026-11-11T15:22:20-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1328,7 +1328,7 @@
  },
  "2026-11-11": {
   "kiwi": {
-   "quotesCalls": 23,
+   "quotesCalls": 24,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -1340,11 +1340,11 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 2,
+   "ordersSent": 3,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 24,
+   "runs": 25,
    "symbolsQuoted": {
     "unique": [
      "UAL",
@@ -1354,17 +1354,18 @@
      "FOSL",
      "NVDA"
     ],
-    "total": 138
+    "total": 139
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-11T15:15:22-05:00",
+   "lastRun": "2026-11-11T15:22:20-05:00",
    "keys": [
     "order:UAL sell 7 (carried exit) Nov 11",
-    "order:UAL sell 7 (9:56 ET)"
+    "order:UAL sell 7 (9:56 ET)",
+    "close-25aec171"
    ]
   },
   "scanner": {

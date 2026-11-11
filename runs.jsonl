@@ -191,3 +191,4 @@
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-11T14:35:54-05:00", "end": "2026-11-11T14:36:03-05:00", "date": "2026-11-11", "counts": {"quotesCalls": 1, "symbolsQuoted": 6}}
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-11T14:55:35-05:00", "end": "2026-11-11T14:55:43-05:00", "date": "2026-11-11", "counts": {"quotesCalls": 1, "symbolsQuoted": 6}}
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-11T15:14:42-05:00", "end": "2026-11-11T15:15:22-05:00", "date": "2026-11-11", "counts": {"quotesCalls": 1, "symbolsQuoted": 6}}
+{"bot": "kiwi", "routine": "close-out", "start": "2026-11-11T15:21:53-05:00", "end": "2026-11-11T15:22:20-05:00", "date": "2026-11-11", "counts": {"quotesCalls": 1, "ordersSent": 1, "symbolsQuoted": 1}}
