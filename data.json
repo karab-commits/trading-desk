@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 11, 2026 9:40 AM ET",
+  "lastUpdated": "Wed Nov 11, 2026 9:56 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -37,16 +37,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No gap fade today",
+        "now": "Gate: wait for UAL flat",
         "detail": "XIU gap +0.15 vs 0.58 trigger (paper only), SOFI +0.29 vs 0.71, HXT -0.02 vs 1.05. No signal.",
-        "since": "2026-11-11T09:08:21-05:00",
-        "state": "done",
+        "since": "2026-11-11T09:56:23-05:00",
+        "state": "idle",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
           "9:31 ET open: no gap fades triggered"
         ],
-        "next": "Intraday check 9:45"
+        "next": "Intraday check 10:10"
       }
     },
     {
@@ -61,11 +61,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "FOSL beat, CRWV beat",
+        "now": "Gate: wait for UAL flat",
         "detail": "Read 5 headlines: CRWV Q3 beat + raised outlook, FOSL surprise profit, NVDA Baird downgrade, GPRO delayed earnings. US bond market closed (Veterans Day); stocks open.",
-        "since": "2026-11-11T09:08:21-05:00",
-        "state": "done",
-        "next": "Debate before any entry"
+        "since": "2026-11-11T09:56:23-05:00",
+        "state": "idle",
+        "next": "Intraday check 10:10"
       }
     },
     {
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scouted CRWV AMD INTC",
+        "now": "Gate: wait for UAL flat",
         "detail": "Stocks in play: CRWV +13% (12.9M pre-mkt sh), INTC +6%, AMD +5.7%, MU +6.7%.",
-        "since": "2026-11-11T09:08:21-05:00",
-        "state": "done",
-        "next": "ORB range 9:45",
+        "since": "2026-11-11T09:56:23-05:00",
+        "state": "idle",
+        "next": "Intraday check 10:10",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -94,7 +94,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "Volatile mood. 0/150 CAD used. Opening gate on until UAL 7 sh is sold.",
+      "status": "No new entries until UAL 7 sh is flat; UAL has no working stop",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -105,9 +105,9 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Gate: UAL must close first",
-        "detail": "Volatile mood. 0/150 CAD used. Opening gate on until UAL 7 sh is sold.",
-        "since": "2026-11-11T09:08:21-05:00",
+        "now": "Gate on: UAL carried",
+        "detail": "No new entries until UAL 7 sh is flat; UAL has no working stop",
+        "since": "2026-11-11T09:56:24-05:00",
         "state": "working",
         "next": "Check each entry",
         "log": [
@@ -120,7 +120,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Market sell UAL 7 sent 9:07 AM ET for approval in Questrade. Opening gate: no new entries until UAL is flat.",
+      "status": "Market sell 7 UAL to flatten the carried position; approve in Questrade by 9:58 ET. Opening gate holds all entries.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,15 +128,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL exit sent, awaiting K",
-        "detail": "Market sell UAL 7 sent 9:07 AM ET for approval in Questrade. Opening gate: no new entries until UAL is flat.",
-        "since": "2026-11-11T09:08:21-05:00",
+        "now": "UAL sell 7 sent 9:56",
+        "detail": "Market sell 7 UAL to flatten the carried position; approve in Questrade by 9:58 ET. Opening gate holds all entries.",
+        "since": "2026-11-11T09:56:23-05:00",
         "state": "waiting",
-        "next": "Intraday check 9:45",
+        "next": "Intraday check 10:10",
         "log": [
-          "9:31 ET pre-market: no orders at open",
           "9:32 ET pre-market: no orders at open",
-          "16:50 EOD review done"
+          "16:50 EOD review done",
+          "9:56 UAL market sell 7 sent (222492c5)"
         ]
       }
     },
@@ -152,11 +152,11 @@
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP ORB: CRWV AMD INTC",
+        "now": "Gate: wait for UAL flat",
         "detail": "Waiting for the 9:30-9:45 range. Blocked until UAL is flat.",
-        "since": "2026-11-11T09:08:21-05:00",
-        "state": "waiting",
-        "next": "Range break after 9:45",
+        "since": "2026-11-11T09:56:23-05:00",
+        "state": "idle",
+        "next": "Intraday check 10:10",
         "log": [
           "10:48 UAL long filled 7 @ 120.66",
           "09:50 AAON long sent, QBTS short rejected",
@@ -195,11 +195,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watching NVDA spreads",
+        "now": "Gate: wait for UAL flat",
         "detail": "NVDA +3.1% pre-market, earnings Nov 17. No chain pulled yet.",
-        "since": "2026-11-11T09:08:21-05:00",
-        "state": "waiting",
-        "next": "Check chain after 9:45"
+        "since": "2026-11-11T09:56:24-05:00",
+        "state": "idle",
+        "next": "Intraday check 10:10"
       }
     }
   ],
@@ -540,7 +540,7 @@
     "total": 67.11,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL sell 7 (carried exit) Nov 11",
+  "lastApprovedIdea": "UAL sell 7 (9:56 ET)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -653,10 +653,10 @@
       "reason": "Carried since Nov 9 with no stop. Market sell 7 sent 9:07 AM ET for approval; first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": false,
-      "last": 119.027,
-      "priceTime": "2026-11-11T09:39:47-05:00",
-      "openPnl": -11.62,
-      "openPnlCAD": -16.22,
+      "last": 119.31,
+      "priceTime": "2026-11-11T09:56:06-05:00",
+      "openPnl": -9.61,
+      "openPnlCAD": -13.41,
       "statusAt": "2026-11-11T09:08:03-05:00",
       "fill": 120.66
     },
@@ -680,8 +680,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.7657,
-      "priceTime": "2026-11-11T09:39:50-05:00",
+      "last": 57.76,
+      "priceTime": "2026-11-11T09:56:06-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -705,8 +705,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 529.615,
-      "priceTime": "2026-11-11T09:39:50-05:00",
+      "last": 532.5181,
+      "priceTime": "2026-11-11T09:56:06-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -730,8 +730,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 61.37,
-      "priceTime": "2026-11-11T09:39:50-05:00",
+      "last": 61.62,
+      "priceTime": "2026-11-11T09:56:06-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -755,8 +755,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 9.7698,
-      "priceTime": "2026-11-11T09:39:49-05:00",
+      "last": 9.9201,
+      "priceTime": "2026-11-11T09:56:06-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -780,13 +780,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 174.84,
-      "priceTime": "2026-11-11T09:39:50-05:00",
+      "last": 173.385,
+      "priceTime": "2026-11-11T09:56:06-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-11T09:40:09-05:00",
+  "watchlistUpdated": "2026-11-11T09:56:15-05:00",
   "scorecard": {
     "updated": "2026-11-10T16:36:02-05:00",
     "currency": "CAD",
@@ -1039,7 +1039,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-11",
-    "updated": "2026-11-11T09:06:29-05:00",
+    "updated": "2026-11-11T09:55:37-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1050,10 +1050,10 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 0.89,
+        "realizedLoss": 0.0,
         "openRisk": 0,
-        "used": 0.89,
-        "left": 34.11
+        "used": 0.0,
+        "left": 35.0
       },
       "news": {
         "budget": 25,
@@ -1080,10 +1080,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 31.32,
+      "used": 31.32,
+      "left": 118.68,
+      "openPositions": 1
     }
   }
 }
