@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated": "2026-11-11T15:53:12-05:00",
+  "updated": "2026-11-11T16:38:17-05:00",
   "date": "2026-11-11",
   "isoWeek": "2026-W46",
-  "marketOpen": true,
+  "marketOpen": false,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.396,
@@ -108,9 +108,9 @@
     }
   },
   "real": {
-    "today": -18.72,
-    "week": -0.89,
-    "allTime": 49.28,
+    "today": -21.75,
+    "week": -22.74,
+    "allTime": 45.26,
     "byBot": {
       "scanner": {
         "today": 0,
@@ -138,9 +138,9 @@
         "allTime": 0
       },
       "quant": {
-        "today": 0,
-        "week": -0.89,
-        "allTime": 67.11
+        "today": -21.75,
+        "week": -22.74,
+        "allTime": 45.26
       },
       "journal": {
         "today": 0,

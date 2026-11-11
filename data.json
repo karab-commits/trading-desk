@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 11, 2026 3:53 PM ET",
+  "lastUpdated": "Wed Nov 11, 2026 4:38 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU gap +0.15 vs 0.58 trigger (paper only), SOFI +0.29 vs 0.71, HXT -0.02 vs 1.05. No signal.",
+      "status": "Opening gate held all entries while UAL stayed open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,23 +37,23 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate: wait for UAL flat",
-        "detail": "XIU gap +0.15 vs 0.58 trigger (paper only), SOFI +0.29 vs 0.71, HXT -0.02 vs 1.05. No signal.",
-        "since": "2026-11-11T09:56:23-05:00",
+        "now": "Blocked by gate today",
+        "detail": "Opening gate held all entries while UAL stayed open",
+        "since": "2026-11-11T16:38:25-05:00",
         "state": "idle",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
           "9:31 ET open: no gap fades triggered"
         ],
-        "next": "Intraday check 10:10"
+        "next": "Nov 12 pre-market 9:00"
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Read 5 headlines: CRWV Q3 beat + raised outlook, FOSL surprise profit, NVDA Baird downgrade, GPRO delayed earnings. US bond market closed (Veterans Day); stocks open.",
+      "status": "Opening gate held all entries while UAL stayed open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +61,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate: wait for UAL flat",
-        "detail": "Read 5 headlines: CRWV Q3 beat + raised outlook, FOSL surprise profit, NVDA Baird downgrade, GPRO delayed earnings. US bond market closed (Veterans Day); stocks open.",
-        "since": "2026-11-11T09:56:23-05:00",
+        "now": "Blocked by gate today",
+        "detail": "Opening gate held all entries while UAL stayed open",
+        "since": "2026-11-11T16:38:25-05:00",
         "state": "idle",
-        "next": "Intraday check 10:10"
+        "next": "Nov 12 pre-market 9:00"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "Stocks in play: CRWV +13% (12.9M pre-mkt sh), INTC +6%, AMD +5.7%, MU +6.7%.",
+      "status": "Opening gate held all entries while UAL stayed open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate: wait for UAL flat",
-        "detail": "Stocks in play: CRWV +13% (12.9M pre-mkt sh), INTC +6%, AMD +5.7%, MU +6.7%.",
-        "since": "2026-11-11T09:56:23-05:00",
+        "now": "Blocked by gate today",
+        "detail": "Opening gate held all entries while UAL stayed open",
+        "since": "2026-11-11T16:38:25-05:00",
         "state": "idle",
-        "next": "Intraday check 10:10",
+        "next": "Nov 12 pre-market 9:00",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -94,7 +94,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "No new entries until UAL 7 sh is flat; UAL has no working stop",
+      "status": "No bot paused; desk risk used 31.32/150 CAD (UAL open)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -106,10 +106,10 @@
       "rejectedAllTime": 6,
       "activity": {
         "now": "Gate on: UAL carried",
-        "detail": "No new entries until UAL 7 sh is flat; UAL has no working stop",
-        "since": "2026-11-11T09:56:24-05:00",
-        "state": "working",
-        "next": "Check each entry",
+        "detail": "No bot paused; desk risk used 31.32/150 CAD (UAL open)",
+        "since": "2026-11-11T16:38:25-05:00",
+        "state": "idle",
+        "next": "Gate check 9:30",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional",
           "09:50 QBTS resize 6->5"
@@ -120,7 +120,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "3:21 PM: market sell of 7 UAL sent to Questrade for K's approval. Last 118.76 USD, open about -13.30 USD.",
+      "status": "0 fills today; UAL 7 sh held, -21.75 CAD today, no stop",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,15 +128,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL sell awaiting OK",
-        "detail": "3:21 PM: market sell of 7 UAL sent to Questrade for K's approval. Last 118.76 USD, open about -13.30 USD.",
-        "since": "2026-11-11T15:22:20-05:00",
-        "state": "waiting",
-        "next": "Review 4:30 PM",
+        "now": "EOD done: UAL still open",
+        "detail": "0 fills today; UAL 7 sh held, -21.75 CAD today, no stop",
+        "since": "2026-11-11T16:38:25-05:00",
+        "state": "idle",
+        "next": "UAL sell at 9:31, then gate",
         "log": [
-          "14:35 watchlist refresh, gate holds",
           "14:55 watchlist refresh, gate holds",
-          "15:15 no entries; prices refreshed"
+          "15:15 no entries; prices refreshed",
+          "16:40 EOD review: 0 fills, no pauses"
         ]
       }
     },
@@ -144,19 +144,19 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Waiting for the 9:30-9:45 range. Blocked until UAL is flat.",
-      "pnlToday": 0,
-      "pnlWeek": -0.89,
-      "pnlAllTime": 67.11,
+      "status": "Forward check on 15-min bars: CRWV +0.74R, AMD -1.01R, INTC no entry (not sent, gate)",
+      "pnlToday": -21.75,
+      "pnlWeek": -22.74,
+      "pnlAllTime": 45.26,
       "tradesToday": 0,
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "Gate: wait for UAL flat",
-        "detail": "Waiting for the 9:30-9:45 range. Blocked until UAL is flat.",
-        "since": "2026-11-11T09:56:23-05:00",
+        "now": "SIP ORB check: -0.27R",
+        "detail": "Forward check on 15-min bars: CRWV +0.74R, AMD -1.01R, INTC no entry (not sent, gate)",
+        "since": "2026-11-11T16:38:25-05:00",
         "state": "idle",
-        "next": "Intraday check 10:10",
+        "next": "Nov 12 pre-market 9:00",
         "log": [
           "10:48 UAL long filled 7 @ 120.66",
           "09:50 AAON long sent, QBTS short rejected",
@@ -168,7 +168,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "No new ideas journaled today; UAL idea 2026-11-09-UAL-1 stays open until sold.",
+      "status": "Scorecard W46: paper -14.56 CAD on 6; UAL idea still open",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -176,18 +176,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Waiting on UAL close",
-        "detail": "No new ideas journaled today; UAL idea 2026-11-09-UAL-1 stays open until sold.",
-        "since": "2026-11-11T15:22:20-05:00",
-        "state": "waiting",
-        "next": "EOD review 4:30 PM"
+        "now": "0 ideas to score today",
+        "detail": "Scorecard W46: paper -14.56 CAD on 6; UAL idea still open",
+        "since": "2026-11-11T16:38:25-05:00",
+        "state": "idle",
+        "next": "Resolve UAL when sold"
       }
     },
     {
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "NVDA +3.1% pre-market, earnings Nov 17. No chain pulled yet.",
+      "status": "Opening gate held all entries while UAL stayed open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -195,23 +195,23 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate: wait for UAL flat",
-        "detail": "NVDA +3.1% pre-market, earnings Nov 17. No chain pulled yet.",
-        "since": "2026-11-11T09:56:24-05:00",
+        "now": "Blocked by gate today",
+        "detail": "Opening gate held all entries while UAL stayed open",
+        "since": "2026-11-11T16:38:25-05:00",
         "state": "idle",
-        "next": "Intraday check 10:10"
+        "next": "Nov 12 pre-market 9:00"
       }
     }
   ],
   "account": {
-    "equity": 2561.6,
+    "equity": 2547.4,
     "buyingPower": 2203.41,
     "currency": "CAD",
     "maxRiskPerTrade": 40,
     "openPositions": 1,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944",
-    "asOf": "2026-11-11T09:06:00-05:00",
+    "asOf": "2026-11-11T16:40:00-05:00",
     "dailyLossStop": 150,
     "maxOpenPositions": 4,
     "buyingPowerUSD": -204.44
@@ -225,7 +225,7 @@
     "target": 48.85,
     "maxLoss": -6.0,
     "projected": 11.5,
-    "status": "No desk trade today (nothing passed). Paper: 4 ideas, 2 filled, net +$73.64 CAD",
+    "status": "No desk trade today: opening gate held all entries while UAL 7 sh stayed open (2 market sells not approved). Paper: 0 ideas logged.",
     "condition": "Buys only if QQC is between $47.67 and $48.10; stop placed after fill"
   },
   "watching": [
@@ -320,7 +320,7 @@
       "trades": 12,
       "winRate": 75.0,
       "expectancyR": 0.542,
-      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh)."
+      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh). Nov 11 forward check (not sent, gate on; Questrade 15-min bars, stop-first, 15:15 exit, 0.02%/side slip): CRWV long +0.74R, AMD short -1.01R, INTC no entry; -0.27R on 2."
     },
     {
       "name": "QQQ relative-volume breakout (Whale Tracker)",
@@ -404,6 +404,10 @@
     }
   ],
   "deskLog": [
+    {
+      "date": "Nov 11",
+      "text": "EOD: 0 real fills. UAL 7 sh (avg 120.66) still held, no stop, third night: -$21.75 CAD today, -$22.74 CAD open after fees. Opening gate blocked every entry; 0 ideas logged. Quant forward check of today's SIP ORB list on 15-min bars: CRWV long +0.74R (time exit), AMD short -1.01R (stopped 10:00), INTC no entry; net -0.27R. No bot paused. Tomorrow: if UAL is still open at 9:30, one sell at 9:31 and stop re-sending; the gate stays."
+    },
     {
       "date": "Nov 11",
       "text": "Pre-market: mood volatile (SPY rv10 30.2% vs 11.4% median). No gap fade at the open (XIU +0.15 vs 0.58 trigger, paper only anyway; SOFI +0.29 vs 0.71; HXT flat vs 1.05). UAL 7 sh still carried with no stop: market sell sent 9:07 AM ET for approval, no new entries until flat. Watching CRWV, AMD, INTC (stocks-in-play ORB), FOSL (news), NVDA (options)."
@@ -520,24 +524,24 @@
     "variantsTested": 124,
     "tradesJournaled": 14,
     "sourcesWatched": 7,
-    "daysRunning": 4
+    "daysRunning": 5
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -18.72,
-    "total": -18.72,
+    "unrealized": -21.75,
+    "total": -21.75,
     "trades": 0
   },
   "pnlWeek": {
     "realized": 0.0,
-    "unrealized": -0.89,
-    "total": -0.89,
+    "unrealized": -22.74,
+    "total": -22.74,
     "trades": 1
   },
   "pnlAllTime": {
     "realized": 68.0,
-    "unrealized": -18.72,
-    "total": 49.28,
+    "unrealized": -22.74,
+    "total": 45.26,
     "trades": 2
   },
   "lastApprovedIdea": "UAL sell 7 (9:56 ET)",
@@ -582,7 +586,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-10T16:36:02-05:00",
+    "updated": "2026-11-11T16:38:17-05:00",
     "ideasLogged": 14,
     "byDate": {
       "2026-11-02": {
@@ -623,6 +627,16 @@
         "filled": 4,
         "wins": 2,
         "real": 0.0,
+        "taken": 0
+      },
+      "2026-11-11": {
+        "net": 0.0,
+        "ideas": 0,
+        "resolved": 0,
+        "open": 0,
+        "filled": 0,
+        "wins": 0,
+        "real": -21.75,
         "taken": 0
       }
     }
@@ -788,7 +802,7 @@
   ],
   "watchlistUpdated": "2026-11-11T15:53:12-05:00",
   "scorecard": {
-    "updated": "2026-11-10T16:36:02-05:00",
+    "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
@@ -1039,7 +1053,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-11",
-    "updated": "2026-11-11T15:14:42-05:00",
+    "updated": "2026-11-11T16:36:40-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
