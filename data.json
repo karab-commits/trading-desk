@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T14:30:55+00:00",
+  "lastUpdated": "Thu Nov 12, 2026 9:31 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -773,7 +773,7 @@
     {
       "date": "2026-11-12",
       "ticker": "UAL",
-      "status": "stopped",
+      "status": "in trade",
       "closeBy": "16:00",
       "addedAt": "2026-11-12T08:59:21-05:00",
       "side": "long",
@@ -797,14 +797,14 @@
       "tested": true,
       "last": 116.83,
       "priceTime": "2026-11-12T09:30:55-05:00",
-      "openPnl": null,
-      "openPnlCAD": null,
-      "statusAt": "2026-11-12T09:30:55-05:00",
+      "openPnl": -27.23,
+      "openPnlCAD": -38.01,
+      "statusAt": "2026-11-12T09:31:01-05:00",
       "fill": 120.66,
       "exitSeen": 116.83
     }
   ],
-  "watchlistUpdated": "2026-11-12T09:30:55-05:00",
+  "watchlistUpdated": "2026-11-12T09:31:01-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
