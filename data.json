@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 12, 2026 9:54 AM ET",
+  "lastUpdated": "Thu Nov 12, 2026 10:07 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "9:30 UAL sell expired unapproved; not re-sending until K responds; no new entries",
+      "status": "10:07 UAL 115.11, no stop; not re-sending sells until K responds; no new entries",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,10 +128,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Gate on: UAL still held",
-        "detail": "9:30 UAL sell expired unapproved; not re-sending until K responds; no new entries",
-        "since": "2026-11-12T09:54:24-05:00",
+        "detail": "10:07 UAL 115.11, no stop; not re-sending sells until K responds; no new entries",
+        "since": "2026-11-12T10:07:25-05:00",
         "state": "working",
-        "next": "Check 10:09",
+        "next": "Check 10:22",
         "log": [
           "14:55 watchlist refresh, gate holds",
           "15:15 no entries; prices refreshed",
@@ -144,7 +144,7 @@
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "Stocks-in-play 15-min ORB on NVDA, NBIS, AMD after 9:45 (testing). Entries blocked until UAL is flat.",
-      "pnlToday": -40.9,
+      "pnlToday": -54.23,
       "pnlWeek": -22.74,
       "pnlAllTime": 45.26,
       "tradesToday": 0,
@@ -535,8 +535,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -40.9,
-    "total": -40.9,
+    "unrealized": -54.23,
+    "total": -54.23,
     "trades": 0
   },
   "pnlWeek": {
@@ -669,8 +669,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 159.61,
-      "priceTime": "2026-11-12T09:40:06-05:00",
+      "last": 160.48,
+      "priceTime": "2026-11-12T10:07:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -693,8 +693,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 130.155,
-      "priceTime": "2026-11-12T09:40:06-05:00",
+      "last": 124.005,
+      "priceTime": "2026-11-12T10:07:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -717,8 +717,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 570.325,
-      "priceTime": "2026-11-12T09:40:06-05:00",
+      "last": 560.63,
+      "priceTime": "2026-11-12T10:07:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -741,8 +741,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 13.95,
-      "priceTime": "2026-11-12T09:40:06-05:00",
+      "last": 13.7763,
+      "priceTime": "2026-11-12T10:07:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 1442.77,
-      "priceTime": "2026-11-12T09:40:06-05:00",
+      "last": 1446.66,
+      "priceTime": "2026-11-12T10:07:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -795,16 +795,16 @@
       "reason": "Carried from Nov 9 (3 nights, no stop). Opening gate: market sell at 9:30 is the first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
-      "last": 116.475,
-      "priceTime": "2026-11-12T09:40:06-05:00",
-      "openPnl": -29.75,
-      "openPnlCAD": -41.53,
-      "statusAt": "2026-11-12T09:54:17-05:00",
+      "last": 115.11,
+      "priceTime": "2026-11-12T10:07:10-05:00",
+      "openPnl": -39.45,
+      "openPnlCAD": -55.07,
+      "statusAt": "2026-11-12T10:07:24-05:00",
       "fill": 120.66,
-      "exitSeen": 116.475
+      "exitSeen": 115.11
     }
   ],
-  "watchlistUpdated": "2026-11-12T09:54:17-05:00",
+  "watchlistUpdated": "2026-11-12T10:07:24-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
@@ -1053,11 +1053,21 @@
       "resolvedAt": "2026-11-02T17:50:00-05:00"
     }
   ],
-  "paused": [],
+  "paused": [
+    {
+      "bot": "quant",
+      "rule": "dailyBudget",
+      "reason": "hit its 35 CAD daily budget (lost 40.90 today)",
+      "since": "2026-11-12",
+      "until": "2026-11-13",
+      "setBy": "risk_check.py",
+      "setAt": "2026-11-12T10:07:16-05:00"
+    }
+  ],
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-12",
-    "updated": "2026-11-12T09:54:00-05:00",
+    "updated": "2026-11-12T10:07:16-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1068,10 +1078,10 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 0.0,
+        "realizedLoss": 40.9,
         "openRisk": 32.31,
-        "used": 32.31,
-        "left": 2.69
+        "used": 73.21,
+        "left": 0.0
       },
       "news": {
         "budget": 25,
