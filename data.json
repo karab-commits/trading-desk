@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "2:59 ET: UAL 7 sh last 111.73, no new entries until flat",
+      "status": "3:15 close-out: sent UAL 7sh market sell (02710d5e) for K's approval; 0 fills today",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate: UAL still held",
-        "detail": "2:59 ET: UAL 7 sh last 111.73, no new entries until flat",
-        "since": "2026-11-12T14:59:45-05:00",
+        "now": "UAL sell awaiting K",
+        "detail": "3:15 close-out: sent UAL 7sh market sell (02710d5e) for K's approval; 0 fills today",
+        "since": "2026-11-12T15:14:43-05:00",
         "state": "waiting",
-        "next": "Close-out check ~3:15 ET",
+        "next": "Review at 4:30 PM",
         "log": [
           "14:55 watchlist refresh, gate holds",
           "15:15 no entries; prices refreshed",
@@ -167,7 +167,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "Scorecard W46: paper -14.56 CAD on 6; UAL idea still open",
+      "status": "No ideas logged or traded Nov 12",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -175,11 +175,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "0 ideas to score today",
-        "detail": "Scorecard W46: paper -14.56 CAD on 6; UAL idea still open",
-        "since": "2026-11-11T16:38:25-05:00",
-        "state": "idle",
-        "next": "Resolve UAL when sold"
+        "now": "0 ideas today",
+        "detail": "No ideas logged or traded Nov 12",
+        "since": "2026-11-12T15:14:43-05:00",
+        "state": "done",
+        "next": "EOD review 4:30 PM"
       }
     },
     {
@@ -535,8 +535,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -65.67,
-    "total": -65.67,
+    "unrealized": -89.79,
+    "total": -89.79,
     "trades": 0
   },
   "pnlWeek": {
@@ -547,8 +547,8 @@
   },
   "pnlAllTime": {
     "realized": 68.0,
-    "unrealized": -22.74,
-    "total": 45.26,
+    "unrealized": -89.79,
+    "total": -21.79,
     "trades": 2
   },
   "lastApprovedIdea": "UAL sell 7 (exit carried position)",
@@ -795,8 +795,8 @@
       "reason": "Carried from Nov 9 (3 nights, no stop). Opening gate: market sell at 9:30 is the first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
-      "last": 111.64,
-      "priceTime": "2026-11-12T15:14:26-05:00",
+      "last": 111.59,
+      "priceTime": "2026-11-12T15:14:43-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-12T15:14:26-05:00",
@@ -804,7 +804,7 @@
       "exitSeen": 111.64
     }
   ],
-  "watchlistUpdated": "2026-11-12T15:14:42-05:00",
+  "watchlistUpdated": "2026-11-12T15:14:43-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
