@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 12, 2026 12:56 PM ET",
+  "lastUpdated": "Thu Nov 12, 2026 1:06 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "12:56 ET: UAL 7 sh last 114.195, no new entries until flat",
+      "status": "1:06 ET: UAL 7 sh last 113.60, no new entries until flat",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,10 +128,10 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Gate: UAL still held",
-        "detail": "12:56 ET: UAL 7 sh last 114.195, no new entries until flat",
-        "since": "2026-11-12T12:56:26-05:00",
+        "detail": "1:06 ET: UAL 7 sh last 113.60, no new entries until flat",
+        "since": "2026-11-12T13:06:57-05:00",
         "state": "waiting",
-        "next": "Next check ~1:11 ET",
+        "next": "Next check ~1:21 ET",
         "log": [
           "14:55 watchlist refresh, gate holds",
           "15:15 no entries; prices refreshed",
@@ -669,8 +669,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 165.24,
-      "priceTime": "2026-11-12T12:56:14-05:00",
+      "last": 165.47,
+      "priceTime": "2026-11-12T13:06:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -693,8 +693,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 129.4701,
-      "priceTime": "2026-11-12T12:56:14-05:00",
+      "last": 129.0156,
+      "priceTime": "2026-11-12T13:06:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -717,8 +717,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 583.2303,
-      "priceTime": "2026-11-12T12:56:14-05:00",
+      "last": 579.4437,
+      "priceTime": "2026-11-12T13:06:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -741,8 +741,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 13.84,
-      "priceTime": "2026-11-12T12:56:14-05:00",
+      "last": 13.75,
+      "priceTime": "2026-11-12T13:06:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 1445.355,
-      "priceTime": "2026-11-12T12:56:14-05:00",
+      "last": 1445.9796,
+      "priceTime": "2026-11-12T13:06:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -795,16 +795,16 @@
       "reason": "Carried from Nov 9 (3 nights, no stop). Opening gate: market sell at 9:30 is the first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
-      "last": 114.195,
-      "priceTime": "2026-11-12T12:56:14-05:00",
-      "openPnl": -45.95,
-      "openPnlCAD": -64.15,
-      "statusAt": "2026-11-12T12:56:26-05:00",
+      "last": 113.6,
+      "priceTime": "2026-11-12T13:06:42-05:00",
+      "openPnl": -50.18,
+      "openPnlCAD": -70.05,
+      "statusAt": "2026-11-12T13:06:57-05:00",
       "fill": 120.66,
-      "exitSeen": 114.195
+      "exitSeen": 113.6
     }
   ],
-  "watchlistUpdated": "2026-11-12T12:56:26-05:00",
+  "watchlistUpdated": "2026-11-12T13:06:57-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
