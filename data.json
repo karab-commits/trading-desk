@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 12, 2026 9:40 AM ET",
+  "lastUpdated": "Thu Nov 12, 2026 9:54 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -144,7 +144,7 @@
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "Stocks-in-play 15-min ORB on NVDA, NBIS, AMD after 9:45 (testing). Entries blocked until UAL is flat.",
-      "pnlToday": 0,
+      "pnlToday": -40.9,
       "pnlWeek": -22.74,
       "pnlAllTime": 45.26,
       "tradesToday": 0,
@@ -534,9 +534,9 @@
     "daysRunning": 5
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": -40.9,
+    "total": -40.9,
     "trades": 0
   },
   "pnlWeek": {
@@ -799,12 +799,12 @@
       "priceTime": "2026-11-12T09:40:06-05:00",
       "openPnl": -29.75,
       "openPnlCAD": -41.53,
-      "statusAt": "2026-11-12T09:40:18-05:00",
+      "statusAt": "2026-11-12T09:54:17-05:00",
       "fill": 120.66,
       "exitSeen": 116.475
     }
   ],
-  "watchlistUpdated": "2026-11-12T09:40:18-05:00",
+  "watchlistUpdated": "2026-11-12T09:54:17-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
@@ -1057,7 +1057,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-12",
-    "updated": "2026-11-12T08:57:25-05:00",
+    "updated": "2026-11-12T09:54:00-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1068,10 +1068,10 @@
       },
       "quant": {
         "budget": 35,
-        "realizedLoss": 21.75,
-        "openRisk": 0,
-        "used": 21.75,
-        "left": 13.25
+        "realizedLoss": 0.0,
+        "openRisk": 32.31,
+        "used": 32.31,
+        "left": 2.69
       },
       "news": {
         "budget": 25,
@@ -1098,10 +1098,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 32.31,
+      "used": 32.31,
+      "left": 117.69,
+      "openPositions": 1
     }
   }
 }
