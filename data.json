@@ -773,7 +773,7 @@
     {
       "date": "2026-11-12",
       "ticker": "UAL",
-      "status": "stopped",
+      "status": "in trade",
       "closeBy": "16:00",
       "addedAt": "2026-11-12T08:59:21-05:00",
       "side": "long",
@@ -792,19 +792,19 @@
       "netLossAtStopCAD": -32.31,
       "planFrom": "journal",
       "journalId": "2026-11-09-UAL-1",
-      "reason": "Carried from Nov 9 (3 nights, no stop). Opening gate: market sell at 9:30 is the first order of the day.",
+      "reason": "still held (7 sh); price is below the old stop level but no stop is working, close-out handling the sell",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
       "last": 111.59,
       "priceTime": "2026-11-12T15:14:43-05:00",
-      "openPnl": null,
-      "openPnlCAD": null,
-      "statusAt": "2026-11-12T15:14:26-05:00",
+      "openPnl": -64.46,
+      "openPnlCAD": -89.98,
+      "statusAt": "2026-11-12T15:14:57-05:00",
       "fill": 120.66,
       "exitSeen": 111.64
     }
   ],
-  "watchlistUpdated": "2026-11-12T15:14:43-05:00",
+  "watchlistUpdated": "2026-11-12T15:14:57-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
