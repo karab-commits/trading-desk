@@ -104,11 +104,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Opening gate: UAL first",
+        "now": "Entries blocked: UAL open",
         "detail": "Mood VOLATILE (SPY rv10 30.6% vs 11.4% median). No bot paused. Opening gate: no new entries until UAL 7 sh is sold. Quant budget left 13.25 CAD after yesterday's UAL mark.",
-        "since": "2026-11-12T08:59:21-05:00",
-        "state": "working",
-        "next": "Check every order",
+        "since": "2026-11-12T09:54:24-05:00",
+        "state": "done",
+        "next": "Check 10:09",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional",
           "09:50 QBTS resize 6->5"
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "9:30 ET: UAL 7 sh market sell sent (instruction 94218b9c, expires 9:32 ET). Opening gate holds until it fills. No gap fades.",
+      "status": "9:30 UAL sell expired unapproved; not re-sending until K responds; no new entries",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL sell: K to approve",
-        "detail": "9:30 ET: UAL 7 sh market sell sent (instruction 94218b9c, expires 9:32 ET). Opening gate holds until it fills. No gap fades.",
-        "since": "2026-11-12T09:30:55-05:00",
-        "state": "waiting",
-        "next": "Intraday check 9:45",
+        "now": "Gate on: UAL still held",
+        "detail": "9:30 UAL sell expired unapproved; not re-sending until K responds; no new entries",
+        "since": "2026-11-12T09:54:24-05:00",
+        "state": "working",
+        "next": "Check 10:09",
         "log": [
           "14:55 watchlist refresh, gate holds",
           "15:15 no entries; prices refreshed",
