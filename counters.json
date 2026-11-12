@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-12T08:59:21-05:00",
+  "updated": "2026-11-12T09:30:55-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1586,11 +1586,11 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 0,
+   "ordersSent": 1,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 0,
+   "runs": 1,
    "symbolsQuoted": {
     "unique": [],
     "total": 0
@@ -1600,10 +1600,13 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": null
+   "lastRun": "2026-11-12T09:30:55-05:00",
+   "keys": [
+    "order:UAL sell 7 (exit carried position)"
+   ]
   },
   "scanner": {
-   "quotesCalls": 1,
+   "quotesCalls": 2,
    "barCalls": 3,
    "bars": 48,
    "optionCalls": 0,
@@ -1629,7 +1632,7 @@
      "SPY",
      "QQQ"
     ],
-    "total": 6
+    "total": 10
    },
    "headlines": {
     "items": [],
@@ -1689,8 +1692,8 @@
    "optionContracts": 0,
    "webSearches": 2,
    "pagesFetched": 0,
-   "xSearches": 0,
-   "xPosts": 0,
+   "xSearches": 1,
+   "xPosts": 10,
    "ideasGenerated": 2,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -1729,15 +1732,21 @@
       "title": "Stock futures decline as Nvidia shares fall, Trump says no deal needed with Iran: Live updates",
       "url": "https://www.cnbc.com/2026/11/11/stock-market-today-live-updates.html",
       "time": "2026-11-12T08:58:45-05:00"
+     },
+     {
+      "title": "Nvidia Board Weighs Ousting CEO Jensen Huang Amid Second Affair Allegations",
+      "url": "https://x.com/i/trending/2120576221176037449",
+      "time": "2026-11-12T08:46:43-05:00"
      }
     ],
-    "count": 5,
+    "count": 6,
     "seen": [
      "eb2dd5df6801",
      "d89b0691e454",
      "7ff7adf9824d",
      "a25798931a76",
-     "c0228f203633"
+     "c0228f203633",
+     "3e070d18f9a1"
     ]
    },
    "lastRun": null

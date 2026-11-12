@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T13:59:29+00:00",
+  "lastUpdated": "2026-11-12T14:30:55+00:00",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU.TO est gap -0.01 vs 0.58 trigger (paper only); HXT.TO +0.08 vs 1.05; SOFI -0.33 vs 0.72. TSX quotes are last night's close until 9:30, re-check at the open.",
+      "status": "Opens vs prior close: XIU.TO 54.61 (-0.21 vs 0.58 trigger, paper only), HXT.TO 98.05 (-0.37 vs 1.05), SOFI 15.83 (-0.43 vs 0.72). No trigger.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,16 +37,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap fades: none pre-mkt",
-        "detail": "XIU.TO est gap -0.01 vs 0.58 trigger (paper only); HXT.TO +0.08 vs 1.05; SOFI -0.33 vs 0.72. TSX quotes are last night's close until 9:30, re-check at the open.",
-        "since": "2026-11-12T08:59:21-05:00",
-        "state": "waiting",
+        "now": "No gap fades at open",
+        "detail": "Opens vs prior close: XIU.TO 54.61 (-0.21 vs 0.58 trigger, paper only), HXT.TO 98.05 (-0.37 vs 1.05), SOFI 15.83 (-0.43 vs 0.72). No trigger.",
+        "since": "2026-11-12T09:30:55-05:00",
+        "state": "done",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
           "9:31 ET open: no gap fades triggered"
-        ],
-        "next": "Re-check XIU/HXT at 9:30"
+        ]
       }
     },
     {
@@ -120,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile. No gap fades. Watchlist NVDA NBIS AMD (SIP ORB), LUNR LLY (news). Sending UAL market sell at the open.",
+      "status": "9:30 ET: UAL 7 sh market sell sent (instruction 94218b9c, expires 9:32 ET). Opening gate holds until it fills. No gap fades.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market: UAL exit 9:30",
-        "detail": "Mood volatile. No gap fades. Watchlist NVDA NBIS AMD (SIP ORB), LUNR LLY (news). Sending UAL market sell at the open.",
-        "since": "2026-11-12T08:59:21-05:00",
-        "state": "working",
-        "next": "UAL sell 9:30",
+        "now": "UAL sell: K to approve",
+        "detail": "9:30 ET: UAL 7 sh market sell sent (instruction 94218b9c, expires 9:32 ET). Opening gate holds until it fills. No gap fades.",
+        "since": "2026-11-12T09:30:55-05:00",
+        "state": "waiting",
+        "next": "Intraday check 9:45",
         "log": [
           "14:55 watchlist refresh, gate holds",
           "15:15 no entries; prices refreshed",
@@ -467,6 +466,10 @@
     {
       "date": "Nov 12",
       "text": "Pre-market: mood volatile (SPY rv10 30.6%; Nasdaq futures -1.3% on NVDA CEO turmoil); no gap fades (XIU -0.01 vs 0.58 trigger, HXT +0.08 vs 1.05, SOFI -0.33 vs 0.72); stocks-in-play NVDA NBIS AMD, news LUNR LLY; UAL 7 sh market sell at 9:30 (opening gate)"
+    },
+    {
+      "date": "Nov 12",
+      "text": "9:30 open: no gap fades (XIU -0.21 vs 0.58, HXT -0.37 vs 1.05, SOFI -0.43 vs 0.72); UAL 7 sh market sell sent for K's approval (expires 9:32 ET)"
     }
   ],
   "sources": [
@@ -548,7 +551,7 @@
     "total": 45.26,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL sell 7 (9:56 ET)",
+  "lastApprovedIdea": "UAL sell 7 (exit carried position)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -770,7 +773,7 @@
     {
       "date": "2026-11-12",
       "ticker": "UAL",
-      "status": "in trade",
+      "status": "stopped",
       "closeBy": "16:00",
       "addedAt": "2026-11-12T08:59:21-05:00",
       "side": "long",
@@ -792,15 +795,16 @@
       "reason": "Carried from Nov 9 (3 nights, no stop). Opening gate: market sell at 9:30 is the first order of the day.",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
-      "last": 116.25,
-      "priceTime": "2026-11-12T08:59:21-05:00",
-      "openPnl": -31.35,
-      "openPnlCAD": -43.76,
-      "statusAt": "2026-11-12T08:59:21-05:00",
-      "fill": 120.66
+      "last": 116.83,
+      "priceTime": "2026-11-12T09:30:55-05:00",
+      "openPnl": null,
+      "openPnlCAD": null,
+      "statusAt": "2026-11-12T09:30:55-05:00",
+      "fill": 120.66,
+      "exitSeen": 116.83
     }
   ],
-  "watchlistUpdated": "2026-11-12T08:59:21-05:00",
+  "watchlistUpdated": "2026-11-12T09:30:55-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
