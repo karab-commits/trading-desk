@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 12, 2026 3:14 PM ET",
+  "lastUpdated": "Thu Nov 12, 2026 3:26 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -669,8 +669,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 163.75,
-      "priceTime": "2026-11-12T15:14:28-05:00",
+      "last": 164.755,
+      "priceTime": "2026-11-12T15:25:56-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -693,8 +693,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 126.901,
-      "priceTime": "2026-11-12T15:14:28-05:00",
+      "last": 126.28,
+      "priceTime": "2026-11-12T15:25:56-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -717,8 +717,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 585.2996,
-      "priceTime": "2026-11-12T15:14:28-05:00",
+      "last": 583.17,
+      "priceTime": "2026-11-12T15:25:56-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -741,8 +741,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 13.445,
-      "priceTime": "2026-11-12T15:14:28-05:00",
+      "last": 13.455,
+      "priceTime": "2026-11-12T15:25:56-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 1437.7585,
-      "priceTime": "2026-11-12T15:14:26-05:00",
+      "last": 1435.52,
+      "priceTime": "2026-11-12T15:25:56-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -792,19 +792,19 @@
       "netLossAtStopCAD": -32.31,
       "planFrom": "journal",
       "journalId": "2026-11-09-UAL-1",
-      "reason": "still held (7 sh); price is below the old stop level but no stop is working, close-out handling the sell",
+      "reason": "still held (7 sh, account checked 3:26 ET); below old stop level but no stop working",
       "tvSymbol": "NASDAQ:UAL",
       "tested": true,
-      "last": 111.59,
-      "priceTime": "2026-11-12T15:14:43-05:00",
-      "openPnl": -64.46,
-      "openPnlCAD": -89.98,
-      "statusAt": "2026-11-12T15:14:57-05:00",
+      "last": 111.825,
+      "priceTime": "2026-11-12T15:25:56-05:00",
+      "openPnl": -62.79,
+      "openPnlCAD": -87.65,
+      "statusAt": "2026-11-12T15:26:30-05:00",
       "fill": 120.66,
-      "exitSeen": 111.64
+      "exitSeen": 111.825
     }
   ],
-  "watchlistUpdated": "2026-11-12T15:14:57-05:00",
+  "watchlistUpdated": "2026-11-12T15:26:30-05:00",
   "scorecard": {
     "updated": "2026-11-11T16:38:17-05:00",
     "currency": "CAD",
@@ -1067,7 +1067,7 @@
   "pausedHistory": [],
   "riskBudgets": {
     "date": "2026-11-12",
-    "updated": "2026-11-12T15:14:12-05:00",
+    "updated": "2026-11-12T15:26:02-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
