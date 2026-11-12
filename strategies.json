@@ -394,7 +394,7 @@
    "name": "Opening-range breakout (15-min), volume-confirmed - live; VWAP reclaim/loss - paper-only (retired)",
    "short": "ORB (VWAP paper)",
    "tested": "ORB testing - walk-forward OOS +0.121R on 51 (positive in 3/4 windows). VWAP retired to paper-only (OOS -0.148R on 46, 1/4 windows).",
-   "testedTag": "ORB testing \u00b7 VWAP paper-only",
+   "testedTag": "ORB testing · VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -796,6 +796,43 @@
        }
       ],
       "netR": -0.27
+     },
+     {
+      "date": "2026-11-12",
+      "source": "Questrade 15-min RTH bars (bars/NVDA_15m.csv, NBIS_15m.csv, AMD_15m.csv), live rule, stop-first, exit 15:00-bar close, 0.02%/side slip",
+      "sent": false,
+      "why": "opening gate (UAL carried)",
+      "trades": [
+       {
+        "ticker": "NVDA",
+        "side": "long",
+        "entry": 162.33,
+        "stop": 148.8,
+        "exit": 163.678,
+        "result": "time",
+        "R": 0.09
+       },
+       {
+        "ticker": "NBIS",
+        "side": "long",
+        "entry": 131.5439,
+        "stop": 118.81,
+        "exit": 126.655,
+        "result": "time",
+        "R": -0.39
+       },
+       {
+        "ticker": "AMD",
+        "side": "long",
+        "entry": 578.7799,
+        "stop": 554.9,
+        "exit": 584.89,
+        "result": "time",
+        "R": 0.25
+       }
+      ],
+      "netR": -0.05,
+      "note": "Watchlist pre-set NVDA/NBIS short, but the live rule takes the first-candle direction (all three opened up). NVDA and AMD are one semis bet under the group rule."
      }
     ]
    },
