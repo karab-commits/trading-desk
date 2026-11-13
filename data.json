@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 13, 2026 1:45 PM ET",
+  "lastUpdated": "Fri Nov 13, 2026 1:53 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -677,8 +677,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 139.16,
-      "priceTime": "2026-11-13T13:44:53-05:00",
+      "last": 139.125,
+      "priceTime": "2026-11-13T13:53:02-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -704,8 +704,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 108.4612,
-      "priceTime": "2026-11-13T13:44:55-05:00",
+      "last": 108.41,
+      "priceTime": "2026-11-13T13:53:00-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -731,8 +731,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 162.09,
-      "priceTime": "2026-11-13T13:45:03-05:00",
+      "last": 162.655,
+      "priceTime": "2026-11-13T13:53:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -758,8 +758,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 95.61,
-      "priceTime": "2026-11-13T13:45:03-05:00",
+      "last": 95.68,
+      "priceTime": "2026-11-13T13:53:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -785,8 +785,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 13.01,
-      "priceTime": "2026-11-13T13:45:02-05:00",
+      "last": 12.945,
+      "priceTime": "2026-11-13T13:53:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -812,13 +812,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 678.68,
-      "priceTime": "2026-11-13T13:45:03-05:00",
+      "last": 679.05,
+      "priceTime": "2026-11-13T13:53:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-13T13:45:11-05:00",
+  "watchlistUpdated": "2026-11-13T13:53:12-05:00",
   "scorecard": {
     "updated": "2026-11-12T16:35:23-05:00",
     "currency": "CAD",
@@ -1082,7 +1082,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-13",
-    "updated": "2026-11-13T13:45:04-05:00",
+    "updated": "2026-11-13T13:53:04-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
