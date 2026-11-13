@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-13T10:35:18-05:00",
+  "updated": "2026-11-13T10:53:23-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1828,7 +1828,7 @@
  },
  "2026-11-13": {
   "kiwi": {
-   "quotesCalls": 6,
+   "quotesCalls": 7,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -1844,7 +1844,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 6,
+   "runs": 7,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -1858,14 +1858,14 @@
      "NU",
      "QQQ"
     ],
-    "total": 45
+    "total": 52
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-13T10:35:18-05:00",
+   "lastRun": "2026-11-13T10:53:23-05:00",
    "keys": [
     "order:UAL sell 7 sh (exit carried position) 9:30"
    ]
