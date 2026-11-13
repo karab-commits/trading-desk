@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-10T16:50:00-05:00",
+ "updated": "2026-11-13T16:50:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -135,7 +135,8 @@
    "options": 56
   },
   "maxLossPerTradeCADByBotNote": "Options Desk cap is 40 USD per spread (0.40 debit), per K on Nov 9, 2026; 40 USD x 1.396 USDCAD = about 56 CAD. Other bots use maxLossPerTradeCAD.",
-  "openingGate": "Set by Kiwi Nov 10 2026 EOD: while a position carried from a previous day (UAL 7 sh) is still open, send no new entries; the first order of the day is that position's exit. Lifted once the account is flat."
+  "openingGate": "Set by Kiwi Nov 10 2026 EOD: while a position carried from a previous day is still open, send no new entries; the first order of the day is that position's exit. LIFTED Nov 13 2026 3:22 PM ET: UAL sold (account flat). Rule stays for any future carry.",
+  "unprotectedFill": "Added by Kiwi Nov 13 2026: if a filled entry has no approved working stop within 5 minutes of the fill, send one market exit and block that bot's new entries until the position is flat. Lesson from UAL: a planned -1R loss became -2.94R because the stop and exits were never approved."
  },
  "strategies": [
   {
@@ -394,7 +395,7 @@
    "name": "Opening-range breakout (15-min), volume-confirmed - live; VWAP reclaim/loss - paper-only (retired)",
    "short": "ORB (VWAP paper)",
    "tested": "ORB testing - walk-forward OOS +0.121R on 51 (positive in 3/4 windows). VWAP retired to paper-only (OOS -0.148R on 46, 1/4 windows).",
-   "testedTag": "ORB testing · VWAP paper-only",
+   "testedTag": "ORB testing \u00b7 VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -724,7 +725,7 @@
    "name": "Stocks-in-play 15-min opening-range breakout",
    "short": "Stocks-in-play ORB",
    "tested": "testing - 5-min quick test with the range-side stop: +0.54R per trade on 12 hand-picked trades (indicative only)",
-   "testedTag": "testing (quick test +, indicative)",
+   "testedTag": "paper only (demoted Nov 13: live record negative)",
    "citation": "Zarattini, C., Barbon, A. & Aziz, A. (2024). A Profitable Day Trading Strategy For The U.S. Equity Market. SSRN 4729284. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4729284",
    "stats": {
     "pilot": {
@@ -833,6 +834,42 @@
       ],
       "netR": -0.05,
       "note": "Watchlist pre-set NVDA/NBIS short, but the live rule takes the first-candle direction (all three opened up). NVDA and AMD are one semis bet under the group rule."
+     },
+     {
+      "date": "2026-11-13",
+      "source": "Questrade 15-min RTH bars (bars/MOD_15m.csv, CBRS_15m.csv, NVDA_15m.csv), live rule (first-candle direction), stop-first, exit 15:00-bar close, 0.02%/side slip",
+      "sent": false,
+      "why": "opening gate (UAL carried until 3:22 PM ET)",
+      "trades": [
+       {
+        "ticker": "MOD",
+        "side": "short",
+        "entry": 138.0,
+        "stop": 146.5,
+        "exit": 137.77,
+        "result": "time",
+        "R": 0.02
+       },
+       {
+        "ticker": "CBRS",
+        "side": "short",
+        "entry": 105.22,
+        "stop": 120.44,
+        "exit": 109.54,
+        "result": "time",
+        "R": -0.29
+       },
+       {
+        "ticker": "NVDA",
+        "side": "short",
+        "entry": 162.19,
+        "stop": 170.0,
+        "exit": 162.96,
+        "result": "time",
+        "R": -0.11
+       }
+      ],
+      "netR": -0.38
      }
     ]
    },
@@ -855,13 +892,18 @@
     "why": "untested strategy"
    },
    "notes": "Stop changed 2026-11-02 (decided by Kiwi): the other side of the opening range only; the 10%-of-ATR stop is removed. Quick test (Questrade 5-min bars, SOFI/AMD/RIVN, 14 hand-picked high-volume days Jul 29 - Nov 2 2026): +0.54R per trade on 12 trades, 75% winners, net of slippage, SEC fee and FX - indicative only (tiny sample, days chosen with hindsight). The old min(range, 10% ATR) stop did -0.62R on the same trades. Wider stop = fewer shares for the same risk: size from the range width. Shares Quant Lab's 35 CAD daily budget with ORB. Risk Manager blocks a second trade in the same correlation group and direction.",
-   "mode": "live",
+   "mode": "paper",
    "aliases": [
     "sip_orb",
     "stocks-in-play",
     "stocks in play",
     "sip"
-   ]
+   ],
+   "demoted": {
+    "date": "2026-11-13",
+    "by": "kiwi",
+    "why": "Live record negative: forward checks -0.70R on 8 (Nov 11 -0.27R, Nov 12 -0.05R, Nov 13 -0.38R); real UAL trade -2.94R (-95.59 CAD, exit not approved for 4 days). Pilot +0.54R was 12 hindsight-picked trades. Back to live only after 20 paper trades with positive average R and a proper out-of-sample test."
+   }
   },
   {
    "bot": "whale",

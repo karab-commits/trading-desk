@@ -654,10 +654,26 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
-      "taken": null,
-      "realPnl": null,
-      "realPnlCAD": null,
+      "result": {
+        "outcome": "stop",
+        "exit": 111.0814,
+        "gross": -67.75,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.016,
+          "fx": 1.02,
+          "total": 1.0323
+        },
+        "net": -68.78,
+        "grossR": -2.973,
+        "netR": -3.018,
+        "netCAD": -96.02,
+        "resolvedAt": "2026-11-13T16:36:20-05:00"
+      },
+      "taken": "yes",
+      "realPnl": -67.05,
+      "realPnlCAD": -93.6,
       "debate": {
         "bull": [
           "Entry is a stop order: only fills if UAL actually breaks the 120.75 opening-range high, so no chase",
@@ -675,7 +691,8 @@
         "at": "2026-11-09T10:04:31-05:00",
         "regime": "volatile",
         "rule": "veto only"
-      }
+      },
+      "realR": -2.942
     },
     {
       "id": "2026-11-09-QQQ-1",
