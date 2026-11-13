@@ -658,7 +658,7 @@
     {
       "date": "2026-11-13",
       "ticker": "MOD",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "long",
@@ -680,12 +680,13 @@
       "last": 138.12,
       "priceTime": "2026-11-13T15:11:01-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     },
     {
       "date": "2026-11-13",
       "ticker": "CBRS",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "long",
@@ -707,12 +708,13 @@
       "last": 109.7892,
       "priceTime": "2026-11-13T15:10:55-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     },
     {
       "date": "2026-11-13",
       "ticker": "NVDA",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "long",
@@ -734,12 +736,13 @@
       "last": 162.8976,
       "priceTime": "2026-11-13T15:11:02-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     },
     {
       "date": "2026-11-13",
       "ticker": "CSCO",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "short",
@@ -761,12 +764,13 @@
       "last": 95.82,
       "priceTime": "2026-11-13T15:11:02-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     },
     {
       "date": "2026-11-13",
       "ticker": "NU",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "long",
@@ -788,12 +792,13 @@
       "last": 13.0718,
       "priceTime": "2026-11-13T15:11:02-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     },
     {
       "date": "2026-11-13",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-13T08:58:40-05:00",
       "side": "long",
@@ -815,10 +820,11 @@
       "last": 679.72,
       "priceTime": "2026-11-13T15:11:02-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-13T15:22:29-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-13T15:11:09-05:00",
+  "watchlistUpdated": "2026-11-13T15:22:29-05:00",
   "scorecard": {
     "updated": "2026-11-12T16:35:23-05:00",
     "currency": "CAD",
