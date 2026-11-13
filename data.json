@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 13, 2026 4:38 PM ET",
+  "lastUpdated": "Fri Nov 13, 2026 5:02 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -177,9 +177,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Week W46 scored",
+        "now": "Week 46 scorecard posted",
         "detail": "UAL resolved: real -95.59 CAD. Week real -95.59 CAD on 1 trade.",
-        "since": "2026-11-13T16:38:23-05:00",
+        "since": "2026-11-13T17:02:13-05:00",
         "state": "done",
         "next": "Fri 5 PM weekly scorecard"
       }
@@ -615,7 +615,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-13T16:36:51-05:00",
+    "updated": "2026-11-13T17:02:07-05:00",
     "ideasLogged": 14,
     "byDate": {
       "2026-11-02": {
@@ -832,7 +832,7 @@
   ],
   "watchlistUpdated": "2026-11-13T15:53:16-05:00",
   "scorecard": {
-    "updated": "2026-11-13T16:36:51-05:00",
+    "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
