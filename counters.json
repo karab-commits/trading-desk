@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-12T16:35:42-05:00",
+  "updated": "2026-11-13T08:58:50-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -1824,6 +1824,171 @@
     "seen": []
    },
    "lastRun": "2026-11-12T09:45:42-05:00"
+  }
+ },
+ "2026-11-13": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "scanner": {
+   "quotesCalls": 1,
+   "barCalls": 3,
+   "bars": 51,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI",
+     "UAL",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 6
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 4,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "MOD",
+     "CBRS",
+     "NVDA",
+     "CSCO",
+     "NU",
+     "PANW",
+     "MSFT"
+    ],
+    "total": 7
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 2,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 2,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Modine surges; Cerebras jumps on Microsoft deal",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-modine-surges-cerebras-jumps-on-microsoft-deal-5024934",
+      "time": "2026-11-13T08:58:16-05:00"
+     },
+     {
+      "title": "Stocks Edge Higher in the Stock Market Today Live, November 13, 2026, as Cerebras Jumps Before Inflation Data",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-13-2026",
+      "time": "2026-11-13T08:58:16-05:00"
+     },
+     {
+      "title": "US futures climb as Wall Street keeps an eye on Nvidia, Microsoft and producer prices",
+      "url": "https://apnews.com/article/stocks-markets-ai-us-oil-f8edd0eeb1494d4d2584715686c5e619",
+      "time": "2026-11-13T08:58:16-05:00"
+     },
+     {
+      "title": "US pre-open: Futures trade higher ahead of October PPI figures",
+      "url": "https://www.sharecast.com/news/market-report-us-pre-open/us-pre-open-futures-trade-higher-ahead-of-october-ppi-figures--24165708.html",
+      "time": "2026-11-13T08:58:16-05:00"
+     },
+     {
+      "title": "Stocks moving the most today: Live updates",
+      "url": "https://www.cnbc.com/2026/11/13/stocks-moving-the-most-today-live-updates.html",
+      "time": "2026-11-13T08:58:16-05:00"
+     }
+    ],
+    "count": 5,
+    "seen": [
+     "85fe631222f5",
+     "672121d6cecb",
+     "7813bec45fe7",
+     "64266fc51ac4",
+     "fc43938fdd7e"
+    ]
+   },
+   "lastRun": null
   }
  }
 }
