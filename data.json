@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 13, 2026 8:59 AM ET",
+  "lastUpdated": "Fri Nov 13, 2026 9:32 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU.TO gap -0.30 vs 0.57 trigger (ATR14 0.765); HXT.TO +0.47 vs 1.02; SOFI +0.16 vs 0.72. Pre-market quotes 8:57 ET.",
+      "status": "Actual opens: XIU.TO 54.64 vs 54.55 close (+0.09, trigger 0.57); HXT.TO 98.02 vs 97.93 (+0.09, trigger 1.02); SOFI 15.675 vs 15.62 (+0.06, trigger 0.72).",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -38,15 +38,14 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No gap fades at open",
-        "detail": "XIU.TO gap -0.30 vs 0.57 trigger (ATR14 0.765); HXT.TO +0.47 vs 1.02; SOFI +0.16 vs 0.72. Pre-market quotes 8:57 ET.",
-        "since": "2026-11-13T08:59:03-05:00",
+        "detail": "Actual opens: XIU.TO 54.64 vs 54.55 close (+0.09, trigger 0.57); HXT.TO 98.02 vs 97.93 (+0.09, trigger 1.02); SOFI 15.675 vs 15.62 (+0.06, trigger 0.72).",
+        "since": "2026-11-13T09:30:24-05:00",
         "state": "done",
         "log": [
           "9:43 ET open scan: 1 untested idea (RIVN)",
           "12:09 ET midday: 2 ideas paper-logged, none taken",
           "9:31 ET open: no gap fades triggered"
-        ],
-        "next": "Re-check gaps at 9:30"
+        ]
       }
     },
     {
@@ -94,7 +93,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "UAL 7 sh carried 5th day (avg 120.66 USD, pre-mkt 111.78). No bots paused; desk budget 0/150 used.",
+      "status": "UAL 7 sh carried 5th day, no stop. Opening gate blocks all new entries. No bots paused; desk budget 0/150 realized.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -105,11 +104,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Opening gate: UAL first",
-        "detail": "UAL 7 sh carried 5th day (avg 120.66 USD, pre-mkt 111.78). No bots paused; desk budget 0/150 used.",
-        "since": "2026-11-13T08:59:03-05:00",
-        "state": "working",
-        "next": "UAL sell 9:30",
+        "now": "Gate shut: UAL still open",
+        "detail": "UAL 7 sh carried 5th day, no stop. Opening gate blocks all new entries. No bots paused; desk budget 0/150 realized.",
+        "since": "2026-11-13T09:32:26-05:00",
+        "state": "waiting",
+        "next": "Re-check at 9:45",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional",
           "09:50 QBTS resize 6->5"
@@ -120,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile. UAL 7 sh still held; one market sell to K's Questrade app at 9:30 ET. Watchlist MOD CBRS NVDA CSCO NU QQQ.",
+      "status": "UAL 7 sh market sell (ca0379af) sent 9:30 ET expired unapproved at 9:32. UAL ~111.25 USD, ~-93 CAD open after fees, no stop. Not re-sending until K responds; opening gate holds entries.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -128,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "UAL sell at 9:30",
-        "detail": "Mood volatile. UAL 7 sh still held; one market sell to K's Questrade app at 9:30 ET. Watchlist MOD CBRS NVDA CSCO NU QQQ.",
-        "since": "2026-11-13T08:59:03-05:00",
+        "now": "UAL sell expired 9:32",
+        "detail": "UAL 7 sh market sell (ca0379af) sent 9:30 ET expired unapproved at 9:32. UAL ~111.25 USD, ~-93 CAD open after fees, no stop. Not re-sending until K responds; opening gate holds entries.",
+        "since": "2026-11-13T09:32:26-05:00",
         "state": "waiting",
-        "next": "Send UAL sell 9:30",
+        "next": "Wait for K on UAL",
         "log": [
           "15:15 no entries; prices refreshed",
           "16:40 EOD review: 0 fills, no pauses",
@@ -204,14 +203,14 @@
     }
   ],
   "account": {
-    "equity": 2488.74,
+    "equity": 2476.57,
     "buyingPower": 2135.46,
     "currency": "CAD",
     "maxRiskPerTrade": 40,
     "openPositions": 1,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944",
-    "asOf": "2026-11-13T08:57:00-05:00",
+    "asOf": "2026-11-13T09:32:00-05:00",
     "dailyLossStop": 150,
     "maxOpenPositions": 4,
     "buyingPowerUSD": -250.06
@@ -225,7 +224,7 @@
     "target": 48.85,
     "maxLoss": -6.0,
     "projected": 11.5,
-    "status": "Opening gate: UAL 7 sh (carried from Nov 9) must be sold first; one UAL market sell goes to K's Questrade app at 9:30 ET. No new entries until UAL is flat.",
+    "status": "UAL 7 sh market sell sent 9:30 ET expired unapproved (ca0379af). Opening gate holds all new entries until UAL is flat; Kiwi is not re-sending until K responds.",
     "condition": "Buys only if QQC is between $47.67 and $48.10; stop placed after fill"
   },
   "watching": [
@@ -479,6 +478,14 @@
     {
       "date": "Nov 13",
       "text": "Pre-market: mood volatile (SPY rv10 30.6% vs 11.4% median; futures +0.2% before PPI); no gap fades (XIU -0.30 vs 0.57 trigger, HXT +0.47 vs 1.02, SOFI +0.16 vs 0.72); stocks-in-play MOD CBRS NVDA, news CSCO NU, whale QQQ; UAL 7 sh still held, market sell at 9:30 (opening gate)"
+    },
+    {
+      "date": "Nov 13",
+      "text": "9:30 open: no gap fades (XIU +0.09 vs 0.57, HXT +0.09 vs 1.02, SOFI +0.06 vs 0.72); UAL 7 sh market sell sent for K's approval (instruction ca0379af, expires 9:32 ET)"
+    },
+    {
+      "date": "Nov 13",
+      "text": "9:32: UAL sell ca0379af expired unapproved; 7 UAL (avg 120.66, now ~111.25 USD) held with no stop, ~-93 CAD open after fees. Not re-sending until K responds; opening gate holds all entries."
     }
   ],
   "sources": [
@@ -543,9 +550,9 @@
     "daysRunning": 6
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": -3.91,
+    "total": -3.91,
     "trades": 0
   },
   "pnlWeek": {
@@ -560,7 +567,7 @@
     "total": -23.28,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL sell 7 (exit carried position)",
+  "lastApprovedIdea": "UAL sell 7 sh (exit carried position) 9:30",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -670,8 +677,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 140.66,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 142.24,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -697,8 +704,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 108.75,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 108.79,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -724,8 +731,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 169.32,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 169.505,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -751,8 +758,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 98.84,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 100.48,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -778,8 +785,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 12.37,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 12.36,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -805,13 +812,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 689.09,
-      "priceTime": "2026-11-13T09:00:00-05:00",
+      "last": 688.4,
+      "priceTime": "2026-11-13T09:30:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-13T08:58:40-05:00",
+  "watchlistUpdated": "2026-11-13T09:30:18-05:00",
   "scorecard": {
     "updated": "2026-11-12T16:35:23-05:00",
     "currency": "CAD",

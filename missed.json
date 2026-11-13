@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-12T15:55:22-05:00",
-  "date": "2026-11-12",
+  "updated": "2026-11-13T09:32:26-05:00",
+  "date": "2026-11-13",
   "isoWeek": "2026-W46",
   "marketOpen": true,
   "currency": "CAD",
@@ -24,11 +24,11 @@
       "net": -14.56,
       "final": -14.56,
       "unrealized": 0.0,
-      "ideas": 6,
+      "ideas": 7,
       "scored": 6,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 3,
       "losses": 3
     },
@@ -36,11 +36,11 @@
       "net": 59.08,
       "final": 59.08,
       "unrealized": 0.0,
-      "ideas": 12,
+      "ideas": 13,
       "scored": 8,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 4,
       "losses": 4
     }
@@ -49,13 +49,13 @@
     "quant": {
       "week": {
         "net": 5.76,
-        "ideas": 5,
+        "ideas": 6,
         "scored": 5,
         "open": 0
       },
       "allTime": {
         "net": 5.76,
-        "ideas": 5,
+        "ideas": 6,
         "scored": 5,
         "open": 0
       },
@@ -108,9 +108,9 @@
     }
   },
   "real": {
-    "today": -89.79,
-    "week": -22.74,
-    "allTime": -21.79,
+    "today": -3.91,
+    "week": -91.28,
+    "allTime": -23.28,
     "byBot": {
       "scanner": {
         "today": 0,
@@ -138,9 +138,9 @@
         "allTime": 0
       },
       "quant": {
-        "today": -65.67,
-        "week": -22.74,
-        "allTime": 45.26
+        "today": 0,
+        "week": -91.28,
+        "allTime": -23.28
       },
       "journal": {
         "today": 0,
@@ -269,6 +269,28 @@
       "net": -14.56,
       "netCAD": -20.32,
       "resolvedAt": "2026-11-09T11:31:03-05:00"
+    },
+    {
+      "id": "2026-11-09-UAL-1",
+      "date": "2026-11-09",
+      "bot": "quant",
+      "ticker": "UAL",
+      "side": "long",
+      "entry": 120.76,
+      "stop": 117.505,
+      "target": 127.27,
+      "shares": 7,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 7,
+      "loggedAt": "2026-11-09T10:04:20-05:00",
+      "why": "untaken",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
     },
     {
       "id": "2026-11-09-NVDA-1",
@@ -428,10 +450,6 @@
     {
       "id": "2026-11-03-AAPL-1",
       "why": "filled with real money"
-    },
-    {
-      "id": "2026-11-09-UAL-1",
-      "why": "in trade (real fill)"
     }
   ]
 }
