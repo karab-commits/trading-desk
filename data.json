@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 13, 2026 3:11 PM ET",
+  "lastUpdated": "Fri Nov 13, 2026 3:22 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -119,7 +119,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "3:11 PM ET: UAL 7 sh last 111.16 USD, no entries; watchlist prices refreshed",
+      "status": "3:21 PM close-out: UAL 7 sh still held (~111.05 USD, -95.91 CAD open). Market sell sent for K's approval; no fills today.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -127,11 +127,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gate shut: UAL still held",
-        "detail": "3:11 PM ET: UAL 7 sh last 111.16 USD, no entries; watchlist prices refreshed",
-        "since": "2026-11-13T15:11:14-05:00",
+        "now": "UAL sell awaiting K OK",
+        "detail": "3:21 PM close-out: UAL 7 sh still held (~111.05 USD, -95.91 CAD open). Market sell sent for K's approval; no fills today.",
+        "since": "2026-11-13T15:22:22-05:00",
         "state": "waiting",
-        "next": "Close-out check 3:15 PM",
+        "next": "Sat/Mon open: confirm UAL flat",
         "log": [
           "11:41 UAL held, no new entries",
           "11:53 UAL held, no new entries",
@@ -144,7 +144,7 @@
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "15-min opening range 9:30-9:45; break triggers after 9:45 (opening gate holds entries while UAL is open). Forward check so far -0.32R over 5.",
-      "pnlToday": 0,
+      "pnlToday": 0.0,
       "pnlWeek": -91.28,
       "pnlAllTime": -23.28,
       "tradesToday": 0,
@@ -167,7 +167,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "SIP ORB/news ideas get journal ids when levels exist after 9:45.",
+      "status": "No real trades or ideas today; UAL carry still open.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -175,11 +175,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "0 ideas logged yet",
-        "detail": "SIP ORB/news ideas get journal ids when levels exist after 9:45.",
-        "since": "2026-11-13T08:59:03-05:00",
-        "state": "idle",
-        "next": "Log triggers"
+        "now": "EOD: 0 fills, 0 ideas",
+        "detail": "No real trades or ideas today; UAL carry still open.",
+        "since": "2026-11-13T15:22:22-05:00",
+        "state": "done",
+        "next": "Review 4:30 PM"
       }
     },
     {
@@ -551,8 +551,8 @@
   },
   "pnlToday": {
     "realized": 0.0,
-    "unrealized": -6.94,
-    "total": -6.94,
+    "unrealized": -2.0,
+    "total": -2.0,
     "trades": 0
   },
   "pnlWeek": {
@@ -567,7 +567,7 @@
     "total": -23.28,
     "trades": 2
   },
-  "lastApprovedIdea": "UAL sell 7 sh (exit carried position) 9:30",
+  "lastApprovedIdea": "UAL close-out sell (market, 7 sh)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
