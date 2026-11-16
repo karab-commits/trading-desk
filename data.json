@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 1:13 PM ET",
+  "lastUpdated": "Mon Nov 16, 2026 1:22 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -72,7 +72,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "5-min closes 663.97-664.78 stayed above session low 663.07",
+      "status": "5-min closes 663.86-664.19 stayed above session low 663.07",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: no RVOL break 13:10",
-        "detail": "5-min closes 663.97-664.78 stayed above session low 663.07",
-        "since": "2026-11-16T13:13:14-05:00",
+        "now": "QQQ: no RVOL break 13:20",
+        "detail": "5-min closes 663.86-664.19 stayed above session low 663.07",
+        "since": "2026-11-16T13:22:26-05:00",
         "state": "idle",
-        "next": "QQQ check 13:25",
+        "next": "QQQ check 13:40",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -129,11 +129,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:10 run: flat, 0 orders",
+        "now": "13:20 run: flat, 0 orders",
         "detail": "Account flat, no working orders; no valid live signal; watchlist prices refreshed",
-        "since": "2026-11-16T13:13:14-05:00",
+        "since": "2026-11-16T13:22:26-05:00",
         "state": "idle",
-        "next": "Next check 13:25",
+        "next": "Next check 13:40",
         "log": [
           "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
@@ -695,8 +695,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.575,
-      "priceTime": "2026-11-16T13:13:07-05:00",
+      "last": 55.426,
+      "priceTime": "2026-11-16T13:22:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -720,8 +720,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 219.55,
-      "priceTime": "2026-11-16T13:13:07-05:00",
+      "last": 219.31,
+      "priceTime": "2026-11-16T13:22:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +744,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 155.95,
-      "priceTime": "2026-11-16T13:13:07-05:00",
+      "last": 155.6303,
+      "priceTime": "2026-11-16T13:22:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -768,8 +768,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 263.675,
-      "priceTime": "2026-11-16T13:12:58-05:00",
+      "last": 263.21,
+      "priceTime": "2026-11-16T13:22:12-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -792,8 +792,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 664.135,
-      "priceTime": "2026-11-16T13:13:07-05:00",
+      "last": 663.67,
+      "priceTime": "2026-11-16T13:22:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -824,14 +824,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.4,
-      "priceTime": "2026-11-16T13:13:06-05:00",
+      "last": 46.38,
+      "priceTime": "2026-11-16T13:22:17-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T13:13:14-05:00",
+  "watchlistUpdated": "2026-11-16T13:22:26-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
@@ -1146,7 +1146,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T13:13:05-05:00",
+    "updated": "2026-11-16T13:22:16-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
