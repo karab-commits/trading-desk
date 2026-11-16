@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 3:13 PM ET",
+  "lastUpdated": "Mon Nov 16, 2026 3:21 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -697,8 +697,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.7122,
-      "priceTime": "2026-11-16T15:10:03-05:00",
+      "last": 55.2667,
+      "priceTime": "2026-11-16T15:21:18-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -722,8 +722,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 216.71,
-      "priceTime": "2026-11-16T15:09:53-05:00",
+      "last": 214.87,
+      "priceTime": "2026-11-16T15:21:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -746,8 +746,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 155.98,
-      "priceTime": "2026-11-16T15:10:03-05:00",
+      "last": 155.21,
+      "priceTime": "2026-11-16T15:21:18-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -770,8 +770,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 260.48,
-      "priceTime": "2026-11-16T15:10:00-05:00",
+      "last": 261.175,
+      "priceTime": "2026-11-16T15:21:14-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -794,8 +794,8 @@
       "netLossAtStop": -0.9,
       "netProfitAtTargetCAD": 2.33,
       "netLossAtStopCAD": -1.26,
-      "last": 661.7,
-      "priceTime": "2026-11-16T15:13:06-05:00",
+      "last": 661.01,
+      "priceTime": "2026-11-16T15:21:18-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -833,14 +833,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.21,
-      "priceTime": "2026-11-16T15:13:06-05:00",
+      "last": 46.16,
+      "priceTime": "2026-11-16T15:21:18-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T15:13:06-05:00",
+  "watchlistUpdated": "2026-11-16T15:21:26-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
