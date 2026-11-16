@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updated": "2026-11-13T15:53:17-05:00",
-  "date": "2026-11-13",
-  "isoWeek": "2026-W46",
+  "updated": "2026-11-16T09:42:33-05:00",
+  "date": "2026-11-16",
+  "isoWeek": "2026-W47",
   "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
@@ -21,71 +21,31 @@
       "losses": 0
     },
     "week": {
-      "net": -14.56,
-      "final": -14.56,
+      "net": 0.0,
+      "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 7,
-      "scored": 6,
+      "ideas": 0,
+      "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
-      "wins": 3,
-      "losses": 3
+      "pending": 0,
+      "wins": 0,
+      "losses": 0
     },
     "allTime": {
       "net": 59.08,
       "final": 59.08,
       "unrealized": 0.0,
-      "ideas": 13,
+      "ideas": 12,
       "scored": 8,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 0,
       "wins": 4,
       "losses": 4
     }
   },
   "byBot": {
-    "quant": {
-      "week": {
-        "net": 5.76,
-        "ideas": 6,
-        "scored": 5,
-        "open": 0
-      },
-      "allTime": {
-        "net": 5.76,
-        "ideas": 6,
-        "scored": 5,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
-        "open": 0
-      }
-    },
-    "whale": {
-      "week": {
-        "net": -20.32,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
-      "allTime": {
-        "net": -20.32,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
-        "open": 0
-      }
-    },
     "scanner": {
       "allTime": {
         "net": 73.64,
@@ -105,12 +65,52 @@
         "scored": 0,
         "open": 0
       }
+    },
+    "quant": {
+      "allTime": {
+        "net": 5.76,
+        "ideas": 5,
+        "scored": 5,
+        "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
+      }
+    },
+    "whale": {
+      "allTime": {
+        "net": -20.32,
+        "ideas": 1,
+        "scored": 1,
+        "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
+      }
     }
   },
   "real": {
-    "today": -2.0,
-    "week": -91.28,
-    "allTime": -23.28,
+    "today": 0.0,
+    "week": -95.59,
+    "allTime": -27.59,
     "byBot": {
       "scanner": {
         "today": 0,
@@ -139,8 +139,8 @@
       },
       "quant": {
         "today": 0,
-        "week": -91.28,
-        "allTime": -23.28
+        "week": -95.59,
+        "allTime": -27.59
       },
       "journal": {
         "today": 0,
@@ -269,28 +269,6 @@
       "net": -14.56,
       "netCAD": -20.32,
       "resolvedAt": "2026-11-09T11:31:03-05:00"
-    },
-    {
-      "id": "2026-11-09-UAL-1",
-      "date": "2026-11-09",
-      "bot": "quant",
-      "ticker": "UAL",
-      "side": "long",
-      "entry": 120.76,
-      "stop": 117.505,
-      "target": 127.27,
-      "shares": 7,
-      "strategy": "Stocks-in-play 15-min ORB",
-      "currency": "USD",
-      "size": 7,
-      "loggedAt": "2026-11-09T10:04:20-05:00",
-      "why": "untaken",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
     },
     {
       "id": "2026-11-09-NVDA-1",
@@ -449,6 +427,10 @@
   "excluded": [
     {
       "id": "2026-11-03-AAPL-1",
+      "why": "filled with real money"
+    },
+    {
+      "id": "2026-11-09-UAL-1",
       "why": "filled with real money"
     }
   ]
