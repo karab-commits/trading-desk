@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16T09:54:30-05:00",
+  "updated": "2026-11-16T10:11:24-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 0,
+      "ideas": 1,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 0,
+      "ideas": 1,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 0
     },
@@ -36,41 +36,41 @@
       "net": 59.08,
       "final": 59.08,
       "unrealized": 0.0,
-      "ideas": 12,
+      "ideas": 13,
       "scored": 8,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 4,
       "losses": 4
     }
   },
   "byBot": {
-    "scanner": {
-      "allTime": {
-        "net": 73.64,
-        "ideas": 6,
-        "scored": 2,
-        "open": 0
-      },
+    "quant": {
       "today": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
         "open": 0
       },
       "week": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
+        "open": 0
+      },
+      "allTime": {
+        "net": 5.76,
+        "ideas": 6,
+        "scored": 5,
         "open": 0
       }
     },
-    "quant": {
+    "scanner": {
       "allTime": {
-        "net": 5.76,
-        "ideas": 5,
-        "scored": 5,
+        "net": 73.64,
+        "ideas": 6,
+        "scored": 2,
         "open": 0
       },
       "today": {
@@ -155,6 +155,27 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-16-QQC-1",
+      "date": "2026-11-16",
+      "bot": "quant",
+      "ticker": "QQC.TO",
+      "side": "short",
+      "entry": 46.46,
+      "stop": 46.92,
+      "target": 45.54,
+      "shares": 53,
+      "strategy": "Opening-range breakout (15-min), volume-confirmed",
+      "currency": "CAD",
+      "size": 53,
+      "loggedAt": "2026-11-16T10:11:02-05:00",
+      "why": "untaken",
+      "state": "waiting",
+      "outcome": null,
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-10-RKLB-1",
       "date": "2026-11-10",

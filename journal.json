@@ -1103,6 +1103,62 @@
         "regime": "volatile",
         "rule": "veto only"
       }
+    },
+    {
+      "id": "2026-11-16-QQC-1",
+      "date": "2026-11-16",
+      "session": "adhoc",
+      "ticker": "QQC.TO",
+      "side": "short",
+      "entry": 46.46,
+      "stop": 46.92,
+      "target": 45.54,
+      "shares": 53,
+      "strategy": "Opening-range breakout (15-min), volume-confirmed",
+      "bot": "quant",
+      "currency": "CAD",
+      "note": "10:00 5-min bar closed 46.50 below OR low 46.60 (OR 46.60-46.92, width 0.24x ATR14 1.31), RVOL 1.76 vs 19-day slot avg, below VWAP 46.73, open 46.87 < prior close 47.39. Size capped by 2,500 CAD buying power. Shortability not verifiable via connector.",
+      "loggedAt": "2026-11-16T10:11:02-05:00",
+      "plan": {
+        "riskGross": 24.38,
+        "rewardGross": 48.76,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 48.76,
+        "netLossAtStop": -24.38,
+        "rrNet": 2.0,
+        "netProfitAtTargetCAD": 48.76,
+        "netLossAtStopCAD": -24.38
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.27,
+        "median": 11.41,
+        "asOfClose": "2026-11-13",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
