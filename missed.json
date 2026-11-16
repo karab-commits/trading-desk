@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16T10:25:46-05:00",
+  "updated": "2026-11-16T10:36:23-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 5.3,
+      "net": 0.0,
       "final": 0.0,
-      "unrealized": 5.3,
+      "unrealized": 0.0,
       "ideas": 1,
       "scored": 0,
-      "open": 1,
+      "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": 5.3,
+      "net": 0.0,
       "final": 0.0,
-      "unrealized": 5.3,
+      "unrealized": 0.0,
       "ideas": 1,
       "scored": 0,
-      "open": 1,
+      "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 0
     },
     "allTime": {
-      "net": 64.38,
+      "net": 59.08,
       "final": 59.08,
-      "unrealized": 5.3,
+      "unrealized": 0.0,
       "ideas": 13,
       "scored": 8,
-      "open": 1,
+      "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 4,
       "losses": 4
     }
@@ -48,22 +48,22 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 5.3,
+        "net": 0.0,
         "ideas": 1,
         "scored": 0,
-        "open": 1
+        "open": 0
       },
       "week": {
-        "net": 5.3,
+        "net": 0.0,
         "ideas": 1,
         "scored": 0,
-        "open": 1
+        "open": 0
       },
       "allTime": {
-        "net": 11.06,
+        "net": 5.76,
         "ideas": 6,
         "scored": 5,
-        "open": 1
+        "open": 0
       }
     },
     "scanner": {
@@ -169,14 +169,13 @@
       "currency": "CAD",
       "size": 53,
       "loggedAt": "2026-11-16T10:11:02-05:00",
-      "why": "untaken",
-      "state": "unrealized",
+      "why": "skipped",
+      "state": "pending",
       "outcome": null,
-      "priceTime": "2026-11-16T10:25:15-05:00",
-      "exit": 46.36,
-      "fees": 0.0,
-      "net": 5.3,
-      "netCAD": 5.3
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
     },
     {
       "id": "2026-11-10-RKLB-1",
