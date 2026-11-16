@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 11:54 AM ET",
+  "lastUpdated": "Mon Nov 16, 2026 12:06 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "INTC/TTWO headlines older than 60 min",
+      "status": "12:05: TTWO reversed below VWAP (no long), INTC shorts blocked until borrow agreement accepted",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +61,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh-headline signal",
-        "detail": "INTC/TTWO headlines older than 60 min",
-        "since": "2026-11-16T10:11:24-05:00",
-        "state": "done",
-        "next": "Recheck 10:22"
+        "now": "No fresh catalyst",
+        "detail": "12:05: TTWO reversed below VWAP (no long), INTC shorts blocked until borrow agreement accepted",
+        "since": "2026-11-16T12:06:51-05:00",
+        "state": "idle",
+        "next": "News check 12:20"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "No new high/low since 10:25 (663.07-672.15)",
+      "status": "12:05 5-min bars: no close beyond session high 672.15 / low 663.07",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ inside session range",
-        "detail": "No new high/low since 10:25 (663.07-672.15)",
-        "since": "2026-11-16T11:54:33-05:00",
-        "state": "done",
-        "next": "QQQ check 12:07",
+        "now": "QQQ: no RVOL breakout",
+        "detail": "12:05 5-min bars: no close beyond session high 672.15 / low 663.07",
+        "since": "2026-11-16T12:06:51-05:00",
+        "state": "idle",
+        "next": "QQQ check 12:20",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -695,8 +695,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.6389,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 56.025,
+      "priceTime": "2026-11-16T12:06:27-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -720,8 +720,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 220.91,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 220.67,
+      "priceTime": "2026-11-16T12:06:27-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +744,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 158.84,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 158.595,
+      "priceTime": "2026-11-16T12:06:27-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -768,8 +768,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 264.97,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 265.14,
+      "priceTime": "2026-11-16T12:06:22-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -792,8 +792,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 666.85,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 667.6,
+      "priceTime": "2026-11-16T12:06:27-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -824,14 +824,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.63,
-      "priceTime": "2026-11-16T11:54:24-05:00",
+      "last": 46.64,
+      "priceTime": "2026-11-16T12:06:27-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T11:54:33-05:00",
+  "watchlistUpdated": "2026-11-16T12:06:50-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
@@ -1146,7 +1146,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T11:54:23-05:00",
+    "updated": "2026-11-16T12:05:57-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
