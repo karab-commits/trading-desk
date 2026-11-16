@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 11:25 AM ET",
+  "lastUpdated": "Mon Nov 16, 2026 11:37 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -82,9 +82,9 @@
       "activity": {
         "now": "QQQ no new session extreme",
         "detail": "Nasdaq futures -0.9%; X flow: SPY, QQQ, IWM puts noted, direction unclear",
-        "since": "2026-11-16T11:25:58-05:00",
+        "since": "2026-11-16T11:37:14-05:00",
         "state": "done",
-        "next": "QQQ check 11:37",
+        "next": "QQQ check 11:52",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -129,11 +129,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:25: no signals, no orders",
+        "now": "11:36: no signals, no orders",
         "detail": "Shorts still need K to accept the borrow agreement",
-        "since": "2026-11-16T11:25:58-05:00",
+        "since": "2026-11-16T11:37:14-05:00",
         "state": "done",
-        "next": "Next run 11:37",
+        "next": "Next run 11:52",
         "log": [
           "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
@@ -145,7 +145,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "No first breakouts on NVDA/AAPL/MSFT; NVDA/LHX paper triggers not hit",
+      "status": "No ORB fill today (QQC short broker-rejected); SIP paper NVDA 163.20 / LHX 268.99 not hit",
       "pnlToday": 0,
       "pnlWeek": -95.59,
       "pnlAllTime": -27.59,
@@ -153,9 +153,9 @@
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "No ORB signal (ends 11:30)",
-        "detail": "No first breakouts on NVDA/AAPL/MSFT; NVDA/LHX paper triggers not hit",
-        "since": "2026-11-16T11:25:58-05:00",
+        "now": "ORB window closed",
+        "detail": "No ORB fill today (QQC short broker-rejected); SIP paper NVDA 163.20 / LHX 268.99 not hit",
+        "since": "2026-11-16T11:37:14-05:00",
         "state": "done",
         "next": "SIP paper watch to 15:15",
         "log": [
@@ -695,8 +695,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 56.1,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 56.0,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -720,8 +720,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 221.12,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 221.37,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +744,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 159.845,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 159.615,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -768,8 +768,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 264.21,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 265.195,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -792,8 +792,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 668.95,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 668.69,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -824,14 +824,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.77,
-      "priceTime": "2026-11-16T11:25:39-05:00",
+      "last": 46.75,
+      "priceTime": "2026-11-16T11:37:03-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T11:25:54-05:00",
+  "watchlistUpdated": "2026-11-16T11:37:14-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
@@ -1146,7 +1146,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T11:25:38-05:00",
+    "updated": "2026-11-16T11:37:02-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
