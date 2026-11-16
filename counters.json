@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-13T16:38:23-05:00",
+  "updated": "2026-11-16T09:06:51-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2061,6 +2061,184 @@
    "fills": 0,
    "backtestVariants": 63,
    "simulatedTrades": 3438,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  }
+ },
+ "2026-11-16": {
+  "kiwi": {
+   "quotesCalls": 1,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 1,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 5
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-16T09:06:51-05:00"
+  },
+  "scanner": {
+   "quotesCalls": 0,
+   "barCalls": 3,
+   "bars": 70,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 2,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 2,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "NVDA",
+     "INTC",
+     "TTWO",
+     "LHX",
+     "ARMK",
+     "T.TO",
+     "TU",
+     "JNJ",
+     "LXEO",
+     "AAL"
+    ],
+    "total": 10
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Nvidia, Intel fall; J&J gains",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-intel-fall-jj-gains-5029397",
+      "time": "2026-11-16T09:06:33-05:00"
+     },
+     {
+      "title": "Stocks making the biggest moves premarket: L3Harris, Nvidia, Take-Two Interactive, Yeti, American Airlines & more",
+      "url": "https://www.cnbc.com/2026/11/16/stocks-moving-the-most-today-live-updates.html",
+      "time": "2026-11-16T09:06:33-05:00"
+     }
+    ],
+    "count": 2,
+    "seen": [
+     "118b03e52fe9",
+     "8c9f4412059f"
+    ]
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 1,
+   "xPosts": 14,
+   "ideasGenerated": 1,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 3,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
    "runs": 0,
    "symbolsQuoted": {
     "unique": [],
