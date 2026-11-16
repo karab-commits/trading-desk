@@ -1159,6 +1159,62 @@
       "taken": null,
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-16-QQQ-1",
+      "date": "2026-11-16",
+      "session": "adhoc",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 661.41,
+      "stop": 661.84,
+      "target": 660.55,
+      "shares": 2,
+      "strategy": "QQQ relative-volume breakout",
+      "bot": "whale",
+      "currency": "USD",
+      "note": "Whale QQQ RVOL breakdown: 13:35 ET 5-min bar closed 661.41 below prior session low 661.42, below VWAP ~666.8, RVOL 2.79 (559,309 vs 19-day slot avg 200,390). Stop = bar high 661.84, target 2R. Spotted at 13:58 run (bar closed 13:40, between runs). Not sent: size capped to 2 sh by ~1,695 USD buying power -> profit at target ~1.72 USD, under the ~8 CAD minimum; also stale (13:40-13:45 bar high 662.42 already took out the stop; last 664.53) and desk shorts are rejected until K accepts the borrow agreement.",
+      "loggedAt": "2026-11-16T13:58:32-05:00",
+      "plan": {
+        "riskGross": 0.86,
+        "rewardGross": 1.72,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0273,
+          "fx": 0.03,
+          "total": 0.0531
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0273,
+          "fx": 0.01,
+          "total": 0.0402
+        },
+        "netProfitAtTarget": 1.67,
+        "netLossAtStop": -0.9,
+        "rrNet": 1.85,
+        "netProfitAtTargetCAD": 2.33,
+        "netLossAtStopCAD": -1.26
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.27,
+        "median": 11.41,
+        "asOfClose": "2026-11-13",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

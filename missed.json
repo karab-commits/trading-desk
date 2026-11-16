@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16T13:36:04-05:00",
+  "updated": "2026-11-16T13:58:45-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 1,
+      "ideas": 2,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 1,
+      "ideas": 2,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
@@ -36,11 +36,11 @@
       "net": 59.08,
       "final": 59.08,
       "unrealized": 0.0,
-      "ideas": 13,
+      "ideas": 14,
       "scored": 8,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 2,
       "wins": 4,
       "losses": 4
     }
@@ -66,31 +66,31 @@
         "open": 0
       }
     },
-    "scanner": {
-      "allTime": {
-        "net": 73.64,
-        "ideas": 6,
-        "scored": 2,
-        "open": 0
-      },
+    "whale": {
       "today": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
         "open": 0
       },
       "week": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
+        "open": 0
+      },
+      "allTime": {
+        "net": -20.32,
+        "ideas": 2,
+        "scored": 1,
         "open": 0
       }
     },
-    "whale": {
+    "scanner": {
       "allTime": {
-        "net": -20.32,
-        "ideas": 1,
-        "scored": 1,
+        "net": 73.64,
+        "ideas": 6,
+        "scored": 2,
         "open": 0
       },
       "today": {
@@ -155,6 +155,28 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-16-QQQ-1",
+      "date": "2026-11-16",
+      "bot": "whale",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 661.41,
+      "stop": 661.84,
+      "target": 660.55,
+      "shares": 2,
+      "strategy": "QQQ relative-volume breakout",
+      "currency": "USD",
+      "size": 2,
+      "loggedAt": "2026-11-16T13:58:32-05:00",
+      "why": "skipped",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-16-QQC-1",
       "date": "2026-11-16",
