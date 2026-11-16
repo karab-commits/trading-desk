@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 1:58 PM ET",
+  "lastUpdated": "Mon Nov 16, 2026 2:09 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -72,7 +72,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "13:35 bar closed 661.41 below session low, RVOL 2.79, under VWAP; only 2 sh fit buying power (+1.67 USD at target, under 8 CAD min), stop already hit by 13:45",
+      "status": "QQQ's first signal today (13:35 short) was logged and skipped; rule allows one per ticker per day",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ short signal, skipped",
-        "detail": "13:35 bar closed 661.41 below session low, RVOL 2.79, under VWAP; only 2 sh fit buying power (+1.67 USD at target, under 8 CAD min), stop already hit by 13:45",
-        "since": "2026-11-16T13:58:45-05:00",
+        "now": "QQQ: first signal used",
+        "detail": "QQQ's first signal today (13:35 short) was logged and skipped; rule allows one per ticker per day",
+        "since": "2026-11-16T14:09:37-05:00",
         "state": "idle",
-        "next": "QQQ: 1 of 2 signals used",
+        "next": "Scout list tomorrow 9:00",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only",
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
@@ -123,7 +123,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "QQQ short signal logged and skipped (too small after buying-power cap, stale); watchlist prices refreshed",
+      "status": "Account flat, no working orders; no new valid signal; watchlist prices refreshed",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -131,11 +131,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:58 run: flat, 0 orders",
-        "detail": "QQQ short signal logged and skipped (too small after buying-power cap, stale); watchlist prices refreshed",
-        "since": "2026-11-16T13:58:45-05:00",
+        "now": "14:09 run: flat, 0 orders",
+        "detail": "Account flat, no working orders; no new valid signal; watchlist prices refreshed",
+        "since": "2026-11-16T14:09:37-05:00",
         "state": "idle",
-        "next": "Next check 14:10",
+        "next": "Next check 14:25",
         "log": [
           "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
@@ -697,8 +697,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 55.66,
-      "priceTime": "2026-11-16T13:57:54-05:00",
+      "last": 55.8487,
+      "priceTime": "2026-11-16T14:09:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -722,8 +722,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 218.01,
-      "priceTime": "2026-11-16T13:57:37-05:00",
+      "last": 216.6,
+      "priceTime": "2026-11-16T14:09:29-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -746,8 +746,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 156.375,
-      "priceTime": "2026-11-16T13:57:54-05:00",
+      "last": 156.1871,
+      "priceTime": "2026-11-16T14:09:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -770,8 +770,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 262.95,
-      "priceTime": "2026-11-16T13:57:41-05:00",
+      "last": 262.065,
+      "priceTime": "2026-11-16T14:09:25-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -794,8 +794,8 @@
       "netLossAtStop": -0.9,
       "netProfitAtTargetCAD": 2.33,
       "netLossAtStopCAD": -1.26,
-      "last": 664.5301,
-      "priceTime": "2026-11-16T13:57:54-05:00",
+      "last": 664.23,
+      "priceTime": "2026-11-16T14:09:30-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -833,14 +833,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.42,
-      "priceTime": "2026-11-16T13:57:53-05:00",
+      "last": 46.37,
+      "priceTime": "2026-11-16T14:09:30-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T13:58:45-05:00",
+  "watchlistUpdated": "2026-11-16T14:09:37-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
@@ -1155,7 +1155,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T13:57:53-05:00",
+    "updated": "2026-11-16T14:09:28-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
