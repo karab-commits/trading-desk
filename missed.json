@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16T10:11:24-05:00",
+  "updated": "2026-11-16T10:25:46-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 0.0,
+      "net": 5.3,
       "final": 0.0,
-      "unrealized": 0.0,
+      "unrealized": 5.3,
       "ideas": 1,
       "scored": 0,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 0,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": 0.0,
+      "net": 5.3,
       "final": 0.0,
-      "unrealized": 0.0,
+      "unrealized": 5.3,
       "ideas": 1,
       "scored": 0,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 0,
       "wins": 0,
       "losses": 0
     },
     "allTime": {
-      "net": 59.08,
+      "net": 64.38,
       "final": 59.08,
-      "unrealized": 0.0,
+      "unrealized": 5.3,
       "ideas": 13,
       "scored": 8,
-      "open": 0,
+      "open": 1,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 0,
       "wins": 4,
       "losses": 4
     }
@@ -48,22 +48,22 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 0.0,
+        "net": 5.3,
         "ideas": 1,
         "scored": 0,
-        "open": 0
+        "open": 1
       },
       "week": {
-        "net": 0.0,
+        "net": 5.3,
         "ideas": 1,
         "scored": 0,
-        "open": 0
+        "open": 1
       },
       "allTime": {
-        "net": 5.76,
+        "net": 11.06,
         "ideas": 6,
         "scored": 5,
-        "open": 0
+        "open": 1
       }
     },
     "scanner": {
@@ -170,11 +170,13 @@
       "size": 53,
       "loggedAt": "2026-11-16T10:11:02-05:00",
       "why": "untaken",
-      "state": "waiting",
+      "state": "unrealized",
       "outcome": null,
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "priceTime": "2026-11-16T10:25:15-05:00",
+      "exit": 46.36,
+      "fees": 0.0,
+      "net": 5.3,
+      "netCAD": 5.3
     },
     {
       "id": "2026-11-10-RKLB-1",

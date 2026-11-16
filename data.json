@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 10:11 AM ET",
+  "lastUpdated": "Mon Nov 16, 2026 10:25 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -80,11 +80,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ no signal (RVOL 0.97)",
+        "now": "QQQ no new session low close",
         "detail": "Nasdaq futures -0.9%; X flow: SPY, QQQ, IWM puts noted, direction unclear",
-        "since": "2026-11-16T10:11:24-05:00",
+        "since": "2026-11-16T10:25:46-05:00",
         "state": "done",
-        "next": "QQQ check 10:22",
+        "next": "QQQ check 10:37",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only"
         ]
@@ -121,7 +121,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Questrade needs K to accept the short borrow agreement in Edge or the app",
+      "status": "Shorts still need K to accept the borrow agreement",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -129,11 +129,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQC short rejected (borrow)",
-        "detail": "Questrade needs K to accept the short borrow agreement in Edge or the app",
-        "since": "2026-11-16T10:11:24-05:00",
+        "now": "10:24: no signals, no orders",
+        "detail": "Shorts still need K to accept the borrow agreement",
+        "since": "2026-11-16T10:25:46-05:00",
         "state": "done",
-        "next": "Next run 10:22",
+        "next": "Next run 10:37",
         "log": [
           "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
@@ -145,7 +145,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "ORB short QQC.TO 53 @ 46.46, stop 46.92, target 45.54 (+48.76/-24.38 CAD); Risk ALLOW; Questrade rejected: short borrow agreement not accepted. SPY/QQQ/XIU/META breaks failed RVOL 1.5",
+      "status": "AMZN short break at 10:05 failed RVOL (1.43 < 1.5); NVDA/LHX paper triggers not hit",
       "pnlToday": 0,
       "pnlWeek": -95.59,
       "pnlAllTime": -27.59,
@@ -153,11 +153,11 @@
       "tradesWeek": 1,
       "tradesAllTime": 2,
       "activity": {
-        "now": "QQC short signal, blocked",
-        "detail": "ORB short QQC.TO 53 @ 46.46, stop 46.92, target 45.54 (+48.76/-24.38 CAD); Risk ALLOW; Questrade rejected: short borrow agreement not accepted. SPY/QQQ/XIU/META breaks failed RVOL 1.5",
-        "since": "2026-11-16T10:11:24-05:00",
+        "now": "No new ORB signal",
+        "detail": "AMZN short break at 10:05 failed RVOL (1.43 < 1.5); NVDA/LHX paper triggers not hit",
+        "since": "2026-11-16T10:25:46-05:00",
         "state": "done",
-        "next": "ORB check 10:22",
+        "next": "ORB check 10:37",
         "log": [
           "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
@@ -695,8 +695,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 56.01,
-      "priceTime": "2026-11-16T10:09:09-05:00",
+      "last": 55.91,
+      "priceTime": "2026-11-16T10:25:15-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -720,8 +720,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 221.925,
-      "priceTime": "2026-11-16T10:09:09-05:00",
+      "last": 222.13,
+      "priceTime": "2026-11-16T10:25:15-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +744,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 158.935,
-      "priceTime": "2026-11-16T10:09:09-05:00",
+      "last": 159.4645,
+      "priceTime": "2026-11-16T10:25:15-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -768,8 +768,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 265.57,
-      "priceTime": "2026-11-16T10:09:09-05:00",
+      "last": 265.795,
+      "priceTime": "2026-11-16T10:25:15-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -792,15 +792,15 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 665.195,
-      "priceTime": "2026-11-16T10:09:09-05:00",
+      "last": 663.63,
+      "priceTime": "2026-11-16T10:25:15-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
     {
       "date": "2026-11-16",
       "ticker": "QQC.TO",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-16T10:11:23-05:00",
       "side": "short",
@@ -824,11 +824,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.48,
-      "priceTime": "2026-11-16T10:10:55-05:00"
+      "last": 46.36,
+      "priceTime": "2026-11-16T10:25:15-05:00",
+      "statusAt": "2026-11-16T10:25:15-05:00",
+      "triggeredAt": "2026-11-16T10:25:15-05:00",
+      "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T10:11:24-05:00",
+  "watchlistUpdated": "2026-11-16T10:25:46-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",
@@ -1143,7 +1146,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T10:11:05-05:00",
+    "updated": "2026-11-16T10:25:14-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
