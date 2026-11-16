@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 3:10 PM ET",
+  "lastUpdated": "Mon Nov 16, 2026 3:13 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -123,7 +123,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account flat, no working orders; no new valid signal; watchlist prices refreshed; no new entries after 15:15",
+      "status": "No positions, no real trades today",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -131,11 +131,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "15:09 run: flat, 0 orders",
-        "detail": "Account flat, no working orders; no new valid signal; watchlist prices refreshed; no new entries after 15:15",
-        "since": "2026-11-16T15:10:05-05:00",
-        "state": "idle",
-        "next": "Close-out check 15:15",
+        "now": "Flat, close-out done",
+        "detail": "No positions, no real trades today",
+        "since": "2026-11-16T15:13:06-05:00",
+        "state": "done",
+        "next": "4:30 review",
         "log": [
           "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
@@ -171,7 +171,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "UAL resolved: real -95.59 CAD. Week real -95.59 CAD on 1 trade.",
+      "status": "QQC, QQQ closed at last price",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -179,11 +179,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Week 46 scorecard posted",
-        "detail": "UAL resolved: real -95.59 CAD. Week real -95.59 CAD on 1 trade.",
-        "since": "2026-11-13T17:02:13-05:00",
-        "state": "done",
-        "next": "Fri 5 PM weekly scorecard"
+        "now": "Resolving paper ideas",
+        "detail": "QQC, QQQ closed at last price",
+        "since": "2026-11-16T15:13:06-05:00",
+        "state": "working",
+        "next": "4:30 review"
       }
     },
     {
@@ -621,7 +621,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-16T13:58:32-05:00",
+    "updated": "2026-11-16T15:13:06-05:00",
     "ideasLogged": 16,
     "byDate": {
       "2026-11-02": {
@@ -665,12 +665,12 @@
         "taken": 0
       },
       "2026-11-16": {
-        "net": 0.0,
+        "net": 12.39,
         "ideas": 2,
-        "resolved": 0,
-        "open": 2,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 2,
+        "open": 0,
+        "filled": 2,
+        "wins": 1,
         "real": 0.0,
         "taken": 0
       }
@@ -794,8 +794,8 @@
       "netLossAtStop": -0.9,
       "netProfitAtTargetCAD": 2.33,
       "netLossAtStopCAD": -1.26,
-      "last": 663.41,
-      "priceTime": "2026-11-16T15:10:03-05:00",
+      "last": 661.7,
+      "priceTime": "2026-11-16T15:13:06-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -833,14 +833,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.28,
-      "priceTime": "2026-11-16T15:10:03-05:00",
+      "last": 46.21,
+      "priceTime": "2026-11-16T15:13:06-05:00",
       "statusAt": "2026-11-16T10:36:22-05:00",
       "triggeredAt": "2026-11-16T10:25:15-05:00",
       "triggerPrice": 46.36
     }
   ],
-  "watchlistUpdated": "2026-11-16T15:10:05-05:00",
+  "watchlistUpdated": "2026-11-16T15:13:06-05:00",
   "scorecard": {
     "updated": "2026-11-13T17:02:07-05:00",
     "currency": "CAD",

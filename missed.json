@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16T15:10:05-05:00",
+  "updated": "2026-11-16T15:13:06-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,80 +9,80 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 0.0,
-      "final": 0.0,
+      "net": 12.39,
+      "final": 12.39,
       "unrealized": 0.0,
       "ideas": 2,
-      "scored": 0,
+      "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
-      "wins": 0,
-      "losses": 0
+      "pending": 0,
+      "wins": 1,
+      "losses": 1
     },
     "week": {
-      "net": 0.0,
-      "final": 0.0,
+      "net": 12.39,
+      "final": 12.39,
       "unrealized": 0.0,
       "ideas": 2,
-      "scored": 0,
+      "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
-      "wins": 0,
-      "losses": 0
+      "pending": 0,
+      "wins": 1,
+      "losses": 1
     },
     "allTime": {
-      "net": 59.08,
-      "final": 59.08,
+      "net": 71.47,
+      "final": 71.47,
       "unrealized": 0.0,
       "ideas": 14,
-      "scored": 8,
+      "scored": 10,
       "open": 0,
       "notTriggered": 4,
-      "pending": 2,
-      "wins": 4,
-      "losses": 4
+      "pending": 0,
+      "wins": 5,
+      "losses": 5
     }
   },
   "byBot": {
     "quant": {
       "today": {
-        "net": 0.0,
+        "net": 13.25,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "week": {
-        "net": 0.0,
+        "net": 13.25,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "allTime": {
-        "net": 5.76,
+        "net": 19.01,
         "ideas": 6,
-        "scored": 5,
+        "scored": 6,
         "open": 0
       }
     },
     "whale": {
       "today": {
-        "net": 0.0,
+        "net": -0.86,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "week": {
-        "net": 0.0,
+        "net": -0.86,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "allTime": {
-        "net": -20.32,
+        "net": -21.18,
         "ideas": 2,
-        "scored": 1,
+        "scored": 2,
         "open": 0
       }
     },
@@ -170,12 +170,13 @@
       "size": 2,
       "loggedAt": "2026-11-16T13:58:32-05:00",
       "why": "skipped",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "time",
+      "exit": 661.7,
+      "fees": 0.036,
+      "net": -0.62,
+      "netCAD": -0.86,
+      "resolvedAt": "2026-11-16T15:13:06-05:00"
     },
     {
       "id": "2026-11-16-QQC-1",
@@ -192,12 +193,13 @@
       "size": 53,
       "loggedAt": "2026-11-16T10:11:02-05:00",
       "why": "skipped",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "time",
+      "exit": 46.21,
+      "fees": 0.0,
+      "net": 13.25,
+      "netCAD": 13.25,
+      "resolvedAt": "2026-11-16T15:13:06-05:00"
     },
     {
       "id": "2026-11-10-RKLB-1",
