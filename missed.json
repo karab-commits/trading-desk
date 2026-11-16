@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updated": "2026-11-16T15:59:28-05:00",
+  "updated": "2026-11-16T16:47:28-05:00",
   "date": "2026-11-16",
   "isoWeek": "2026-W47",
-  "marketOpen": true,
+  "marketOpen": false,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 12.39,
-      "final": 12.39,
+      "net": 12.52,
+      "final": 12.52,
       "unrealized": 0.0,
       "ideas": 2,
       "scored": 2,
@@ -21,8 +21,8 @@
       "losses": 1
     },
     "week": {
-      "net": 12.39,
-      "final": 12.39,
+      "net": 12.52,
+      "final": 12.52,
       "unrealized": 0.0,
       "ideas": 2,
       "scored": 2,
@@ -33,8 +33,8 @@
       "losses": 1
     },
     "allTime": {
-      "net": 71.47,
-      "final": 71.47,
+      "net": 71.6,
+      "final": 71.6,
       "unrealized": 0.0,
       "ideas": 14,
       "scored": 10,
@@ -48,19 +48,19 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 13.25,
+        "net": 13.78,
         "ideas": 1,
         "scored": 1,
         "open": 0
       },
       "week": {
-        "net": 13.25,
+        "net": 13.78,
         "ideas": 1,
         "scored": 1,
         "open": 0
       },
       "allTime": {
-        "net": 19.01,
+        "net": 19.54,
         "ideas": 6,
         "scored": 6,
         "open": 0
@@ -68,19 +68,19 @@
     },
     "whale": {
       "today": {
-        "net": -0.86,
+        "net": -1.26,
         "ideas": 1,
         "scored": 1,
         "open": 0
       },
       "week": {
-        "net": -0.86,
+        "net": -1.26,
         "ideas": 1,
         "scored": 1,
         "open": 0
       },
       "allTime": {
-        "net": -21.18,
+        "net": -21.58,
         "ideas": 2,
         "scored": 2,
         "open": 0
@@ -109,7 +109,7 @@
   },
   "real": {
     "today": 0.0,
-    "week": -95.59,
+    "week": 0.0,
     "allTime": -27.59,
     "byBot": {
       "scanner": {
@@ -139,7 +139,7 @@
       },
       "quant": {
         "today": 0,
-        "week": -95.59,
+        "week": 0,
         "allTime": -27.59
       },
       "journal": {
@@ -171,12 +171,12 @@
       "loggedAt": "2026-11-16T13:58:32-05:00",
       "why": "skipped",
       "state": "final",
-      "outcome": "time",
-      "exit": 661.7,
-      "fees": 0.036,
-      "net": -0.62,
-      "netCAD": -0.86,
-      "resolvedAt": "2026-11-16T15:13:06-05:00"
+      "outcome": "stop",
+      "exit": 661.84,
+      "fees": 0.0402,
+      "net": -0.9,
+      "netCAD": -1.26,
+      "resolvedAt": "2026-11-16T16:44:57-05:00"
     },
     {
       "id": "2026-11-16-QQC-1",
@@ -195,11 +195,11 @@
       "why": "skipped",
       "state": "final",
       "outcome": "time",
-      "exit": 46.21,
+      "exit": 46.2,
       "fees": 0.0,
-      "net": 13.25,
-      "netCAD": 13.25,
-      "resolvedAt": "2026-11-16T15:13:06-05:00"
+      "net": 13.78,
+      "netCAD": 13.78,
+      "resolvedAt": "2026-11-16T16:44:57-05:00"
     },
     {
       "id": "2026-11-10-RKLB-1",

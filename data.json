@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 16, 2026 3:59 PM ET",
+  "lastUpdated": "Mon Nov 16, 2026 4:47 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,8 +29,8 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Gaps XIU -0.03, SOFI -0.31, HXT -0.11, all under 0.75x ATR",
-      "pnlToday": 0,
+      "status": "XIU +0.20 vs 0.56, HXT +0.17 vs 0.98, SOFI -0.35 vs 0.73; XIU OOS re-check unchanged (paper only)",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
@@ -38,53 +38,53 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No gap fade today",
-        "detail": "Gaps XIU -0.03, SOFI -0.31, HXT -0.11, all under 0.75x ATR",
-        "since": "2026-11-16T10:11:24-05:00",
-        "state": "done",
+        "detail": "XIU +0.20 vs 0.56, HXT +0.17 vs 0.98, SOFI -0.35 vs 0.73; XIU OOS re-check unchanged (paper only)",
+        "since": "2026-11-16T16:47:28-05:00",
+        "state": "idle",
         "log": [
           "12:09 ET midday: 2 ideas paper-logged, none taken",
           "9:31 ET open: no gap fades triggered",
           "9:10 ET: no gap fades at the open"
         ],
-        "next": "Idle until tomorrow"
+        "next": "Gap scan 9:10 ET Tue"
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "12:05: TTWO reversed below VWAP (no long), INTC shorts blocked until borrow agreement accepted",
-      "pnlToday": 0,
+      "status": "INTC short blocked (borrow agreement), TTWO lost VWAP - no long",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst",
-        "detail": "12:05: TTWO reversed below VWAP (no long), INTC shorts blocked until borrow agreement accepted",
-        "since": "2026-11-16T12:06:51-05:00",
+        "now": "No news trade today",
+        "detail": "INTC short blocked (borrow agreement), TTWO lost VWAP - no long",
+        "since": "2026-11-16T16:47:28-05:00",
         "state": "idle",
-        "next": "News check 12:20"
+        "next": "Headline scan 9:00 ET Tue"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
-      "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); trades the QQQ-only RVOL breakout (rest retired Nov 2)",
-      "status": "QQQ's first signal today (13:35 short) was logged and skipped; rule allows one per ticker per day",
-      "pnlToday": 0,
+      "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
+      "status": "Demoted Nov 16: 2/2 signals stopped (-2.07R), no OOS test; scout role unchanged",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: first signal used",
-        "detail": "QQQ's first signal today (13:35 short) was logged and skipped; rule allows one per ticker per day",
-        "since": "2026-11-16T14:09:37-05:00",
+        "now": "QQQ RVOL now paper only",
+        "detail": "Demoted Nov 16: 2/2 signals stopped (-2.07R), no OOS test; scout role unchanged",
+        "since": "2026-11-16T16:47:28-05:00",
         "state": "idle",
-        "next": "Scout list tomorrow 9:00",
+        "next": "SIP scout list 9:45 ET Tue",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only",
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
@@ -96,7 +96,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "Mood volatile; no bot paused; desk loss 0/150 CAD",
+      "status": "Flat, 0 open positions, all bot budgets full",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -107,11 +107,11 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "ALLOW QQC short 24.38",
-        "detail": "Mood volatile; no bot paused; desk loss 0/150 CAD",
-        "since": "2026-11-16T10:11:24-05:00",
-        "state": "done",
-        "next": "Check each signal",
+        "now": "No pauses, 0/150 used",
+        "detail": "Flat, 0 open positions, all bot budgets full",
+        "since": "2026-11-16T16:47:28-05:00",
+        "state": "idle",
+        "next": "Pre-trade checks 9:45 ET Tue",
         "log": [
           "9:45 ET: 4 rejected, RIVN conditional",
           "09:50 QBTS resize 6->5",
@@ -123,7 +123,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No positions, no real trades today",
+      "status": "0 real trades, 0.00 CAD; paper +12.52 CAD (QQC +13.78, QQQ -1.26). Shorts blocked until K accepts the borrow agreement.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -131,15 +131,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Flat, close-out done",
-        "detail": "No positions, no real trades today",
-        "since": "2026-11-16T15:13:06-05:00",
+        "now": "EOD review done",
+        "detail": "0 real trades, 0.00 CAD; paper +12.52 CAD (QQC +13.78, QQQ -1.26). Shorts blocked until K accepts the borrow agreement.",
+        "since": "2026-11-16T16:47:28-05:00",
         "state": "done",
-        "next": "4:30 review",
+        "next": "Pre-market scan 9:10 ET Tue",
         "log": [
-          "15:11 gate shut, prices refreshed",
           "16:45 EOD review Nov 13",
-          "9:15 ET pre-market: no opening orders"
+          "9:15 ET pre-market: no opening orders",
+          "16:55 EOD review: Whale QQQ RVOL -> paper only"
         ]
       }
     },
@@ -147,19 +147,19 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "No ORB fill today (QQC short broker-rejected); SIP paper NVDA 163.20 / LHX 268.99 not hit",
-      "pnlToday": 0,
-      "pnlWeek": -95.59,
+      "status": "QQC ORB paper +13.78 CAD (+0.56R); SIP forward NVDA/LHX no entry (-0.70R on 8)",
+      "pnlToday": 0.0,
+      "pnlWeek": 0.0,
       "pnlAllTime": -27.59,
       "tradesToday": 0,
-      "tradesWeek": 1,
+      "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "ORB window closed",
-        "detail": "No ORB fill today (QQC short broker-rejected); SIP paper NVDA 163.20 / LHX 268.99 not hit",
-        "since": "2026-11-16T11:37:14-05:00",
+        "now": "QQC short rejected (borrow)",
+        "detail": "QQC ORB paper +13.78 CAD (+0.56R); SIP forward NVDA/LHX no entry (-0.70R on 8)",
+        "since": "2026-11-16T16:47:28-05:00",
         "state": "done",
-        "next": "SIP paper watch to 15:15",
+        "next": "ORB + SIP paper 9:45 ET Tue",
         "log": [
           "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
@@ -171,7 +171,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "QQC, QQQ closed at last price",
+      "status": "QQC +0.56R time 46.20, QQQ -1.05R stop; week paper +12.52 CAD, real 0",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -179,30 +179,30 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Resolving paper ideas",
-        "detail": "QQC, QQQ closed at last price",
-        "since": "2026-11-16T15:13:06-05:00",
-        "state": "working",
-        "next": "4:30 review"
+        "now": "2 ideas scored",
+        "detail": "QQC +0.56R time 46.20, QQQ -1.05R stop; week paper +12.52 CAD, real 0",
+        "since": "2026-11-16T16:47:28-05:00",
+        "state": "done",
+        "next": "Log ideas from 9:10 ET Tue"
       }
     },
     {
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "No spread today; NVDA reports Tue after close",
-      "pnlToday": 0,
+      "status": "NVDA reports Tue after close",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "NVDA earnings Tue",
-        "detail": "No spread today; NVDA reports Tue after close",
-        "since": "2026-11-16T09:06:51-05:00",
+        "now": "No spread today",
+        "detail": "NVDA reports Tue after close",
+        "since": "2026-11-16T16:47:28-05:00",
         "state": "idle",
-        "next": "Intraday check 9:45"
+        "next": "Post-open run 9:45 ET Tue"
       }
     }
   ],
@@ -214,22 +214,24 @@
     "openPositions": 0,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944",
-    "asOf": "2026-11-16T09:10:00-05:00",
+    "asOf": "2026-11-16T16:50:00-05:00",
     "dailyLossStop": 150,
     "maxOpenPositions": 4,
     "buyingPowerUSD": -17.63
   },
   "todayTrade": {
     "symbol": "QQC.TO",
-    "side": "BUY",
-    "qty": 10,
-    "entry": 47.7,
-    "stop": 47.1,
-    "target": 48.85,
-    "maxLoss": -6.0,
-    "projected": 11.5,
-    "status": "UAL 7 sh sold 3:22 PM ET at 111.08 (approved): -95.59 CAD real. Account flat; opening gate lifted for Monday.",
-    "condition": "Buys only if QQC is between $47.67 and $48.10; stop placed after fill"
+    "side": "SHORT",
+    "qty": 53,
+    "entry": 46.46,
+    "stop": 46.92,
+    "target": 45.54,
+    "maxLoss": -24.38,
+    "projected": 48.76,
+    "projectedNet": 48.76,
+    "maxLossNet": -24.38,
+    "status": "Not traded: Questrade rejected the short at 10:10 AM ET (borrow agreement not accepted). Paper +13.78 CAD after fees (+0.56R) at the 46.20 close. 0 real trades today; account flat.",
+    "condition": "Quant ORB short below the 46.60 opening-range low; shorts need K to accept the borrow agreement once in Questrade"
   },
   "watching": [
     {
@@ -315,7 +317,7 @@
       "trades": 50,
       "winRate": 58.0,
       "expectancyR": 0.188,
-      "note": "Demoted Nov 10 2026 by Kiwi: walk-forward out-of-sample turned slightly negative (-0.004R on 40 trades, positive in 2/5 test windows, was +0.037R, 3/5 on Nov 2). Full-sample +0.188R on 50 is in-sample only. Paper only (logged, not sent) until OOS is positive in most windows again. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper."
+      "note": "Demoted Nov 10 2026 by Kiwi: walk-forward out-of-sample turned slightly negative (-0.004R on 40 trades, positive in 2/5 test windows, was +0.037R, 3/5 on Nov 2). Full-sample +0.188R on 50 is in-sample only. Paper only (logged, not sent) until OOS is positive in most windows again. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper. Nov 16 re-check (walkforward-2026-11-16): unchanged, OOS -0.004R on 40, 2/5 windows, 0 look-ahead leaks; stays paper only (retire line is <= -0.05R on 30+)."
     },
     {
       "name": "Stocks-in-play 15-min ORB (Quant Lab, scout Whale Tracker)",
@@ -323,15 +325,15 @@
       "trades": 12,
       "winRate": 75.0,
       "expectancyR": 0.542,
-      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh). Nov 11 forward check (not sent, gate on; Questrade 15-min bars, stop-first, 15:15 exit, 0.02%/side slip): CRWV long +0.74R, AMD short -1.01R, INTC no entry; -0.27R on 2. Nov 12 forward check (not sent, gate on; 15-min bars, stop-first, 15:15 exit): NVDA long +0.09R, NBIS long -0.39R, AMD long +0.25R; -0.05R on 3. Forward checks so far: -0.32R on 5. UAL (Nov 9) is now about -2.9R open because no exit or stop was approved. Nov 13: UAL finally sold 3:22 PM ET at 111.08 (approved): -67.05 USD / -95.59 CAD real, -2.94R vs the planned 1R. Nov 13 forward check (not sent, gate on; 15-min bars, first-candle direction, stop-first, 15:15 exit): MOD short +0.02R, CBRS short -0.29R, NVDA short -0.11R; -0.38R on 3. Forward checks now -0.70R on 8. DEMOTED to paper only by Kiwi Nov 13: live record negative. Back to live only after 20 paper trades with positive average R plus an out-of-sample test."
+      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh). Nov 11 forward check (not sent, gate on; Questrade 15-min bars, stop-first, 15:15 exit, 0.02%/side slip): CRWV long +0.74R, AMD short -1.01R, INTC no entry; -0.27R on 2. Nov 12 forward check (not sent, gate on; 15-min bars, stop-first, 15:15 exit): NVDA long +0.09R, NBIS long -0.39R, AMD long +0.25R; -0.05R on 3. Forward checks so far: -0.32R on 5. UAL (Nov 9) is now about -2.9R open because no exit or stop was approved. Nov 13: UAL finally sold 3:22 PM ET at 111.08 (approved): -67.05 USD / -95.59 CAD real, -2.94R vs the planned 1R. Nov 13 forward check (not sent, gate on; 15-min bars, first-candle direction, stop-first, 15:15 exit): MOD short +0.02R, CBRS short -0.29R, NVDA short -0.11R; -0.38R on 3. Forward checks now -0.70R on 8. DEMOTED to paper only by Kiwi Nov 13: live record negative. Back to live only after 20 paper trades with positive average R plus an out-of-sample test. Nov 16 forward check (paper only): NVDA and LHX both opened up and never broke the 15-min high -> 0 entries; forward record still -0.70R on 8."
     },
     {
       "name": "QQQ relative-volume breakout (Whale Tracker)",
-      "status": "testing",
-      "trades": 1,
+      "status": "paper",
+      "trades": 2,
       "winRate": 0.0,
-      "expectancyR": -1.026,
-      "note": "Paper only. Nov 9: 10:50 signal, 7 min stale so not sent; stopped out -1.03R (-$20.32 CAD paper). 20-day volume average not cached yet."
+      "expectancyR": -1.04,
+      "note": "Demoted to PAPER ONLY Nov 16 2026 by Kiwi: both journal signals hit the stop (Nov 9 long -1.03R / -20.32 CAD paper; Nov 16 13:35 short -1.05R / -1.26 CAD paper, skipped: 2 sh max on ~1,700 USD buying power, stale, shorts blocked). No walk-forward test exists (30-min proxy +0.179R on 17). Back to live after 20 paper trades with positive avg R and an out-of-sample test. Whale Tracker keeps scouting the stocks-in-play list."
     },
     {
       "name": "Big-gap fade >0.75 ATR, daily · XIU/HXT/SOFI, 1 trade a day",
@@ -407,6 +409,10 @@
     }
   ],
   "deskLog": [
+    {
+      "date": "Nov 16",
+      "text": "EOD: 0 orders reached Questrade, 0 fills, real P&L 0.00 CAD (account flat, equity 2,474.84 CAD). Quant ORB QQC.TO 53-sh short (10:10 ET) was rejected by Questrade: the security borrow agreement isn't accepted, so every desk short fails until K places one short himself in Edge or the mobile app. Paper after fees: QQC short +13.78 CAD (+0.56R, flat at the 4:00 PM close 46.20; never near the 46.92 stop or the 45.54 target); Whale QQQ short -1.26 CAD (-1.05R, stopped on the bar right after the 13:35 signal; skipped anyway). Re-scored both at 4:00 PM / stop-first (close-out had marked them at 3:13 PM prices). SIP ORB forward check: NVDA, LHX no entry. XIU gap fade re-check unchanged (-0.004R OOS, paper only). Whale QQQ RVOL demoted to paper only (2/2 stops, no OOS test). risk_check: no bot paused, 0/150 used. Regime volatile (all 12 scored ideas so far are volatile; no calm data yet)."
+    },
     {
       "date": "Nov 16",
       "text": "Pre-market: mood volatile (SPY rv10 29.3% vs 11.4% median). No gap fades at the open: XIU +0.20 vs 0.56 trigger (paper only anyway), HXT +0.17 vs 0.98, SOFI -0.35 vs 0.73. Account flat, equity 2,474.84 CAD, USD buying power -17.63. No orders sent at the open. Watchlist: INTC short, TTWO long (News), NVDA, LHX (stocks-in-play ORB, paper only), QQQ (Whale). No bot paused."
@@ -557,7 +563,7 @@
   "desk": {
     "strategiesTested": 9,
     "variantsTested": 124,
-    "tradesJournaled": 14,
+    "tradesJournaled": 16,
     "sourcesWatched": 7,
     "daysRunning": 7
   },
@@ -568,10 +574,10 @@
     "trades": 0
   },
   "pnlWeek": {
-    "realized": -95.59,
+    "realized": 0.0,
     "unrealized": 0.0,
-    "total": -95.59,
-    "trades": 1
+    "total": 0.0,
+    "trades": 0
   },
   "pnlAllTime": {
     "realized": -27.59,
@@ -621,7 +627,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-16T15:13:06-05:00",
+    "updated": "2026-11-16T16:46:48-05:00",
     "ideasLogged": 16,
     "byDate": {
       "2026-11-02": {
@@ -665,7 +671,7 @@
         "taken": 0
       },
       "2026-11-16": {
-        "net": 12.39,
+        "net": 12.52,
         "ideas": 2,
         "resolved": 2,
         "open": 0,
@@ -842,132 +848,96 @@
   ],
   "watchlistUpdated": "2026-11-16T15:59:28-05:00",
   "scorecard": {
-    "updated": "2026-11-13T17:02:07-05:00",
+    "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
-      "ideas": 7,
+      "ideas": 2,
       "open": 0,
       "paper": {
-        "trades": 7,
+        "trades": 2,
         "noFill": 0,
-        "wins": 3,
-        "losses": 4,
-        "winRate": 42.9,
-        "avgWin": 4.02,
-        "avgLoss": -30.66,
-        "expectancyR": -0.529,
-        "netPnl": -110.58,
+        "wins": 1,
+        "losses": 1,
+        "winRate": 50.0,
+        "avgWin": 13.78,
+        "avgLoss": -1.26,
+        "expectancyR": -0.241,
+        "netPnl": 12.52,
         "bestStrategy": {
+          "name": "Opening-range breakout (15-min), volume-confirmed",
+          "trades": 1,
+          "wins": 1,
+          "netPnl": 13.78,
+          "winRate": 100.0,
+          "expectancyR": 0.565
+        },
+        "worstStrategy": {
           "name": "QQQ relative-volume breakout",
           "trades": 1,
           "wins": 0,
-          "netPnl": -20.32,
+          "netPnl": -1.26,
           "winRate": 0.0,
-          "expectancyR": -1.026
-        },
-        "worstStrategy": {
-          "name": "Stocks-in-play 15-min ORB",
-          "trades": 6,
-          "wins": 3,
-          "netPnl": -90.26,
-          "winRate": 50.0,
-          "expectancyR": -0.446
+          "expectancyR": -1.047
         },
         "byStrategy": [
+          {
+            "name": "Opening-range breakout (15-min), volume-confirmed",
+            "trades": 1,
+            "wins": 1,
+            "netPnl": 13.78,
+            "winRate": 100.0,
+            "expectancyR": 0.565
+          },
           {
             "name": "QQQ relative-volume breakout",
             "trades": 1,
             "wins": 0,
-            "netPnl": -20.32,
+            "netPnl": -1.26,
             "winRate": 0.0,
-            "expectancyR": -1.026
-          },
-          {
-            "name": "Stocks-in-play 15-min ORB",
-            "trades": 6,
-            "wins": 3,
-            "netPnl": -90.26,
-            "winRate": 50.0,
-            "expectancyR": -0.446
+            "expectancyR": -1.047
           }
         ],
         "byBot": [
+          {
+            "name": "quant",
+            "trades": 1,
+            "wins": 1,
+            "netPnl": 13.78,
+            "winRate": 100.0,
+            "expectancyR": 0.565
+          },
           {
             "name": "whale",
             "trades": 1,
             "wins": 0,
-            "netPnl": -20.32,
+            "netPnl": -1.26,
             "winRate": 0.0,
-            "expectancyR": -1.026
-          },
-          {
-            "name": "quant",
-            "trades": 6,
-            "wins": 3,
-            "netPnl": -90.26,
-            "winRate": 50.0,
-            "expectancyR": -0.446
+            "expectancyR": -1.047
           }
         ]
       },
       "real": {
-        "trades": 1,
-        "wins": 0,
-        "losses": 1,
-        "winRate": 0.0,
-        "avgWin": null,
-        "avgLoss": -93.6,
-        "expectancyR": -2.942,
-        "netPnl": -93.6,
-        "bestStrategy": {
-          "name": "Stocks-in-play 15-min ORB",
-          "trades": 1,
-          "wins": 0,
-          "netPnl": -93.6,
-          "winRate": 0.0,
-          "expectancyR": -2.942
-        },
-        "worstStrategy": null,
-        "byStrategy": [
-          {
-            "name": "Stocks-in-play 15-min ORB",
-            "trades": 1,
-            "wins": 0,
-            "netPnl": -93.6,
-            "winRate": 0.0,
-            "expectancyR": -2.942
-          }
-        ],
-        "byBot": [
-          {
-            "name": "quant",
-            "trades": 1,
-            "wins": 0,
-            "netPnl": -93.6,
-            "winRate": 0.0,
-            "expectancyR": -2.942
-          }
-        ]
+        "trades": 0
       },
-      "label": "2026-W46",
-      "from": "2026-11-09",
-      "to": "2026-11-15",
-      "title": "Week of Nov 9 - Nov 13, 2026"
+      "label": "2026-W47",
+      "from": "2026-11-16",
+      "to": "2026-11-22",
+      "title": "Week of Nov 16 - Nov 20, 2026"
     },
     "allTime": {
-      "ideas": 14,
+      "ideas": 16,
       "open": 0,
       "paper": {
-        "trades": 10,
+        "trades": 12,
         "noFill": 4,
-        "wins": 5,
-        "losses": 5,
+        "wins": 6,
+        "losses": 6,
         "winRate": 50.0,
-        "avgWin": 33.0,
-        "avgLoss": -26.92,
-        "expectancyR": -0.092,
-        "netPnl": 30.39,
+        "avgWin": 29.79,
+        "avgLoss": -22.64,
+        "expectancyR": -0.117,
+        "netPnl": 42.91,
         "bestStrategy": {
           "name": "LOD breakdown under VWAP (untested; PDH/PDL-break tests negative)",
           "trades": 1,
@@ -1002,6 +972,14 @@
             "expectancyR": 2.083
           },
           {
+            "name": "Opening-range breakout (15-min), volume-confirmed",
+            "trades": 1,
+            "wins": 1,
+            "netPnl": 13.78,
+            "winRate": 100.0,
+            "expectancyR": 0.565
+          },
+          {
             "name": "HOD breakout over VWAP (untested; ORB/PDH-break tests negative)",
             "trades": 1,
             "wins": 0,
@@ -1011,11 +989,11 @@
           },
           {
             "name": "QQQ relative-volume breakout",
-            "trades": 1,
+            "trades": 2,
             "wins": 0,
-            "netPnl": -20.32,
+            "netPnl": -21.58,
             "winRate": 0.0,
-            "expectancyR": -1.026
+            "expectancyR": -1.036
           },
           {
             "name": "Stocks-in-play 15-min ORB",
@@ -1036,20 +1014,20 @@
             "expectancyR": 0.352
           },
           {
-            "name": "whale",
-            "trades": 1,
-            "wins": 0,
-            "netPnl": -20.32,
-            "winRate": 0.0,
-            "expectancyR": -1.026
+            "name": "quant",
+            "trades": 8,
+            "wins": 5,
+            "netPnl": -9.15,
+            "winRate": 62.5,
+            "expectancyR": -0.004
           },
           {
-            "name": "quant",
-            "trades": 7,
-            "wins": 4,
-            "netPnl": -22.93,
-            "winRate": 57.1,
-            "expectancyR": -0.085
+            "name": "whale",
+            "trades": 2,
+            "wins": 0,
+            "netPnl": -21.58,
+            "winRate": 0.0,
+            "expectancyR": -1.036
           }
         ]
       },
@@ -1155,7 +1133,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-16",
-    "updated": "2026-11-16T15:10:02-05:00",
+    "updated": "2026-11-16T16:45:06-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

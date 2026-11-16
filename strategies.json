@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-13T16:50:00-05:00",
+ "updated": "2026-11-16T16:55:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -370,7 +370,19 @@
       ]
      }
     },
-    "walkForward": "12-month train / 3-month test, rolled quarterly; tests Oct 2025 - Nov 2 2026 (5 windows). Grid k {0.5,0.6,0.75,0.9,1.0} x stop {0.75,1.0,1.25} x gap. Look-ahead audit: 0 leaks on 508 days per ticker. Nearby k 0.6-0.75 positive OOS on XIU and SOFI; k 0.5 and 1.0 flat/negative on XIU and HXT."
+    "walkForward": "12-month train / 3-month test, rolled quarterly; tests Oct 2025 - Nov 2 2026 (5 windows). Grid k {0.5,0.6,0.75,0.9,1.0} x stop {0.75,1.0,1.25} x gap. Look-ahead audit: 0 leaks on 508 days per ticker. Nearby k 0.6-0.75 positive OOS on XIU and SOFI; k 0.5 and 1.0 flat/negative on XIU and HXT.",
+    "rechecks": [
+     {
+      "date": "2026-11-16",
+      "script": "/workspace/quant/walkforward.py --only gapfade --out /workspace/quant/walkforward-2026-11-16",
+      "result": "Unchanged vs Nov 13 (same daily window to Nov 2 2026): XIU OOS -0.004R on 40 (2/5 windows) -> stays paper only, not at the retire line (<= -0.05R on 30+); SOFI +0.365R on 11 (4/5); HXT +0.028R on 40 (3/5). Look-ahead audit 0 leaks on 517 days each. No gap-fade trigger today (XIU +0.20 vs 0.56, HXT +0.17 vs 0.98, SOFI -0.35 vs 0.73).",
+      "journalTrades": {
+       "XIU.TO": 1,
+       "SOFI": 0,
+       "HXT.TO": 0
+      }
+     }
+    ]
    },
    "universe": [
     "XIU.TO",
@@ -395,7 +407,7 @@
    "name": "Opening-range breakout (15-min), volume-confirmed - live; VWAP reclaim/loss - paper-only (retired)",
    "short": "ORB (VWAP paper)",
    "tested": "ORB testing - walk-forward OOS +0.121R on 51 (positive in 3/4 windows). VWAP retired to paper-only (OOS -0.148R on 46, 1/4 windows).",
-   "testedTag": "ORB testing \u00b7 VWAP paper-only",
+   "testedTag": "ORB testing · VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -870,6 +882,32 @@
        }
       ],
       "netR": -0.38
+     },
+     {
+      "date": "2026-11-16",
+      "source": "Questrade 15-min RTH bars (bars/NVDA_15m.csv, LHX_15m.csv), live rule (first-candle direction), stop-first, exit 15:00-bar close, 0.02%/side slip",
+      "sent": false,
+      "why": "paper only (demoted Nov 13)",
+      "trades": [
+       {
+        "ticker": "NVDA",
+        "side": "long",
+        "entry": 163.2,
+        "stop": 158.11,
+        "result": "no entry",
+        "note": "first candle up (159.015->162.445); high after 9:45 was 163.00 < OR high 163.20"
+       },
+       {
+        "ticker": "LHX",
+        "side": "long",
+        "entry": 268.99,
+        "stop": 262.924,
+        "result": "no entry",
+        "note": "first candle up (264.28->264.68); high after 9:45 was 266.755 < OR high 268.99"
+       }
+      ],
+      "netR": 0.0,
+      "note": "0 entries. Forward record unchanged: -0.70R on 8 trades (Nov 11-16)."
      }
     ]
    },
@@ -910,7 +948,7 @@
    "name": "QQQ-only relative-volume breakout (rest retired) + stocks-in-play scout",
    "short": "SIP scout + QQQ RVOL",
    "tested": "retired on every ticker except QQQ (tested -0.28R on 97, both halves negative); QQQ-only kept as testing (+0.179R on 17, 30-min proxy)",
-   "testedTag": "retired (QQQ testing)",
+   "testedTag": "paper only (QQQ RVOL demoted Nov 16: live record negative); scout role unchanged",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "rule": "RVOL2 day-high/low break, VWAP side, t2R",
@@ -963,7 +1001,12 @@
    },
    "role": "Scout: builds the stocks-in-play morning list (RVOL >= 2 in the first 15 min or a fresh News Desk catalyst) by 9:45 ET and hands it to Quant Lab; trades only the QQQ RVOL breakout itself.",
    "scoutFor": "Stocks-in-play ORB (quant)",
-   "mode": "live"
+   "mode": "paper",
+   "demoted": {
+    "date": "2026-11-16",
+    "by": "kiwi",
+    "why": "Live/paper record negative: 2 of 2 journal QQQ RVOL signals hit the stop (Nov 9 long -1.03R, Nov 16 short -1.05R; -2.07R total), no out-of-sample test exists (only a 30-min-proxy backtest, +0.179R on 17), and with ~1,700 USD buying power the 40 CAD risk sizes QQQ to 2 shares, under the desk's ~8 CAD minimum profit at target. Back to live only after 20 paper trades with positive average R and a walk-forward test. Whale Tracker keeps scouting the stocks-in-play list."
+   }
   },
   {
    "bot": "news",
