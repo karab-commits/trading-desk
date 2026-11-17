@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 11:59 AM ET",
+  "lastUpdated": "Tue Nov 17, 2026 12:06 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "COHR/AAOI/DIS headlines older than 60 min",
+      "status": "X news check: no headline within 60 min for a pullback-hold entry; COHR/AAOI/DIS headlines are pre-market",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -60,11 +60,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst",
-        "detail": "COHR/AAOI/DIS headlines older than 60 min",
-        "since": "2026-11-17T10:12:54-05:00",
-        "state": "working",
-        "next": "Recheck 10:25"
+        "now": "No fresh catalyst <60m",
+        "detail": "X news check: no headline within 60 min for a pullback-hold entry; COHR/AAOI/DIS headlines are pre-market",
+        "since": "2026-11-17T12:06:39-05:00",
+        "state": "idle",
+        "next": "Next check 12:15"
       }
     },
     {
@@ -122,7 +122,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile (SPY rv10 30.7%). No gap fade triggered. Account flat, equity 2,472.19 CAD. Watchlist: COHR AAOI DIS (news), NVDA LITE (SIP paper), QQQ (whale paper).",
+      "status": "Account flat, no orders today; ORB window closed 11:30; paper NVDA/LITE/XIU shorts open on paper",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -130,15 +130,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:59 run: flat, 0 orders",
-        "detail": "Mood volatile (SPY rv10 30.7%). No gap fade triggered. Account flat, equity 2,472.19 CAD. Watchlist: COHR AAOI DIS (news), NVDA LITE (SIP paper), QQQ (whale paper).",
-        "since": "2026-11-17T11:59:56-05:00",
-        "state": "working",
-        "next": "Next run 12:14",
+        "now": "12:06 check: flat, no signal",
+        "detail": "Account flat, no orders today; ORB window closed 11:30; paper NVDA/LITE/XIU shorts open on paper",
+        "since": "2026-11-17T12:06:39-05:00",
+        "state": "idle",
+        "next": "Next check 12:15",
         "log": [
-          "16:45 EOD review Nov 13",
           "9:15 ET pre-market: no opening orders",
-          "16:55 EOD review: Whale QQQ RVOL -> paper only"
+          "16:55 EOD review: Whale QQQ RVOL -> paper only",
+          "12:06 flat, 0 orders, watchlist refreshed"
         ]
       }
     },
@@ -713,8 +713,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 205.23,
-      "priceTime": "2026-11-17T11:59:45-05:00",
+      "last": 206.845,
+      "priceTime": "2026-11-17T12:06:25-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -739,8 +739,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 44.105,
-      "priceTime": "2026-11-17T11:59:43-05:00",
+      "last": 44.5,
+      "priceTime": "2026-11-17T12:06:24-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 120.01,
-      "priceTime": "2026-11-17T11:59:42-05:00",
+      "last": 120.035,
+      "priceTime": "2026-11-17T12:06:25-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -790,8 +790,8 @@
       "netLossAtStop": -27.44,
       "netProfitAtTargetCAD": 74.21,
       "netLossAtStopCAD": -38.3,
-      "last": 153.66,
-      "priceTime": "2026-11-17T11:59:45-05:00",
+      "last": 154.245,
+      "priceTime": "2026-11-17T12:06:25-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -823,8 +823,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 548.2893,
-      "priceTime": "2026-11-17T11:59:34-05:00",
+      "last": 552.19,
+      "priceTime": "2026-11-17T12:06:23-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -855,8 +855,8 @@
       "netLossAtStop": -7.15,
       "netProfitAtTargetCAD": 19.24,
       "netLossAtStopCAD": -9.98,
-      "last": 652.7801,
-      "priceTime": "2026-11-17T11:59:45-05:00",
+      "last": 653.74,
+      "priceTime": "2026-11-17T12:06:24-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -895,11 +895,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-17T10:57:11-05:00",
-      "last": 53.42,
-      "priceTime": "2026-11-17T11:59:18-05:00"
+      "last": 53.48,
+      "priceTime": "2026-11-17T12:06:12-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-17T11:59:56-05:00",
+  "watchlistUpdated": "2026-11-17T12:06:32-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1186,7 +1186,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T11:38:59-05:00",
+    "updated": "2026-11-17T12:05:45-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
