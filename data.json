@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 1:53 PM ET",
+  "lastUpdated": "Tue Nov 17, 2026 2:05 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "X news 13:52: IREN at lows (bearish, shorts blocked, not a fresh headline); rest repeats",
+      "status": "X news 14:05: SOFI slide is a bearish recap of old earnings (shorts blocked); rest macro",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -60,15 +60,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No valid catalyst 13:52",
-        "detail": "X news 13:52: IREN at lows (bearish, shorts blocked, not a fresh headline); rest repeats",
-        "since": "2026-11-17T13:53:07-05:00",
+        "now": "No valid catalyst 14:05",
+        "detail": "X news 14:05: SOFI slide is a bearish recap of old earnings (shorts blocked); rest macro",
+        "since": "2026-11-17T14:05:29-05:00",
         "state": "idle",
-        "next": "Next check 14:07",
+        "next": "Next check 14:20",
         "log": [
-          "13:27 no company headline, no signal",
           "13:37 HD/NVDA checked, no signal",
-          "13:52 IREN checked, no signal"
+          "13:52 IREN checked, no signal",
+          "14:05 SOFI checked, no signal"
         ]
       }
     },
@@ -718,8 +718,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 207.975,
-      "priceTime": "2026-11-17T13:52:56-05:00",
+      "last": 207.96,
+      "priceTime": "2026-11-17T14:05:21-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +744,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 44.37,
-      "priceTime": "2026-11-17T13:52:56-05:00",
+      "last": 44.31,
+      "priceTime": "2026-11-17T14:05:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -770,8 +770,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 118.3,
-      "priceTime": "2026-11-17T13:52:52-05:00",
+      "last": 117.435,
+      "priceTime": "2026-11-17T14:05:20-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -795,8 +795,8 @@
       "netLossAtStop": -27.44,
       "netProfitAtTargetCAD": 74.21,
       "netLossAtStopCAD": -38.3,
-      "last": 153.345,
-      "priceTime": "2026-11-17T13:52:58-05:00",
+      "last": 153.625,
+      "priceTime": "2026-11-17T14:05:21-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -828,8 +828,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 550.72,
-      "priceTime": "2026-11-17T13:52:56-05:00",
+      "last": 552.6775,
+      "priceTime": "2026-11-17T14:05:18-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -860,8 +860,8 @@
       "netLossAtStop": -7.15,
       "netProfitAtTargetCAD": 19.24,
       "netLossAtStopCAD": -9.98,
-      "last": 654.22,
-      "priceTime": "2026-11-17T13:52:58-05:00",
+      "last": 653.83,
+      "priceTime": "2026-11-17T14:05:21-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -900,11 +900,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-17T10:57:11-05:00",
-      "last": 53.41,
-      "priceTime": "2026-11-17T13:52:56-05:00"
+      "last": 53.37,
+      "priceTime": "2026-11-17T14:05:21-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-17T13:53:07-05:00",
+  "watchlistUpdated": "2026-11-17T14:05:29-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1191,7 +1191,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T13:52:56-05:00",
+    "updated": "2026-11-17T14:05:18-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
