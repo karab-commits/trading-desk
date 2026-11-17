@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-17T10:25:11-05:00",
+  "updated": "2026-11-17T10:39:55-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2326,7 +2326,7 @@
  },
  "2026-11-17": {
   "kiwi": {
-   "quotesCalls": 4,
+   "quotesCalls": 5,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2342,7 +2342,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 5,
+   "runs": 6,
    "symbolsQuoted": {
     "unique": [
      "COHR",
@@ -2361,14 +2361,14 @@
      "AMZN",
      "META"
     ],
-    "total": 34
+    "total": 47
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-17T10:25:11-05:00"
+   "lastRun": "2026-11-17T10:39:55-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -2509,8 +2509,8 @@
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 24,
-   "bars": 82,
+   "barCalls": 43,
+   "bars": 140,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
