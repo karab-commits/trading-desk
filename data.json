@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 9:52 AM ET",
+  "lastUpdated": "Tue Nov 17, 2026 10:12 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -37,23 +37,22 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No gap fade: gaps too small",
+        "now": "No gap fades today",
         "detail": "Opens 9:30: XIU 53.75 (gap -0.25 vs 0.57 trigger), HXT 96.58 (-0.37 vs 1.00), SOFI 14.835 (-0.005 vs 0.76). No trade.",
-        "since": "2026-11-17T09:31:44-05:00",
+        "since": "2026-11-17T10:12:54-05:00",
         "state": "done",
         "log": [
           "9:31 ET open: no gap fades triggered",
           "9:10 ET: no gap fades at the open",
           "9:31 no gap fade (XIU/HXT/SOFI)"
-        ],
-        "next": "Intraday check 9:45"
+        ]
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Optical import-ban report (COHR +7.9%, AAOI +8.1% pre-mkt); DIS FQ4 beat. Longs on pullback hold after 9:45.",
+      "status": "COHR/AAOI/DIS headlines older than 60 min",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,18 +60,18 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watch: COHR AAOI DIS",
-        "detail": "Optical import-ban report (COHR +7.9%, AAOI +8.1% pre-mkt); DIS FQ4 beat. Longs on pullback hold after 9:45.",
-        "since": "2026-11-17T09:05:46-05:00",
-        "state": "done",
-        "next": "Intraday check 9:45"
+        "now": "No fresh catalyst",
+        "detail": "COHR/AAOI/DIS headlines older than 60 min",
+        "since": "2026-11-17T10:12:54-05:00",
+        "state": "working",
+        "next": "Recheck 10:25"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "QQQ RVOL breakout demoted to paper (2/2 stops). Scouting NVDA/optics volume.",
+      "status": "10:05 bar closed 659.11 below session low, RVOL 0.76 vs 17-day slot avg (needs 2.0)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -80,11 +79,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ RVOL: paper only",
-        "detail": "QQQ RVOL breakout demoted to paper (2/2 stops). Scouting NVDA/optics volume.",
-        "since": "2026-11-17T09:05:46-05:00",
-        "state": "done",
-        "next": "Intraday check 9:45",
+        "now": "QQQ: no RVOL signal",
+        "detail": "10:05 bar closed 659.11 below session low, RVOL 0.76 vs 17-day slot avg (needs 2.0)",
+        "since": "2026-11-17T10:12:54-05:00",
+        "state": "working",
+        "next": "QQQ check 10:25",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only",
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
@@ -131,11 +130,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Open: no orders sent",
+        "now": "10:11 run: flat, 0 orders",
         "detail": "Mood volatile (SPY rv10 30.7%). No gap fade triggered. Account flat, equity 2,472.19 CAD. Watchlist: COHR AAOI DIS (news), NVDA LITE (SIP paper), QQQ (whale paper).",
-        "since": "2026-11-17T09:31:44-05:00",
-        "state": "done",
-        "next": "Intraday check 9:45",
+        "since": "2026-11-17T10:12:54-05:00",
+        "state": "working",
+        "next": "Next run 10:26",
         "log": [
           "16:45 EOD review Nov 13",
           "9:15 ET pre-market: no opening orders",
@@ -147,7 +146,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "SIP ORB paper only (forward -0.70R on 8). NVDA reports after close; LITE +5.9% pre-mkt.",
+      "status": "AAPL (9:50) and AMZN (9:55) broke OR highs on RVOL 0.57 and 0.49, under 1.5; SPY/XIU 10:05 breakdowns are shorts (borrow agreement not accepted)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -27.59,
@@ -155,11 +154,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP ORB paper: NVDA LITE",
-        "detail": "SIP ORB paper only (forward -0.70R on 8). NVDA reports after close; LITE +5.9% pre-mkt.",
-        "since": "2026-11-17T09:05:46-05:00",
-        "state": "done",
-        "next": "Range set 9:45",
+        "now": "ORB: no valid signal",
+        "detail": "AAPL (9:50) and AMZN (9:55) broke OR highs on RVOL 0.57 and 0.49, under 1.5; SPY/XIU 10:05 breakdowns are shorts (borrow agreement not accepted)",
+        "since": "2026-11-17T10:12:54-05:00",
+        "state": "working",
+        "next": "ORB check 10:25",
         "log": [
           "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
@@ -568,9 +567,9 @@
     "daysRunning": 7
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": 0.0,
+    "total": 0.0,
     "trades": 0
   },
   "pnlWeek": {
@@ -714,8 +713,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 208.605,
-      "priceTime": "2026-11-17T09:52:07-05:00",
+      "last": 208.11,
+      "priceTime": "2026-11-17T10:11:27-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -740,8 +739,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 45.79,
-      "priceTime": "2026-11-17T09:52:08-05:00",
+      "last": 45.3301,
+      "priceTime": "2026-11-17T10:11:29-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -766,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 121.0,
-      "priceTime": "2026-11-17T09:52:08-05:00",
+      "last": 121.455,
+      "priceTime": "2026-11-17T10:11:28-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -791,8 +790,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 155.58,
-      "priceTime": "2026-11-17T09:51:09-05:00",
+      "last": 154.18,
+      "priceTime": "2026-11-17T10:11:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -816,8 +815,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 556.605,
-      "priceTime": "2026-11-17T09:52:08-05:00",
+      "last": 551.01,
+      "priceTime": "2026-11-17T10:11:29-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -848,13 +847,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 660.86,
-      "priceTime": "2026-11-17T09:51:09-05:00",
+      "last": 658.63,
+      "priceTime": "2026-11-17T10:11:30-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-17T09:52:30-05:00",
+  "watchlistUpdated": "2026-11-17T10:12:54-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1141,7 +1140,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T09:52:01-05:00",
+    "updated": "2026-11-17T10:11:30-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1153,9 +1152,9 @@
       "quant": {
         "budget": 35,
         "realizedLoss": 0.0,
-        "openRisk": 0,
-        "used": 0.0,
-        "left": 35.0
+        "openRisk": 23.1,
+        "used": 23.1,
+        "left": 11.9
       },
       "news": {
         "budget": 25,
@@ -1182,10 +1181,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 0,
-      "used": 0.0,
-      "left": 150.0,
-      "openPositions": 0
+      "openRisk": 23.1,
+      "used": 23.1,
+      "left": 126.9,
+      "openPositions": 1
     }
   }
 }
