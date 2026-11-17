@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-17T11:29:11-05:00",
+  "updated": "2026-11-17T11:39:00-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2326,7 +2326,7 @@
  },
  "2026-11-17": {
   "kiwi": {
-   "quotesCalls": 8,
+   "quotesCalls": 9,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2342,7 +2342,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 9,
+   "runs": 10,
    "symbolsQuoted": {
     "unique": [
      "COHR",
@@ -2361,14 +2361,14 @@
      "AMZN",
      "META"
     ],
-    "total": 86
+    "total": 99
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-17T11:29:11-05:00"
+   "lastRun": "2026-11-17T11:39:00-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -2465,16 +2465,16 @@
   },
   "quant": {
    "quotesCalls": 1,
-   "barCalls": 128,
-   "bars": 684,
+   "barCalls": 157,
+   "bars": 792,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 5,
-   "ideasLogged": 3,
+   "ideasGenerated": 6,
+   "ideasLogged": 4,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -2506,7 +2506,8 @@
    "keys": [
     "logged:2026-11-17-LITE-1",
     "logged:2026-11-17-XIU-1",
-    "logged:2026-11-17-NVDA-1"
+    "logged:2026-11-17-NVDA-1",
+    "logged:2026-11-17-NVDA-2"
    ]
   },
   "whale": {
@@ -2591,7 +2592,7 @@
    "xPosts": 0,
    "ideasGenerated": 0,
    "ideasLogged": 0,
-   "ideasRejected": 4,
+   "ideasRejected": 5,
    "ordersSent": 0,
    "fills": 0,
    "backtestVariants": 0,
@@ -2611,7 +2612,8 @@
     "rejected:2026-11-17-LITE-1",
     "rejected:2026-11-17-QQQ-1",
     "rejected:2026-11-17-XIU-1",
-    "rejected:2026-11-17-NVDA-1"
+    "rejected:2026-11-17-NVDA-1",
+    "rejected:2026-11-17-NVDA-2"
    ]
   }
  }

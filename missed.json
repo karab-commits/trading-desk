@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-17T11:29:11-05:00",
+  "updated": "2026-11-17T11:39:00-05:00",
   "date": "2026-11-17",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 4.06,
+      "net": 25.04,
       "final": -9.98,
-      "unrealized": 14.04,
-      "ideas": 4,
+      "unrealized": 35.02,
+      "ideas": 5,
       "scored": 1,
       "open": 3,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 1
     },
     "week": {
-      "net": 16.58,
+      "net": 37.56,
       "final": 2.54,
-      "unrealized": 14.04,
-      "ideas": 6,
+      "unrealized": 35.02,
+      "ideas": 7,
       "scored": 3,
       "open": 3,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 1,
       "losses": 2
     },
     "allTime": {
-      "net": 75.66,
+      "net": 96.64,
       "final": 61.62,
-      "unrealized": 14.04,
-      "ideas": 18,
+      "unrealized": 35.02,
+      "ideas": 19,
       "scored": 11,
       "open": 3,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 5,
       "losses": 6
     }
@@ -48,20 +48,20 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 14.04,
-        "ideas": 3,
+        "net": 35.02,
+        "ideas": 4,
         "scored": 0,
         "open": 3
       },
       "week": {
-        "net": 27.82,
-        "ideas": 4,
+        "net": 48.8,
+        "ideas": 5,
         "scored": 1,
         "open": 3
       },
       "allTime": {
-        "net": 33.58,
-        "ideas": 9,
+        "net": 54.56,
+        "ideas": 10,
         "scored": 6,
         "open": 3
       }
@@ -156,6 +156,28 @@
   },
   "ideas": [
     {
+      "id": "2026-11-17-NVDA-2",
+      "date": "2026-11-17",
+      "bot": "quant",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 154.6,
+      "stop": 155.81,
+      "target": 152.79,
+      "shares": 11,
+      "strategy": "VWAP reclaim/loss",
+      "currency": "USD",
+      "size": 11,
+      "loggedAt": "2026-11-17T11:38:59-05:00",
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
       "id": "2026-11-17-NVDA-1",
       "date": "2026-11-17",
       "bot": "quant",
@@ -172,11 +194,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-17T11:28:59-05:00",
-      "exit": 154.9575,
-      "fees": 0.0615,
-      "net": -2.04,
-      "netCAD": -2.84
+      "priceTime": "2026-11-17T11:38:34-05:00",
+      "exit": 153.72,
+      "fees": 0.1879,
+      "net": 10.21,
+      "netCAD": 14.26
     },
     {
       "id": "2026-11-17-XIU-1",
@@ -195,11 +217,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-17T11:28:57-05:00",
-      "exit": 53.42,
+      "priceTime": "2026-11-17T11:38:22-05:00",
+      "exit": 53.4,
       "fees": 0.0,
-      "net": 5.98,
-      "netCAD": 5.98
+      "net": 6.9,
+      "netCAD": 6.9
     },
     {
       "id": "2026-11-17-QQQ-1",
@@ -241,11 +263,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-17T11:28:59-05:00",
-      "exit": 551.2301,
-      "fees": 0.1306,
-      "net": 7.81,
-      "netCAD": 10.9
+      "priceTime": "2026-11-17T11:38:32-05:00",
+      "exit": 549.08,
+      "fees": 0.1629,
+      "net": 9.93,
+      "netCAD": 13.86
     },
     {
       "id": "2026-11-16-QQQ-1",

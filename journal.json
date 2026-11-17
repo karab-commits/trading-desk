@@ -1491,6 +1491,63 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-17-NVDA-2",
+      "date": "2026-11-17",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 154.6,
+      "stop": 155.81,
+      "target": 152.79,
+      "shares": 11,
+      "strategy": "VWAP reclaim/loss",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "VWAP loss: 11:15-11:30 15-min bar closed 154.60 below session VWAP 155.13 after the 11:00 bar closed above (155.33 vs 155.24); RVOL 2.03 (11.30M vs 18-day slot avg 5.55M); below prior close 156.14. Stop = higher high of the two bars 155.81, target 1.5R. Paper only (VWAP retired); size capped by buying power. NVDA also has paper SIP ORB idea 2026-11-17-NVDA-1.",
+      "loggedAt": "2026-11-17T11:38:59-05:00",
+      "plan": {
+        "riskGross": 13.31,
+        "rewardGross": 19.91,
+        "rr": 1.5,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.035,
+          "fx": 0.3,
+          "total": 0.3337
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.035,
+          "fx": 0.2,
+          "total": 0.2347
+        },
+        "netProfitAtTarget": 19.58,
+        "netLossAtStop": -13.54,
+        "rrNet": 1.45,
+        "netProfitAtTargetCAD": 27.33,
+        "netLossAtStopCAD": -18.91
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (ORB (VWAP paper) / vwap)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.73,
+        "median": 11.41,
+        "asOfClose": "2026-11-16",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
