@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 2:23 PM ET",
+  "lastUpdated": "Tue Nov 17, 2026 2:37 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "X news 14:23: only NVDA pre-earnings recaps and Monday selloff; no fresh company headline",
+      "status": "No valid News Desk signal today after 14:30 cutoff",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -60,15 +60,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No valid catalyst 14:23",
-        "detail": "X news 14:23: only NVDA pre-earnings recaps and Monday selloff; no fresh company headline",
-        "since": "2026-11-17T14:23:19-05:00",
-        "state": "idle",
-        "next": "Next check 14:38 (window ends 14:30)",
+        "now": "Window closed 14:30",
+        "detail": "No valid News Desk signal today after 14:30 cutoff",
+        "since": "2026-11-17T14:37:13-05:00",
+        "state": "done",
         "log": [
-          "13:52 IREN checked, no signal",
           "14:05 SOFI checked, no signal",
-          "14:23 no signal"
+          "14:23 no signal",
+          "14:37 entry window closed"
         ]
       }
     },
@@ -718,8 +717,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 207.8299,
-      "priceTime": "2026-11-17T14:23:05-05:00",
+      "last": 207.33,
+      "priceTime": "2026-11-17T14:37:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -744,8 +743,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 44.53,
-      "priceTime": "2026-11-17T14:23:10-05:00",
+      "last": 44.451,
+      "priceTime": "2026-11-17T14:37:04-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -770,8 +769,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 117.615,
-      "priceTime": "2026-11-17T14:23:06-05:00",
+      "last": 117.96,
+      "priceTime": "2026-11-17T14:37:12-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -795,8 +794,8 @@
       "netLossAtStop": -27.44,
       "netProfitAtTargetCAD": 74.21,
       "netLossAtStopCAD": -38.3,
-      "last": 154.1,
-      "priceTime": "2026-11-17T14:23:11-05:00",
+      "last": 153.61,
+      "priceTime": "2026-11-17T14:37:12-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -828,8 +827,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 554.605,
-      "priceTime": "2026-11-17T14:23:11-05:00",
+      "last": 551.745,
+      "priceTime": "2026-11-17T14:37:11-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -860,8 +859,8 @@
       "netLossAtStop": -7.15,
       "netProfitAtTargetCAD": 19.24,
       "netLossAtStopCAD": -9.98,
-      "last": 654.86,
-      "priceTime": "2026-11-17T14:23:11-05:00",
+      "last": 654.27,
+      "priceTime": "2026-11-17T14:37:12-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -900,11 +899,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-17T10:57:11-05:00",
-      "last": 53.42,
-      "priceTime": "2026-11-17T14:23:09-05:00"
+      "last": 53.4,
+      "priceTime": "2026-11-17T14:37:12-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-17T14:23:19-05:00",
+  "watchlistUpdated": "2026-11-17T14:37:13-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1191,7 +1190,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T14:23:10-05:00",
+    "updated": "2026-11-17T14:37:11-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
