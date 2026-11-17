@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-16T16:47:32-05:00",
+  "updated": "2026-11-17T09:31:50-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2322,6 +2322,188 @@
     "seen": []
    },
    "lastRun": "2026-11-16T09:47:25-05:00"
+  }
+ },
+ "2026-11-17": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 1,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-17T09:31:50-05:00"
+  },
+  "scanner": {
+   "quotesCalls": 2,
+   "barCalls": 3,
+   "bars": 94,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI",
+     "SPY",
+     "QQQ"
+    ],
+    "total": 8
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 2,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 3,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "COHR",
+     "LITE",
+     "AAOI",
+     "DIS",
+     "HD",
+     "INTC",
+     "NVDA",
+     "TSN"
+    ],
+    "total": 8
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Nvidia, Red Cat fall; Home Depot, SpaceX gains",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-red-cat-fall-home-depot-spacex-gains-5032425",
+      "time": "2026-11-17T09:05:14-05:00"
+     },
+     {
+      "title": "Stocks moving the most today: Live updates",
+      "url": "https://www.cnbc.com/2026/11/17/stocks-moving-the-most-today-live-updates.html",
+      "time": "2026-11-17T09:05:14-05:00"
+     },
+     {
+      "title": "Why Aytu Biopharma Shares Are Trading Higher By 43%; Here Are 20 Stocks Moving Premarket",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63331561/why-aytu-biopharma-shares-are-trading-higher-by-43-here-are-20-stocks-moving-premarket",
+      "time": "2026-11-17T09:05:14-05:00"
+     }
+    ],
+    "count": 3,
+    "seen": [
+     "fa41b49585ba",
+     "d88ffb54e72e",
+     "4b9fb101550b"
+    ]
+   },
+   "lastRun": null
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 2,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 1,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
   }
  }
 }
