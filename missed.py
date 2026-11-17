@@ -16,17 +16,17 @@ and K's own manual orders (idea.manual true or bot "k"/"manual"; Questrade order
 are never in journal.json).
 
 Fees: same model as log_idea.py (data.json `fees`): $0 commission, SEC fee on US sells, 1.5% FX on the USD P&L,
-USD converted to CAD at fees.usdcad.rate (default 1.3960).
+USD converted to CAD at fees.usdcad.rate (default 1.4298). Late-logged ideas (`loggedLate` + `loggedPrice`) are scored from the log-time price, not the original signal entry.
 """
 import argparse, json, os, sys
 from datetime import datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from log_idea import trade_fees, gross_pnl, to_cad, iso_week, r2, now_et, load_json, save_json, desk_dir  # noqa: E402
+from log_idea import trade_fees, gross_pnl, to_cad, iso_week, r2, now_et, load_json, save_json, desk_dir, paper_entry  # noqa: E402
 
 MANUAL_BOTS = {'k', 'manual', 'K'}
-DEFAULT_USDCAD = 1.396
+DEFAULT_USDCAD = 1.4298
 
 
 def market_open(now):
@@ -87,16 +87,22 @@ def compute(journal, data, counters, now=None):
         row = {k: i.get(k) for k in ('id', 'date', 'bot', 'ticker', 'side', 'entry', 'stop', 'target', 'shares', 'strategy', 'currency')}
         row['size'] = i.get('shares')
         row['loggedAt'] = i.get('loggedAt')
+        if i.get('loggedLate'):
+            row['loggedLate'] = True
+            if i.get('loggedPrice') is not None:
+                row['loggedPrice'] = i['loggedPrice']
+                row['paperEntry'] = paper_entry(i)
         row['why'] = why_not_real(i, w, blocked)
         res = i.get('result')
         mark = None
+        entry = paper_entry(i)
         if res:
             if res.get('outcome') == 'no-fill':
                 row.update(state='not triggered', outcome='no-fill', exit=None, net=0.0, netCAD=0.0)
             else:
                 ex = res['exit']
-                f = trade_fees(i['side'], i['entry'], ex, i['shares'], cur, cfg)
-                net = gross_pnl(i['side'], i['entry'], ex, i['shares']) - f['total']
+                f = trade_fees(i['side'], entry, ex, i['shares'], cur, cfg)
+                net = gross_pnl(i['side'], entry, ex, i['shares']) - f['total']
                 row.update(state='final', outcome=res['outcome'], exit=ex, fees=round(f['total'], 4), net=r2(net),
                            netCAD=r2(to_cad(net, cur, cfg)), resolvedAt=res.get('resolvedAt'))
         else:
@@ -116,8 +122,8 @@ def compute(journal, data, counters, now=None):
             else:
                 row.update(state='pending', outcome=None, note='not scored yet (journal has no result; no triggered watchlist price)')
             if mark is not None:
-                f = trade_fees(i['side'], i['entry'], mark, i['shares'], cur, cfg)
-                net = gross_pnl(i['side'], i['entry'], mark, i['shares']) - f['total']
+                f = trade_fees(i['side'], entry, mark, i['shares'], cur, cfg)
+                net = gross_pnl(i['side'], entry, mark, i['shares']) - f['total']
                 row.update(exit=mark, fees=round(f['total'], 4), net=r2(net), netCAD=r2(to_cad(net, cur, cfg)))
             else:
                 row.update(exit=None, net=0.0, netCAD=0.0)
@@ -163,7 +169,7 @@ def compute(journal, data, counters, now=None):
         'version': 1, 'updated': now.isoformat(timespec='seconds'), 'date': today, 'isoWeek': wk, 'marketOpen': mopen,
         'currency': 'CAD',
         'basis': 'hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), '
-                 'USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price',
+                 'USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price',
         'usdcad': cfg['usdcad']['rate'],
         'totals': totals, 'byBot': by_bot,
         'real': {'today': real('pnlToday'), 'week': real('pnlWeek'), 'allTime': real('pnlAllTime'), 'byBot': bots_real},

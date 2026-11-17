@@ -3,7 +3,7 @@
    Same rules as missed.py (which writes missed.json for routines); the browser recomputes live from journal.json +
    data.json (+ counters.json for risk_check BLOCKs) every 60 s, so an open idea is re-marked to the newest desk price.
    Real data only: final = the journal's paper result; unrealized = (latest data.json watchlist price - entry) after fees;
-   never triggered = $0. Fees = data.json `fees` (log_idea.py model): $0 commission, SEC fee on US sells, FX % on the USD P&L.
+   never triggered = $0. Late-logged ideas (`loggedLate` + `loggedPrice`) are scored from the log-time price, not the signal entry. Fees = data.json `fees` (log_idea.py model): $0 commission, SEC fee on US sells, FX % on the USD P&L.
    API: MISSED.compute(journal, data, counters, now) -> model; MISSED.render(el, M, opts); MISSED.mount(el, opts). */
 (function(){
 var NAMES={kiwi:'Kiwi',scanner:'Scanner',news:'News Desk',whale:'Whale Tracker',risk:'Risk Manager',quant:'Quant Lab',journal:'Trade Journal',options:'Options Desk'};
@@ -22,7 +22,7 @@ function fees(side,entry,ex,n,cur,cfg){var st=cfg.stocksEtfs||{},comm=(+st.commi
 function blockedKeys(C){var o={};for(var k in (C||{})){if(k.charAt(0)==='_')continue;var r=(C[k]||{}).risk;((r&&r.keys)||[]).forEach(function(x){if(x.indexOf('rejected:')===0)o[x.slice(9)]=1})}return o}
 function realOf(D,k){var o=D&&D[k];if(typeof o==='number')return o;o=o||{};return typeof o.total==='number'?o.total:(+o.realized||0)+(+o.unrealized||0)}
 function compute(J,D,C,now){now=now||new Date();var e=etParts(now),today=e.date,mins=e.h*60+e.m,mopen=!/Sat|Sun/.test(e.wd)&&mins>=570&&mins<960;
- D=D||{};var cfg=D.fees||{},rate=+((cfg.usdcad||{}).rate)||1.396,wl={},bl=blockedKeys(C),rows=[],excl=[];
+ D=D||{};var cfg=D.fees||{},rate=+((cfg.usdcad||{}).rate)||1.4298,wl={},bl=blockedKeys(C),rows=[],excl=[];
  (D.watchlist||[]).forEach(function(w){if(w.journalId)wl[w.journalId]=w});
  function cad(x,cur){return cur==='USD'?x*rate:x}
  ((J&&J.ideas)||[]).forEach(function(i){var w=wl[i.id],cur=i.currency||'USD';
@@ -30,14 +30,16 @@ function compute(J,D,C,now){now=now||new Date();var e=etParts(now),today=e.date,
   if(i.taken==='yes'||i.realPnl!=null||i.realPnlCAD!=null){excl.push({id:i.id,why:'filled with real money'});return}
   if(w&&(w.status==='in trade'||w.fill!=null)){excl.push({id:i.id,why:'in trade (real fill)'});return}
   var why=i.mode==='paper'?'paper-only':(i.debate&&i.debate.verdict==='skip')?'vetoed':(bl[i.id]||bl[i.bot+':'+i.ticker+':'+i.side])?'blocked':(w&&w.status==='expired')?'expired':((w&&w.status==='skipped')||i.taken==='no')?'skipped':'untaken';
+  var entry=(i.loggedLate&&i.loggedPrice!=null)?+i.loggedPrice:i.entry;
   var r={id:i.id,date:i.date,loggedAt:i.loggedAt||'',bot:i.bot,ticker:i.ticker,side:i.side,entry:i.entry,stop:i.stop,target:i.target,size:i.shares,currency:cur,strategy:i.strategy,why:why,exit:null,netCAD:0,state:'pending',outcome:null},res=i.result,mark=null;
+  if(i.loggedLate){r.loggedLate=true;if(i.loggedPrice!=null){r.loggedPrice=+i.loggedPrice;r.paperEntry=entry}}
   if(res){if(res.outcome==='no-fill'){r.state='not triggered';r.outcome='no-fill'}else{mark=res.exit;r.state='final';r.outcome=res.outcome}}
   else{var st=w&&w.status,last=w&&w.last;
    if(st==='target hit'||st==='stopped'){mark=st==='target hit'?i.target:i.stop;r.state='final';r.outcome=st==='target hit'?'target':'stop'}
    else if(st==='triggered'&&typeof last==='number'){var closed=i.date<today||(!mopen&&e.h>=16);mark=last;r.state=closed?'final':'unrealized';r.outcome=closed?'time':null;r.priceTime=w.priceTime}
    else if((st==='watching'||st==='expired')&&(i.date<today||e.h>=16)){r.state='not triggered';r.outcome='expired'}
    else if(st==='watching'){r.state='waiting'}}
-  if(mark!=null){var g=(mark-i.entry)*i.shares*(i.side==='long'?1:-1),net=g-fees(i.side,i.entry,mark,i.shares,cur,cfg);r.exit=mark;r.net=r2(net);r.netCAD=r2(cad(net,cur))}
+  if(mark!=null){var g=(mark-entry)*i.shares*(i.side==='long'?1:-1),net=g-fees(i.side,entry,mark,i.shares,cur,cfg);r.exit=mark;r.net=r2(net);r.netCAD=r2(cad(net,cur))}
   rows.push(r)});
  rows.sort(function(a,b){return (b.date+b.loggedAt+b.id).localeCompare(a.date+a.loggedAt+a.id)});
  var wk=isoWeek(today),P={today:function(d){return d===today},week:function(d){return isoWeek(d)===wk},allTime:function(){return true}},T={},B={};
@@ -72,7 +74,7 @@ function css(){if(document.getElementById('missed-css'))return;var s=document.cr
 function item(r,o){var names=o.names||NAMES,col=(o.colors||{})[r.bot];var stLab=r.state==='unrealized'?'unrealized':r.state==='final'?'final · '+(r.outcome==='target'?'hit target':r.outcome==='stop'?'hit stop':'flat at close'):r.state;
  return '<div class="ms-i"'+(col?' style="--c:'+col+'"':'')+'><div class="top"><span class="tk">'+esc(r.ticker)+'</span><span class="sd '+esc(r.side)+'">'+esc(String(r.side).toUpperCase())+' '+esc(r.size)+' sh</span><span class="st '+esc(r.state.replace(' ','-'))+'">'+esc(stLab)+'</span><span class="wy">'+esc(WHY[r.why]||r.why)+'</span>'+
   '<span class="pl '+cls(r.netCAD)+'">'+(r.state==='not triggered'||r.state==='waiting'||r.state==='pending'?'$0.00':m(r.netCAD))+'</span></div>'+
-  '<div class="meta"><span>'+esc(dShort(r.date))+' · <b>'+esc(names[r.bot]||r.bot)+'</b></span><span>entry <b>'+px(r.entry)+'</b></span><span>stop <b>'+px(r.stop)+'</b></span><span>target <b>'+px(r.target)+'</b></span>'+
+  '<div class="meta"><span>'+esc(dShort(r.date))+' · <b>'+esc(names[r.bot]||r.bot)+'</b></span><span>entry <b>'+px(r.paperEntry!=null?r.paperEntry:r.entry)+'</b>'+(r.loggedLate?' (logged late)':'')+'</span><span>stop <b>'+px(r.stop)+'</b></span><span>target <b>'+px(r.target)+'</b></span>'+
   (r.exit!=null?'<span>'+(r.state==='unrealized'?'last':'exit')+' <b>'+px(r.exit)+'</b>'+(r.priceTime?' '+esc(tET(r.priceTime)):'')+'</span>':'')+'<span>'+esc(r.currency)+'</span></div></div>'}
 function render(el,M,o){o=o||{};css();var names=o.names||NAMES,colors=o.colors||{},T=M.totals,R=M.real;el.classList.add('missed');
  var tiles=[['today','Today'],['week','This week'],['allTime','All time']].map(function(p){var t=T[p[0]];
@@ -86,7 +88,7 @@ function render(el,M,o){o=o||{};css();var names=o.names||NAMES,colors=o.colors||
  var anyOpen=M.ideas.some(function(r){return r.state==='unrealized'});
  el.innerHTML=(o.head||'<div class="ph">MISSED TRADES · NOT REAL MONEY</div>')+'<small class="ms-sub">Hypothetical P&amp;L of the ideas the desk did not take, CAD after fees · recomputed '+esc(tET(M.computedAt))+(M.marketOpen?' · market open':' · market closed')+' · re-read every 60s</small>'+
   '<div class="ms-g">'+tiles+'</div>'+line+tb+list+
-  '<div class="ms-n">Not real money. Skipped, blocked (risk_check), vetoed (debate), expired, untaken and paper-only ideas from journal.json, scored at the alert\'s plan. Final = the journal\'s paper result; '+
+  '<div class="ms-n">Not real money. Skipped, blocked (risk_check), vetoed (debate), expired, untaken and paper-only ideas from journal.json, scored at the alert\'s plan (or at loggedPrice when logged late). Final = the journal\'s paper result; '+
   '<b>unrealized</b> = triggered, still open, marked to the latest Questrade price the desk wrote to data.json'+(anyOpen?'':' (none open now)')+'; never triggered = $0. Fees: $0 commission, SEC fee on US sells, '+esc(((o.fx)||1.5))+'% FX on the USD P&amp;L, USD at '+esc(M.usdcad.toFixed(4))+' CAD. '+
   'Excludes ideas that filled with real money and K\'s own manual orders'+(M.excluded.length?' ('+M.excluded.length+' excluded)':'')+'. Real = desk P&amp;L in data.json.</div>'}
 function j(u){return fetch(u+'?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}

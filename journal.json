@@ -37,8 +37,8 @@
         "netProfitAtTarget": 16.22,
         "netLossAtStop": -9.05,
         "rrNet": 1.79,
-        "netProfitAtTargetCAD": 22.64,
-        "netLossAtStopCAD": -12.63
+        "netProfitAtTargetCAD": 23.19,
+        "netLossAtStopCAD": -12.94
       },
       "feesSource": {
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
@@ -247,8 +247,8 @@
         "netProfitAtTarget": 70.89,
         "netLossAtStop": -36.57,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 98.96,
-        "netLossAtStopCAD": -51.05
+        "netProfitAtTargetCAD": 101.36,
+        "netLossAtStopCAD": -52.29
       },
       "feesSource": {
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
@@ -268,7 +268,7 @@
         "net": 61.32,
         "grossR": 1.73,
         "netR": 1.703,
-        "netCAD": 85.6,
+        "netCAD": 87.67,
         "resolvedAt": "2026-11-02T16:37:04-05:00"
       },
       "taken": "no",
@@ -461,8 +461,8 @@
         "netProfitAtTarget": 45.6,
         "netLossAtStop": -23.53,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 63.66,
-        "netLossAtStopCAD": -32.84
+        "netProfitAtTargetCAD": 65.2,
+        "netLossAtStopCAD": -33.64
       },
       "mode": "live",
       "regime": "volatile",
@@ -490,7 +490,7 @@
         "net": 48.23,
         "grossR": 2.115,
         "netR": 2.083,
-        "netCAD": 67.33,
+        "netCAD": 68.96,
         "resolvedAt": "2026-11-17T16:44:18-05:00"
       },
       "taken": "yes",
@@ -551,8 +551,8 @@
         "netProfitAtTarget": 39.94,
         "netLossAtStop": -20.59,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 55.76,
-        "netLossAtStopCAD": -28.75
+        "netProfitAtTargetCAD": 57.11,
+        "netLossAtStopCAD": -29.44
       },
       "mode": "live",
       "regime": "volatile",
@@ -580,7 +580,7 @@
         "net": 2.8,
         "grossR": 0.141,
         "netR": 0.138,
-        "netCAD": 3.9,
+        "netCAD": 4.0,
         "resolvedAt": "2026-11-09T15:34:30-05:00"
       },
       "taken": "no",
@@ -639,8 +639,8 @@
         "netProfitAtTarget": 44.87,
         "netLossAtStop": -23.14,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 62.64,
-        "netLossAtStopCAD": -32.31
+        "netProfitAtTargetCAD": 64.16,
+        "netLossAtStopCAD": -33.09
       },
       "mode": "live",
       "regime": "volatile",
@@ -668,7 +668,7 @@
         "net": -68.78,
         "grossR": -2.973,
         "netR": -3.018,
-        "netCAD": -96.02,
+        "netCAD": -98.35,
         "resolvedAt": "2026-11-17T16:44:18-05:00"
       },
       "taken": "yes",
@@ -730,8 +730,8 @@
         "netProfitAtTarget": 27.8,
         "netLossAtStop": -14.56,
         "rrNet": 1.91,
-        "netProfitAtTargetCAD": 38.81,
-        "netLossAtStopCAD": -20.32
+        "netProfitAtTargetCAD": 39.75,
+        "netLossAtStopCAD": -20.82
       },
       "mode": "paper",
       "paperReason": "paper-only",
@@ -760,7 +760,7 @@
         "net": -14.56,
         "grossR": -1.0,
         "netR": -1.026,
-        "netCAD": -20.32,
+        "netCAD": -20.81,
         "resolvedAt": "2026-11-09T11:31:03-05:00"
       },
       "taken": "no",
@@ -803,8 +803,8 @@
         "netProfitAtTarget": 32.23,
         "netLossAtStop": -16.61,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 44.99,
-        "netLossAtStopCAD": -23.19
+        "netProfitAtTargetCAD": 46.08,
+        "netLossAtStopCAD": -23.75
       },
       "mode": "live",
       "regime": "volatile",
@@ -832,7 +832,7 @@
         "net": -2.08,
         "grossR": -0.125,
         "netR": -0.127,
-        "netCAD": -2.91,
+        "netCAD": -2.98,
         "resolvedAt": "2026-11-10T15:22:14-05:00"
       },
       "taken": "no",
@@ -891,8 +891,8 @@
         "netProfitAtTarget": 9.69,
         "netLossAtStop": -5.0,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 13.53,
-        "netLossAtStopCAD": -6.97
+        "netProfitAtTargetCAD": 13.85,
+        "netLossAtStopCAD": -7.15
       },
       "mode": "live",
       "regime": "volatile",
@@ -920,7 +920,7 @@
         "net": 1.08,
         "grossR": 0.223,
         "netR": 0.22,
-        "netCAD": 1.51,
+        "netCAD": 1.55,
         "resolvedAt": "2026-11-10T15:22:14-05:00"
       },
       "taken": "no",
@@ -979,8 +979,8 @@
         "netProfitAtTarget": 25.38,
         "netLossAtStop": -13.08,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 35.43,
-        "netLossAtStopCAD": -18.26
+        "netProfitAtTargetCAD": 36.29,
+        "netLossAtStopCAD": -18.7
       },
       "mode": "paper",
       "paperReason": "paper-only: retired (Stocks-in-play ORB)",
@@ -1009,7 +1009,7 @@
         "net": -2.42,
         "grossR": -0.185,
         "netR": -0.188,
-        "netCAD": -3.38,
+        "netCAD": -3.46,
         "resolvedAt": "2026-11-10T15:22:14-05:00"
       },
       "taken": "no",
@@ -1052,8 +1052,8 @@
         "netProfitAtTarget": 31.51,
         "netLossAtStop": -16.24,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 43.99,
-        "netLossAtStopCAD": -22.68
+        "netProfitAtTargetCAD": 45.05,
+        "netLossAtStopCAD": -23.22
       },
       "mode": "live",
       "regime": "volatile",
@@ -1081,7 +1081,7 @@
         "net": 4.75,
         "grossR": 0.302,
         "netR": 0.297,
-        "netCAD": 6.64,
+        "netCAD": 6.8,
         "resolvedAt": "2026-11-10T15:22:14-05:00"
       },
       "taken": "no",
@@ -1212,8 +1212,8 @@
         "netProfitAtTarget": 1.67,
         "netLossAtStop": -0.9,
         "rrNet": 1.85,
-        "netProfitAtTargetCAD": 2.33,
-        "netLossAtStopCAD": -1.26
+        "netProfitAtTargetCAD": 2.39,
+        "netLossAtStopCAD": -1.29
       },
       "mode": "live",
       "regime": "volatile",
@@ -1241,7 +1241,7 @@
         "net": -0.9,
         "grossR": -1.0,
         "netR": -1.047,
-        "netCAD": -1.26,
+        "netCAD": -1.29,
         "resolvedAt": "2026-11-16T16:44:57-05:00"
       },
       "taken": "no",
@@ -1284,8 +1284,8 @@
         "netProfitAtTarget": 32.08,
         "netLossAtStop": -16.55,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 44.78,
-        "netLossAtStopCAD": -23.1
+        "netProfitAtTargetCAD": 45.87,
+        "netLossAtStopCAD": -23.66
       },
       "mode": "paper",
       "paperReason": "paper-only: retired (Stocks-in-play ORB)",
@@ -1314,7 +1314,7 @@
         "net": 6.75,
         "grossR": 0.421,
         "netR": 0.414,
-        "netCAD": 9.42,
+        "netCAD": 9.64,
         "resolvedAt": "2026-11-17T15:16:52-05:00"
       },
       "taken": "no",
@@ -1357,8 +1357,8 @@
         "netProfitAtTarget": 13.78,
         "netLossAtStop": -7.15,
         "rrNet": 1.93,
-        "netProfitAtTargetCAD": 19.24,
-        "netLossAtStopCAD": -9.98
+        "netProfitAtTargetCAD": 19.7,
+        "netLossAtStopCAD": -10.22
       },
       "mode": "paper",
       "paperReason": "paper-only",
@@ -1387,7 +1387,7 @@
         "net": -7.15,
         "grossR": -1.0,
         "netR": -1.019,
-        "netCAD": -9.98,
+        "netCAD": -10.23,
         "resolvedAt": "2026-11-17T11:10:08-05:00"
       },
       "taken": "no",
@@ -1480,7 +1480,7 @@
       "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
       "currency": "USD",
-      "note": "First 15-min candle red (O 156.895, C 155.74) so short only; OR 154.761-157.46. Broke the OR low between the 9:50 and 10:11 runs (day low 153.87 by 10:11, 150.33 by 11:09); missed by the 10:11 and 10:24 runs and logged late at 11:10. Paper only.",
+      "note": "First 15-min candle red (O 156.895, C 155.74) so short only; OR 154.761-157.46. Broke the OR low between the 9:50 and 10:11 runs (day low 153.87 by 10:11, 150.33 by 11:09); missed by the 10:11 and 10:24 runs and logged late at 11:10. Paper only. Re-scored from the 11:10 ET log-time price 154.80 (5-min bar close 154.7965 / next open 154.80), not the 154.76 OR-low signal.",
       "loggedAt": "2026-11-17T11:10:08-05:00",
       "plan": {
         "riskGross": 27.0,
@@ -1503,8 +1503,8 @@
         "netProfitAtTarget": 53.16,
         "netLossAtStop": -27.44,
         "rrNet": 1.94,
-        "netProfitAtTargetCAD": 74.21,
-        "netLossAtStopCAD": -38.3
+        "netProfitAtTargetCAD": 76.01,
+        "netLossAtStopCAD": -39.23
       },
       "mode": "paper",
       "paperReason": "paper-only: retired (Stocks-in-play ORB)",
@@ -1522,23 +1522,26 @@
       "result": {
         "outcome": "time",
         "exit": 153.03,
-        "gross": 17.3,
+        "gross": 17.7,
         "fees": {
           "commission": 0.0,
           "ecn": 0.0,
           "sec": 0.0319,
-          "fx": 0.26,
-          "total": 0.2914
+          "fx": 0.27,
+          "total": 0.2974
         },
-        "net": 17.01,
-        "grossR": 0.641,
-        "netR": 0.63,
-        "netCAD": 23.74,
+        "net": 17.4,
+        "grossR": 0.656,
+        "netR": 0.645,
+        "netCAD": 24.88,
+        "entryUsed": 154.8,
         "resolvedAt": "2026-11-17T15:16:52-05:00"
       },
       "taken": "no",
       "realPnl": null,
-      "realPnlCAD": null
+      "realPnlCAD": null,
+      "loggedLate": true,
+      "loggedPrice": 154.8
     },
     {
       "id": "2026-11-17-NVDA-2",
@@ -1576,8 +1579,8 @@
         "netProfitAtTarget": 19.58,
         "netLossAtStop": -13.54,
         "rrNet": 1.45,
-        "netProfitAtTargetCAD": 27.33,
-        "netLossAtStopCAD": -18.91
+        "netProfitAtTargetCAD": 28.0,
+        "netLossAtStopCAD": -19.36
       },
       "mode": "paper",
       "paperReason": "paper-only: retired (ORB (VWAP paper) / vwap)",
@@ -1606,7 +1609,7 @@
         "net": 19.58,
         "grossR": 1.496,
         "netR": 1.471,
-        "netCAD": 27.33,
+        "netCAD": 27.99,
         "resolvedAt": "2026-11-17T11:59:56-05:00"
       },
       "taken": "no",

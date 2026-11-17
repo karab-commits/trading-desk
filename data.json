@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 4:47 PM ET",
+  "lastUpdated": "Tue Nov 17, 2026 4:54 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -416,6 +416,10 @@
   "deskLog": [
     {
       "date": "Nov 17",
+      "text": "After the close, two scoring fixes: (1) paper ideas logged after the signal bar are now scored from the price at log time (`loggedLate` + `loggedPrice`). 2026-11-17-NVDA-1 was logged at 11:10 ET, 65 minutes after the OR-low break; paper entry is the 11:10 price 154.80 (5-min close 154.7965), not the 154.76 signal. Re-scored at the 15:15 time stop 153.03: +17.40 USD / +24.88 CAD (+0.645R), vs the old +17.01 USD / +23.74 CAD. (2) Desk USD/CAD rate moved from 1.396 (Bank of Canada 2026-10-30) to 1.4298, implied by Questrade combined CAD equity vs CAD/USD cash. Other paper USD results were reconverted at 1.4298; realized historical trades are unchanged at their recorded CAD values (AAPL +49.44 USD / +69.02 CAD, UAL -67.07 USD / -93.63 CAD, all-time real -24.61 CAD). Today paper after fees is now +61.94 CAD (Quant +72.17, Whale -10.23): NVDA VWAP +27.99, NVDA SIP ORB +24.88, LITE +9.64, XIU +9.66, QQQ -10.23."
+    },
+    {
+      "date": "Nov 17",
       "text": "EOD: 0 orders reached Questrade, 0 fills, real P&L 0.00 CAD (account 0944 flat, equity 2,472.19 CAD; the -2.65 CAD vs Nov 16 is Questrade's -1.82 USD margin interest posted Nov 16 + FX on the USD -19.45 debit, not trading). Paper after fees (all paper-only strategies or shorts): Quant NVDA VWAP short +27.33 CAD (+1.47R, target 11:50), NVDA SIP ORB short +23.74 (+0.63R, 15:15 time stop; logged 65 min late, so flattering), LITE SIP ORB short +9.42 (+0.41R, 15:15), XIU VWAP short +9.66 (+0.88R, re-scored to its 15:50 time stop 53.34 from 3:16 PM 53.28); Whale QQQ short -9.98 (-1.02R, stop 11:00). Paper day +60.17 CAD: Quant +70.15, Whale -9.98. Risk blocked the paper-only QQQ and XIU shorts (rule followed). All-time real reconciled to Questrade executions: AAPL +49.44 USD, UAL -67.07 USD (commission/SEC included, no FX charged) = -24.61 CAD at the desk's 1.396 rate (was -27.59 on the site vs -25.60 in scorecard: UAL had been converted at two different rates and AAPL had an estimated 1.5% FX fee). Fixed risk_check.py: paper-only watchlist items no longer count as open risk (it had shown Quant 72.44/35 used with 0 real positions). Daily bars for XIU/SOFI/HXT/QQQ/SPY refreshed to Nov 17; gap-fade walk-forward unchanged (XIU -0.004R 2/5 paper, SOFI +0.365R 4/5, HXT +0.028R 3/5). No bot paused. Regime: all 17 scored ideas volatile, 0 calm."
     },
     {
@@ -626,21 +630,21 @@
       "note": "Questrade Currency Conversion (USD/CAD) 1.5%. Same-day US trades in the margin account settle in USD with no forced conversion, so only the P&L is assumed converted back to CAD (mode 'pnl'). Set mode 'round_trip' if CAD is converted to buy and back after selling, or 'none' to keep USD."
     },
     "usdcad": {
-      "rate": 1.396,
-      "asOf": "2026-10-30",
-      "source": "Bank of Canada daily average (FXUSDCAD)",
-      "note": "Used only to show USD P&L in CAD totals"
+      "rate": 1.4298,
+      "asOf": "2026-11-17",
+      "source": "Questrade account balances (combined CAD equity / USD cash)",
+      "note": "Used only to show USD P&L in CAD totals. Implied USD/CAD from the account's combined CAD and USD balances on 2026-11-17 (1.4298). Realized historical trades keep their recorded CAD values and are not reconverted."
     },
     "notIncluded": "Short borrow fees (overnight only; the desk is flat by the close), margin interest, FINRA TAF (not listed on Questrade's schedule)"
   },
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-17T16:47:00-05:00",
+    "updated": "2026-11-17T16:54:16-05:00",
     "ideasLogged": 21,
     "byDate": {
       "2026-11-02": {
-        "net": 73.64,
+        "net": 75.71,
         "ideas": 4,
         "resolved": 4,
         "open": 0,
@@ -650,7 +654,7 @@
         "taken": 0
       },
       "2026-11-03": {
-        "net": 67.33,
+        "net": 68.96,
         "ideas": 3,
         "resolved": 3,
         "open": 0,
@@ -660,7 +664,7 @@
         "taken": 1
       },
       "2026-11-09": {
-        "net": -112.44,
+        "net": -115.16,
         "ideas": 3,
         "resolved": 3,
         "open": 0,
@@ -670,7 +674,7 @@
         "taken": 1
       },
       "2026-11-10": {
-        "net": 1.86,
+        "net": 1.91,
         "ideas": 4,
         "resolved": 4,
         "open": 0,
@@ -680,7 +684,7 @@
         "taken": 0
       },
       "2026-11-16": {
-        "net": 12.52,
+        "net": 12.49,
         "ideas": 2,
         "resolved": 2,
         "open": 0,
@@ -690,7 +694,7 @@
         "taken": 0
       },
       "2026-11-17": {
-        "net": 60.17,
+        "net": 61.94,
         "ideas": 5,
         "resolved": 5,
         "open": 0,
@@ -914,7 +918,7 @@
   ],
   "watchlistUpdated": "2026-11-17T16:44:35-05:00",
   "scorecard": {
-    "updated": "2026-11-17T16:47:00-05:00",
+    "updated": "2026-11-17T16:54:16-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
@@ -926,15 +930,15 @@
         "wins": 5,
         "losses": 2,
         "winRate": 71.4,
-        "avgWin": 16.79,
-        "avgLoss": -5.62,
-        "expectancyR": 0.27,
-        "netPnl": 72.69,
+        "avgWin": 17.19,
+        "avgLoss": -5.76,
+        "expectancyR": 0.272,
+        "netPnl": 74.43,
         "bestStrategy": {
           "name": "VWAP reclaim/loss",
           "trades": 2,
           "wins": 2,
-          "netPnl": 36.99,
+          "netPnl": 37.65,
           "winRate": 100.0,
           "expectancyR": 1.173
         },
@@ -942,7 +946,7 @@
           "name": "QQQ RVOL breakout",
           "trades": 1,
           "wins": 0,
-          "netPnl": -9.98,
+          "netPnl": -10.23,
           "winRate": 0.0,
           "expectancyR": -1.019
         },
@@ -951,7 +955,7 @@
             "name": "VWAP reclaim/loss",
             "trades": 2,
             "wins": 2,
-            "netPnl": 36.99,
+            "netPnl": 37.65,
             "winRate": 100.0,
             "expectancyR": 1.173
           },
@@ -959,9 +963,9 @@
             "name": "Stocks-in-play 15-min ORB",
             "trades": 2,
             "wins": 2,
-            "netPnl": 33.16,
+            "netPnl": 34.52,
             "winRate": 100.0,
-            "expectancyR": 0.522
+            "expectancyR": 0.529
           },
           {
             "name": "Opening-range breakout (15-min), volume-confirmed",
@@ -975,7 +979,7 @@
             "name": "QQQ relative-volume breakout",
             "trades": 1,
             "wins": 0,
-            "netPnl": -1.26,
+            "netPnl": -1.29,
             "winRate": 0.0,
             "expectancyR": -1.047
           },
@@ -983,7 +987,7 @@
             "name": "QQQ RVOL breakout",
             "trades": 1,
             "wins": 0,
-            "netPnl": -9.98,
+            "netPnl": -10.23,
             "winRate": 0.0,
             "expectancyR": -1.019
           }
@@ -993,15 +997,15 @@
             "name": "quant",
             "trades": 5,
             "wins": 5,
-            "netPnl": 83.93,
+            "netPnl": 85.95,
             "winRate": 100.0,
-            "expectancyR": 0.791
+            "expectancyR": 0.794
           },
           {
             "name": "whale",
             "trades": 2,
             "wins": 0,
-            "netPnl": -11.24,
+            "netPnl": -11.52,
             "winRate": 0.0,
             "expectancyR": -1.033
           }
@@ -1024,15 +1028,15 @@
         "wins": 10,
         "losses": 7,
         "winRate": 58.8,
-        "avgWin": 24.89,
-        "avgLoss": -20.83,
-        "expectancyR": 0.057,
-        "netPnl": 103.08,
+        "avgWin": 25.49,
+        "avgLoss": -21.3,
+        "expectancyR": 0.058,
+        "netPnl": 105.85,
         "bestStrategy": {
           "name": "LOD breakdown under VWAP (untested; PDH/PDL-break tests negative)",
           "trades": 1,
           "wins": 1,
-          "netPnl": 85.6,
+          "netPnl": 87.67,
           "winRate": 100.0,
           "expectancyR": 1.703
         },
@@ -1040,16 +1044,16 @@
           "name": "Stocks-in-play 15-min ORB",
           "trades": 8,
           "wins": 5,
-          "netPnl": -57.1,
+          "netPnl": -57.92,
           "winRate": 62.5,
-          "expectancyR": -0.204
+          "expectancyR": -0.202
         },
         "byStrategy": [
           {
             "name": "LOD breakdown under VWAP (untested; PDH/PDL-break tests negative)",
             "trades": 1,
             "wins": 1,
-            "netPnl": 85.6,
+            "netPnl": 87.67,
             "winRate": 100.0,
             "expectancyR": 1.703
           },
@@ -1057,7 +1061,7 @@
             "name": "Stocks-in-play ORB",
             "trades": 1,
             "wins": 1,
-            "netPnl": 67.33,
+            "netPnl": 68.96,
             "winRate": 100.0,
             "expectancyR": 2.083
           },
@@ -1065,7 +1069,7 @@
             "name": "VWAP reclaim/loss",
             "trades": 2,
             "wins": 2,
-            "netPnl": 36.99,
+            "netPnl": 37.65,
             "winRate": 100.0,
             "expectancyR": 1.173
           },
@@ -1081,7 +1085,7 @@
             "name": "QQQ RVOL breakout",
             "trades": 1,
             "wins": 0,
-            "netPnl": -9.98,
+            "netPnl": -10.23,
             "winRate": 0.0,
             "expectancyR": -1.019
           },
@@ -1097,7 +1101,7 @@
             "name": "QQQ relative-volume breakout",
             "trades": 2,
             "wins": 0,
-            "netPnl": -21.58,
+            "netPnl": -22.1,
             "winRate": 0.0,
             "expectancyR": -1.036
           },
@@ -1105,9 +1109,9 @@
             "name": "Stocks-in-play 15-min ORB",
             "trades": 8,
             "wins": 5,
-            "netPnl": -57.1,
+            "netPnl": -57.92,
             "winRate": 62.5,
-            "expectancyR": -0.204
+            "expectancyR": -0.202
           }
         ],
         "byBot": [
@@ -1115,7 +1119,7 @@
             "name": "scanner",
             "trades": 2,
             "wins": 1,
-            "netPnl": 73.64,
+            "netPnl": 75.71,
             "winRate": 50.0,
             "expectancyR": 0.352
           },
@@ -1123,15 +1127,15 @@
             "name": "quant",
             "trades": 12,
             "wins": 9,
-            "netPnl": 61.0,
+            "netPnl": 62.47,
             "winRate": 75.0,
-            "expectancyR": 0.28
+            "expectancyR": 0.281
           },
           {
             "name": "whale",
             "trades": 3,
             "wins": 0,
-            "netPnl": -31.56,
+            "netPnl": -32.33,
             "winRate": 0.0,
             "expectancyR": -1.031
           }

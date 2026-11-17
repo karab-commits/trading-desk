@@ -3,7 +3,7 @@
 
 Every alert gets logged with `add` BEFORE it is sent, so the alert can quote the
 after-fee numbers this script prints. Later `resolve` scores it as if it had been
-traded exactly at the alert's plan, and records whether K actually took it.
+traded exactly at the alert's plan (or at `loggedPrice` when `loggedLate` is set), and records whether K actually took it.
 
   python3 log_idea.py add --date 2026-11-03 --session premarket --ticker XIU.TO --side short \\
       --entry 54.31 --stop 54.84 --target 53.78 --shares 150 --strategy "Big-gap fade XIU" --bot scanner
@@ -103,6 +103,38 @@ def trade_fees(side, entry, exit_px, shares, currency, cfg):
 
 def gross_pnl(side, entry, exit_px, shares):
     return (exit_px - entry) * shares * (1 if side == 'long' else -1)
+
+
+def paper_entry(idea):
+    """Price used to score paper P&L.
+
+    The journal `entry` stays the original signal price. If the idea was logged after
+    the signal bar (`loggedLate`) and `loggedPrice` is set, paper P&L is scored from
+    that log-time price, not the signal.
+    """
+    if idea.get('loggedLate') and idea.get('loggedPrice') is not None:
+        return float(idea['loggedPrice'])
+    return idea['entry']
+
+
+def score_paper(idea, outcome, exit_px, cfg):
+    """Build a journal `result` using paper_entry (logged price when late)."""
+    cur = idea['currency']
+    e = paper_entry(idea)
+    if outcome == 'no-fill':
+        return {'outcome': 'no-fill', 'exit': None, 'gross': 0.0,
+                'fees': trade_fees(idea['side'], e, e, 0, cur, cfg),
+                'net': 0.0, 'grossR': 0.0, 'netR': 0.0, 'netCAD': 0.0}
+    g = gross_pnl(idea['side'], e, exit_px, idea['shares'])
+    f = trade_fees(idea['side'], e, exit_px, idea['shares'], cur, cfg)
+    net = g - f['total']
+    risk = (idea.get('plan') or {}).get('riskGross') or None
+    res = {'outcome': outcome, 'exit': exit_px, 'gross': r2(g), 'fees': f, 'net': r2(net),
+           'grossR': round(g / risk, 3) if risk else None, 'netR': round(net / risk, 3) if risk else None,
+           'netCAD': r2(to_cad(net, cur, cfg))}
+    if idea.get('loggedLate'):
+        res['entryUsed'] = e
+    return res
 
 
 def plan_numbers(idea, cfg):
@@ -205,6 +237,11 @@ def cmd_add(a):
             'entry': a.entry, 'stop': a.stop, 'target': a.target, 'shares': a.shares,
             'strategy': a.strategy, 'bot': a.bot, 'currency': (a.currency or infer_currency(t)).upper(),
             'note': a.note or '', 'loggedAt': now_et().isoformat(timespec='seconds')}
+    if getattr(a, 'logged_late', False) or getattr(a, 'logged_price', None) is not None:
+        if not getattr(a, 'logged_late', False) or a.logged_price is None:
+            sys.exit('--logged-late requires --logged-price (the price at log time)')
+        idea['loggedLate'] = True
+        idea['loggedPrice'] = a.logged_price
     idea['plan'] = plan_numbers(idea, cfg)
     # strategy mode from strategies.json (live | paper): paper-only strategies are logged but never traded
     mode, mlabel = 'live', None
@@ -265,19 +302,9 @@ def cmd_resolve(a):
     if idea.get('mode') == 'paper' and (a.taken == 'yes' or a.real_pnl is not None):
         sys.exit(f"{a.id} is paper-only ({idea.get('paperReason')}); it can't be marked taken / given real P&L")
     cur = idea['currency']
-    if a.outcome == 'no-fill':
-        res = {'outcome': 'no-fill', 'exit': None, 'gross': 0.0, 'fees': trade_fees(idea['side'], idea['entry'], idea['entry'], 0, cur, cfg),
-               'net': 0.0, 'grossR': 0.0, 'netR': 0.0, 'netCAD': 0.0}
-    else:
-        if a.exit is None:
-            sys.exit('--exit PRICE is required unless --outcome no-fill')
-        g = gross_pnl(idea['side'], idea['entry'], a.exit, idea['shares'])
-        f = trade_fees(idea['side'], idea['entry'], a.exit, idea['shares'], cur, cfg)
-        net = g - f['total']
-        risk = idea['plan']['riskGross'] or None
-        res = {'outcome': a.outcome, 'exit': a.exit, 'gross': r2(g), 'fees': f, 'net': r2(net),
-               'grossR': round(g / risk, 3) if risk else None, 'netR': round(net / risk, 3) if risk else None,
-               'netCAD': r2(to_cad(net, cur, cfg))}
+    if a.outcome != 'no-fill' and a.exit is None:
+        sys.exit('--exit PRICE is required unless --outcome no-fill')
+    res = score_paper(idea, a.outcome, a.exit, cfg)
     res['resolvedAt'] = now_et().isoformat(timespec='seconds')
     idea['result'] = res
     if a.taken:
@@ -337,6 +364,10 @@ def main():
     p.add_argument('--note')
     p.add_argument('--strategy-id', help='strategy id/alias for the mode lookup (e.g. vwap, orb, sip_orb); default: match --strategy text')
     p.add_argument('--paper', action='store_true', help='force paper-only (never traded)')
+    p.add_argument('--logged-late', action='store_true',
+                   help='idea was logged after the signal bar; paper P&L uses --logged-price')
+    p.add_argument('--logged-price', type=float,
+                   help='price at log time (required with --logged-late); used as the paper entry')
     p.set_defaults(fn=cmd_add)
     p = sp.add_parser('resolve', parents=[common], help='score an idea at its plan')
     p.add_argument('--id', required=True)

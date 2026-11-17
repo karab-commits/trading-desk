@@ -166,7 +166,7 @@ python3 set_pnl.py --reset today                # start of a new day
 
 ## Paper-tracking every alert (journal.json + log_idea.py)
 
-Every idea the desk sends K is logged **before** the alert goes out, taken or not, then scored later as if it had been traded exactly at the alert's plan. Nothing in `journal.json` is invented: ideas come from real alerts, exits from real prices, real P&L from Questrade.
+Every idea the desk sends K is logged **before** the alert goes out, taken or not, then scored later as if it had been traded exactly at the alert's plan. If an idea is logged after the signal bar, set `loggedLate: true` and `loggedPrice` (the price at log time); paper P&L is then scored from `loggedPrice`, not the original signal `entry`. Nothing in `journal.json` is invented: ideas come from real alerts, exits from real prices, real P&L from Questrade.
 
 `journal.json` = `{"version": 1, "ideas": [...]}`. Each idea:
 
@@ -175,6 +175,7 @@ Every idea the desk sends K is logged **before** the alert goes out, taken or no
 | `id` | `YYYY-MM-DD-ROOT-n`, e.g. `2026-11-03-XIU-1` |
 | `date`, `session` | alert date (ET) and `premarket` / `midday` / `adhoc` |
 | `ticker`, `side`, `entry`, `stop`, `target`, `shares` | the plan in the alert |
+| `loggedLate`, `loggedPrice` | optional: if the idea was logged after the signal bar, `loggedPrice` is the price at log time and is used as the paper entry |
 | `strategy`, `bot` | playbook strategy name and the bot id whose idea it was (scorecard groups by both) |
 | `currency` | `CAD` / `USD`. Default: CAD for `.TO .V .CN .NE` tickers, else USD |
 | `plan` | `riskGross`, `rewardGross`, `rr`, `feesAtTarget`, `feesAtStop`, `netProfitAtTarget`, `netLossAtStop`, `rrNet` (+ `…CAD`) |
@@ -184,7 +185,8 @@ Every idea the desk sends K is logged **before** the alert goes out, taken or no
 ```
 # log an idea (prints the id and the after-fee numbers to quote in the alert)
 python3 log_idea.py add --date 2026-11-03 --session premarket --ticker XIU.TO --side short \
-    --entry 54.31 --stop 54.84 --target 53.78 --shares 150 --strategy "Big-gap fade XIU" --bot scanner [--currency CAD] [--note "..."]
+    --entry 54.31 --stop 54.84 --target 53.78 --shares 150 --strategy "Big-gap fade XIU" --bot scanner [--currency CAD] [--note "..."] \
+    [--logged-late --logged-price 54.40]
 # score it at the plan (time = closed at the close / time stop at PRICE)
 python3 log_idea.py resolve --id 2026-11-03-XIU-1 --outcome target|stop|time|no-fill --exit 53.78 [--taken yes|no] [--real-pnl 75.10]
 # unresolved ideas
@@ -203,7 +205,7 @@ python3 scorecard.py --week 2026-W45  # a given week
 python3 scorecard.py --all            # print all-time (data.json still gets week + all time)
 ```
 Writes `data.json.scorecard = {updated, currency: "CAD", basis, week: {label, from, to, title, ideas, open, paper, real}, allTime: {ideas, open, paper, real}}` and prints a short summary.
-Each book (`paper` = every filled idea at its plan; `real` = ideas with `taken: yes` and a `realPnl`) has `trades, wins, losses, winRate, avgWin, avgLoss, expectancyR, netPnl, bestStrategy, worstStrategy, byStrategy[], byBot[]` (all CAD, after fees; win = net > 0). `byBot` answers "which bot's ideas actually paid".
+Each book (`paper` = every filled idea at its plan, or at `loggedPrice` when `loggedLate`; `real` = ideas with `taken: yes` and a `realPnl`) has `trades, wins, losses, winRate, avgWin, avgLoss, expectancyR, netPnl, bestStrategy, worstStrategy, byStrategy[], byBot[]` (all CAD, after fees; win = net > 0). `byBot` answers "which bot's ideas actually paid".
 
 ## Fees (data.json `fees`)
 
@@ -218,7 +220,7 @@ Checked 2026-11-02 on Questrade's own pages: [Transaction fees](https://www.ques
 | Options (not used yet) | US equity options $0; CAD options $0.99/contract; US index $0.99/contract | — |
 
 `fx.mode`: `pnl` (default) assumes a same-day USD trade in the margin account settles in USD (no forced conversion) and only the P&L is converted back, costing 1.5% of |P&L|; `round_trip` charges 1.5% on entry + exit notional (CAD converted to buy and back after selling); `none` keeps USD.
-USD amounts are shown in CAD at `fees.usdcad.rate` (Bank of Canada daily average; 1.3960 on 2026-10-30). Update `rate`/`asOf` when it moves.
+USD amounts are shown in CAD at `fees.usdcad.rate` (Questrade account-implied USD/CAD; 1.4298 as of 2026-11-17, from combined CAD equity vs CAD/USD cash balances). Update `rate`/`asOf` when it moves. Realized historical trades keep their recorded CAD values and are not reconverted when the rate changes.
 Not included: short borrow fees (charged on overnight shorts; the desk is flat by the close), margin interest, FINRA TAF (not on Questrade's schedule).
 
 ## Multi-strategy desk (K's choice, Nov 2 2026) + strategies.json
@@ -341,7 +343,7 @@ vetoed by `debate.py` (verdict `skip`), expired, untaken, or paper-only (`mode: 
     after 4:00 PM ET (or on a later day) it counts as flat at that last price until the close-out routine resolves it;
   - **not triggered** = `no-fill`, or still `watching`/`expired` at the close → $0; `waiting` / `pending` (not scored yet) → $0.
 - Fees: the same model as `log_idea.py` (data.json `fees`): $0 commission, SEC fee on US sells, 1.5% FX on the USD P&L
-  (`fx.mode: pnl`), USD → CAD at `fees.usdcad.rate` (1.3960 if missing).
+  (`fx.mode: pnl`), USD → CAD at `fees.usdcad.rate` (1.4298 if missing). Late-logged ideas are scored from `loggedPrice`.
 - Totals today / this ISO week / all time (ET dates), per-bot breakdown, and `Real: $X · Missed: $Y` (Real = data.json
   `pnlToday/pnlWeek/pnlAllTime.total`, per bot `bots[].pnlToday/Week/AllTime`).
 - `missed.js` (shared by both pages) recomputes everything in the browser from journal.json + data.json + counters.json

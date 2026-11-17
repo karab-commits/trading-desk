@@ -134,7 +134,7 @@
   "maxLossPerTradeCADByBot": {
    "options": 56
   },
-  "maxLossPerTradeCADByBotNote": "Options Desk cap is 40 USD per spread (0.40 debit), per K on Nov 9, 2026; 40 USD x 1.396 USDCAD = about 56 CAD. Other bots use maxLossPerTradeCAD.",
+  "maxLossPerTradeCADByBotNote": "Options Desk cap is 40 USD per spread (0.40 debit), per K on Nov 9, 2026; 40 USD x 1.4298 USDCAD = about 57 CAD (the stored cap remains 56 CAD as set Nov 9). Other bots use maxLossPerTradeCAD.",
   "openingGate": "Set by Kiwi Nov 10 2026 EOD: while a position carried from a previous day is still open, send no new entries; the first order of the day is that position's exit. LIFTED Nov 13 2026 3:22 PM ET: UAL sold (account flat). Rule stays for any future carry.",
   "unprotectedFill": "Added by Kiwi Nov 13 2026: if a filled entry has no approved working stop within 5 minutes of the fill, send one market exit and block that bot's new entries until the position is flat. Lesson from UAL: a planned -1R loss became -2.94R because the stop and exits were never approved."
  },
