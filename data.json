@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 11:39 AM ET",
+  "lastUpdated": "Tue Nov 17, 2026 11:59 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -130,11 +130,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:38 run: flat, 0 orders",
+        "now": "11:59 run: flat, 0 orders",
         "detail": "Mood volatile (SPY rv10 30.7%). No gap fade triggered. Account flat, equity 2,472.19 CAD. Watchlist: COHR AAOI DIS (news), NVDA LITE (SIP paper), QQQ (whale paper).",
-        "since": "2026-11-17T11:38:59-05:00",
+        "since": "2026-11-17T11:59:56-05:00",
         "state": "working",
-        "next": "Next run 11:53",
+        "next": "Next run 12:14",
         "log": [
           "16:45 EOD review Nov 13",
           "9:15 ET pre-market: no opening orders",
@@ -146,7 +146,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "11:15 bar lost VWAP on RVOL 2.03; paper only (2026-11-17-NVDA-2)",
+      "status": "2026-11-17-NVDA-2 reached 152.79 (11:45 bar low 152.655). Open paper: LITE, XIU, NVDA SIP ORB",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -27.59,
@@ -154,11 +154,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "NVDA VWAP-loss paper short",
-        "detail": "11:15 bar lost VWAP on RVOL 2.03; paper only (2026-11-17-NVDA-2)",
-        "since": "2026-11-17T11:38:59-05:00",
+        "now": "NVDA VWAP paper hit target",
+        "detail": "2026-11-17-NVDA-2 reached 152.79 (11:45 bar low 152.655). Open paper: LITE, XIU, NVDA SIP ORB",
+        "since": "2026-11-17T11:59:56-05:00",
         "state": "working",
-        "next": "ORB + VWAP 11:55",
+        "next": "ORB + VWAP 12:10",
         "log": [
           "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
@@ -626,7 +626,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-17T11:38:59-05:00",
+    "updated": "2026-11-17T11:59:56-05:00",
     "ideasLogged": 21,
     "byDate": {
       "2026-11-02": {
@@ -680,12 +680,12 @@
         "taken": 0
       },
       "2026-11-17": {
-        "net": -9.98,
+        "net": 17.35,
         "ideas": 5,
-        "resolved": 1,
-        "open": 4,
-        "filled": 1,
-        "wins": 0,
+        "resolved": 2,
+        "open": 3,
+        "filled": 2,
+        "wins": 1,
         "real": 0.0,
         "taken": 0
       }
@@ -713,8 +713,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 204.49,
-      "priceTime": "2026-11-17T11:38:32-05:00",
+      "last": 205.23,
+      "priceTime": "2026-11-17T11:59:45-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -739,8 +739,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 43.771,
-      "priceTime": "2026-11-17T11:38:30-05:00",
+      "last": 44.105,
+      "priceTime": "2026-11-17T11:59:43-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,8 +765,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 119.42,
-      "priceTime": "2026-11-17T11:38:34-05:00",
+      "last": 120.01,
+      "priceTime": "2026-11-17T11:59:42-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -790,8 +790,8 @@
       "netLossAtStop": -27.44,
       "netProfitAtTargetCAD": 74.21,
       "netLossAtStopCAD": -38.3,
-      "last": 153.72,
-      "priceTime": "2026-11-17T11:38:34-05:00",
+      "last": 153.66,
+      "priceTime": "2026-11-17T11:59:45-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -823,8 +823,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 549.08,
-      "priceTime": "2026-11-17T11:38:32-05:00",
+      "last": 548.2893,
+      "priceTime": "2026-11-17T11:59:34-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -855,8 +855,8 @@
       "netLossAtStop": -7.15,
       "netProfitAtTargetCAD": 19.24,
       "netLossAtStopCAD": -9.98,
-      "last": 652.72,
-      "priceTime": "2026-11-17T11:38:34-05:00",
+      "last": 652.7801,
+      "priceTime": "2026-11-17T11:59:45-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -895,11 +895,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-17T10:57:11-05:00",
-      "last": 53.4,
-      "priceTime": "2026-11-17T11:38:22-05:00"
+      "last": 53.42,
+      "priceTime": "2026-11-17T11:59:18-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-17T11:38:59-05:00",
+  "watchlistUpdated": "2026-11-17T11:59:56-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
