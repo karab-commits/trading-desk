@@ -491,11 +491,11 @@
         "grossR": 2.115,
         "netR": 2.083,
         "netCAD": 67.33,
-        "resolvedAt": "2026-11-04T10:51:45-05:00"
+        "resolvedAt": "2026-11-17T16:44:18-05:00"
       },
       "taken": "yes",
-      "realPnl": 48.71,
-      "realPnlCAD": 68.0,
+      "realPnl": 49.44,
+      "realPnlCAD": 69.02,
       "debate": {
         "bull": [
           "Textbook stocks-in-play setup: -3.8% earnings-warning gap, 15.7M shares traded by 9:51 (very heavy first-half-hour volume), strong first 15-min candle (325.58 to 332.38) and a clean break of the 332.67 range high",
@@ -513,7 +513,7 @@
         "regime": "volatile",
         "rule": "veto only"
       },
-      "realR": 2.103
+      "realR": 2.135
     },
     {
       "id": "2026-11-09-NVDA-1",
@@ -669,11 +669,11 @@
         "grossR": -2.973,
         "netR": -3.018,
         "netCAD": -96.02,
-        "resolvedAt": "2026-11-13T16:36:20-05:00"
+        "resolvedAt": "2026-11-17T16:44:18-05:00"
       },
       "taken": "yes",
-      "realPnl": -67.05,
-      "realPnlCAD": -93.6,
+      "realPnl": -67.07,
+      "realPnlCAD": -93.63,
       "debate": {
         "bull": [
           "Entry is a stop order: only fills if UAL actually breaks the 120.75 opening-range high, so no chase",
@@ -692,7 +692,7 @@
         "regime": "volatile",
         "rule": "veto only"
       },
-      "realR": -2.942
+      "realR": -2.943
     },
     {
       "id": "2026-11-09-QQQ-1",
@@ -1448,8 +1448,8 @@
       },
       "result": {
         "outcome": "time",
-        "exit": 53.28,
-        "gross": 12.42,
+        "exit": 53.34,
+        "gross": 9.66,
         "fees": {
           "commission": 0.0,
           "ecn": 0.0,
@@ -1457,11 +1457,11 @@
           "fx": 0.0,
           "total": 0.0
         },
-        "net": 12.42,
-        "grossR": 1.125,
-        "netR": 1.125,
-        "netCAD": 12.42,
-        "resolvedAt": "2026-11-17T15:16:52-05:00"
+        "net": 9.66,
+        "grossR": 0.875,
+        "netR": 0.875,
+        "netCAD": 9.66,
+        "resolvedAt": "2026-11-17T16:44:18-05:00"
       },
       "taken": "no",
       "realPnl": null,

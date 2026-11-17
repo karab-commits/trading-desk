@@ -118,6 +118,12 @@ def open_positions(journal, data, today, extra):
             pos.append(dict(ticker=i['ticker'], side=i['side'], risk=idea_risk_cad(i, data), bot=i.get('bot'), src=f"journal {i['id']}"))
     for w in data.get('watchlist', []):
         if w.get('date') == today and str(w.get('status', '')).lower() in ('triggered', 'in trade') and w.get('side'):
+            # Nov 17 fix (Kiwi): a watchlist item whose same-day journal idea is paper-only (mode paper or not taken
+            # and already resolved) carries no real money, so it is not open risk. Real/pending items still count.
+            if any(i.get('date') == today and root(i['ticker']) == root(w['ticker']) and i.get('side') == w['side']
+                   and i.get('taken') != 'yes' and (i.get('mode') == 'paper' or i.get('result'))
+                   for i in journal.get('ideas', [])) and str(w.get('status', '')).lower() != 'in trade':
+                continue
             if not any(root(p['ticker']) == root(w['ticker']) and p['side'] == w['side'] for p in pos):
                 r = abs(w['netLossAtStopCAD']) if w.get('netLossAtStopCAD') is not None else 40.0
                 pos.append(dict(ticker=w['ticker'], side=w['side'], risk=r, bot=w.get('bot'), src=f"watchlist {w.get('status')}"))

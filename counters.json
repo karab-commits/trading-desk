@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-17T15:54:35-05:00",
+  "updated": "2026-11-17T16:47:05-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2342,7 +2342,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 28,
+   "runs": 29,
    "symbolsQuoted": {
     "unique": [
      "COHR",
@@ -2368,7 +2368,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-17T15:54:35-05:00"
+   "lastRun": "2026-11-17T16:47:05-05:00",
+   "keys": [
+    "review-2026-11-17"
+   ]
   },
   "scanner": {
    "quotesCalls": 2,
@@ -2466,8 +2469,8 @@
   },
   "quant": {
    "quotesCalls": 1,
-   "barCalls": 167,
-   "bars": 892,
+   "barCalls": 172,
+   "bars": 967,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -2479,8 +2482,8 @@
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
-   "backtestVariants": 0,
-   "simulatedTrades": 0,
+   "backtestVariants": 45,
+   "simulatedTrades": 2502,
    "runs": 0,
    "symbolsQuoted": {
     "unique": [
@@ -2616,6 +2619,35 @@
     "rejected:2026-11-17-NVDA-1",
     "rejected:2026-11-17-NVDA-2"
    ]
+  },
+  "journal": {
+   "quotesCalls": 0,
+   "barCalls": 8,
+   "bars": 316,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
   }
  }
 }
