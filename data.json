@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 10:57 AM ET",
+  "lastUpdated": "Tue Nov 17, 2026 11:10 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -71,7 +71,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "10:40 bar broke the session low on RVOL 2.44; paper only (2026-11-17-QQQ-1)",
+      "status": "2026-11-17-QQQ-1 hit stop 655.12 by 11:00 (-9.98 CAD paper, -1.02R)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -79,11 +79,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ paper short logged",
-        "detail": "10:40 bar broke the session low on RVOL 2.44; paper only (2026-11-17-QQQ-1)",
-        "since": "2026-11-17T10:57:11-05:00",
-        "state": "working",
-        "next": "Track QQQ paper",
+        "now": "QQQ paper short stopped",
+        "detail": "2026-11-17-QQQ-1 hit stop 655.12 by 11:00 (-9.98 CAD paper, -1.02R)",
+        "since": "2026-11-17T11:10:17-05:00",
+        "state": "done",
+        "next": "Scout list",
         "log": [
           "11:05 ET: QQQ triggered at 677.32, paper only",
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
@@ -102,7 +102,7 @@
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
-      "rejectedToday": 3,
+      "rejectedToday": 4,
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
@@ -130,11 +130,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "10:56 run: flat, 0 orders",
+        "now": "11:09 run: flat, 0 orders",
         "detail": "Mood volatile (SPY rv10 30.7%). No gap fade triggered. Account flat, equity 2,472.19 CAD. Watchlist: COHR AAOI DIS (news), NVDA LITE (SIP paper), QQQ (whale paper).",
-        "since": "2026-11-17T10:57:11-05:00",
+        "since": "2026-11-17T11:10:17-05:00",
         "state": "working",
-        "next": "Next run 11:09",
+        "next": "Next run 11:24",
         "log": [
           "16:45 EOD review Nov 13",
           "9:15 ET pre-market: no opening orders",
@@ -146,7 +146,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "10:30 15-min bar lost VWAP, RVOL 3.85; paper only (2026-11-17-XIU-1). AAPL/AMZN VWAP losses had RVOL 0.79/0.90",
+      "status": "LITE, XIU (VWAP), NVDA (SIP ORB, logged late)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -27.59,
@@ -154,11 +154,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "XIU VWAP-loss paper short",
-        "detail": "10:30 15-min bar lost VWAP, RVOL 3.85; paper only (2026-11-17-XIU-1). AAPL/AMZN VWAP losses had RVOL 0.79/0.90",
-        "since": "2026-11-17T10:57:11-05:00",
+        "now": "Tracking 3 paper shorts",
+        "detail": "LITE, XIU (VWAP), NVDA (SIP ORB, logged late)",
+        "since": "2026-11-17T11:10:17-05:00",
         "state": "working",
-        "next": "ORB + VWAP 11:10",
+        "next": "ORB + VWAP 11:25",
         "log": [
           "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
@@ -626,8 +626,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-17T10:56:58-05:00",
-    "ideasLogged": 19,
+    "updated": "2026-11-17T11:10:08-05:00",
+    "ideasLogged": 20,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -680,11 +680,11 @@
         "taken": 0
       },
       "2026-11-17": {
-        "net": 0.0,
-        "ideas": 3,
-        "resolved": 0,
+        "net": -9.98,
+        "ideas": 4,
+        "resolved": 1,
         "open": 3,
-        "filled": 0,
+        "filled": 1,
         "wins": 0,
         "real": 0.0,
         "taken": 0
@@ -713,8 +713,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 202.55,
-      "priceTime": "2026-11-17T10:56:07-05:00",
+      "last": 209.679,
+      "priceTime": "2026-11-17T11:09:51-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -739,8 +739,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 43.25,
-      "priceTime": "2026-11-17T10:56:06-05:00",
+      "last": 45.18,
+      "priceTime": "2026-11-17T11:09:49-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -765,18 +765,18 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 119.995,
-      "priceTime": "2026-11-17T10:56:08-05:00",
+      "last": 119.645,
+      "priceTime": "2026-11-17T11:09:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
     {
       "date": "2026-11-17",
       "ticker": "NVDA",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-17T09:05:36-05:00",
-      "strategy": "Stocks-in-play 15-min ORB (PAPER ONLY)",
+      "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
       "reason": "Pre-mkt +1.2%, earnings after today's close; 9:30-9:45 range decides side; paper only, flat well before the report",
       "notBefore": "09:45",
@@ -784,16 +784,24 @@
       "currency": "USD",
       "tvSymbol": "NASDAQ:NVDA",
       "tested": false,
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
-      "last": 151.3901,
-      "priceTime": "2026-11-17T10:56:08-05:00",
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 53.16,
+      "netLossAtStop": -27.44,
+      "netProfitAtTargetCAD": 74.21,
+      "netLossAtStopCAD": -38.3,
+      "last": 154.77,
+      "priceTime": "2026-11-17T11:09:51-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "side": "short",
+      "entry": 154.76,
+      "stop": 157.46,
+      "target": 149.36,
+      "shares": 10,
+      "planFrom": "journal",
+      "journalId": "2026-11-17-NVDA-1",
+      "statusAt": "2026-11-17T11:10:09-05:00"
     },
     {
       "date": "2026-11-17",
@@ -815,8 +823,8 @@
       "netLossAtStop": -16.55,
       "netProfitAtTargetCAD": 44.78,
       "netLossAtStopCAD": -23.1,
-      "last": 540.2422,
-      "priceTime": "2026-11-17T10:56:08-05:00",
+      "last": 560.36,
+      "priceTime": "2026-11-17T11:09:50-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -831,7 +839,7 @@
     {
       "date": "2026-11-17",
       "ticker": "QQQ",
-      "status": "triggered",
+      "status": "stopped",
       "closeBy": "16:00",
       "addedAt": "2026-11-17T09:05:36-05:00",
       "strategy": "QQQ RVOL breakout",
@@ -847,8 +855,8 @@
       "netLossAtStop": -7.15,
       "netProfitAtTargetCAD": 19.24,
       "netLossAtStopCAD": -9.98,
-      "last": 649.02,
-      "priceTime": "2026-11-17T10:56:08-05:00",
+      "last": 655.64,
+      "priceTime": "2026-11-17T11:09:51-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -858,7 +866,7 @@
       "shares": 2,
       "planFrom": "journal",
       "journalId": "2026-11-17-QQQ-1",
-      "statusAt": "2026-11-17T10:57:11-05:00"
+      "statusAt": "2026-11-17T11:10:17-05:00"
     },
     {
       "date": "2026-11-17",
@@ -887,11 +895,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-17T10:57:11-05:00",
-      "last": 53.4,
-      "priceTime": "2026-11-17T10:56:06-05:00"
+      "last": 53.49,
+      "priceTime": "2026-11-17T11:09:51-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-17T10:57:11-05:00",
+  "watchlistUpdated": "2026-11-17T11:10:17-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1178,7 +1186,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T10:57:11-05:00",
+    "updated": "2026-11-17T11:10:08-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
@@ -1190,9 +1198,9 @@
       "quant": {
         "budget": 35,
         "realizedLoss": 0.0,
-        "openRisk": 23.1,
-        "used": 23.1,
-        "left": 11.9
+        "openRisk": 34.14,
+        "used": 34.14,
+        "left": 0.86
       },
       "news": {
         "budget": 25,
@@ -1204,9 +1212,9 @@
       "whale": {
         "budget": 20,
         "realizedLoss": 0.0,
-        "openRisk": 0,
-        "used": 0.0,
-        "left": 20.0
+        "openRisk": 9.98,
+        "used": 9.98,
+        "left": 10.02
       },
       "options": {
         "budget": 56,
@@ -1219,10 +1227,10 @@
     "desk": {
       "budget": 150,
       "realizedLoss": 0.0,
-      "openRisk": 23.1,
-      "used": 23.1,
-      "left": 126.9,
-      "openPositions": 1
+      "openRisk": 44.12,
+      "used": 44.12,
+      "left": 105.88,
+      "openPositions": 3
     }
   }
 }

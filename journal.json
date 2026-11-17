@@ -1357,7 +1357,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "stop",
+        "exit": 655.12,
+        "gross": -7.02,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0268,
+          "fx": 0.11,
+          "total": 0.1321
+        },
+        "net": -7.15,
+        "grossR": -1.0,
+        "netR": -1.019,
+        "netCAD": -9.98,
+        "resolvedAt": "2026-11-17T11:10:08-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
@@ -1403,6 +1419,63 @@
       },
       "mode": "paper",
       "paperReason": "paper-only: retired (ORB (VWAP paper) / vwap)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.73,
+        "median": 11.41,
+        "asOfClose": "2026-11-16",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-17-NVDA-1",
+      "date": "2026-11-17",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 154.76,
+      "stop": 157.46,
+      "target": 149.36,
+      "shares": 10,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (O 156.895, C 155.74) so short only; OR 154.761-157.46. Broke the OR low between the 9:50 and 10:11 runs (day low 153.87 by 10:11, 150.33 by 11:09); missed by the 10:11 and 10:24 runs and logged late at 11:10. Paper only.",
+      "loggedAt": "2026-11-17T11:10:08-05:00",
+      "plan": {
+        "riskGross": 27.0,
+        "rewardGross": 54.0,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0319,
+          "fx": 0.81,
+          "total": 0.8419
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0319,
+          "fx": 0.41,
+          "total": 0.4369
+        },
+        "netProfitAtTarget": 53.16,
+        "netLossAtStop": -27.44,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 74.21,
+        "netLossAtStopCAD": -38.3
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
       "regime": "volatile",
       "regimeDetail": {
         "spy_rv10": 30.73,
