@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-17T10:12:54-05:00",
+  "updated": "2026-11-17T10:25:11-05:00",
   "date": "2026-11-17",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,9 +9,9 @@
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 11.2,
+      "net": 1.54,
       "final": 0.0,
-      "unrealized": 11.2,
+      "unrealized": 1.54,
       "ideas": 1,
       "scored": 0,
       "open": 1,
@@ -21,9 +21,9 @@
       "losses": 0
     },
     "week": {
-      "net": 23.72,
+      "net": 14.06,
       "final": 12.52,
-      "unrealized": 11.2,
+      "unrealized": 1.54,
       "ideas": 3,
       "scored": 2,
       "open": 1,
@@ -33,9 +33,9 @@
       "losses": 1
     },
     "allTime": {
-      "net": 82.8,
+      "net": 73.14,
       "final": 71.6,
-      "unrealized": 11.2,
+      "unrealized": 1.54,
       "ideas": 15,
       "scored": 10,
       "open": 1,
@@ -48,19 +48,19 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 11.2,
+        "net": 1.54,
         "ideas": 1,
         "scored": 0,
         "open": 1
       },
       "week": {
-        "net": 24.98,
+        "net": 15.32,
         "ideas": 2,
         "scored": 1,
         "open": 1
       },
       "allTime": {
-        "net": 30.74,
+        "net": 21.08,
         "ideas": 7,
         "scored": 6,
         "open": 1
@@ -172,11 +172,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-17T10:11:29-05:00",
-      "exit": 551.01,
-      "fees": 0.1339,
-      "net": 8.03,
-      "netCAD": 11.2
+      "priceTime": "2026-11-17T10:24:52-05:00",
+      "exit": 558.0403,
+      "fees": 0.0285,
+      "net": 1.1,
+      "netCAD": 1.54
     },
     {
       "id": "2026-11-16-QQQ-1",
