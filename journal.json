@@ -1300,7 +1300,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 552.31,
+        "gross": 6.86,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0115,
+          "fx": 0.1,
+          "total": 0.1144
+        },
+        "net": 6.75,
+        "grossR": 0.421,
+        "netR": 0.414,
+        "netCAD": 9.42,
+        "resolvedAt": "2026-11-17T15:16:52-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
@@ -1430,7 +1446,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 53.28,
+        "gross": 12.42,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "net": 12.42,
+        "grossR": 1.125,
+        "netR": 1.125,
+        "netCAD": 12.42,
+        "resolvedAt": "2026-11-17T15:16:52-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
@@ -1487,7 +1519,23 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 153.03,
+        "gross": 17.3,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0319,
+          "fx": 0.26,
+          "total": 0.2914
+        },
+        "net": 17.01,
+        "grossR": 0.641,
+        "netR": 0.63,
+        "netCAD": 23.74,
+        "resolvedAt": "2026-11-17T15:16:52-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null

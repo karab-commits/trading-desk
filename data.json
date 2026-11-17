@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 3:14 PM ET",
+  "lastUpdated": "Tue Nov 17, 2026 3:16 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -126,7 +126,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account flat, no working orders; ORB window closed, news catalysts stale (>60 min), no live signal",
+      "status": "Close-out: account flat, 0 real fills today",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -134,11 +134,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "12:43 check: flat, 0 orders",
-        "detail": "Account flat, no working orders; ORB window closed, news catalysts stale (>60 min), no live signal",
-        "since": "2026-11-17T12:44:16-05:00",
-        "state": "idle",
-        "next": "Next check 12:58",
+        "now": "Flat, no real trades",
+        "detail": "Close-out: account flat, 0 real fills today",
+        "since": "2026-11-17T15:16:52-05:00",
+        "state": "done",
+        "next": "Review 4:30 PM",
         "log": [
           "12:06 flat, 0 orders, watchlist refreshed",
           "12:20 flat, 0 orders, watchlist refreshed",
@@ -174,7 +174,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "QQC +0.56R time 46.20, QQQ -1.05R stop; week paper +12.52 CAD, real 0",
+      "status": "5 paper ideas closed out",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -182,11 +182,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "2 ideas scored",
-        "detail": "QQC +0.56R time 46.20, QQQ -1.05R stop; week paper +12.52 CAD, real 0",
-        "since": "2026-11-16T16:47:28-05:00",
-        "state": "done",
-        "next": "Log ideas from 9:10 ET Tue"
+        "now": "All ideas resolved",
+        "detail": "5 paper ideas closed out",
+        "since": "2026-11-17T15:16:52-05:00",
+        "state": "done"
       }
     },
     {
@@ -630,7 +629,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-17T11:59:56-05:00",
+    "updated": "2026-11-17T15:16:52-05:00",
     "ideasLogged": 21,
     "byDate": {
       "2026-11-02": {
@@ -684,12 +683,12 @@
         "taken": 0
       },
       "2026-11-17": {
-        "net": 17.35,
+        "net": 62.93,
         "ideas": 5,
-        "resolved": 2,
-        "open": 3,
-        "filled": 2,
-        "wins": 1,
+        "resolved": 5,
+        "open": 0,
+        "filled": 5,
+        "wins": 4,
         "real": 0.0,
         "taken": 0
       }
