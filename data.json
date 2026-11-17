@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 17, 2026 9:43 AM ET",
+  "lastUpdated": "Tue Nov 17, 2026 9:52 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -103,7 +103,7 @@
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
-      "rejectedToday": 0,
+      "rejectedToday": 1,
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
@@ -627,8 +627,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-16T16:46:48-05:00",
-    "ideasLogged": 16,
+    "updated": "2026-11-17T09:51:56-05:00",
+    "ideasLogged": 17,
     "byDate": {
       "2026-11-02": {
         "net": 73.64,
@@ -679,6 +679,16 @@
         "wins": 1,
         "real": 0.0,
         "taken": 0
+      },
+      "2026-11-17": {
+        "net": 0.0,
+        "ideas": 1,
+        "resolved": 0,
+        "open": 1,
+        "filled": 0,
+        "wins": 0,
+        "real": 0.0,
+        "taken": 0
       }
     }
   },
@@ -704,8 +714,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 215.9,
-      "priceTime": "2026-11-17T09:43:02-05:00",
+      "last": 208.605,
+      "priceTime": "2026-11-17T09:52:07-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -730,8 +740,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 47.39,
-      "priceTime": "2026-11-17T09:43:02-05:00",
+      "last": 45.79,
+      "priceTime": "2026-11-17T09:52:08-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -756,8 +766,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 119.325,
-      "priceTime": "2026-11-17T09:43:00-05:00",
+      "last": 121.0,
+      "priceTime": "2026-11-17T09:52:08-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -781,35 +791,43 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 156.295,
-      "priceTime": "2026-11-17T09:43:02-05:00",
+      "last": 155.58,
+      "priceTime": "2026-11-17T09:51:09-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
     {
       "date": "2026-11-17",
       "ticker": "LITE",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-17T09:05:36-05:00",
-      "strategy": "Stocks-in-play 15-min ORB (PAPER ONLY)",
+      "strategy": "Stocks-in-play 15-min ORB",
       "bot": "quant",
-      "reason": "Pre-mkt +5.9% on optical-module import-ban report; paper only",
+      "reason": "Paper SIP ORB short: broke OR low 559.17 at 9:50",
       "notBefore": "09:45",
       "testNote": "paper only",
       "currency": "USD",
       "tvSymbol": "NASDAQ:LITE",
       "tested": false,
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
-      "last": 571.56,
-      "priceTime": "2026-11-17T09:43:02-05:00",
+      "rr": 2.0,
+      "rrNet": 1.94,
+      "netProfitAtTarget": 32.08,
+      "netLossAtStop": -16.55,
+      "netProfitAtTargetCAD": 44.78,
+      "netLossAtStopCAD": -23.1,
+      "last": 556.605,
+      "priceTime": "2026-11-17T09:52:08-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "side": "short",
+      "entry": 559.17,
+      "stop": 575.46,
+      "target": 526.59,
+      "shares": 1,
+      "planFrom": "journal",
+      "journalId": "2026-11-17-LITE-1",
+      "statusAt": "2026-11-17T09:52:01-05:00"
     },
     {
       "date": "2026-11-17",
@@ -830,13 +848,13 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 662.3317,
-      "priceTime": "2026-11-17T09:43:02-05:00",
+      "last": 660.86,
+      "priceTime": "2026-11-17T09:51:09-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-17T09:43:08-05:00",
+  "watchlistUpdated": "2026-11-17T09:52:30-05:00",
   "scorecard": {
     "updated": "2026-11-16T16:46:48-05:00",
     "currency": "CAD",
@@ -1123,7 +1141,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-17",
-    "updated": "2026-11-17T09:04:45-05:00",
+    "updated": "2026-11-17T09:52:01-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

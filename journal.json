@@ -1247,6 +1247,63 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-17-LITE-1",
+      "date": "2026-11-17",
+      "session": "adhoc",
+      "ticker": "LITE",
+      "side": "short",
+      "entry": 559.17,
+      "stop": 575.46,
+      "target": 526.59,
+      "shares": 1,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (O 566.60, C 564.46) so short only; OR 559.17-575.46; 9:50 5-min bar broke OR low (low 557.29). Paper only (SIP ORB demoted Nov 13).",
+      "loggedAt": "2026-11-17T09:51:56-05:00",
+      "plan": {
+        "riskGross": 16.29,
+        "rewardGross": 32.58,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0115,
+          "fx": 0.49,
+          "total": 0.5002
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0115,
+          "fx": 0.24,
+          "total": 0.2559
+        },
+        "netProfitAtTarget": 32.08,
+        "netLossAtStop": -16.55,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 44.78,
+        "netLossAtStopCAD": -23.1
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 30.73,
+        "median": 11.41,
+        "asOfClose": "2026-11-16",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
