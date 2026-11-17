@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "updated": "2026-11-16T16:47:28-05:00",
-  "date": "2026-11-16",
+  "updated": "2026-11-17T09:43:08-05:00",
+  "date": "2026-11-17",
   "isoWeek": "2026-W47",
-  "marketOpen": false,
+  "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.396,
   "totals": {
     "today": {
-      "net": 12.52,
-      "final": 12.52,
+      "net": 0.0,
+      "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 2,
-      "scored": 2,
+      "ideas": 0,
+      "scored": 0,
       "open": 0,
       "notTriggered": 0,
       "pending": 0,
-      "wins": 1,
-      "losses": 1
+      "wins": 0,
+      "losses": 0
     },
     "week": {
       "net": 12.52,
@@ -47,12 +47,6 @@
   },
   "byBot": {
     "quant": {
-      "today": {
-        "net": 13.78,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
       "week": {
         "net": 13.78,
         "ideas": 1,
@@ -64,15 +58,15 @@
         "ideas": 6,
         "scored": 6,
         "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
+        "open": 0
       }
     },
     "whale": {
-      "today": {
-        "net": -1.26,
-        "ideas": 1,
-        "scored": 1,
-        "open": 0
-      },
       "week": {
         "net": -1.26,
         "ideas": 1,
@@ -83,6 +77,12 @@
         "net": -21.58,
         "ideas": 2,
         "scored": 2,
+        "open": 0
+      },
+      "today": {
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
         "open": 0
       }
     },
