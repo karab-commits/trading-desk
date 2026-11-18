@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "No pauses; mood volatile (SPY rv10 30.9%)",
+      "status": "No orders to check at 9:51",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,9 +112,9 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "0/150 used, 0/4 open",
-        "detail": "No pauses; mood volatile (SPY rv10 30.9%)",
-        "since": "2026-11-18T09:05:14-05:00",
+        "now": "Flat, 0/4 open, 0/150 used",
+        "detail": "No orders to check at 9:51",
+        "since": "2026-11-18T09:54:16-05:00",
         "state": "done",
         "next": "Check each order Wed",
         "log": [
