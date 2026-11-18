@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-16T16:55:00-05:00",
+ "updated": "2026-11-18T16:50:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -406,7 +406,7 @@
    "bot": "quant",
    "name": "Opening-range breakout (15-min), volume-confirmed - live; VWAP reclaim/loss - paper-only (retired)",
    "short": "ORB (VWAP paper)",
-   "tested": "ORB testing - walk-forward OOS +0.121R on 51 (positive in 3/4 windows). VWAP retired to paper-only (OOS -0.148R on 46, 1/4 windows).",
+   "tested": "ORB testing - walk-forward OOS +0.131R on 53 (positive in 4/5 windows, data to Nov 18 2026; live params +0.049R on 42). VWAP retired to paper-only (OOS -0.154R on 50, 1/5 windows).",
    "testedTag": "ORB testing · VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
@@ -501,22 +501,22 @@
     "outOfSample": {
      "orb": {
       "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
-      "windowsPositive": "3/4",
-      "trades": 51,
-      "expectancyR": 0.121,
-      "winRate": 60.8,
-      "tStat": 1.08,
-      "totalR": 6.18,
+      "windowsPositive": "4/5",
+      "trades": 53,
+      "expectancyR": 0.131,
+      "winRate": 62.3,
+      "tStat": 1.21,
+      "totalR": 6.94,
       "liveParamsInTestWindows": {
-       "n": 36,
-       "meanR": 0.111,
-       "winRate": 55.6,
-       "totalR": 4.0,
-       "t": 0.82
+       "n": 42,
+       "meanR": 0.049,
+       "winRate": 52.4,
+       "totalR": 2.06,
+       "t": 0.4
       },
-      "journalTrades": 0,
+      "journalTrades": 2,
       "promotion": "testing",
-      "why": "OOS mean R +0.121 on 51 trades; positive in 3/4 test windows; 0 paper/real journal trades (need 20)",
+      "why": "OOS mean R +0.131 on 53 trades; positive in 4/5 test windows; 2 paper/real journal trades (need 20) (re-check Nov 18 2026: 30-min Questrade bars now May 4 - Nov 18 2026, walkforward-2026-11-18)",
       "windows": [
        {
         "test": "2026-07-01..2026-08-01",
@@ -549,27 +549,77 @@
         "testMeanR": 0.083,
         "liveTestN": 12,
         "liveTestMeanR": 0.154
+       },
+       {
+        "test": "2026-11-01..2026-12-01",
+        "chosen": "t=2.0R rvol>=2.0",
+        "testN": 2,
+        "testMeanR": 0.379,
+        "liveTestN": 6,
+        "liveTestMeanR": -0.323
        }
-      ]
+      ],
+      "perTickerOOS": {
+       "XIU.TO": {
+        "n": 12,
+        "meanR": 0.117,
+        "winRate": 58.3,
+        "totalR": 1.4,
+        "t": 0.55
+       },
+       "ZEB.TO": {
+        "n": 13,
+        "meanR": -0.201,
+        "winRate": 53.8,
+        "totalR": -2.61,
+        "t": -0.93
+       },
+       "QQC.TO": {
+        "n": 16,
+        "meanR": 0.324,
+        "winRate": 75.0,
+        "totalR": 5.18,
+        "t": 1.88
+       },
+       "QQQ": {
+        "n": 12,
+        "meanR": 0.246,
+        "winRate": 58.3,
+        "totalR": 2.96,
+        "t": 0.9
+       }
+      },
+      "regimeSplit": {
+       "calm": {
+        "n": 30,
+        "meanR": 0.186
+       },
+       "volatile": {
+        "n": 23,
+        "meanR": 0.059
+       },
+       "source": "walkforward-2026-11-18/oos_trades.csv tagged with regime.py (SPY rv10 vs 1y median)"
+      },
+      "novemberWindowNote": "Nov 2-18 test window: re-picked params +0.379R on 2; live params (t2.0R, RVOL 1.5) -0.323R on 6. Watch: live params have weakened in November."
      },
      "vwap": {
       "method": "walk-forward, params re-picked on each train window and traded unchanged on the next test window",
-      "windowsPositive": "1/4",
-      "trades": 46,
-      "expectancyR": -0.148,
-      "winRate": 43.5,
-      "tStat": -1.08,
-      "totalR": -6.8,
+      "windowsPositive": "1/5",
+      "trades": 50,
+      "expectancyR": -0.154,
+      "winRate": 44.0,
+      "tStat": -1.19,
+      "totalR": -7.7,
       "liveParamsInTestWindows": {
-       "n": 37,
-       "meanR": 0.058,
-       "winRate": 56.8,
-       "totalR": 2.15,
-       "t": 0.4
+       "n": 43,
+       "meanR": 0.036,
+       "winRate": 55.8,
+       "totalR": 1.55,
+       "t": 0.27
       },
-      "journalTrades": 0,
+      "journalTrades": 2,
       "promotion": "retired",
-      "why": "OOS mean R -0.148 on 46 trades; positive in 1/4 test windows; 0 paper/real journal trades (need 20)",
+      "why": "OOS mean R -0.154 on 50 trades; positive in 1/5 test windows; 2 paper/real journal trades (need 20) (re-check Nov 18 2026: 30-min Questrade bars now May 4 - Nov 18 2026, walkforward-2026-11-18)",
       "windows": [
        {
         "test": "2026-07-01..2026-08-01",
@@ -602,8 +652,56 @@
         "testMeanR": 0.6,
         "liveTestN": 9,
         "liveTestMeanR": 0.6
+       },
+       {
+        "test": "2026-11-01..2026-12-01",
+        "chosen": "t=1.0R rvol>=2.0",
+        "testN": 4,
+        "testMeanR": -0.227,
+        "liveTestN": 6,
+        "liveTestMeanR": -0.1
        }
-      ]
+      ],
+      "perTickerOOS": {
+       "XIU.TO": {
+        "n": 13,
+        "meanR": -0.102,
+        "winRate": 46.2,
+        "totalR": -1.32,
+        "t": -0.36
+       },
+       "ZEB.TO": {
+        "n": 9,
+        "meanR": -0.111,
+        "winRate": 44.4,
+        "totalR": -1.0,
+        "t": -0.37
+       },
+       "QQC.TO": {
+        "n": 18,
+        "meanR": -0.004,
+        "winRate": 55.6,
+        "totalR": -0.07,
+        "t": -0.02
+       },
+       "QQQ": {
+        "n": 10,
+        "meanR": -0.531,
+        "winRate": 20.0,
+        "totalR": -5.31,
+        "t": -1.86
+       }
+      },
+      "regimeSplit": {
+       "calm": {
+        "n": 31,
+        "meanR": -0.024
+       },
+       "volatile": {
+        "n": 19,
+        "meanR": -0.366
+       }
+      }
      },
      "perTickerOOS": {
       "orb": {
@@ -737,7 +835,7 @@
    "name": "Stocks-in-play 15-min opening-range breakout",
    "short": "Stocks-in-play ORB",
    "tested": "testing - 5-min quick test with the range-side stop: +0.54R per trade on 12 hand-picked trades (indicative only)",
-   "testedTag": "paper only (demoted Nov 13: live record negative)",
+   "testedTag": "paper only (demoted Nov 13: live record negative; forward -1.73R on 10)",
    "citation": "Zarattini, C., Barbon, A. & Aziz, A. (2024). A Profitable Day Trading Strategy For The U.S. Equity Market. SSRN 4729284. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4729284",
    "stats": {
     "pilot": {
@@ -908,8 +1006,43 @@
       ],
       "netR": 0.0,
       "note": "0 entries. Forward record unchanged: -0.70R on 8 trades (Nov 11-16)."
+     },
+     {
+      "date": "2026-11-18",
+      "source": "Questrade 5-min RTH bars (bars/NBIS_5m.csv, CRWV_5m.csv, full session), live rule (first-candle direction, stop = other side of the 9:30-9:45 range, 2R, 15:15 time stop), stop-first; fees per data.json (SEC + 1.5% FX), USD/CAD 1.4298",
+      "sent": false,
+      "why": "paper only (demoted Nov 13); not logged by the 9:51 intraday run although it had the bars (missed log, found in the Nov 18 daily review)",
+      "trades": [
+       {
+        "ticker": "NBIS",
+        "side": "short",
+        "entry": 102.25,
+        "stop": 110.22,
+        "shares": 3,
+        "exit": 107.995,
+        "result": "time",
+        "R": -0.73,
+        "netUSD": -17.5,
+        "netCAD": -25.02
+       },
+       {
+        "ticker": "CRWV",
+        "side": "short",
+        "entry": 46.5,
+        "stop": 51.07,
+        "shares": 6,
+        "exit": 47.83,
+        "result": "time",
+        "R": -0.3,
+        "netUSD": -8.11,
+        "netCAD": -11.59
+       }
+      ],
+      "netR": -1.03,
+      "note": "Both shorts triggered on the 9:45 bar, never reached 2R or the stop; both bounced into the 15:15 time stop. Not in journal.json (never alerted)."
      }
-    ]
+    ],
+    "forwardRecordNote": "Forward checks (not journaled): Nov 11 -0.27R, Nov 12 -0.05R, Nov 13 -0.38R, Nov 18 -1.03R = -1.73R on 10 entries. Journal paper (Nov 17): NVDA +0.645R, LITE +0.41R. Stays paper."
    },
    "universe": [
     "Morning list from Whale Tracker (scout) + News Desk: liquid US and Canadian stocks, price > 5 (USD/CAD), average daily volume >= 1M shares, with first-15-min relative volume >= 2.0 (9:30-9:45 volume vs the 14-day average of the same 15 minutes) OR a fresh company-specific news catalyst (News Desk, <= 12 h old). Scan Questrade get_quotes on the watchlist plus the News Desk names; no OTC, no halted names, no ETFs."
@@ -941,7 +1074,8 @@
     "date": "2026-11-13",
     "by": "kiwi",
     "why": "Live record negative: forward checks -0.70R on 8 (Nov 11 -0.27R, Nov 12 -0.05R, Nov 13 -0.38R); real UAL trade -2.94R (-95.59 CAD, exit not approved for 4 days). Pilot +0.54R was 12 hindsight-picked trades. Back to live only after 20 paper trades with positive average R and a proper out-of-sample test."
-   }
+   },
+   "paperLogRule": "Added Nov 18 2026 by Kiwi (review found NBIS and CRWV shorts triggered on the 9:45 bar but were never logged): every intraday run from 9:45 to 15:15 must, for each Stocks-in-play ORB watchlist name, read 5-min bars, compute the 9:30-9:45 range and first-candle direction, and if price has broken the range in that direction, log it at once with log_idea.py add (bot quant, strategy 'Stocks-in-play 15-min ORB', entry = range edge, stop = other edge, target 2R, shares sized to 40 CAD; add --logged-late --logged-price <current price> if logged after the break bar). Paper-only ideas are logged, not sent."
   },
   {
    "bot": "whale",
