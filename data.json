@@ -195,7 +195,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "NVDA earnings after close: IV rich, no same-day debit spread.",
+      "status": "No flow setup pulled pre-market; intraday checks from 9:45",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -204,8 +204,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No setups pre-market",
-        "detail": "NVDA earnings after close: IV rich, no same-day debit spread.",
-        "since": "2026-11-18T09:05:14-05:00",
+        "detail": "No flow setup pulled pre-market; intraday checks from 9:45",
+        "since": "2026-11-18T09:05:19-05:00",
         "state": "idle",
         "next": "Options check 9:45 Wed",
         "log": [
