@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-18T10:24:35-05:00",
+  "updated": "2026-11-18T13:21:51-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2652,7 +2652,7 @@
  },
  "2026-11-18": {
   "kiwi": {
-   "quotesCalls": 4,
+   "quotesCalls": 5,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2668,7 +2668,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 5,
+   "runs": 6,
    "symbolsQuoted": {
     "unique": [
      "TJX",
@@ -2689,14 +2689,14 @@
      "HXT.TO",
      "SOFI"
     ],
-    "total": 48
+    "total": 56
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-18T10:24:35-05:00"
+   "lastRun": "2026-11-18T13:21:51-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -2746,8 +2746,8 @@
    "optionContracts": 0,
    "webSearches": 1,
    "pagesFetched": 0,
-   "xSearches": 0,
-   "xPosts": 0,
+   "xSearches": 1,
+   "xPosts": 10,
    "ideasGenerated": 5,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -2785,13 +2785,25 @@
       "title": "S&P 500 Premarket Movers on Nov. 18",
       "url": "https://www.chartmill.com/news/FCX/Chartmill-58882-SP-500-Premarket-Movers-on-Nov-18",
       "time": "2026-11-18T09:04:16-05:00"
+     },
+     {
+      "title": "TJX Shares Surge 10% on Strong Q3 Results and Raised Outlook",
+      "url": "https://x.com/i/trending/2123101218276827324",
+      "time": "2026-11-18T12:54:52-05:00"
+     },
+     {
+      "title": "Applied Optoelectronics Announces $550 Million Stock Sales Program",
+      "url": "https://x.com/i/trending/2122805422725718451",
+      "time": "2026-11-18T11:15:32-05:00"
      }
     ],
-    "count": 3,
+    "count": 5,
     "seen": [
      "2c215aa5c4f8",
      "bc299065a231",
-     "7f3a39362847"
+     "7f3a39362847",
+     "256c1f676369",
+     "6d4a6abef104"
     ]
    },
    "lastRun": null
