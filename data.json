@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 18, 2026 9:45 AM ET",
+  "lastUpdated": "Wed Nov 18, 2026 9:54 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU +0.43 vs 0.58 trigger (ATR14 0.778), SOFI +0.17 vs 0.65, HXT +0.35 vs 1.02",
+      "status": "XIU gap -0.29 vs 0.58 trigger, HXT -0.51 vs 1.03, SOFI +0.055 vs 0.65",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,23 +37,23 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No gap fades at the open",
-        "detail": "XIU +0.43 vs 0.58 trigger (ATR14 0.778), SOFI +0.17 vs 0.65, HXT +0.35 vs 1.02",
-        "since": "2026-11-18T09:05:14-05:00",
+        "now": "9:51 gap check: no fade",
+        "detail": "XIU gap -0.29 vs 0.58 trigger, HXT -0.51 vs 1.03, SOFI +0.055 vs 0.65",
+        "since": "2026-11-18T09:54:10-05:00",
         "state": "done",
         "log": [
           "9:10 ET: no gap fades at the open",
           "9:31 no gap fade (XIU/HXT/SOFI)",
           "Gap check: XIU/SOFI/HXT all under trigger, no orders"
         ],
-        "next": "Back tomorrow 9:00"
+        "next": "Window closes 10:15"
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Pullback-hold longs after 9:45; LOW/AAOI shorts paper (borrow agreement)",
+      "status": "TJX/TTWO/NVDA headlines older than 60 min; no qualifying entry",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,23 +61,23 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watching TJX TTWO NVDA",
-        "detail": "Pullback-hold longs after 9:45; LOW/AAOI shorts paper (borrow agreement)",
-        "since": "2026-11-18T09:05:14-05:00",
-        "state": "working",
+        "now": "9:51: no fresh catalyst",
+        "detail": "TJX/TTWO/NVDA headlines older than 60 min; no qualifying entry",
+        "since": "2026-11-18T09:54:10-05:00",
+        "state": "done",
         "log": [
           "14:23 no signal",
           "14:37 entry window closed",
           "Pre-market: 5 news setups"
         ],
-        "next": "News scan 8:30 Wed"
+        "next": "Watch for fresh headlines"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "NQ +0.7% on NVDA beat; paper only",
+      "status": "NBIS/CRWV/NVDA broke OR lows; RVOL vs 14-day not confirmed, no paper idea logged",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,11 +85,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ RVOL paper",
-        "detail": "NQ +0.7% on NVDA beat; paper only",
-        "since": "2026-11-18T09:05:14-05:00",
+        "now": "Scouting SIP names",
+        "detail": "NBIS/CRWV/NVDA broke OR lows; RVOL vs 14-day not confirmed, no paper idea logged",
+        "since": "2026-11-18T09:54:10-05:00",
         "state": "working",
-        "next": "Scout list 9:35 Wed",
+        "next": "QQQ RVOL breakout from 10:00",
         "log": [
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
           "13:58 ET: QQQ short signal logged, skipped (size/min profit)",
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "9:30-9:45 range decides side; paper only",
+      "status": "XIU.TO broke OR low 52.67 (9:45 bar close 52.53) but RVOL ~1.0 (60.7K vs 58.8K avg of 13 known 9:45 slots) < 1.5; AAPL/AMZN/MSFT/others no breakout in trend direction",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,11 +160,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP ORB paper: NBIS CRWV",
-        "detail": "9:30-9:45 range decides side; paper only",
-        "since": "2026-11-18T09:05:14-05:00",
-        "state": "working",
-        "next": "ORB check 9:45 Wed",
+        "now": "9:51 ORB check: no signal",
+        "detail": "XIU.TO broke OR low 52.67 (9:45 bar close 52.53) but RVOL ~1.0 (60.7K vs 58.8K avg of 13 known 9:45 slots) < 1.5; AAPL/AMZN/MSFT/others no breakout in trend direction",
+        "since": "2026-11-18T09:54:10-05:00",
+        "state": "done",
+        "next": "Next 5-min bars at 10:06",
         "log": [
           "16:40 forward check -0.05R on 3",
           "16:40 SIP ORB demoted to paper",
@@ -584,9 +584,9 @@
     "daysRunning": 8
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": 0.0,
+    "total": 0.0,
     "trades": 0
   },
   "pnlWeek": {
@@ -731,8 +731,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 140.5575,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 141.195,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -756,8 +756,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 216.225,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 218.44,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -781,8 +781,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 154.455,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 154.83,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -805,8 +805,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 102.4,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 104.43,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -829,8 +829,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 46.64,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 47.3599,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -852,8 +852,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 655.32,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 658.03,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -877,8 +877,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 217.931,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 218.055,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     },
     {
       "date": "2026-11-18",
@@ -902,11 +902,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 38.38,
-      "priceTime": "2026-11-18T09:44:59-05:00"
+      "last": 39.615,
+      "priceTime": "2026-11-18T09:54:00-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-18T09:45:05-05:00",
+  "watchlistUpdated": "2026-11-18T09:54:10-05:00",
   "scorecard": {
     "updated": "2026-11-17T16:54:16-05:00",
     "currency": "CAD",
@@ -1233,7 +1233,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-18",
-    "updated": "2026-11-18T09:03:58-05:00",
+    "updated": "2026-11-18T09:51:40-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
