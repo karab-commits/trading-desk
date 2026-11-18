@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 18, 2026 2:14 PM ET",
+  "lastUpdated": "Wed Nov 18, 2026 2:21 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "2:15 PM: no new company headline meeting the move + RVOL rule",
+      "status": "2:21 PM: PANW earnings preview only (reports later); no signal",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,8 +61,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No fresh catalyst",
-        "detail": "2:15 PM: no new company headline meeting the move + RVOL rule",
-        "since": "2026-11-18T14:14:49-05:00",
+        "detail": "2:21 PM: PANW earnings preview only (reports later); no signal",
+        "since": "2026-11-18T14:21:16-05:00",
         "state": "done",
         "log": [
           "14:23 no signal",
@@ -127,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "2:15 PM run: watchlist prices refreshed",
+      "status": "2:21 PM run: watchlist prices refreshed",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,8 +136,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Flat, 0 orders",
-        "detail": "2:15 PM run: watchlist prices refreshed",
-        "since": "2026-11-18T14:14:49-05:00",
+        "detail": "2:21 PM run: watchlist prices refreshed",
+        "since": "2026-11-18T14:21:16-05:00",
         "state": "done",
         "next": "Pre-market scan 9:00 Wed",
         "log": [
@@ -730,8 +730,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 143.585,
-      "priceTime": "2026-11-18T14:14:41-05:00"
+      "last": 143.19,
+      "priceTime": "2026-11-18T14:21:09-05:00"
     },
     {
       "date": "2026-11-18",
@@ -755,8 +755,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 219.78,
-      "priceTime": "2026-11-18T14:14:39-05:00"
+      "last": 218.47,
+      "priceTime": "2026-11-18T14:21:06-05:00"
     },
     {
       "date": "2026-11-18",
@@ -780,8 +780,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 151.69,
-      "priceTime": "2026-11-18T14:14:41-05:00"
+      "last": 151.68,
+      "priceTime": "2026-11-18T14:21:09-05:00"
     },
     {
       "date": "2026-11-18",
@@ -804,8 +804,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 107.69,
-      "priceTime": "2026-11-18T14:14:39-05:00"
+      "last": 108.1899,
+      "priceTime": "2026-11-18T14:21:07-05:00"
     },
     {
       "date": "2026-11-18",
@@ -828,8 +828,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 47.425,
-      "priceTime": "2026-11-18T14:14:41-05:00"
+      "last": 47.615,
+      "priceTime": "2026-11-18T14:21:08-05:00"
     },
     {
       "date": "2026-11-18",
@@ -851,8 +851,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 659.428,
-      "priceTime": "2026-11-18T14:14:41-05:00"
+      "last": 658.97,
+      "priceTime": "2026-11-18T14:21:09-05:00"
     },
     {
       "date": "2026-11-18",
@@ -876,8 +876,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 222.11,
-      "priceTime": "2026-11-18T14:14:42-05:00"
+      "last": 221.93,
+      "priceTime": "2026-11-18T14:21:09-05:00"
     },
     {
       "date": "2026-11-18",
@@ -901,11 +901,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 39.995,
-      "priceTime": "2026-11-18T14:14:41-05:00"
+      "last": 40.0599,
+      "priceTime": "2026-11-18T14:21:08-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-18T14:14:49-05:00",
+  "watchlistUpdated": "2026-11-18T14:21:16-05:00",
   "scorecard": {
     "updated": "2026-11-17T16:54:16-05:00",
     "currency": "CAD",
@@ -1232,7 +1232,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-18",
-    "updated": "2026-11-18T14:14:41-05:00",
+    "updated": "2026-11-18T14:21:08-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
