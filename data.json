@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 18, 2026 3:05 PM ET",
+  "lastUpdated": "Wed Nov 18, 2026 3:17 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -127,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "3:05 PM run: live windows closed, watchlist prices refreshed",
+      "status": "Close-out 3:17 PM: account 0944 flat, no orders or fills today, real P&L 0.00 CAD.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -135,11 +135,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Flat, 0 orders",
-        "detail": "3:05 PM run: live windows closed, watchlist prices refreshed",
-        "since": "2026-11-18T15:05:32-05:00",
+        "now": "Flat. 0 trades today",
+        "detail": "Close-out 3:17 PM: account 0944 flat, no orders or fills today, real P&L 0.00 CAD.",
+        "since": "2026-11-18T15:17:43-05:00",
         "state": "done",
-        "next": "Pre-market scan 9:00 Wed",
+        "next": "Daily review 4:30 PM",
         "log": [
           "12:20 flat, 0 orders, watchlist refreshed",
           "12:43 no signals, watchlist prices refreshed",
@@ -175,7 +175,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "Re-scored XIU VWAP to its 15:50 time stop (53.34). Real P&L reconciled to Questrade: AAPL +49.44 USD, UAL -67.07 USD.",
+      "status": "No journal ideas today; watchlist items never triggered.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -183,11 +183,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "5 paper ideas scored",
-        "detail": "Re-scored XIU VWAP to its 15:50 time stop (53.34). Real P&L reconciled to Questrade: AAPL +49.44 USD, UAL -67.07 USD.",
-        "since": "2026-11-17T16:47:00-05:00",
+        "now": "No ideas to resolve today",
+        "detail": "No journal ideas today; watchlist items never triggered.",
+        "since": "2026-11-18T15:17:43-05:00",
         "state": "done",
-        "next": "Log Wed ideas"
+        "next": "Review 4:30 PM"
       }
     },
     {
@@ -711,7 +711,7 @@
     {
       "date": "2026-11-18",
       "ticker": "TJX",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "side": "long",
@@ -731,12 +731,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 141.76,
-      "priceTime": "2026-11-18T15:05:29-05:00"
+      "priceTime": "2026-11-18T15:05:29-05:00",
+      "statusAt": "2026-11-18T15:17:42-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "TTWO",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "side": "long",
@@ -756,12 +757,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 216.45,
-      "priceTime": "2026-11-18T15:05:29-05:00"
+      "priceTime": "2026-11-18T15:05:29-05:00",
+      "statusAt": "2026-11-18T15:17:42-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "NVDA",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "side": "long",
@@ -781,12 +783,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 151.025,
-      "priceTime": "2026-11-18T15:05:30-05:00"
+      "priceTime": "2026-11-18T15:05:30-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "NBIS",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "strategy": "Stocks-in-play 15-min ORB",
@@ -805,12 +808,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 108.02,
-      "priceTime": "2026-11-18T15:05:29-05:00"
+      "priceTime": "2026-11-18T15:05:29-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "CRWV",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "strategy": "Stocks-in-play 15-min ORB",
@@ -829,12 +833,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 47.69,
-      "priceTime": "2026-11-18T15:05:30-05:00"
+      "priceTime": "2026-11-18T15:05:30-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "strategy": "QQQ RVOL breakout",
@@ -852,12 +857,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 658.79,
-      "priceTime": "2026-11-18T15:05:30-05:00"
+      "priceTime": "2026-11-18T15:05:30-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "LOW",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "side": "short",
@@ -877,12 +883,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 221.42,
-      "priceTime": "2026-11-18T15:05:29-05:00"
+      "priceTime": "2026-11-18T15:05:29-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     },
     {
       "date": "2026-11-18",
       "ticker": "AAOI",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-18T09:04:49-05:00",
       "side": "short",
@@ -902,10 +909,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 40.315,
-      "priceTime": "2026-11-18T15:05:29-05:00"
+      "priceTime": "2026-11-18T15:05:29-05:00",
+      "statusAt": "2026-11-18T15:17:43-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-18T15:05:32-05:00",
+  "watchlistUpdated": "2026-11-18T15:17:43-05:00",
   "scorecard": {
     "updated": "2026-11-17T16:54:16-05:00",
     "currency": "CAD",
