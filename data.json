@@ -39,21 +39,21 @@
       "activity": {
         "now": "No gap fades at the open",
         "detail": "XIU +0.43 vs 0.58 trigger (ATR14 0.778), SOFI +0.17 vs 0.65, HXT +0.35 vs 1.02",
-        "since": "2026-11-18T09:05:02-05:00",
+        "since": "2026-11-18T09:05:14-05:00",
         "state": "done",
         "log": [
           "9:10 ET: no gap fades at the open",
           "9:31 no gap fade (XIU/HXT/SOFI)",
           "Gap check: XIU/SOFI/HXT all under trigger, no orders"
         ],
-        "next": "Gap check 9:30 Wed"
+        "next": "Back tomorrow 9:00"
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "COHR, AAOI, DIS longs never gave a valid pullback entry; expired at close.",
+      "status": "Pullback-hold longs after 9:45; LOW/AAOI shorts paper (borrow agreement)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,14 +61,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No news signal today",
-        "detail": "COHR, AAOI, DIS longs never gave a valid pullback entry; expired at close.",
-        "since": "2026-11-17T16:47:00-05:00",
-        "state": "idle",
+        "now": "Watching TJX TTWO NVDA",
+        "detail": "Pullback-hold longs after 9:45; LOW/AAOI shorts paper (borrow agreement)",
+        "since": "2026-11-18T09:05:14-05:00",
+        "state": "working",
         "log": [
-          "14:05 SOFI checked, no signal",
           "14:23 no signal",
-          "14:37 entry window closed"
+          "14:37 entry window closed",
+          "Pre-market: 5 news setups"
         ],
         "next": "News scan 8:30 Wed"
       }
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "QQQ RVOL short stopped 11:00 (-1.02R paper). 3/3 journal signals stopped; paper only, retire if next 2 stop.",
+      "status": "NQ +0.7% on NVDA beat; paper only",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ paper stop -9.98 CAD",
-        "detail": "QQQ RVOL short stopped 11:00 (-1.02R paper). 3/3 journal signals stopped; paper only, retire if next 2 stop.",
-        "since": "2026-11-17T16:47:00-05:00",
-        "state": "done",
+        "now": "QQQ RVOL paper",
+        "detail": "NQ +0.7% on NVDA beat; paper only",
+        "since": "2026-11-18T09:05:14-05:00",
+        "state": "working",
         "next": "Scout list 9:35 Wed",
         "log": [
-          "11:05 ET: QQQ triggered at 677.32, paper only",
           "13:35 ET: QQQ breakdown, RVOL 1.74 < 2.0, no trade",
-          "13:58 ET: QQQ short signal logged, skipped (size/min profit)"
+          "13:58 ET: QQQ short signal logged, skipped (size/min profit)",
+          "Pre-market: QQQ scout"
         ]
       }
     },
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "Blocked 2 paper-only shorts (QQQ, XIU). Fixed: paper watchlist items no longer count as open risk. No bot paused.",
+      "status": "No pauses; mood volatile (SPY rv10 30.9%)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,15 +112,15 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "0/150 used, no pauses",
-        "detail": "Blocked 2 paper-only shorts (QQQ, XIU). Fixed: paper watchlist items no longer count as open risk. No bot paused.",
-        "since": "2026-11-17T16:47:00-05:00",
+        "now": "0/150 used, 0/4 open",
+        "detail": "No pauses; mood volatile (SPY rv10 30.9%)",
+        "since": "2026-11-18T09:05:14-05:00",
         "state": "done",
         "next": "Check each order Wed",
         "log": [
-          "9:45 ET: 4 rejected, RIVN conditional",
           "09:50 QBTS resize 6->5",
-          "16:40 opening gate lifted (flat)"
+          "16:40 opening gate lifted (flat)",
+          "Pre-market risk update"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Nov 17: 0 orders, 0 fills, real 0.00 CAD. Equity 2,472.19 CAD. Week 0.00, all-time -24.61 CAD (reconciled to Questrade executions). Paper +60.17 CAD.",
+      "status": "Watchlist set for the intraday routine",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "EOD: 0 real trades, flat",
-        "detail": "Nov 17: 0 orders, 0 fills, real 0.00 CAD. Equity 2,472.19 CAD. Week 0.00, all-time -24.61 CAD (reconciled to Questrade executions). Paper +60.17 CAD.",
-        "since": "2026-11-17T16:47:00-05:00",
+        "now": "No orders at the open",
+        "detail": "Watchlist set for the intraday routine",
+        "since": "2026-11-18T09:05:14-05:00",
         "state": "done",
         "next": "Pre-market scan 9:00 Wed",
         "log": [
-          "12:06 flat, 0 orders, watchlist refreshed",
           "12:20 flat, 0 orders, watchlist refreshed",
-          "12:43 no signals, watchlist prices refreshed"
+          "12:43 no signals, watchlist prices refreshed",
+          "Pre-market done"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Paper only: NVDA VWAP +27.33 (target), NVDA SIP ORB +23.74, LITE SIP ORB +9.42, XIU VWAP +9.66 (time). Gap-fade walk-forward re-run on data to Nov 17.",
+      "status": "9:30-9:45 range decides side; paper only",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "Paper +70.15 CAD, 0 real",
-        "detail": "Paper only: NVDA VWAP +27.33 (target), NVDA SIP ORB +23.74, LITE SIP ORB +9.42, XIU VWAP +9.66 (time). Gap-fade walk-forward re-run on data to Nov 17.",
-        "since": "2026-11-17T16:47:00-05:00",
-        "state": "done",
+        "now": "SIP ORB paper: NBIS CRWV",
+        "detail": "9:30-9:45 range decides side; paper only",
+        "since": "2026-11-18T09:05:14-05:00",
+        "state": "working",
         "next": "ORB check 9:45 Wed",
         "log": [
-          "10:07 RKLB long sent; AAON expired",
           "16:40 forward check -0.05R on 3",
-          "16:40 SIP ORB demoted to paper"
+          "16:40 SIP ORB demoted to paper",
+          "Pre-market: NBIS, CRWV in play"
         ]
       }
     },
@@ -203,11 +203,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No spread today",
+        "now": "No setups pre-market",
         "detail": "NVDA earnings after close: IV rich, no same-day debit spread.",
-        "since": "2026-11-17T16:47:00-05:00",
+        "since": "2026-11-18T09:05:14-05:00",
         "state": "idle",
-        "next": "Options check 9:45 Wed"
+        "next": "Options check 9:45 Wed",
+        "log": [
+          "Pre-market: no options setup"
+        ]
       }
     }
   ],
