@@ -193,6 +193,8 @@ python3 log_idea.py resolve --id 2026-11-03-XIU-1 --outcome target|stop|time|no-
 python3 log_idea.py list --date 2026-11-03 --open
 ```
 `add` output ends with an `alert line:` like `Profit after fees +$79.50 CAD at target, loss after fees -$79.50 CAD at stop` for the alert (rule: **profit is shown after fees in every alert**).
+**Scoring rule (Kiwi, Nov 19 2026):** resolve paper ideas only from Questrade **5-min** bars, walking bar by bar from the bar containing `loggedAt` (or the signal bar if logged on time): first bar whose range touches the stop = `stop`, first that touches the target = `target`, both in one bar = `stop`; otherwise the strategy's time-stop price. Never score from 15/30-min bars or end-of-day quotes (the Nov 19 close-out scored QQQ a target that was really a stop at 11:35).
+
 R = P&L ÷ planned gross risk (|entry − stop| × shares). `no-fill` ideas are counted but not scored.
 After every add/resolve, `data.json.paper` is refreshed: `{currency, basis, updated, ideasLogged, byDate: {"YYYY-MM-DD": {net, ideas, resolved, open, filled, wins, real, taken}}}` (CAD, net of fees, resolved ideas only). The site works out today / this ISO week / all time from `byDate` in ET, so it never goes stale overnight.
 All scripts take `--dir PATH` (or `DESK_DIR=PATH`) to work on a copy, e.g. for tests.

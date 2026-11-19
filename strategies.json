@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-18T16:50:00-05:00",
+ "updated": "2026-11-19T21:48:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -404,10 +404,10 @@
   },
   {
    "bot": "quant",
-   "name": "Opening-range breakout (15-min), volume-confirmed - live; VWAP reclaim/loss - paper-only (retired)",
-   "short": "ORB (VWAP paper)",
+   "name": "Opening-range breakout (15-min), volume-confirmed - paper-only (demoted Nov 19); VWAP reclaim/loss - paper-only (retired)",
+   "short": "ORB + VWAP (paper)",
    "tested": "ORB testing - walk-forward OOS +0.131R on 53 (positive in 4/5 windows, data to Nov 18 2026; live params +0.049R on 42). VWAP retired to paper-only (OOS -0.154R on 50, 1/5 windows).",
-   "testedTag": "ORB testing · VWAP paper-only",
+   "testedTag": "ORB paper only (demoted Nov 19: forward record negative) · VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -806,10 +806,10 @@
    },
    "maxTradesPerDay": 2,
    "vwapStatus": "RETIRED to paper-only 2026-11-02 (decided by Kiwi, head of desk): walk-forward OOS -0.148R on 46 trades, positive in 1/4 test windows. The routine still logs every VWAP signal as a paper idea; risk_check.py --strategy vwap always BLOCKs (\"paper-only: retired\").",
-   "mode": "mixed",
+   "mode": "paper",
    "id": "orb_vwap",
    "modes": {
-    "orb": "live",
+    "orb": "paper",
     "vwap": "paper"
    },
    "aliases": {
@@ -826,6 +826,12 @@
      "vwap loss",
      "reclaim/loss"
     ]
+   },
+   "orbDemoted": {
+    "date": "2026-11-19",
+    "by": "kiwi",
+    "why": "Daily review rule 'demote anything negative OOS or live': walk-forward OOS is still +0.131R on 53 (4/5 windows, walkforward-2026-11-19), but the forward record is negative: journal ORB ideas QQC.TO +0.565R (Nov 16) and MSFT -1.009R (Nov 19, order sent, approval expired, would have stopped at 10:15-10:30) = -0.22R avg on 2, and the live (fixed) params lost -0.323R on 6 in the Nov 2-19 test window. Small sample, so this is a tightening, not a verdict.",
+    "backToLive": "20 paper/real ORB journal trades with positive average net R AND walk-forward OOS mean R > 0 in most test windows (same bar as Stocks-in-play ORB and Whale QQQ). Signals keep being logged as paper ideas every run."
    }
   },
   {
@@ -1140,6 +1146,11 @@
     "date": "2026-11-16",
     "by": "kiwi",
     "why": "Live/paper record negative: 2 of 2 journal QQQ RVOL signals hit the stop (Nov 9 long -1.03R, Nov 16 short -1.05R; -2.07R total), no out-of-sample test exists (only a 30-min-proxy backtest, +0.179R on 17), and with ~1,700 USD buying power the 40 CAD risk sizes QQQ to 2 shares, under the desk's ~8 CAD minimum profit at target. Back to live only after 20 paper trades with positive average R and a walk-forward test. Whale Tracker keeps scouting the stocks-in-play list."
+   },
+   "qqqRecord": {
+    "updated": "2026-11-19",
+    "journal": "4 of 4 stops (Nov 9 long -1.03R, Nov 16 short -1.05R, Nov 17 short -1.02R, Nov 19 short -1.49R late-logged); -4.58R",
+    "retireRule": "Retire the QQQ RVOL breakout if the next 2 signals after Nov 17 both stop: Nov 19 stopped (1 of 2). The next stop retires it."
    }
   },
   {
