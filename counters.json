@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T12:23:27-05:00",
+  "updated": "2026-11-19T12:43:58-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 12,
+   "quotesCalls": 13,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 13,
+   "runs": 14,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2945,14 +2945,14 @@
      "AMZN",
      "META"
     ],
-    "total": 203
+    "total": 221
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T12:23:27-05:00",
+   "lastRun": "2026-11-19T12:43:58-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3005,15 +3005,15 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 0,
+   "quotesCalls": 1,
    "barCalls": 0,
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 3,
+   "webSearches": 5,
    "pagesFetched": 0,
-   "xSearches": 1,
-   "xPosts": 10,
+   "xSearches": 2,
+   "xPosts": 20,
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -3023,8 +3023,10 @@
    "simulatedTrades": 0,
    "runs": 0,
    "symbolsQuoted": {
-    "unique": [],
-    "total": 0
+    "unique": [
+     "INSM"
+    ],
+    "total": 1
    },
    "headlines": {
     "items": [
@@ -3052,15 +3054,51 @@
       "title": "12 Information Technology Stocks Moving In Thursday's Intraday Session",
       "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63443237/12-information-technology-stocks-moving-thursday-s-intraday-session",
       "time": "2026-11-19T12:05:00-05:00"
+     },
+     {
+      "title": "Sanofi weighs takeover of US drugmaker Insmed, Bloomberg News reports",
+      "url": "https://www.investing.com/news/stock-market-news/sanofi-weighs-takeover-of-us-drugmaker-insmed-bloomberg-news-reports-5039450",
+      "time": "2026-11-19T10:20:00-05:00"
+     },
+     {
+      "title": "Why is Insmed stock surging today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-insmed-stock-surging-today-93CH-5039451",
+      "time": "2026-11-19T10:25:00-05:00"
+     },
+     {
+      "title": "PDD Holdings, BellRing Brands, Everpure And Other Big Stocks Moving Higher On Thursday",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63429964/pdd-holdings-bellring-brands-everpure-and-other-big-stocks-moving-higher-on-thursday",
+      "time": "2026-11-19T09:56:00-05:00"
+     },
+     {
+      "title": "A soaring debut for Anthropic's stock is not enough to carry Wall Street, and indexes drop",
+      "url": "https://apnews.com/article/stocks-markets-ai-us-anthropic-206c84045137824feabe052a29ff6140",
+      "time": "2026-11-19T12:43:39-05:00"
+     },
+     {
+      "title": "Palo Alto Networks Buys AI Startup Applied Compute for $4.5 Billion",
+      "url": "https://x.com/i/trending/2123163232990830858",
+      "time": "2026-11-19T12:43:39-05:00"
+     },
+     {
+      "title": "Walmart Beats Q3 Forecasts and Raises Full-Year Outlook",
+      "url": "https://x.com/i/trending/2123388034787774896",
+      "time": "2026-11-19T12:43:39-05:00"
      }
     ],
-    "count": 5,
+    "count": 11,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
      "ad92d7489119",
      "350c18c5b2c1",
-     "81d67f1ee441"
+     "81d67f1ee441",
+     "adab5377ab83",
+     "db6624aeca8c",
+     "9c45b104e016",
+     "0ece51404603",
+     "017aa4c872f6",
+     "230210f761a3"
     ]
    },
    "lastRun": null
@@ -3105,8 +3143,8 @@
   },
   "quant": {
    "quotesCalls": 2,
-   "barCalls": 119,
-   "bars": 555,
+   "barCalls": 120,
+   "bars": 568,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
