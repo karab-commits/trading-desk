@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T15:24:39-05:00",
+  "updated": "2026-11-19T15:40:29-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 23,
+   "quotesCalls": 24,
    "barCalls": 2,
    "bars": 45,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 26,
+   "runs": 27,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2945,14 +2945,14 @@
      "AMZN",
      "META"
     ],
-    "total": 369
+    "total": 381
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T15:24:39-05:00",
+   "lastRun": "2026-11-19T15:40:29-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
