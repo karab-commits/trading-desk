@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 3:09 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 3:18 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Flat, no pending orders; all watch names below VWAP",
+      "status": "Close-out 3:17 PM: account 0944 flat, no orders, real P&L 0.00 CAD",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "3:09 run: no signals",
-        "detail": "Flat, no pending orders; all watch names below VWAP",
-        "since": "2026-11-19T15:09:24-05:00",
-        "state": "idle",
-        "next": "Close-out 3:15",
+        "now": "Flat at close, 0 trades",
+        "detail": "Close-out 3:17 PM: account 0944 flat, no orders, real P&L 0.00 CAD",
+        "since": "2026-11-19T15:18:06-05:00",
+        "state": "done",
+        "next": "Tomorrow 9:00 pre-market",
         "log": [
           "14:10 flat, no signals",
           "14:20 flat, no signals",
@@ -176,7 +176,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "No journal ideas Nov 18. NBIS/CRWV SIP ORB breaks never logged; scored off-journal at -36.61 CAD after fees.",
+      "status": "MSFT, STX, WDC stopped; QQQ short hit target (all paper)",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -184,11 +184,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "0 ideas; 2 missed found",
-        "detail": "No journal ideas Nov 18. NBIS/CRWV SIP ORB breaks never logged; scored off-journal at -36.61 CAD after fees.",
-        "since": "2026-11-18T16:54:17-05:00",
+        "now": "Resolved 4 paper ideas",
+        "detail": "MSFT, STX, WDC stopped; QQQ short hit target (all paper)",
+        "since": "2026-11-19T15:18:06-05:00",
         "state": "done",
-        "next": "Log Thu ideas",
+        "next": "4:30 PM review",
         "log": []
       }
     },
@@ -658,7 +658,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-19T10:36:37-05:00",
+    "updated": "2026-11-19T15:18:06-05:00",
     "ideasLogged": 25,
     "byDate": {
       "2026-11-02": {
@@ -722,12 +722,12 @@
         "taken": 0
       },
       "2026-11-19": {
-        "net": 0.0,
+        "net": -68.17,
         "ideas": 4,
-        "resolved": 0,
-        "open": 4,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 4,
+        "open": 0,
+        "filled": 4,
+        "wins": 1,
         "real": 0.0,
         "taken": 0
       }
@@ -822,7 +822,7 @@
     {
       "date": "2026-11-19",
       "ticker": "PANW",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "side": "long",
@@ -841,12 +841,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 357.715,
-      "priceTime": "2026-11-19T15:09:07-05:00"
+      "priceTime": "2026-11-19T15:09:07-05:00",
+      "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "date": "2026-11-19",
       "ticker": "BE",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "side": "long",
@@ -865,12 +866,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 170.4999,
-      "priceTime": "2026-11-19T15:09:09-05:00"
+      "priceTime": "2026-11-19T15:09:09-05:00",
+      "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "date": "2026-11-19",
       "ticker": "ASTS",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "side": "long",
@@ -889,12 +891,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 25.66,
-      "priceTime": "2026-11-19T15:09:09-05:00"
+      "priceTime": "2026-11-19T15:09:09-05:00",
+      "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "date": "2026-11-19",
       "ticker": "MU",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "Opening-range breakout (ORB)",
@@ -912,12 +915,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 693.925,
-      "priceTime": "2026-11-19T15:09:09-05:00"
+      "priceTime": "2026-11-19T15:09:09-05:00",
+      "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "date": "2026-11-19",
       "ticker": "INTC",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "Opening-range breakout (ORB)",
@@ -935,7 +939,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 55.755,
-      "priceTime": "2026-11-19T15:09:09-05:00"
+      "priceTime": "2026-11-19T15:09:09-05:00",
+      "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "date": "2026-11-19",
@@ -957,8 +962,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 526.995,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 529.15,
+      "priceTime": "2026-11-19T15:18:06-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -988,8 +993,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 298.26,
-      "priceTime": "2026-11-19T15:09:08-05:00",
+      "last": 299.24,
+      "priceTime": "2026-11-19T15:18:06-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1019,8 +1024,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 645.95,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 647.0,
+      "priceTime": "2026-11-19T15:18:06-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1058,11 +1063,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 500.15,
-      "priceTime": "2026-11-19T15:09:09-05:00"
+      "last": 501.125,
+      "priceTime": "2026-11-19T15:18:06-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T15:09:19-05:00",
+  "watchlistUpdated": "2026-11-19T15:18:06-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",

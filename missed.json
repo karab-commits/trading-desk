@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-19T15:09:20-05:00",
+  "updated": "2026-11-19T15:18:06-05:00",
   "date": "2026-11-19",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,80 +9,80 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 0.0,
-      "final": 0.0,
+      "net": -68.17,
+      "final": -68.17,
       "unrealized": 0.0,
       "ideas": 4,
-      "scored": 0,
+      "scored": 4,
       "open": 0,
       "notTriggered": 0,
-      "pending": 4,
-      "wins": 0,
-      "losses": 0
+      "pending": 0,
+      "wins": 1,
+      "losses": 3
     },
     "week": {
-      "net": 74.43,
-      "final": 74.43,
+      "net": 6.26,
+      "final": 6.26,
       "unrealized": 0.0,
       "ideas": 11,
-      "scored": 7,
+      "scored": 11,
       "open": 0,
       "notTriggered": 0,
-      "pending": 4,
-      "wins": 5,
-      "losses": 2
+      "pending": 0,
+      "wins": 6,
+      "losses": 5
     },
     "allTime": {
-      "net": 135.24,
-      "final": 135.24,
+      "net": 67.07,
+      "final": 67.07,
       "unrealized": 0.0,
       "ideas": 23,
-      "scored": 15,
+      "scored": 19,
       "open": 0,
       "notTriggered": 4,
-      "pending": 4,
-      "wins": 9,
-      "losses": 6
+      "pending": 0,
+      "wins": 10,
+      "losses": 9
     }
   },
   "byBot": {
     "quant": {
       "today": {
-        "net": 0.0,
+        "net": -94.48,
         "ideas": 3,
-        "scored": 0,
+        "scored": 3,
         "open": 0
       },
       "week": {
-        "net": 85.95,
+        "net": -8.53,
         "ideas": 8,
-        "scored": 5,
+        "scored": 8,
         "open": 0
       },
       "allTime": {
-        "net": 91.86,
+        "net": -2.62,
         "ideas": 13,
-        "scored": 10,
+        "scored": 13,
         "open": 0
       }
     },
     "whale": {
       "today": {
-        "net": 0.0,
+        "net": 26.31,
         "ideas": 1,
-        "scored": 0,
+        "scored": 1,
         "open": 0
       },
       "week": {
-        "net": -11.52,
+        "net": 14.79,
         "ideas": 3,
-        "scored": 2,
+        "scored": 3,
         "open": 0
       },
       "allTime": {
-        "net": -32.33,
+        "net": -6.02,
         "ideas": 4,
-        "scored": 3,
+        "scored": 4,
         "open": 0
       }
     },
@@ -173,12 +173,13 @@
       "loggedPrice": 659.115,
       "paperEntry": 659.115,
       "why": "paper-only",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "target",
+      "exit": 654.43,
+      "fees": 0.3354,
+      "net": 18.4,
+      "netCAD": 26.31,
+      "resolvedAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "id": "2026-11-19-WDC-1",
@@ -198,12 +199,13 @@
       "loggedPrice": 312.605,
       "paperEntry": 312.605,
       "why": "paper-only",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "stop",
+      "exit": 300.82,
+      "fees": 0.3659,
+      "net": -23.94,
+      "netCAD": -34.22,
+      "resolvedAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "id": "2026-11-19-STX-1",
@@ -223,12 +225,13 @@
       "loggedPrice": 563.08,
       "paperEntry": 563.08,
       "why": "paper-only",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "stop",
+      "exit": 536.54,
+      "fees": 0.4092,
+      "net": -26.95,
+      "netCAD": -38.53,
+      "resolvedAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "id": "2026-11-19-MSFT-1",
@@ -248,12 +251,13 @@
       "loggedPrice": 523.36,
       "paperEntry": 523.36,
       "why": "skipped",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "stop",
+      "exit": 518.38,
+      "fees": 0.2561,
+      "net": -15.2,
+      "netCAD": -21.73,
+      "resolvedAt": "2026-11-19T15:18:06-05:00"
     },
     {
       "id": "2026-11-17-NVDA-2",
