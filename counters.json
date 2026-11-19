@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T12:13:29-05:00",
+  "updated": "2026-11-19T12:23:27-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 11,
+   "quotesCalls": 12,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 12,
+   "runs": 13,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2945,14 +2945,14 @@
      "AMZN",
      "META"
     ],
-    "total": 185
+    "total": 203
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T12:13:29-05:00",
+   "lastRun": "2026-11-19T12:23:27-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3010,7 +3010,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 2,
+   "webSearches": 3,
    "pagesFetched": 0,
    "xSearches": 1,
    "xPosts": 10,
@@ -3047,14 +3047,20 @@
       "title": "B. Riley Upgrades AST SpaceMobile to Buy Amid Rebound",
       "url": "https://x.com/i/trending",
       "time": "2026-11-19T07:35:28-05:00"
+     },
+     {
+      "title": "12 Information Technology Stocks Moving In Thursday's Intraday Session",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63443237/12-information-technology-stocks-moving-thursday-s-intraday-session",
+      "time": "2026-11-19T12:05:00-05:00"
      }
     ],
-    "count": 4,
+    "count": 5,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
      "ad92d7489119",
-     "350c18c5b2c1"
+     "350c18c5b2c1",
+     "81d67f1ee441"
     ]
    },
    "lastRun": null
@@ -3099,8 +3105,8 @@
   },
   "quant": {
    "quotesCalls": 2,
-   "barCalls": 118,
-   "bars": 543,
+   "barCalls": 119,
+   "bars": 555,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
