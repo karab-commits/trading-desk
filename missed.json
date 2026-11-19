@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-19T10:24:04-05:00",
+  "updated": "2026-11-19T10:37:02-05:00",
   "date": "2026-11-19",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 3,
+      "ideas": 4,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 3,
+      "pending": 4,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 74.43,
       "final": 74.43,
       "unrealized": 0.0,
-      "ideas": 10,
+      "ideas": 11,
       "scored": 7,
       "open": 0,
       "notTriggered": 0,
-      "pending": 3,
+      "pending": 4,
       "wins": 5,
       "losses": 2
     },
@@ -36,11 +36,11 @@
       "net": 135.24,
       "final": 135.24,
       "unrealized": 0.0,
-      "ideas": 22,
+      "ideas": 23,
       "scored": 15,
       "open": 0,
       "notTriggered": 4,
-      "pending": 3,
+      "pending": 4,
       "wins": 9,
       "losses": 6
     }
@@ -67,22 +67,22 @@
       }
     },
     "whale": {
+      "today": {
+        "net": 0.0,
+        "ideas": 1,
+        "scored": 0,
+        "open": 0
+      },
       "week": {
         "net": -11.52,
-        "ideas": 2,
+        "ideas": 3,
         "scored": 2,
         "open": 0
       },
       "allTime": {
         "net": -32.33,
-        "ideas": 3,
+        "ideas": 4,
         "scored": 3,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
         "open": 0
       }
     },
@@ -155,6 +155,31 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-19-QQQ-1",
+      "date": "2026-11-19",
+      "bot": "whale",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 660.51,
+      "stop": 663.55,
+      "target": 654.43,
+      "shares": 4,
+      "strategy": "QQQ RVOL breakout",
+      "currency": "USD",
+      "size": 4,
+      "loggedAt": "2026-11-19T10:36:37-05:00",
+      "loggedLate": true,
+      "loggedPrice": 659.115,
+      "paperEntry": 659.115,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-19-WDC-1",
       "date": "2026-11-19",

@@ -1823,6 +1823,65 @@
         "regime": "volatile",
         "rule": "veto only"
       }
+    },
+    {
+      "id": "2026-11-19-QQQ-1",
+      "date": "2026-11-19",
+      "session": "adhoc",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 660.51,
+      "stop": 663.55,
+      "target": 654.43,
+      "shares": 4,
+      "strategy": "QQQ RVOL breakout",
+      "bot": "whale",
+      "currency": "USD",
+      "note": "Whale QQQ short (paper): 10:30 5-min bar closed 660.51 below session low 663.09 on RVOL 2.03 (1.026M vs 20-day slot avg 506k), below VWAP ~671.9. Stop = bar high 663.55, target 2R. Sized to whale budget 20 CAD. Logged late 10:38.",
+      "loggedAt": "2026-11-19T10:36:37-05:00",
+      "loggedLate": true,
+      "loggedPrice": 659.115,
+      "plan": {
+        "riskGross": 12.16,
+        "rewardGross": 24.32,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0544,
+          "fx": 0.36,
+          "total": 0.4192
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0544,
+          "fx": 0.18,
+          "total": 0.2368
+        },
+        "netProfitAtTarget": 23.9,
+        "netLossAtStop": -12.4,
+        "rrNet": 1.93,
+        "netProfitAtTargetCAD": 34.17,
+        "netLossAtStopCAD": -17.72
+      },
+      "mode": "paper",
+      "paperReason": "paper-only",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.01,
+        "median": 11.41,
+        "asOfClose": "2026-11-18",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

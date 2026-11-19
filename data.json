@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 10:24 AM ET",
+  "lastUpdated": "Thu Nov 19, 2026 10:37 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -76,7 +76,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "10:10 / 10:15 closes below session low, RVOL 1.11 / 1.65 < 2.0",
+      "status": "10:30 close 660.51 < session low, RVOL 2.03; stop 663.55, tgt 654.43",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -84,15 +84,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ new lows, low RVOL",
-        "detail": "10:10 / 10:15 closes below session low, RVOL 1.11 / 1.65 < 2.0",
-        "since": "2026-11-19T10:24:04-05:00",
-        "state": "idle",
+        "now": "QQQ short logged (paper)",
+        "detail": "10:30 close 660.51 < session low, RVOL 2.03; stop 663.55, tgt 654.43",
+        "since": "2026-11-19T10:37:02-05:00",
+        "state": "done",
         "next": "10:00",
         "log": [
-          "13:58 ET: QQQ short signal logged, skipped (size/min profit)",
           "Pre-market: QQQ scout",
-          "10:23 QQQ breakdown RVOL < 2, no signal"
+          "10:23 QQQ breakdown RVOL < 2, no signal",
+          "10:38 QQQ RVOL short paper (blocked)"
         ]
       }
     },
@@ -107,19 +107,19 @@
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
-      "rejectedToday": 2,
+      "rejectedToday": 3,
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "2 paper blocks (SIP ORB)",
+        "now": "QQQ paper block",
         "detail": "risk_check --update: 0 open, 0 realized, no bots paused, all budgets full.",
-        "since": "2026-11-19T10:14:19-05:00",
+        "since": "2026-11-19T10:37:02-05:00",
         "state": "done",
         "next": "Pre-market risk 9:00 Thu",
         "log": [
-          "Pre-market risk update",
           "10:01 MSFT quant orb ALLOW 21.90/35",
-          "10:14 STX, WDC blocked: paper only"
+          "10:14 STX, WDC blocked: paper only",
+          "10:38 whale QQQ short blocked: paper only"
         ]
       }
     },
@@ -151,7 +151,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Selloff: no universe name above OR high; shorts barred by trend filter",
+      "status": "Selloff; longs below OR highs, shorts barred by trend filter",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -159,9 +159,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "No live ORB signal 10:23",
-        "detail": "Selloff: no universe name above OR high; shorts barred by trend filter",
-        "since": "2026-11-19T10:24:04-05:00",
+        "now": "No live ORB signal 10:36",
+        "detail": "Selloff; longs below OR highs, shorts barred by trend filter",
+        "since": "2026-11-19T10:37:02-05:00",
         "state": "idle",
         "next": "Next ORB check 10:15",
         "log": [
@@ -655,8 +655,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-19T10:14:08-05:00",
-    "ideasLogged": 24,
+    "updated": "2026-11-19T10:36:37-05:00",
+    "ideasLogged": 25,
     "byDate": {
       "2026-11-02": {
         "net": 75.71,
@@ -720,9 +720,9 @@
       },
       "2026-11-19": {
         "net": 0.0,
-        "ideas": 3,
+        "ideas": 4,
         "resolved": 0,
-        "open": 3,
+        "open": 4,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -754,8 +754,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 51.91,
-      "priceTime": "2026-11-19T10:23:39-05:00",
+      "last": 51.79,
+      "priceTime": "2026-11-19T10:36:13-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -782,8 +782,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 93.2,
-      "priceTime": "2026-11-19T10:23:39-05:00",
+      "last": 92.98,
+      "priceTime": "2026-11-19T10:34:36-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -810,8 +810,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 14.03,
-      "priceTime": "2026-11-19T10:23:40-05:00",
+      "last": 13.9358,
+      "priceTime": "2026-11-19T10:36:14-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -837,8 +837,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 355.58,
-      "priceTime": "2026-11-19T10:23:39-05:00"
+      "last": 353.245,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     },
     {
       "date": "2026-11-19",
@@ -861,8 +861,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 181.545,
-      "priceTime": "2026-11-19T10:23:39-05:00"
+      "last": 175.4751,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     },
     {
       "date": "2026-11-19",
@@ -885,8 +885,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 26.88,
-      "priceTime": "2026-11-19T10:23:38-05:00"
+      "last": 26.53,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     },
     {
       "date": "2026-11-19",
@@ -908,8 +908,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 737.33,
-      "priceTime": "2026-11-19T10:23:40-05:00"
+      "last": 718.6,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     },
     {
       "date": "2026-11-19",
@@ -931,8 +931,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 57.685,
-      "priceTime": "2026-11-19T10:23:39-05:00"
+      "last": 56.57,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     },
     {
       "date": "2026-11-19",
@@ -954,8 +954,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 555.63,
-      "priceTime": "2026-11-19T10:23:36-05:00",
+      "last": 544.61,
+      "priceTime": "2026-11-19T10:36:12-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -985,8 +985,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 309.515,
-      "priceTime": "2026-11-19T10:23:38-05:00",
+      "last": 303.44,
+      "priceTime": "2026-11-19T10:36:14-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -999,25 +999,33 @@
     {
       "date": "2026-11-19",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "QQQ RVOL breakout",
       "bot": "whale",
-      "reason": "NQ futures +2.1% on Anthropic IPO pricing (QQQ pre-mkt 671.75, +1.9%); RVOL breakout on paper only",
+      "reason": "Whale QQQ short (paper): 10:30 bar closed 660.51 below session low on RVOL 2.03; paper only (risk BLOCK)",
       "tvSymbol": "NASDAQ:QQQ",
       "tested": false,
       "currency": "USD",
-      "rr": null,
-      "rrNet": null,
-      "netProfitAtTarget": null,
-      "netLossAtStop": null,
-      "netProfitAtTargetCAD": null,
-      "netLossAtStopCAD": null,
+      "rr": 2.0,
+      "rrNet": 1.93,
+      "netProfitAtTarget": 23.9,
+      "netLossAtStop": -12.4,
+      "netProfitAtTargetCAD": 34.17,
+      "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 665.635,
-      "priceTime": "2026-11-19T10:23:39-05:00"
+      "last": 659.115,
+      "priceTime": "2026-11-19T10:36:16-05:00",
+      "side": "short",
+      "entry": 660.51,
+      "stop": 663.55,
+      "target": 654.43,
+      "shares": 4,
+      "planFrom": "journal",
+      "journalId": "2026-11-19-QQQ-1",
+      "testNote": "QQQ RVOL paper only"
     },
     {
       "date": "2026-11-19",
@@ -1047,11 +1055,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 518.085,
-      "priceTime": "2026-11-19T10:23:39-05:00"
+      "last": 516.425,
+      "priceTime": "2026-11-19T10:36:16-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T10:24:04-05:00",
+  "watchlistUpdated": "2026-11-19T10:37:02-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
@@ -1378,7 +1386,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-19",
-    "updated": "2026-11-19T10:23:39-05:00",
+    "updated": "2026-11-19T10:36:53-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
