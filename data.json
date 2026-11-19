@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 3:18 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 3:24 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -758,7 +758,7 @@
       "openPnlCAD": null,
       "side": "long",
       "last": 51.46,
-      "priceTime": "2026-11-19T15:09:08-05:00",
+      "priceTime": "2026-11-19T15:24:36-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -785,8 +785,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 92.37,
-      "priceTime": "2026-11-19T15:09:10-05:00",
+      "last": 92.39,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -813,8 +813,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 13.6368,
-      "priceTime": "2026-11-19T15:09:07-05:00",
+      "last": 13.6799,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -840,8 +840,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 357.715,
-      "priceTime": "2026-11-19T15:09:07-05:00",
+      "last": 358.99,
+      "priceTime": "2026-11-19T15:24:36-05:00",
       "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
@@ -865,8 +865,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 170.4999,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 169.575,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
@@ -890,8 +890,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 25.66,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 25.67,
+      "priceTime": "2026-11-19T15:24:36-05:00",
       "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
@@ -914,8 +914,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 693.925,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 697.64,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
@@ -938,8 +938,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 55.755,
-      "priceTime": "2026-11-19T15:09:09-05:00",
+      "last": 55.735,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "statusAt": "2026-11-19T15:18:06-05:00"
     },
     {
@@ -962,8 +962,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 529.15,
-      "priceTime": "2026-11-19T15:18:06-05:00",
+      "last": 527.66,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -993,8 +993,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 299.24,
-      "priceTime": "2026-11-19T15:18:06-05:00",
+      "last": 298.3149,
+      "priceTime": "2026-11-19T15:24:36-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1024,8 +1024,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 647.0,
-      "priceTime": "2026-11-19T15:18:06-05:00",
+      "last": 646.73,
+      "priceTime": "2026-11-19T15:24:37-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1063,11 +1063,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 501.125,
-      "priceTime": "2026-11-19T15:18:06-05:00"
+      "last": 501.185,
+      "priceTime": "2026-11-19T15:24:37-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T15:18:06-05:00",
+  "watchlistUpdated": "2026-11-19T15:24:39-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
