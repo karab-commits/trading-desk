@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 9:07 AM ET",
+  "lastUpdated": "Thu Nov 19, 2026 9:33 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Gap fades: XIU ATR14 0.830 trig 0.62 (long <=51.61, paper); HXT trig 1.10 (long <=92.72); SOFI trig 0.63 (long <=13.46, pre-mkt 14.39). Gap-up shorts blocked by the borrow agreement.",
+      "status": "Open: XIU 52.35 (+0.12 vs 0.62), HXT 94.12 (+0.31 vs 1.10), SOFI 14.28 (+0.19 vs 0.63). No orders.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,16 +37,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "XIU long trig 51.61",
-        "detail": "Gap fades: XIU ATR14 0.830 trig 0.62 (long <=51.61, paper); HXT trig 1.10 (long <=92.72); SOFI trig 0.63 (long <=13.46, pre-mkt 14.39). Gap-up shorts blocked by the borrow agreement.",
-        "since": "2026-11-19T09:07:37-05:00",
-        "state": "waiting",
+        "now": "No gap fade today",
+        "detail": "Open: XIU 52.35 (+0.12 vs 0.62), HXT 94.12 (+0.31 vs 1.10), SOFI 14.28 (+0.19 vs 0.63). No orders.",
+        "since": "2026-11-19T09:32:02-05:00",
+        "state": "done",
         "log": [
           "9:10 ET: no gap fades at the open",
           "9:31 no gap fade (XIU/HXT/SOFI)",
           "Gap check: XIU/SOFI/HXT all under trigger, no orders"
-        ],
-        "next": "Open check 9:31"
+        ]
       }
     },
     {
@@ -128,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile (SPY rv10 29.0%). Account 0944 flat, equity 2,472.13 CAD. Futures up on Anthropic IPO pricing; checking gap fades at 9:30.",
+      "status": "Mood volatile (SPY rv10 29.0%). No gap fade at the open, no orders. Watchlist handed to the 9:45 intraday run: news PANW/BE/ASTS, ORB MU/INTC, SIP ORB paper STX/WDC, whale QQQ paper.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +135,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market: waiting for open",
-        "detail": "Mood volatile (SPY rv10 29.0%). Account 0944 flat, equity 2,472.13 CAD. Futures up on Anthropic IPO pricing; checking gap fades at 9:30.",
-        "since": "2026-11-19T09:07:37-05:00",
-        "state": "working",
-        "next": "Open check 9:31",
+        "now": "Open: no orders sent",
+        "detail": "Mood volatile (SPY rv10 29.0%). No gap fade at the open, no orders. Watchlist handed to the 9:45 intraday run: news PANW/BE/ASTS, ORB MU/INTC, SIP ORB paper STX/WDC, whale QQQ paper.",
+        "since": "2026-11-19T09:32:02-05:00",
+        "state": "done",
+        "next": "Intraday 9:45",
         "log": [
           "12:43 no signals, watchlist prices refreshed",
           "Pre-market done",
@@ -725,12 +724,12 @@
     {
       "date": "2026-11-19",
       "ticker": "XIU.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "ATR14 0.830, trigger 0.62: long only if open <= 51.61 (prev close 52.23); a gap up >= 52.85 would be a short (paper, borrow agreement). Paper only.",
+      "reason": "No setup: opened 52.35, gap +0.12 vs 0.62 trigger (prev close 52.23). Paper only anyway.",
       "trigger": 51.61,
       "testNote": "XIU paper only (OOS -0.004R)",
       "tvSymbol": "TSX:XIU",
@@ -744,17 +743,22 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "side": "long"
+      "side": "long",
+      "last": 52.37,
+      "priceTime": "2026-11-19T09:31:51-05:00",
+      "statusAt": "2026-11-19T09:32:02-05:00",
+      "triggeredAt": "2026-11-19T09:31:51-05:00",
+      "triggerPrice": 52.37
     },
     {
       "date": "2026-11-19",
       "ticker": "HXT.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "ATR14 1.460, trigger 1.10: long only if open <= 92.72 (prev close 93.81); gap up >= 94.91 = short, blocked (borrow agreement). Same group as XIU.",
+      "reason": "No setup: opened 94.12, gap +0.31 vs 1.10 trigger (prev close 93.81).",
       "trigger": 92.72,
       "tvSymbol": "TSX:HXT",
       "tested": false,
@@ -767,17 +771,22 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "side": "long"
+      "side": "long",
+      "last": 94.1,
+      "priceTime": "2026-11-19T09:31:51-05:00",
+      "statusAt": "2026-11-19T09:32:02-05:00",
+      "triggeredAt": "2026-11-19T09:31:51-05:00",
+      "triggerPrice": 94.1
     },
     {
       "date": "2026-11-19",
       "ticker": "SOFI",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-19T09:07:20-05:00",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "ATR14 0.842, trigger 0.63: long only if open <= 13.46 (prev close 14.095); pre-mkt 14.39 (+0.30), no setup so far.",
+      "reason": "No setup: opened 14.28, gap +0.19 vs 0.63 trigger (prev close 14.095).",
       "trigger": 13.46,
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
@@ -790,7 +799,12 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "side": "long"
+      "side": "long",
+      "last": 14.33,
+      "priceTime": "2026-11-19T09:31:51-05:00",
+      "statusAt": "2026-11-19T09:32:02-05:00",
+      "triggeredAt": "2026-11-19T09:31:51-05:00",
+      "triggerPrice": 14.33
     },
     {
       "date": "2026-11-19",
@@ -964,7 +978,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-19T09:07:25-05:00",
+  "watchlistUpdated": "2026-11-19T09:32:02-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
