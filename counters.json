@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T13:13:40-05:00",
+  "updated": "2026-11-19T13:23:17-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 16,
+   "runs": 17,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2952,7 +2952,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T13:13:40-05:00",
+   "lastRun": "2026-11-19T13:23:17-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3012,7 +3012,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 8,
+   "webSearches": 10,
    "pagesFetched": 0,
    "xSearches": 3,
    "xPosts": 30,
@@ -3106,9 +3106,14 @@
       "title": "B. Riley Upgrades AST SpaceMobile to Buy with $48 Target",
       "url": "https://x.com/i/trending/2123393406798037403",
       "time": "2026-11-19T13:13:28-05:00"
+     },
+     {
+      "title": "Short seller Hunterbrook shorts AMD citing concerns over China exports",
+      "url": "https://www.investing.com/news/stock-market-news/short-seller-hunterbrook-shorts-amd-citing-concerns-over-china-exports-5039475",
+      "time": "2026-11-19T10:33:00-05:00"
      }
     ],
-    "count": 15,
+    "count": 16,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
@@ -3124,7 +3129,8 @@
      "b15ce9b658c0",
      "a2f9e73bd92a",
      "7bfac7b9e2f8",
-     "499f76a84975"
+     "499f76a84975",
+     "1a9e7bceccfa"
     ]
    },
    "lastRun": null
@@ -3168,9 +3174,9 @@
    "lastRun": "2026-11-19T09:51:36-05:00"
   },
   "quant": {
-   "quotesCalls": 2,
-   "barCalls": 129,
-   "bars": 694,
+   "quotesCalls": 4,
+   "barCalls": 138,
+   "bars": 829,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -3202,9 +3208,11 @@
      "MU",
      "INTC",
      "STX",
-     "WDC"
+     "WDC",
+     "SOFI",
+     "HXT.TO"
     ],
-    "total": 17
+    "total": 53
    },
    "headlines": {
     "items": [],

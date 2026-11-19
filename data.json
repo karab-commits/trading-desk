@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 1:13 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 1:23 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Refreshed 12 watchlist quotes; gap-fade window closed 10:15",
+      "status": "Window 9:45-10:15 closed; no fades today.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,14 +37,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Watchlist prices 13:12",
-        "detail": "Refreshed 12 watchlist quotes; gap-fade window closed 10:15",
-        "since": "2026-11-19T13:13:40-05:00",
+        "now": "Gap-fade window closed",
+        "detail": "Window 9:45-10:15 closed; no fades today.",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "log": [
-          "9:10 ET: no gap fades at the open",
           "9:31 no gap fade (XIU/HXT/SOFI)",
-          "Gap check: XIU/SOFI/HXT all under trigger, no orders"
+          "Gap check: XIU/SOFI/HXT all under trigger, no orders",
+          "13:20 scanner: done for the day"
         ],
         "next": "Next check 13:27"
       }
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "13:12: INSM (10:05) and ASTS (pre-mkt) headlines stale; no signal",
+      "status": "13:20: AMD Hunterbrook short report 10:33 (stale, >60 min, short = paper). PDD/COHR/PANW moves are morning news.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,14 +61,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh news <=60m",
-        "detail": "13:12: INSM (10:05) and ASTS (pre-mkt) headlines stale; no signal",
-        "since": "2026-11-19T13:13:40-05:00",
+        "now": "No fresh catalyst <60m",
+        "detail": "13:20: AMD Hunterbrook short report 10:33 (stale, >60 min, short = paper). PDD/COHR/PANW moves are morning news.",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "log": [
-          "12:10 no signal",
           "12:42 no News signal",
-          "13:12 news scan: no signal"
+          "13:12 news scan: no signal",
+          "13:20 news: no headline within 60 min"
         ],
         "next": "News window ends 14:30"
       }
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "13:12: QQQ RVOL breakout already used (paper); no new scout",
+      "status": "QQQ RVOL first signal used at 10:30 (paper). Scout list unchanged.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -86,14 +86,14 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "QQQ entry used today",
-        "detail": "13:12: QQQ RVOL breakout already used (paper); no new scout",
-        "since": "2026-11-19T13:13:40-05:00",
+        "detail": "QQQ RVOL first signal used at 10:30 (paper). Scout list unchanged.",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "next": "Next check 13:27",
         "log": [
-          "10:23 QQQ breakdown RVOL < 2, no signal",
           "10:38 QQQ RVOL short paper (blocked)",
-          "12:42 QQQ 654.21 < VWAP 661.21"
+          "12:42 QQQ 654.21 < VWAP 661.21",
+          "13:20 whale: nothing new"
         ]
       }
     },
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "13:12: no positions, no working orders, no checks needed",
+      "status": "13:20: account 0944 flat, no working orders, no fills today. No checks needed (no signals).",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,15 +112,15 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "Flat 0/4, 0/150 used",
-        "detail": "13:12: no positions, no working orders, no checks needed",
-        "since": "2026-11-19T13:13:40-05:00",
+        "now": "0/150 used, 0/4 open",
+        "detail": "13:20: account 0944 flat, no working orders, no fills today. No checks needed (no signals).",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "next": "Next check 13:27",
         "log": [
-          "10:38 whale QQQ short blocked: paper only",
           "12:10 flat, no checks",
-          "12:42 risk_check --update: 0 risk"
+          "12:42 risk_check --update: 0 risk",
+          "13:20 risk: flat, nothing to check"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account flat, equity 2,472.13 CAD; SPY -1.4%; no valid live signals",
+      "status": "No signals met the written rules; account flat, equity 2,472.13 CAD, BP 1,687.04 USD.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:12 check: no orders",
-        "detail": "Account flat, equity 2,472.13 CAD; SPY -1.4%; no valid live signals",
-        "since": "2026-11-19T13:13:40-05:00",
+        "now": "13:20 run: no orders",
+        "detail": "No signals met the written rules; account flat, equity 2,472.13 CAD, BP 1,687.04 USD.",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "next": "Next check 13:27",
         "log": [
-          "16:54 review: flat, 0 orders, missed SIP logs found",
           "12:10 no signals",
-          "12:42 no orders; P&L 0.00"
+          "12:42 no orders; P&L 0.00",
+          "13:20 intraday: 0 orders, 0 ideas"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "13:12: ORB window closed 11:30; SIP entries used; no live signal",
+      "status": "13:20 run: 13:00-13:15 15m bars for 9 names. AAPL 12:45 bar lost VWAP (348.76<349.57) but vol 429k, nowhere near RVOL 1.5; 13:00 bar stayed below. Other 8 below VWAP all session-late, no reclaim. ORB closed; SIP ORB entries used.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "ORB closed; VWAP paper",
-        "detail": "13:12: ORB window closed 11:30; SIP entries used; no live signal",
-        "since": "2026-11-19T13:13:40-05:00",
+        "now": "VWAP recheck: no signal",
+        "detail": "13:20 run: 13:00-13:15 15m bars for 9 names. AAPL 12:45 bar lost VWAP (348.76<349.57) but vol 429k, nowhere near RVOL 1.5; 13:00 bar stayed below. Other 8 below VWAP all session-late, no reclaim. ORB closed; SIP ORB entries used.",
+        "since": "2026-11-19T13:23:11-05:00",
         "state": "idle",
         "next": "Next check 13:27",
         "log": [
-          "10:14 STX, WDC SIP ORB paper (blocked)",
           "12:10 no signal",
-          "12:42 VWAP paper: no signal"
+          "12:42 VWAP paper: no signal",
+          "13:20 VWAP: no reclaim/loss with RVOL>=1.5"
         ]
       }
     },
@@ -196,7 +196,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "13:12: no live signal on SPY/QQQ/AAPL/MSFT/NVDA/AMZN/META to express",
+      "status": "13:20: no live signal on SPY/QQQ/megacaps to express as a spread.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -205,12 +205,13 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No source signal",
-        "detail": "13:12: no live signal on SPY/QQQ/AAPL/MSFT/NVDA/AMZN/META to express",
-        "since": "2026-11-19T13:13:40-05:00",
+        "detail": "13:20: no live signal on SPY/QQQ/megacaps to express as a spread.",
+        "since": "2026-11-19T13:23:12-05:00",
         "state": "idle",
         "next": "Window ends 14:30",
         "log": [
-          "Pre-market: no options setup"
+          "Pre-market: no options setup",
+          "13:20 options: nothing to do"
         ]
       }
     }
@@ -756,7 +757,7 @@
       "openPnlCAD": null,
       "side": "long",
       "last": 51.56,
-      "priceTime": "2026-11-19T13:12:44-05:00",
+      "priceTime": "2026-11-19T13:21:41-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -783,8 +784,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 92.53,
-      "priceTime": "2026-11-19T13:11:53-05:00",
+      "last": 92.59,
+      "priceTime": "2026-11-19T13:21:42-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -811,8 +812,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 13.7667,
-      "priceTime": "2026-11-19T13:12:47-05:00",
+      "last": 13.77,
+      "priceTime": "2026-11-19T13:21:41-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -838,8 +839,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 358.445,
-      "priceTime": "2026-11-19T13:12:46-05:00"
+      "last": 359.53,
+      "priceTime": "2026-11-19T13:21:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -862,8 +863,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 169.89,
-      "priceTime": "2026-11-19T13:12:47-05:00"
+      "last": 170.36,
+      "priceTime": "2026-11-19T13:21:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -886,8 +887,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 26.105,
-      "priceTime": "2026-11-19T13:12:44-05:00"
+      "last": 26.27,
+      "priceTime": "2026-11-19T13:21:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -909,8 +910,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 700.345,
-      "priceTime": "2026-11-19T13:12:47-05:00"
+      "last": 703.3555,
+      "priceTime": "2026-11-19T13:21:42-05:00"
     },
     {
       "date": "2026-11-19",
@@ -932,8 +933,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 56.01,
-      "priceTime": "2026-11-19T13:12:47-05:00"
+      "last": 56.28,
+      "priceTime": "2026-11-19T13:21:42-05:00"
     },
     {
       "date": "2026-11-19",
@@ -955,8 +956,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 529.6723,
-      "priceTime": "2026-11-19T13:12:47-05:00",
+      "last": 530.73,
+      "priceTime": "2026-11-19T13:21:41-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -986,8 +987,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 295.875,
-      "priceTime": "2026-11-19T13:12:47-05:00",
+      "last": 297.205,
+      "priceTime": "2026-11-19T13:21:40-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1017,8 +1018,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 649.52,
-      "priceTime": "2026-11-19T13:12:47-05:00",
+      "last": 650.08,
+      "priceTime": "2026-11-19T13:21:42-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1056,11 +1057,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 503.99,
-      "priceTime": "2026-11-19T13:12:47-05:00"
+      "last": 503.05,
+      "priceTime": "2026-11-19T13:21:41-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T13:13:28-05:00",
+  "watchlistUpdated": "2026-11-19T13:23:11-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
@@ -1387,7 +1388,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-19",
-    "updated": "2026-11-19T13:12:09-05:00",
+    "updated": "2026-11-19T13:20:30-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
