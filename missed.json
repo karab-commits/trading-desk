@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-19T09:38:24-05:00",
+  "updated": "2026-11-19T10:03:22-05:00",
   "date": "2026-11-19",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 0,
+      "ideas": 1,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 74.43,
       "final": 74.43,
       "unrealized": 0.0,
-      "ideas": 7,
+      "ideas": 8,
       "scored": 7,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 1,
       "wins": 5,
       "losses": 2
     },
@@ -36,33 +36,33 @@
       "net": 135.24,
       "final": 135.24,
       "unrealized": 0.0,
-      "ideas": 19,
+      "ideas": 20,
       "scored": 15,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 1,
       "wins": 9,
       "losses": 6
     }
   },
   "byBot": {
     "quant": {
+      "today": {
+        "net": 0.0,
+        "ideas": 1,
+        "scored": 0,
+        "open": 0
+      },
       "week": {
         "net": 85.95,
-        "ideas": 5,
+        "ideas": 6,
         "scored": 5,
         "open": 0
       },
       "allTime": {
         "net": 91.86,
-        "ideas": 10,
+        "ideas": 11,
         "scored": 10,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
         "open": 0
       }
     },
@@ -155,6 +155,31 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-19-MSFT-1",
+      "date": "2026-11-19",
+      "bot": "quant",
+      "ticker": "MSFT",
+      "side": "long",
+      "entry": 523.4,
+      "stop": 518.38,
+      "target": 533.44,
+      "shares": 3,
+      "strategy": "Opening-range breakout (15-min), volume-confirmed",
+      "currency": "USD",
+      "size": 3,
+      "loggedAt": "2026-11-19T10:01:01-05:00",
+      "loggedLate": true,
+      "loggedPrice": 523.36,
+      "paperEntry": 523.36,
+      "why": "skipped",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-17-NVDA-2",
       "date": "2026-11-17",

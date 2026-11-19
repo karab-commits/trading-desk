@@ -1615,6 +1615,64 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-19-MSFT-1",
+      "date": "2026-11-19",
+      "session": "adhoc",
+      "ticker": "MSFT",
+      "side": "long",
+      "entry": 523.4,
+      "stop": 518.38,
+      "target": 533.44,
+      "shares": 3,
+      "strategy": "Opening-range breakout (15-min), volume-confirmed",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "ORB long: 9:45 5-min bar closed 525.35 > OR high 524.79 (OR 518.38-524.79, width 6.41 = 0.36x ATR14 17.95), RVOL 1.77 (646k vs 19-day 9:45-slot avg 365k), above VWAP, open 519.50 > prev close 508.29. First routine run after the signal (10:00); entry limit at the 10:03 ask 523.40, stop OR low, target 2R. Sized 3 sh to fit buying power (1,687 USD).",
+      "loggedAt": "2026-11-19T10:01:01-05:00",
+      "loggedLate": true,
+      "loggedPrice": 523.36,
+      "plan": {
+        "riskGross": 15.06,
+        "rewardGross": 30.12,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.033,
+          "fx": 0.45,
+          "total": 0.4848
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.032,
+          "fx": 0.23,
+          "total": 0.2579
+        },
+        "netProfitAtTarget": 29.64,
+        "netLossAtStop": -15.32,
+        "rrNet": 1.93,
+        "netProfitAtTargetCAD": 42.37,
+        "netLossAtStopCAD": -21.9
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.01,
+        "median": 11.41,
+        "asOfClose": "2026-11-18",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
