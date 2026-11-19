@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-18T16:54:26-05:00",
+  "updated": "2026-11-19T09:07:20-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2903,6 +2903,139 @@
     "seen": []
    },
    "lastRun": "2026-11-18T09:52:49-05:00"
+  }
+ },
+ "2026-11-19": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "scanner": {
+   "quotesCalls": 2,
+   "barCalls": 6,
+   "bars": 78,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "SOFI",
+     "HXT.TO",
+     "SPY",
+     "PANW",
+     "BE",
+     "STX",
+     "WDC",
+     "MU",
+     "INTC",
+     "MRVL",
+     "AMD",
+     "NVDA",
+     "QQQ",
+     "WMT",
+     "CRWD",
+     "ASTS"
+    ],
+    "total": 17
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 1,
+   "pagesFetched": 0,
+   "xSearches": 1,
+   "xPosts": 10,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Palo Alto soars, chip stocks rally ahead of Anthropic debut",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-palo-alto-soars-chip-stocks-rally-ahead-of-anthropic-debut-5038792",
+      "time": "2026-11-19T09:06:54-05:00"
+     },
+     {
+      "title": "Stocks moving the most today: Live updates",
+      "url": "https://www.cnbc.com/2026/11/19/stocks-moving-the-most-today-live-updates.html",
+      "time": "2026-11-19T09:06:54-05:00"
+     },
+     {
+      "title": "Wall St set for higher open on AI optimism ahead of Anthropic's market debut",
+      "url": "https://www.investing.com/news/stock-market-news/nasdaq-futures-jump-as-anthropics-record-ipo-pricing-fuels-hopes-for-strong-debut-5038156",
+      "time": "2026-11-19T09:06:54-05:00"
+     },
+     {
+      "title": "B. Riley Upgrades AST SpaceMobile to Buy Amid Rebound",
+      "url": "https://x.com/i/trending",
+      "time": "2026-11-19T07:35:28-05:00"
+     }
+    ],
+    "count": 4,
+    "seen": [
+     "ab07aed1d984",
+     "c4efd596e0e6",
+     "ad92d7489119",
+     "350c18c5b2c1"
+    ]
+   },
+   "lastRun": null
   }
  }
 }
