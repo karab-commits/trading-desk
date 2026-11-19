@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated": "2026-11-18T16:54:22-05:00",
-  "date": "2026-11-18",
+  "updated": "2026-11-19T09:38:24-05:00",
+  "date": "2026-11-19",
   "isoWeek": "2026-W47",
-  "marketOpen": false,
+  "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.4298,
