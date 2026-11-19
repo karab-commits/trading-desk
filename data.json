@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 2:43 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 3:00 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -757,8 +757,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 51.58,
-      "priceTime": "2026-11-19T14:43:00-05:00",
+      "last": 51.47,
+      "priceTime": "2026-11-19T15:00:04-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -785,8 +785,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 92.61,
-      "priceTime": "2026-11-19T14:43:00-05:00",
+      "last": 92.51,
+      "priceTime": "2026-11-19T14:50:28-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -813,8 +813,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 13.7629,
-      "priceTime": "2026-11-19T14:43:07-05:00",
+      "last": 13.6801,
+      "priceTime": "2026-11-19T15:00:09-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -840,8 +840,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 360.3006,
-      "priceTime": "2026-11-19T14:43:06-05:00"
+      "last": 360.03,
+      "priceTime": "2026-11-19T15:00:08-05:00"
     },
     {
       "date": "2026-11-19",
@@ -864,8 +864,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 171.91,
-      "priceTime": "2026-11-19T14:43:07-05:00"
+      "last": 170.38,
+      "priceTime": "2026-11-19T15:00:09-05:00"
     },
     {
       "date": "2026-11-19",
@@ -888,8 +888,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 25.935,
-      "priceTime": "2026-11-19T14:43:06-05:00"
+      "last": 25.68,
+      "priceTime": "2026-11-19T15:00:09-05:00"
     },
     {
       "date": "2026-11-19",
@@ -911,8 +911,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 701.84,
-      "priceTime": "2026-11-19T14:43:07-05:00"
+      "last": 694.355,
+      "priceTime": "2026-11-19T15:00:09-05:00"
     },
     {
       "date": "2026-11-19",
@@ -934,8 +934,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 56.31,
-      "priceTime": "2026-11-19T14:43:07-05:00"
+      "last": 55.675,
+      "priceTime": "2026-11-19T15:00:09-05:00"
     },
     {
       "date": "2026-11-19",
@@ -957,8 +957,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 532.09,
-      "priceTime": "2026-11-19T14:43:02-05:00",
+      "last": 524.745,
+      "priceTime": "2026-11-19T15:00:09-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -988,8 +988,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 299.8,
-      "priceTime": "2026-11-19T14:42:58-05:00",
+      "last": 296.15,
+      "priceTime": "2026-11-19T15:00:08-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1019,8 +1019,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 650.53,
-      "priceTime": "2026-11-19T14:43:07-05:00",
+      "last": 646.44,
+      "priceTime": "2026-11-19T15:00:09-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1058,11 +1058,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 502.83,
-      "priceTime": "2026-11-19T14:43:07-05:00"
+      "last": 500.37,
+      "priceTime": "2026-11-19T15:00:08-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T14:43:32-05:00",
+  "watchlistUpdated": "2026-11-19T15:00:28-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
@@ -1389,7 +1389,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-19",
-    "updated": "2026-11-19T14:42:06-05:00",
+    "updated": "2026-11-19T14:59:47-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
