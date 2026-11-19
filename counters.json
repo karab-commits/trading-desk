@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T14:14:11-05:00",
+  "updated": "2026-11-19T14:22:55-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 17,
+   "quotesCalls": 18,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 20,
+   "runs": 21,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2945,14 +2945,14 @@
      "AMZN",
      "META"
     ],
-    "total": 293
+    "total": 311
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T14:14:11-05:00",
+   "lastRun": "2026-11-19T14:22:55-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3012,7 +3012,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 13,
+   "webSearches": 14,
    "pagesFetched": 0,
    "xSearches": 3,
    "xPosts": 30,
@@ -3116,9 +3116,14 @@
       "title": "Intraday Movers — November 19 MIDDAY: $INSM led Thursday's midday movers, up 17.6% as Sanofi weighed a potential acquisition",
       "url": "https://newsletter.positiontracker.trading/p/intraday-movers-midday-intraday-movers-b5c",
       "time": "2026-11-19T12:00:00-05:00"
+     },
+     {
+      "title": "Palo Alto stock jumps on earnings, bet on securing open-weight models",
+      "url": "https://www.cnbc.com/2026/11/19/palo-alto-networks-earnings-applied-compute.html",
+      "time": "2026-11-19T11:28:00-05:00"
      }
     ],
-    "count": 17,
+    "count": 18,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
@@ -3136,7 +3141,8 @@
      "7bfac7b9e2f8",
      "499f76a84975",
      "1a9e7bceccfa",
-     "da654e5564de"
+     "da654e5564de",
+     "1d814fe00b8a"
     ]
    },
    "lastRun": null
@@ -3181,8 +3187,8 @@
   },
   "quant": {
    "quotesCalls": 4,
-   "barCalls": 158,
-   "bars": 1197,
+   "barCalls": 167,
+   "bars": 1377,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
