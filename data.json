@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 1:23 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 1:38 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "13:20: AMD Hunterbrook short report 10:33 (stale, >60 min, short = paper). PDD/COHR/PANW moves are morning news.",
+      "status": "Searched midday movers: PANW, PDD, ASTS upgrade, AMD short report all older than 60 min",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,14 +61,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst <60m",
-        "detail": "13:20: AMD Hunterbrook short report 10:33 (stale, >60 min, short = paper). PDD/COHR/PANW moves are morning news.",
-        "since": "2026-11-19T13:23:11-05:00",
-        "state": "idle",
+        "now": "No fresh catalyst <=60m",
+        "detail": "Searched midday movers: PANW, PDD, ASTS upgrade, AMD short report all older than 60 min",
+        "since": "2026-11-19T13:38:09-05:00",
+        "state": "done",
         "log": [
-          "12:42 no News signal",
           "13:12 news scan: no signal",
-          "13:20 news: no headline within 60 min"
+          "13:20 news: no headline within 60 min",
+          "13:35 news: 0 signals"
         ],
         "next": "News window ends 14:30"
       }
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "QQQ RVOL first signal used at 10:30 (paper). Scout list unchanged.",
+      "status": "QQQ 652.71 below VWAP 659.86; first-signal-per-day already used (paper short 2026-11-19-QQQ-1)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -86,14 +86,14 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "QQQ entry used today",
-        "detail": "QQQ RVOL first signal used at 10:30 (paper). Scout list unchanged.",
-        "since": "2026-11-19T13:23:11-05:00",
+        "detail": "QQQ 652.71 below VWAP 659.86; first-signal-per-day already used (paper short 2026-11-19-QQQ-1)",
+        "since": "2026-11-19T13:38:16-05:00",
         "state": "idle",
-        "next": "Next check 13:27",
+        "next": "13:50 check",
         "log": [
-          "10:38 QQQ RVOL short paper (blocked)",
           "12:42 QQQ 654.21 < VWAP 661.21",
-          "13:20 whale: nothing new"
+          "13:20 whale: nothing new",
+          "13:35 no new QQQ signal"
         ]
       }
     },
@@ -112,15 +112,15 @@
       "rejectedWeek": 6,
       "rejectedAllTime": 6,
       "activity": {
-        "now": "0/150 used, 0/4 open",
+        "now": "Flat 0/4, 0/150 used",
         "detail": "13:20: account 0944 flat, no working orders, no fills today. No checks needed (no signals).",
-        "since": "2026-11-19T13:23:11-05:00",
+        "since": "2026-11-19T13:38:16-05:00",
         "state": "idle",
-        "next": "Next check 13:27",
+        "next": "13:50 check",
         "log": [
-          "12:10 flat, no checks",
           "12:42 risk_check --update: 0 risk",
-          "13:20 risk: flat, nothing to check"
+          "13:20 risk: flat, nothing to check",
+          "13:35 no orders to check"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No signals met the written rules; account flat, equity 2,472.13 CAD, BP 1,687.04 USD.",
+      "status": "Account 0944 flat, eq 2,472.13 CAD, no working orders or fills; prices refreshed",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:20 run: no orders",
-        "detail": "No signals met the written rules; account flat, equity 2,472.13 CAD, BP 1,687.04 USD.",
-        "since": "2026-11-19T13:23:11-05:00",
-        "state": "idle",
-        "next": "Next check 13:27",
+        "now": "13:35 run: no signals",
+        "detail": "Account 0944 flat, eq 2,472.13 CAD, no working orders or fills; prices refreshed",
+        "since": "2026-11-19T13:38:10-05:00",
+        "state": "done",
+        "next": "13:50 check",
         "log": [
-          "12:10 no signals",
           "12:42 no orders; P&L 0.00",
-          "13:20 intraday: 0 orders, 0 ideas"
+          "13:20 intraday: 0 orders, 0 ideas",
+          "13:35 intraday: 0 orders"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "13:20 run: 13:00-13:15 15m bars for 9 names. AAPL 12:45 bar lost VWAP (348.76<349.57) but vol 429k, nowhere near RVOL 1.5; 13:00 bar stayed below. Other 8 below VWAP all session-late, no reclaim. ORB closed; SIP ORB entries used.",
+      "status": "Paper VWAP recheck on the 13:15-13:30 bars: all 9 names closed below VWAP (AAPL 349.52 vs 349.57); AAPL long also fails price < prior close 352.45",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "VWAP recheck: no signal",
-        "detail": "13:20 run: 13:00-13:15 15m bars for 9 names. AAPL 12:45 bar lost VWAP (348.76<349.57) but vol 429k, nowhere near RVOL 1.5; 13:00 bar stayed below. Other 8 below VWAP all session-late, no reclaim. ORB closed; SIP ORB entries used.",
-        "since": "2026-11-19T13:23:11-05:00",
-        "state": "idle",
-        "next": "Next check 13:27",
+        "now": "VWAP 13:30: 0 signals",
+        "detail": "Paper VWAP recheck on the 13:15-13:30 bars: all 9 names closed below VWAP (AAPL 349.52 vs 349.57); AAPL long also fails price < prior close 352.45",
+        "since": "2026-11-19T13:38:09-05:00",
+        "state": "done",
+        "next": "VWAP window ends 14:30",
         "log": [
-          "12:10 no signal",
           "12:42 VWAP paper: no signal",
-          "13:20 VWAP: no reclaim/loss with RVOL>=1.5"
+          "13:20 VWAP: no reclaim/loss with RVOL>=1.5",
+          "13:35 VWAP: no reclaim/loss, 0 ideas"
         ]
       }
     },
@@ -756,8 +756,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 51.56,
-      "priceTime": "2026-11-19T13:21:41-05:00",
+      "last": 51.7,
+      "priceTime": "2026-11-19T13:36:41-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -784,8 +784,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 92.59,
-      "priceTime": "2026-11-19T13:21:42-05:00",
+      "last": 92.73,
+      "priceTime": "2026-11-19T13:36:41-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -812,8 +812,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 13.77,
-      "priceTime": "2026-11-19T13:21:41-05:00",
+      "last": 13.86,
+      "priceTime": "2026-11-19T13:36:42-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -839,8 +839,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 359.53,
-      "priceTime": "2026-11-19T13:21:41-05:00"
+      "last": 360.5875,
+      "priceTime": "2026-11-19T13:36:38-05:00"
     },
     {
       "date": "2026-11-19",
@@ -863,8 +863,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 170.36,
-      "priceTime": "2026-11-19T13:21:41-05:00"
+      "last": 171.955,
+      "priceTime": "2026-11-19T13:36:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -887,8 +887,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 26.27,
-      "priceTime": "2026-11-19T13:21:41-05:00"
+      "last": 26.495,
+      "priceTime": "2026-11-19T13:36:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -910,8 +910,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 703.3555,
-      "priceTime": "2026-11-19T13:21:42-05:00"
+      "last": 707.82,
+      "priceTime": "2026-11-19T13:36:41-05:00"
     },
     {
       "date": "2026-11-19",
@@ -933,8 +933,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 56.28,
-      "priceTime": "2026-11-19T13:21:42-05:00"
+      "last": 56.815,
+      "priceTime": "2026-11-19T13:36:42-05:00"
     },
     {
       "date": "2026-11-19",
@@ -956,8 +956,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 530.73,
-      "priceTime": "2026-11-19T13:21:41-05:00",
+      "last": 533.91,
+      "priceTime": "2026-11-19T13:36:40-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -987,8 +987,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 297.205,
-      "priceTime": "2026-11-19T13:21:40-05:00",
+      "last": 301.795,
+      "priceTime": "2026-11-19T13:36:42-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1018,8 +1018,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 650.08,
-      "priceTime": "2026-11-19T13:21:42-05:00",
+      "last": 652.7074,
+      "priceTime": "2026-11-19T13:36:42-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1057,11 +1057,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 503.05,
-      "priceTime": "2026-11-19T13:21:41-05:00"
+      "last": 503.005,
+      "priceTime": "2026-11-19T13:36:42-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T13:23:11-05:00",
+  "watchlistUpdated": "2026-11-19T13:38:17-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
@@ -1388,7 +1388,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-19",
-    "updated": "2026-11-19T13:20:30-05:00",
+    "updated": "2026-11-19T13:36:07-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
