@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Thu Nov 19, 2026 1:38 PM ET",
+  "lastUpdated": "Thu Nov 19, 2026 1:54 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "Searched midday movers: PANW, PDD, ASTS upgrade, AMD short report all older than 60 min",
+      "status": "Midday movers (INSM/Sanofi report, Everpure, PDD) are all older than 60 min; no qualifying News momentum setup.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,10 +61,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst <=60m",
-        "detail": "Searched midday movers: PANW, PDD, ASTS upgrade, AMD short report all older than 60 min",
-        "since": "2026-11-19T13:38:09-05:00",
-        "state": "done",
+        "now": "No headline in last 60 min",
+        "detail": "Midday movers (INSM/Sanofi report, Everpure, PDD) are all older than 60 min; no qualifying News momentum setup.",
+        "since": "2026-11-19T13:54:56-05:00",
+        "state": "idle",
         "log": [
           "13:12 news scan: no signal",
           "13:20 news: no headline within 60 min",
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944 flat, eq 2,472.13 CAD, no working orders or fills; prices refreshed",
+      "status": "Account 0944 flat, equity 2,472.13 CAD, buying power 1,687.04 USD, no working orders, no fills today. No signals, so nothing sent.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,10 +136,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:35 run: no signals",
-        "detail": "Account 0944 flat, eq 2,472.13 CAD, no working orders or fills; prices refreshed",
-        "since": "2026-11-19T13:38:10-05:00",
-        "state": "done",
+        "now": "13:53 check: flat, no orders",
+        "detail": "Account 0944 flat, equity 2,472.13 CAD, buying power 1,687.04 USD, no working orders, no fills today. No signals, so nothing sent.",
+        "since": "2026-11-19T13:54:50-05:00",
+        "state": "idle",
         "next": "13:50 check",
         "log": [
           "12:42 no orders; P&L 0.00",
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "Paper VWAP recheck on the 13:15-13:30 bars: all 9 names closed below VWAP (AAPL 349.52 vs 349.57); AAPL long also fails price < prior close 352.45",
+      "status": "AAPL closed 349.64 back above VWAP 349.56 on the 13:30-13:45 bar, but it's below yesterday's close 352.45, so it isn't a reclaim. All 9 tickers are down on the day and none was above VWAP on the prior bar, so no VWAP loss either (VWAP is paper only).",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,10 +160,10 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "VWAP 13:30: 0 signals",
-        "detail": "Paper VWAP recheck on the 13:15-13:30 bars: all 9 names closed below VWAP (AAPL 349.52 vs 349.57); AAPL long also fails price < prior close 352.45",
-        "since": "2026-11-19T13:38:09-05:00",
-        "state": "done",
+        "now": "VWAP 13:45 bar: no signal",
+        "detail": "AAPL closed 349.64 back above VWAP 349.56 on the 13:30-13:45 bar, but it's below yesterday's close 352.45, so it isn't a reclaim. All 9 tickers are down on the day and none was above VWAP on the prior bar, so no VWAP loss either (VWAP is paper only).",
+        "since": "2026-11-19T13:54:56-05:00",
+        "state": "idle",
         "next": "VWAP window ends 14:30",
         "log": [
           "12:42 VWAP paper: no signal",
@@ -756,8 +756,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 51.7,
-      "priceTime": "2026-11-19T13:36:41-05:00",
+      "last": 51.56,
+      "priceTime": "2026-11-19T13:53:56-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 52.37
@@ -784,8 +784,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 92.73,
-      "priceTime": "2026-11-19T13:36:41-05:00",
+      "last": 92.59,
+      "priceTime": "2026-11-19T13:50:03-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 94.1
@@ -812,8 +812,8 @@
       "openPnl": null,
       "openPnlCAD": null,
       "side": "long",
-      "last": 13.86,
-      "priceTime": "2026-11-19T13:36:42-05:00",
+      "last": 13.7597,
+      "priceTime": "2026-11-19T13:53:57-05:00",
       "statusAt": "2026-11-19T09:32:02-05:00",
       "triggeredAt": "2026-11-19T09:31:51-05:00",
       "triggerPrice": 14.33
@@ -839,8 +839,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 360.5875,
-      "priceTime": "2026-11-19T13:36:38-05:00"
+      "last": 359.37,
+      "priceTime": "2026-11-19T13:53:57-05:00"
     },
     {
       "date": "2026-11-19",
@@ -863,8 +863,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 171.955,
-      "priceTime": "2026-11-19T13:36:41-05:00"
+      "last": 170.25,
+      "priceTime": "2026-11-19T13:53:56-05:00"
     },
     {
       "date": "2026-11-19",
@@ -887,8 +887,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 26.495,
-      "priceTime": "2026-11-19T13:36:41-05:00"
+      "last": 26.0889,
+      "priceTime": "2026-11-19T13:53:57-05:00"
     },
     {
       "date": "2026-11-19",
@@ -910,8 +910,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 707.82,
-      "priceTime": "2026-11-19T13:36:41-05:00"
+      "last": 701.1645,
+      "priceTime": "2026-11-19T13:53:59-05:00"
     },
     {
       "date": "2026-11-19",
@@ -933,8 +933,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 56.815,
-      "priceTime": "2026-11-19T13:36:42-05:00"
+      "last": 56.17,
+      "priceTime": "2026-11-19T13:53:59-05:00"
     },
     {
       "date": "2026-11-19",
@@ -956,8 +956,8 @@
       "netLossAtStopCAD": -33.99,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 533.91,
-      "priceTime": "2026-11-19T13:36:40-05:00",
+      "last": 529.03,
+      "priceTime": "2026-11-19T13:53:58-05:00",
       "side": "long",
       "entry": 559.95,
       "stop": 536.54,
@@ -987,8 +987,8 @@
       "netLossAtStopCAD": -32.03,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 301.795,
-      "priceTime": "2026-11-19T13:36:42-05:00",
+      "last": 299.63,
+      "priceTime": "2026-11-19T13:53:53-05:00",
       "side": "long",
       "entry": 311.85,
       "stop": 300.82,
@@ -1018,8 +1018,8 @@
       "netLossAtStopCAD": -17.72,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 652.7074,
-      "priceTime": "2026-11-19T13:36:42-05:00",
+      "last": 649.7,
+      "priceTime": "2026-11-19T13:53:56-05:00",
       "side": "short",
       "entry": 660.51,
       "stop": 663.55,
@@ -1057,11 +1057,11 @@
       "tested": true,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 503.005,
-      "priceTime": "2026-11-19T13:36:42-05:00"
+      "last": 501.975,
+      "priceTime": "2026-11-19T13:53:59-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-19T13:38:17-05:00",
+  "watchlistUpdated": "2026-11-19T13:54:50-05:00",
   "scorecard": {
     "updated": "2026-11-18T16:53:38-05:00",
     "currency": "CAD",
@@ -1388,7 +1388,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-19",
-    "updated": "2026-11-19T13:36:07-05:00",
+    "updated": "2026-11-19T13:53:28-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

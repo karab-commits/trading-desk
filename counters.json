@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T13:38:20-05:00",
+  "updated": "2026-11-19T13:54:50-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 15,
+   "quotesCalls": 16,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 18,
+   "runs": 19,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2945,14 +2945,14 @@
      "AMZN",
      "META"
     ],
-    "total": 257
+    "total": 275
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T13:38:20-05:00",
+   "lastRun": "2026-11-19T13:54:50-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3012,7 +3012,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 11,
+   "webSearches": 12,
    "pagesFetched": 0,
    "xSearches": 3,
    "xPosts": 30,
@@ -3111,9 +3111,14 @@
       "title": "Short seller Hunterbrook shorts AMD citing concerns over China exports",
       "url": "https://www.investing.com/news/stock-market-news/short-seller-hunterbrook-shorts-amd-citing-concerns-over-china-exports-5039475",
       "time": "2026-11-19T10:33:00-05:00"
+     },
+     {
+      "title": "Intraday Movers — November 19 MIDDAY: $INSM led Thursday's midday movers, up 17.6% as Sanofi weighed a potential acquisition",
+      "url": "https://newsletter.positiontracker.trading/p/intraday-movers-midday-intraday-movers-b5c",
+      "time": "2026-11-19T12:00:00-05:00"
      }
     ],
-    "count": 16,
+    "count": 17,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
@@ -3130,7 +3135,8 @@
      "a2f9e73bd92a",
      "7bfac7b9e2f8",
      "499f76a84975",
-     "1a9e7bceccfa"
+     "1a9e7bceccfa",
+     "da654e5564de"
     ]
    },
    "lastRun": null
@@ -3175,8 +3181,8 @@
   },
   "quant": {
    "quotesCalls": 4,
-   "barCalls": 147,
-   "bars": 982,
+   "barCalls": 148,
+   "bars": 986,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
