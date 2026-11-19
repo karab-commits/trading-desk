@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T13:00:20-05:00",
+  "updated": "2026-11-19T13:13:40-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 15,
+   "runs": 16,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2952,13 +2952,13 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T13:00:20-05:00",
+   "lastRun": "2026-11-19T13:13:40-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
   },
   "scanner": {
-   "quotesCalls": 3,
+   "quotesCalls": 4,
    "barCalls": 6,
    "bars": 78,
    "optionCalls": 0,
@@ -2993,9 +2993,11 @@
      "QQQ",
      "WMT",
      "CRWD",
-     "ASTS"
+     "ASTS",
+     "MSFT",
+     "AAPL"
     ],
-    "total": 20
+    "total": 34
    },
    "headlines": {
     "items": [],
@@ -3010,10 +3012,10 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 6,
+   "webSearches": 8,
    "pagesFetched": 0,
-   "xSearches": 2,
-   "xPosts": 20,
+   "xSearches": 3,
+   "xPosts": 30,
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -3094,9 +3096,19 @@
       "title": "Micron Stocks Jump 6.63% as 75% of 2027 Capacity Sells Out",
       "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-jump-6-63-172727188.html",
       "time": "2026-11-19T09:47:00-05:00"
+     },
+     {
+      "title": "Insmed shares jump more than 18% on report Sanofi is weighing acquisition",
+      "url": "https://www.investing.com/news/stock-market-news/insmed-shares-jump-more-than-6-on-report-sanofi-is-weighing-acquisition-5039411",
+      "time": "2026-11-19T10:13:00-05:00"
+     },
+     {
+      "title": "B. Riley Upgrades AST SpaceMobile to Buy with $48 Target",
+      "url": "https://x.com/i/trending/2123393406798037403",
+      "time": "2026-11-19T13:13:28-05:00"
      }
     ],
-    "count": 13,
+    "count": 15,
     "seen": [
      "ab07aed1d984",
      "c4efd596e0e6",
@@ -3110,7 +3122,9 @@
      "017aa4c872f6",
      "230210f761a3",
      "b15ce9b658c0",
-     "a2f9e73bd92a"
+     "a2f9e73bd92a",
+     "7bfac7b9e2f8",
+     "499f76a84975"
     ]
    },
    "lastRun": null
