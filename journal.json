@@ -1673,6 +1673,156 @@
       "taken": null,
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-19-STX-1",
+      "date": "2026-11-19",
+      "session": "adhoc",
+      "ticker": "STX",
+      "side": "long",
+      "entry": 559.95,
+      "stop": 536.54,
+      "target": 606.77,
+      "shares": 1,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB (paper): OR 536.54-559.95, first 15-min candle green (546.90->559.65), 9:45 bar broke OR high (high 560.85). Whale/News scout: storage rally. Logged late at 10:14.",
+      "loggedAt": "2026-11-19T10:14:08-05:00",
+      "loggedLate": true,
+      "loggedPrice": 563.08,
+      "plan": {
+        "riskGross": 23.41,
+        "rewardGross": 46.82,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0125,
+          "fx": 0.7,
+          "total": 0.7148
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0111,
+          "fx": 0.35,
+          "total": 0.3622
+        },
+        "netProfitAtTarget": 46.11,
+        "netLossAtStop": -23.77,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 65.92,
+        "netLossAtStopCAD": -33.99
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.01,
+        "median": 11.41,
+        "asOfClose": "2026-11-18",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Green first candle, clean OR break, storage sector rally on AI/IPO news"
+        ],
+        "bear": [
+          "OR is wide (23.41 USD = 4.2% of price), so 1 share risks most of the budget",
+          "Gap-up +6% already priced the news; late breakouts in gap stocks often fade",
+          "SIP ORB forward record is negative (-0.70R on 8) and it is paper only"
+        ],
+        "verdict": "skip",
+        "why": "paper only; SIP ORB under review",
+        "by": "quant",
+        "at": "2026-11-19T10:14:08-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
+    },
+    {
+      "id": "2026-11-19-WDC-1",
+      "date": "2026-11-19",
+      "session": "adhoc",
+      "ticker": "WDC",
+      "side": "long",
+      "entry": 311.85,
+      "stop": 300.82,
+      "target": 333.91,
+      "shares": 2,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB (paper): OR 300.82-311.85, first 15-min candle green (306.17->311.84), 9:45 bar broke OR high (high 312.68). Storage rally. Logged late at 10:14.",
+      "loggedAt": "2026-11-19T10:14:08-05:00",
+      "loggedLate": true,
+      "loggedPrice": 312.605,
+      "plan": {
+        "riskGross": 22.06,
+        "rewardGross": 44.12,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0138,
+          "fx": 0.66,
+          "total": 0.6756
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0124,
+          "fx": 0.33,
+          "total": 0.3433
+        },
+        "netProfitAtTarget": 43.44,
+        "netLossAtStop": -22.4,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 62.12,
+        "netLossAtStopCAD": -32.03
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 29.01,
+        "median": 11.41,
+        "asOfClose": "2026-11-18",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Green first candle, OR break, above VWAP, storage rally"
+        ],
+        "bear": [
+          "Wide OR (3.5% of price) after a +5% gap",
+          "Breakout bar volume below the opening bars, weak follow-through",
+          "SIP ORB forward record is negative and it is paper only"
+        ],
+        "verdict": "skip",
+        "why": "paper only; SIP ORB under review",
+        "by": "quant",
+        "at": "2026-11-19T10:14:08-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }

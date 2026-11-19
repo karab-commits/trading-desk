@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-19T10:03:22-05:00",
+  "updated": "2026-11-19T10:14:19-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -2907,7 +2907,7 @@
  },
  "2026-11-19": {
   "kiwi": {
-   "quotesCalls": 2,
+   "quotesCalls": 3,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -2923,7 +2923,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 3,
+   "runs": 4,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -2937,16 +2937,22 @@
      "STX",
      "WDC",
      "QQQ",
-     "MSFT"
+     "MSFT",
+     "SPY",
+     "QQC.TO",
+     "AAPL",
+     "NVDA",
+     "AMZN",
+     "META"
     ],
-    "total": 23
+    "total": 41
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-19T10:03:22-05:00",
+   "lastRun": "2026-11-19T10:14:19-05:00",
    "keys": [
     "order:MSFT ORB long 2026-11-19"
    ]
@@ -3093,16 +3099,16 @@
   },
   "quant": {
    "quotesCalls": 2,
-   "barCalls": 38,
-   "bars": 176,
+   "barCalls": 48,
+   "bars": 226,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 1,
-   "ideasLogged": 1,
+   "ideasGenerated": 3,
+   "ideasLogged": 3,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -3137,7 +3143,42 @@
    },
    "lastRun": null,
    "keys": [
-    "logged:2026-11-19-MSFT-1"
+    "logged:2026-11-19-MSFT-1",
+    "logged:2026-11-19-STX-1",
+    "logged:2026-11-19-WDC-1"
+   ]
+  },
+  "risk": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 2,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "rejected:2026-11-19-STX-1",
+    "rejected:2026-11-19-WDC-1"
    ]
   }
  }

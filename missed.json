@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-19T10:03:22-05:00",
+  "updated": "2026-11-19T10:14:19-05:00",
   "date": "2026-11-19",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 1,
+      "ideas": 3,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 3,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": 74.43,
       "final": 74.43,
       "unrealized": 0.0,
-      "ideas": 8,
+      "ideas": 10,
       "scored": 7,
       "open": 0,
       "notTriggered": 0,
-      "pending": 1,
+      "pending": 3,
       "wins": 5,
       "losses": 2
     },
@@ -36,11 +36,11 @@
       "net": 135.24,
       "final": 135.24,
       "unrealized": 0.0,
-      "ideas": 20,
+      "ideas": 22,
       "scored": 15,
       "open": 0,
       "notTriggered": 4,
-      "pending": 1,
+      "pending": 3,
       "wins": 9,
       "losses": 6
     }
@@ -49,19 +49,19 @@
     "quant": {
       "today": {
         "net": 0.0,
-        "ideas": 1,
+        "ideas": 3,
         "scored": 0,
         "open": 0
       },
       "week": {
         "net": 85.95,
-        "ideas": 6,
+        "ideas": 8,
         "scored": 5,
         "open": 0
       },
       "allTime": {
         "net": 91.86,
-        "ideas": 11,
+        "ideas": 13,
         "scored": 10,
         "open": 0
       }
@@ -155,6 +155,56 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-19-WDC-1",
+      "date": "2026-11-19",
+      "bot": "quant",
+      "ticker": "WDC",
+      "side": "long",
+      "entry": 311.85,
+      "stop": 300.82,
+      "target": 333.91,
+      "shares": 2,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "currency": "USD",
+      "size": 2,
+      "loggedAt": "2026-11-19T10:14:08-05:00",
+      "loggedLate": true,
+      "loggedPrice": 312.605,
+      "paperEntry": 312.605,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
+      "id": "2026-11-19-STX-1",
+      "date": "2026-11-19",
+      "bot": "quant",
+      "ticker": "STX",
+      "side": "long",
+      "entry": 559.95,
+      "stop": 536.54,
+      "target": 606.77,
+      "shares": 1,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "currency": "USD",
+      "size": 1,
+      "loggedAt": "2026-11-19T10:14:08-05:00",
+      "loggedLate": true,
+      "loggedPrice": 563.08,
+      "paperEntry": 563.08,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-19-MSFT-1",
       "date": "2026-11-19",
