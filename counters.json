@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-20T09:48:06-05:00",
+  "updated": "2026-11-20T09:56:15-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3323,7 +3323,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 2,
+   "runs": 3,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3344,10 +3344,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-20T09:35:38-05:00"
+   "lastRun": "2026-11-20T09:56:15-05:00"
   },
   "scanner": {
-   "quotesCalls": 2,
+   "quotesCalls": 3,
    "barCalls": 3,
    "bars": 75,
    "optionCalls": 0,
@@ -3369,9 +3369,16 @@
      "XIU.TO",
      "SOFI",
      "HXT.TO",
-     "SPY"
+     "SPY",
+     "GAP",
+     "INTU",
+     "ROST",
+     "BJ",
+     "ANT",
+     "NVDA",
+     "QQQ"
     ],
-    "total": 8
+    "total": 18
    },
    "headlines": {
     "items": [],
@@ -3444,8 +3451,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 7,
+   "bars": 42,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
