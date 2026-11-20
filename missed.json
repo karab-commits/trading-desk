@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-20T12:28:59-05:00",
+  "updated": "2026-11-20T12:44:56-05:00",
   "date": "2026-11-20",
   "isoWeek": "2026-W47",
   "marketOpen": true,
@@ -9,9 +9,9 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 132.74,
+      "net": 143.6,
       "final": 80.67,
-      "unrealized": 52.07,
+      "unrealized": 62.93,
       "ideas": 5,
       "scored": 2,
       "open": 2,
@@ -21,9 +21,9 @@
       "losses": 0
     },
     "week": {
-      "net": 86.87,
+      "net": 97.73,
       "final": 34.8,
-      "unrealized": 52.07,
+      "unrealized": 62.93,
       "ideas": 16,
       "scored": 13,
       "open": 2,
@@ -33,9 +33,9 @@
       "losses": 6
     },
     "allTime": {
-      "net": 147.68,
+      "net": 158.54,
       "final": 95.61,
-      "unrealized": 52.07,
+      "unrealized": 62.93,
       "ideas": 28,
       "scored": 21,
       "open": 2,
@@ -48,19 +48,19 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 101.32,
+        "net": 112.18,
         "ideas": 4,
         "scored": 1,
         "open": 2
       },
       "week": {
-        "net": 92.79,
+        "net": 103.65,
         "ideas": 12,
         "scored": 9,
         "open": 2
       },
       "allTime": {
-        "net": 98.7,
+        "net": 109.56,
         "ideas": 17,
         "scored": 14,
         "open": 2
@@ -175,11 +175,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-20T12:28:46-05:00",
-      "exit": 84.44,
-      "fees": 0.3035,
-      "net": 18.98,
-      "netCAD": 27.13
+      "priceTime": "2026-11-20T12:44:45-05:00",
+      "exit": 83.305,
+      "fees": 0.4397,
+      "net": 27.92,
+      "netCAD": 39.92
     },
     {
       "id": "2026-11-20-QQQ-2",
@@ -253,11 +253,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-20T12:28:46-05:00",
-      "exit": 135.1558,
-      "fees": 0.2801,
-      "net": 17.44,
-      "netCAD": 24.94
+      "priceTime": "2026-11-20T12:44:45-05:00",
+      "exit": 135.43,
+      "fees": 0.2595,
+      "net": 16.09,
+      "netCAD": 23.01
     },
     {
       "id": "2026-11-20-NVDA-1",
