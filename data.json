@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 20, 2026 4:54 PM ET",
+  "lastUpdated": "Fri Nov 20, 2026 5:14 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -184,9 +184,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Week scorecard written",
+        "now": "Week 47 scorecard posted",
         "detail": "W47 paper +146.03 CAD on 16 (exp +0.26R); real 0 trades",
-        "since": "2026-11-20T16:54:27-05:00",
+        "since": "2026-11-20T17:14:45-05:00",
         "state": "done",
         "next": "Mon close-out",
         "log": [
@@ -669,7 +669,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-20T16:54:10-05:00",
+    "updated": "2026-11-20T17:14:37-05:00",
     "ideasLogged": 30,
     "byDate": {
       "2026-11-02": {
@@ -1033,7 +1033,7 @@
   ],
   "watchlistUpdated": "2026-11-20T15:52:51-05:00",
   "scorecard": {
-    "updated": "2026-11-20T16:54:10-05:00",
+    "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
