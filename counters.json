@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-20T15:52:51-05:00",
+  "updated": "2026-11-20T16:54:32-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3308,8 +3308,8 @@
  "2026-11-20": {
   "kiwi": {
    "quotesCalls": 18,
-   "barCalls": 1,
-   "bars": 5,
+   "barCalls": 7,
+   "bars": 242,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -3323,7 +3323,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 28,
+   "runs": 29,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3344,7 +3344,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-20T15:52:51-05:00"
+   "lastRun": "2026-11-20T16:54:32-05:00"
   },
   "scanner": {
    "quotesCalls": 11,
@@ -3464,8 +3464,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 31,
-   "bars": 221,
+   "barCalls": 39,
+   "bars": 341,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -3477,8 +3477,8 @@
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
-   "backtestVariants": 0,
-   "simulatedTrades": 0,
+   "backtestVariants": 63,
+   "simulatedTrades": 3543,
    "runs": 0,
    "symbolsQuoted": {
     "unique": [],

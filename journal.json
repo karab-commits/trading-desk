@@ -2311,21 +2311,21 @@
       },
       "result": {
         "outcome": "time",
-        "exit": 87.68,
-        "gross": -6.64,
+        "exit": 88.44,
+        "gross": -12.72,
         "fees": {
           "commission": 0.0,
           "ecn": 0.0,
           "sec": 0.0143,
-          "fx": 0.1,
-          "total": 0.1139
+          "fx": 0.19,
+          "total": 0.2051
         },
-        "net": -6.75,
-        "grossR": -0.299,
-        "netR": -0.304,
-        "netCAD": -9.66,
+        "net": -12.92,
+        "grossR": -0.572,
+        "netR": -0.581,
+        "netCAD": -18.48,
         "entryUsed": 86.8501,
-        "resolvedAt": "2026-11-20T15:18:14-05:00"
+        "resolvedAt": "2026-11-20T16:51:12-05:00"
       },
       "taken": "no",
       "realPnl": null,

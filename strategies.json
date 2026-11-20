@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-19T21:48:00-05:00",
+ "updated": "2026-11-20T17:05:00-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -832,6 +832,11 @@
     "by": "kiwi",
     "why": "Daily review rule 'demote anything negative OOS or live': walk-forward OOS is still +0.131R on 53 (4/5 windows, walkforward-2026-11-19), but the forward record is negative: journal ORB ideas QQC.TO +0.565R (Nov 16) and MSFT -1.009R (Nov 19, order sent, approval expired, would have stopped at 10:15-10:30) = -0.22R avg on 2, and the live (fixed) params lost -0.323R on 6 in the Nov 2-19 test window. Small sample, so this is a tightening, not a verdict.",
     "backToLive": "20 paper/real ORB journal trades with positive average net R AND walk-forward OOS mean R > 0 in most test windows (same bar as Stocks-in-play ORB and Whale QQQ). Signals keep being logged as paper ideas every run."
+   },
+   "orbForward": {
+    "updated": "2026-11-20",
+    "journal": "5 ORB ideas: Nov 2 XIU -1.00R, Nov 16 QQC +0.56R, Nov 19 MSFT -1.01R, Nov 20 QQQ +1.82R, Nov 20 NVDA +2.03R (both paper, late-logged); avg +0.48R on 5",
+    "rule": "Stays paper until 20 paper trades with positive expectancy (5/20)."
    }
   },
   {
@@ -1081,7 +1086,12 @@
     "by": "kiwi",
     "why": "Live record negative: forward checks -0.70R on 8 (Nov 11 -0.27R, Nov 12 -0.05R, Nov 13 -0.38R); real UAL trade -2.94R (-95.59 CAD, exit not approved for 4 days). Pilot +0.54R was 12 hindsight-picked trades. Back to live only after 20 paper trades with positive average R and a proper out-of-sample test."
    },
-   "paperLogRule": "Added Nov 18 2026 by Kiwi (review found NBIS and CRWV shorts triggered on the 9:45 bar but were never logged): every intraday run from 9:45 to 15:15 must, for each Stocks-in-play ORB watchlist name, read 5-min bars, compute the 9:30-9:45 range and first-candle direction, and if price has broken the range in that direction, log it at once with log_idea.py add (bot quant, strategy 'Stocks-in-play 15-min ORB', entry = range edge, stop = other edge, target 2R, shares sized to 40 CAD; add --logged-late --logged-price <current price> if logged after the break bar). Paper-only ideas are logged, not sent."
+   "paperLogRule": "Added Nov 18 2026 by Kiwi (review found NBIS and CRWV shorts triggered on the 9:45 bar but were never logged): every intraday run from 9:45 to 15:15 must, for each Stocks-in-play ORB watchlist name, read 5-min bars, compute the 9:30-9:45 range and first-candle direction, and if price has broken the range in that direction, log it at once with log_idea.py add (bot quant, strategy 'Stocks-in-play 15-min ORB', entry = range edge, stop = other edge, target 2R, shares sized to 40 CAD; add --logged-late --logged-price <current price> if logged after the break bar). Paper-only ideas are logged, not sent.",
+   "forward": {
+    "updated": "2026-11-20",
+    "journal": "13 SIP ORB journal ideas avg -0.03R (7 wins); Nov 20 NVDA short +1.94R target, ANT short -0.58R at the 4:00 PM close (88.44; -0.30R at the 15:15 time stop)",
+    "rule": "Stays paper until 20 paper trades with positive average R and an out-of-sample test."
+   }
   },
   {
    "bot": "whale",
@@ -1148,9 +1158,9 @@
     "why": "Live/paper record negative: 2 of 2 journal QQQ RVOL signals hit the stop (Nov 9 long -1.03R, Nov 16 short -1.05R; -2.07R total), no out-of-sample test exists (only a 30-min-proxy backtest, +0.179R on 17), and with ~1,700 USD buying power the 40 CAD risk sizes QQQ to 2 shares, under the desk's ~8 CAD minimum profit at target. Back to live only after 20 paper trades with positive average R and a walk-forward test. Whale Tracker keeps scouting the stocks-in-play list."
    },
    "qqqRecord": {
-    "updated": "2026-11-19",
-    "journal": "4 of 4 stops (Nov 9 long -1.03R, Nov 16 short -1.05R, Nov 17 short -1.02R, Nov 19 short -1.49R late-logged); -4.58R",
-    "retireRule": "Retire the QQQ RVOL breakout if the next 2 signals after Nov 17 both stop: Nov 19 stopped (1 of 2). The next stop retires it."
+    "updated": "2026-11-20",
+    "journal": "1 of 5 (Nov 9 long -1.03R, Nov 16 short -1.05R, Nov 17 short -1.02R, Nov 19 short -1.49R, Nov 20 short +1.74R target, late-logged 10:30 at 631.62); -2.85R total, avg -0.57R",
+    "retireRule": "Retire the QQQ RVOL breakout on its next stop (Nov 19 was 1 of the 2 'retire if next 2 stop'; Nov 20 hit target so it survives). Still paper only."
    }
   },
   {

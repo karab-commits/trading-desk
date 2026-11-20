@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updated": "2026-11-20T15:52:51-05:00",
+  "updated": "2026-11-20T16:54:27-05:00",
   "date": "2026-11-20",
   "isoWeek": "2026-W47",
-  "marketOpen": true,
+  "marketOpen": false,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 200.72,
-      "final": 200.72,
+      "net": 191.9,
+      "final": 191.9,
       "unrealized": 0.0,
       "ideas": 5,
       "scored": 5,
@@ -21,8 +21,8 @@
       "losses": 1
     },
     "week": {
-      "net": 154.85,
-      "final": 154.85,
+      "net": 146.03,
+      "final": 146.03,
       "unrealized": 0.0,
       "ideas": 16,
       "scored": 16,
@@ -33,8 +33,8 @@
       "losses": 7
     },
     "allTime": {
-      "net": 215.66,
-      "final": 215.66,
+      "net": 206.84,
+      "final": 206.84,
       "unrealized": 0.0,
       "ideas": 28,
       "scored": 24,
@@ -48,19 +48,19 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": 169.3,
+        "net": 160.48,
         "ideas": 4,
         "scored": 4,
         "open": 0
       },
       "week": {
-        "net": 160.77,
+        "net": 151.95,
         "ideas": 12,
         "scored": 12,
         "open": 0
       },
       "allTime": {
-        "net": 166.68,
+        "net": 157.86,
         "ideas": 17,
         "scored": 17,
         "open": 0
@@ -175,11 +175,11 @@
       "why": "paper-only",
       "state": "final",
       "outcome": "time",
-      "exit": 87.68,
-      "fees": 0.1139,
-      "net": -6.75,
-      "netCAD": -9.66,
-      "resolvedAt": "2026-11-20T15:18:14-05:00"
+      "exit": 88.44,
+      "fees": 0.2051,
+      "net": -12.92,
+      "netCAD": -18.48,
+      "resolvedAt": "2026-11-20T16:51:12-05:00"
     },
     {
       "id": "2026-11-20-QQQ-2",
