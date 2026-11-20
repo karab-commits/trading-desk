@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 20, 2026 3:07 PM ET",
+  "lastUpdated": "Fri Nov 20, 2026 3:18 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -127,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944 flat, no working orders or approvals; paper NVDA ORB and ANT shorts still open",
+      "status": "Close-out 3:18 PM ET: account 0944 flat, no orders or fills today.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -135,11 +135,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "2:51: flat, no signals",
-        "detail": "Account 0944 flat, no working orders or approvals; paper NVDA ORB and ANT shorts still open",
-        "since": "2026-11-20T14:52:13-05:00",
-        "state": "working",
-        "next": "Intraday 9:45",
+        "now": "Flat. No real trades",
+        "detail": "Close-out 3:18 PM ET: account 0944 flat, no orders or fills today.",
+        "since": "2026-11-20T15:18:14-05:00",
+        "state": "done",
+        "next": "Tomorrow 9:00 pre-market",
         "log": [
           "11:27 5 paper shorts open, no stops/targets hit",
           "11:44 whale QQQ paper short hit target; 4 paper shorts open",
@@ -183,11 +183,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "4 paper ideas, 0 for 4",
+        "now": "Scored today's ideas",
         "detail": "Nov 19: MSFT, STX, WDC, QQQ all stopped (-120.30 CAD paper); QQQ re-scored target->stop from 5-min bars",
-        "since": "2026-11-19T16:48:05-05:00",
+        "since": "2026-11-20T15:18:14-05:00",
         "state": "done",
-        "next": "Fri 5 PM weekly scorecard",
+        "next": "Scorecard 5 PM",
         "log": []
       }
     },
@@ -662,7 +662,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-20T14:42:00-05:00",
+    "updated": "2026-11-20T15:18:14-05:00",
     "ideasLogged": 30,
     "byDate": {
       "2026-11-02": {
@@ -736,12 +736,12 @@
         "taken": 0
       },
       "2026-11-20": {
-        "net": 148.46,
+        "net": 200.72,
         "ideas": 5,
-        "resolved": 3,
-        "open": 2,
-        "filled": 3,
-        "wins": 3,
+        "resolved": 5,
+        "open": 0,
+        "filled": 5,
+        "wins": 4,
         "real": 0.0,
         "taken": 0
       }
