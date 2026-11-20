@@ -1950,6 +1950,301 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-20-QQQ-1",
+      "date": "2026-11-20",
+      "session": "adhoc",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 632.57,
+      "stop": 638.88,
+      "target": 619.95,
+      "shares": 3,
+      "strategy": "Opening-range breakout (15-min)",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "10:15 bar closed 632.57 < OR low 633.86, RVOL 2.21 (19-day slot avg), below VWAP 636.70, open 638.84 < prior close 645.10; OR width 0.26x ATR14 19.47",
+      "loggedAt": "2026-11-20T10:30:54-05:00",
+      "loggedLate": true,
+      "loggedPrice": 631.62,
+      "plan": {
+        "riskGross": 18.93,
+        "rewardGross": 37.86,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0391,
+          "fx": 0.57,
+          "total": 0.607
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0391,
+          "fx": 0.28,
+          "total": 0.323
+        },
+        "netProfitAtTarget": 37.25,
+        "netLossAtStop": -19.25,
+        "rrNet": 1.93,
+        "netProfitAtTargetCAD": 53.26,
+        "netLossAtStopCAD": -27.53
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (ORB + VWAP (paper) / orb)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 21.05,
+        "median": 11.41,
+        "asOfClose": "2026-11-19",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-20-QQQ-2",
+      "date": "2026-11-20",
+      "session": "adhoc",
+      "ticker": "QQQ",
+      "side": "short",
+      "entry": 632.57,
+      "stop": 636.77,
+      "target": 624.17,
+      "shares": 3,
+      "strategy": "QQQ RVOL breakout",
+      "bot": "whale",
+      "currency": "USD",
+      "note": "10:15 bar closed 632.57 below session low 633.86, RVOL 2.21, below VWAP; stop = bar high 636.77",
+      "loggedAt": "2026-11-20T10:30:54-05:00",
+      "loggedLate": true,
+      "loggedPrice": 631.62,
+      "plan": {
+        "riskGross": 12.6,
+        "rewardGross": 25.2,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0391,
+          "fx": 0.38,
+          "total": 0.4171
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0391,
+          "fx": 0.19,
+          "total": 0.2281
+        },
+        "netProfitAtTarget": 24.78,
+        "netLossAtStop": -12.83,
+        "rrNet": 1.93,
+        "netProfitAtTargetCAD": 35.43,
+        "netLossAtStopCAD": -18.34
+      },
+      "mode": "paper",
+      "paperReason": "paper-only",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 21.05,
+        "median": 11.41,
+        "asOfClose": "2026-11-19",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-20-NVDA-1",
+      "date": "2026-11-20",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 138.385,
+      "stop": 143.725,
+      "target": 127.705,
+      "shares": 4,
+      "strategy": "Opening-range breakout (15-min)",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "10:20 bar closed 138.385 < OR low 138.84, RVOL 1.85, below VWAP 140.66, open 143.52 < prior close 146.00; OR width 0.42x ATR14 11.76",
+      "loggedAt": "2026-11-20T10:30:54-05:00",
+      "loggedLate": true,
+      "loggedPrice": 138.7,
+      "plan": {
+        "riskGross": 21.36,
+        "rewardGross": 42.72,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0114,
+          "fx": 0.64,
+          "total": 0.6522
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0114,
+          "fx": 0.32,
+          "total": 0.3318
+        },
+        "netProfitAtTarget": 42.07,
+        "netLossAtStop": -21.69,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 60.15,
+        "netLossAtStopCAD": -31.01
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (ORB + VWAP (paper) / orb)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 21.05,
+        "median": 11.41,
+        "asOfClose": "2026-11-19",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-20-NVDA-2",
+      "date": "2026-11-20",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 138.84,
+      "stop": 143.725,
+      "target": 129.07,
+      "shares": 5,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "Bearish first 15-min candle (143.52->139.54); broke OR low 138.84 on the 10:20 bar",
+      "loggedAt": "2026-11-20T10:30:54-05:00",
+      "loggedLate": true,
+      "loggedPrice": 138.7,
+      "plan": {
+        "riskGross": 24.42,
+        "rewardGross": 48.85,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0143,
+          "fx": 0.73,
+          "total": 0.7471
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0143,
+          "fx": 0.37,
+          "total": 0.3807
+        },
+        "netProfitAtTarget": 48.1,
+        "netLossAtStop": -24.81,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 68.78,
+        "netLossAtStopCAD": -35.47
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 21.05,
+        "median": 11.41,
+        "asOfClose": "2026-11-19",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-20-ANT-1",
+      "date": "2026-11-20",
+      "session": "adhoc",
+      "ticker": "ANT",
+      "side": "short",
+      "entry": 87.26,
+      "stop": 90.04,
+      "target": 81.7,
+      "shares": 8,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "Bearish first 15-min candle (89.86->89.36); broke OR low 87.26 on the 10:15 bar; IPO day-2 news",
+      "loggedAt": "2026-11-20T10:30:55-05:00",
+      "loggedLate": true,
+      "loggedPrice": 86.8501,
+      "plan": {
+        "riskGross": 22.24,
+        "rewardGross": 44.48,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0144,
+          "fx": 0.67,
+          "total": 0.6816
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0144,
+          "fx": 0.33,
+          "total": 0.348
+        },
+        "netProfitAtTarget": 43.8,
+        "netLossAtStop": -22.59,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 62.62,
+        "netLossAtStopCAD": -32.3
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 21.05,
+        "median": 11.41,
+        "asOfClose": "2026-11-19",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

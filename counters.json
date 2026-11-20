@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-20T10:09:21-05:00",
+  "updated": "2026-11-20T10:31:30-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3323,7 +3323,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 4,
+   "runs": 5,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3344,10 +3344,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-20T10:09:21-05:00"
+   "lastRun": "2026-11-20T10:31:30-05:00"
   },
   "scanner": {
-   "quotesCalls": 4,
+   "quotesCalls": 5,
    "barCalls": 3,
    "bars": 75,
    "optionCalls": 0,
@@ -3378,7 +3378,7 @@
      "NVDA",
      "QQQ"
     ],
-    "total": 28
+    "total": 38
    },
    "headlines": {
     "items": [],
@@ -3395,8 +3395,8 @@
    "optionContracts": 0,
    "webSearches": 2,
    "pagesFetched": 0,
-   "xSearches": 1,
-   "xPosts": 10,
+   "xSearches": 2,
+   "xPosts": 20,
    "ideasGenerated": 4,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -3457,16 +3457,16 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 11,
-   "bars": 74,
+   "barCalls": 13,
+   "bars": 146,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 2,
-   "ideasLogged": 0,
+   "ideasGenerated": 6,
+   "ideasLogged": 4,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -3482,7 +3482,13 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": null
+   "lastRun": null,
+   "keys": [
+    "logged:2026-11-20-QQQ-1",
+    "logged:2026-11-20-NVDA-1",
+    "logged:2026-11-20-NVDA-2",
+    "logged:2026-11-20-ANT-1"
+   ]
   },
   "options": {
    "quotesCalls": 1,
@@ -3521,6 +3527,74 @@
     "seen": []
    },
    "lastRun": "2026-11-20T09:48:06-05:00"
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 41,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 1,
+   "ideasLogged": 1,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "logged:2026-11-20-QQQ-2"
+   ]
+  },
+  "risk": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 5,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "rejected:2026-11-20-QQQ-1",
+    "rejected:2026-11-20-QQQ-2",
+    "rejected:2026-11-20-NVDA-1",
+    "rejected:2026-11-20-NVDA-2",
+    "rejected:2026-11-20-ANT-1"
+   ]
   }
  }
 }
