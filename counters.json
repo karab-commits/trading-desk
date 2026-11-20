@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-20T09:56:15-05:00",
+  "updated": "2026-11-20T10:09:21-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3323,7 +3323,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 3,
+   "runs": 4,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3344,10 +3344,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-20T09:56:15-05:00"
+   "lastRun": "2026-11-20T10:09:21-05:00"
   },
   "scanner": {
-   "quotesCalls": 3,
+   "quotesCalls": 4,
    "barCalls": 3,
    "bars": 75,
    "optionCalls": 0,
@@ -3378,7 +3378,7 @@
      "NVDA",
      "QQQ"
     ],
-    "total": 18
+    "total": 28
    },
    "headlines": {
     "items": [],
@@ -3388,15 +3388,15 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 1,
-   "barCalls": 0,
-   "bars": 0,
+   "quotesCalls": 2,
+   "barCalls": 1,
+   "bars": 8,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 2,
    "pagesFetched": 0,
-   "xSearches": 0,
-   "xPosts": 0,
+   "xSearches": 1,
+   "xPosts": 10,
    "ideasGenerated": 4,
    "ideasLogged": 0,
    "ideasRejected": 0,
@@ -3420,7 +3420,7 @@
      "MU",
      "TSLA"
     ],
-    "total": 12
+    "total": 13
    },
    "headlines": {
     "items": [
@@ -3438,21 +3438,27 @@
       "title": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday's Pre-Market Session",
       "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63468329/ross-stores-intuit-anthropic-and-other-big-stocks-moving-lower-in-fridays-pre-market-session",
       "time": "2026-11-20T09:06:45-05:00"
+     },
+     {
+      "title": "AMD Shares Drop After Short Seller Questions China Firmware Ties",
+      "url": "x.com/news",
+      "time": "2026-11-20T09:54:30-05:00"
      }
     ],
-    "count": 3,
+    "count": 4,
     "seen": [
      "ef887ae6e7b9",
      "0f2e4480c321",
-     "cca9ff6677e5"
+     "cca9ff6677e5",
+     "390e84a955a9"
     ]
    },
    "lastRun": null
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 7,
-   "bars": 42,
+   "barCalls": 11,
+   "bars": 74,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
