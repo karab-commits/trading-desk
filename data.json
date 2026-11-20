@@ -175,7 +175,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "Nov 19: MSFT, STX, WDC, QQQ all stopped (-120.30 CAD paper); QQQ re-scored target->stop from 5-min bars",
+      "status": "Nov 20 paper: QQQ x2, NVDA x2 hit target, ANT flat at close; 0 real trades",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -184,8 +184,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "Scored today's ideas",
-        "detail": "Nov 19: MSFT, STX, WDC, QQQ all stopped (-120.30 CAD paper); QQQ re-scored target->stop from 5-min bars",
-        "since": "2026-11-20T15:18:14-05:00",
+        "detail": "Nov 20 paper: QQQ x2, NVDA x2 hit target, ANT flat at close; 0 real trades",
+        "since": "2026-11-20T15:18:20-05:00",
         "state": "done",
         "next": "Scorecard 5 PM",
         "log": []
@@ -832,7 +832,7 @@
     {
       "date": "2026-11-20",
       "ticker": "GAP",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-20T09:07:12-05:00",
       "side": "long",
@@ -851,12 +851,13 @@
       "last": 20.8023,
       "priceTime": "2026-11-20T15:07:35-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-20T15:18:20-05:00"
     },
     {
       "date": "2026-11-20",
       "ticker": "INTU",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-20T09:07:12-05:00",
       "side": "short",
@@ -875,12 +876,13 @@
       "last": 275.775,
       "priceTime": "2026-11-20T15:07:36-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-20T15:18:20-05:00"
     },
     {
       "date": "2026-11-20",
       "ticker": "ROST",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-20T09:07:12-05:00",
       "side": "short",
@@ -899,12 +901,13 @@
       "last": 215.23,
       "priceTime": "2026-11-20T15:07:36-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-20T15:18:20-05:00"
     },
     {
       "date": "2026-11-20",
       "ticker": "BJ",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-20T09:07:12-05:00",
       "side": "short",
@@ -923,12 +926,13 @@
       "last": 105.0,
       "priceTime": "2026-11-20T15:07:27-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-20T15:18:20-05:00"
     },
     {
       "date": "2026-11-20",
       "ticker": "ANT",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-20T09:07:12-05:00",
       "strategy": "Stocks-in-play 15-min opening-range breakout",
@@ -954,7 +958,7 @@
       "shares": 8,
       "planFrom": "journal",
       "journalId": "2026-11-20-ANT-1",
-      "statusAt": "2026-11-20T10:31:19-05:00"
+      "statusAt": "2026-11-20T15:18:20-05:00"
     },
     {
       "date": "2026-11-20",
@@ -1020,7 +1024,7 @@
       "exitSeen": 622.9199
     }
   ],
-  "watchlistUpdated": "2026-11-20T15:07:39-05:00",
+  "watchlistUpdated": "2026-11-20T15:18:20-05:00",
   "scorecard": {
     "updated": "2026-11-19T16:47:23-05:00",
     "currency": "CAD",
