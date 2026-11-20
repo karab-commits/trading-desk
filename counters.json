@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-20T13:35:35-05:00",
+  "updated": "2026-11-20T13:55:00-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3307,7 +3307,7 @@
  },
  "2026-11-20": {
   "kiwi": {
-   "quotesCalls": 8,
+   "quotesCalls": 9,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3323,7 +3323,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 18,
+   "runs": 19,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3337,14 +3337,14 @@
      "NVDA",
      "QQQ"
     ],
-    "total": 80
+    "total": 90
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-20T13:35:35-05:00"
+   "lastRun": "2026-11-20T13:55:00-05:00"
   },
   "scanner": {
    "quotesCalls": 11,
@@ -3395,8 +3395,8 @@
    "optionContracts": 0,
    "webSearches": 2,
    "pagesFetched": 0,
-   "xSearches": 15,
-   "xPosts": 150,
+   "xSearches": 16,
+   "xPosts": 160,
    "ideasGenerated": 4,
    "ideasLogged": 0,
    "ideasRejected": 0,
