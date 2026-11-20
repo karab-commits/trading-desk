@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 20, 2026 12:10 PM ET",
+  "lastUpdated": "Fri Nov 20, 2026 12:28 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "No fresh company catalyst in the last 60 min that's tradable long (NBIS drop is a short, paper only); GAP headline is stale and price is below VWAP",
+      "status": "AMD -13% on a short-seller report is a short (paper only); NXAT is under 3 USD; GAP still below VWAP",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -60,16 +60,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "12:09: nothing fresh",
-        "detail": "No fresh company catalyst in the last 60 min that's tradable long (NBIS drop is a short, paper only); GAP headline is stale and price is below VWAP",
-        "since": "2026-11-20T12:10:24-05:00",
+        "now": "12:28: no long catalyst",
+        "detail": "AMD -13% on a short-seller report is a short (paper only); NXAT is under 3 USD; GAP still below VWAP",
+        "since": "2026-11-20T12:28:59-05:00",
         "state": "waiting",
         "log": [
           "13:35 news: 0 signals",
           "14:10 news scan: nothing fresh",
           "14:20 news: nothing fresh"
         ],
-        "next": "12:25 check"
+        "next": "12:45 check"
       }
     },
     {
@@ -127,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944 flat, no working orders or pending approvals; paper ideas QQQ/NVDA/ANT still open",
+      "status": "Account 0944 flat, no working orders or approvals; paper QQQ ORB short hit its 619.95 target",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -135,9 +135,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "12:09: flat, no signals",
-        "detail": "Account 0944 flat, no working orders or pending approvals; paper ideas QQQ/NVDA/ANT still open",
-        "since": "2026-11-20T12:10:30-05:00",
+        "now": "12:28: flat, no signals",
+        "detail": "Account 0944 flat, no working orders or approvals; paper QQQ ORB short hit its 619.95 target",
+        "since": "2026-11-20T12:28:59-05:00",
         "state": "working",
         "next": "Intraday 9:45",
         "log": [
@@ -662,7 +662,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-20T11:44:41-05:00",
+    "updated": "2026-11-20T12:28:59-05:00",
     "ideasLogged": 30,
     "byDate": {
       "2026-11-02": {
@@ -736,12 +736,12 @@
         "taken": 0
       },
       "2026-11-20": {
-        "net": 31.42,
+        "net": 80.67,
         "ideas": 5,
-        "resolved": 1,
-        "open": 4,
-        "filled": 1,
-        "wins": 1,
+        "resolved": 2,
+        "open": 3,
+        "filled": 2,
+        "wins": 2,
         "real": 0.0,
         "taken": 0
       }
@@ -771,8 +771,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 50.9,
-      "priceTime": "2026-11-20T12:09:51-05:00"
+      "last": 50.71,
+      "priceTime": "2026-11-20T12:28:46-05:00"
     },
     {
       "date": "2026-11-20",
@@ -797,8 +797,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 91.32,
-      "priceTime": "2026-11-20T12:09:51-05:00"
+      "last": 91.06,
+      "priceTime": "2026-11-20T12:28:46-05:00"
     },
     {
       "date": "2026-11-20",
@@ -821,8 +821,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 12.8603,
-      "priceTime": "2026-11-20T12:09:51-05:00",
+      "last": 12.8151,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "statusAt": "2026-11-20T09:07:23-05:00",
       "triggeredAt": "2026-11-20T09:07:12-05:00",
       "triggerPrice": 13.15,
@@ -848,8 +848,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 21.145,
-      "priceTime": "2026-11-20T12:09:50-05:00",
+      "last": 21.155,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -872,8 +872,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 282.74,
-      "priceTime": "2026-11-20T12:09:48-05:00",
+      "last": 283.2,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -896,8 +896,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 214.25,
-      "priceTime": "2026-11-20T12:09:50-05:00",
+      "last": 216.135,
+      "priceTime": "2026-11-20T12:28:44-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -920,8 +920,8 @@
       "netLossAtStop": null,
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
-      "last": 108.45,
-      "priceTime": "2026-11-20T12:09:46-05:00",
+      "last": 107.9,
+      "priceTime": "2026-11-20T12:28:35-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -943,8 +943,8 @@
       "netLossAtStop": -22.59,
       "netProfitAtTargetCAD": 62.62,
       "netLossAtStopCAD": -32.3,
-      "last": 85.3301,
-      "priceTime": "2026-11-20T12:09:51-05:00",
+      "last": 84.44,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -974,8 +974,8 @@
       "netLossAtStop": -24.81,
       "netProfitAtTargetCAD": 68.78,
       "netLossAtStopCAD": -35.47,
-      "last": 136.15,
-      "priceTime": "2026-11-20T12:09:51-05:00",
+      "last": 135.1558,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -1005,8 +1005,8 @@
       "netLossAtStop": -12.83,
       "netProfitAtTargetCAD": 35.43,
       "netLossAtStopCAD": -18.34,
-      "last": 623.0899,
-      "priceTime": "2026-11-20T12:09:51-05:00",
+      "last": 620.34,
+      "priceTime": "2026-11-20T12:28:46-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "side": "short",
@@ -1020,7 +1020,7 @@
       "exitSeen": 622.9199
     }
   ],
-  "watchlistUpdated": "2026-11-20T12:10:24-05:00",
+  "watchlistUpdated": "2026-11-20T12:28:50-05:00",
   "scorecard": {
     "updated": "2026-11-19T16:47:23-05:00",
     "currency": "CAD",
@@ -1363,7 +1363,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-20",
-    "updated": "2026-11-20T12:09:22-05:00",
+    "updated": "2026-11-20T12:28:45-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

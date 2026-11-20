@@ -2005,7 +2005,24 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "target",
+        "exit": 619.95,
+        "gross": 35.01,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.039,
+          "fx": 0.53,
+          "total": 0.5642
+        },
+        "net": 34.45,
+        "grossR": 1.849,
+        "netR": 1.82,
+        "netCAD": 49.25,
+        "entryUsed": 631.62,
+        "resolvedAt": "2026-11-20T12:28:59-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
