@@ -365,3 +365,15 @@ python3 missed.py --json     # dump the model
   `cd /workspace/desk-pages && python3 missed.py && git add missed.json journal.json data.json && git commit -qm "missed: close-out" && git push -q`
   Resolve every idea of the day (`--outcome time --exit <4:00 PM price>` for ideas still open, `no-fill` for ideas that never
   triggered) so nothing stays "flat at last price" or "pending".
+
+## orb_scan.py (added Nov 23, 2026)
+Finds WHEN an opening-range break happened, so ORB / Stocks-in-play ideas are logged on the break bar (late logging
+cost the desk the NVDA 9:55 and QQQ 10:20 ORB breaks on Nov 23, found only at 12:13 ET). Reads the 5-min cache only:
+first fetch Questrade get_historical_data 5m (tradingHoursOnly, from 9:30 ET; responses cap at 40 candles, so split
+the day) and `python3 bars.py ingest --bot quant <file>`, then:
+```
+python3 orb_scan.py NVDA QQQ MU            # today (ET): OR 9:30-9:45, first-15-min direction, first 5-min CLOSE beyond each edge
+python3 orb_scan.py --date 2026-11-23 --json NVDA
+```
+It applies no strategy filter (RVOL, session VWAP side, trend remain the routine's job) and never places orders.
+"bar VWAP" in the output is that 5-min bar's own VWAP, not the session VWAP. Every intraday run 9:45-11:30 ET runs it.

@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-23T10:34:15-05:00",
+ "updated": "2026-11-23T21:56:09+00:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -404,10 +404,10 @@
   },
   {
    "bot": "quant",
-   "name": "Opening-range breakout (15-min), volume-confirmed - live for longs (re-enabled Nov 23); paper for shorts; VWAP reclaim/loss - paper-only (retired)",
-   "short": "ORB (live longs) + VWAP (paper)",
+   "name": "Opening-range breakout (15-min), volume-confirmed - paper-only (longs re-demoted Nov 23 EOD; shorts paper: borrow agreement); VWAP reclaim/loss - paper-only (retired)",
+   "short": "ORB + VWAP (paper)",
    "tested": "ORB testing - walk-forward OOS +0.131R on 53 (positive in 4/5 windows, data to Nov 18 2026; live params +0.049R on 42). VWAP retired to paper-only (OOS -0.154R on 50, 1/5 windows).",
-   "testedTag": "ORB live for longs (re-enabled Nov 23) · shorts paper · VWAP paper-only",
+   "testedTag": "ORB paper only (longs re-demoted Nov 23: long side negative OOS and live) · VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -806,13 +806,10 @@
    },
    "maxTradesPerDay": 2,
    "vwapStatus": "RETIRED to paper-only 2026-11-02 (decided by Kiwi, head of desk): walk-forward OOS -0.148R on 46 trades, positive in 1/4 test windows. The routine still logs every VWAP signal as a paper idea; risk_check.py --strategy vwap always BLOCKs (\"paper-only: retired\").",
-   "mode": "mixed",
+   "mode": "paper",
    "id": "orb_vwap",
    "modes": {
-    "orb": {
-     "long": "live",
-     "short": "paper"
-    },
+    "orb": "paper",
     "vwap": "paper"
    },
    "aliases": {
@@ -838,8 +835,8 @@
    },
    "orbForward": {
     "updated": "2026-11-23",
-    "journal": "5 ORB ideas: Nov 2 XIU -1.00R, Nov 16 QQC +0.56R, Nov 19 MSFT -1.01R, Nov 20 QQQ +1.82R, Nov 20 NVDA +2.03R (both paper, late-logged); avg +0.48R on 5",
-    "rule": "Live for longs as of Nov 23 (Kiwi). Shorts stay paper until the Questrade borrow agreement is accepted. Still under the 20-trade promotion bar (5 of 20)."
+    "journal": "6 ORB (15-min) journal ideas avg +0.525R: shorts QQC +0.565R, QQQ +1.82R, NVDA +2.028R (avg +1.47R on 3); longs MSFT -1.009R, QQQ -0.104R, NVDA -0.147R (avg -0.42R on 3). Nov 23 QQQ/NVDA longs were paper (breaks at 10:20/9:55 ET found at 12:13 ET), scored at the 4:00 PM close.",
+    "rule": "Paper-only again from Nov 24. Back live after 20 paper/real ORB journal trades with positive average net R AND walk-forward OOS mean R > 0 in most windows FOR THE SIDE being traded (longs and shorts judged separately). Shorts also need K to accept the borrow agreement in Questrade Edge."
    },
    "orbReenabled": {
     "date": "2026-11-23",
@@ -847,7 +844,13 @@
     "why": "K said there hasn't been a trade for too long. Re-enabled ORB for longs only, effective immediately, to get real trades. Same $40 CAD max risk, same trend filter and other rules. Forward record since the Nov 19 demotion: +0.48R over 5 paper trades. Shorts stay paper until K accepts the borrow agreement in Questrade Edge.",
     "risk": "Same $40 CAD max risk per trade; desk $150 daily loss stop and max 4 open positions still apply. Account Margin 0944 (aa65e932-2416-4312-0258-4f2e0192357e). Valid ORB longs go to Questrade for K to approve within ~2 min."
    },
-   "orbLogRule": "Added Nov 20 / confirmed Nov 23 by Kiwi: log ORB breaks on the 5-minute bar that actually closes through the opening-range edge, not 10-15 minutes late. Every intraday run from 9:45 to 11:30 ET (ORB window) must read 5-min bars, compute the 9:30-9:45 range, and if a 5-min bar has closed beyond the range with the volume, VWAP and trend filters, log it at once with log_idea.py add (bot quant, strategy 'Opening-range breakout (15-min)', entry = range edge, stop = other edge, target 2R, shares sized to 40 CAD; add --logged-late --logged-price <current price> if logged after the break bar). ORB longs: after risk_check ALLOW, send a real Questrade order on account 0944 and alert K to approve within 2 min. ORB shorts: paper only until the borrow agreement is accepted."
+   "orbLogRule": "Added Nov 20 / confirmed Nov 23 by Kiwi: log ORB breaks on the 5-minute bar that actually closes through the opening-range edge, not 10-15 minutes late. Every intraday run from 9:45 to 11:30 ET (ORB window) must read 5-min bars, compute the 9:30-9:45 range, and if a 5-min bar has closed beyond the range with the volume, VWAP and trend filters, log it at once with log_idea.py add (bot quant, strategy 'Opening-range breakout (15-min)', entry = range edge, stop = other edge, target 2R, shares sized to 40 CAD; add --logged-late --logged-price <current price> if logged after the break bar). ORB longs: after risk_check ALLOW, send a real Questrade order on account 0944 and alert K to approve within 2 min. ORB shorts: paper only until the borrow agreement is accepted. | Nov 23 EOD (Kiwi): every intraday run from 9:45 to 11:30 ET must fetch + ingest 5-min RTH bars for the ORB and SIP universe and run `python3 orb_scan.py <symbols>`; it prints the first 5-min bar that closed beyond the 9:30-9:45 range, so the idea is logged on that bar.",
+   "orbDemoted2": {
+    "date": "2026-11-23",
+    "by": "kiwi",
+    "why": "Daily review walk-forward (walkforward-2026-11-23, Questrade 30-min bars May 4 - Nov 23): ORB OOS overall +0.131R on 53 (4/5 windows) but split by side LONGS -0.031R on 22, positive in 1/4 windows (calm +0.039R/15, volatile -0.182R/7); SHORTS +0.246R on 31 (calm +0.333/15, volatile +0.164/16). Live/journal longs -0.42R on 3. Standing rule: demote anything negative on OOS or live record. The morning re-enable (longs only) put the desk on the one losing side; regime is volatile.",
+    "reversible": "K can override; real ORB trades come back fastest via the short side once K accepts the borrow agreement and shorts pass the bar."
+   }
   },
   {
    "bot": "quant",
