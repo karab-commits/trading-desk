@@ -884,7 +884,7 @@
       "side": "short",
       "strategy": "Stocks-in-play 15-min opening-range breakout",
       "bot": "quant",
-      "reason": "Whale scout: chip rebound, MU up sharply pre-market on heavy volume. SIP ORB paper from 9:45.",
+      "reason": "paper short: high 705.28 through stop 693.92",
       "notBefore": "09:45",
       "testNote": "paper: sip_orb demoted; short needs borrow agreement",
       "tvSymbol": "NASDAQ:MU",
@@ -906,7 +906,7 @@
       "shares": 1,
       "planFrom": "journal",
       "journalId": "2026-11-23-MU-1",
-      "statusAt": "2026-11-23T10:07:09-05:00",
+      "statusAt": "2026-11-23T10:07:33-05:00",
       "exitSeen": 701.0565
     },
     {
@@ -1057,7 +1057,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T10:07:26-05:00",
+  "watchlistUpdated": "2026-11-23T10:07:33-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
