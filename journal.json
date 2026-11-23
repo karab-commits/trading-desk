@@ -2501,6 +2501,183 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-MU-1",
+      "date": "2026-11-23",
+      "session": "adhoc",
+      "ticker": "MU",
+      "side": "short",
+      "entry": 672.31,
+      "stop": 693.92,
+      "target": 629.09,
+      "shares": 1,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB 9:45 break below the 15-min range (first candle red -> short only). Signal on the 9:45-9:50 bar, logged late at the 9:57 run. RVOL vs 14-day slot not computable (proxy: first 15 min ~1.6x+ of the 20-day daily average/10). Paper: sip_orb demoted, and shorts need the borrow agreement. OR 672.31-693.92.",
+      "loggedAt": "2026-11-23T09:56:10-05:00",
+      "loggedLate": true,
+      "loggedPrice": 677.15,
+      "plan": {
+        "riskGross": 21.61,
+        "rewardGross": 43.22,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0138,
+          "fx": 0.65,
+          "total": 0.6621
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0138,
+          "fx": 0.32,
+          "total": 0.338
+        },
+        "netProfitAtTarget": 42.56,
+        "netLossAtStop": -21.95,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 60.85,
+        "netLossAtStopCAD": -31.38
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-NBIS-1",
+      "date": "2026-11-23",
+      "session": "adhoc",
+      "ticker": "NBIS",
+      "side": "short",
+      "entry": 100.64,
+      "stop": 110.05,
+      "target": 81.82,
+      "shares": 2,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB 9:45 break below the 15-min range (first candle red -> short only). Signal on the 9:45-9:50 bar, logged late at the 9:57 run. RVOL vs 14-day slot not computable (proxy: first 15 min ~1.6x+ of the 20-day daily average/10). Paper: sip_orb demoted, and shorts need the borrow agreement. OR 100.64-110.05.",
+      "loggedAt": "2026-11-23T09:56:10-05:00",
+      "loggedLate": true,
+      "loggedPrice": 97.815,
+      "plan": {
+        "riskGross": 18.82,
+        "rewardGross": 37.64,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0041,
+          "fx": 0.56,
+          "total": 0.5687
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0041,
+          "fx": 0.28,
+          "total": 0.2864
+        },
+        "netProfitAtTarget": 37.07,
+        "netLossAtStop": -19.11,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 53.0,
+        "netLossAtStopCAD": -27.32
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-CRWV-1",
+      "date": "2026-11-23",
+      "session": "adhoc",
+      "ticker": "CRWV",
+      "side": "short",
+      "entry": 48.59,
+      "stop": 51.9,
+      "target": 41.97,
+      "shares": 8,
+      "strategy": "Stocks-in-play 15-min opening-range breakout",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB 9:45 break below the 15-min range (first candle red -> short only). Signal on the 9:45-9:50 bar, logged late at the 9:57 run. RVOL vs 14-day slot not computable (proxy: first 15 min ~1.6x+ of the 20-day daily average/10). Paper: sip_orb demoted, and shorts need the borrow agreement. OR 48.59-51.90.",
+      "loggedAt": "2026-11-23T09:56:10-05:00",
+      "loggedLate": true,
+      "loggedPrice": 46.91,
+      "plan": {
+        "riskGross": 26.48,
+        "rewardGross": 52.96,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.008,
+          "fx": 0.79,
+          "total": 0.8024
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.008,
+          "fx": 0.4,
+          "total": 0.4052
+        },
+        "netProfitAtTarget": 52.16,
+        "netLossAtStop": -26.89,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 74.57,
+        "netLossAtStopCAD": -38.44
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
