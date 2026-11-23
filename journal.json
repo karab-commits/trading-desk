@@ -2678,6 +2678,124 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-QQQ-1",
+      "date": "2026-11-23",
+      "session": "adhoc",
+      "ticker": "QQQ",
+      "side": "long",
+      "entry": 656.3,
+      "stop": 641.95,
+      "target": 685.0,
+      "shares": 1,
+      "strategy": "Opening-range breakout (15-min)",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "ORB long: 10:20 5-min bar closed 656.37 > OR high 656.30 (OR 641.95-656.30, width 14.35 = 0.69x ATR14 20.88), RVOL 1.58 (957.6k vs 6-day cached slot avg 607.7k), above VWAP 650.27, open 655.98 > prior close 610.04. Missed by the 10:27-11:50 runs (no 5-min ORB check); found at the 12:13 run after the 11:30 ORB window closed, so paper only, logged late at 652.34 (12:14 quote). Sized 1 sh at 40 CAD risk.",
+      "loggedAt": "2026-11-23T12:17:44-05:00",
+      "loggedLate": true,
+      "loggedPrice": 652.34,
+      "plan": {
+        "riskGross": 14.35,
+        "rewardGross": 28.7,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0141,
+          "fx": 0.43,
+          "total": 0.4446
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0132,
+          "fx": 0.22,
+          "total": 0.2285
+        },
+        "netProfitAtTarget": 28.26,
+        "netLossAtStop": -14.58,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 40.4,
+        "netLossAtStopCAD": -20.84
+      },
+      "mode": "paper",
+      "paperReason": "paper-only for longs (ORB (live longs) + VWAP (paper) / orb)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-NVDA-1",
+      "date": "2026-11-23",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "long",
+      "entry": 167.2,
+      "stop": 156.93,
+      "target": 187.74,
+      "shares": 2,
+      "strategy": "Opening-range breakout (15-min)",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "ORB long: 9:55 5-min bar closed 168.55 > OR high 167.20 (OR 156.93-167.20, width 10.27 = 0.81x ATR14 12.70), RVOL 6.56 (20.06M vs 3-day cached slot avg 3.06M), above VWAP 162.60, open 167.04 > prior close 125.81. Missed by earlier runs; found at 12:13 after the 11:30 ORB window, so paper only, logged late at 166.66 (12:14 quote). K's own manual NVDA long is separate.",
+      "loggedAt": "2026-11-23T12:17:44-05:00",
+      "loggedLate": true,
+      "loggedPrice": 166.66,
+      "plan": {
+        "riskGross": 20.54,
+        "rewardGross": 41.08,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0077,
+          "fx": 0.62,
+          "total": 0.6239
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0065,
+          "fx": 0.31,
+          "total": 0.3146
+        },
+        "netProfitAtTarget": 40.46,
+        "netLossAtStop": -20.85,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 57.84,
+        "netLossAtStopCAD": -29.82
+      },
+      "mode": "paper",
+      "paperReason": "paper-only for longs (ORB (live longs) + VWAP (paper) / orb)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

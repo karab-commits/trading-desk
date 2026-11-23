@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 11:50 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 12:18 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "NVDA/CRWV/ZS headlines are pre-market (>60 min old); AI names fading off the open. No valid signal.",
+      "status": "12:13: NVDA/Huang, CRWD-ZS deal, KYMR, APLD headlines are all >60 min old; no fresh company headline <=60 min. No valid signal.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -62,9 +62,9 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No fresh headline",
-        "detail": "NVDA/CRWV/ZS headlines are pre-market (>60 min old); AI names fading off the open. No valid signal.",
-        "since": "2026-11-23T10:07:26-05:00",
-        "state": "waiting",
+        "detail": "12:13: NVDA/Huang, CRWD-ZS deal, KYMR, APLD headlines are all >60 min old; no fresh company headline <=60 min. No valid signal.",
+        "since": "2026-11-23T12:18:22-05:00",
+        "state": "done",
         "log": [
           "14:20 news: nothing fresh",
           "16:55 EOD: no News trades",
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "No 5-min close beyond the session range on RVOL >= 2 since 10:00 (high 657.53)",
+      "status": "12:13: no 5-min close beyond session range on RVOL>=2 since 10:00 (10:20 close 656.37 > 656.30, RVOL 1.58). Session 641.95-657.53.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -86,9 +86,9 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "QQQ: no signal",
-        "detail": "No 5-min close beyond the session range on RVOL >= 2 since 10:00 (high 657.53)",
-        "since": "2026-11-23T10:57:53-05:00",
-        "state": "waiting",
+        "detail": "12:13: no 5-min close beyond session range on RVOL>=2 since 10:00 (10:20 close 656.37 > 656.30, RVOL 1.58). Session 641.95-657.53.",
+        "since": "2026-11-23T12:18:22-05:00",
+        "state": "done",
         "next": "QQQ 10:00 (paper)",
         "log": [
           "16:55 QQQ 1/5, not retired",
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "K's own NVDA buy (5.9314 sh @ 168.59, 10:54 ET market) is manual, not a desk trade; desk 0/150 CAD used",
+      "status": "12:13: no desk orders or rejections. K's own manual NVDA (5.9314 sh @168.59) is not a desk trade; no stop sent by the desk.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,10 +112,10 @@
       "rejectedWeek": 8,
       "rejectedAllTime": 10,
       "activity": {
-        "now": "K manual NVDA seen",
-        "detail": "K's own NVDA buy (5.9314 sh @ 168.59, 10:54 ET market) is manual, not a desk trade; desk 0/150 CAD used",
-        "since": "2026-11-23T10:57:53-05:00",
-        "state": "working",
+        "now": "0/150 CAD used, 0/4 open",
+        "detail": "12:13: no desk orders or rejections. K's own manual NVDA (5.9314 sh @168.59) is not a desk trade; no stop sent by the desk.",
+        "since": "2026-11-23T12:18:22-05:00",
+        "state": "done",
         "next": "Checks every order",
         "log": [
           "10:29 blocked 5 paper-only shorts",
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No desk orders; K's manual NVDA still held",
+      "status": "No live signals (ORB window closed 11:30; missed QQQ/NVDA ORB longs logged as paper). No orders sent; K's manual NVDA still held.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:50 run: no orders",
-        "detail": "No desk orders; K's manual NVDA still held",
-        "since": "2026-11-23T11:50:57-05:00",
-        "state": "working",
-        "next": "Intraday 9:45",
+        "now": "12:13 run: no orders",
+        "detail": "No live signals (ORB window closed 11:30; missed QQQ/NVDA ORB longs logged as paper). No orders sent; K's manual NVDA still held.",
+        "since": "2026-11-23T12:18:22-05:00",
+        "state": "done",
+        "next": "Next check 12:30",
         "log": [
           "11:44 whale QQQ paper short hit target; 4 paper shorts open",
           "11:53 4 paper shorts open, no stops/targets hit",
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (live for longs, paper for shorts as of Nov 23) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "NBIS 104.57 (stop 110.05), CRWV 50.24 (stop 51.90); MU stopped; NVDA never broke its OR low",
+      "status": "12:13 run: ORB 5-min check found QQQ long break (10:20 bar, RVOL 1.58) and NVDA long break (9:55 bar, RVOL 6.56) that earlier runs missed; ORB window closed 11:30, so logged late as paper (2026-11-23-QQQ-1 @652.34, 2026-11-23-NVDA-1 @166.66). VWAP: no signal (reclaims RVOL<1.5; losses above prior close). SIP NBIS/CRWV paper shorts open.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "NBIS/CRWV paper shorts open",
-        "detail": "NBIS 104.57 (stop 110.05), CRWV 50.24 (stop 51.90); MU stopped; NVDA never broke its OR low",
-        "since": "2026-11-23T10:27:08-05:00",
-        "state": "working",
+        "now": "ORB missed: QQQ/NVDA paper",
+        "detail": "12:13 run: ORB 5-min check found QQQ long break (10:20 bar, RVOL 1.58) and NVDA long break (9:55 bar, RVOL 6.56) that earlier runs missed; ORB window closed 11:30, so logged late as paper (2026-11-23-QQQ-1 @652.34, 2026-11-23-NVDA-1 @166.66). VWAP: no signal (reclaims RVOL<1.5; losses above prior close). SIP NBIS/CRWV paper shorts open.",
+        "since": "2026-11-23T12:18:22-05:00",
+        "state": "done",
         "next": "OR set 9:45",
         "log": [
-          "16:55 walkforward: all OOS unchanged",
           "09:57 MU/NBIS/CRWV SIP ORB paper shorts logged",
-          "10:07 MU paper stop hit"
+          "10:07 MU paper stop hit",
+          "12:13 ORB late paper QQQ, NVDA"
         ]
       }
     },
@@ -198,7 +198,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "No defined-risk spread setup before the open.",
+      "status": "12:13: no live underlying signal, so no spread.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -207,8 +207,8 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "No live signal to express",
-        "detail": "No defined-risk spread setup before the open.",
-        "since": "2026-11-23T09:56:40-05:00",
+        "detail": "12:13: no live underlying signal, so no spread.",
+        "since": "2026-11-23T12:18:22-05:00",
         "state": "idle",
         "next": "Intraday 9:45",
         "log": [
@@ -669,8 +669,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-23T09:56:10-05:00",
-    "ideasLogged": 36,
+    "updated": "2026-11-23T12:17:44-05:00",
+    "ideasLogged": 38,
     "byDate": {
       "2026-11-02": {
         "net": 75.71,
@@ -754,9 +754,9 @@
       },
       "2026-11-23": {
         "net": 0.0,
-        "ideas": 6,
+        "ideas": 8,
         "resolved": 0,
-        "open": 6,
+        "open": 8,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 164.58,
-      "priceTime": "2026-11-23T11:50:54-05:00"
+      "last": 166.66,
+      "priceTime": "2026-11-23T12:14:11-05:00"
     },
     {
       "date": "2026-11-23",
@@ -814,8 +814,8 @@
       "netLossAtStopCAD": -38.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 48.02,
-      "priceTime": "2026-11-23T11:50:54-05:00",
+      "last": 48.62,
+      "priceTime": "2026-11-23T12:14:11-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -846,8 +846,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 224.08,
-      "priceTime": "2026-11-23T11:50:51-05:00"
+      "last": 227.0,
+      "priceTime": "2026-11-23T12:14:09-05:00"
     },
     {
       "date": "2026-11-23",
@@ -872,8 +872,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 204.5575,
-      "priceTime": "2026-11-23T11:50:54-05:00"
+      "last": 206.34,
+      "priceTime": "2026-11-23T12:14:11-05:00"
     },
     {
       "date": "2026-11-23",
@@ -898,8 +898,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 705.4429,
-      "priceTime": "2026-11-23T11:50:54-05:00",
+      "last": 709.2999,
+      "priceTime": "2026-11-23T12:14:10-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -932,8 +932,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 100.5593,
-      "priceTime": "2026-11-23T11:50:54-05:00",
+      "last": 100.9984,
+      "priceTime": "2026-11-23T12:14:10-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 650.3,
-      "priceTime": "2026-11-23T11:50:54-05:00"
+      "last": 652.3355,
+      "priceTime": "2026-11-23T12:14:11-05:00"
     },
     {
       "date": "2026-11-23",
@@ -991,8 +991,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.69,
-      "priceTime": "2026-11-23T11:50:53-05:00",
+      "last": 51.72,
+      "priceTime": "2026-11-23T12:14:11-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1022,7 +1022,7 @@
       "tvSymbol": "TSX:HXT",
       "tested": false,
       "last": 92.54,
-      "priceTime": "2026-11-23T11:45:10-05:00",
+      "priceTime": "2026-11-23T12:14:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1051,13 +1051,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.2498,
-      "priceTime": "2026-11-23T11:50:54-05:00",
+      "last": 13.295,
+      "priceTime": "2026-11-23T12:14:10-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T11:50:57-05:00",
+  "watchlistUpdated": "2026-11-23T12:18:09-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1416,7 +1416,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T11:50:53-05:00",
+    "updated": "2026-11-23T12:13:03-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

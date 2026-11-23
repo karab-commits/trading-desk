@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T11:50:58-05:00",
+  "updated": "2026-11-23T12:18:27-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3606,7 +3606,7 @@
  },
  "2026-11-23": {
   "kiwi": {
-   "quotesCalls": 10,
+   "quotesCalls": 11,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3622,7 +3622,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 11,
+   "runs": 12,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -3635,16 +3635,21 @@
      "XIU.TO",
      "HXT.TO",
      "SOFI",
-     "SPY"
+     "SPY",
+     "QQC.TO",
+     "AAPL",
+     "MSFT",
+     "AMZN",
+     "META"
     ],
-    "total": 101
+    "total": 117
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-23T11:50:58-05:00"
+   "lastRun": "2026-11-23T12:18:27-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -3692,7 +3697,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 1,
+   "webSearches": 2,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
@@ -3737,13 +3742,25 @@
       "title": "Nasdaq 100 futures rebound sharply to rise 3%, kick-starting shortened week after tech rout",
       "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html",
       "time": "2026-11-23T08:15:00-05:00"
+     },
+     {
+      "title": "Midday Fly By: Nvidia reinstates Huang as CEO, CrowdStrike buys Zscaler",
+      "url": "https://www.tipranks.com/news/the-fly/midday-fly-by-nvidia-reinstates-huang-as-ceo-crowdstrike-buys-zscaler-thefly-news",
+      "time": "2026-11-23T12:18:03-05:00"
+     },
+     {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq surge as Jensen Huang's reinstatement at Nvidia sparks stunning rally",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html",
+      "time": "2026-11-23T12:03:00-05:00"
      }
     ],
-    "count": 3,
+    "count": 5,
     "seen": [
      "fcf9c1d2a59d",
      "0ceef495df71",
-     "0aa90cd0315f"
+     "0aa90cd0315f",
+     "eba04161c675",
+     "8f8437bd379d"
     ]
    },
    "lastRun": null
@@ -3788,16 +3805,16 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 4,
-   "bars": 24,
+   "barCalls": 14,
+   "bars": 340,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 3,
-   "ideasLogged": 3,
+   "ideasGenerated": 5,
+   "ideasLogged": 5,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -3817,7 +3834,9 @@
    "keys": [
     "logged:2026-11-23-MU-1",
     "logged:2026-11-23-NBIS-1",
-    "logged:2026-11-23-CRWV-1"
+    "logged:2026-11-23-CRWV-1",
+    "logged:2026-11-23-QQQ-1",
+    "logged:2026-11-23-NVDA-1"
    ]
   },
   "risk": {
@@ -3856,8 +3875,8 @@
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 8,
-   "bars": 37,
+   "barCalls": 9,
+   "bars": 77,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
