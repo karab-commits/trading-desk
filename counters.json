@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T13:28:54-05:00",
+  "updated": "2026-11-23T13:38:32-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3606,7 +3606,7 @@
  },
  "2026-11-23": {
   "kiwi": {
-   "quotesCalls": 16,
+   "quotesCalls": 18,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3622,7 +3622,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 17,
+   "runs": 18,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -3642,14 +3642,14 @@
      "AMZN",
      "META"
     ],
-    "total": 177
+    "total": 202
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-23T13:28:54-05:00"
+   "lastRun": "2026-11-23T13:38:32-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -3697,7 +3697,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 7,
+   "webSearches": 8,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
@@ -3777,9 +3777,19 @@
       "title": "Stock Market Today Live, November 23, 2026: Nvidia Brings Back Jensen Huang as CEO",
       "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-23-2026",
       "time": "2026-11-23T13:10:00-05:00"
+     },
+     {
+      "title": "Texas Instruments surges 10% on Cantor Fitzgerald upgrade and chip rally",
+      "url": "https://www.investing.com/news/stock-market-news/texas-instruments-surges-10-on-cantor-fitzgerald-upgrade-and-chip-rally-5046130",
+      "time": "2026-11-23T12:12:00-05:00"
+     },
+     {
+      "title": "Nvidia has reinstated CEO Jensen Huang. Analysts upgraded the stock",
+      "url": "https://www.cnbc.com/2026/11/23/nvidia-has-reinstated-ceo-jensen-huang-analysts-upgraded-the-stock.html",
+      "time": "2026-11-23T11:41:00-05:00"
      }
     ],
-    "count": 10,
+    "count": 12,
     "seen": [
      "fcf9c1d2a59d",
      "0ceef495df71",
@@ -3790,7 +3800,9 @@
      "de960aad8494",
      "17f3df8de2d7",
      "2d5b43f5c7bf",
-     "fcff5bff3c7f"
+     "fcff5bff3c7f",
+     "9f2915353101",
+     "e832151635bd"
     ]
    },
    "lastRun": null
@@ -3835,8 +3847,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 23,
-   "bars": 400,
+   "barCalls": 29,
+   "bars": 502,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
