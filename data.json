@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 11:24 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 11:35 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -136,9 +136,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:24 run: no orders",
+        "now": "11:35 run: no orders",
         "detail": "No desk orders; K's manual NVDA still held",
-        "since": "2026-11-23T11:24:46-05:00",
+        "since": "2026-11-23T11:35:55-05:00",
         "state": "working",
         "next": "Intraday 9:45",
         "log": [
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 166.65,
-      "priceTime": "2026-11-23T11:24:42-05:00"
+      "last": 165.29,
+      "priceTime": "2026-11-23T11:35:51-05:00"
     },
     {
       "date": "2026-11-23",
@@ -814,8 +814,8 @@
       "netLossAtStopCAD": -38.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 49.0799,
-      "priceTime": "2026-11-23T11:24:42-05:00",
+      "last": 48.275,
+      "priceTime": "2026-11-23T11:35:51-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -846,8 +846,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 222.38,
-      "priceTime": "2026-11-23T11:24:41-05:00"
+      "last": 223.09,
+      "priceTime": "2026-11-23T11:35:51-05:00"
     },
     {
       "date": "2026-11-23",
@@ -872,8 +872,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 203.48,
-      "priceTime": "2026-11-23T11:24:42-05:00"
+      "last": 203.83,
+      "priceTime": "2026-11-23T11:35:51-05:00"
     },
     {
       "date": "2026-11-23",
@@ -898,8 +898,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 712.48,
-      "priceTime": "2026-11-23T11:24:42-05:00",
+      "last": 707.66,
+      "priceTime": "2026-11-23T11:35:51-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -932,8 +932,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 101.8,
-      "priceTime": "2026-11-23T11:24:42-05:00",
+      "last": 100.74,
+      "priceTime": "2026-11-23T11:35:51-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 653.08,
-      "priceTime": "2026-11-23T11:24:42-05:00"
+      "last": 651.39,
+      "priceTime": "2026-11-23T11:35:51-05:00"
     },
     {
       "date": "2026-11-23",
@@ -991,8 +991,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.84,
-      "priceTime": "2026-11-23T11:24:24-05:00",
+      "last": 51.75,
+      "priceTime": "2026-11-23T11:35:46-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1021,8 +1021,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:HXT",
       "tested": false,
-      "last": 93.02,
-      "priceTime": "2026-11-23T11:23:07-05:00",
+      "last": 92.91,
+      "priceTime": "2026-11-23T11:35:29-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1051,13 +1051,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.3701,
-      "priceTime": "2026-11-23T11:24:42-05:00",
+      "last": 13.3201,
+      "priceTime": "2026-11-23T11:35:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T11:24:46-05:00",
+  "watchlistUpdated": "2026-11-23T11:35:55-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1416,7 +1416,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T11:24:42-05:00",
+    "updated": "2026-11-23T11:35:50-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
