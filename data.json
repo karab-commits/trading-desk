@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 10:07 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 10:27 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "10:00 bar closed 650.46 inside session range 641.95-656.30 (paper)",
+      "status": "10:20 bar closed 656.37 above session high 656.30 and above VWAP, but RVOL 1.58 (957.6k vs 607.7k slot avg, 6 days cached) < 2.0: no signal",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: no RVOL break",
-        "detail": "10:00 bar closed 650.46 inside session range 641.95-656.30 (paper)",
-        "since": "2026-11-23T10:07:26-05:00",
+        "now": "QQQ: break, RVOL 1.58",
+        "detail": "10:20 bar closed 656.37 above session high 656.30 and above VWAP, but RVOL 1.58 (957.6k vs 607.7k slot avg, 6 days cached) < 2.0: no signal",
+        "since": "2026-11-23T10:27:08-05:00",
         "state": "working",
         "next": "QQQ 10:00 (paper)",
         "log": [
-          "11:30 QQQ paper short target 624.17 hit",
           "16:55 QQQ 1/5, not retired",
-          "10:07 QQQ no signal"
+          "10:07 QQQ no signal",
+          "10:27 QQQ new high, RVOL too low"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944 flat (order history read failed this run; no orders sent)",
+      "status": "Account 0944 flat, no working orders, 0 orders today",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,9 +136,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "10:07 run: no orders",
-        "detail": "Account 0944 flat (order history read failed this run; no orders sent)",
-        "since": "2026-11-23T10:07:26-05:00",
+        "now": "10:27 run: no orders",
+        "detail": "Account 0944 flat, no working orders, 0 orders today",
+        "since": "2026-11-23T10:27:08-05:00",
         "state": "working",
         "next": "Intraday 9:45",
         "log": [
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "MU ran to 705 through the 693.92 stop; NBIS, CRWV paper shorts open; NVDA no break",
+      "status": "NBIS 104.57 (stop 110.05), CRWV 50.24 (stop 51.90); MU stopped; NVDA never broke its OR low",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,9 +160,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "MU paper short stopped",
-        "detail": "MU ran to 705 through the 693.92 stop; NBIS, CRWV paper shorts open; NVDA no break",
-        "since": "2026-11-23T10:07:26-05:00",
+        "now": "NBIS/CRWV paper shorts open",
+        "detail": "NBIS 104.57 (stop 110.05), CRWV 50.24 (stop 51.90); MU stopped; NVDA never broke its OR low",
+        "since": "2026-11-23T10:27:08-05:00",
         "state": "working",
         "next": "OR set 9:45",
         "log": [
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 166.79,
-      "priceTime": "2026-11-23T10:07:09-05:00"
+      "last": 170.28,
+      "priceTime": "2026-11-23T10:26:49-05:00"
     },
     {
       "date": "2026-11-23",
@@ -814,8 +814,8 @@
       "netLossAtStopCAD": -38.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 48.57,
-      "priceTime": "2026-11-23T10:07:09-05:00",
+      "last": 50.24,
+      "priceTime": "2026-11-23T10:26:49-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -846,8 +846,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 227.13,
-      "priceTime": "2026-11-23T10:07:08-05:00"
+      "last": 229.72,
+      "priceTime": "2026-11-23T10:26:47-05:00"
     },
     {
       "date": "2026-11-23",
@@ -872,8 +872,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 206.85,
-      "priceTime": "2026-11-23T10:07:08-05:00"
+      "last": 209.5575,
+      "priceTime": "2026-11-23T10:26:49-05:00"
     },
     {
       "date": "2026-11-23",
@@ -898,8 +898,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 701.0565,
-      "priceTime": "2026-11-23T10:07:09-05:00",
+      "last": 717.35,
+      "priceTime": "2026-11-23T10:26:49-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -932,8 +932,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 100.55,
-      "priceTime": "2026-11-23T10:07:08-05:00",
+      "last": 104.57,
+      "priceTime": "2026-11-23T10:26:49-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 650.71,
-      "priceTime": "2026-11-23T10:07:08-05:00"
+      "last": 656.97,
+      "priceTime": "2026-11-23T10:26:49-05:00"
     },
     {
       "date": "2026-11-23",
@@ -991,8 +991,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.57,
-      "priceTime": "2026-11-23T10:07:08-05:00",
+      "last": 51.7,
+      "priceTime": "2026-11-23T10:26:46-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1021,8 +1021,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:HXT",
       "tested": false,
-      "last": 92.5,
-      "priceTime": "2026-11-23T09:59:56-05:00",
+      "last": 92.85,
+      "priceTime": "2026-11-23T10:24:19-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1051,13 +1051,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.54,
-      "priceTime": "2026-11-23T10:07:08-05:00",
+      "last": 13.6434,
+      "priceTime": "2026-11-23T10:26:47-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T10:07:33-05:00",
+  "watchlistUpdated": "2026-11-23T10:26:52-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1416,7 +1416,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T10:06:57-05:00",
+    "updated": "2026-11-23T10:26:48-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
