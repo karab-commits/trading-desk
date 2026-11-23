@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T13:56:12-05:00",
+  "updated": "2026-11-23T14:16:57-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3606,7 +3606,7 @@
  },
  "2026-11-23": {
   "kiwi": {
-   "quotesCalls": 20,
+   "quotesCalls": 22,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3622,7 +3622,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 19,
+   "runs": 20,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -3642,14 +3642,14 @@
      "AMZN",
      "META"
     ],
-    "total": 234
+    "total": 250
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-23T13:56:12-05:00"
+   "lastRun": "2026-11-23T14:16:57-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -3697,7 +3697,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 9,
+   "webSearches": 10,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
@@ -3792,9 +3792,14 @@
       "title": "Stock Market Today: Nvidia Jumps More Than 30% After Huang Returns as CEO; Nasdaq Soars 7%, Dow Jumps 1,600 Points",
       "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11232026-12274147",
       "time": "2026-11-23T13:55:28-05:00"
+     },
+     {
+      "title": "Why is MiniMed stock rallying today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-minimed-stock-rallying-today-93CH-5046081",
+      "time": "2026-11-23T11:35:00-05:00"
      }
     ],
-    "count": 13,
+    "count": 14,
     "seen": [
      "fcf9c1d2a59d",
      "0ceef495df71",
@@ -3808,7 +3813,8 @@
      "fcff5bff3c7f",
      "9f2915353101",
      "e832151635bd",
-     "ac0f89c71031"
+     "ac0f89c71031",
+     "ce81704d51d8"
     ]
    },
    "lastRun": null
@@ -3853,8 +3859,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 31,
-   "bars": 538,
+   "barCalls": 33,
+   "bars": 578,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -3923,8 +3929,8 @@
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 10,
-   "bars": 117,
+   "barCalls": 11,
+   "bars": 157,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
