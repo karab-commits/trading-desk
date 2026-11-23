@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T09:56:49-05:00",
+  "updated": "2026-11-23T10:07:26-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3606,7 +3606,7 @@
  },
  "2026-11-23": {
   "kiwi": {
-   "quotesCalls": 2,
+   "quotesCalls": 3,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3622,7 +3622,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 3,
+   "runs": 4,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -3637,14 +3637,14 @@
      "SOFI",
      "SPY"
     ],
-    "total": 21
+    "total": 31
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-23T09:56:49-05:00"
+   "lastRun": "2026-11-23T10:07:26-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -3853,6 +3853,35 @@
     "rejected:2026-11-23-NBIS-1",
     "rejected:2026-11-23-CRWV-1"
    ]
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 8,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
   }
  }
 }
