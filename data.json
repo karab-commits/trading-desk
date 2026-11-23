@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 10:42 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 10:57 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -87,7 +87,7 @@
       "activity": {
         "now": "QQQ: no signal",
         "detail": "No 5-min close beyond the session range on RVOL >= 2 since 10:00 (high 657.53)",
-        "since": "2026-11-23T10:42:55-05:00",
+        "since": "2026-11-23T10:57:53-05:00",
         "state": "waiting",
         "next": "QQQ 10:00 (paper)",
         "log": [
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "Desk 0/150 CAD used, 0/4 positions",
+      "status": "K's own NVDA buy (5.9314 sh @ 168.59, 10:54 ET market) is manual, not a desk trade; desk 0/150 CAD used",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,15 +112,15 @@
       "rejectedWeek": 8,
       "rejectedAllTime": 10,
       "activity": {
-        "now": "3 blocked (paper-only)",
-        "detail": "Desk 0/150 CAD used, 0/4 positions",
-        "since": "2026-11-23T09:56:40-05:00",
+        "now": "K manual NVDA seen",
+        "detail": "K's own NVDA buy (5.9314 sh @ 168.59, 10:54 ET market) is manual, not a desk trade; desk 0/150 CAD used",
+        "since": "2026-11-23T10:57:53-05:00",
         "state": "working",
         "next": "Checks every order",
         "log": [
-          "14:20 flat, nothing to check",
           "10:29 blocked 5 paper-only shorts",
-          "16:55 update: no bot paused"
+          "16:55 update: no bot paused",
+          "10:58 manual NVDA position noted, not managed"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Account 0944 flat, 0 orders today",
+      "status": "No desk orders; K holds a manual NVDA position",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,9 +136,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "10:43 run: no orders",
-        "detail": "Account 0944 flat, 0 orders today",
-        "since": "2026-11-23T10:42:55-05:00",
+        "now": "10:58 run: no orders",
+        "detail": "No desk orders; K holds a manual NVDA position",
+        "since": "2026-11-23T10:57:53-05:00",
         "state": "working",
         "next": "Intraday 9:45",
         "log": [
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 168.2956,
-      "priceTime": "2026-11-23T10:42:45-05:00"
+      "last": 168.3501,
+      "priceTime": "2026-11-23T10:57:35-05:00"
     },
     {
       "date": "2026-11-23",
@@ -814,8 +814,8 @@
       "netLossAtStopCAD": -38.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 49.65,
-      "priceTime": "2026-11-23T10:42:45-05:00",
+      "last": 48.99,
+      "priceTime": "2026-11-23T10:57:34-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -846,8 +846,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 228.3393,
-      "priceTime": "2026-11-23T10:42:42-05:00"
+      "last": 221.73,
+      "priceTime": "2026-11-23T10:57:34-05:00"
     },
     {
       "date": "2026-11-23",
@@ -872,8 +872,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 208.5,
-      "priceTime": "2026-11-23T10:42:45-05:00"
+      "last": 202.71,
+      "priceTime": "2026-11-23T10:57:34-05:00"
     },
     {
       "date": "2026-11-23",
@@ -898,8 +898,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 713.29,
-      "priceTime": "2026-11-23T10:42:45-05:00",
+      "last": 704.766687,
+      "priceTime": "2026-11-23T10:57:35-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -932,8 +932,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 103.16,
-      "priceTime": "2026-11-23T10:42:45-05:00",
+      "last": 101.28,
+      "priceTime": "2026-11-23T10:57:34-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 654.97,
-      "priceTime": "2026-11-23T10:42:45-05:00"
+      "last": 651.545,
+      "priceTime": "2026-11-23T10:57:34-05:00"
     },
     {
       "date": "2026-11-23",
@@ -992,7 +992,7 @@
       "tvSymbol": "TSX:XIU",
       "tested": false,
       "last": 51.69,
-      "priceTime": "2026-11-23T10:42:44-05:00",
+      "priceTime": "2026-11-23T10:57:32-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1021,8 +1021,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:HXT",
       "tested": false,
-      "last": 92.82,
-      "priceTime": "2026-11-23T10:42:14-05:00",
+      "last": 92.86,
+      "priceTime": "2026-11-23T10:55:09-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1051,13 +1051,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.4999,
-      "priceTime": "2026-11-23T10:42:44-05:00",
+      "last": 13.4199,
+      "priceTime": "2026-11-23T10:57:32-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T10:42:49-05:00",
+  "watchlistUpdated": "2026-11-23T10:57:38-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1416,7 +1416,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T10:42:45-05:00",
+    "updated": "2026-11-23T10:57:34-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
