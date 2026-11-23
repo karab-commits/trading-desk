@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 9:06 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 9:32 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU indicative 51.50 vs close 50.32 (+1.18, trigger 0.66). SOFI 13.62 vs 12.495 (+1.13, trigger 0.62). HXT trigger 1.15. Shorts are paper until the borrow agreement is accepted.",
+      "status": "All three gapped up past their triggers: XIU open 51.55 (+1.23 vs 0.66), HXT 92.49 (+2.20 vs 1.15), SOFI 13.71 (+1.215 vs 0.62). Shorts are paper until the borrow agreement is accepted, so no orders.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,16 +37,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap ups: XIU, SOFI short",
-        "detail": "XIU indicative 51.50 vs close 50.32 (+1.18, trigger 0.66). SOFI 13.62 vs 12.495 (+1.13, trigger 0.62). HXT trigger 1.15. Shorts are paper until the borrow agreement is accepted.",
-        "since": "2026-11-23T09:06:57-05:00",
-        "state": "waiting",
+        "now": "Gap fades: 3 shorts, paper",
+        "detail": "All three gapped up past their triggers: XIU open 51.55 (+1.23 vs 0.66), HXT 92.49 (+2.20 vs 1.15), SOFI 13.71 (+1.215 vs 0.62). Shorts are paper until the borrow agreement is accepted, so no orders.",
+        "since": "2026-11-23T09:32:17-05:00",
+        "state": "done",
         "log": [
           "Gap check: XIU/SOFI/HXT all under trigger, no orders",
           "13:20 scanner: done for the day",
           "16:55 WF: SOFI +0.365R, HXT +0.028R OOS"
         ],
-        "next": "Confirm at 9:30 open"
+        "next": "Close-out 3:15"
       }
     },
     {
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile (SPY rv10 26.5%). Futures up sharply on the AI/chip rebound. Account 0944 flat, equity 2,472.09 CAD.",
+      "status": "Mood volatile. Account 0944 flat, equity 2,472.09 CAD. Gap fades were all shorts (paper). Intraday routine takes News, SIP and QQQ setups from 9:45.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market: waiting on open",
-        "detail": "Mood volatile (SPY rv10 26.5%). Futures up sharply on the AI/chip rebound. Account 0944 flat, equity 2,472.09 CAD.",
-        "since": "2026-11-23T09:06:57-05:00",
-        "state": "working",
-        "next": "Open check 9:31",
+        "now": "Open: no orders, 3 paper",
+        "detail": "Mood volatile. Account 0944 flat, equity 2,472.09 CAD. Gap fades were all shorts (paper). Intraday routine takes News, SIP and QQQ setups from 9:45.",
+        "since": "2026-11-23T09:32:17-05:00",
+        "state": "done",
+        "next": "Intraday 9:45",
         "log": [
           "11:44 whale QQQ paper short hit target; 4 paper shorts open",
           "11:53 4 paper shorts open, no stops/targets hit",
@@ -669,8 +669,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-20T17:14:37-05:00",
-    "ideasLogged": 30,
+    "updated": "2026-11-23T09:31:52-05:00",
+    "ideasLogged": 33,
     "byDate": {
       "2026-11-02": {
         "net": 75.71,
@@ -749,6 +749,16 @@
         "open": 0,
         "filled": 5,
         "wins": 4,
+        "real": 0.0,
+        "taken": 0
+      },
+      "2026-11-23": {
+        "net": 0.0,
+        "ideas": 3,
+        "resolved": 0,
+        "open": 3,
+        "filled": 0,
+        "wins": 0,
         "real": 0.0,
         "taken": 0
       }
@@ -921,9 +931,99 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null
+    },
+    {
+      "date": "2026-11-23",
+      "ticker": "XIU.TO",
+      "status": "triggered",
+      "closeBy": "16:00",
+      "addedAt": "2026-11-23T09:31:59-05:00",
+      "side": "short",
+      "entry": 51.55,
+      "stop": 52.78,
+      "target": 50.32,
+      "shares": 32,
+      "strategy": "Big-gap fade XIU",
+      "bot": "scanner",
+      "currency": "CAD",
+      "rr": 1.0,
+      "rrNet": 1.0,
+      "netProfitAtTarget": 39.36,
+      "netLossAtStop": -39.36,
+      "netProfitAtTargetCAD": 39.36,
+      "netLossAtStopCAD": -39.36,
+      "planFrom": "journal",
+      "journalId": "2026-11-23-XIU-1",
+      "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
+      "tvSymbol": "TSX:XIU",
+      "tested": false,
+      "last": 51.63,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "openPnl": null,
+      "openPnlCAD": null
+    },
+    {
+      "date": "2026-11-23",
+      "ticker": "HXT.TO",
+      "status": "triggered",
+      "closeBy": "16:00",
+      "addedAt": "2026-11-23T09:31:59-05:00",
+      "side": "short",
+      "entry": 92.49,
+      "stop": 94.69,
+      "target": 90.29,
+      "shares": 18,
+      "strategy": "Big-gap fade HXT",
+      "bot": "scanner",
+      "currency": "CAD",
+      "rr": 1.0,
+      "rrNet": 1.0,
+      "netProfitAtTarget": 39.6,
+      "netLossAtStop": -39.6,
+      "netProfitAtTargetCAD": 39.6,
+      "netLossAtStopCAD": -39.6,
+      "planFrom": "journal",
+      "journalId": "2026-11-23-HXT-1",
+      "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
+      "tvSymbol": "TSX:HXT",
+      "tested": false,
+      "last": 92.66,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "openPnl": null,
+      "openPnlCAD": null
+    },
+    {
+      "date": "2026-11-23",
+      "ticker": "SOFI",
+      "status": "triggered",
+      "closeBy": "16:00",
+      "addedAt": "2026-11-23T09:31:59-05:00",
+      "side": "short",
+      "entry": 13.71,
+      "stop": 14.925,
+      "target": 12.495,
+      "shares": 23,
+      "strategy": "Big-gap fade SOFI",
+      "bot": "scanner",
+      "currency": "USD",
+      "rr": 1.0,
+      "rrNet": 0.97,
+      "netProfitAtTarget": 27.52,
+      "netLossAtStop": -28.37,
+      "netProfitAtTargetCAD": 39.35,
+      "netLossAtStopCAD": -40.56,
+      "planFrom": "journal",
+      "journalId": "2026-11-23-SOFI-1",
+      "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
+      "tvSymbol": "NASDAQ:SOFI",
+      "tested": false,
+      "last": 13.4357,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "openPnl": null,
+      "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T09:06:36-05:00",
+  "watchlistUpdated": "2026-11-23T09:31:59-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1282,7 +1382,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T09:05:24-05:00",
+    "updated": "2026-11-23T09:31:59-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

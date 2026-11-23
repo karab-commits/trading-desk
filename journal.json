@@ -2330,6 +2330,177 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-XIU-1",
+      "date": "2026-11-23",
+      "session": "premarket",
+      "ticker": "XIU.TO",
+      "side": "short",
+      "entry": 51.55,
+      "stop": 52.78,
+      "target": 50.32,
+      "shares": 32,
+      "strategy": "Big-gap fade XIU",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Gap fade short at the open: open 51.55 vs prior close 50.32 = +1.23 gap >= trigger 0.66 (0.75 x ATR14 0.874). Stop one gap above, target prior close, out by 4 PM. Paper: K has not accepted the short borrow agreement in Questrade Edge.",
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "plan": {
+        "riskGross": 39.36,
+        "rewardGross": 39.36,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 39.36,
+        "netLossAtStop": -39.36,
+        "rrNet": 1.0,
+        "netProfitAtTargetCAD": 39.36,
+        "netLossAtStopCAD": -39.36
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: short blocked (K has not accepted Questrade's short borrow agreement in Edge)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-SOFI-1",
+      "date": "2026-11-23",
+      "session": "premarket",
+      "ticker": "SOFI",
+      "side": "short",
+      "entry": 13.71,
+      "stop": 14.925,
+      "target": 12.495,
+      "shares": 23,
+      "strategy": "Big-gap fade SOFI",
+      "bot": "scanner",
+      "currency": "USD",
+      "note": "Gap fade short at the open: open 13.71 vs prior close 12.495 = +1.215 gap >= trigger 0.62 (0.75 x ATR14 0.830). Paper: short borrow agreement not accepted.",
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "plan": {
+        "riskGross": 27.94,
+        "rewardGross": 27.95,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0065,
+          "fx": 0.42,
+          "total": 0.4257
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0065,
+          "fx": 0.42,
+          "total": 0.4257
+        },
+        "netProfitAtTarget": 27.52,
+        "netLossAtStop": -28.37,
+        "rrNet": 0.97,
+        "netProfitAtTargetCAD": 39.35,
+        "netLossAtStopCAD": -40.56
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: short blocked (K has not accepted Questrade's short borrow agreement in Edge)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-23-HXT-1",
+      "date": "2026-11-23",
+      "session": "premarket",
+      "ticker": "HXT.TO",
+      "side": "short",
+      "entry": 92.49,
+      "stop": 94.69,
+      "target": 90.29,
+      "shares": 18,
+      "strategy": "Big-gap fade HXT",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Gap fade short at the open: open 92.49 vs prior close 90.29 = +2.20 gap >= trigger 1.15 (0.75 x ATR14 1.531). Same tsx_index group as XIU (XIU takes the slot). Paper: short borrow agreement not accepted.",
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "plan": {
+        "riskGross": 39.6,
+        "rewardGross": 39.6,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 39.6,
+        "netLossAtStop": -39.6,
+        "rrNet": 1.0,
+        "netProfitAtTargetCAD": 39.6,
+        "netLossAtStopCAD": -39.6
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: short blocked (K has not accepted Questrade's short borrow agreement in Edge)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 26.46,
+        "median": 11.41,
+        "asOfClose": "2026-11-20",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

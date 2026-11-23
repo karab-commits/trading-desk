@@ -1,44 +1,44 @@
 {
   "version": 1,
-  "updated": "2026-11-20T16:54:27-05:00",
-  "date": "2026-11-20",
-  "isoWeek": "2026-W47",
-  "marketOpen": false,
+  "updated": "2026-11-23T09:32:17-05:00",
+  "date": "2026-11-23",
+  "isoWeek": "2026-W48",
+  "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 191.9,
-      "final": 191.9,
-      "unrealized": 0.0,
-      "ideas": 5,
-      "scored": 5,
-      "open": 0,
+      "net": 3.26,
+      "final": 0.0,
+      "unrealized": 3.26,
+      "ideas": 3,
+      "scored": 0,
+      "open": 3,
       "notTriggered": 0,
       "pending": 0,
-      "wins": 4,
-      "losses": 1
+      "wins": 0,
+      "losses": 0
     },
     "week": {
-      "net": 146.03,
-      "final": 146.03,
-      "unrealized": 0.0,
-      "ideas": 16,
-      "scored": 16,
-      "open": 0,
+      "net": 3.26,
+      "final": 0.0,
+      "unrealized": 3.26,
+      "ideas": 3,
+      "scored": 0,
+      "open": 3,
       "notTriggered": 0,
       "pending": 0,
-      "wins": 9,
-      "losses": 7
+      "wins": 0,
+      "losses": 0
     },
     "allTime": {
-      "net": 206.84,
+      "net": 210.1,
       "final": 206.84,
-      "unrealized": 0.0,
-      "ideas": 28,
+      "unrealized": 3.26,
+      "ideas": 31,
       "scored": 24,
-      "open": 0,
+      "open": 3,
       "notTriggered": 4,
       "pending": 0,
       "wins": 13,
@@ -46,51 +46,51 @@
     }
   },
   "byBot": {
-    "quant": {
+    "scanner": {
       "today": {
-        "net": 160.48,
-        "ideas": 4,
-        "scored": 4,
-        "open": 0
+        "net": 3.26,
+        "ideas": 3,
+        "scored": 0,
+        "open": 3
       },
       "week": {
-        "net": 151.95,
-        "ideas": 12,
-        "scored": 12,
-        "open": 0
+        "net": 3.26,
+        "ideas": 3,
+        "scored": 0,
+        "open": 3
       },
+      "allTime": {
+        "net": 78.97,
+        "ideas": 9,
+        "scored": 2,
+        "open": 3
+      }
+    },
+    "quant": {
       "allTime": {
         "net": 157.86,
         "ideas": 17,
         "scored": 17,
         "open": 0
-      }
-    },
-    "whale": {
+      },
       "today": {
-        "net": 31.42,
-        "ideas": 1,
-        "scored": 1,
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
         "open": 0
       },
       "week": {
-        "net": -5.92,
-        "ideas": 4,
-        "scored": 4,
+        "net": 0.0,
+        "ideas": 0,
+        "scored": 0,
         "open": 0
-      },
+      }
+    },
+    "whale": {
       "allTime": {
         "net": -26.73,
         "ideas": 5,
         "scored": 5,
-        "open": 0
-      }
-    },
-    "scanner": {
-      "allTime": {
-        "net": 75.71,
-        "ideas": 6,
-        "scored": 2,
         "open": 0
       },
       "today": {
@@ -155,6 +155,75 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-23-XIU-1",
+      "date": "2026-11-23",
+      "bot": "scanner",
+      "ticker": "XIU.TO",
+      "side": "short",
+      "entry": 51.55,
+      "stop": 52.78,
+      "target": 50.32,
+      "shares": 32,
+      "strategy": "Big-gap fade XIU",
+      "currency": "CAD",
+      "size": 32,
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "why": "paper-only",
+      "state": "unrealized",
+      "outcome": null,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "exit": 51.63,
+      "fees": 0.0,
+      "net": -2.56,
+      "netCAD": -2.56
+    },
+    {
+      "id": "2026-11-23-SOFI-1",
+      "date": "2026-11-23",
+      "bot": "scanner",
+      "ticker": "SOFI",
+      "side": "short",
+      "entry": 13.71,
+      "stop": 14.925,
+      "target": 12.495,
+      "shares": 23,
+      "strategy": "Big-gap fade SOFI",
+      "currency": "USD",
+      "size": 23,
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "why": "paper-only",
+      "state": "unrealized",
+      "outcome": null,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "exit": 13.4357,
+      "fees": 0.1011,
+      "net": 6.21,
+      "netCAD": 8.88
+    },
+    {
+      "id": "2026-11-23-HXT-1",
+      "date": "2026-11-23",
+      "bot": "scanner",
+      "ticker": "HXT.TO",
+      "side": "short",
+      "entry": 92.49,
+      "stop": 94.69,
+      "target": 90.29,
+      "shares": 18,
+      "strategy": "Big-gap fade HXT",
+      "currency": "CAD",
+      "size": 18,
+      "loggedAt": "2026-11-23T09:31:52-05:00",
+      "why": "paper-only",
+      "state": "unrealized",
+      "outcome": null,
+      "priceTime": "2026-11-23T09:31:36-05:00",
+      "exit": 92.66,
+      "fees": 0.0,
+      "net": -3.06,
+      "netCAD": -3.06
+    },
     {
       "id": "2026-11-20-ANT-1",
       "date": "2026-11-20",
