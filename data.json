@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 3:28 PM ET",
+  "lastUpdated": "Mon Nov 23, 2026 3:37 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "15:29 refresh",
+        "now": "15:37 refresh",
         "detail": "Flat (only K's manual NVDA); no new entries after 15:15; watchlist refreshed",
-        "since": "2026-11-23T15:28:35-05:00",
+        "since": "2026-11-23T15:37:18-05:00",
         "state": "done",
         "next": "Daily review 4:30 PM",
         "log": [
-          "14:35 flat; only K's manual NVDA; no signals",
           "15:14 flat; only K's manual NVDA; no signals",
-          "15:29 flat; watchlist refresh only"
+          "15:29 flat; watchlist refresh only",
+          "15:37 flat; watchlist refresh only"
         ]
       }
     },
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 166.1601,
-      "priceTime": "2026-11-23T15:28:32-05:00"
+      "last": 166.27,
+      "priceTime": "2026-11-23T15:37:16-05:00"
     },
     {
       "date": "2026-11-23",
@@ -815,7 +815,7 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 48.33,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "priceTime": "2026-11-23T15:37:16-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -847,8 +847,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 227.17,
-      "priceTime": "2026-11-23T15:28:32-05:00"
+      "last": 228.615,
+      "priceTime": "2026-11-23T15:37:14-05:00"
     },
     {
       "date": "2026-11-23",
@@ -873,8 +873,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 207.245,
-      "priceTime": "2026-11-23T15:28:32-05:00"
+      "last": 208.55,
+      "priceTime": "2026-11-23T15:37:16-05:00"
     },
     {
       "date": "2026-11-23",
@@ -899,8 +899,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 709.405,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "last": 709.1657,
+      "priceTime": "2026-11-23T15:37:15-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -933,8 +933,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 97.81,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "last": 97.535,
+      "priceTime": "2026-11-23T15:37:16-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -965,8 +965,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 652.75,
-      "priceTime": "2026-11-23T15:28:32-05:00"
+      "last": 652.76,
+      "priceTime": "2026-11-23T15:37:16-05:00"
     },
     {
       "date": "2026-11-23",
@@ -993,8 +993,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.67,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "last": 51.64,
+      "priceTime": "2026-11-23T15:37:16-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-23T15:15:36-05:00"
@@ -1024,8 +1024,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:HXT",
       "tested": false,
-      "last": 92.8,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "last": 92.74,
+      "priceTime": "2026-11-23T15:37:14-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-23T15:15:36-05:00"
@@ -1055,14 +1055,14 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.175,
-      "priceTime": "2026-11-23T15:28:32-05:00",
+      "last": 13.135,
+      "priceTime": "2026-11-23T15:37:16-05:00",
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-23T15:15:36-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-23T15:28:35-05:00",
+  "watchlistUpdated": "2026-11-23T15:37:18-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
