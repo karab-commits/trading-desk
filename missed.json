@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-23T14:24:22-05:00",
+  "updated": "2026-11-23T14:36:09-05:00",
   "date": "2026-11-23",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -9,9 +9,9 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": -28.91,
+      "net": -26.98,
       "final": -24.36,
-      "unrealized": -4.55,
+      "unrealized": -2.62,
       "ideas": 8,
       "scored": 1,
       "open": 5,
@@ -21,9 +21,9 @@
       "losses": 1
     },
     "week": {
-      "net": -28.91,
+      "net": -26.98,
       "final": -24.36,
-      "unrealized": -4.55,
+      "unrealized": -2.62,
       "ideas": 8,
       "scored": 1,
       "open": 5,
@@ -33,9 +33,9 @@
       "losses": 1
     },
     "allTime": {
-      "net": 177.93,
+      "net": 179.86,
       "final": 182.48,
-      "unrealized": -4.55,
+      "unrealized": -2.62,
       "ideas": 36,
       "scored": 25,
       "open": 5,
@@ -48,19 +48,19 @@
   "byBot": {
     "scanner": {
       "today": {
-        "net": 4.27,
+        "net": 5.3,
         "ideas": 3,
         "scored": 0,
         "open": 3
       },
       "week": {
-        "net": 4.27,
+        "net": 5.3,
         "ideas": 3,
         "scored": 0,
         "open": 3
       },
       "allTime": {
-        "net": 79.98,
+        "net": 81.01,
         "ideas": 9,
         "scored": 2,
         "open": 3
@@ -68,19 +68,19 @@
     },
     "quant": {
       "today": {
-        "net": -33.18,
+        "net": -32.28,
         "ideas": 5,
         "scored": 1,
         "open": 2
       },
       "week": {
-        "net": -33.18,
+        "net": -32.28,
         "ideas": 5,
         "scored": 1,
         "open": 2
       },
       "allTime": {
-        "net": 124.68,
+        "net": 125.58,
         "ideas": 22,
         "scored": 18,
         "open": 2
@@ -225,11 +225,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-23T14:24:03-05:00",
-      "exit": 97.395,
-      "fees": 0.0166,
-      "net": 0.82,
-      "netCAD": 1.18
+      "priceTime": "2026-11-23T14:35:50-05:00",
+      "exit": 97.28,
+      "fees": 0.0201,
+      "net": 1.05,
+      "netCAD": 1.5
     },
     {
       "id": "2026-11-23-MU-1",
@@ -276,11 +276,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-23T14:24:03-05:00",
-      "exit": 47.77,
-      "fees": 0.1109,
-      "net": -6.99,
-      "netCAD": -10.0
+      "priceTime": "2026-11-23T14:35:50-05:00",
+      "exit": 47.72,
+      "fees": 0.1049,
+      "net": -6.58,
+      "netCAD": -9.42
     },
     {
       "id": "2026-11-23-XIU-1",
@@ -299,11 +299,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-23T14:24:03-05:00",
-      "exit": 51.73,
+      "priceTime": "2026-11-23T14:35:50-05:00",
+      "exit": 51.74,
       "fees": 0.0,
-      "net": -5.76,
-      "netCAD": -5.76
+      "net": -6.08,
+      "netCAD": -6.08
     },
     {
       "id": "2026-11-23-SOFI-1",
@@ -322,11 +322,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-23T14:24:03-05:00",
-      "exit": 13.1667,
-      "fees": 0.1939,
-      "net": 12.3,
-      "netCAD": 17.59
+      "priceTime": "2026-11-23T14:35:50-05:00",
+      "exit": 13.125,
+      "fees": 0.2083,
+      "net": 13.25,
+      "netCAD": 18.94
     },
     {
       "id": "2026-11-23-HXT-1",
@@ -345,7 +345,7 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "exit": 92.91,
       "fees": 0.0,
       "net": -7.56,

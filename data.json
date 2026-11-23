@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 2:24 PM ET",
+  "lastUpdated": "Mon Nov 23, 2026 2:36 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "14:15 scan: TXN/MiniMed/NVDA upgrades all >60 min old; no signal",
+      "status": "News Desk entry window ended 14:30; no signals today after 14:24",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,23 +61,23 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "14:24 no fresh catalyst",
-        "detail": "14:15 scan: TXN/MiniMed/NVDA upgrades all >60 min old; no signal",
-        "since": "2026-11-23T14:24:22-05:00",
-        "state": "idle",
+        "now": "Window closed 14:30",
+        "detail": "News Desk entry window ended 14:30; no signals today after 14:24",
+        "since": "2026-11-23T14:36:09-05:00",
+        "state": "done",
         "log": [
-          "13:55 news scan: no signal",
           "14:15 news scan: no signal",
-          "14:24 no headline <=60 min w/ 2% move; window ends 14:30"
+          "14:24 no headline <=60 min w/ 2% move; window ends 14:30",
+          "14:35 window closed, no new ideas"
         ],
-        "next": "Window ends 14:30"
+        "next": "Close-out 3:15"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "14:15: QQQ 651.54 inside session range 641.95-657.53; no RVOL breakout",
+      "status": "14:35: QQQ 650.95 inside session range 641.95-657.53; no RVOL breakout (paper)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ 650.92 in range",
-        "detail": "14:15: QQQ 651.54 inside session range 641.95-657.53; no RVOL breakout",
-        "since": "2026-11-23T14:24:22-05:00",
+        "now": "QQQ 650.95 in range",
+        "detail": "14:35: QQQ 650.95 inside session range 641.95-657.53; no RVOL breakout (paper)",
+        "since": "2026-11-23T14:36:09-05:00",
         "state": "idle",
         "next": "Window ends 15:00",
         "log": [
-          "13:36 QQQ no signal",
           "14:15 QQQ no break",
-          "14:24 QQQ no day high/low break (paper)"
+          "14:24 QQQ no day high/low break (paper)",
+          "14:35 QQQ no day high/low break (paper)"
         ]
       }
     },
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "14:15: no checks needed; desk flat (K's manual NVDA excluded)",
+      "status": "14:35: no checks needed; desk flat (K's manual NVDA excluded)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -113,14 +113,14 @@
       "rejectedAllTime": 10,
       "activity": {
         "now": "0/150 used, 0/4 open",
-        "detail": "14:15: no checks needed; desk flat (K's manual NVDA excluded)",
-        "since": "2026-11-23T14:16:52-05:00",
+        "detail": "14:35: no checks needed; desk flat (K's manual NVDA excluded)",
+        "since": "2026-11-23T14:36:09-05:00",
         "state": "idle",
         "next": "Checks every order",
         "log": [
-          "10:58 manual NVDA position noted, not managed",
           "13:55 budgets refreshed",
-          "14:15 no orders to check"
+          "14:15 no orders to check",
+          "14:35 no orders to check"
         ]
       }
     },
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "No valid signals; watchlist refreshed",
+      "status": "All live windows closed; no valid signals; watchlist refreshed",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "14:24 check: no orders",
-        "detail": "No valid signals; watchlist refreshed",
-        "since": "2026-11-23T14:24:22-05:00",
+        "now": "14:35 check: no orders",
+        "detail": "All live windows closed; no valid signals; watchlist refreshed",
+        "since": "2026-11-23T14:36:09-05:00",
         "state": "idle",
-        "next": "Next check 14:30",
+        "next": "Next check 14:45",
         "log": [
-          "13:55 no signals, watchlist refreshed",
           "14:15 intraday: no orders",
-          "14:24 flat; only K's manual NVDA; no signals"
+          "14:24 flat; only K's manual NVDA; no signals",
+          "14:35 flat; only K's manual NVDA; no signals"
         ]
       }
     },
@@ -198,7 +198,7 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "14:15: no valid underlying signal to express",
+      "status": "No valid underlying signal; options window ended 14:30",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -206,15 +206,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No source signal",
-        "detail": "14:15: no valid underlying signal to express",
-        "since": "2026-11-23T14:16:52-05:00",
-        "state": "idle",
-        "next": "Window ends 14:30",
+        "now": "Window closed 14:30",
+        "detail": "No valid underlying signal; options window ended 14:30",
+        "since": "2026-11-23T14:36:09-05:00",
+        "state": "done",
+        "next": "Close-out 3:15",
         "log": [
-          "16:55 EOD: 0 spreads",
           "13:55 no spread",
-          "14:15 no spread"
+          "14:15 no spread",
+          "14:35 window closed, 0 spreads"
         ]
       }
     }
@@ -788,8 +788,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 164.7,
-      "priceTime": "2026-11-23T14:24:03-05:00"
+      "last": 164.93,
+      "priceTime": "2026-11-23T14:35:50-05:00"
     },
     {
       "date": "2026-11-23",
@@ -814,8 +814,8 @@
       "netLossAtStopCAD": -38.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 47.77,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "last": 47.72,
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "entry": 48.59,
       "stop": 51.9,
       "target": 41.97,
@@ -846,8 +846,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 225.145,
-      "priceTime": "2026-11-23T14:24:03-05:00"
+      "last": 224.84,
+      "priceTime": "2026-11-23T14:35:50-05:00"
     },
     {
       "date": "2026-11-23",
@@ -872,8 +872,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 205.0605,
-      "priceTime": "2026-11-23T14:24:03-05:00"
+      "last": 205.1009,
+      "priceTime": "2026-11-23T14:35:50-05:00"
     },
     {
       "date": "2026-11-23",
@@ -898,8 +898,8 @@
       "netLossAtStopCAD": -31.38,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 706.7,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "last": 706.325,
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "entry": 672.31,
       "stop": 693.92,
       "target": 629.09,
@@ -932,8 +932,8 @@
       "netLossAtStopCAD": -27.32,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 97.395,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "last": 97.28,
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "entry": 100.64,
       "stop": 110.05,
       "target": 81.82,
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 650.92,
-      "priceTime": "2026-11-23T14:24:03-05:00"
+      "last": 650.95,
+      "priceTime": "2026-11-23T14:35:50-05:00"
     },
     {
       "date": "2026-11-23",
@@ -991,8 +991,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.73,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "last": 51.74,
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1022,7 +1022,7 @@
       "tvSymbol": "TSX:HXT",
       "tested": false,
       "last": 92.91,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1051,13 +1051,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.1667,
-      "priceTime": "2026-11-23T14:24:03-05:00",
+      "last": 13.125,
+      "priceTime": "2026-11-23T14:35:50-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T14:24:16-05:00",
+  "watchlistUpdated": "2026-11-23T14:35:59-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
@@ -1416,7 +1416,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-23",
-    "updated": "2026-11-23T14:23:31-05:00",
+    "updated": "2026-11-23T14:35:29-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
