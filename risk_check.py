@@ -22,7 +22,8 @@ Checks (any failure = BLOCK):
            the same direction; or 20-day daily-return correlation > 0.8 with an open same-direction position
            (only when both tickers are in bars/*.csv; else groups only)
   mode:    strategies.json mode/modes: 'paper' strategies are BLOCKed ('paper-only: retired'; Quant Lab VWAP).
-           Bots with several strategies must pass --strategy (Quant Lab: orb | vwap | sip_orb)
+           A sub-mode may be {long: live, short: paper} (Quant Lab ORB from Nov 23: longs live, shorts paper).
+           Bots with several strategies must pass --strategy (Quant Lab: orb | vwap | sip_orb) and --side
   debate:  strategies with devils_advocate.required (News Desk; Quant Lab's Stocks-in-play ORB, pass
            --strategy sip_orb) need --idea <journal id> whose debate verdict is 'take' (debate.py)
 Real trades = journal ideas with taken == 'yes' (log_idea.py resolve --taken yes --real-pnl X). Open/pending =
@@ -264,16 +265,36 @@ def choices(strategies, bot):
     return out
 
 
-def resolve_strategy(strategies, bot, text):
+def effective_mode(mode_val, side=None):
+    """Resolve a mode value to 'live' | 'paper' | 'mixed'.
+
+    mode_val is a string (live|paper|mixed) or a side map such as
+    {long: live, short: paper} (Quant Lab ORB from Nov 23).
+    """
+    if isinstance(mode_val, dict):
+        if side in ('long', 'short') and mode_val.get(side):
+            return mode_val[side]
+        vals = {mode_val[k] for k in ('long', 'short') if mode_val.get(k)}
+        if len(vals) == 1:
+            return next(iter(vals))
+        return 'mixed'
+    return mode_val
+
+
+def resolve_strategy(strategies, bot, text, side=None):
     """Match free text (or an id/alias) to one of the bot's strategies; the longest alias contained in the text wins.
-    Returns {strategy, sub, mode, label} or None. Mode = sub-mode (modes{}) or the strategy's mode (default live)."""
+    Returns {strategy, sub, mode, modeRaw, label} or None. Mode = effective_mode of the sub-mode (modes{})
+    or the strategy's mode (default live), using --side when the mode is a long/short map."""
     L = bot_strategies(strategies, bot)
     if not L:
         return None
     if not text:
         if needs_name(strategies, bot):
             return None
-        st = L[0]; return dict(strategy=st, sub=None, mode=st.get('mode', 'live'), label=st.get('short') or st.get('name'))
+        st = L[0]
+        raw = st.get('mode', 'live')
+        return dict(strategy=st, sub=None, mode=effective_mode(raw, side), modeRaw=raw,
+                    label=st.get('short') or st.get('name'))
     t = text.lower(); best = None
     for st in L:
         for al, sub in _aliases(st):
@@ -284,8 +305,10 @@ def resolve_strategy(strategies, bot, text):
     _, st, sub = best
     if st.get('modes') and sub is None:
         return None if needs_name(strategies, bot) and len(st['modes']) > 1 else None
-    mode = st['modes'][sub] if sub else st.get('mode', 'live')
-    return dict(strategy=st, sub=sub, mode=mode, label=f"{st.get('short')} / {sub}" if sub else (st.get('short') or st.get('name')))
+    raw = st['modes'][sub] if sub else st.get('mode', 'live')
+    mode = effective_mode(raw, side)
+    return dict(strategy=st, sub=sub, mode=mode, modeRaw=raw,
+                label=f"{st.get('short')} / {sub}" if sub else (st.get('short') or st.get('name')))
 
 # ------------------------------------------------------------------ main
 def main():
@@ -293,7 +316,7 @@ def main():
     ap.add_argument('--bot'); ap.add_argument('--ticker'); ap.add_argument('--side', choices=['long', 'short'])
     ap.add_argument('--risk', type=float, help='this trade\'s max loss to the stop in CAD, after fees')
     ap.add_argument('--idea', help='journal idea id (needed for strategies with a devil\'s-advocate debate)')
-    ap.add_argument('--strategy', help='which strategy (required for Quant Lab: orb | vwap | sip_orb); paper-mode strategies always BLOCK')
+    ap.add_argument('--strategy', help='which strategy (required for Quant Lab: orb | vwap | sip_orb); paper-mode strategies always BLOCK; side-specific modes (ORB longs live / shorts paper) use --side')
     ap.add_argument('--open', action='append', default=[], metavar='TICKER:side[:riskCAD[:bot]]')
     ap.add_argument('--date', help='trading date (default today ET)')
     ap.add_argument('--now', help='HH:MM ET override for the 15:15 cutoff (testing)')
@@ -399,14 +422,18 @@ def main():
     # devil's advocate
     strats = []
     if bot_strategies(strategies, bot):
-        rs = resolve_strategy(strategies, bot, a.strategy)
+        rs = resolve_strategy(strategies, bot, a.strategy, side=side)
         if rs is None:
             block.append(f"name the strategy: --strategy {'|'.join(choices(strategies, bot))}" if not a.strategy
                          else f"unknown strategy {a.strategy!r} for {bot} (use {'|'.join(choices(strategies, bot))})")
         else:
             strats = [rs['strategy']]
             if rs['mode'] == 'paper':
-                block.append(f"paper-only: retired ({rs['label']}) - log the signal with log_idea.py as a paper idea, never send a real order")
+                raw = rs.get('modeRaw', 'paper')
+                if isinstance(raw, dict):
+                    block.append(f"paper-only for {side}s ({rs['label']}) - log the signal with log_idea.py as a paper idea, never send a real order")
+                else:
+                    block.append(f"paper-only: retired ({rs['label']}) - log the signal with log_idea.py as a paper idea, never send a real order")
             elif rs['mode'] != 'live':
                 block.append(f"strategy mode {rs['mode']!r} is not live ({rs['label']})")
             else:

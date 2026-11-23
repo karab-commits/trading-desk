@@ -243,22 +243,26 @@ def cmd_add(a):
         idea['loggedLate'] = True
         idea['loggedPrice'] = a.logged_price
     idea['plan'] = plan_numbers(idea, cfg)
-    # strategy mode from strategies.json (live | paper): paper-only strategies are logged but never traded
-    mode, mlabel = 'live', None
+    # strategy mode from strategies.json (live | paper, or a long/short map): paper-only strategies/sides are logged but never traded
+    mode, mlabel, raw_mode = 'live', None, None
     try:
         sys.path.insert(0, HERE)
         import risk_check as _rc
         _S = load_json(os.path.join(ddir, 'strategies.json'), {})
-        _r = _rc.resolve_strategy(_S, a.bot, a.strategy_id or a.strategy)
+        _r = _rc.resolve_strategy(_S, a.bot, a.strategy_id or a.strategy, side=a.side)
         if _r:
             mode, mlabel = _r['mode'], _r['label']
+            raw_mode = _r.get('modeRaw')
     except Exception:
         pass
     if a.paper:
         mode = 'paper'
     idea['mode'] = mode
     if mode == 'paper':
-        idea['paperReason'] = f'paper-only: retired ({mlabel})' if mlabel else 'paper-only'
+        if isinstance(raw_mode, dict):
+            idea['paperReason'] = f'paper-only for {a.side}s ({mlabel})'
+        else:
+            idea['paperReason'] = f'paper-only: retired ({mlabel})' if mlabel else 'paper-only'
     # market-mood tag (regime.py): tag only, never a filter
     try:
         sys.path.insert(0, HERE)

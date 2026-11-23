@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 10:27 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 10:34 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -151,7 +151,7 @@
     {
       "id": "quant",
       "name": "Quant Lab",
-      "role": "Trades the 15-min ORB and the Stocks-in-play ORB (testing); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
+      "role": "Trades the 15-min ORB (live for longs, paper for shorts as of Nov 23) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
       "status": "NBIS 104.57 (stop 110.05), CRWV 50.24 (stop 51.90); MU stopped; NVDA never broke its OR low",
       "pnlToday": 0,
       "pnlWeek": 0.0,
@@ -244,7 +244,7 @@
     "projectedNet": 0,
     "maxLossNet": 0,
     "status": "No real trades Nov 20: 0 orders sent, 0 fills in account 0944 (flat, equity 2,472.11 CAD). Paper: 5 shorts (4 targets, 1 flat at the close), +191.90 CAD after fees (Quant +160.48, Whale +31.42).",
-    "condition": "Shorts stay paper until K accepts the Questrade borrow agreement in Edge; ORB, SIP ORB and Whale QQQ are paper-only"
+    "condition": "Shorts stay paper until K accepts the Questrade borrow agreement in Edge; ORB longs are live as of Nov 23; ORB shorts, SIP ORB and Whale QQQ stay paper-only"
   },
   "watching": [
     {
@@ -322,7 +322,7 @@
     "One bet per correlation group and direction (risk_check.py)",
     "News Desk: devil's-advocate debate before every entry (veto only)",
     "Quant Lab VWAP reclaim/loss: paper-only (retired Nov 2, decided by Kiwi)",
-    "Quant Lab ORB (15-min): paper-only from Nov 20 (demoted Nov 19 by Kiwi: forward record negative); back live after 20 paper trades with positive avg R + positive OOS"
+    "Quant Lab ORB (15-min): live for longs as of Nov 23 (Kiwi re-enabled to get real trades; same $40 CAD max risk, same trend filter and other rules). Shorts stay paper until K accepts the Questrade borrow agreement in Edge. Still testing on the 20-trade promotion bar (5 journal ideas, +0.48R)."
   ],
   "playbook": [
     {
@@ -335,11 +335,11 @@
     },
     {
       "name": "Opening-range breakout (15-min), volume-confirmed (Quant Lab) · XIU/QQC/QQQ",
-      "status": "paper",
+      "status": "live (longs)",
       "trades": 53,
       "winRate": 62.3,
       "expectancyR": 0.131,
-      "note": "Already Quant Lab's live strategy in strategies.json (not new); added to the playbook board Nov 18 2026. Walk-forward on Questrade 30-min bars May 4 - Nov 18 2026 (walkforward-2026-11-18): OOS +0.131R on 53, positive in 4/5 windows; per ticker XIU +0.117 (12), QQC +0.324 (16), QQQ +0.246 (12), ZEB -0.201 (13, already dropped from the universe). Live params +0.049R on 42 OOS, but -0.323R on 6 in the Nov 2-18 window. Calm +0.186R (30) / volatile +0.059R (23). 2 journal trades (need 20); stays testing/live. | Nov 19 review (walkforward-2026-11-19, 30-min bars to Nov 19): OOS unchanged +0.131R on 53, 4/5 windows, 0 look-ahead leaks; calm +0.186R (30) / volatile +0.059R (23). Forward record negative: journal QQC +0.565R, MSFT -1.009R (order expired unapproved; would have stopped 10:15-10:30) = -0.22R on 2; live params -0.323R on 6 in the Nov window. DEMOTED to paper only by Kiwi (rule: demote anything negative live). Back live after 20 paper trades with positive avg R + positive OOS. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks. Forward: 2 paper shorts hit target today (QQQ +1.82R / +49.25 CAD, NVDA +2.03R / +61.92 CAD); journal ORB now 5 ideas avg +0.48R. Stays paper (5 of 20 paper trades needed)."
+      "note": "Already Quant Lab's live strategy in strategies.json (not new); added to the playbook board Nov 18 2026. Walk-forward on Questrade 30-min bars May 4 - Nov 18 2026 (walkforward-2026-11-18): OOS +0.131R on 53, positive in 4/5 windows; per ticker XIU +0.117 (12), QQC +0.324 (16), QQQ +0.246 (12), ZEB -0.201 (13, already dropped from the universe). Live params +0.049R on 42 OOS, but -0.323R on 6 in the Nov 2-18 window. Calm +0.186R (30) / volatile +0.059R (23). 2 journal trades (need 20); stays testing/live. | Nov 19 review (walkforward-2026-11-19, 30-min bars to Nov 19): OOS unchanged +0.131R on 53, 4/5 windows, 0 look-ahead leaks; calm +0.186R (30) / volatile +0.059R (23). Forward record negative: journal QQC +0.565R, MSFT -1.009R (order expired unapproved; would have stopped 10:15-10:30) = -0.22R on 2; live params -0.323R on 6 in the Nov window. DEMOTED to paper only by Kiwi (rule: demote anything negative live). Back live after 20 paper trades with positive avg R + positive OOS. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks. Forward: 2 paper shorts hit target today (QQQ +1.82R / +49.25 CAD, NVDA +2.03R / +61.92 CAD); journal ORB now 5 ideas avg +0.48R. Stays paper (5 of 20 paper trades needed). | Nov 23 (Kiwi): re-enabled for LONGS only, effective immediately, after K said there hasn't been a trade for too long. Same $40 CAD max risk, same trend filter and other rules. Shorts stay paper until the Questrade borrow agreement is accepted in Edge. Still testing (5 of 20 journal trades)."
     },
     {
       "name": "Stocks-in-play 15-min ORB (Quant Lab, scout Whale Tracker)",
