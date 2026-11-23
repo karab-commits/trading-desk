@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 9:32 AM ET",
+  "lastUpdated": "Mon Nov 23, 2026 9:36 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -787,7 +787,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 160.34,
+      "priceTime": "2026-11-23T09:36:18-05:00"
     },
     {
       "date": "2026-11-23",
@@ -811,7 +813,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 50.19,
+      "priceTime": "2026-11-23T09:36:19-05:00"
     },
     {
       "date": "2026-11-23",
@@ -835,7 +839,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 232.6,
+      "priceTime": "2026-11-23T09:36:18-05:00"
     },
     {
       "date": "2026-11-23",
@@ -859,7 +865,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 211.675,
+      "priceTime": "2026-11-23T09:36:19-05:00"
     },
     {
       "date": "2026-11-23",
@@ -883,7 +891,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 679.25,
+      "priceTime": "2026-11-23T09:36:19-05:00"
     },
     {
       "date": "2026-11-23",
@@ -907,7 +917,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 104.87,
+      "priceTime": "2026-11-23T09:36:18-05:00"
     },
     {
       "date": "2026-11-23",
@@ -930,7 +942,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 646.285,
+      "priceTime": "2026-11-23T09:36:18-05:00"
     },
     {
       "date": "2026-11-23",
@@ -957,8 +971,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:XIU",
       "tested": false,
-      "last": 51.63,
-      "priceTime": "2026-11-23T09:31:36-05:00",
+      "last": 51.38,
+      "priceTime": "2026-11-23T09:36:17-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -987,8 +1001,8 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "TSX:HXT",
       "tested": false,
-      "last": 92.66,
-      "priceTime": "2026-11-23T09:31:36-05:00",
+      "last": 92.27,
+      "priceTime": "2026-11-23T09:36:08-05:00",
       "openPnl": null,
       "openPnlCAD": null
     },
@@ -1017,13 +1031,13 @@
       "testNote": "testing (walk-forward positive, under 20 journal trades); paper: short borrow agreement not accepted",
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
-      "last": 13.4357,
-      "priceTime": "2026-11-23T09:31:36-05:00",
+      "last": 13.42,
+      "priceTime": "2026-11-23T09:36:18-05:00",
       "openPnl": null,
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-23T09:31:59-05:00",
+  "watchlistUpdated": "2026-11-23T09:36:33-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
