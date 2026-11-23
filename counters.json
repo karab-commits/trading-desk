@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T13:08:24-05:00",
+  "updated": "2026-11-23T13:28:54-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3606,7 +3606,7 @@
  },
  "2026-11-23": {
   "kiwi": {
-   "quotesCalls": 15,
+   "quotesCalls": 16,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -3622,7 +3622,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 16,
+   "runs": 17,
    "symbolsQuoted": {
     "unique": [
      "NVDA",
@@ -3642,14 +3642,14 @@
      "AMZN",
      "META"
     ],
-    "total": 166
+    "total": 177
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-23T13:08:24-05:00"
+   "lastRun": "2026-11-23T13:28:54-05:00"
   },
   "scanner": {
    "quotesCalls": 2,
@@ -3697,7 +3697,7 @@
    "bars": 0,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 6,
+   "webSearches": 7,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
@@ -3772,9 +3772,14 @@
       "title": "Crude Oil Down 4%; Nvidia Shares Spike Higher",
       "url": "https://www.benzinga.com/markets/market-summary/26/11/63547457/crude-oil-down-4-nvidia-shares-spike-higher",
       "time": "2026-11-23T12:16:00-05:00"
+     },
+     {
+      "title": "Stock Market Today Live, November 23, 2026: Nvidia Brings Back Jensen Huang as CEO",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-23-2026",
+      "time": "2026-11-23T13:10:00-05:00"
      }
     ],
-    "count": 9,
+    "count": 10,
     "seen": [
      "fcf9c1d2a59d",
      "0ceef495df71",
@@ -3784,7 +3789,8 @@
      "1f7bfb629258",
      "de960aad8494",
      "17f3df8de2d7",
-     "2d5b43f5c7bf"
+     "2d5b43f5c7bf",
+     "fcff5bff3c7f"
     ]
    },
    "lastRun": null
