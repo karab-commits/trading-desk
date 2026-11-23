@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Nov 23, 2026 3:14 PM ET",
+  "lastUpdated": "Mon Nov 23, 2026 3:15 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Flat (only K's manual NVDA); live windows closed; no new entries after 15:15; watchlist refreshed",
+      "status": "Close-out 3:15 PM: no desk positions or working orders; 0 real desk trades today. K's manual NVDA buy is open (not a desk trade). All 8 paper ideas resolved from 5-min bars.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "15:14 check",
-        "detail": "Flat (only K's manual NVDA); live windows closed; no new entries after 15:15; watchlist refreshed",
-        "since": "2026-11-23T15:14:31-05:00",
+        "now": "Flat; 0 real trades",
+        "detail": "Close-out 3:15 PM: no desk positions or working orders; 0 real desk trades today. K's manual NVDA buy is open (not a desk trade). All 8 paper ideas resolved from 5-min bars.",
+        "since": "2026-11-23T15:15:30-05:00",
         "state": "done",
-        "next": "Check 3:11 PM",
+        "next": "Daily review 4:30 PM",
         "log": [
           "14:24 flat; only K's manual NVDA; no signals",
           "14:35 flat; only K's manual NVDA; no signals",
@@ -176,7 +176,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "W47 paper +146.03 CAD on 16 (exp +0.26R); real 0 trades",
+      "status": "All of today's paper ideas scored from Questrade 5-min bars.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -184,11 +184,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Week 47 scorecard posted",
-        "detail": "W47 paper +146.03 CAD on 16 (exp +0.26R); real 0 trades",
-        "since": "2026-11-20T17:14:45-05:00",
+        "now": "Resolved 8 paper ideas",
+        "detail": "All of today's paper ideas scored from Questrade 5-min bars.",
+        "since": "2026-11-23T15:15:30-05:00",
         "state": "done",
-        "next": "Mon close-out",
+        "next": "Daily review 4:30 PM",
         "log": [
           "16:55 ANT re-scored at 4 PM close"
         ]
@@ -669,7 +669,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-23T12:17:44-05:00",
+    "updated": "2026-11-23T15:15:23-05:00",
     "ideasLogged": 38,
     "byDate": {
       "2026-11-02": {
@@ -753,12 +753,12 @@
         "taken": 0
       },
       "2026-11-23": {
-        "net": 0.0,
+        "net": -26.79,
         "ideas": 8,
-        "resolved": 0,
-        "open": 8,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 8,
+        "open": 0,
+        "filled": 8,
+        "wins": 2,
         "real": 0.0,
         "taken": 0
       }
@@ -794,7 +794,7 @@
     {
       "date": "2026-11-23",
       "ticker": "CRWV",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-23T09:06:35-05:00",
       "side": "short",
@@ -821,7 +821,8 @@
       "target": 41.97,
       "shares": 8,
       "planFrom": "journal",
-      "journalId": "2026-11-23-CRWV-1"
+      "journalId": "2026-11-23-CRWV-1",
+      "statusAt": "2026-11-23T15:15:36-05:00"
     },
     {
       "date": "2026-11-23",
@@ -912,7 +913,7 @@
     {
       "date": "2026-11-23",
       "ticker": "NBIS",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-23T09:06:36-05:00",
       "side": "short",
@@ -939,7 +940,8 @@
       "target": 81.82,
       "shares": 2,
       "planFrom": "journal",
-      "journalId": "2026-11-23-NBIS-1"
+      "journalId": "2026-11-23-NBIS-1",
+      "statusAt": "2026-11-23T15:15:36-05:00"
     },
     {
       "date": "2026-11-23",
@@ -969,7 +971,7 @@
     {
       "date": "2026-11-23",
       "ticker": "XIU.TO",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-23T09:31:59-05:00",
       "side": "short",
@@ -994,12 +996,13 @@
       "last": 51.67,
       "priceTime": "2026-11-23T15:14:04-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-23T15:15:36-05:00"
     },
     {
       "date": "2026-11-23",
       "ticker": "HXT.TO",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-23T09:31:59-05:00",
       "side": "short",
@@ -1024,12 +1027,13 @@
       "last": 92.71,
       "priceTime": "2026-11-23T15:14:04-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-23T15:15:36-05:00"
     },
     {
       "date": "2026-11-23",
       "ticker": "SOFI",
-      "status": "triggered",
+      "status": "closed",
       "closeBy": "16:00",
       "addedAt": "2026-11-23T09:31:59-05:00",
       "side": "short",
@@ -1054,10 +1058,11 @@
       "last": 13.175,
       "priceTime": "2026-11-23T15:14:03-05:00",
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "statusAt": "2026-11-23T15:15:36-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-23T15:14:22-05:00",
+  "watchlistUpdated": "2026-11-23T15:15:36-05:00",
   "scorecard": {
     "updated": "2026-11-20T17:14:37-05:00",
     "currency": "CAD",
