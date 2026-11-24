@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T09:12:00-05:00",
+  "lastUpdated": "2026-11-24T09:31:00-05:00",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "XIU long <=50.90 / short >=52.30; HXT long <=91.40; SOFI long <=12.41. Pre-mkt gaps all under trigger.",
+      "status": "Open gaps: XIU -0.28 vs 0.70 trigger, HXT -0.32 vs 1.23, SOFI -0.14 vs 0.67. No orders.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,16 +37,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap triggers set, open 9:30",
-        "detail": "XIU long <=50.90 / short >=52.30; HXT long <=91.40; SOFI long <=12.41. Pre-mkt gaps all under trigger.",
-        "since": "2026-11-24T09:04:06-05:00",
-        "state": "waiting",
+        "now": "No gap fades at the open",
+        "detail": "Open gaps: XIU -0.28 vs 0.70 trigger, HXT -0.32 vs 1.23, SOFI -0.14 vs 0.67. No orders.",
+        "since": "2026-11-24T09:31:03-05:00",
+        "state": "done",
         "log": [
-          "Gap check: XIU/SOFI/HXT all under trigger, no orders",
           "13:20 scanner: done for the day",
-          "16:55 WF: SOFI +0.365R, HXT +0.028R OOS"
-        ],
-        "next": "Open check 9:30"
+          "16:55 WF: SOFI +0.365R, HXT +0.028R OOS",
+          "9:30 gap check: all under trigger, no orders"
+        ]
       }
     },
     {
@@ -128,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Mood volatile, futures red (SPY -1.1%, QQQ -2%). Watching gap fades at the open.",
+      "status": "No gap fade triggered at the open. Intraday routine takes News/SIP/whale signals from 9:45.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +135,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market set, open 9:30",
-        "detail": "Mood volatile, futures red (SPY -1.1%, QQQ -2%). Watching gap fades at the open.",
-        "since": "2026-11-24T09:04:06-05:00",
-        "state": "working",
-        "next": "Open check 9:30",
+        "now": "Flat; 0 orders at open",
+        "detail": "No gap fade triggered at the open. Intraday routine takes News/SIP/whale signals from 9:45.",
+        "since": "2026-11-24T09:31:03-05:00",
+        "state": "waiting",
+        "next": "Intraday 9:45",
         "log": [
-          "15:29 flat; watchlist refresh only",
           "15:37 flat; watchlist refresh only",
-          "15:58 flat; watchlist refresh only"
+          "15:58 flat; watchlist refresh only",
+          "9:30 open: no gap fades, 0 orders"
         ]
       }
     },
@@ -556,6 +555,10 @@
     {
       "date": "Nov 24",
       "text": "Pre-market: mood volatile (SPY rv10 34.2% vs 11.4% median); futures red (SPY -1.1%, QQQ -2%, NVDA -4.7% after Monday's +31.5%); gap triggers XIU 0.70, HXT 1.23, SOFI 0.67, pre-mkt gaps under trigger; news DLTR DKS long, HPE SMTC short paper; SIP NVDA INSM paper; whale QQQ paper"
+    },
+    {
+      "date": "Nov 24",
+      "text": "9:30 open: no gap fades (XIU -0.28 vs 0.70, HXT -0.32 vs 1.23, SOFI -0.14 vs 0.67); 0 orders sent"
     }
   ],
   "sources": [
@@ -778,13 +781,13 @@
     {
       "date": "2026-11-24",
       "ticker": "XIU.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-24T09:04:06-05:00",
       "side": "long",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "Buy at the open only if it is <= 50.90 (gap down >= 0.70 = 0.75x ATR14 0.933; prev close 51.60). Short trigger 52.30 (paper: borrow agreement). Pre-mkt est (SPY -1.1%): about -0.3.",
+      "reason": "Open 51.32 vs prev close 51.60 = gap -0.28, under the 0.70 trigger (0.75x ATR14 0.933). No gap fade today.",
       "trigger": 50.9,
       "tvSymbol": "TSX:XIU",
       "tested": false,
@@ -796,18 +799,23 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 51.16,
+      "priceTime": "2026-11-24T09:30:49-05:00",
+      "statusAt": "2026-11-24T09:31:03-05:00",
+      "triggeredAt": "2026-11-24T09:30:49-05:00",
+      "triggerPrice": 51.16
     },
     {
       "date": "2026-11-24",
       "ticker": "HXT.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-24T09:04:06-05:00",
       "side": "long",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "Buy at the open only if it is <= 91.40 (gap down >= 1.23 = 0.75x ATR14 1.639; prev close 92.63). Short trigger 93.86 (paper). Same group as XIU.",
+      "reason": "Open 92.31 vs prev close 92.63 = gap -0.32, under the 1.23 trigger (0.75x ATR14 1.639). No gap fade today.",
       "trigger": 91.4,
       "tvSymbol": "TSX:HXT",
       "tested": false,
@@ -819,18 +827,23 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 92.0,
+      "priceTime": "2026-11-24T09:30:49-05:00",
+      "statusAt": "2026-11-24T09:31:03-05:00",
+      "triggeredAt": "2026-11-24T09:30:49-05:00",
+      "triggerPrice": 92.0
     },
     {
       "date": "2026-11-24",
       "ticker": "SOFI",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-24T09:04:06-05:00",
       "side": "long",
       "strategy": "Big-gap fade (0.75x ATR14)",
       "bot": "scanner",
-      "reason": "Buy at the open only if it is <= 12.41 (gap down >= 0.67 = 0.75x ATR14 0.891; prev close 13.08). Pre-mkt 12.86 (gap -0.22), under trigger. Short trigger 13.75 (paper).",
+      "reason": "Open 12.94 vs prev close 13.08 = gap -0.14, under the 0.67 trigger (0.75x ATR14 0.891). No gap fade today.",
       "trigger": 12.41,
       "tvSymbol": "NASDAQ:SOFI",
       "tested": false,
@@ -842,7 +855,12 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 12.965,
+      "priceTime": "2026-11-24T09:30:39-05:00",
+      "statusAt": "2026-11-24T09:31:03-05:00",
+      "triggeredAt": "2026-11-24T09:30:39-05:00",
+      "triggerPrice": 12.965
     },
     {
       "date": "2026-11-24",
@@ -996,7 +1014,7 @@
       "openPnlCAD": null
     }
   ],
-  "watchlistUpdated": "2026-11-24T09:04:06-05:00",
+  "watchlistUpdated": "2026-11-24T09:31:03-05:00",
   "scorecard": {
     "updated": "2026-11-23T16:54:46-05:00",
     "currency": "CAD",
