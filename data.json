@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 24, 2026 10:55 AM ET",
+  "lastUpdated": "Tue Nov 24, 2026 11:10 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "10:55: earnings headlines past the 60-min rule; no fresh headline",
+      "status": "11:10: earnings headlines past the 60-min rule; no fresh headline",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,22 +61,22 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "DLTR/DKS: no valid signal",
-        "detail": "10:55: earnings headlines past the 60-min rule; no fresh headline",
-        "since": "2026-11-24T10:55:55-05:00",
+        "detail": "11:10: earnings headlines past the 60-min rule; no fresh headline",
+        "since": "2026-11-24T11:10:48-05:00",
         "state": "working",
         "log": [
           "14:15 news scan: no signal",
           "14:24 no headline <=60 min w/ 2% move; window ends 14:30",
           "14:35 window closed, no new ideas"
         ],
-        "next": "Next check 11:10"
+        "next": "Next check 11:25"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "10:40 bar closed 632.87 below session low 633.85 and VWAP, volume 773k = 1.0x the 8-day slot average (needs 2.0), so no signal (paper)",
+      "status": "11:10: no 5-min close below the prior session low since 10:40 (1.0x RVOL); QQQ 633.66 (paper)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -84,11 +84,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ new low, RVOL 1.0",
-        "detail": "10:40 bar closed 632.87 below session low 633.85 and VWAP, volume 773k = 1.0x the 8-day slot average (needs 2.0), so no signal (paper)",
-        "since": "2026-11-24T10:55:56-05:00",
+        "now": "QQQ: no RVOL breakout",
+        "detail": "11:10: no 5-min close below the prior session low since 10:40 (1.0x RVOL); QQQ 633.66 (paper)",
+        "since": "2026-11-24T11:10:48-05:00",
         "state": "working",
-        "next": "Next check 11:10",
+        "next": "Next check 11:25",
         "log": [
           "14:15 QQQ no break",
           "14:24 QQQ no day high/low break (paper)",
@@ -134,11 +134,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "10:55: 0 signals, 0 orders",
+        "now": "11:10: 0 signals, 0 orders",
         "detail": "Watchlist prices refreshed",
-        "since": "2026-11-24T10:55:56-05:00",
+        "since": "2026-11-24T11:10:48-05:00",
         "state": "done",
-        "next": "11:10 run",
+        "next": "11:25 run",
         "log": [
           "15:37 flat; watchlist refresh only",
           "15:58 flat; watchlist refresh only",
@@ -150,7 +150,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (paper again from Nov 24: long side negative OOS/live; shorts need the borrow agreement) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "10:55: DKS high 155.20 under 155.78; SMTC, HPE, INSM inside ranges; DLTR and NVDA paper ideas open",
+      "status": "11:10: DKS high 155.78 equals OR high, no break; SMTC, HPE, INSM inside ranges; DLTR (156.87) and NVDA (152.11) paper ideas open",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -159,10 +159,10 @@
       "tradesAllTime": 2,
       "activity": {
         "now": "SIP: no new breaks",
-        "detail": "10:55: DKS high 155.20 under 155.78; SMTC, HPE, INSM inside ranges; DLTR and NVDA paper ideas open",
-        "since": "2026-11-24T10:55:55-05:00",
+        "detail": "11:10: DKS high 155.78 equals OR high, no break; SMTC, HPE, INSM inside ranges; DLTR (156.87) and NVDA (152.11) paper ideas open",
+        "since": "2026-11-24T11:10:48-05:00",
         "state": "working",
-        "next": "Next check 11:10",
+        "next": "Next check 11:25",
         "log": [
           "13:36 VWAP scan: no signal",
           "13:55 META/AMZN 15m bars: no VWAP signal",
@@ -808,8 +808,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 51.4,
-      "priceTime": "2026-11-24T10:55:33-05:00",
+      "last": 51.35,
+      "priceTime": "2026-11-24T11:10:13-05:00",
       "statusAt": "2026-11-24T09:31:03-05:00",
       "triggeredAt": "2026-11-24T09:30:49-05:00",
       "triggerPrice": 51.16
@@ -836,8 +836,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 92.37,
-      "priceTime": "2026-11-24T10:53:13-05:00",
+      "last": 92.07,
+      "priceTime": "2026-11-24T11:07:50-05:00",
       "statusAt": "2026-11-24T09:31:03-05:00",
       "triggeredAt": "2026-11-24T09:30:49-05:00",
       "triggerPrice": 92.0
@@ -864,8 +864,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 12.735,
-      "priceTime": "2026-11-24T10:55:33-05:00",
+      "last": 12.72,
+      "priceTime": "2026-11-24T11:10:12-05:00",
       "statusAt": "2026-11-24T09:31:03-05:00",
       "triggeredAt": "2026-11-24T09:30:39-05:00",
       "triggerPrice": 12.965
@@ -891,8 +891,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 154.92,
-      "priceTime": "2026-11-24T10:55:20-05:00"
+      "last": 156.87,
+      "priceTime": "2026-11-24T11:10:10-05:00"
     },
     {
       "date": "2026-11-24",
@@ -915,8 +915,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 154.68,
-      "priceTime": "2026-11-24T10:55:27-05:00"
+      "last": 155.065,
+      "priceTime": "2026-11-24T11:10:11-05:00"
     },
     {
       "date": "2026-11-24",
@@ -939,8 +939,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 40.92,
-      "priceTime": "2026-11-24T10:55:34-05:00"
+      "last": 40.72,
+      "priceTime": "2026-11-24T11:10:13-05:00"
     },
     {
       "date": "2026-11-24",
@@ -963,8 +963,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 86.65,
-      "priceTime": "2026-11-24T10:55:31-05:00"
+      "last": 86.3045,
+      "priceTime": "2026-11-24T11:10:09-05:00"
     },
     {
       "date": "2026-11-24",
@@ -986,8 +986,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 152.46,
-      "priceTime": "2026-11-24T10:55:34-05:00"
+      "last": 152.11,
+      "priceTime": "2026-11-24T11:10:13-05:00"
     },
     {
       "date": "2026-11-24",
@@ -1010,7 +1010,7 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 170.305,
-      "priceTime": "2026-11-24T10:55:34-05:00"
+      "priceTime": "2026-11-24T11:10:11-05:00"
     },
     {
       "date": "2026-11-24",
@@ -1032,11 +1032,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 635.14,
-      "priceTime": "2026-11-24T10:55:34-05:00"
+      "last": 633.66,
+      "priceTime": "2026-11-24T11:10:13-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-24T10:55:55-05:00",
+  "watchlistUpdated": "2026-11-24T11:10:48-05:00",
   "scorecard": {
     "updated": "2026-11-23T16:54:46-05:00",
     "currency": "CAD",
@@ -1403,7 +1403,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-24",
-    "updated": "2026-11-24T10:55:34-05:00",
+    "updated": "2026-11-24T11:10:17-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
