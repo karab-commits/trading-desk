@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-24T11:37:25-05:00",
+  "updated": "2026-11-24T11:59:54-05:00",
   "date": "2026-11-24",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 2,
+      "ideas": 3,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
+      "pending": 3,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": -31.14,
       "final": -31.14,
       "unrealized": 0.0,
-      "ideas": 10,
+      "ideas": 11,
       "scored": 8,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
+      "pending": 3,
       "wins": 2,
       "losses": 6
     },
@@ -36,11 +36,11 @@
       "net": 175.7,
       "final": 175.7,
       "unrealized": 0.0,
-      "ideas": 38,
+      "ideas": 39,
       "scored": 32,
       "open": 0,
       "notTriggered": 4,
-      "pending": 2,
+      "pending": 3,
       "wins": 15,
       "losses": 17
     }
@@ -49,19 +49,19 @@
     "quant": {
       "today": {
         "net": 0.0,
-        "ideas": 2,
+        "ideas": 3,
         "scored": 0,
         "open": 0
       },
       "week": {
         "net": -47.42,
-        "ideas": 7,
+        "ideas": 8,
         "scored": 5,
         "open": 0
       },
       "allTime": {
         "net": 110.44,
-        "ideas": 24,
+        "ideas": 25,
         "scored": 22,
         "open": 0
       }
@@ -155,6 +155,31 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-24-HPE-1",
+      "date": "2026-11-24",
+      "bot": "quant",
+      "ticker": "HPE",
+      "side": "short",
+      "entry": 40.08,
+      "stop": 42.49,
+      "target": 35.26,
+      "shares": 11,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 11,
+      "loggedAt": "2026-11-24T11:59:48-05:00",
+      "loggedLate": true,
+      "loggedPrice": 39.93,
+      "paperEntry": 39.93,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-24-NVDA-1",
       "date": "2026-11-24",

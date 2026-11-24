@@ -3079,6 +3079,81 @@
         "regime": "volatile",
         "rule": "veto only"
       }
+    },
+    {
+      "id": "2026-11-24-HPE-1",
+      "date": "2026-11-24",
+      "session": "adhoc",
+      "ticker": "HPE",
+      "side": "short",
+      "entry": 40.08,
+      "stop": 42.49,
+      "target": 35.26,
+      "shares": 11,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB short: first 15-min candle down (open 42.425, 9:40 close 40.795); OR 40.08-42.49; 11:40 5-min bar broke OR low (low 39.949). Catalyst: Q4 beat but warned on Cloud & AI margins. Logged late at 11:59 at 39.93. Paper (sip_orb paper-only).",
+      "loggedAt": "2026-11-24T11:59:48-05:00",
+      "loggedLate": true,
+      "loggedPrice": 39.93,
+      "plan": {
+        "riskGross": 26.51,
+        "rewardGross": 53.02,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0091,
+          "fx": 0.8,
+          "total": 0.8044
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0091,
+          "fx": 0.4,
+          "total": 0.4067
+        },
+        "netProfitAtTarget": 52.22,
+        "netLossAtStop": -26.92,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 74.66,
+        "netLossAtStopCAD": -38.49
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-23",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "First 15-min candle down on a margin warning, range low broken, price below VWAP 40.9, tape weak (QQQ below VWAP)"
+        ],
+        "bear": [
+          "The break came 2 hours after the open and only by 13 cents; it has bounced off 40.0 three times since 11:40",
+          "Already -15% on the day, extended vs ATR; late-day short covering is common after an earnings gap",
+          "Stop at the OR high is 2.41 wide (6%), so 2R needs 35.26, far below anything seen today"
+        ],
+        "verdict": "skip",
+        "why": "Paper only; bear case wins (late, shallow break into support)",
+        "by": "quant",
+        "at": "2026-11-24T11:59:48-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }
