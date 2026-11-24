@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-24T11:26:04-05:00",
+  "updated": "2026-11-24T11:37:25-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3975,7 +3975,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 9,
+   "runs": 10,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3996,7 +3996,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-24T11:26:04-05:00"
+   "lastRun": "2026-11-24T11:37:25-05:00"
   },
   "scanner": {
    "quotesCalls": 3,
@@ -4035,7 +4035,7 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 8,
+   "quotesCalls": 9,
    "barCalls": 18,
    "bars": 192,
    "optionCalls": 0,
@@ -4070,7 +4070,7 @@
      "HXT.TO",
      "SOFI"
     ],
-    "total": 83
+    "total": 94
    },
    "headlines": {
     "items": [
@@ -4134,8 +4134,8 @@
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 7,
-   "bars": 101,
+   "barCalls": 8,
+   "bars": 127,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
