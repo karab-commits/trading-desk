@@ -2929,6 +2929,156 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-24-DLTR-1",
+      "date": "2026-11-24",
+      "session": "adhoc",
+      "ticker": "DLTR",
+      "side": "long",
+      "entry": 155.21,
+      "stop": 147.83,
+      "target": 169.97,
+      "shares": 3,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB long: first 15-min candle up (open 149.95, 9:40 close 154.92); OR 147.83-155.21; 10:05 5-min bar broke OR high (high 155.23). Catalyst: Q3 beat and raised guidance (6:30 ET). Logged late at 10:23 at 154.24. Paper (sip_orb paper-only).",
+      "loggedAt": "2026-11-24T10:23:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 154.24,
+      "plan": {
+        "riskGross": 22.14,
+        "rewardGross": 44.28,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0105,
+          "fx": 0.66,
+          "total": 0.6747
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0091,
+          "fx": 0.33,
+          "total": 0.3412
+        },
+        "netProfitAtTarget": 43.61,
+        "netLossAtStop": -22.48,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 62.35,
+        "netLossAtStopCAD": -32.14
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-23",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "Clean break of the 15-min range on a beat-and-raise catalyst, above VWAP 152.9, strong relative volume"
+        ],
+        "bear": [
+          "Already +11% on the day; the move is extended vs ATR and the break was only 2 cents before fading back to 154.2",
+          "SPY and QQQ are rolling over (QQQ 636.7 below VWAP 639.5), against a long",
+          "Stop at the OR low is 7.38 wide (4.8%), so 2R needs 169.97, far above anything seen today"
+        ],
+        "verdict": "skip",
+        "why": "Paper only; bear case wins (failed break, weak tape)",
+        "by": "quant",
+        "at": "2026-11-24T10:23:17-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
+    },
+    {
+      "id": "2026-11-24-NVDA-1",
+      "date": "2026-11-24",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 153.69,
+      "stop": 159.92,
+      "target": 141.23,
+      "shares": 4,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "SIP ORB short: first 15-min candle down (open 159.10, 9:40 close 154.87); OR 153.69-159.92; 10:05 5-min bar broke OR low (low 153.37). Logged late at 10:23 at 153.11. Paper (sip_orb paper-only). Not K's manual NVDA long.",
+      "loggedAt": "2026-11-24T10:23:07-05:00",
+      "loggedLate": true,
+      "loggedPrice": 153.11,
+      "plan": {
+        "riskGross": 24.92,
+        "rewardGross": 49.84,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0127,
+          "fx": 0.75,
+          "total": 0.7603
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0127,
+          "fx": 0.37,
+          "total": 0.3865
+        },
+        "netProfitAtTarget": 49.08,
+        "netLossAtStop": -25.31,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 70.17,
+        "netLossAtStopCAD": -36.18
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-23",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null,
+      "debate": {
+        "bull": [
+          "First 15-min candle down, range low broken and held, price below VWAP 155.5 with heavy volume, tape weak"
+        ],
+        "bear": [
+          "Open 159.10 was above yesterday's close, so the daily trend is up and this is a gap-and-fade, not a trend day",
+          "NVDA is near the 152.5 low of day where dip buyers may step in; the stop at the OR high is 6.23 wide",
+          "Mega-cap index weight; a market bounce can lift it fast"
+        ],
+        "verdict": "take",
+        "why": "Paper only; bull case wins on a clean range break in a weak tape",
+        "by": "quant",
+        "at": "2026-11-24T10:23:17-05:00",
+        "regime": "volatile",
+        "rule": "veto only"
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-24T10:07:00-05:00",
+  "updated": "2026-11-24T10:23:38-05:00",
   "date": "2026-11-24",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 0,
+      "ideas": 2,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": -31.14,
       "final": -31.14,
       "unrealized": 0.0,
-      "ideas": 8,
+      "ideas": 10,
       "scored": 8,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 2,
       "losses": 6
     },
@@ -36,16 +36,36 @@
       "net": 175.7,
       "final": 175.7,
       "unrealized": 0.0,
-      "ideas": 36,
+      "ideas": 38,
       "scored": 32,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 2,
       "wins": 15,
       "losses": 17
     }
   },
   "byBot": {
+    "quant": {
+      "today": {
+        "net": 0.0,
+        "ideas": 2,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": -47.42,
+        "ideas": 7,
+        "scored": 5,
+        "open": 0
+      },
+      "allTime": {
+        "net": 110.44,
+        "ideas": 24,
+        "scored": 22,
+        "open": 0
+      }
+    },
     "scanner": {
       "week": {
         "net": 16.28,
@@ -57,26 +77,6 @@
         "net": 91.99,
         "ideas": 9,
         "scored": 5,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
-        "open": 0
-      }
-    },
-    "quant": {
-      "week": {
-        "net": -47.42,
-        "ideas": 5,
-        "scored": 5,
-        "open": 0
-      },
-      "allTime": {
-        "net": 110.44,
-        "ideas": 22,
-        "scored": 22,
         "open": 0
       },
       "today": {
@@ -155,6 +155,56 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-24-NVDA-1",
+      "date": "2026-11-24",
+      "bot": "quant",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 153.69,
+      "stop": 159.92,
+      "target": 141.23,
+      "shares": 4,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 4,
+      "loggedAt": "2026-11-24T10:23:07-05:00",
+      "loggedLate": true,
+      "loggedPrice": 153.11,
+      "paperEntry": 153.11,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
+      "id": "2026-11-24-DLTR-1",
+      "date": "2026-11-24",
+      "bot": "quant",
+      "ticker": "DLTR",
+      "side": "long",
+      "entry": 155.21,
+      "stop": 147.83,
+      "target": 169.97,
+      "shares": 3,
+      "strategy": "Stocks-in-play 15-min ORB",
+      "currency": "USD",
+      "size": 3,
+      "loggedAt": "2026-11-24T10:23:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 154.24,
+      "paperEntry": 154.24,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-23-QQQ-1",
       "date": "2026-11-23",

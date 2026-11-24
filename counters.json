@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-24T10:07:00-05:00",
+  "updated": "2026-11-24T10:23:38-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3975,7 +3975,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 4,
+   "runs": 5,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3996,7 +3996,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-24T10:07:00-05:00"
+   "lastRun": "2026-11-24T10:23:38-05:00"
   },
   "scanner": {
    "quotesCalls": 3,
@@ -4035,9 +4035,9 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 3,
-   "barCalls": 8,
-   "bars": 52,
+   "quotesCalls": 4,
+   "barCalls": 12,
+   "bars": 96,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 3,
@@ -4070,7 +4070,7 @@
      "HXT.TO",
      "SOFI"
     ],
-    "total": 28
+    "total": 39
    },
    "headlines": {
     "items": [
@@ -4101,16 +4101,16 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 4,
-   "bars": 26,
+   "barCalls": 6,
+   "bars": 48,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
    "pagesFetched": 0,
    "xSearches": 0,
    "xPosts": 0,
-   "ideasGenerated": 2,
-   "ideasLogged": 0,
+   "ideasGenerated": 4,
+   "ideasLogged": 2,
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
@@ -4126,12 +4126,16 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": null
+   "lastRun": null,
+   "keys": [
+    "logged:2026-11-24-DLTR-1",
+    "logged:2026-11-24-NVDA-1"
+   ]
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 2,
-   "bars": 13,
+   "barCalls": 3,
+   "bars": 24,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -4194,6 +4198,39 @@
     "seen": []
    },
    "lastRun": "2026-11-24T09:52:32-05:00"
+  },
+  "risk": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 2,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "rejected:2026-11-24-DLTR-1",
+    "rejected:2026-11-24-NVDA-1"
+   ]
   }
  }
 }
