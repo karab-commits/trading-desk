@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-24T09:52:32-05:00",
+  "updated": "2026-11-24T09:54:49-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3975,7 +3975,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 2,
+   "runs": 3,
    "symbolsQuoted": {
     "unique": [
      "XIU.TO",
@@ -3996,10 +3996,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-24T09:44:53-05:00"
+   "lastRun": "2026-11-24T09:54:49-05:00"
   },
   "scanner": {
-   "quotesCalls": 2,
+   "quotesCalls": 3,
    "barCalls": 3,
    "bars": 72,
    "optionCalls": 0,
@@ -4025,7 +4025,7 @@
      "QQQ",
      "NVDA"
     ],
-    "total": 9
+    "total": 12
    },
    "headlines": {
     "items": [],
@@ -4035,12 +4035,12 @@
    "lastRun": null
   },
   "news": {
-   "quotesCalls": 1,
-   "barCalls": 0,
-   "bars": 0,
+   "quotesCalls": 2,
+   "barCalls": 4,
+   "bars": 20,
    "optionCalls": 0,
    "optionContracts": 0,
-   "webSearches": 1,
+   "webSearches": 3,
    "pagesFetched": 0,
    "xSearches": 2,
    "xPosts": 20,
@@ -4062,9 +4062,12 @@
      "HPE",
      "SMTC",
      "IREN",
-     "INSM"
+     "INSM",
+     "NVDA",
+     "QQQ",
+     "SPY"
     ],
-    "total": 9
+    "total": 17
    },
    "headlines": {
     "items": [
@@ -4095,8 +4098,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 2,
+   "bars": 10,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -4124,8 +4127,8 @@
   },
   "whale": {
    "quotesCalls": 0,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 1,
+   "bars": 5,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
