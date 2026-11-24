@@ -126,7 +126,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "17:39 ET: desk flat (0/4), no pending orders; no valid live signals; watchlist prices refreshed",
+      "status": "12:39 ET: desk flat (0/4), no pending orders; no valid live signals; watchlist prices refreshed",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -134,9 +134,9 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Intraday 17:39 ET check",
-        "detail": "17:39 ET: desk flat (0/4), no pending orders; no valid live signals; watchlist prices refreshed",
-        "since": "2026-11-24T12:39:40-05:00",
+        "now": "Intraday 12:39 ET check",
+        "detail": "12:39 ET: desk flat (0/4), no pending orders; no valid live signals; watchlist prices refreshed",
+        "since": "2026-11-24T12:39:47-05:00",
         "state": "working",
         "next": "Next check in ~15 min",
         "log": [
