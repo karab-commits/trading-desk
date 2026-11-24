@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-23T21:56:09+00:00",
+ "updated": "2026-11-24T21:55:41-05:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -143,7 +143,7 @@
    "bot": "scanner",
    "name": "Big-gap fade (0.75x ATR14)",
    "short": "Gap fade",
-   "tested": "testing - Nov 10 walk-forward: XIU OOS turned slightly negative (-0.004R, 2/5 windows) so XIU gap fade is PAPER ONLY (log, don't send); SOFI (+0.365R, 4/5) and HXT (+0.028R, 3/5) stay testing at small live size. 0-1 of the 20 journal trades the promotion rule needs.",
+   "tested": "testing - Nov 24 walk-forward (daily bars to Nov 24): XIU OOS -0.006R on 41 (2/5 windows) so XIU gap fade stays PAPER ONLY (log, don't send); SOFI +0.391R on 12 (5/5) and HXT +0.025R on 41 (3/5) stay testing at small live size. 1-2 of the 20 journal trades the promotion rule needs.",
    "testedTag": "testing (XIU paper only)",
    "stats": {
     "source": "/workspace/quant/eod/2026-11-02/recheck_output.txt (daily bars Oct 2024 - Nov 2 2026, after Questrade fees + 0.02%/side slip)",
@@ -1104,6 +1104,11 @@
     "updated": "2026-11-20",
     "journal": "13 SIP ORB journal ideas avg -0.03R (7 wins); Nov 20 NVDA short +1.94R target, ANT short -0.58R at the 4:00 PM close (88.44; -0.30R at the 15:15 time stop)",
     "rule": "Stays paper until 20 paper trades with positive average R and an out-of-sample test."
+   },
+   "forwardRecord": {
+    "updated": "2026-11-24",
+    "journal": "19 scored SIP ORB ideas, avg -0.11R (Nov 24: DLTR +0.06R, NVDA -0.39R, HPE -0.11R)",
+    "verdict": "stays paper: no OOS test, forward record negative"
    }
   },
   {
@@ -1171,8 +1176,8 @@
     "why": "Live/paper record negative: 2 of 2 journal QQQ RVOL signals hit the stop (Nov 9 long -1.03R, Nov 16 short -1.05R; -2.07R total), no out-of-sample test exists (only a 30-min-proxy backtest, +0.179R on 17), and with ~1,700 USD buying power the 40 CAD risk sizes QQQ to 2 shares, under the desk's ~8 CAD minimum profit at target. Back to live only after 20 paper trades with positive average R and a walk-forward test. Whale Tracker keeps scouting the stocks-in-play list."
    },
    "qqqRecord": {
-    "updated": "2026-11-20",
-    "journal": "1 of 5 (Nov 9 long -1.03R, Nov 16 short -1.05R, Nov 17 short -1.02R, Nov 19 short -1.49R, Nov 20 short +1.74R target, late-logged 10:30 at 631.62); -2.85R total, avg -0.57R",
+    "updated": "2026-11-24",
+    "journal": "1 of 5 (Nov 9 long -1.03R, Nov 16 short -1.05R, Nov 17 short -1.02R, Nov 19 short -1.49R, Nov 20 short +1.74R target, late-logged 10:30 at 631.62); -2.85R total, avg -0.57R; Nov 23 and Nov 24: no signal",
     "retireRule": "Retire the QQQ RVOL breakout on its next stop (Nov 19 was 1 of the 2 'retire if next 2 stop'; Nov 20 hit target so it survives). Still paper only."
    }
   },

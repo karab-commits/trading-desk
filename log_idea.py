@@ -308,6 +308,15 @@ def cmd_resolve(a):
     cur = idea['currency']
     if a.outcome != 'no-fill' and a.exit is None:
         sys.exit('--exit PRICE is required unless --outcome no-fill')
+    # Guard added by Kiwi Nov 24 2026: the 3:15-3:20 PM close-out scored paper 'time' exits at ~3:17 prices on
+    # Nov 20, 23 and 24, and each had to be re-scored at the 4:00 PM close. A paper time exit can only be scored
+    # after 16:00 ET on the idea's date (from the 3:55 5-min bar close). Real trades (taken yes / --real-pnl) are
+    # exempt: they record the actual exit.
+    now = now_et()
+    if (a.outcome == 'time' and a.real_pnl is None and a.taken != 'yes' and not getattr(a, 'early', False)
+            and idea['date'] == now.strftime('%Y-%m-%d') and now.strftime('%H:%M') < '16:00'):
+        sys.exit(f"{a.id}: paper time exits are scored at the 4:00 PM ET close; it's {now.strftime('%H:%M')} ET. "
+                 "Leave it open (the after-close review scores it from the 3:55 5-min bar), or pass --early if this is a real exit.")
     res = score_paper(idea, a.outcome, a.exit, cfg)
     res['resolvedAt'] = now_et().isoformat(timespec='seconds')
     idea['result'] = res
@@ -379,6 +388,7 @@ def main():
     p.add_argument('--exit', type=float)
     p.add_argument('--taken', choices=['yes', 'no'])
     p.add_argument('--real-pnl', type=float, help="K's actual P&L on it, net of fees, in the idea's currency")
+    p.add_argument('--early', action='store_true', help='allow a paper time exit before 16:00 ET (normally refused)')
     p.set_defaults(fn=cmd_resolve)
     p = sp.add_parser('list', parents=[common], help='list ideas')
     p.add_argument('--date')
