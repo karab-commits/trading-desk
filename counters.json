@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-23T16:56:09-05:00",
+  "updated": "2026-11-24T09:04:20-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -3938,6 +3938,190 @@
    "xSearches": 0,
    "xPosts": 0,
    "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  }
+ },
+ "2026-11-24": {
+  "kiwi": {
+   "quotesCalls": 0,
+   "barCalls": 1,
+   "bars": 5,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": "2026-11-24T09:02:51-05:00"
+  },
+  "scanner": {
+   "quotesCalls": 1,
+   "barCalls": 3,
+   "bars": 72,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "XIU.TO",
+     "HXT.TO",
+     "SOFI",
+     "SPY",
+     "QQQ",
+     "NVDA"
+    ],
+    "total": 6
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "news": {
+   "quotesCalls": 1,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 1,
+   "pagesFetched": 0,
+   "xSearches": 2,
+   "xPosts": 20,
+   "ideasGenerated": 4,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [
+     "DLTR",
+     "DKS",
+     "BBY",
+     "FLNC",
+     "A",
+     "HPE",
+     "SMTC",
+     "IREN",
+     "INSM"
+    ],
+    "total": 9
+   },
+   "headlines": {
+    "items": [
+     {
+      "title": "Premarket movers: Nvidia slips; HPE, Semtech fall",
+      "url": "https://www.investing.com/news/stock-market-news/premarket-movers-nvidia-slips-hpe-semtech-fall-5047572",
+      "time": "2026-11-24T09:03:24-05:00"
+     },
+     {
+      "title": "Best Buy Posts Strongest Sales Growth in Five Years, Beats Estimates",
+      "url": "https://x.com/i/trending",
+      "time": "2026-11-24T08:44:39-05:00"
+     },
+     {
+      "title": "Stock Market Today Live, November 24, 2026: Chip Stocks Slip After Monday's Big Rally",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-24-2026",
+      "time": "2026-11-24T09:03:24-05:00"
+     }
+    ],
+    "count": 3,
+    "seen": [
+     "462bcea8f524",
+     "350c18c5b2c1",
+     "7b05f7248cbc"
+    ]
+   },
+   "lastRun": null
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 2,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
+  },
+  "whale": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 1,
    "ideasLogged": 0,
    "ideasRejected": 0,
    "ordersSent": 0,
