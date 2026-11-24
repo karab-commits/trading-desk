@@ -2984,7 +2984,24 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 154.44,
+        "gross": 0.6,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0095,
+          "fx": 0.01,
+          "total": 0.0185
+        },
+        "net": 0.58,
+        "grossR": 0.027,
+        "netR": 0.026,
+        "netCAD": 0.83,
+        "entryUsed": 154.24,
+        "resolvedAt": "2026-11-24T15:17:17-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
@@ -3059,7 +3076,24 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 153.15,
+        "gross": -0.16,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0126,
+          "fx": 0.0,
+          "total": 0.015
+        },
+        "net": -0.17,
+        "grossR": -0.006,
+        "netR": -0.007,
+        "netCAD": -0.25,
+        "entryUsed": 153.11,
+        "resolvedAt": "2026-11-24T15:17:17-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,
@@ -3134,7 +3168,24 @@
         "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
         "checked": "2026-11-02"
       },
-      "result": null,
+      "result": {
+        "outcome": "time",
+        "exit": 39.75,
+        "gross": 1.98,
+        "fees": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.009,
+          "fx": 0.03,
+          "total": 0.0387
+        },
+        "net": 1.94,
+        "grossR": 0.075,
+        "netR": 0.073,
+        "netCAD": 2.78,
+        "entryUsed": 39.93,
+        "resolvedAt": "2026-11-24T15:17:17-05:00"
+      },
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null,

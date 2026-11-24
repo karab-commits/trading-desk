@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Tue Nov 24, 2026 3:10 PM ET",
+  "lastUpdated": "Tue Nov 24, 2026 3:17 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -126,7 +126,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "14:59 ET: desk flat (0/4), no pending orders; News/Options windows closed 14:30; watchlist prices refreshed",
+      "status": "Close-out Nov 24: no desk positions or orders, 0 real trades, real P&L 0.00 CAD. K's manual NVDA holding is not a desk trade.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -134,11 +134,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Intraday 14:59 ET check",
-        "detail": "14:59 ET: desk flat (0/4), no pending orders; News/Options windows closed 14:30; watchlist prices refreshed",
-        "since": "2026-11-24T14:59:14-05:00",
-        "state": "working",
-        "next": "Next check in ~15 min",
+        "now": "Flat, 0 real trades",
+        "detail": "Close-out Nov 24: no desk positions or orders, 0 real trades, real P&L 0.00 CAD. K's manual NVDA holding is not a desk trade.",
+        "since": "2026-11-24T15:17:23-05:00",
+        "state": "done",
+        "next": "Pre-market tomorrow",
         "log": [
           "15:37 flat; watchlist refresh only",
           "15:58 flat; watchlist refresh only",
@@ -174,7 +174,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "Re-scored 7 time exits at the 4:00 PM close from Questrade 5-min bars (was ~3:15 prices): paper -26.79 -> -31.14 CAD. Week scorecard: 8 paper, exp -0.13R.",
+      "status": "Nov 24 SIP ORB paper ideas closed at time stop: DLTR +0.58, NVDA -0.17, HPE +1.94 USD.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -182,11 +182,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "8 ideas re-scored 4 PM",
-        "detail": "Re-scored 7 time exits at the 4:00 PM close from Questrade 5-min bars (was ~3:15 prices): paper -26.79 -> -31.14 CAD. Week scorecard: 8 paper, exp -0.13R.",
-        "since": "2026-11-23T16:56:01-05:00",
+        "now": "3 paper ideas scored",
+        "detail": "Nov 24 SIP ORB paper ideas closed at time stop: DLTR +0.58, NVDA -0.17, HPE +1.94 USD.",
+        "since": "2026-11-24T15:17:23-05:00",
         "state": "done",
-        "next": "Score Tue ideas",
+        "next": "Pre-market tomorrow",
         "log": [
           "16:55 ANT re-scored at 4 PM close"
         ]
@@ -680,7 +680,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-24T11:59:48-05:00",
+    "updated": "2026-11-24T15:17:17-05:00",
     "ideasLogged": 41,
     "byDate": {
       "2026-11-02": {
@@ -774,12 +774,12 @@
         "taken": 0
       },
       "2026-11-24": {
-        "net": 0.0,
+        "net": 3.36,
         "ideas": 3,
-        "resolved": 0,
-        "open": 3,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 3,
+        "open": 0,
+        "filled": 3,
+        "wins": 2,
         "real": 0.0,
         "taken": 0
       }
@@ -891,8 +891,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 154.2,
-      "priceTime": "2026-11-24T15:09:59-05:00"
+      "last": 154.44,
+      "priceTime": "2026-11-24T15:17:23-05:00"
     },
     {
       "date": "2026-11-24",
@@ -939,8 +939,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 39.6516,
-      "priceTime": "2026-11-24T15:10:00-05:00"
+      "last": 39.75,
+      "priceTime": "2026-11-24T15:17:23-05:00"
     },
     {
       "date": "2026-11-24",
@@ -986,8 +986,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 152.03,
-      "priceTime": "2026-11-24T15:10:00-05:00"
+      "last": 153.15,
+      "priceTime": "2026-11-24T15:17:23-05:00"
     },
     {
       "date": "2026-11-24",
@@ -1036,7 +1036,7 @@
       "priceTime": "2026-11-24T15:10:00-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-24T15:10:18-05:00",
+  "watchlistUpdated": "2026-11-24T15:17:23-05:00",
   "scorecard": {
     "updated": "2026-11-23T16:54:46-05:00",
     "currency": "CAD",
