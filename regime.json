@@ -1,13 +1,13 @@
 {
- "date": "2026-11-24",
+ "date": "2026-11-25",
  "spy_rv10": 34.22,
  "median": 11.41,
  "regime": "volatile",
- "asOfClose": "2026-11-23",
- "bars": 538,
+ "asOfClose": "2026-11-24",
+ "bars": 539,
  "stale": false,
  "units": "annualized %",
  "method": "SPY 10-day realized vol (log returns, annualized) through the prior close vs its trailing 250-session median; volatile if above",
  "note": "Tag only, no filter yet. Revisit as a filter after ~100 more trades (gap fade: calm +0.06R / volatile +0.24R on 116 trades).",
- "updated": "2026-11-24T09:02:51-05:00"
+ "updated": "2026-11-25T08:59:42-05:00"
 }

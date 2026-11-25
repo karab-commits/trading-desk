@@ -3205,6 +3205,118 @@
         "regime": "volatile",
         "rule": "veto only"
       }
+    },
+    {
+      "id": "2026-11-25-HXT-1",
+      "date": "2026-11-25",
+      "session": "premarket",
+      "ticker": "HXT.TO",
+      "side": "long",
+      "entry": 90.96,
+      "stop": 89.54,
+      "target": 92.37,
+      "shares": 20,
+      "strategy": "Big-gap fade HXT",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "Open 90.95 vs prior close 92.37 = gap -1.42 >= trigger 1.145 (0.75xATR14 1.526). Size capped by CAD buying power (1,953 combined).",
+      "loggedAt": "2026-11-25T09:31:01-05:00",
+      "plan": {
+        "riskGross": 28.4,
+        "rewardGross": 28.2,
+        "rr": 0.99,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 28.2,
+        "netLossAtStop": -28.4,
+        "rrNet": 0.99,
+        "netProfitAtTargetCAD": 28.2,
+        "netLossAtStopCAD": -28.4
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-25-XIU-1",
+      "date": "2026-11-25",
+      "session": "premarket",
+      "ticker": "XIU.TO",
+      "side": "long",
+      "entry": 50.47,
+      "stop": 49.8,
+      "target": 51.14,
+      "shares": 59,
+      "strategy": "Big-gap fade XIU",
+      "bot": "scanner",
+      "currency": "CAD",
+      "note": "PAPER ONLY. Open 50.47 vs prior close 51.44 less 0.30 ex-dividend today (51.14) = gap -0.67 >= trigger 0.654; raw gap -0.97. Target = dividend-adjusted close.",
+      "loggedAt": "2026-11-25T09:31:01-05:00",
+      "plan": {
+        "riskGross": 39.53,
+        "rewardGross": 39.53,
+        "rr": 1.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0,
+          "fx": 0.0,
+          "total": 0.0
+        },
+        "netProfitAtTarget": 39.53,
+        "netLossAtStop": -39.53,
+        "rrNet": 1.0,
+        "netProfitAtTargetCAD": 39.53,
+        "netLossAtStopCAD": -39.53
+      },
+      "mode": "live",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": null,
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
