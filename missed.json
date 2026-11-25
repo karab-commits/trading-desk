@@ -1,34 +1,34 @@
 {
   "version": 1,
-  "updated": "2026-11-24T16:54:59-05:00",
-  "date": "2026-11-24",
+  "updated": "2026-11-25T09:40:49-05:00",
+  "date": "2026-11-25",
   "isoWeek": "2026-W48",
-  "marketOpen": false,
+  "marketOpen": true,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": -16.34,
-      "final": -16.34,
+      "net": 0.0,
+      "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 3,
-      "scored": 3,
+      "ideas": 2,
+      "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
-      "wins": 1,
-      "losses": 2
+      "pending": 2,
+      "wins": 0,
+      "losses": 0
     },
     "week": {
       "net": -47.48,
       "final": -47.48,
       "unrealized": 0.0,
-      "ideas": 11,
+      "ideas": 13,
       "scored": 11,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 3,
       "losses": 8
     },
@@ -36,23 +36,37 @@
       "net": 159.36,
       "final": 159.36,
       "unrealized": 0.0,
-      "ideas": 39,
+      "ideas": 41,
       "scored": 35,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 2,
       "wins": 16,
       "losses": 19
     }
   },
   "byBot": {
-    "quant": {
+    "scanner": {
       "today": {
-        "net": -16.34,
-        "ideas": 3,
+        "net": 0.0,
+        "ideas": 2,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": 16.28,
+        "ideas": 5,
         "scored": 3,
         "open": 0
       },
+      "allTime": {
+        "net": 91.99,
+        "ideas": 11,
+        "scored": 5,
+        "open": 0
+      }
+    },
+    "quant": {
       "week": {
         "net": -63.76,
         "ideas": 8,
@@ -63,20 +77,6 @@
         "net": 94.1,
         "ideas": 25,
         "scored": 25,
-        "open": 0
-      }
-    },
-    "scanner": {
-      "week": {
-        "net": 16.28,
-        "ideas": 3,
-        "scored": 3,
-        "open": 0
-      },
-      "allTime": {
-        "net": 91.99,
-        "ideas": 9,
-        "scored": 5,
         "open": 0
       },
       "today": {
@@ -155,6 +155,48 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-25-XIU-1",
+      "date": "2026-11-25",
+      "bot": "scanner",
+      "ticker": "XIU.TO",
+      "side": "long",
+      "entry": 50.47,
+      "stop": 49.8,
+      "target": 51.14,
+      "shares": 59,
+      "strategy": "Big-gap fade XIU",
+      "currency": "CAD",
+      "size": 59,
+      "loggedAt": "2026-11-25T09:31:01-05:00",
+      "why": "untaken",
+      "state": "waiting",
+      "outcome": null,
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
+      "id": "2026-11-25-HXT-1",
+      "date": "2026-11-25",
+      "bot": "scanner",
+      "ticker": "HXT.TO",
+      "side": "long",
+      "entry": 90.96,
+      "stop": 89.54,
+      "target": 92.37,
+      "shares": 20,
+      "strategy": "Big-gap fade HXT",
+      "currency": "CAD",
+      "size": 20,
+      "loggedAt": "2026-11-25T09:31:01-05:00",
+      "why": "untaken",
+      "state": "waiting",
+      "outcome": null,
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-24-HPE-1",
       "date": "2026-11-24",

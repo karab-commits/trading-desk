@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 25, 2026 9:35 AM ET",
+  "lastUpdated": "Wed Nov 25, 2026 9:40 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -52,7 +52,7 @@
     {
       "id": "news",
       "name": "News Desk",
-      "role": "Trades fresh news-catalyst momentum \u00b7 devil's-advocate debate before every entry (veto only)",
+      "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
       "status": "AMBA -31% guide, URBN -11%, DELL -7.8% (shorts paper: borrow agreement), MDT long watch. Futures down on AI/chip selloff + tariff threats ahead of PCE.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
@@ -328,7 +328,7 @@
   ],
   "playbook": [
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · XIU.TO",
       "status": "testing",
       "trades": 50,
       "winRate": 58.0,
@@ -336,7 +336,7 @@
       "note": "Demoted Nov 10 2026 by Kiwi: walk-forward out-of-sample turned slightly negative (-0.004R on 40 trades, positive in 2/5 test windows, was +0.037R, 3/5 on Nov 2). Full-sample +0.188R on 50 is in-sample only. Paper only (logged, not sent) until OOS is positive in most windows again. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper. Nov 16 re-check (walkforward-2026-11-16): unchanged, OOS -0.004R on 40, 2/5 windows, 0 look-ahead leaks; stays paper only (retire line is <= -0.05R on 30+). | Nov 17 re-check with daily data refreshed to Nov 17: unchanged -0.004R OOS on 40 (2/5 windows), stays paper. | Nov 18 re-check (daily bars to Nov 18, walkforward-2026-11-18): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. Regime split of OOS: calm -0.163R (20) / volatile +0.154R (20). | Nov 19 re-check (daily bars still end Nov 18; Questrade had not published the Nov 19 daily candle at 4:55 PM ET): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS -0.004R on 40, 2/5 windows, 0 leaks; stays paper only. | Nov 23: gap-up short (paper, borrow agreement) closed at 4:00 PM 51.60, -0.04R / -1.60 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS -0.006R on 41, 2/5 windows; stays paper only. Regime split of OOS: calm -0.161R (19) / volatile +0.143R (21). No gap signal today (gap -0.28 vs 0.70)."
     },
     {
-      "name": "Opening-range breakout (15-min), volume-confirmed (Quant Lab) \u00b7 XIU/QQC/QQQ",
+      "name": "Opening-range breakout (15-min), volume-confirmed (Quant Lab) · XIU/QQC/QQQ",
       "status": "paper",
       "trades": 53,
       "winRate": 62.3,
@@ -360,7 +360,7 @@
       "note": "Demoted to PAPER ONLY Nov 16 2026 by Kiwi: both journal signals hit the stop (Nov 9 long -1.03R / -20.32 CAD paper; Nov 16 13:35 short -1.05R / -1.26 CAD paper, skipped: 2 sh max on ~1,700 USD buying power, stale, shorts blocked). No walk-forward test exists (30-min proxy +0.179R on 17). Back to live after 20 paper trades with positive avg R and an out-of-sample test. Whale Tracker keeps scouting the stocks-in-play list. | Nov 17 paper short stopped -1.02R (3/3 journal signals stopped); stays paper, retire if the next 2 also stop. | Nov 18: no QQQ close beyond the session high/low after 10:00 (5-min bars), so no signal; still 0/3, retire if the next 2 stop. | Nov 19: short (paper, logged late 10:36 at 659.115) STOPPED at 663.55 on the 11:35 5-min bar (high 664.55) before any target touch: -18.06 USD / -25.82 CAD, -1.49R. (The 3:18 close-out had scored it a target; corrected in the review from Questrade 5-min bars.) Journal now 0 for 4, -4.58R. Retire rule: next 2 signals after Nov 17 both stop -> Nov 19 was 1 of 2; the next stop retires it. | Nov 20: paper short (late-logged 10:30 at 631.62) HIT TARGET 624.17 on the 11:30 5-min bar, +1.74R / +31.42 CAD. Record now 1 of 5, -2.85R (avg -0.57R). Not retired; the next stop still retires it. Stays paper. | Nov 23: no RVOL breakout signal (QQQ stayed in range); still 1/5, one more stop retires it. | Nov 24: no signal. QQQ 5-min closes below the session low at 10:25 and 10:40 had relative volume about 1.25 and 1.0 (same-slot average of the 8 cached days) vs 2.0 needed. Still 1/5; the next stop retires it."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 XIU/HXT/SOFI, 1 trade a day",
+      "name": "Big-gap fade >0.75 ATR, daily · XIU/HXT/SOFI, 1 trade a day",
       "status": "testing",
       "trades": 78,
       "winRate": 56.4,
@@ -368,7 +368,7 @@
       "note": "New run Nov 2 2026 EOD (one desk trade a day, priority XIU > HXT > SOFI), after fees: +0.150R n=78, max DD 2.03R; last 6m +0.171R n=19; last 3m +0.110R n=10. Adds little over XIU alone. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 SOFI",
+      "name": "Big-gap fade >0.75 ATR, daily · SOFI",
       "status": "testing",
       "trades": 33,
       "winRate": 60.6,
@@ -376,7 +376,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R. | Nov 17 walk-forward (data to Nov 17): OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.365R on 11, 4/5 windows; no gap signal today. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. No gap signal today (gap -0.30 vs 0.61). | Nov 23: gap-up short (paper) closed at 4:00 PM 13.08, +0.51R / +20.40 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.391R on 12, 5/5 windows (was +0.365R/11, 4/5); 1 journal trade (need 20); stays testing/live. Regime: calm +0.288R (6) / volatile +0.494R (6). No gap signal today (gap -0.14 vs 0.67)."
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 HXT.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
       "status": "testing",
       "trades": 49,
       "winRate": 57.1,
@@ -384,7 +384,7 @@
       "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R. | Nov 17 walk-forward (data to Nov 17): OOS +0.028R on 40, 3/5 windows; 0 journal trades; stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.028R on 40, 3/5 windows. Regime split: calm -0.172R (19) / volatile +0.209R (21). | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.028R on 40, 3/5 windows; stays testing/live. No gap signal today (gap -0.36 vs 1.08). | Nov 23: gap-up short (paper) closed at 4:00 PM 92.63, -0.06R / -2.52 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.025R on 41, 3/5 windows; 1 journal trade; stays testing/live. Regime: calm -0.258R (17) / volatile +0.195R (22). No gap signal today (gap -0.32 vs 1.23)."
     },
     {
-      "name": "Down-open buy >0.35ATR, daily \u00b7 ZEB.TO",
+      "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 64,
       "winRate": 54.7,
@@ -392,7 +392,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.329R (no-slip +0.408, 0.04%/side +0.250); H1 +0.713R n=37, H2 -0.198R n=27; last 6m (May-Oct 2026) -0.003R n=11"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 ZEB.TO",
+      "name": "Big-gap fade >0.75 ATR, daily · ZEB.TO",
       "status": "testing",
       "trades": 30,
       "winRate": 80.0,
@@ -400,7 +400,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.303R (no-slip +0.344, 0.04%/side +0.261); H1 +0.302R n=25, H2 +0.304R n=5; last 6m (May-Oct 2026) +nanR n=0"
     },
     {
-      "name": "Big-gap fade >0.75 ATR, daily \u00b7 all 8 tickers pooled",
+      "name": "Big-gap fade >0.75 ATR, daily · all 8 tickers pooled",
       "status": "testing",
       "trades": 412,
       "winRate": 55.1,
@@ -408,7 +408,7 @@
       "note": "Oct 2024-Oct 2026, daily bars (halves split Oct 31 2025); exp +0.099R (no-slip +0.130, 0.04%/side +0.068); H1 +0.110R n=198, H2 +0.088R n=214; last 6m (May-Oct 2026) -0.070R n=118"
     },
     {
-      "name": "VWAP cross +trendFilter, 30-min \u00b7 XIU.TO",
+      "name": "VWAP cross +trendFilter, 30-min · XIU.TO",
       "status": "retired",
       "trades": 51,
       "winRate": 54.9,
@@ -831,7 +831,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 33.2201,
+      "priceTime": "2026-11-25T09:40:27-05:00"
     },
     {
       "date": "2026-11-25",
@@ -853,7 +855,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 75.75,
+      "priceTime": "2026-11-25T09:40:29-05:00"
     },
     {
       "date": "2026-11-25",
@@ -875,7 +879,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 274.42,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -897,7 +903,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 94.54,
+      "priceTime": "2026-11-25T09:40:29-05:00"
     },
     {
       "date": "2026-11-25",
@@ -919,7 +927,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 142.28,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -941,7 +951,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 563.04,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -963,7 +975,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 70.09,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -985,7 +999,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 610.88,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1014,8 +1030,8 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 90.67,
-      "priceTime": "2026-11-25T09:33:48-05:00"
+      "last": 90.73,
+      "priceTime": "2026-11-25T09:35:00-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1044,8 +1060,8 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 50.2,
-      "priceTime": "2026-11-25T09:33:48-05:00"
+      "last": 50.14,
+      "priceTime": "2026-11-25T09:40:29-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1068,10 +1084,12 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "statusAt": "2026-11-25T09:31:18-05:00"
+      "statusAt": "2026-11-25T09:31:18-05:00",
+      "last": 12.125,
+      "priceTime": "2026-11-25T09:40:30-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-25T09:33:48-05:00",
+  "watchlistUpdated": "2026-11-25T09:40:42-05:00",
   "scorecard": {
     "updated": "2026-11-24T16:54:01-05:00",
     "currency": "CAD",
