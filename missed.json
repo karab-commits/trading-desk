@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-25T12:30:29-05:00",
+  "updated": "2026-11-25T12:40:13-05:00",
   "date": "2026-11-25",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 18.29,
+      "net": 25.37,
       "final": 0.0,
-      "unrealized": 18.29,
-      "ideas": 5,
+      "unrealized": 25.37,
+      "ideas": 6,
       "scored": 0,
       "open": 1,
       "notTriggered": 0,
-      "pending": 4,
+      "pending": 5,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": -29.19,
+      "net": -22.11,
       "final": -47.48,
-      "unrealized": 18.29,
-      "ideas": 16,
+      "unrealized": 25.37,
+      "ideas": 17,
       "scored": 11,
       "open": 1,
       "notTriggered": 0,
-      "pending": 4,
+      "pending": 5,
       "wins": 3,
       "losses": 8
     },
     "allTime": {
-      "net": 177.65,
+      "net": 184.73,
       "final": 159.36,
-      "unrealized": 18.29,
-      "ideas": 44,
+      "unrealized": 25.37,
+      "ideas": 45,
       "scored": 35,
       "open": 1,
       "notTriggered": 4,
-      "pending": 4,
+      "pending": 5,
       "wins": 16,
       "losses": 19
     }
@@ -48,19 +48,19 @@
   "byBot": {
     "scanner": {
       "today": {
-        "net": 18.29,
+        "net": 25.37,
         "ideas": 2,
         "scored": 0,
         "open": 1
       },
       "week": {
-        "net": 34.57,
+        "net": 41.65,
         "ideas": 5,
         "scored": 3,
         "open": 1
       },
       "allTime": {
-        "net": 110.28,
+        "net": 117.36,
         "ideas": 11,
         "scored": 5,
         "open": 1
@@ -87,22 +87,22 @@
       }
     },
     "whale": {
-      "allTime": {
-        "net": -26.73,
-        "ideas": 5,
-        "scored": 5,
-        "open": 0
-      },
       "today": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
         "open": 0
       },
       "week": {
         "net": 0.0,
-        "ideas": 0,
+        "ideas": 1,
         "scored": 0,
+        "open": 0
+      },
+      "allTime": {
+        "net": -26.73,
+        "ideas": 6,
+        "scored": 5,
         "open": 0
       }
     }
@@ -155,6 +155,31 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-25-QQQ-1",
+      "date": "2026-11-25",
+      "bot": "whale",
+      "ticker": "QQQ",
+      "side": "long",
+      "entry": 620.02,
+      "stop": 618.4,
+      "target": 623.26,
+      "shares": 2,
+      "strategy": "QQQ relative-volume breakout",
+      "currency": "USD",
+      "size": 2,
+      "loggedAt": "2026-11-25T12:30:48-05:00",
+      "loggedLate": true,
+      "loggedPrice": 619.99,
+      "paperEntry": 619.99,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-25-SNDK-1",
       "date": "2026-11-25",
@@ -247,11 +272,11 @@
       "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-25T12:30:18-05:00",
-      "exit": 50.78,
+      "priceTime": "2026-11-25T12:40:04-05:00",
+      "exit": 50.9,
       "fees": 0.0,
-      "net": 18.29,
-      "netCAD": 18.29
+      "net": 25.37,
+      "netCAD": 25.37
     },
     {
       "id": "2026-11-25-HXT-1",
