@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-25T15:13:16-05:00",
+  "updated": "2026-11-25T15:23:17-05:00",
   "date": "2026-11-25",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -295,7 +295,7 @@
       "currency": "CAD",
       "size": 20,
       "loggedAt": "2026-11-25T09:31:01-05:00",
-      "why": "expired",
+      "why": "untaken",
       "state": "final",
       "outcome": "time",
       "exit": 92.63,
