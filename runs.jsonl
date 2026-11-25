@@ -478,3 +478,4 @@
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-25T14:38:55-05:00", "end": "2026-11-25T14:38:57-05:00", "date": "2026-11-25", "counts": {"quotesCalls": 1, "symbolsQuoted": 11}}
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-25T14:53:48-05:00", "end": "2026-11-25T14:53:51-05:00", "date": "2026-11-25", "counts": {"quotesCalls": 1, "symbolsQuoted": 11}}
 {"bot": "kiwi", "routine": "intraday", "start": "2026-11-25T15:11:48-05:00", "end": "2026-11-25T15:12:22-05:00", "date": "2026-11-25", "counts": {"quotesCalls": 1, "symbolsQuoted": 11}}
+{"bot": "kiwi", "routine": "close-out", "start": "2026-11-25T15:12:44-05:00", "end": "2026-11-25T15:13:20-05:00", "date": "2026-11-25", "counts": {"quotesCalls": 2, "symbolsQuoted": 6}}

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 25, 2026 3:12 PM ET",
+  "lastUpdated": "Wed Nov 25, 2026 3:13 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -127,7 +127,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "15:11 ET intraday run: account 0944 has no desk positions or working orders (only K's manual NVDA). No live strategy in its window (news ends 14:30, gap fades at open). Watchlist prices refreshed.",
+      "status": "Close-out 3:15 PM: no desk positions, 0 orders today",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -135,11 +135,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "15:11 check: no signals",
-        "detail": "15:11 ET intraday run: account 0944 has no desk positions or working orders (only K's manual NVDA). No live strategy in its window (news ends 14:30, gap fades at open). Watchlist prices refreshed.",
-        "since": "2026-11-25T15:12:22-05:00",
-        "state": "working",
-        "next": "Close-out check 15:30",
+        "now": "Flat, 0 real trades",
+        "detail": "Close-out 3:15 PM: no desk positions, 0 orders today",
+        "since": "2026-11-25T15:13:16-05:00",
+        "state": "done",
+        "next": "Pre-market tomorrow",
         "log": [
           "11:22 intraday run: 0 orders",
           "11:39 intraday run: 0 orders",
@@ -175,7 +175,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "Re-scored DLTR/NVDA/HPE time exits at the 4:00 PM close from Questrade 5-min bars (3:17 marks gave +3.36 CAD; now -16.34 CAD). Week W48: 11 paper, exp -0.14R, -47.48 CAD. log_idea.py now refuses paper time exits before 16:00.",
+      "status": "All Nov 25 paper ideas scored",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -183,11 +183,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "3 ideas re-scored 4 PM",
-        "detail": "Re-scored DLTR/NVDA/HPE time exits at the 4:00 PM close from Questrade 5-min bars (3:17 marks gave +3.36 CAD; now -16.34 CAD). Week W48: 11 paper, exp -0.14R, -47.48 CAD. log_idea.py now refuses paper time exits before 16:00.",
-        "since": "2026-11-24T16:55:52-05:00",
+        "now": "Resolved 6 ideas",
+        "detail": "All Nov 25 paper ideas scored",
+        "since": "2026-11-25T15:13:16-05:00",
         "state": "done",
-        "next": "Score Wed ideas after close",
+        "next": "Weekly scorecard Fri",
         "log": [
           "16:55 ANT re-scored at 4 PM close"
         ]
@@ -694,7 +694,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-25T12:30:48-05:00",
+    "updated": "2026-11-25T15:13:16-05:00",
     "ideasLogged": 47,
     "byDate": {
       "2026-11-02": {
@@ -798,12 +798,12 @@
         "taken": 0
       },
       "2026-11-25": {
-        "net": 0.0,
+        "net": -0.11,
         "ideas": 6,
-        "resolved": 0,
-        "open": 6,
-        "filled": 0,
-        "wins": 0,
+        "resolved": 5,
+        "open": 1,
+        "filled": 5,
+        "wins": 2,
         "real": 0.0,
         "taken": 0
       }
@@ -813,7 +813,7 @@
     {
       "date": "2026-11-25",
       "ticker": "AMBA",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "short",
@@ -832,12 +832,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 36.1,
-      "priceTime": "2026-11-25T15:12:13-05:00"
+      "priceTime": "2026-11-25T15:12:13-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "URBN",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "short",
@@ -856,12 +857,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 75.5789,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "DELL",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "short",
@@ -880,12 +882,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 291.77,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "MDT",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "long",
@@ -904,12 +907,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 96.135,
-      "priceTime": "2026-11-25T15:12:12-05:00"
+      "priceTime": "2026-11-25T15:12:12-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "NVDA",
-      "status": "watching",
+      "status": "stopped",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "long",
@@ -928,12 +932,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 147.845,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "MU",
-      "status": "watching",
+      "status": "stopped",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "long",
@@ -952,12 +957,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 596.25,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "SNDK",
-      "status": "watching",
+      "status": "stopped",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "long",
@@ -976,12 +982,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 72.99,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "target hit",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:00:26-05:00",
       "side": "long",
@@ -1000,12 +1007,13 @@
       "openPnl": null,
       "openPnlCAD": null,
       "last": 632.03,
-      "priceTime": "2026-11-25T15:12:14-05:00"
+      "priceTime": "2026-11-25T15:12:14-05:00",
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "HXT.TO",
-      "status": "expired",
+      "status": "target hit",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:31:18-05:00",
       "side": "long",
@@ -1031,7 +1039,7 @@
       "openPnlCAD": null,
       "last": 92.65,
       "priceTime": "2026-11-25T15:04:13-05:00",
-      "statusAt": "2026-11-25T09:59:45-05:00"
+      "statusAt": "2026-11-25T15:13:20-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1093,7 +1101,7 @@
       "priceTime": "2026-11-25T15:12:13-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-25T15:12:22-05:00",
+  "watchlistUpdated": "2026-11-25T15:13:20-05:00",
   "scorecard": {
     "updated": "2026-11-24T16:54:01-05:00",
     "currency": "CAD",
