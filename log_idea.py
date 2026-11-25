@@ -18,7 +18,7 @@ Lab's VWAP reclaim/loss is logged with mode=paper, taken=no and the run must not
 Every `add` also tags the idea with today's market mood (`regime`: calm|volatile, from regime.py).
 After every add/resolve, data.json `paper` (by-date paper P&L for the wall board) is refreshed.
 """
-import argparse, json, os, sys
+import argparse, csv, fcntl, json, os, sys
 from datetime import datetime
 
 try:
@@ -48,7 +48,7 @@ def load_json(path, default):
 
 
 def save_json(path, obj):
-    tmp = path + '.tmp'
+    tmp = f'{path}.tmp{os.getpid()}'
     with open(tmp, 'w') as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
         f.write('\n')
@@ -295,6 +295,42 @@ def cmd_add(a):
     print(f"alert line: Profit after fees {fmt_money(p['netProfitAtTarget'], cur)} at target, loss after fees {fmt_money(p['netLossAtStop'], cur)} at stop")
 
 
+def first_touch(ddir, idea):
+    """Kiwi Nov 25 2026: walk the cached Questrade 5-min bars (bars/<SYM>_5m.csv) from the bar containing loggedAt
+    on the idea's date; return (outcome, bar_start) for the first bar touching the stop or target (both = stop), or
+    (None, last_bar_start) if neither was touched, or None when the cache has no bars for that day."""
+    sym = idea['ticker'].replace('.', '_')
+    path = os.path.join(ddir, 'bars', f'{sym}_5m.csv')
+    if not os.path.exists(path):
+        return None
+    try:
+        t0 = datetime.fromisoformat(idea.get('loggedAt')).astimezone(ZoneInfo('UTC'))
+    except Exception:
+        return None
+    rows = []
+    with open(path) as f:
+        for r in csv.DictReader(f):
+            try:
+                st = datetime.fromisoformat(r['start'].replace('Z', '+00:00'))
+                en = datetime.fromisoformat(r['end'].replace('Z', '+00:00'))
+            except Exception:
+                continue
+            if en > t0 and st.astimezone(ET).strftime('%Y-%m-%d') == idea['date']:
+                rows.append((st, float(r['high']), float(r['low'])))
+    if not rows:
+        return None
+    rows.sort()
+    long_ = idea['side'] == 'long'
+    for st, hi, lo in rows:
+        hit_stop = lo <= idea['stop'] if long_ else hi >= idea['stop']
+        hit_tgt = hi >= idea['target'] if long_ else lo <= idea['target']
+        if hit_stop:
+            return ('stop', st)
+        if hit_tgt:
+            return ('target', st)
+    return (None, rows[-1][0])
+
+
 def cmd_resolve(a):
     ddir = desk_dir(a)
     data = load_json(os.path.join(ddir, 'data.json'), {})
@@ -317,6 +353,20 @@ def cmd_resolve(a):
             and idea['date'] == now.strftime('%Y-%m-%d') and now.strftime('%H:%M') < '16:00'):
         sys.exit(f"{a.id}: paper time exits are scored at the 4:00 PM ET close; it's {now.strftime('%H:%M')} ET. "
                  "Leave it open (the after-close review scores it from the 3:55 5-min bar), or pass --early if this is a real exit.")
+    # Guard added by Kiwi Nov 25 2026: the 3:13 PM close-out scored HXT.TO a 'time' exit at 92.63 although the
+    # 1:15 PM 5-min bar had touched the 92.37 target. Paper outcomes must match the first touch in the cached
+    # 5-min bars (stop first when both). Real trades are exempt; --force overrides (say why in the desk log).
+    if a.real_pnl is None and a.taken != 'yes' and a.outcome in ('time', 'target', 'stop') and not getattr(a, 'force', False):
+        ft = first_touch(ddir, idea)
+        if ft is not None:
+            want, when = ft
+            when_et = when.astimezone(ET).strftime('%H:%M') if ET else str(when)
+            if want and a.outcome != want:
+                sys.exit(f"{a.id}: cached 5-min bars show the {want} touched first (bar {when_et} ET), not '{a.outcome}'. "
+                         "Fetch fresh bars if the cache is stale, or pass --force with a reason.")
+            if want is None and a.outcome != 'time':
+                sys.exit(f"{a.id}: cached 5-min bars (through {when_et} ET) show neither stop nor target touched; "
+                         "refresh bars first, or pass --force.")
     res = score_paper(idea, a.outcome, a.exit, cfg)
     res['resolvedAt'] = now_et().isoformat(timespec='seconds')
     idea['result'] = res
@@ -389,13 +439,24 @@ def main():
     p.add_argument('--taken', choices=['yes', 'no'])
     p.add_argument('--real-pnl', type=float, help="K's actual P&L on it, net of fees, in the idea's currency")
     p.add_argument('--early', action='store_true', help='allow a paper time exit before 16:00 ET (normally refused)')
+    p.add_argument('--force', action='store_true', help='skip the 5-min bar first-touch check (explain why in the desk log)')
     p.set_defaults(fn=cmd_resolve)
     p = sp.add_parser('list', parents=[common], help='list ideas')
     p.add_argument('--date')
     p.add_argument('--open', action='store_true')
     p.set_defaults(fn=cmd_list)
     a = ap.parse_args()
-    a.fn(a)
+    if a.cmd == 'list':
+        a.fn(a)
+        return
+    # Kiwi Nov 25 2026: exclusive lock for add/resolve. Parallel resolves in the 3:13 PM close-out raced on
+    # journal.json and one lost update left XIU.TO open. Read-modify-write now happens under journal.json.lock.
+    with open(os.path.join(desk_dir(a), 'journal.json.lock'), 'a') as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        try:
+            a.fn(a)
+        finally:
+            fcntl.flock(lk, fcntl.LOCK_UN)
 
 
 if __name__ == '__main__':

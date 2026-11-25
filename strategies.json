@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-24T21:55:41-05:00",
+ "updated": "2026-11-25T21:54:47+00:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -143,7 +143,7 @@
    "bot": "scanner",
    "name": "Big-gap fade (0.75x ATR14)",
    "short": "Gap fade",
-   "tested": "testing - Nov 24 walk-forward (daily bars to Nov 24): XIU OOS -0.006R on 41 (2/5 windows) so XIU gap fade stays PAPER ONLY (log, don't send); SOFI +0.391R on 12 (5/5) and HXT +0.025R on 41 (3/5) stay testing at small live size. 1-2 of the 20 journal trades the promotion rule needs.",
+   "tested": "testing - Nov 25 walk-forward (daily bars to Nov 25, 0 leaks): XIU OOS +0.021R on 42 (2/5 windows) so XIU gap fade stays PAPER ONLY (log, don't send); SOFI +0.391R on 12 (5/5) and HXT +0.055R on 42 (3/5) stay testing at small live size. 1-3 of the 20 journal trades the promotion rule needs.",
    "testedTag": "testing (XIU paper only)",
    "stats": {
     "source": "/workspace/quant/eod/2026-11-02/recheck_output.txt (daily bars Oct 2024 - Nov 2 2026, after Questrade fees + 0.02%/side slip)",
@@ -1116,7 +1116,7 @@
    "name": "QQQ-only relative-volume breakout (rest retired) + stocks-in-play scout",
    "short": "SIP scout + QQQ RVOL",
    "tested": "retired on every ticker except QQQ (tested -0.28R on 97, both halves negative); QQQ-only kept as testing (+0.179R on 17, 30-min proxy)",
-   "testedTag": "paper only (QQQ RVOL demoted Nov 16: live record negative); scout role unchanged",
+   "testedTag": "paper only (QQQ RVOL demoted Nov 16: live record negative; journal 2 targets / 4 stops, avg -0.14R as of Nov 25); scout role unchanged",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "rule": "RVOL2 day-high/low break, VWAP side, t2R",

@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-25T15:56:49-05:00",
+  "updated": "2026-11-25T16:54:40-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -4282,7 +4282,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 28,
+   "runs": 30,
    "symbolsQuoted": {
     "unique": [
      "QQQ",
@@ -4304,7 +4304,7 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-25T15:56:49-05:00",
+   "lastRun": "2026-11-25T16:54:40-05:00",
    "keys": [
     "order:HXT.TO gap fade long 20 @ 91.05 lmt",
     "order:HXT.TO gap fade long 20 @ 90.92 (09:57)"
@@ -4487,8 +4487,8 @@
   },
   "quant": {
    "quotesCalls": 0,
-   "barCalls": 3,
-   "bars": 18,
+   "barCalls": 6,
+   "bars": 36,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -4500,8 +4500,8 @@
    "ideasRejected": 0,
    "ordersSent": 0,
    "fills": 0,
-   "backtestVariants": 0,
-   "simulatedTrades": 0,
+   "backtestVariants": 45,
+   "simulatedTrades": 2577,
    "runs": 0,
    "symbolsQuoted": {
     "unique": [],
@@ -4553,6 +4553,35 @@
     "rejected:2026-11-25-SNDK-1",
     "rejected:2026-11-25-QQQ-1"
    ]
+  },
+  "journal": {
+   "quotesCalls": 0,
+   "barCalls": 9,
+   "bars": 301,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null
   }
  }
 }
