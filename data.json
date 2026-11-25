@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 25, 2026 1:36 PM ET",
+  "lastUpdated": "Wed Nov 25, 2026 1:59 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "13:37 ET: X news scan found no new company-specific long catalyst.",
+      "status": "13:59 ET: X news scan: another DELL earnings recap (not fresh) and a non-US/TSX bank deal; no valid long catalyst.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,16 +61,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:37 no fresh catalyst",
-        "detail": "13:37 ET: X news scan found no new company-specific long catalyst.",
-        "since": "2026-11-25T13:36:49-05:00",
+        "now": "13:59 no fresh catalyst",
+        "detail": "13:59 ET: X news scan: another DELL earnings recap (not fresh) and a non-US/TSX bank deal; no valid long catalyst.",
+        "since": "2026-11-25T13:59:21-05:00",
         "state": "waiting",
         "log": [
           "11:22 MDT ~flat, no headline move",
           "11:39 MDT ~flat, no headline move",
           "11:53 MDT ~flat, no headline move"
         ],
-        "next": "Next check 13:52"
+        "next": "Next check 14:14"
       }
     },
     {
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "13:37 ET: desk flat, no working orders or pending approvals; 0 of 150 CAD risk used. No valid live signals.",
+      "status": "13:59 ET: desk flat, no working orders or pending approvals; 0 of 150 CAD risk used. No valid live signals.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "13:37 flat, no signals",
-        "detail": "13:37 ET: desk flat, no working orders or pending approvals; 0 of 150 CAD risk used. No valid live signals.",
-        "since": "2026-11-25T13:36:49-05:00",
+        "now": "13:59 flat, no signals",
+        "detail": "13:59 ET: desk flat, no working orders or pending approvals; 0 of 150 CAD risk used. No valid live signals.",
+        "since": "2026-11-25T13:59:21-05:00",
         "state": "waiting",
-        "next": "Next check 13:52",
+        "next": "Next check 14:14",
         "log": [
           "11:22 intraday run: 0 orders",
           "11:39 intraday run: 0 orders",
@@ -832,8 +832,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 35.35,
-      "priceTime": "2026-11-25T13:36:37-05:00"
+      "last": 35.54,
+      "priceTime": "2026-11-25T13:59:05-05:00"
     },
     {
       "date": "2026-11-25",
@@ -856,8 +856,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 75.93,
-      "priceTime": "2026-11-25T13:36:37-05:00"
+      "last": 75.645,
+      "priceTime": "2026-11-25T13:59:09-05:00"
     },
     {
       "date": "2026-11-25",
@@ -880,8 +880,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 291.0,
-      "priceTime": "2026-11-25T13:36:39-05:00"
+      "last": 292.5,
+      "priceTime": "2026-11-25T13:59:10-05:00"
     },
     {
       "date": "2026-11-25",
@@ -904,8 +904,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 96.59,
-      "priceTime": "2026-11-25T13:36:32-05:00"
+      "last": 96.565,
+      "priceTime": "2026-11-25T13:59:11-05:00"
     },
     {
       "date": "2026-11-25",
@@ -928,8 +928,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 147.615,
-      "priceTime": "2026-11-25T13:36:39-05:00"
+      "last": 148.0594,
+      "priceTime": "2026-11-25T13:59:11-05:00"
     },
     {
       "date": "2026-11-25",
@@ -952,8 +952,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 582.81,
-      "priceTime": "2026-11-25T13:36:39-05:00"
+      "last": 589.62,
+      "priceTime": "2026-11-25T13:59:11-05:00"
     },
     {
       "date": "2026-11-25",
@@ -976,8 +976,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 71.55,
-      "priceTime": "2026-11-25T13:36:39-05:00"
+      "last": 71.995,
+      "priceTime": "2026-11-25T13:59:11-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1000,8 +1000,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 628.85,
-      "priceTime": "2026-11-25T13:36:39-05:00"
+      "last": 631.28,
+      "priceTime": "2026-11-25T13:59:11-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1030,8 +1030,8 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 92.47,
-      "priceTime": "2026-11-25T13:35:41-05:00",
+      "last": 92.67,
+      "priceTime": "2026-11-25T13:55:22-05:00",
       "statusAt": "2026-11-25T09:59:45-05:00"
     },
     {
@@ -1061,8 +1061,8 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 51.18,
-      "priceTime": "2026-11-25T13:36:21-05:00",
+      "last": 51.21,
+      "priceTime": "2026-11-25T13:59:07-05:00",
       "statusAt": "2026-11-25T13:28:16-05:00",
       "triggeredAt": "2026-11-25T10:07:00-05:00",
       "triggerPrice": 50.5,
@@ -1090,11 +1090,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-25T09:31:18-05:00",
-      "last": 12.99,
-      "priceTime": "2026-11-25T13:36:38-05:00"
+      "last": 13.035,
+      "priceTime": "2026-11-25T13:59:09-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-25T13:36:44-05:00",
+  "watchlistUpdated": "2026-11-25T13:59:16-05:00",
   "scorecard": {
     "updated": "2026-11-24T16:54:01-05:00",
     "currency": "CAD",
@@ -1469,7 +1469,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-25",
-    "updated": "2026-11-25T13:36:40-05:00",
+    "updated": "2026-11-25T13:59:10-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
