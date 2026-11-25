@@ -3317,6 +3317,183 @@
       "taken": null,
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-25-NVDA-1",
+      "date": "2026-11-25",
+      "session": "adhoc",
+      "ticker": "NVDA",
+      "side": "short",
+      "entry": 141.22,
+      "stop": 145.04,
+      "target": 133.58,
+      "shares": 7,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (short only); 9:45-9:50 bar broke OR low 141.22; logged 09:59 ET at 144.2. Paper only (SIP ORB paper; shorts need borrow agreement). Scout: whale.",
+      "loggedAt": "2026-11-25T09:59:44-05:00",
+      "loggedLate": true,
+      "loggedPrice": 144.2,
+      "plan": {
+        "riskGross": 26.74,
+        "rewardGross": 53.48,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0204,
+          "fx": 0.8,
+          "total": 0.8226
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0204,
+          "fx": 0.4,
+          "total": 0.4215
+        },
+        "netProfitAtTarget": 52.66,
+        "netLossAtStop": -27.16,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 75.29,
+        "netLossAtStopCAD": -38.84
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-25-MU-1",
+      "date": "2026-11-25",
+      "session": "adhoc",
+      "ticker": "MU",
+      "side": "short",
+      "entry": 558.05,
+      "stop": 578.99,
+      "target": 516.17,
+      "shares": 1,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (short only); 9:45-9:50 bar broke OR low 558.05; logged 09:59 ET at 571.34. Paper only (SIP ORB paper; shorts need borrow agreement). Scout: whale.",
+      "loggedAt": "2026-11-25T09:59:44-05:00",
+      "loggedLate": true,
+      "loggedPrice": 571.34,
+      "plan": {
+        "riskGross": 20.94,
+        "rewardGross": 41.88,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0115,
+          "fx": 0.63,
+          "total": 0.6397
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0115,
+          "fx": 0.31,
+          "total": 0.3256
+        },
+        "netProfitAtTarget": 41.24,
+        "netLossAtStop": -21.27,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 58.97,
+        "netLossAtStopCAD": -30.41
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-25-SNDK-1",
+      "date": "2026-11-25",
+      "session": "adhoc",
+      "ticker": "SNDK",
+      "side": "short",
+      "entry": 69.3,
+      "stop": 72.52,
+      "target": 62.86,
+      "shares": 8,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (short only); 9:45-9:50 bar broke OR low 69.3; logged 09:59 ET at 70.54. Paper only (SIP ORB paper; shorts need borrow agreement). Scout: whale.",
+      "loggedAt": "2026-11-25T09:59:45-05:00",
+      "loggedLate": true,
+      "loggedPrice": 70.54,
+      "plan": {
+        "riskGross": 25.76,
+        "rewardGross": 51.52,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0114,
+          "fx": 0.77,
+          "total": 0.7842
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0114,
+          "fx": 0.39,
+          "total": 0.3978
+        },
+        "netProfitAtTarget": 50.74,
+        "netLossAtStop": -26.16,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 72.54,
+        "netLossAtStopCAD": -37.4
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-25T09:52:29-05:00",
+  "updated": "2026-11-25T10:00:14-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -4266,7 +4266,7 @@
  },
  "2026-11-25": {
   "kiwi": {
-   "quotesCalls": 1,
+   "quotesCalls": 2,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -4278,11 +4278,11 @@
    "ideasGenerated": 0,
    "ideasLogged": 0,
    "ideasRejected": 0,
-   "ordersSent": 1,
+   "ordersSent": 2,
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 2,
+   "runs": 3,
    "symbolsQuoted": {
     "unique": [
      "QQQ",
@@ -4297,22 +4297,23 @@
      "XIU.TO",
      "SOFI"
     ],
-    "total": 11
+    "total": 15
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-25T09:40:49-05:00",
+   "lastRun": "2026-11-25T10:00:14-05:00",
    "keys": [
-    "order:HXT.TO gap fade long 20 @ 91.05 lmt"
+    "order:HXT.TO gap fade long 20 @ 91.05 lmt",
+    "order:HXT.TO gap fade long 20 @ 90.92 (09:57)"
    ]
   },
   "scanner": {
-   "quotesCalls": 3,
-   "barCalls": 3,
-   "bars": 75,
+   "quotesCalls": 5,
+   "barCalls": 5,
+   "bars": 86,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -4333,9 +4334,13 @@
      "HXT.TO",
      "SOFI",
      "SPY",
-     "QQQ"
+     "QQQ",
+     "MDT",
+     "NVDA",
+     "MU",
+     "SNDK"
     ],
-    "total": 10
+    "total": 18
    },
    "headlines": {
     "items": [],
@@ -4350,8 +4355,8 @@
   },
   "news": {
    "quotesCalls": 0,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 1,
+   "bars": 6,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 1,
@@ -4399,8 +4404,8 @@
   },
   "whale": {
    "quotesCalls": 1,
-   "barCalls": 0,
-   "bars": 0,
+   "barCalls": 1,
+   "bars": 6,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,
@@ -4474,6 +4479,74 @@
     "seen": []
    },
    "lastRun": "2026-11-25T09:52:29-05:00"
+  },
+  "quant": {
+   "quotesCalls": 0,
+   "barCalls": 3,
+   "bars": 18,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 3,
+   "ideasLogged": 3,
+   "ideasRejected": 0,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "logged:2026-11-25-NVDA-1",
+    "logged:2026-11-25-MU-1",
+    "logged:2026-11-25-SNDK-1"
+   ]
+  },
+  "risk": {
+   "quotesCalls": 0,
+   "barCalls": 0,
+   "bars": 0,
+   "optionCalls": 0,
+   "optionContracts": 0,
+   "webSearches": 0,
+   "pagesFetched": 0,
+   "xSearches": 0,
+   "xPosts": 0,
+   "ideasGenerated": 0,
+   "ideasLogged": 0,
+   "ideasRejected": 3,
+   "ordersSent": 0,
+   "fills": 0,
+   "backtestVariants": 0,
+   "simulatedTrades": 0,
+   "runs": 0,
+   "symbolsQuoted": {
+    "unique": [],
+    "total": 0
+   },
+   "headlines": {
+    "items": [],
+    "count": 0,
+    "seen": []
+   },
+   "lastRun": null,
+   "keys": [
+    "rejected:2026-11-25-NVDA-1",
+    "rejected:2026-11-25-MU-1",
+    "rejected:2026-11-25-SNDK-1"
+   ]
   }
  }
 }

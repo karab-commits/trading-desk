@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 25, 2026 9:40 AM ET",
+  "lastUpdated": "Wed Nov 25, 2026 10:00 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Open gaps: HXT -1.42 vs 1.145 trigger (buy 20 @91.05 lmt sent 9:31, expired unapproved 9:33; paper tracked), XIU div-adj -0.67 vs 0.654 (paper only), SOFI -0.48 vs 0.647 (no signal).",
+      "status": "HXT.TO gap fade long 20 @ 90.92 sent 09:57, expired unapproved 09:59 (2nd expiry today). Paper-tracked.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,14 +37,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "HXT fade sent; expired",
-        "detail": "Open gaps: HXT -1.42 vs 1.145 trigger (buy 20 @91.05 lmt sent 9:31, expired unapproved 9:33; paper tracked), XIU div-adj -0.67 vs 0.654 (paper only), SOFI -0.48 vs 0.647 (no signal).",
-        "since": "2026-11-25T09:33:48-05:00",
+        "now": "HXT order expired",
+        "detail": "HXT.TO gap fade long 20 @ 90.92 sent 09:57, expired unapproved 09:59 (2nd expiry today). Paper-tracked.",
+        "since": "2026-11-25T09:59:45-05:00",
         "state": "done",
         "log": [
-          "13:20 scanner: done for the day",
-          "16:55 WF: SOFI +0.365R, HXT +0.028R OOS",
-          "9:30 gap check: all under trigger, no orders"
+          "9:30 gap check: all under trigger, no orders",
+          "09:57 HXT gap fade re-sent at 9:45 rule",
+          "09:59 HXT re-send expired unapproved"
         ],
         "next": "Intraday 9:45"
       }
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "AMBA -31% guide, URBN -11%, DELL -7.8% (shorts paper: borrow agreement), MDT long watch. Futures down on AI/chip selloff + tariff threats ahead of PCE.",
+      "status": "MDT ~flat (95.69); no fresh <=60-min headline with a 2% move",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -61,14 +61,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "4 names: AMBA URBN DELL MDT",
-        "detail": "AMBA -31% guide, URBN -11%, DELL -7.8% (shorts paper: borrow agreement), MDT long watch. Futures down on AI/chip selloff + tariff threats ahead of PCE.",
-        "since": "2026-11-25T09:00:37-05:00",
+        "now": "MDT: no signal",
+        "detail": "MDT ~flat (95.69); no fresh <=60-min headline with a 2% move",
+        "since": "2026-11-25T09:59:46-05:00",
         "state": "done",
         "log": [
-          "14:15 news scan: no signal",
           "14:24 no headline <=60 min w/ 2% move; window ends 14:30",
-          "14:35 window closed, no new ideas"
+          "14:35 window closed, no new ideas",
+          "09:59 MDT no pullback signal"
         ],
         "next": "Intraday 9:45"
       }
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "Stocks in play pre-mkt: NVDA -6.4% (15.9M sh), MU -9.6%, SNDK -9.0%. QQQ RVOL paper.",
+      "status": "Scouted NVDA, MU, SNDK; QQQ RVOL window opens 10:00 (paper)",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "SIP scout: NVDA MU SNDK",
-        "detail": "Stocks in play pre-mkt: NVDA -6.4% (15.9M sh), MU -9.6%, SNDK -9.0%. QQQ RVOL paper.",
-        "since": "2026-11-25T09:00:37-05:00",
+        "now": "Scout: 3 SIP names",
+        "detail": "Scouted NVDA, MU, SNDK; QQQ RVOL window opens 10:00 (paper)",
+        "since": "2026-11-25T09:59:45-05:00",
         "state": "done",
         "next": "Intraday 9:45",
         "log": [
-          "14:15 QQQ no break",
           "14:24 QQQ no day high/low break (paper)",
-          "14:35 QQQ no day high/low break (paper)"
+          "14:35 QQQ no day high/low break (paper)",
+          "09:59 QQQ no signal before 10:00"
         ]
       }
     },
@@ -108,18 +108,18 @@
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
-      "rejectedToday": 0,
-      "rejectedWeek": 6,
-      "rejectedAllTime": 21,
+      "rejectedToday": 3,
+      "rejectedWeek": 9,
+      "rejectedAllTime": 24,
       "activity": {
-        "now": "1 ALLOW, 0 BLOCK",
+        "now": "HXT 27.60 risk ALLOW",
         "detail": "HXT.TO long 28.40 CAD ALLOW. Mood volatile (rv10 34.2%). No pauses.",
-        "since": "2026-11-25T09:33:48-05:00",
+        "since": "2026-11-25T09:57:36-05:00",
         "state": "done",
         "log": [
-          "13:55 budgets refreshed",
           "14:15 no orders to check",
-          "14:35 no orders to check"
+          "14:35 no orders to check",
+          "09:57 HXT ALLOW 27.6/50"
         ],
         "next": "Intraday 9:45"
       }
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "HXT.TO buy 20 limit 91.05 sent 9:31 ET, 2-min approval window expired 9:33. Not re-sent. K's manual NVDA held (not desk).",
+      "status": "09:57 HXT.TO gap fade long re-sent at the 9:45 rule, expired unapproved 09:59; 3 SIP shorts on paper",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Open: HXT expired unapproved",
-        "detail": "HXT.TO buy 20 limit 91.05 sent 9:31 ET, 2-min approval window expired 9:33. Not re-sent. K's manual NVDA held (not desk).",
-        "since": "2026-11-25T09:33:48-05:00",
+        "now": "HXT re-sent, expired",
+        "detail": "09:57 HXT.TO gap fade long re-sent at the 9:45 rule, expired unapproved 09:59; 3 SIP shorts on paper",
+        "since": "2026-11-25T10:00:14-05:00",
         "state": "done",
         "next": "Intraday 9:45",
         "log": [
-          "15:58 flat; watchlist refresh only",
           "9:30 open: no gap fades, 0 orders",
-          "16:55 review: paper re-scored at 4 PM close"
+          "16:55 review: paper re-scored at 4 PM close",
+          "09:59 intraday run done"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (paper again from Nov 24: long side negative OOS/live; shorts need the borrow agreement) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "NVDA, MU, SNDK opening-range breakouts, paper only.",
+      "status": "NVDA, MU, SNDK broke OR low 9:45-9:50 then reversed; paper only",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP ORB paper: 3 names",
-        "detail": "NVDA, MU, SNDK opening-range breakouts, paper only.",
-        "since": "2026-11-25T09:00:37-05:00",
-        "state": "waiting",
+        "now": "3 SIP shorts on paper",
+        "detail": "NVDA, MU, SNDK broke OR low 9:45-9:50 then reversed; paper only",
+        "since": "2026-11-25T09:59:45-05:00",
+        "state": "done",
         "next": "ORB 9:45",
         "log": [
-          "13:36 VWAP scan: no signal",
           "13:55 META/AMZN 15m bars: no VWAP signal",
-          "14:15 VWAP paper scan: none"
+          "14:15 VWAP paper scan: none",
+          "09:59 SIP ORB paper: NVDA MU SNDK short"
         ]
       }
     },
@@ -206,14 +206,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No source signal",
+        "now": "No live signal to express",
         "detail": "4 option ideas screened at 9:52; no valid underlying signal, no option orders. Real 0.00.",
-        "since": "2026-11-24T16:55:52-05:00",
-        "state": "done",
+        "since": "2026-11-25T09:59:46-05:00",
+        "state": "idle",
         "log": [
-          "13:55 no spread",
           "14:15 no spread",
-          "14:35 window closed, 0 spreads"
+          "14:35 window closed, 0 spreads",
+          "09:59 no live underlying signal"
         ],
         "next": "Post-open options Wed"
       }
@@ -636,9 +636,9 @@
     "daysRunning": 13
   },
   "pnlToday": {
-    "realized": 0,
-    "unrealized": 0,
-    "total": 0,
+    "realized": 0.0,
+    "unrealized": 0.0,
+    "total": 0.0,
     "trades": 0
   },
   "pnlWeek": {
@@ -653,7 +653,7 @@
     "total": -24.61,
     "trades": 2
   },
-  "lastApprovedIdea": "HXT.TO gap fade long 20 @ 91.05 lmt",
+  "lastApprovedIdea": "HXT.TO gap fade long 20 @ 90.92 (09:57)",
   "fees": {
     "broker": "Questrade self-directed (online orders)",
     "checked": "2026-11-02",
@@ -695,8 +695,8 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-25T09:31:01-05:00",
-    "ideasLogged": 43,
+    "updated": "2026-11-25T09:59:45-05:00",
+    "ideasLogged": 46,
     "byDate": {
       "2026-11-02": {
         "net": 75.71,
@@ -800,9 +800,9 @@
       },
       "2026-11-25": {
         "net": 0.0,
-        "ideas": 2,
+        "ideas": 5,
         "resolved": 0,
-        "open": 2,
+        "open": 5,
         "filled": 0,
         "wins": 0,
         "real": 0.0,
@@ -832,8 +832,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 33.2201,
-      "priceTime": "2026-11-25T09:40:27-05:00"
+      "last": 35.185,
+      "priceTime": "2026-11-25T09:59:52-05:00"
     },
     {
       "date": "2026-11-25",
@@ -856,8 +856,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 75.75,
-      "priceTime": "2026-11-25T09:40:29-05:00"
+      "last": 77.0125,
+      "priceTime": "2026-11-25T09:59:52-05:00"
     },
     {
       "date": "2026-11-25",
@@ -880,8 +880,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 274.42,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 279.245,
+      "priceTime": "2026-11-25T09:59:52-05:00"
     },
     {
       "date": "2026-11-25",
@@ -904,8 +904,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 94.54,
-      "priceTime": "2026-11-25T09:40:29-05:00"
+      "last": 95.685,
+      "priceTime": "2026-11-25T09:56:21-05:00"
     },
     {
       "date": "2026-11-25",
@@ -928,8 +928,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 142.28,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 144.2,
+      "priceTime": "2026-11-25T09:56:37-05:00"
     },
     {
       "date": "2026-11-25",
@@ -952,8 +952,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 563.04,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 571.34,
+      "priceTime": "2026-11-25T09:56:37-05:00"
     },
     {
       "date": "2026-11-25",
@@ -976,8 +976,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 70.09,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 70.54,
+      "priceTime": "2026-11-25T09:56:37-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1000,13 +1000,13 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 610.88,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 615.07,
+      "priceTime": "2026-11-25T09:56:37-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "HXT.TO",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:31:18-05:00",
       "side": "long",
@@ -1030,8 +1030,9 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 90.73,
-      "priceTime": "2026-11-25T09:35:00-05:00"
+      "last": 90.78,
+      "priceTime": "2026-11-25T09:54:20-05:00",
+      "statusAt": "2026-11-25T09:59:45-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1060,8 +1061,8 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 50.14,
-      "priceTime": "2026-11-25T09:40:29-05:00"
+      "last": 50.32,
+      "priceTime": "2026-11-25T09:56:30-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1085,11 +1086,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-25T09:31:18-05:00",
-      "last": 12.125,
-      "priceTime": "2026-11-25T09:40:30-05:00"
+      "last": 12.355,
+      "priceTime": "2026-11-25T09:59:52-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-25T09:40:42-05:00",
+  "watchlistUpdated": "2026-11-25T10:00:01-05:00",
   "scorecard": {
     "updated": "2026-11-24T16:54:01-05:00",
     "currency": "CAD",
@@ -1464,7 +1465,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-25",
-    "updated": "2026-11-25T09:31:04-05:00",
+    "updated": "2026-11-25T09:59:45-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
