@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-25T10:00:14-05:00",
+  "updated": "2026-11-25T10:07:25-05:00",
   "date": "2026-11-25",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -9,38 +9,38 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 0.0,
+      "net": 1.77,
       "final": 0.0,
-      "unrealized": 0.0,
+      "unrealized": 1.77,
       "ideas": 5,
       "scored": 0,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
-      "pending": 5,
+      "pending": 4,
       "wins": 0,
       "losses": 0
     },
     "week": {
-      "net": -47.48,
+      "net": -45.71,
       "final": -47.48,
-      "unrealized": 0.0,
+      "unrealized": 1.77,
       "ideas": 16,
       "scored": 11,
-      "open": 0,
+      "open": 1,
       "notTriggered": 0,
-      "pending": 5,
+      "pending": 4,
       "wins": 3,
       "losses": 8
     },
     "allTime": {
-      "net": 159.36,
+      "net": 161.13,
       "final": 159.36,
-      "unrealized": 0.0,
+      "unrealized": 1.77,
       "ideas": 44,
       "scored": 35,
-      "open": 0,
+      "open": 1,
       "notTriggered": 4,
-      "pending": 5,
+      "pending": 4,
       "wins": 16,
       "losses": 19
     }
@@ -48,22 +48,22 @@
   "byBot": {
     "scanner": {
       "today": {
-        "net": 0.0,
+        "net": 1.77,
         "ideas": 2,
         "scored": 0,
-        "open": 0
+        "open": 1
       },
       "week": {
-        "net": 16.28,
+        "net": 18.05,
         "ideas": 5,
         "scored": 3,
-        "open": 0
+        "open": 1
       },
       "allTime": {
-        "net": 91.99,
+        "net": 93.76,
         "ideas": 11,
         "scored": 5,
-        "open": 0
+        "open": 1
       }
     },
     "quant": {
@@ -245,11 +245,13 @@
       "size": 59,
       "loggedAt": "2026-11-25T09:31:01-05:00",
       "why": "untaken",
-      "state": "waiting",
+      "state": "unrealized",
       "outcome": null,
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "priceTime": "2026-11-25T10:07:00-05:00",
+      "exit": 50.5,
+      "fees": 0.0,
+      "net": 1.77,
+      "netCAD": 1.77
     },
     {
       "id": "2026-11-25-HXT-1",

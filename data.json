@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Wed Nov 25, 2026 10:00 AM ET",
+  "lastUpdated": "Wed Nov 25, 2026 10:07 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -37,14 +37,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "HXT order expired",
+        "now": "Gap fade window: done",
         "detail": "HXT.TO gap fade long 20 @ 90.92 sent 09:57, expired unapproved 09:59 (2nd expiry today). Paper-tracked.",
-        "since": "2026-11-25T09:59:45-05:00",
+        "since": "2026-11-25T10:07:25-05:00",
         "state": "done",
         "log": [
-          "9:30 gap check: all under trigger, no orders",
           "09:57 HXT gap fade re-sent at 9:45 rule",
-          "09:59 HXT re-send expired unapproved"
+          "09:59 HXT re-send expired unapproved",
+          "10:07 HXT 2/2 expired, no more entries"
         ],
         "next": "Intraday 9:45"
       }
@@ -63,12 +63,12 @@
       "activity": {
         "now": "MDT: no signal",
         "detail": "MDT ~flat (95.69); no fresh <=60-min headline with a 2% move",
-        "since": "2026-11-25T09:59:46-05:00",
+        "since": "2026-11-25T10:07:25-05:00",
         "state": "done",
         "log": [
-          "14:24 no headline <=60 min w/ 2% move; window ends 14:30",
           "14:35 window closed, no new ideas",
-          "09:59 MDT no pullback signal"
+          "09:59 MDT no pullback signal",
+          "10:07 MDT no 2% move/pullback"
         ],
         "next": "Intraday 9:45"
       }
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scout: 3 SIP names",
+        "now": "QQQ: no breakout",
         "detail": "Scouted NVDA, MU, SNDK; QQQ RVOL window opens 10:00 (paper)",
-        "since": "2026-11-25T09:59:45-05:00",
+        "since": "2026-11-25T10:07:25-05:00",
         "state": "done",
         "next": "Intraday 9:45",
         "log": [
-          "14:24 QQQ no day high/low break (paper)",
           "14:35 QQQ no day high/low break (paper)",
-          "09:59 QQQ no signal before 10:00"
+          "09:59 QQQ no signal before 10:00",
+          "10:07 QQQ 10:00 bar closed under day high (paper)"
         ]
       }
     },
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "HXT re-sent, expired",
+        "now": "No new signals",
         "detail": "09:57 HXT.TO gap fade long re-sent at the 9:45 rule, expired unapproved 09:59; 3 SIP shorts on paper",
-        "since": "2026-11-25T10:00:14-05:00",
+        "since": "2026-11-25T10:07:25-05:00",
         "state": "done",
         "next": "Intraday 9:45",
         "log": [
-          "9:30 open: no gap fades, 0 orders",
           "16:55 review: paper re-scored at 4 PM close",
-          "09:59 intraday run done"
+          "09:59 intraday run done",
+          "10:07 intraday run: 0 orders"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (paper again from Nov 24: long side negative OOS/live; shorts need the borrow agreement) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "NVDA, MU, SNDK broke OR low 9:45-9:50 then reversed; paper only",
+      "status": "NVDA, MU, SNDK paper shorts: day highs 145.98/584.49/72.60 crossed their OR-high stops",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -160,15 +160,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "3 SIP shorts on paper",
-        "detail": "NVDA, MU, SNDK broke OR low 9:45-9:50 then reversed; paper only",
-        "since": "2026-11-25T09:59:45-05:00",
+        "now": "SIP paper shorts stopped",
+        "detail": "NVDA, MU, SNDK paper shorts: day highs 145.98/584.49/72.60 crossed their OR-high stops",
+        "since": "2026-11-25T10:07:25-05:00",
         "state": "done",
         "next": "ORB 9:45",
         "log": [
-          "13:55 META/AMZN 15m bars: no VWAP signal",
           "14:15 VWAP paper scan: none",
-          "09:59 SIP ORB paper: NVDA MU SNDK short"
+          "09:59 SIP ORB paper: NVDA MU SNDK short",
+          "10:07 SIP paper shorts hit stops"
         ]
       }
     },
@@ -832,8 +832,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 35.185,
-      "priceTime": "2026-11-25T09:59:52-05:00"
+      "last": 34.82,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -856,8 +856,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 77.0125,
-      "priceTime": "2026-11-25T09:59:52-05:00"
+      "last": 76.41,
+      "priceTime": "2026-11-25T10:07:01-05:00"
     },
     {
       "date": "2026-11-25",
@@ -880,8 +880,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 279.245,
-      "priceTime": "2026-11-25T09:59:52-05:00"
+      "last": 279.54,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -904,8 +904,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 95.685,
-      "priceTime": "2026-11-25T09:56:21-05:00"
+      "last": 95.415,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -928,8 +928,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 144.2,
-      "priceTime": "2026-11-25T09:56:37-05:00"
+      "last": 144.47,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -952,8 +952,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 571.34,
-      "priceTime": "2026-11-25T09:56:37-05:00"
+      "last": 574.91,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -976,8 +976,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 70.54,
-      "priceTime": "2026-11-25T09:56:37-05:00"
+      "last": 70.935,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1000,8 +1000,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 615.07,
-      "priceTime": "2026-11-25T09:56:37-05:00"
+      "last": 617.605,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     },
     {
       "date": "2026-11-25",
@@ -1030,14 +1030,14 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 90.78,
-      "priceTime": "2026-11-25T09:54:20-05:00",
+      "last": 91.04,
+      "priceTime": "2026-11-25T10:02:07-05:00",
       "statusAt": "2026-11-25T09:59:45-05:00"
     },
     {
       "date": "2026-11-25",
       "ticker": "XIU.TO",
-      "status": "watching",
+      "status": "triggered",
       "closeBy": "16:00",
       "addedAt": "2026-11-25T09:31:18-05:00",
       "side": "long",
@@ -1061,8 +1061,11 @@
       "tested": false,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 50.32,
-      "priceTime": "2026-11-25T09:56:30-05:00"
+      "last": 50.5,
+      "priceTime": "2026-11-25T10:07:00-05:00",
+      "statusAt": "2026-11-25T10:07:00-05:00",
+      "triggeredAt": "2026-11-25T10:07:00-05:00",
+      "triggerPrice": 50.5
     },
     {
       "date": "2026-11-25",
@@ -1086,11 +1089,11 @@
       "openPnl": null,
       "openPnlCAD": null,
       "statusAt": "2026-11-25T09:31:18-05:00",
-      "last": 12.355,
-      "priceTime": "2026-11-25T09:59:52-05:00"
+      "last": 12.375,
+      "priceTime": "2026-11-25T10:07:03-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-25T10:00:01-05:00",
+  "watchlistUpdated": "2026-11-25T10:07:11-05:00",
   "scorecard": {
     "updated": "2026-11-24T16:54:01-05:00",
     "currency": "CAD",
@@ -1465,7 +1468,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-25",
-    "updated": "2026-11-25T09:59:45-05:00",
+    "updated": "2026-11-25T10:07:01-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
