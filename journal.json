@@ -3494,6 +3494,65 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-25-QQQ-1",
+      "date": "2026-11-25",
+      "session": "midday",
+      "ticker": "QQQ",
+      "side": "long",
+      "entry": 620.02,
+      "stop": 618.4,
+      "target": 623.26,
+      "shares": 2,
+      "strategy": "QQQ relative-volume breakout",
+      "bot": "whale",
+      "currency": "USD",
+      "note": "12:10 ET 5m bar closed 620.02 above session high 620.00, above VWAP 612.82, RVOL 2.22 (1,033,364 vs 7-day slot avg 464,987; 20-day slot history not cached). Stop = bar low 618.40, target 2R 623.26. Logged at 12:31 ET at 619.99; 12:15 bar high 623.67 touched the target before logging. Size capped to 2 sh by buying power.",
+      "loggedAt": "2026-11-25T12:30:48-05:00",
+      "loggedLate": true,
+      "loggedPrice": 619.99,
+      "plan": {
+        "riskGross": 3.24,
+        "rewardGross": 6.48,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0257,
+          "fx": 0.1,
+          "total": 0.1229
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0255,
+          "fx": 0.05,
+          "total": 0.0741
+        },
+        "netProfitAtTarget": 6.36,
+        "netLossAtStop": -3.31,
+        "rrNet": 1.92,
+        "netProfitAtTargetCAD": 9.09,
+        "netLossAtStopCAD": -4.74
+      },
+      "mode": "paper",
+      "paperReason": "paper-only",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 34.22,
+        "median": 11.41,
+        "asOfClose": "2026-11-24",
+        "stale": false
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
