@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-25T10:07:25-05:00",
+  "updated": "2026-11-25T10:26:43-05:00",
   "date": "2026-11-25",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -9,9 +9,9 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 1.77,
+      "net": -10.62,
       "final": 0.0,
-      "unrealized": 1.77,
+      "unrealized": -10.62,
       "ideas": 5,
       "scored": 0,
       "open": 1,
@@ -21,9 +21,9 @@
       "losses": 0
     },
     "week": {
-      "net": -45.71,
+      "net": -58.1,
       "final": -47.48,
-      "unrealized": 1.77,
+      "unrealized": -10.62,
       "ideas": 16,
       "scored": 11,
       "open": 1,
@@ -33,9 +33,9 @@
       "losses": 8
     },
     "allTime": {
-      "net": 161.13,
+      "net": 148.74,
       "final": 159.36,
-      "unrealized": 1.77,
+      "unrealized": -10.62,
       "ideas": 44,
       "scored": 35,
       "open": 1,
@@ -48,19 +48,19 @@
   "byBot": {
     "scanner": {
       "today": {
-        "net": 1.77,
+        "net": -10.62,
         "ideas": 2,
         "scored": 0,
         "open": 1
       },
       "week": {
-        "net": 18.05,
+        "net": 5.66,
         "ideas": 5,
         "scored": 3,
         "open": 1
       },
       "allTime": {
-        "net": 93.76,
+        "net": 81.37,
         "ideas": 11,
         "scored": 5,
         "open": 1
@@ -244,14 +244,14 @@
       "currency": "CAD",
       "size": 59,
       "loggedAt": "2026-11-25T09:31:01-05:00",
-      "why": "untaken",
+      "why": "paper-only",
       "state": "unrealized",
       "outcome": null,
-      "priceTime": "2026-11-25T10:07:00-05:00",
-      "exit": 50.5,
+      "priceTime": "2026-11-25T10:26:07-05:00",
+      "exit": 50.29,
       "fees": 0.0,
-      "net": 1.77,
-      "netCAD": 1.77
+      "net": -10.62,
+      "netCAD": -10.62
     },
     {
       "id": "2026-11-25-HXT-1",

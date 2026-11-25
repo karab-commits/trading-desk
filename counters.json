@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-25T10:07:25-05:00",
+  "updated": "2026-11-25T10:26:43-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -4266,7 +4266,7 @@
  },
  "2026-11-25": {
   "kiwi": {
-   "quotesCalls": 3,
+   "quotesCalls": 4,
    "barCalls": 1,
    "bars": 5,
    "optionCalls": 0,
@@ -4282,7 +4282,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 4,
+   "runs": 5,
    "symbolsQuoted": {
     "unique": [
      "QQQ",
@@ -4297,14 +4297,14 @@
      "XIU.TO",
      "SOFI"
     ],
-    "total": 26
+    "total": 37
    },
    "headlines": {
     "items": [],
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-25T10:07:25-05:00",
+   "lastRun": "2026-11-25T10:26:43-05:00",
    "keys": [
     "order:HXT.TO gap fade long 20 @ 91.05 lmt",
     "order:HXT.TO gap fade long 20 @ 90.92 (09:57)"
@@ -4355,8 +4355,8 @@
   },
   "news": {
    "quotesCalls": 0,
-   "barCalls": 2,
-   "bars": 14,
+   "barCalls": 3,
+   "bars": 26,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 1,
@@ -4404,8 +4404,8 @@
   },
   "whale": {
    "quotesCalls": 1,
-   "barCalls": 2,
-   "bars": 14,
+   "barCalls": 3,
+   "bars": 26,
    "optionCalls": 0,
    "optionContracts": 0,
    "webSearches": 0,

@@ -3301,7 +3301,7 @@
         "netProfitAtTargetCAD": 39.53,
         "netLossAtStopCAD": -39.53
       },
-      "mode": "live",
+      "mode": "paper",
       "regime": "volatile",
       "regimeDetail": {
         "spy_rv10": 34.22,
@@ -3314,7 +3314,7 @@
         "checked": "2026-11-02"
       },
       "result": null,
-      "taken": null,
+      "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
     },
