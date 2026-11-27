@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 27, 2026 11:25 AM ET",
+  "lastUpdated": "Fri Nov 27, 2026 11:42 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -53,7 +53,7 @@
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "MRVL 138.26 above VWAP 136.38, VRTX 529.11 above VWAP 516.79; both headlines older than 60 min. US entries stop 12:15 ET",
+      "status": "MRVL 137.65 above VWAP 136.49, VRTX 528.98 above VWAP 517.28; headlines older than 60 min. US entries stop 12:15 ET",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -62,13 +62,13 @@
       "tradesAllTime": 0,
       "activity": {
         "now": "MRVL/VRTX: no fresh headline",
-        "detail": "MRVL 138.26 above VWAP 136.38, VRTX 529.11 above VWAP 516.79; both headlines older than 60 min. US entries stop 12:15 ET",
-        "since": "2026-11-27T11:25:59-05:00",
+        "detail": "MRVL 137.65 above VWAP 136.49, VRTX 528.98 above VWAP 517.28; headlines older than 60 min. US entries stop 12:15 ET",
+        "since": "2026-11-27T11:42:49-05:00",
         "state": "working",
         "log": [
-          "10:51 news: 0 signals",
           "11:09 news: 0 signals",
-          "11:26 news: 0 signals"
+          "11:26 news: 0 signals",
+          "11:42 news: 0 signals"
         ],
         "next": "Intraday 9:45"
       }
@@ -77,7 +77,7 @@
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "QQQ 645.57 above VWAP 641.56; no 5-min close above the session high 646.61",
+      "status": "11:30 bar closed 646.74 above the 646.61 high, but volume 359,923 vs 449,366 slot average (8 cached days) = RVOL 0.80 < 2.0: no signal",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -85,15 +85,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ RVOL: no close break",
-        "detail": "QQQ 645.57 above VWAP 641.56; no 5-min close above the session high 646.61",
-        "since": "2026-11-27T11:25:59-05:00",
+        "now": "QQQ: high break, RVOL 0.8",
+        "detail": "11:30 bar closed 646.74 above the 646.61 high, but volume 359,923 vs 449,366 slot average (8 cached days) = RVOL 0.80 < 2.0: no signal",
+        "since": "2026-11-27T11:42:49-05:00",
         "state": "working",
-        "next": "QQQ RVOL check 11:40",
+        "next": "QQQ RVOL check 11:55",
         "log": [
-          "11:22 QQQ inside day range (paper)",
           "11:39 QQQ inside day range (paper)",
-          "11:53 QQQ inside day range (paper)"
+          "11:53 QQQ inside day range (paper)",
+          "11:42 QQQ RVOL fail 0.80"
         ]
       }
     },
@@ -114,7 +114,7 @@
       "activity": {
         "now": "0/4 open, 0/150 used",
         "detail": "No orders to check this run",
-        "since": "2026-11-27T11:25:59-05:00",
+        "since": "2026-11-27T11:42:49-05:00",
         "state": "idle",
         "log": [
           "09:57 HXT ALLOW 27.6/50",
@@ -136,15 +136,15 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "11:26 run: 0 orders",
+        "now": "11:42 run: 0 orders",
         "detail": "No valid live signal; account flat",
-        "since": "2026-11-27T11:25:59-05:00",
+        "since": "2026-11-27T11:42:49-05:00",
         "state": "working",
         "next": "Intraday 9:45",
         "log": [
-          "10:51 run: 0 orders",
           "11:09 run: 0 orders",
-          "11:26 run: 0 orders"
+          "11:26 run: 0 orders",
+          "11:42 run: 0 orders"
         ]
       }
     },
@@ -152,7 +152,7 @@
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (paper again from Nov 24: long side negative OOS/live; shorts need the borrow agreement) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "MRVL 138.26 (stop 139.52), LITE 509.04 (stop 516.25); no new breaks",
+      "status": "MRVL 137.65 (stop 139.52), LITE 506.20 (stop 516.25); no new breaks",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
@@ -161,14 +161,14 @@
       "tradesAllTime": 2,
       "activity": {
         "now": "SIP: 2 paper shorts open",
-        "detail": "MRVL 138.26 (stop 139.52), LITE 509.04 (stop 516.25); no new breaks",
-        "since": "2026-11-27T11:25:59-05:00",
+        "detail": "MRVL 137.65 (stop 139.52), LITE 506.20 (stop 516.25); no new breaks",
+        "since": "2026-11-27T11:42:49-05:00",
         "state": "working",
         "next": "ORB scan 9:45",
         "log": [
-          "10:51 SIP: no new signal",
           "11:09 SIP: no new signal",
-          "11:26 SIP: no new signal"
+          "11:26 SIP: no new signal",
+          "11:42 SIP: no new signal"
         ]
       }
     },
@@ -861,8 +861,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 52.07,
-      "priceTime": "2026-11-27T11:25:46-05:00",
+      "last": 52.06,
+      "priceTime": "2026-11-27T11:42:26-05:00",
       "statusAt": "2026-11-27T09:31:05-05:00"
     },
     {
@@ -888,8 +888,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 93.96,
-      "priceTime": "2026-11-27T11:17:45-05:00",
+      "last": 94.0,
+      "priceTime": "2026-11-27T11:39:17-05:00",
       "statusAt": "2026-11-27T09:31:05-05:00"
     },
     {
@@ -916,8 +916,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 13.38,
-      "priceTime": "2026-11-27T11:25:48-05:00",
+      "last": 13.395,
+      "priceTime": "2026-11-27T11:42:32-05:00",
       "statusAt": "2026-11-27T09:31:05-05:00",
       "triggeredAt": "2026-11-27T09:30:49-05:00",
       "triggerPrice": 13.42
@@ -944,8 +944,8 @@
       "netLossAtStopCAD": -34.44,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 138.26,
-      "priceTime": "2026-11-27T11:25:48-05:00",
+      "last": 137.65,
+      "priceTime": "2026-11-27T11:42:32-05:00",
       "entry": 133.59,
       "stop": 139.52,
       "target": 121.73,
@@ -975,8 +975,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 529.11,
-      "priceTime": "2026-11-27T11:25:48-05:00"
+      "last": 528.975,
+      "priceTime": "2026-11-27T11:42:28-05:00"
     },
     {
       "date": "2026-11-27",
@@ -1000,8 +1000,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 83.38,
-      "priceTime": "2026-11-27T11:25:48-05:00"
+      "last": 83.475,
+      "priceTime": "2026-11-27T11:42:32-05:00"
     },
     {
       "date": "2026-11-27",
@@ -1025,8 +1025,8 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 641.69,
-      "priceTime": "2026-11-27T11:25:48-05:00"
+      "last": 640.7005,
+      "priceTime": "2026-11-27T11:42:32-05:00"
     },
     {
       "date": "2026-11-27",
@@ -1050,8 +1050,8 @@
       "netLossAtStopCAD": -35.93,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 509.04,
-      "priceTime": "2026-11-27T11:25:45-05:00",
+      "last": 506.1975,
+      "priceTime": "2026-11-27T11:42:30-05:00",
       "entry": 491.5,
       "stop": 516.25,
       "target": 442.0,
@@ -1081,11 +1081,11 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 645.57,
-      "priceTime": "2026-11-27T11:25:48-05:00"
+      "last": 645.71,
+      "priceTime": "2026-11-27T11:42:32-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-27T11:25:58-05:00",
+  "watchlistUpdated": "2026-11-27T11:42:49-05:00",
   "scorecard": {
     "updated": "2026-11-26T16:48:56-05:00",
     "currency": "CAD",
@@ -1484,7 +1484,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-27",
-    "updated": "2026-11-27T11:25:47-05:00",
+    "updated": "2026-11-27T11:42:30-05:00",
     "bots": {
       "scanner": {
         "budget": 50,
