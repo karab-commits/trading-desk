@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-27T09:52:45-05:00",
+  "updated": "2026-11-27T10:07:19-05:00",
   "date": "2026-11-27",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -12,11 +12,11 @@
       "net": 0.0,
       "final": 0.0,
       "unrealized": 0.0,
-      "ideas": 0,
+      "ideas": 2,
       "scored": 0,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 0,
       "losses": 0
     },
@@ -24,11 +24,11 @@
       "net": -13.26,
       "final": -13.26,
       "unrealized": 0.0,
-      "ideas": 17,
+      "ideas": 19,
       "scored": 17,
       "open": 0,
       "notTriggered": 0,
-      "pending": 0,
+      "pending": 2,
       "wins": 6,
       "losses": 11
     },
@@ -36,16 +36,36 @@
       "net": 193.58,
       "final": 193.58,
       "unrealized": 0.0,
-      "ideas": 45,
+      "ideas": 47,
       "scored": 41,
       "open": 0,
       "notTriggered": 4,
-      "pending": 0,
+      "pending": 2,
       "wins": 19,
       "losses": 22
     }
   },
   "byBot": {
+    "quant": {
+      "today": {
+        "net": 0.0,
+        "ideas": 2,
+        "scored": 0,
+        "open": 0
+      },
+      "week": {
+        "net": -106.44,
+        "ideas": 13,
+        "scored": 11,
+        "open": 0
+      },
+      "allTime": {
+        "net": 51.42,
+        "ideas": 30,
+        "scored": 28,
+        "open": 0
+      }
+    },
     "scanner": {
       "week": {
         "net": 84.01,
@@ -57,26 +77,6 @@
         "net": 159.72,
         "ideas": 11,
         "scored": 7,
-        "open": 0
-      },
-      "today": {
-        "net": 0.0,
-        "ideas": 0,
-        "scored": 0,
-        "open": 0
-      }
-    },
-    "quant": {
-      "week": {
-        "net": -106.44,
-        "ideas": 11,
-        "scored": 11,
-        "open": 0
-      },
-      "allTime": {
-        "net": 51.42,
-        "ideas": 28,
-        "scored": 28,
         "open": 0
       },
       "today": {
@@ -155,6 +155,56 @@
     }
   },
   "ideas": [
+    {
+      "id": "2026-11-27-MRVL-1",
+      "date": "2026-11-27",
+      "bot": "quant",
+      "ticker": "MRVL",
+      "side": "short",
+      "entry": 133.59,
+      "stop": 139.52,
+      "target": 121.73,
+      "shares": 4,
+      "strategy": "Stocks-in-play ORB",
+      "currency": "USD",
+      "size": 4,
+      "loggedAt": "2026-11-27T10:07:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 134.28,
+      "paperEntry": 134.28,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
+    {
+      "id": "2026-11-27-LITE-1",
+      "date": "2026-11-27",
+      "bot": "quant",
+      "ticker": "LITE",
+      "side": "short",
+      "entry": 491.5,
+      "stop": 516.25,
+      "target": 442.0,
+      "shares": 1,
+      "strategy": "Stocks-in-play ORB",
+      "currency": "USD",
+      "size": 1,
+      "loggedAt": "2026-11-27T10:07:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 491.97,
+      "paperEntry": 491.97,
+      "why": "paper-only",
+      "state": "pending",
+      "outcome": null,
+      "note": "not scored yet (journal has no result; no triggered watchlist price)",
+      "exit": null,
+      "net": 0.0,
+      "netCAD": 0.0
+    },
     {
       "id": "2026-11-25-QQQ-1",
       "date": "2026-11-25",

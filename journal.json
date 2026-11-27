@@ -3653,6 +3653,124 @@
       "taken": "no",
       "realPnl": null,
       "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-27-MRVL-1",
+      "date": "2026-11-27",
+      "session": "adhoc",
+      "ticker": "MRVL",
+      "side": "short",
+      "entry": 133.59,
+      "stop": 139.52,
+      "target": 121.73,
+      "shares": 4,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (139.455->133.72 area, short only); 9:50-9:55 bar closed 132.86 below OR low 133.59; logged 10:07 ET at 134.28. Paper only. Catalyst: Q3 beat (News Desk). Scout: whale.",
+      "loggedAt": "2026-11-27T10:07:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 134.28,
+      "plan": {
+        "riskGross": 23.72,
+        "rewardGross": 47.44,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.011,
+          "fx": 0.71,
+          "total": 0.7226
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.011,
+          "fx": 0.36,
+          "total": 0.3668
+        },
+        "netProfitAtTarget": 46.72,
+        "netLossAtStop": -24.09,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 66.8,
+        "netLossAtStopCAD": -34.44
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 32.88,
+        "median": 11.41,
+        "asOfClose": "2026-11-25",
+        "stale": true
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
+    },
+    {
+      "id": "2026-11-27-LITE-1",
+      "date": "2026-11-27",
+      "session": "adhoc",
+      "ticker": "LITE",
+      "side": "short",
+      "entry": 491.5,
+      "stop": 516.25,
+      "target": 442.0,
+      "shares": 1,
+      "strategy": "Stocks-in-play ORB",
+      "bot": "quant",
+      "currency": "USD",
+      "note": "First 15-min candle red (short only); 9:50-9:55 bar closed 488.485 below OR low 491.5; logged 10:07 ET at 491.97. Paper only. Scout: whale (pre-market +7.6%).",
+      "loggedAt": "2026-11-27T10:07:06-05:00",
+      "loggedLate": true,
+      "loggedPrice": 491.97,
+      "plan": {
+        "riskGross": 24.75,
+        "rewardGross": 49.5,
+        "rr": 2.0,
+        "feesAtTarget": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0101,
+          "fx": 0.74,
+          "total": 0.7526
+        },
+        "feesAtStop": {
+          "commission": 0.0,
+          "ecn": 0.0,
+          "sec": 0.0101,
+          "fx": 0.37,
+          "total": 0.3814
+        },
+        "netProfitAtTarget": 48.75,
+        "netLossAtStop": -25.13,
+        "rrNet": 1.94,
+        "netProfitAtTargetCAD": 69.7,
+        "netLossAtStopCAD": -35.93
+      },
+      "mode": "paper",
+      "paperReason": "paper-only: retired (Stocks-in-play ORB)",
+      "regime": "volatile",
+      "regimeDetail": {
+        "spy_rv10": 32.88,
+        "median": 11.41,
+        "asOfClose": "2026-11-25",
+        "stale": true
+      },
+      "feesSource": {
+        "url": "https://www.questrade.com/pricing/self-directed-commissions-plans-fees/transaction",
+        "checked": "2026-11-02"
+      },
+      "result": null,
+      "taken": "no",
+      "realPnl": null,
+      "realPnlCAD": null
     }
   ]
 }
