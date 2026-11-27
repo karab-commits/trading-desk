@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-27T12:25:18-05:00",
+  "updated": "2026-11-27T12:41:50-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -4740,7 +4740,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 13,
+   "runs": 14,
    "symbolsQuoted": {
     "unique": [],
     "total": 0
@@ -4750,10 +4750,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": "2026-11-27T12:25:18-05:00"
+   "lastRun": "2026-11-27T12:41:50-05:00"
   },
   "scanner": {
-   "quotesCalls": 16,
+   "quotesCalls": 17,
    "barCalls": 3,
    "bars": 80,
    "optionCalls": 0,
@@ -4784,7 +4784,7 @@
      "MU",
      "LITE"
     ],
-    "total": 132
+    "total": 141
    },
    "headlines": {
     "items": [],
