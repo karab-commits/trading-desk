@@ -486,3 +486,4 @@
 {"bot": "kiwi", "routine": "pre-market", "start": "2026-11-26T08:56:48-05:00", "end": "2026-11-26T09:31:44-05:00", "date": "2026-11-26", "counts": {"barCalls": 1, "bars": 5}}
 {"bot": "options", "routine": "Post-open options ideas", "start": "2026-11-26T09:49:27-05:00", "end": "2026-11-26T09:49:39-05:00", "date": "2026-11-26", "counts": {"quotesCalls": 1, "symbolsQuoted": 8}}
 {"bot": "kiwi", "routine": "pre-market", "start": "2026-11-27T09:06:19-05:00", "end": "2026-11-27T09:31:05-05:00", "date": "2026-11-27", "counts": {"barCalls": 1, "bars": 4}}
+{"bot": "kiwi", "routine": "intraday", "start": "2026-11-27T09:40:15-05:00", "end": "2026-11-27T09:40:32-05:00", "date": "2026-11-27", "counts": {}}
