@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 27, 2026 9:08 AM ET",
+  "lastUpdated": "Fri Nov 27, 2026 9:32 AM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,7 +29,7 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "Triggers: XIU 0.627, HXT 1.092, SOFI 0.605 (0.75xATR14). Pre-open: XIU +0.11, SOFI +0.54, none triggered yet.",
+      "status": "9:30 open vs prior close: XIU 52.03 (+0.34 vs trigger 0.627), HXT 94.13 (+0.81 vs 1.092), SOFI 13.55 (+0.48 vs 0.605). No trigger, no orders.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -37,16 +37,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap check at 9:30 open",
-        "detail": "Triggers: XIU 0.627, HXT 1.092, SOFI 0.605 (0.75xATR14). Pre-open: XIU +0.11, SOFI +0.54, none triggered yet.",
-        "since": "2026-11-27T09:08:00-05:00",
-        "state": "waiting",
+        "now": "No gap fade at open",
+        "detail": "9:30 open vs prior close: XIU 52.03 (+0.34 vs trigger 0.627), HXT 94.13 (+0.81 vs 1.092), SOFI 13.55 (+0.48 vs 0.605). No trigger, no orders.",
+        "since": "2026-11-27T09:31:05-05:00",
+        "state": "done",
         "log": [
           "9:31 HXT/XIU gap fades logged",
           "16:55 review: both re-scored as targets",
           "09:31 XIU +0.22/0.65, HXT +0.73/1.13: none"
         ],
-        "next": "Open check 9:30"
+        "next": "Tomorrow's open"
       }
     },
     {
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "risk_check --update: desk 0.00/150, 0/4 desk positions, no bot paused. K's manual NVDA is not a desk trade.",
+      "status": "No opening signal, so no risk_check trade checks; desk 0/150, 0/4, none paused.",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,23 +112,23 @@
       "rejectedWeek": 10,
       "rejectedAllTime": 25,
       "activity": {
-        "now": "0/150 used, none paused",
-        "detail": "risk_check --update: desk 0.00/150, 0/4 desk positions, no bot paused. K's manual NVDA is not a desk trade.",
-        "since": "2026-11-27T09:08:01-05:00",
+        "now": "No orders to check",
+        "detail": "No opening signal, so no risk_check trade checks; desk 0/150, 0/4, none paused.",
+        "since": "2026-11-27T09:31:05-05:00",
         "state": "done",
         "log": [
           "14:35 no orders to check",
           "09:57 HXT ALLOW 27.6/50",
           "10:26 XIU paper no longer counts as risk"
         ],
-        "next": "Checks at open"
+        "next": "Intraday 9:45"
       }
     },
     {
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "SPY rv10 32.9% vs 11.4% median. Futures up (SPY +1.5%, QQQ +2.1%). US closes 1:00 PM ET today.",
+      "status": "Mood volatile. No gap-fade trigger at the open (XIU +0.34/0.627, HXT +0.81/1.092, SOFI +0.48/0.605). Watchlist handed to the intraday routine. US half day: no US entries after 12:15 ET.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,11 +136,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Pre-market: mood volatile",
-        "detail": "SPY rv10 32.9% vs 11.4% median. Futures up (SPY +1.5%, QQQ +2.1%). US closes 1:00 PM ET today.",
-        "since": "2026-11-27T09:08:01-05:00",
-        "state": "working",
-        "next": "Open 9:30",
+        "now": "Open: 0 orders, no trigger",
+        "detail": "Mood volatile. No gap-fade trigger at the open (XIU +0.34/0.627, HXT +0.81/1.092, SOFI +0.48/0.605). Watchlist handed to the intraday routine. US half day: no US entries after 12:15 ET.",
+        "since": "2026-11-27T09:31:05-05:00",
+        "state": "done",
+        "next": "Intraday 9:45",
         "log": [
           "11:53 intraday run: 0 orders",
           "16:55 review: XIU/HXT re-scored as targets",
@@ -244,7 +244,7 @@
     "projected": 0,
     "projectedNet": 0,
     "maxLossNet": 0,
-    "status": "No real desk trades Nov 26 (US Thanksgiving, closed). TSX gap fades did not trigger (XIU +0.22 vs 0.65, HXT +0.73 vs 1.13); 0 instructions, 0 fills in account 0944.",
+    "status": "No gap-fade trigger at the Nov 27 open (XIU +0.34 vs 0.627, HXT +0.81 vs 1.092, SOFI +0.48 vs 0.605). 0 orders. Intraday routine watches MRVL/VRTX (news), SNDK/MU/LITE (SIP paper), QQQ (whale paper).",
     "condition": "Shorts stay paper until K accepts the Questrade borrow agreement in Edge. ORB, SIP ORB, Whale QQQ and XIU gap fade are paper. Real orders can come from SOFI/HXT gap fades, News Desk and Options Desk."
   },
   "watching": [
@@ -434,6 +434,10 @@
     }
   ],
   "deskLog": [
+    {
+      "date": "Nov 27",
+      "text": "9:30 open: no gap fades (XIU open 52.03 +0.34 vs 0.627, HXT 94.13 +0.81 vs 1.092, SOFI 13.55 +0.48 vs 0.605); 0 orders sent. HXT's 96.26 pre-open quote was stale, as suspected."
+    },
     {
       "date": "Nov 27",
       "text": "Pre-market: mood volatile (SPY rv10 32.9% vs 11.4% median); futures up on AI/semis rebound (SPY +1.5%, QQQ +2.1%, NVDA +2.2%). US half day (1:00 PM ET close): no new US entries after 12:15 ET. Gap triggers XIU 0.627, HXT 1.092, SOFI 0.605; pre-open XIU +0.11, SOFI +0.54 (under). News: MRVL long (beat), VRTX short (FDA delay); SIP paper SNDK MU LITE; whale QQQ paper. No bot paused."
@@ -837,7 +841,7 @@
     {
       "date": "2026-11-27",
       "ticker": "XIU.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "strategy": "Big-gap fade 0.75xATR14",
@@ -856,12 +860,15 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 52.12,
+      "priceTime": "2026-11-27T09:30:49-05:00",
+      "statusAt": "2026-11-27T09:31:05-05:00"
     },
     {
       "date": "2026-11-27",
       "ticker": "HXT.TO",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "strategy": "Big-gap fade 0.75xATR14",
@@ -880,12 +887,15 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 94.13,
+      "priceTime": "2026-11-27T09:30:49-05:00",
+      "statusAt": "2026-11-27T09:31:05-05:00"
     },
     {
       "date": "2026-11-27",
       "ticker": "SOFI",
-      "status": "watching",
+      "status": "skipped",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "side": "short",
@@ -905,7 +915,12 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 13.42,
+      "priceTime": "2026-11-27T09:30:49-05:00",
+      "statusAt": "2026-11-27T09:31:05-05:00",
+      "triggeredAt": "2026-11-27T09:30:49-05:00",
+      "triggerPrice": 13.42
     },
     {
       "date": "2026-11-27",
@@ -928,7 +943,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 137.53,
+      "priceTime": "2026-11-27T09:30:49-05:00"
     },
     {
       "date": "2026-11-27",
@@ -951,7 +968,9 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 518.8,
+      "priceTime": "2026-11-27T09:30:49-05:00"
     },
     {
       "date": "2026-11-27",
@@ -1043,10 +1062,12 @@
       "netProfitAtTargetCAD": null,
       "netLossAtStopCAD": null,
       "openPnl": null,
-      "openPnlCAD": null
+      "openPnlCAD": null,
+      "last": 644.21,
+      "priceTime": "2026-11-27T09:30:49-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-27T09:07:51-05:00",
+  "watchlistUpdated": "2026-11-27T09:31:05-05:00",
   "scorecard": {
     "updated": "2026-11-26T16:48:56-05:00",
     "currency": "CAD",

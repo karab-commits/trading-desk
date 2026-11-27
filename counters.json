@@ -1,7 +1,7 @@
 {
  "_meta": {
   "version": 1,
-  "updated": "2026-11-27T09:07:51-05:00",
+  "updated": "2026-11-27T09:31:05-05:00",
   "tz": "America/Toronto",
   "note": "Real counts only, written by count.py and the desk scripts. Top-level YYYY-MM-DD keys -> bot id -> counters. _audits holds reconstructed past totals that are NOT part of any day, the per-bot bars or the 7-day average."
  },
@@ -4740,7 +4740,7 @@
    "fills": 0,
    "backtestVariants": 0,
    "simulatedTrades": 0,
-   "runs": 0,
+   "runs": 1,
    "symbolsQuoted": {
     "unique": [],
     "total": 0
@@ -4750,10 +4750,10 @@
     "count": 0,
     "seen": []
    },
-   "lastRun": null
+   "lastRun": "2026-11-27T09:31:05-05:00"
   },
   "scanner": {
-   "quotesCalls": 1,
+   "quotesCalls": 2,
    "barCalls": 3,
    "bars": 80,
    "optionCalls": 0,
@@ -4777,9 +4777,11 @@
      "SOFI",
      "SPY",
      "QQQ",
-     "NVDA"
+     "NVDA",
+     "MRVL",
+     "VRTX"
     ],
-    "total": 6
+    "total": 13
    },
    "headlines": {
     "items": [],
