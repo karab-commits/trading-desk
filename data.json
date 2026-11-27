@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 27, 2026 3:18 PM ET",
+  "lastUpdated": "Fri Nov 27, 2026 4:49 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -29,71 +29,71 @@
       "id": "scanner",
       "name": "Scanner",
       "role": "Scans for big-gap fades (XIU active; SOFI, HXT testing)",
-      "status": "No open trigger on XIU/HXT/SOFI today; done for the day",
-      "pnlToday": 0,
+      "status": "XIU/HXT/SOFI below trigger; 0 orders",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Gap fade: window closed",
-        "detail": "No open trigger on XIU/HXT/SOFI today; done for the day",
-        "since": "2026-11-27T10:20:48-05:00",
+        "now": "0 gap triggers today",
+        "detail": "XIU/HXT/SOFI below trigger; 0 orders",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "done",
         "log": [
-          "09:52 gap fade: no trigger",
           "10:07 gap fade: no trigger",
-          "10:21 gap fade: done, 0 trades"
+          "10:21 gap fade: done, 0 trades",
+          "16:50 EOD review done"
         ],
-        "next": "Tomorrow's open"
+        "next": "Mon Nov 30 9:00 pre-mkt"
       }
     },
     {
       "id": "news",
       "name": "News Desk",
       "role": "Trades fresh news-catalyst momentum · devil's-advocate debate before every entry (veto only)",
-      "status": "12:07 ET: no company headline within 60 min; VRTX back above VWAP, no failed bounce",
-      "pnlToday": 0,
+      "status": "No news entry triggered; 0 orders",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No fresh catalyst",
-        "detail": "12:07 ET: no company headline within 60 min; VRTX back above VWAP, no failed bounce",
-        "since": "2026-11-27T12:06:59-05:00",
+        "now": "MRVL/VRTX: no entry",
+        "detail": "No news entry triggered; 0 orders",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "done",
         "log": [
-          "11:26 news: 0 signals",
           "11:42 news: 0 signals",
-          "11:56 news: 0 signals"
+          "11:56 news: 0 signals",
+          "16:50 EOD review done"
         ],
-        "next": "US entries end 12:15"
+        "next": "Mon Nov 30 9:00 pre-mkt"
       }
     },
     {
       "id": "whale",
       "name": "Whale Tracker",
       "role": "Stocks-in-play scout for Quant Lab (RVOL >= 2 / news catalyst morning list); QQQ RVOL breakout is PAPER ONLY from Nov 16 (rest retired Nov 2)",
-      "status": "11:45 and 11:50 bars closed at new highs (647.17, 648.07) but RVOL 0.60 and 0.58 vs 8-day slot averages: below 2.0, no signal",
-      "pnlToday": 0,
+      "status": "Whale QQQ paper record unchanged (next stop retires)",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "QQQ: new highs, RVOL 0.6",
-        "detail": "11:45 and 11:50 bars closed at new highs (647.17, 648.07) but RVOL 0.60 and 0.58 vs 8-day slot averages: below 2.0, no signal",
-        "since": "2026-11-27T11:56:38-05:00",
-        "state": "working",
-        "next": "QQQ RVOL check 12:10",
+        "now": "QQQ: no signal today",
+        "detail": "Whale QQQ paper record unchanged (next stop retires)",
+        "since": "2026-11-27T16:49:29-05:00",
+        "state": "done",
+        "next": "Mon Nov 30 9:00 pre-mkt",
         "log": [
-          "11:53 QQQ inside day range (paper)",
           "11:42 QQQ RVOL fail 0.80",
-          "11:56 QQQ RVOL fail 0.60/0.58"
+          "11:56 QQQ RVOL fail 0.60/0.58",
+          "16:50 EOD review done"
         ]
       }
     },
@@ -101,7 +101,7 @@
       "id": "risk",
       "name": "Risk Manager",
       "role": "Runs risk_check.py before every order: per-bot budgets, auto-pauses, one bet per correlation group",
-      "status": "No orders to check this run",
+      "status": "risk_check --update: 0/4 open, 0.00/150 used",
       "pnlToday": 0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
@@ -112,23 +112,23 @@
       "rejectedWeek": 10,
       "rejectedAllTime": 25,
       "activity": {
-        "now": "0/4 open, 0/150 used",
-        "detail": "No orders to check this run",
-        "since": "2026-11-27T11:56:38-05:00",
+        "now": "0 blocks; none paused",
+        "detail": "risk_check --update: 0/4 open, 0.00/150 used",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "idle",
         "log": [
-          "09:57 HXT ALLOW 27.6/50",
           "10:26 XIU paper no longer counts as risk",
-          "10:07 BLOCK MRVL, LITE (paper)"
+          "10:07 BLOCK MRVL, LITE (paper)",
+          "16:50 risk update"
         ],
-        "next": "Intraday 9:45"
+        "next": "Mon Nov 30 9:00 pre-mkt"
       }
     },
     {
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "Close-out 3:18 PM ET: Questrade 0944 has no open positions or working orders and no trades today.",
+      "status": "0 orders; SIP retired; weekly scorecard sent to site",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,39 +136,39 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Flat. No positions open",
-        "detail": "Close-out 3:18 PM ET: Questrade 0944 has no open positions or working orders and no trades today.",
-        "since": "2026-11-27T15:18:49-05:00",
+        "now": "EOD review done",
+        "detail": "0 orders; SIP retired; weekly scorecard sent to site",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "done",
         "log": [
-          "11:26 run: 0 orders",
           "11:42 run: 0 orders",
-          "11:56 run: 0 orders"
+          "11:56 run: 0 orders",
+          "16:50 daily review"
         ],
-        "next": "Monday open"
+        "next": "Mon Nov 30 9:00 pre-mkt"
       }
     },
     {
       "id": "quant",
       "name": "Quant Lab",
       "role": "Trades the 15-min ORB (paper again from Nov 24: long side negative OOS/live; shorts need the borrow agreement) and the Stocks-in-play ORB (paper); VWAP reclaim/loss is paper-only (retired); runs walk-forward tests",
-      "status": "MRVL 137.75 (stop 139.52), LITE 507.19 (stop 516.25); no new breaks",
-      "pnlToday": 0,
+      "status": "SIP ORB retired (-0.21R/24). MRVL -0.90R, LITE -0.94R paper",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": -24.61,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 2,
       "activity": {
-        "now": "SIP: 2 paper shorts open",
-        "detail": "MRVL 137.75 (stop 139.52), LITE 507.19 (stop 516.25); no new breaks",
-        "since": "2026-11-27T11:56:38-05:00",
-        "state": "working",
-        "next": "ORB scan 9:45",
+        "now": "SIP retired; WF done",
+        "detail": "SIP ORB retired (-0.21R/24). MRVL -0.90R, LITE -0.94R paper",
+        "since": "2026-11-27T16:49:29-05:00",
+        "state": "done",
+        "next": "ORB scan Mon 9:45",
         "log": [
-          "11:26 SIP: no new signal",
           "11:42 SIP: no new signal",
-          "11:56 SIP: no new signal"
+          "11:56 SIP: no new signal",
+          "16:50 walk-forward run"
         ]
       }
     },
@@ -176,7 +176,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "MRVL short paper hit stop; LITE short paper flat at 512.30. Neither traded with real money.",
+      "status": "MRVL stop, LITE time exit corrected to 514.84",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -184,13 +184,14 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Scored 2 paper ideas",
-        "detail": "MRVL short paper hit stop; LITE short paper flat at 512.30. Neither traded with real money.",
-        "since": "2026-11-27T15:18:49-05:00",
+        "now": "2 paper ideas scored",
+        "detail": "MRVL stop, LITE time exit corrected to 514.84",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "done",
-        "next": "Weekly scorecard 5 PM",
+        "next": "Mon 3:30 close-out",
         "log": [
-          "16:55 ANT re-scored at 4 PM close"
+          "16:55 ANT re-scored at 4 PM close",
+          "16:50 journal updated"
         ]
       }
     },
@@ -198,40 +199,40 @@
       "id": "options",
       "name": "Options Desk",
       "role": "Trades defined-risk debit spreads (max loss $40)",
-      "status": "Debit spreads only follow another bot's valid live signal",
-      "pnlToday": 0,
+      "status": "0 option orders",
+      "pnlToday": 0.0,
       "pnlWeek": 0.0,
       "pnlAllTime": 0.0,
       "tradesToday": 0,
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "No live signal to express",
-        "detail": "Debit spreads only follow another bot's valid live signal",
-        "since": "2026-11-27T10:20:48-05:00",
+        "now": "No spread today",
+        "detail": "0 option orders",
+        "since": "2026-11-27T16:49:29-05:00",
         "state": "idle",
         "log": [
-          "14:15 no spread",
           "14:35 window closed, 0 spreads",
-          "09:59 no live underlying signal"
+          "09:59 no live underlying signal",
+          "16:50 EOD"
         ],
-        "next": "10:00"
+        "next": "Mon Nov 30 9:00 pre-mkt"
       }
     }
   ],
   "account": {
-    "equity": 2336.17,
-    "buyingPower": 1917.91,
+    "equity": 2330.6,
+    "buyingPower": 2326.79,
     "currency": "CAD",
     "maxRiskPerTrade": 40,
     "openPositions": 0,
     "accountLabel": "Questrade margin",
     "accountLast4": "0944",
-    "asOf": "2026-11-27T09:07:00-05:00",
+    "asOf": "2026-11-27T21:49:10+00:00",
     "dailyLossStop": 150,
     "maxOpenPositions": 4,
-    "buyingPowerUSD": -399.55,
-    "note": "Questrade 0944 pre-market Nov 27: combined equity 2,336.17 CAD (2,500.00 CAD / -114.99 USD), buying power 1,917.91 CAD combined (CAD 2,500.00, USD -399.55). Only position is K's own manual NVDA (5.9314 sh @ 168.59 USD), with K's manual NVDA market sell (Day) working for the open; not desk trades. Desk positions 0/4, 0 desk instructions."
+    "buyingPowerUSD": 1597.12,
+    "note": "Questrade 0944 after close Nov 27: combined equity 2,330.60 CAD (2,500.00 CAD / -118.89 USD), buying power 2,326.79 CAD combined. 0 positions, 0 open orders. Today's account P&L -141.66 CAD combined (-99.42 USD closed) is K's own manual NVDA round trip (5.9314 sh bought @ 168.59, sold @ 151.83), not desk trades."
   },
   "todayTrade": {
     "symbol": "-",
@@ -244,7 +245,7 @@
     "projected": 0,
     "projectedNet": 0,
     "maxLossNet": 0,
-    "status": "No gap-fade trigger at the Nov 27 open (XIU +0.34 vs 0.627, HXT +0.81 vs 1.092, SOFI +0.48 vs 0.605). 0 orders. Intraday routine watches MRVL/VRTX (news), SNDK/MU/LITE (SIP paper), QQQ (whale paper).",
+    "status": "Nov 27 close: 0 desk orders, 0 desk fills. Two late-logged SIP paper shorts: MRVL -0.90R (-21.29 USD) and LITE -0.94R (-23.22 USD). K manual NVDA sell is not a desk trade. Next session Mon Nov 30.",
     "condition": "Shorts stay paper until K accepts the Questrade borrow agreement in Edge. ORB, SIP ORB, Whale QQQ and XIU gap fade are paper. Real orders can come from SOFI/HXT gap fades, News Desk and Options Desk."
   },
   "watching": [
@@ -325,7 +326,8 @@
     "Quant Lab VWAP reclaim/loss: paper-only (retired Nov 2, decided by Kiwi)",
     "Quant Lab ORB (15-min): paper-only again from Nov 24 (Kiwi, Nov 23 review). Longs were re-enabled live in the morning, but the walk-forward split shows the long side negative (OOS -0.031R on 22, 1/4 windows; journal longs -0.42R on 3) while shorts are +0.246R on 31. Back live per side after 20 journal trades with positive avg R + positive OOS for that side. Shorts also need the borrow agreement.",
     "ORB/SIP breaks are logged on the 5-min bar that closes through the range: every run 9:45-11:30 ET ingests 5-min bars and runs orb_scan.py (added Nov 23)",
-    "Fri Nov 27: US markets close early at 1:00 PM ET (TSX full day). No new US entries after 12:15 PM ET; any US desk position is flattened by 12:45 PM ET. TSX ideas follow the normal 3:15 PM cutoff (Kiwi, Nov 26 review)."
+    "Fri Nov 27: US markets close early at 1:00 PM ET (TSX full day). No new US entries after 12:15 PM ET; any US desk position is flattened by 12:45 PM ET. TSX ideas follow the normal 3:15 PM cutoff (Kiwi, Nov 26 review).",
+    "Quant Lab Stocks-in-play ORB: RETIRED Nov 27 (Kiwi): 24 scored paper ideas avg -0.21R. No new SIP alerts. Calm vs volatile split: all 45 tagged trades are volatile so far (no filter until ~100 more trades)."
   ],
   "playbook": [
     {
@@ -334,7 +336,7 @@
       "trades": 50,
       "winRate": 58.0,
       "expectancyR": 0.188,
-      "note": "Demoted Nov 10 2026 by Kiwi: walk-forward out-of-sample turned slightly negative (-0.004R on 40 trades, positive in 2/5 test windows, was +0.037R, 3/5 on Nov 2). Full-sample +0.188R on 50 is in-sample only. Paper only (logged, not sent) until OOS is positive in most windows again. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper. Nov 16 re-check (walkforward-2026-11-16): unchanged, OOS -0.004R on 40, 2/5 windows, 0 look-ahead leaks; stays paper only (retire line is <= -0.05R on 30+). | Nov 17 re-check with daily data refreshed to Nov 17: unchanged -0.004R OOS on 40 (2/5 windows), stays paper. | Nov 18 re-check (daily bars to Nov 18, walkforward-2026-11-18): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. Regime split of OOS: calm -0.163R (20) / volatile +0.154R (20). | Nov 19 re-check (daily bars still end Nov 18; Questrade had not published the Nov 19 daily candle at 4:55 PM ET): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS -0.004R on 40, 2/5 windows, 0 leaks; stays paper only. | Nov 23: gap-up short (paper, borrow agreement) closed at 4:00 PM 51.60, -0.04R / -1.60 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS -0.006R on 41, 2/5 windows; stays paper only. Regime split of OOS: calm -0.161R (19) / volatile +0.143R (21). No gap signal today (gap -0.28 vs 0.70). | Nov 25 re-check (walkforward-2026-11-25, daily bars to Nov 25, 0 leaks): OOS +0.021R on 42, positive in 2/5 windows (was -0.006R/41). Not most windows, so it stays PAPER ONLY. Journal 3 scored (need 20). Today's paper long hit the dividend-adjusted target 51.14 at 1:15 PM ET: +39.53 CAD (+1.00R). Nov 26 re-check (walkforward-2026-11-26, daily bars to Nov 26, 0 leaks): OOS +0.021R on 42, 2/5 windows; stays paper."
+      "note": "Demoted Nov 10 2026 by Kiwi: walk-forward out-of-sample turned slightly negative (-0.004R on 40 trades, positive in 2/5 test windows, was +0.037R, 3/5 on Nov 2). Full-sample +0.188R on 50 is in-sample only. Paper only (logged, not sent) until OOS is positive in most windows again. Nov 13 walk-forward re-run: unchanged at -0.004R on 40 OOS trades, 2/5 windows; stays paper. Nov 16 re-check (walkforward-2026-11-16): unchanged, OOS -0.004R on 40, 2/5 windows, 0 look-ahead leaks; stays paper only (retire line is <= -0.05R on 30+). | Nov 17 re-check with daily data refreshed to Nov 17: unchanged -0.004R OOS on 40 (2/5 windows), stays paper. | Nov 18 re-check (daily bars to Nov 18, walkforward-2026-11-18): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. Regime split of OOS: calm -0.163R (20) / volatile +0.154R (20). | Nov 19 re-check (daily bars still end Nov 18; Questrade had not published the Nov 19 daily candle at 4:55 PM ET): unchanged, OOS -0.004R on 40, 2/5 windows; stays paper. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS -0.004R on 40, 2/5 windows, 0 leaks; stays paper only. | Nov 23: gap-up short (paper, borrow agreement) closed at 4:00 PM 51.60, -0.04R / -1.60 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS -0.006R on 41, 2/5 windows; stays paper only. Regime split of OOS: calm -0.161R (19) / volatile +0.143R (21). No gap signal today (gap -0.28 vs 0.70). | Nov 25 re-check (walkforward-2026-11-25, daily bars to Nov 25, 0 leaks): OOS +0.021R on 42, positive in 2/5 windows (was -0.006R/41). Not most windows, so it stays PAPER ONLY. Journal 3 scored (need 20). Today's paper long hit the dividend-adjusted target 51.14 at 1:15 PM ET: +39.53 CAD (+1.00R). Nov 26 re-check (walkforward-2026-11-26, daily bars to Nov 26, 0 leaks): OOS +0.021R on 42, 2/5 windows; stays paper. | Nov 27 walk-forward: XIU OOS +0.021R on 42, 2/5 windows; stays paper-only."
     },
     {
       "name": "Opening-range breakout (15-min), volume-confirmed (Quant Lab) · XIU/QQC/QQQ",
@@ -342,15 +344,15 @@
       "trades": 53,
       "winRate": 62.3,
       "expectancyR": 0.131,
-      "note": "Already Quant Lab's live strategy in strategies.json (not new); added to the playbook board Nov 18 2026. Walk-forward on Questrade 30-min bars May 4 - Nov 18 2026 (walkforward-2026-11-18): OOS +0.131R on 53, positive in 4/5 windows; per ticker XIU +0.117 (12), QQC +0.324 (16), QQQ +0.246 (12), ZEB -0.201 (13, already dropped from the universe). Live params +0.049R on 42 OOS, but -0.323R on 6 in the Nov 2-18 window. Calm +0.186R (30) / volatile +0.059R (23). 2 journal trades (need 20); stays testing/live. | Nov 19 review (walkforward-2026-11-19, 30-min bars to Nov 19): OOS unchanged +0.131R on 53, 4/5 windows, 0 look-ahead leaks; calm +0.186R (30) / volatile +0.059R (23). Forward record negative: journal QQC +0.565R, MSFT -1.009R (order expired unapproved; would have stopped 10:15-10:30) = -0.22R on 2; live params -0.323R on 6 in the Nov window. DEMOTED to paper only by Kiwi (rule: demote anything negative live). Back live after 20 paper trades with positive avg R + positive OOS. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks. Forward: 2 paper shorts hit target today (QQQ +1.82R / +49.25 CAD, NVDA +2.03R / +61.92 CAD); journal ORB now 5 ideas avg +0.48R. Stays paper (5 of 20 paper trades needed). | Nov 23 (Kiwi): re-enabled for LONGS only, effective immediately, after K said there hasn't been a trade for too long. Same $40 CAD max risk, same trend filter and other rules. Shorts stay paper until the Questrade borrow agreement is accepted in Edge. Still testing (5 of 20 journal trades). | Nov 23 EOD review (walkforward-2026-11-23, 30-min bars to Nov 23): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks (no new 30-min-proxy trade on Nov 23). Side split: LONGS -0.031R on 22 (positive in 1/4 windows; calm +0.039/15, volatile -0.182/7; QQC +0.361/8, QQQ +0.036/5, XIU -0.487/3, ZEB -0.382/6), SHORTS +0.246R on 31 (calm +0.333/15, volatile +0.164/16). Journal: 6 ideas avg +0.525R (shorts +1.47R on 3, longs -0.42R on 3; today QQQ -0.10R, NVDA -0.15R paper, found late at 12:13 ET). DEMOTED back to paper for longs by Kiwi (negative OOS + live on the long side). 6 of 20 journal trades. | Nov 24: no ORB signal. QQQ up-break 9:55 bar failed the trend filter (open 640.05 < prior close 650.88) and RVOL ~1.0; down-break 10:25 bar RVOL ~1.25 < 1.5; NVDA down-break RVOL < 1. Stays paper."
+      "note": "Already Quant Lab's live strategy in strategies.json (not new); added to the playbook board Nov 18 2026. Walk-forward on Questrade 30-min bars May 4 - Nov 18 2026 (walkforward-2026-11-18): OOS +0.131R on 53, positive in 4/5 windows; per ticker XIU +0.117 (12), QQC +0.324 (16), QQQ +0.246 (12), ZEB -0.201 (13, already dropped from the universe). Live params +0.049R on 42 OOS, but -0.323R on 6 in the Nov 2-18 window. Calm +0.186R (30) / volatile +0.059R (23). 2 journal trades (need 20); stays testing/live. | Nov 19 review (walkforward-2026-11-19, 30-min bars to Nov 19): OOS unchanged +0.131R on 53, 4/5 windows, 0 look-ahead leaks; calm +0.186R (30) / volatile +0.059R (23). Forward record negative: journal QQC +0.565R, MSFT -1.009R (order expired unapproved; would have stopped 10:15-10:30) = -0.22R on 2; live params -0.323R on 6 in the Nov window. DEMOTED to paper only by Kiwi (rule: demote anything negative live). Back live after 20 paper trades with positive avg R + positive OOS. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks. Forward: 2 paper shorts hit target today (QQQ +1.82R / +49.25 CAD, NVDA +2.03R / +61.92 CAD); journal ORB now 5 ideas avg +0.48R. Stays paper (5 of 20 paper trades needed). | Nov 23 (Kiwi): re-enabled for LONGS only, effective immediately, after K said there hasn't been a trade for too long. Same $40 CAD max risk, same trend filter and other rules. Shorts stay paper until the Questrade borrow agreement is accepted in Edge. Still testing (5 of 20 journal trades). | Nov 23 EOD review (walkforward-2026-11-23, 30-min bars to Nov 23): OOS unchanged +0.131R on 53, 4/5 windows, 0 leaks (no new 30-min-proxy trade on Nov 23). Side split: LONGS -0.031R on 22 (positive in 1/4 windows; calm +0.039/15, volatile -0.182/7; QQC +0.361/8, QQQ +0.036/5, XIU -0.487/3, ZEB -0.382/6), SHORTS +0.246R on 31 (calm +0.333/15, volatile +0.164/16). Journal: 6 ideas avg +0.525R (shorts +1.47R on 3, longs -0.42R on 3; today QQQ -0.10R, NVDA -0.15R paper, found late at 12:13 ET). DEMOTED back to paper for longs by Kiwi (negative OOS + live on the long side). 6 of 20 journal trades. | Nov 24: no ORB signal. QQQ up-break 9:55 bar failed the trend filter (open 640.05 < prior close 650.88) and RVOL ~1.0; down-break 10:25 bar RVOL ~1.25 < 1.5; NVDA down-break RVOL < 1. Stays paper. | Nov 27 walk-forward (data to Nov 26): OOS +0.131R on 53 trades, 4/5 windows; only 4 journal trades (need 20); stays paper."
     },
     {
       "name": "Stocks-in-play 15-min ORB (Quant Lab, scout Whale Tracker)",
-      "status": "paper",
+      "status": "retired",
       "trades": 12,
       "winRate": 75.0,
       "expectancyR": 0.542,
-      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh). Nov 11 forward check (not sent, gate on; Questrade 15-min bars, stop-first, 15:15 exit, 0.02%/side slip): CRWV long +0.74R, AMD short -1.01R, INTC no entry; -0.27R on 2. Nov 12 forward check (not sent, gate on; 15-min bars, stop-first, 15:15 exit): NVDA long +0.09R, NBIS long -0.39R, AMD long +0.25R; -0.05R on 3. Forward checks so far: -0.32R on 5. UAL (Nov 9) is now about -2.9R open because no exit or stop was approved. Nov 13: UAL finally sold 3:22 PM ET at 111.08 (approved): -67.05 USD / -95.59 CAD real, -2.94R vs the planned 1R. Nov 13 forward check (not sent, gate on; 15-min bars, first-candle direction, stop-first, 15:15 exit): MOD short +0.02R, CBRS short -0.29R, NVDA short -0.11R; -0.38R on 3. Forward checks now -0.70R on 8. DEMOTED to paper only by Kiwi Nov 13: live record negative. Back to live only after 20 paper trades with positive average R plus an out-of-sample test. Nov 16 forward check (paper only): NVDA and LHX both opened up and never broke the 15-min high -> 0 entries; forward record still -0.70R on 8. | Nov 17 paper: LITE +0.41R, NVDA +0.63R (late log). Journal SIP ORB 15-min: 8 scored, avg -0.20R; stays paper. | Nov 18 review: NBIS and CRWV shorts triggered on the 9:45 bar but were never logged; checked on Questrade 5-min bars they would have hit the 15:15 time stop: NBIS -0.73R, CRWV -0.30R (-36.61 CAD after fees). Forward record now -1.73R on 10 (not journaled); stays paper. New rule: every intraday run logs SIP ORB breaks at once. | Nov 19 paper: STX long -1.15R, WDC long -1.09R (both logged late at 10:14, both stopped ~12:00 ET). Paper since the Nov 13 demotion: 4 trades, avg -0.29R (LITE +0.41, NVDA +0.65, STX -1.15, WDC -1.09); 4 of the 20 needed, negative; stays paper. | Nov 20: paper NVDA short target +1.94R (+67.79 CAD), ANT short flat at 4:00 PM close 88.44 -0.58R (-18.48 CAD; re-scored from the 3:18 PM 87.68 mark). Journal SIP 13 ideas avg -0.03R. Stays paper (no OOS test, record not positive). | Nov 23: 3 paper shorts (MU stop -0.79R, NBIS +0.00R, CRWV -0.44R at the 4:00 PM close; -40.97 CAD). Journal SIP 16 ideas avg -0.10R. Stays paper. | Nov 24: 3 paper ideas, all time exits at the 4:00 PM close (Questrade 5-min bars; the 3:17 PM close-out had marked them at ~3:17 prices, +3.36 CAD): DLTR long +0.06R (+1.76 CAD), NVDA short -0.39R (-13.78 CAD), HPE short -0.11R (-4.32 CAD; debate VETO). Journal SIP 19 scored, avg -0.11R. Stays paper (no OOS test, forward record negative). | Nov 25: 3 paper shorts (NVDA, MU, SNDK) all stopped in the 9:55-10:00 bars after logging late at 9:59 (break bars 9:40-9:45): -42.68 CAD. Journal SIP total 22 scored, about -0.15R; stays paper."
+      "note": "Re-run Nov 9 2026 EOD on the Nov 2 pilot data (AMD/RIVN/SOFI): 12 trades, +0.542R net, but that is one in-sample window, not out-of-sample, so it stays 'testing' with small live size. Live/paper record: Nov 3 +2.08R; Nov 9 NVDA +0.14R (paper, not sent), UAL taken 7 @ 120.66, still open overnight (stop expired at 4 PM, close-out failed). Needs out-of-sample walk-forward and 20 trades before 'active'. Nov 10: 4 signals (AAON, RKLB long; QBTS, SANM short), AAON and RKLB sent but not approved; all 4 held to the 4 PM exit, none hit stop or target: paper net AAON -2.08, QBTS +1.08, SANM -2.42, RKLB +4.75 USD (+1.33 USD total). UAL from Nov 9 still held (7 sh). Nov 11 forward check (not sent, gate on; Questrade 15-min bars, stop-first, 15:15 exit, 0.02%/side slip): CRWV long +0.74R, AMD short -1.01R, INTC no entry; -0.27R on 2. Nov 12 forward check (not sent, gate on; 15-min bars, stop-first, 15:15 exit): NVDA long +0.09R, NBIS long -0.39R, AMD long +0.25R; -0.05R on 3. Forward checks so far: -0.32R on 5. UAL (Nov 9) is now about -2.9R open because no exit or stop was approved. Nov 13: UAL finally sold 3:22 PM ET at 111.08 (approved): -67.05 USD / -95.59 CAD real, -2.94R vs the planned 1R. Nov 13 forward check (not sent, gate on; 15-min bars, first-candle direction, stop-first, 15:15 exit): MOD short +0.02R, CBRS short -0.29R, NVDA short -0.11R; -0.38R on 3. Forward checks now -0.70R on 8. DEMOTED to paper only by Kiwi Nov 13: live record negative. Back to live only after 20 paper trades with positive average R plus an out-of-sample test. Nov 16 forward check (paper only): NVDA and LHX both opened up and never broke the 15-min high -> 0 entries; forward record still -0.70R on 8. | Nov 17 paper: LITE +0.41R, NVDA +0.63R (late log). Journal SIP ORB 15-min: 8 scored, avg -0.20R; stays paper. | Nov 18 review: NBIS and CRWV shorts triggered on the 9:45 bar but were never logged; checked on Questrade 5-min bars they would have hit the 15:15 time stop: NBIS -0.73R, CRWV -0.30R (-36.61 CAD after fees). Forward record now -1.73R on 10 (not journaled); stays paper. New rule: every intraday run logs SIP ORB breaks at once. | Nov 19 paper: STX long -1.15R, WDC long -1.09R (both logged late at 10:14, both stopped ~12:00 ET). Paper since the Nov 13 demotion: 4 trades, avg -0.29R (LITE +0.41, NVDA +0.65, STX -1.15, WDC -1.09); 4 of the 20 needed, negative; stays paper. | Nov 20: paper NVDA short target +1.94R (+67.79 CAD), ANT short flat at 4:00 PM close 88.44 -0.58R (-18.48 CAD; re-scored from the 3:18 PM 87.68 mark). Journal SIP 13 ideas avg -0.03R. Stays paper (no OOS test, record not positive). | Nov 23: 3 paper shorts (MU stop -0.79R, NBIS +0.00R, CRWV -0.44R at the 4:00 PM close; -40.97 CAD). Journal SIP 16 ideas avg -0.10R. Stays paper. | Nov 24: 3 paper ideas, all time exits at the 4:00 PM close (Questrade 5-min bars; the 3:17 PM close-out had marked them at ~3:17 prices, +3.36 CAD): DLTR long +0.06R (+1.76 CAD), NVDA short -0.39R (-13.78 CAD), HPE short -0.11R (-4.32 CAD; debate VETO). Journal SIP 19 scored, avg -0.11R. Stays paper (no OOS test, forward record negative). | Nov 25: 3 paper shorts (NVDA, MU, SNDK) all stopped in the 9:55-10:00 bars after logging late at 9:59 (break bars 9:40-9:45): -42.68 CAD. Journal SIP total 22 scored, about -0.15R; stays paper. | Nov 27: MRVL short stopped (-0.90R, -21.29 USD) and LITE short flat at the 1:00 PM close 514.84 (-0.94R, -23.22 USD), both logged late 10:07 ET. Journal SIP 24 scored, avg -0.21R. RETIRED by Kiwi Nov 27 (20+ trades, negative); no new alerts."
     },
     {
       "name": "QQQ relative-volume breakout (Whale Tracker)",
@@ -374,7 +376,7 @@
       "trades": 33,
       "winRate": 60.6,
       "expectancyR": 0.175,
-      "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R. | Nov 17 walk-forward (data to Nov 17): OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.365R on 11, 4/5 windows; no gap signal today. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. No gap signal today (gap -0.30 vs 0.61). | Nov 23: gap-up short (paper) closed at 4:00 PM 13.08, +0.51R / +20.40 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.391R on 12, 5/5 windows (was +0.365R/11, 4/5); 1 journal trade (need 20); stays testing/live. Regime: calm +0.288R (6) / volatile +0.494R (6). No gap signal today (gap -0.14 vs 0.67). | Nov 25 re-check (daily to Nov 25): unchanged OOS +0.391R on 12, 5/5 windows; no SOFI trigger today; 1 journal trade (need 20). Nov 26 re-check (walkforward-2026-11-26): OOS +0.391R on 12, 5/5 windows; 1 journal trade (need 20), stays testing."
+      "note": "Demoted to testing Nov 2 2026 EOD: after fees (SEC + 1.5% FX) +0.175R on only 33 trades (below the 50-trade bar), first half flat (+0.008R n=19); H2 +0.402R n=14; last 6m +0.303R n=6. Max DD 1.72R. | Nov 17 walk-forward (data to Nov 17): OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.365R on 11, 4/5 windows; no gap signal today. | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.365R on 11, 4/5 windows; 0 journal trades (need 20); stays testing/live. No gap signal today (gap -0.30 vs 0.61). | Nov 23: gap-up short (paper) closed at 4:00 PM 13.08, +0.51R / +20.40 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.391R on 12, 5/5 windows (was +0.365R/11, 4/5); 1 journal trade (need 20); stays testing/live. Regime: calm +0.288R (6) / volatile +0.494R (6). No gap signal today (gap -0.14 vs 0.67). | Nov 25 re-check (daily to Nov 25): unchanged OOS +0.391R on 12, 5/5 windows; no SOFI trigger today; 1 journal trade (need 20). Nov 26 re-check (walkforward-2026-11-26): OOS +0.391R on 12, 5/5 windows; 1 journal trade (need 20), stays testing. | Nov 27 walk-forward: SOFI OOS +0.391R on 12, 5/5; testing, small size (shorts need borrow)."
     },
     {
       "name": "Big-gap fade >0.75 ATR, daily · HXT.TO",
@@ -382,7 +384,7 @@
       "trades": 49,
       "winRate": 57.1,
       "expectancyR": 0.115,
-      "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R. | Nov 17 walk-forward (data to Nov 17): OOS +0.028R on 40, 3/5 windows; 0 journal trades; stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.028R on 40, 3/5 windows. Regime split: calm -0.172R (19) / volatile +0.209R (21). | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.028R on 40, 3/5 windows; stays testing/live. No gap signal today (gap -0.36 vs 1.08). | Nov 23: gap-up short (paper) closed at 4:00 PM 92.63, -0.06R / -2.52 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.025R on 41, 3/5 windows; 1 journal trade; stays testing/live. Regime: calm -0.258R (17) / volatile +0.195R (22). No gap signal today (gap -0.32 vs 1.23). | Nov 25 re-check (daily to Nov 25): OOS +0.055R on 42, 3/5 windows (was +0.025R/41); stays testing at small live size. Today's live long (2 instructions) expired unapproved; paper hit target 92.37 at 1:15 PM ET: +28.20 CAD (+0.99R). Regime split OOS: calm -0.172R (19) / volatile +0.243R (23). Nov 26 re-check (walkforward-2026-11-26): OOS +0.055R on 42, 3/5 windows; 2 journal trades (need 20), stays testing."
+      "note": "Demoted to testing Nov 2 2026 EOD: +0.115R n=49 but last 3m -0.148R (n=5), last 6m only +0.038R; 42 of 49 signals fall on the same days as XIU (same TSX-60 basket), so it adds no independent edge under one trade a day. Max DD 4.57R. | Nov 17 walk-forward (data to Nov 17): OOS +0.028R on 40, 3/5 windows; 0 journal trades; stays testing/live. | Nov 18 re-check (data to Nov 18): unchanged OOS +0.028R on 40, 3/5 windows. Regime split: calm -0.172R (19) / volatile +0.209R (21). | Nov 20 review (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): unchanged OOS +0.028R on 40, 3/5 windows; stays testing/live. No gap signal today (gap -0.36 vs 1.08). | Nov 23: gap-up short (paper) closed at 4:00 PM 92.63, -0.06R / -2.52 CAD. | Nov 24 re-check (walkforward-2026-11-24 (daily bars to Nov 24, 0 leaks)): OOS +0.025R on 41, 3/5 windows; 1 journal trade; stays testing/live. Regime: calm -0.258R (17) / volatile +0.195R (22). No gap signal today (gap -0.32 vs 1.23). | Nov 25 re-check (daily to Nov 25): OOS +0.055R on 42, 3/5 windows (was +0.025R/41); stays testing at small live size. Today's live long (2 instructions) expired unapproved; paper hit target 92.37 at 1:15 PM ET: +28.20 CAD (+0.99R). Regime split OOS: calm -0.172R (19) / volatile +0.243R (23). Nov 26 re-check (walkforward-2026-11-26): OOS +0.055R on 42, 3/5 windows; 2 journal trades (need 20), stays testing. | Nov 27 walk-forward: HXT OOS +0.055R on 42, 3/5; testing, small size."
     },
     {
       "name": "Down-open buy >0.35ATR, daily · ZEB.TO",
@@ -414,7 +416,7 @@
       "trades": 51,
       "winRate": 54.9,
       "expectancyR": 0.08,
-      "note": "May 4-Oct 30 2026, 30-min bars (halves split Aug 1); exp +0.080R (no-slip +0.214, 0.04%/side -0.054); H1 +0.333R n=24, H2 -0.146R n=27; last 6m (May-Oct 2026) +0.080R n=51 | Nov 18: shown as retired to match strategies.json (VWAP retired to paper-only Nov 2). Walk-forward with 30-min bars to Nov 18: OOS -0.154R on 50, positive in 1/5 windows; calm -0.024R (31) / volatile -0.366R (19). | Nov 20 (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS -0.154R on 50, 1/5 windows; stays retired."
+      "note": "May 4-Oct 30 2026, 30-min bars (halves split Aug 1); exp +0.080R (no-slip +0.214, 0.04%/side -0.054); H1 +0.333R n=24, H2 -0.146R n=27; last 6m (May-Oct 2026) +0.080R n=51 | Nov 18: shown as retired to match strategies.json (VWAP retired to paper-only Nov 2). Walk-forward with 30-min bars to Nov 18: OOS -0.154R on 50, positive in 1/5 windows; calm -0.024R (31) / volatile -0.366R (19). | Nov 20 (walkforward-2026-11-20 (30-min bars to Nov 20; daily to Nov 19, Nov 20 daily candle not yet published)): OOS -0.154R on 50, 1/5 windows; stays retired. | Nov 27 walk-forward: VWAP OOS -0.132R on 51, 2/5 windows; stays retired."
     },
     {
       "name": "QQC gap-and-go (base)",
@@ -589,6 +591,10 @@
     {
       "date": "Nov 25",
       "text": "9:30 open: HXT gap -1.42 >= 1.145 -> buy 20 limit 91.05 sent 9:31, expired unapproved 9:33 (not re-sent, paper tracked); XIU div-adj gap -0.67 >= 0.654 paper only; SOFI -0.48 < 0.647 no signal"
+    },
+    {
+      "date": "Nov 27",
+      "text": "Review: 0 desk orders/fills; account 0944 only K manual NVDA market sell 5.9314 @ 151.83 (not a desk trade). Paper: MRVL short stop -0.90R (-21.29 USD), LITE short flat at 1:00 PM close 514.84 -0.94R (-23.22 USD; close-out had used 512.3, corrected from Questrade 5-min bars). Both logged late 10:07 ET. Walk-forward: XIU +0.021R/42 (2/5) paper, SOFI +0.391R/12 (5/5), HXT +0.055R/42 (3/5), ORB +0.131R/53 (4/5, 4 journal trades), VWAP -0.132R/51 retired. SIP ORB retired (24 scored, -0.21R). No bot paused."
     }
   ],
   "sources": [
@@ -647,7 +653,7 @@
   ],
   "desk": {
     "strategiesTested": 9,
-    "variantsTested": 133,
+    "variantsTested": 196,
     "tradesJournaled": 47,
     "sourcesWatched": 7,
     "daysRunning": 15
@@ -712,7 +718,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-27T15:18:49-05:00",
+    "updated": "2026-11-27T16:49:10-05:00",
     "ideasLogged": 49,
     "byDate": {
       "2026-11-02": {
@@ -826,7 +832,7 @@
         "taken": 0
       },
       "2026-11-27": {
-        "net": -59.95,
+        "net": -63.63,
         "ideas": 2,
         "resolved": 2,
         "open": 0,
@@ -1091,22 +1097,22 @@
   ],
   "watchlistUpdated": "2026-11-27T15:18:49-05:00",
   "scorecard": {
-    "updated": "2026-11-26T16:48:56-05:00",
+    "updated": "2026-11-27T16:49:10-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
-      "ideas": 17,
+      "ideas": 19,
       "open": 0,
       "paper": {
-        "trades": 17,
+        "trades": 19,
         "noFill": 0,
         "wins": 6,
-        "losses": 11,
-        "winRate": 35.3,
+        "losses": 13,
+        "winRate": 31.6,
         "avgWin": 16.53,
-        "avgLoss": -10.22,
-        "expectancyR": 0.073,
-        "netPnl": -13.26,
+        "avgLoss": -13.54,
+        "expectancyR": -0.031,
+        "netPnl": -76.89,
         "bestStrategy": {
           "name": "Big-gap fade XIU",
           "trades": 2,
@@ -1117,11 +1123,11 @@
         },
         "worstStrategy": {
           "name": "Stocks-in-play ORB",
-          "trades": 3,
+          "trades": 5,
           "wins": 0,
-          "netPnl": -42.68,
+          "netPnl": -106.31,
           "winRate": 0.0,
-          "expectancyR": -0.407
+          "expectancyR": -0.611
         },
         "byStrategy": [
           {
@@ -1182,11 +1188,11 @@
           },
           {
             "name": "Stocks-in-play ORB",
-            "trades": 3,
+            "trades": 5,
             "wins": 0,
-            "netPnl": -42.68,
+            "netPnl": -106.31,
             "winRate": 0.0,
-            "expectancyR": -0.407
+            "expectancyR": -0.611
           }
         ],
         "byBot": [
@@ -1208,11 +1214,11 @@
           },
           {
             "name": "quant",
-            "trades": 11,
+            "trades": 13,
             "wins": 2,
-            "netPnl": -106.44,
-            "winRate": 18.2,
-            "expectancyR": -0.286
+            "netPnl": -170.07,
+            "winRate": 15.4,
+            "expectancyR": -0.383
           }
         ]
       },
@@ -1225,18 +1231,18 @@
       "title": "Week of Nov 23 - Nov 27, 2026"
     },
     "allTime": {
-      "ideas": 47,
+      "ideas": 49,
       "open": 0,
       "paper": {
-        "trades": 43,
+        "trades": 45,
         "noFill": 4,
         "wins": 20,
-        "losses": 23,
-        "winRate": 46.5,
+        "losses": 25,
+        "winRate": 44.4,
         "avgWin": 28.22,
-        "avgLoss": -17.4,
-        "expectancyR": 0.103,
-        "netPnl": 164.19,
+        "avgLoss": -18.56,
+        "expectancyR": 0.058,
+        "netPnl": 100.56,
         "bestStrategy": {
           "name": "Opening-range breakout (15-min)",
           "trades": 4,
@@ -1287,14 +1293,6 @@
             "expectancyR": 1.173
           },
           {
-            "name": "Stocks-in-play ORB",
-            "trades": 4,
-            "wins": 1,
-            "netPnl": 26.28,
-            "winRate": 25.0,
-            "expectancyR": 0.216
-          },
-          {
             "name": "Big-gap fade HXT",
             "trades": 2,
             "wins": 1,
@@ -1343,6 +1341,14 @@
             "expectancyR": -0.031
           },
           {
+            "name": "Stocks-in-play ORB",
+            "trades": 6,
+            "wins": 1,
+            "netPnl": -37.35,
+            "winRate": 16.7,
+            "expectancyR": -0.162
+          },
+          {
             "name": "Stocks-in-play 15-min opening-range breakout",
             "trades": 7,
             "wins": 2,
@@ -1369,20 +1375,20 @@
             "expectancyR": 0.443
           },
           {
-            "name": "quant",
-            "trades": 30,
-            "wins": 14,
-            "netPnl": 22.03,
-            "winRate": 46.7,
-            "expectancyR": 0.073
-          },
-          {
             "name": "whale",
             "trades": 6,
             "wins": 2,
             "netPnl": -17.56,
             "winRate": 33.3,
             "expectancyR": -0.142
+          },
+          {
+            "name": "quant",
+            "trades": 32,
+            "wins": 14,
+            "netPnl": -41.6,
+            "winRate": 43.8,
+            "expectancyR": 0.011
           }
         ]
       },
@@ -1488,7 +1494,7 @@
   ],
   "riskBudgets": {
     "date": "2026-11-27",
-    "updated": "2026-11-27T12:06:05-05:00",
+    "updated": "2026-11-27T16:48:11-05:00",
     "bots": {
       "scanner": {
         "budget": 50,

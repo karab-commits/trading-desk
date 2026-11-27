@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-25T21:54:47+00:00",
+ "updated": "2026-11-27T21:49:10+00:00",
  "readBy": "Signal routine every 15 min, 9:45 AM - 3:15 PM ET (America/Toronto). Each run re-reads this file.",
  "execution": "Kiwi leads: orders are sent without waiting for K's go; K approves each one in the Questrade app. Every bot trades its strategy on every valid signal, subject to the risk block below (Risk Manager enforces).",
  "risk": {
@@ -143,7 +143,7 @@
    "bot": "scanner",
    "name": "Big-gap fade (0.75x ATR14)",
    "short": "Gap fade",
-   "tested": "testing - Nov 25 walk-forward (daily bars to Nov 25, 0 leaks): XIU OOS +0.021R on 42 (2/5 windows) so XIU gap fade stays PAPER ONLY (log, don't send); SOFI +0.391R on 12 (5/5) and HXT +0.055R on 42 (3/5) stay testing at small live size. 1-3 of the 20 journal trades the promotion rule needs.",
+   "tested": "testing - Nov 27 walk-forward (daily bars to Nov 26, 0 leaks): XIU OOS +0.021R on 42 (2/5 windows) so XIU gap fade stays PAPER ONLY (log, don't send); SOFI +0.391R on 12 (5/5) and HXT +0.055R on 42 (3/5) stay testing at small live size. 1-3 of the 20 journal trades the promotion rule needs. Nov 27: no gap-fade trigger (XIU +0.34 vs 0.627, HXT +0.81 vs 1.092, SOFI +0.48 vs 0.605); Nov 27 walk-forward unchanged: XIU +0.021R/42 (2/5), SOFI +0.391R/12 (5/5), HXT +0.055R/42 (3/5).",
    "testedTag": "testing (XIU paper only)",
    "stats": {
     "source": "/workspace/quant/eod/2026-11-02/recheck_output.txt (daily bars Oct 2024 - Nov 2 2026, after Questrade fees + 0.02%/side slip)",
@@ -406,8 +406,8 @@
    "bot": "quant",
    "name": "Opening-range breakout (15-min), volume-confirmed - paper-only (longs re-demoted Nov 23 EOD; shorts paper: borrow agreement); VWAP reclaim/loss - paper-only (retired)",
    "short": "ORB + VWAP (paper)",
-   "tested": "ORB testing - walk-forward OOS +0.131R on 53 (positive in 4/5 windows, data to Nov 18 2026; live params +0.049R on 42). VWAP retired to paper-only (OOS -0.154R on 50, 1/5 windows).",
-   "testedTag": "ORB paper only (longs re-demoted Nov 23: long side negative OOS and live) · VWAP paper-only",
+   "tested": "ORB testing - walk-forward OOS +0.131R on 53 (positive in 4/5 windows, data to Nov 18 2026; live params +0.049R on 42). VWAP retired to paper-only (OOS -0.154R on 50, 1/5 windows). Nov 27 walk-forward: ORB OOS +0.131R on 53 (4/5 windows), 4 journal trades (need 20) so it stays paper; VWAP OOS -0.132R on 51 (2/5) stays retired.",
+   "testedTag": "ORB paper only (longs re-demoted Nov 23: long side negative OOS and live) \u00b7 VWAP paper-only",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",
     "orbFiltered_t2R": {
@@ -859,7 +859,7 @@
    "name": "Stocks-in-play 15-min opening-range breakout",
    "short": "Stocks-in-play ORB",
    "tested": "testing - 5-min quick test with the range-side stop: +0.54R per trade on 12 hand-picked trades (indicative only)",
-   "testedTag": "paper only (demoted Nov 13: live record negative; forward -1.73R on 10)",
+   "testedTag": "RETIRED Nov 27 (paper record 24 scored, avg -0.21R; no OOS test)",
    "citation": "Zarattini, C., Barbon, A. & Aziz, A. (2024). A Profitable Day Trading Strategy For The U.S. Equity Market. SSRN 4729284. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4729284",
    "stats": {
     "pilot": {
@@ -1106,16 +1106,22 @@
     "rule": "Stays paper until 20 paper trades with positive average R and an out-of-sample test."
    },
    "forwardRecord": {
-    "updated": "2026-11-24",
-    "journal": "19 scored SIP ORB ideas, avg -0.11R (Nov 24: DLTR +0.06R, NVDA -0.39R, HPE -0.11R)",
-    "verdict": "stays paper: no OOS test, forward record negative"
+    "updated": "2026-11-27",
+    "journal": "24 scored SIP ORB ideas, avg -0.214R (Nov 27: MRVL short stop -0.90R, LITE short time exit -0.94R)",
+    "verdict": "retired"
+   },
+   "status": "retired",
+   "retired": {
+    "date": "2026-11-27",
+    "by": "kiwi",
+    "why": "24 scored journal ideas avg -0.214R net (1 of the last 6 labelled \"Stocks-in-play ORB\" won), past the 20-trade bar with a negative average; Nov 27 MRVL short stop -0.90R and LITE short time exit -0.94R, both logged late (10:07 ET). No new alerts; only revisit with a new, tested variant proposed to K."
    }
   },
   {
    "bot": "whale",
    "name": "QQQ-only relative-volume breakout (rest retired) + stocks-in-play scout",
    "short": "SIP scout + QQQ RVOL",
-   "tested": "retired on every ticker except QQQ (tested -0.28R on 97, both halves negative); QQQ-only kept as testing (+0.179R on 17, 30-min proxy)",
+   "tested": "retired on every ticker except QQQ (tested -0.28R on 97, both halves negative); QQQ-only kept as testing (+0.179R on 17, 30-min proxy) Nov 27: no QQQ signal; record unchanged (next stop retires it).",
    "testedTag": "paper only (QQQ RVOL demoted Nov 16: live record negative; journal 2 targets / 4 stops, avg -0.14R as of Nov 25); scout role unchanged",
    "stats": {
     "method": "30-min-bar proxy (the live rule uses 15-min/5-min bars; only 30-min Questrade bars exist locally). Data: Questrade RTH 30-min bars May 4 - Oct 30 2026 (~124 sessions), XIU.TO ZEB.TO QQC.TO QQQ; 0.02%/side slippage, stop-first fills, flat at close. Script: /workspace/quant/multistrat-2026-11-02/backtest_new_rules.py",

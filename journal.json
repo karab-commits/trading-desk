@@ -3724,7 +3724,7 @@
         "netR": -0.897,
         "netCAD": -30.43,
         "entryUsed": 134.28,
-        "resolvedAt": "2026-11-27T15:18:49-05:00"
+        "resolvedAt": "2026-11-27T16:48:11-05:00"
       },
       "taken": "no",
       "realPnl": null,
@@ -3786,21 +3786,21 @@
       },
       "result": {
         "outcome": "time",
-        "exit": 512.3,
-        "gross": -20.33,
+        "exit": 514.84,
+        "gross": -22.87,
         "fees": {
           "commission": 0.0,
           "ecn": 0.0,
           "sec": 0.0101,
-          "fx": 0.3,
-          "total": 0.3151
+          "fx": 0.34,
+          "total": 0.3532
         },
-        "net": -20.65,
-        "grossR": -0.821,
-        "netR": -0.834,
-        "netCAD": -29.52,
+        "net": -23.22,
+        "grossR": -0.924,
+        "netR": -0.938,
+        "netCAD": -33.2,
         "entryUsed": 491.97,
-        "resolvedAt": "2026-11-27T15:18:49-05:00"
+        "resolvedAt": "2026-11-27T16:48:10-05:00"
       },
       "taken": "no",
       "realPnl": null,

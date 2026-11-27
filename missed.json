@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updated": "2026-11-27T15:18:49-05:00",
+  "updated": "2026-11-27T16:49:29-05:00",
   "date": "2026-11-27",
   "isoWeek": "2026-W48",
-  "marketOpen": true,
+  "marketOpen": false,
   "currency": "CAD",
   "basis": "hypothetical, net of Questrade fees (data.json fees: $0 commission, SEC fee on US sells, 1.5% FX on USD P&L), USD at fees.usdcad.rate; late-logged ideas scored from loggedPrice; final = journal paper result, unrealized = marked to the latest data.json watchlist price",
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": -59.95,
-      "final": -59.95,
+      "net": -63.63,
+      "final": -63.63,
       "unrealized": 0.0,
       "ideas": 2,
       "scored": 2,
@@ -21,8 +21,8 @@
       "losses": 2
     },
     "week": {
-      "net": -73.21,
-      "final": -73.21,
+      "net": -76.89,
+      "final": -76.89,
       "unrealized": 0.0,
       "ideas": 19,
       "scored": 19,
@@ -33,8 +33,8 @@
       "losses": 13
     },
     "allTime": {
-      "net": 133.63,
-      "final": 133.63,
+      "net": 129.95,
+      "final": 129.95,
       "unrealized": 0.0,
       "ideas": 47,
       "scored": 43,
@@ -48,19 +48,19 @@
   "byBot": {
     "quant": {
       "today": {
-        "net": -59.95,
+        "net": -63.63,
         "ideas": 2,
         "scored": 2,
         "open": 0
       },
       "week": {
-        "net": -166.39,
+        "net": -170.07,
         "ideas": 13,
         "scored": 13,
         "open": 0
       },
       "allTime": {
-        "net": -8.53,
+        "net": -12.21,
         "ideas": 30,
         "scored": 30,
         "open": 0
@@ -179,7 +179,7 @@
       "fees": 0.3255,
       "net": -21.29,
       "netCAD": -30.43,
-      "resolvedAt": "2026-11-27T15:18:49-05:00"
+      "resolvedAt": "2026-11-27T16:48:11-05:00"
     },
     {
       "id": "2026-11-27-LITE-1",
@@ -201,11 +201,11 @@
       "why": "paper-only",
       "state": "final",
       "outcome": "time",
-      "exit": 512.3,
-      "fees": 0.3151,
-      "net": -20.65,
-      "netCAD": -29.52,
-      "resolvedAt": "2026-11-27T15:18:49-05:00"
+      "exit": 514.84,
+      "fees": 0.3532,
+      "net": -23.22,
+      "netCAD": -33.2,
+      "resolvedAt": "2026-11-27T16:48:10-05:00"
     },
     {
       "id": "2026-11-25-QQQ-1",
