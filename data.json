@@ -718,7 +718,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-27T16:49:10-05:00",
+    "updated": "2026-11-27T17:08:40-05:00",
     "ideasLogged": 49,
     "byDate": {
       "2026-11-02": {
@@ -1097,7 +1097,7 @@
   ],
   "watchlistUpdated": "2026-11-27T15:18:49-05:00",
   "scorecard": {
-    "updated": "2026-11-27T16:49:10-05:00",
+    "updated": "2026-11-27T17:08:40-05:00",
     "currency": "CAD",
     "basis": "net of Questrade fees (data.json fees); R = P&L / planned risk",
     "week": {
