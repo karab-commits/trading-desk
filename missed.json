@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-27T12:54:07-05:00",
+  "updated": "2026-11-27T15:18:49-05:00",
   "date": "2026-11-27",
   "isoWeek": "2026-W48",
   "marketOpen": true,
@@ -9,60 +9,60 @@
   "usdcad": 1.4298,
   "totals": {
     "today": {
-      "net": 0.0,
-      "final": 0.0,
+      "net": -59.95,
+      "final": -59.95,
       "unrealized": 0.0,
       "ideas": 2,
-      "scored": 0,
+      "scored": 2,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
+      "pending": 0,
       "wins": 0,
-      "losses": 0
+      "losses": 2
     },
     "week": {
-      "net": -13.26,
-      "final": -13.26,
+      "net": -73.21,
+      "final": -73.21,
       "unrealized": 0.0,
       "ideas": 19,
-      "scored": 17,
+      "scored": 19,
       "open": 0,
       "notTriggered": 0,
-      "pending": 2,
+      "pending": 0,
       "wins": 6,
-      "losses": 11
+      "losses": 13
     },
     "allTime": {
-      "net": 193.58,
-      "final": 193.58,
+      "net": 133.63,
+      "final": 133.63,
       "unrealized": 0.0,
       "ideas": 47,
-      "scored": 41,
+      "scored": 43,
       "open": 0,
       "notTriggered": 4,
-      "pending": 2,
+      "pending": 0,
       "wins": 19,
-      "losses": 22
+      "losses": 24
     }
   },
   "byBot": {
     "quant": {
       "today": {
-        "net": 0.0,
+        "net": -59.95,
         "ideas": 2,
-        "scored": 0,
+        "scored": 2,
         "open": 0
       },
       "week": {
-        "net": -106.44,
+        "net": -166.39,
         "ideas": 13,
-        "scored": 11,
+        "scored": 13,
         "open": 0
       },
       "allTime": {
-        "net": 51.42,
+        "net": -8.53,
         "ideas": 30,
-        "scored": 28,
+        "scored": 30,
         "open": 0
       }
     },
@@ -173,12 +173,13 @@
       "loggedPrice": 134.28,
       "paperEntry": 134.28,
       "why": "paper-only",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "stop",
+      "exit": 139.52,
+      "fees": 0.3255,
+      "net": -21.29,
+      "netCAD": -30.43,
+      "resolvedAt": "2026-11-27T15:18:49-05:00"
     },
     {
       "id": "2026-11-27-LITE-1",
@@ -198,12 +199,13 @@
       "loggedPrice": 491.97,
       "paperEntry": 491.97,
       "why": "paper-only",
-      "state": "pending",
-      "outcome": null,
-      "note": "not scored yet (journal has no result; no triggered watchlist price)",
-      "exit": null,
-      "net": 0.0,
-      "netCAD": 0.0
+      "state": "final",
+      "outcome": "time",
+      "exit": 512.3,
+      "fees": 0.3151,
+      "net": -20.65,
+      "netCAD": -29.52,
+      "resolvedAt": "2026-11-27T15:18:49-05:00"
     },
     {
       "id": "2026-11-25-QQQ-1",

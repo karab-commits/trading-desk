@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Fri Nov 27, 2026 12:54 PM ET",
+  "lastUpdated": "Fri Nov 27, 2026 3:18 PM ET",
   "deskName": "K's AI Trading Desk",
   "tickers": [
     {
@@ -128,7 +128,7 @@
       "id": "kiwi",
       "name": "Kiwi",
       "role": "Head of desk. Leads: sends each valid order to Questrade; K approves it in the app.",
-      "status": "12:07 ET run: no positions, no working orders, 0 orders sent",
+      "status": "Close-out 3:18 PM ET: Questrade 0944 has no open positions or working orders and no trades today.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -136,15 +136,16 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Flat · 0 signals",
-        "detail": "12:07 ET run: no positions, no working orders, 0 orders sent",
-        "since": "2026-11-27T12:06:59-05:00",
+        "now": "Flat. No positions open",
+        "detail": "Close-out 3:18 PM ET: Questrade 0944 has no open positions or working orders and no trades today.",
+        "since": "2026-11-27T15:18:49-05:00",
         "state": "done",
         "log": [
           "11:26 run: 0 orders",
           "11:42 run: 0 orders",
           "11:56 run: 0 orders"
-        ]
+        ],
+        "next": "Monday open"
       }
     },
     {
@@ -175,7 +176,7 @@
       "id": "journal",
       "name": "Trade Journal",
       "role": "Logs every trade and keeps the stats (no trading)",
-      "status": "0 ideas Nov 26. Week paper -13.26 CAD on 17.",
+      "status": "MRVL short paper hit stop; LITE short paper flat at 512.30. Neither traded with real money.",
       "pnlToday": 0,
       "pnlWeek": 0,
       "pnlAllTime": 0,
@@ -183,11 +184,11 @@
       "tradesWeek": 0,
       "tradesAllTime": 0,
       "activity": {
-        "now": "Nothing to score today",
-        "detail": "0 ideas Nov 26. Week paper -13.26 CAD on 17.",
-        "since": "2026-11-26T16:49:28-05:00",
+        "now": "Scored 2 paper ideas",
+        "detail": "MRVL short paper hit stop; LITE short paper flat at 512.30. Neither traded with real money.",
+        "since": "2026-11-27T15:18:49-05:00",
         "state": "done",
-        "next": "Fri 5 PM weekly scorecard",
+        "next": "Weekly scorecard 5 PM",
         "log": [
           "16:55 ANT re-scored at 4 PM close"
         ]
@@ -711,7 +712,7 @@
   "paper": {
     "currency": "CAD",
     "basis": "net of fees, resolved ideas only",
-    "updated": "2026-11-27T10:07:06-05:00",
+    "updated": "2026-11-27T15:18:49-05:00",
     "ideasLogged": 49,
     "byDate": {
       "2026-11-02": {
@@ -825,11 +826,11 @@
         "taken": 0
       },
       "2026-11-27": {
-        "net": 0.0,
+        "net": -59.95,
         "ideas": 2,
-        "resolved": 0,
-        "open": 2,
-        "filled": 0,
+        "resolved": 2,
+        "open": 0,
+        "filled": 2,
         "wins": 0,
         "real": 0.0,
         "taken": 0
@@ -955,7 +956,7 @@
     {
       "date": "2026-11-27",
       "ticker": "VRTX",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "side": "short",
@@ -974,13 +975,14 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 532.67,
-      "priceTime": "2026-11-27T12:54:02-05:00"
+      "last": 535.06,
+      "priceTime": "2026-11-27T15:18:49-05:00",
+      "statusAt": "2026-11-27T15:18:49-05:00"
     },
     {
       "date": "2026-11-27",
       "ticker": "SNDK",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "side": "long",
@@ -999,13 +1001,14 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 83.9083,
-      "priceTime": "2026-11-27T12:54:02-05:00"
+      "last": 85.1,
+      "priceTime": "2026-11-27T15:18:49-05:00",
+      "statusAt": "2026-11-27T15:18:49-05:00"
     },
     {
       "date": "2026-11-27",
       "ticker": "MU",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "side": "long",
@@ -1024,8 +1027,9 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 637.82,
-      "priceTime": "2026-11-27T12:54:02-05:00"
+      "last": 644.15,
+      "priceTime": "2026-11-27T15:18:49-05:00",
+      "statusAt": "2026-11-27T15:18:49-05:00"
     },
     {
       "date": "2026-11-27",
@@ -1061,7 +1065,7 @@
     {
       "date": "2026-11-27",
       "ticker": "QQQ",
-      "status": "watching",
+      "status": "expired",
       "closeBy": "16:00",
       "addedAt": "2026-11-27T09:07:51-05:00",
       "side": "long",
@@ -1080,11 +1084,12 @@
       "netLossAtStopCAD": null,
       "openPnl": null,
       "openPnlCAD": null,
-      "last": 647.15,
-      "priceTime": "2026-11-27T12:54:03-05:00"
+      "last": 650.25,
+      "priceTime": "2026-11-27T15:18:49-05:00",
+      "statusAt": "2026-11-27T15:18:49-05:00"
     }
   ],
-  "watchlistUpdated": "2026-11-27T12:54:07-05:00",
+  "watchlistUpdated": "2026-11-27T15:18:49-05:00",
   "scorecard": {
     "updated": "2026-11-26T16:48:56-05:00",
     "currency": "CAD",
